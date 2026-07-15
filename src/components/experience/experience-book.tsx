@@ -164,22 +164,34 @@ export function ExperienceBook({ experiences }: ExperienceBookProps) {
           key={`${activeExperience.company}-${activeExperience.period}`}
           aria-hidden="true"
         >
-          <div className="experience-book__folio">
-            <span>{String(activePage + 1).padStart(2, "0")}</span>
-            <span>{activeExperience.period}</span>
+          <div className="experience-book__page experience-book__page--left">
+            <div className="experience-book__folio">
+              <span>{String(activePage + 1).padStart(2, "0")}</span>
+              <span>{activeExperience.period}</span>
+            </div>
+            <p className="experience-book__company">
+              {activeExperience.company}
+            </p>
+            <h3>{activeExperience.role}</h3>
+            <p className="experience-book__summary">
+              {activeExperience.summary}
+            </p>
+            <div className="experience-book__tags">
+              {activeExperience.technologies.slice(0, 5).map((technology) => (
+                <span key={technology}>{technology}</span>
+              ))}
+            </div>
           </div>
-          <p>{activeExperience.company}</p>
-          <h3>{activeExperience.role}</h3>
-          <p>{activeExperience.summary}</p>
-          <ul>
-            {activeExperience.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </ul>
-          <div className="experience-book__tags">
-            {activeExperience.technologies.slice(0, 5).map((technology) => (
-              <span key={technology}>{technology}</span>
-            ))}
+          <div className="experience-book__page experience-book__page--right">
+            <div className="experience-book__chapter-label">
+              <span>Selected signals</span>
+              <span>Chapter {String(activePage + 1).padStart(2, "0")}</span>
+            </div>
+            <ul>
+              {activeExperience.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
           </div>
         </article>
 

@@ -7,13 +7,20 @@ import * as THREE from "three";
 import type { Theme } from "@/components/theme/theme-provider";
 
 const PAGE_WIDTH = 3.48;
-const PAGE_HEIGHT = 4.46;
+const PAGE_HEIGHT = 4.68;
 
 function ResponsiveCamera() {
   const size = useThree((state) => state.size);
   const aspect = size.width / Math.max(size.height, 1);
+  const mobileDistance = THREE.MathUtils.clamp(11.2 / aspect, 8.65, 11.5);
   const cameraDistance =
-    size.width < 640 ? 10.3 : aspect < 1 ? 12.6 : aspect < 1.25 ? 11.8 : 11.2;
+    size.width < 640
+      ? mobileDistance
+      : aspect < 1
+        ? 12.6
+        : aspect < 1.25
+          ? 11.8
+          : 11.2;
 
   return (
     <PerspectiveCamera
@@ -133,7 +140,7 @@ function BookModel({
   return (
     <group ref={book} rotation={[0.045, -0.04, -0.018]}>
       <RoundedBox
-        args={[3.68, 4.72, 0.16]}
+        args={[3.68, PAGE_HEIGHT + 0.26, 0.16]}
         radius={0.09}
         smoothness={3}
         position={[-1.84, 0, -0.3]}
@@ -146,7 +153,7 @@ function BookModel({
         />
       </RoundedBox>
       <RoundedBox
-        args={[3.68, 4.72, 0.16]}
+        args={[3.68, PAGE_HEIGHT + 0.26, 0.16]}
         radius={0.09}
         smoothness={3}
         position={[1.84, 0, -0.3]}
@@ -160,7 +167,7 @@ function BookModel({
       </RoundedBox>
 
       <mesh position={[0, 0, -0.27]}>
-        <cylinderGeometry args={[0.12, 0.12, 4.68, 28]} />
+        <cylinderGeometry args={[0.12, 0.12, PAGE_HEIGHT + 0.22, 28]} />
         <meshStandardMaterial
           color={coverEdge}
           roughness={0.48}
@@ -169,7 +176,7 @@ function BookModel({
       </mesh>
 
       <RoundedBox
-        args={[3.46, 4.44, 0.22]}
+        args={[3.46, PAGE_HEIGHT - 0.02, 0.22]}
         radius={0.055}
         smoothness={2}
         position={[-1.74, 0, -0.13]}
@@ -178,7 +185,7 @@ function BookModel({
         <meshStandardMaterial color={pageEdge} roughness={0.9} />
       </RoundedBox>
       <RoundedBox
-        args={[3.46, 4.44, 0.22]}
+        args={[3.46, PAGE_HEIGHT - 0.02, 0.22]}
         radius={0.055}
         smoothness={2}
         position={[1.74, 0, -0.13]}
@@ -207,7 +214,7 @@ function BookModel({
       ))}
 
       <mesh position={[0, 0, 0.075]}>
-        <boxGeometry args={[0.025, 4.35, 0.018]} />
+        <boxGeometry args={[0.025, PAGE_HEIGHT - 0.11, 0.018]} />
         <meshBasicMaterial color={pageEdge} transparent opacity={0.7} />
       </mesh>
     </group>
