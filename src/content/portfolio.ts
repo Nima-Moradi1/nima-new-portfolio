@@ -249,7 +249,7 @@ export const portfolio = {
   ] satisfies CapabilityGroup[],
   education: {
     title: "B.S. in Computer Engineering",
-    institution: "Tehran Azad University · Sep 2021 — Present",
+    institution: "Tehran Azad University · Sep 2021 — Jul 15, 2026",
     note: "Formal computer engineering study alongside professional frontend product work.",
     languages: [
       "Persian · Native/Bilingual",
