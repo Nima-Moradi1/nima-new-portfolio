@@ -6,7 +6,6 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { ThemeLamp } from "@/components/theme/theme-lamp";
 
 export default function HomePage() {
   return (
@@ -15,7 +14,6 @@ export default function HomePage() {
         Skip to main content
       </a>
       <SiteHeader />
-      <ThemeLamp />
       <main id="main-content">
         <HeroSection />
         <AboutSection />

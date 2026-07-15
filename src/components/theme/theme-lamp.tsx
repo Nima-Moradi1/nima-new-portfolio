@@ -1,28 +1,13 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useReducedMotion } from "motion/react";
 import { useRef, type MouseEvent, type PointerEvent } from "react";
-import { LampFallback } from "@/components/theme/lamp-fallback";
 import { useTheme } from "@/components/theme/theme-provider";
-import { WebGLErrorBoundary } from "@/components/three/webgl-error-boundary";
-import { useWebGLSupport } from "@/hooks/use-webgl-support";
-
-const LampScene = dynamic(
-  () =>
-    import("@/components/theme/lamp-scene").then((module) => module.LampScene),
-  { ssr: false, loading: () => <LampFallback isDark /> },
-);
 
 export function ThemeLamp() {
   const { isDark, toggleTheme } = useTheme();
-  const webGLSupported = useWebGLSupport();
-  const reducedMotion = useReducedMotion() ?? false;
   const pullAmountRef = useRef(0);
   const pointerStart = useRef(0);
   const isDragging = useRef(false);
-  const dragged = useRef(false);
-  const suppressClick = useRef(false);
 
   function setPullVisual(
     button: HTMLButtonElement,
@@ -35,10 +20,9 @@ export function ThemeLamp() {
   }
 
   function handlePointerDown(event: PointerEvent<HTMLButtonElement>) {
+    if (event.button !== 0) return;
     pointerStart.current = event.clientY;
     isDragging.current = true;
-    dragged.current = false;
-    suppressClick.current = false;
     setPullVisual(event.currentTarget, 0, true);
     event.currentTarget.setPointerCapture(event.pointerId);
   }
@@ -46,43 +30,39 @@ export function ThemeLamp() {
   function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
     if (!isDragging.current) return;
     const distance = Math.max(0, event.clientY - pointerStart.current);
-    const nextPullAmount = Math.min(distance / 48, 1);
-    if (distance >= 5) dragged.current = true;
+    const nextPullAmount = Math.min(distance / 42, 1);
     setPullVisual(event.currentTarget, nextPullAmount, true);
   }
 
   function handlePointerUp(event: PointerEvent<HTMLButtonElement>) {
+    if (!isDragging.current) return;
     const finalDistance = Math.max(0, event.clientY - pointerStart.current);
     const shouldToggle =
-      Math.max(pullAmountRef.current, finalDistance / 48) >= 0.35;
-    const wasDragged = dragged.current || finalDistance >= 5;
+      Math.max(pullAmountRef.current, finalDistance / 42) >= 0.42;
 
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
     isDragging.current = false;
     setPullVisual(event.currentTarget, 0, false);
-    suppressClick.current = wasDragged;
 
     if (shouldToggle) toggleTheme();
   }
 
   function handlePointerCancel(event: PointerEvent<HTMLButtonElement>) {
+    if (!isDragging.current) return;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
     isDragging.current = false;
     setPullVisual(event.currentTarget, 0, false);
     pullAmountRef.current = 0;
-    suppressClick.current = false;
   }
 
   function handleClick(event: MouseEvent<HTMLButtonElement>) {
-    if (suppressClick.current && event.detail !== 0) {
-      suppressClick.current = false;
-      return;
-    }
-    toggleTheme();
+    // Pointer users pull the cord. Keyboard activation remains an accessible
+    // equivalent for people who cannot perform a drag gesture.
+    if (event.detail === 0) toggleTheme();
   }
 
   const actionLabel = isDark
@@ -90,34 +70,29 @@ export function ThemeLamp() {
     : "Turn the reading lamp on and switch to dark mode";
 
   return (
-    <aside className="theme-lamp" data-lit={isDark} aria-label="Theme lamp">
-      <div className="theme-lamp__scene" aria-hidden="true">
-        <WebGLErrorBoundary fallback={<LampFallback isDark={isDark} />}>
-          {webGLSupported === false || webGLSupported === null ? (
-            <LampFallback isDark={isDark} />
-          ) : (
-            <LampScene isDark={isDark} reducedMotion={reducedMotion} />
-          )}
-        </WebGLErrorBoundary>
-      </div>
-      <div className="theme-lamp__caption" aria-hidden="true">
-        <span>{isDark ? "Lamp on" : "Lamp off"}</span>
-        <small>Pull chain · {isDark ? "Dark room" : "Daylight"}</small>
+    <div className="theme-lamp" data-lit={isDark}>
+      <div className="theme-lamp__fixture" aria-hidden="true">
+        <span className="theme-lamp__glow" />
+        <span className="theme-lamp__shade" />
+        <span className="theme-lamp__bulb" />
       </div>
       <button
         className="theme-lamp__pull"
         type="button"
         aria-label={actionLabel}
         aria-pressed={isDark}
-        title={`${actionLabel}. Drag or click the chain.`}
+        title={`${actionLabel}. Pull the chain downward.`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
         onClick={handleClick}
       >
-        <span aria-hidden="true" />
+        <span className="theme-lamp__pendulum" aria-hidden="true">
+          <span className="theme-lamp__cord" />
+          <span className="theme-lamp__handle" />
+        </span>
       </button>
-    </aside>
+    </div>
   );
 }
