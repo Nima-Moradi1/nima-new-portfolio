@@ -61,7 +61,11 @@ test("pull-chain control changes and remembers the room theme", async ({
   const pullX = lampBox.x + lampBox.width / 2;
   const pullY = lampBox.y + lampBox.height / 2;
   const pointerTarget = await page.evaluate(
-    ({ x, y }) => document.elementFromPoint(x, y)?.className,
+    ({ x, y }) =>
+      document
+        .elementFromPoint(x, y)
+        ?.closest(".theme-lamp__pull")
+        ?.getAttribute("class"),
     { x: pullX, y: pullY },
   );
   expect(pointerTarget).toContain("theme-lamp__pull");
@@ -84,10 +88,9 @@ test("pull-chain control changes and remembers the room theme", async ({
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(lamp).toHaveCSS("cursor", "grab");
 
-  for (let toggle = 0; toggle < 2; toggle += 1) {
-    await lamp.click();
-  }
+  await lamp.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(page.locator(".site-header .theme-lamp")).toHaveCount(1);
 
   const lostContexts = await page.locator("canvas").evaluateAll(
     (canvases) =>
@@ -103,7 +106,7 @@ test("pull-chain control changes and remembers the room theme", async ({
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
 });
 
-test("keeps the experience book clear of headings and the floating lamp", async ({
+test("typesets experience copy across both physical book pages", async ({
   page,
 }) => {
   async function scrollExperienceIntoPlace() {
@@ -128,19 +131,24 @@ test("keeps the experience book clear of headings and the floating lamp", async 
   const desktopCopy = await page
     .locator(".experience-book__page-copy")
     .boundingBox();
-  const desktopLamp = await page.locator(".theme-lamp").boundingBox();
+  const desktopPages = page.locator(".experience-book__page");
 
   expect(desktopHeading).not.toBeNull();
   expect(desktopScene).not.toBeNull();
   expect(desktopCopy).not.toBeNull();
-  expect(desktopLamp).not.toBeNull();
-  if (!desktopHeading || !desktopScene || !desktopCopy || !desktopLamp) return;
+  await expect(desktopPages).toHaveCount(2);
+  if (!desktopHeading || !desktopScene || !desktopCopy) return;
 
   expect(desktopScene.x).toBeGreaterThan(
     desktopHeading.x + desktopHeading.width,
   );
+  expect(desktopCopy.x).toBeGreaterThanOrEqual(desktopScene.x - 2);
   expect(desktopCopy.x + desktopCopy.width).toBeLessThanOrEqual(
-    desktopLamp.x + 2,
+    desktopScene.x + desktopScene.width + 2,
+  );
+  expect(desktopCopy.y).toBeGreaterThanOrEqual(desktopScene.y - 2);
+  expect(desktopCopy.y + desktopCopy.height).toBeLessThanOrEqual(
+    desktopScene.y + desktopScene.height + 2,
   );
 
   await page.setViewportSize({ width: 390, height: 844 });
@@ -155,23 +163,250 @@ test("keeps the experience book clear of headings and the floating lamp", async 
   const mobileCopy = await page
     .locator(".experience-book__page-copy")
     .boundingBox();
-  const mobileLamp = await page.locator(".theme-lamp").boundingBox();
+  const mobilePages = page.locator(".experience-book__page");
 
   expect(mobileHeading).not.toBeNull();
   expect(mobileScene).not.toBeNull();
   expect(mobileCopy).not.toBeNull();
-  expect(mobileLamp).not.toBeNull();
-  if (!mobileHeading || !mobileScene || !mobileCopy || !mobileLamp) return;
+  await expect(mobilePages).toHaveCount(2);
+  if (!mobileHeading || !mobileScene || !mobileCopy) return;
 
   expect(mobileScene.y).toBeGreaterThanOrEqual(
-    mobileHeading.y + mobileHeading.height,
+    mobileHeading.y + mobileHeading.height + 12,
   );
-  expect(mobileCopy.y).toBeGreaterThanOrEqual(
-    mobileScene.y + mobileScene.height,
-  );
+  expect(mobileScene.x).toBeGreaterThanOrEqual(10);
+  expect(mobileScene.x + mobileScene.width).toBeLessThanOrEqual(380);
+  expect(mobileCopy.x).toBeGreaterThanOrEqual(20);
+  expect(mobileCopy.x + mobileCopy.width).toBeLessThanOrEqual(370);
+  expect(mobileCopy.y).toBeGreaterThanOrEqual(mobileScene.y - 2);
   expect(mobileCopy.y + mobileCopy.height).toBeLessThanOrEqual(
-    mobileLamp.y + 1,
+    mobileScene.y + mobileScene.height + 2,
   );
+
+  const pageOverflow = await mobilePages.evaluateAll((pages) =>
+    pages.map((bookPage) => ({
+      horizontal: bookPage.scrollWidth - bookPage.clientWidth,
+      vertical: bookPage.scrollHeight - bookPage.clientHeight,
+    })),
+  );
+  expect(pageOverflow).toEqual([
+    { horizontal: 0, vertical: 0 },
+    { horizontal: 0, vertical: 0 },
+  ]);
+
+  await expect(page.locator(".experience-book__page-copy")).toHaveCSS(
+    "background-color",
+    "rgba(0, 0, 0, 0)",
+  );
+  const mobileCopySizes = await page.evaluate(() => ({
+    summary: Number.parseFloat(
+      getComputedStyle(document.querySelector(".experience-book__summary")!)
+        .fontSize,
+    ),
+    highlight: Number.parseFloat(
+      getComputedStyle(
+        document.querySelector(".experience-book__page--right li")!,
+      ).fontSize,
+    ),
+  }));
+  expect(mobileCopySizes.summary).toBeGreaterThanOrEqual(9.5);
+  expect(mobileCopySizes.highlight).toBeGreaterThanOrEqual(8.75);
+
+  for (const role of [
+    "Senior Frontend Engineer",
+    "Frontend Developer",
+    "React Developer",
+  ]) {
+    await page.getByRole("button", { name: "Next experience" }).click();
+    await expect(page.locator(".experience-book__page-copy h3")).toHaveText(
+      role,
+    );
+    const chapterOverflow = await mobilePages.evaluateAll((pages) =>
+      pages.map((bookPage) => bookPage.scrollHeight - bookPage.clientHeight),
+    );
+    expect(chapterOverflow).toEqual([0, 0]);
+  }
+});
+
+test("keeps the mobile glass navbar readable with adjacent lamp access", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+
+  const header = page.locator(".site-header");
+  const lamp = page.locator(".theme-lamp");
+  const menu = page.locator(".site-header__menu-button");
+  await expect(header).toBeVisible();
+  const [headerBox, lampBox, menuBox] = await Promise.all([
+    header.boundingBox(),
+    lamp.boundingBox(),
+    menu.boundingBox(),
+  ]);
+
+  expect(headerBox).not.toBeNull();
+  expect(lampBox).not.toBeNull();
+  expect(menuBox).not.toBeNull();
+  if (!headerBox || !lampBox || !menuBox) return;
+
+  expect(
+    await header.evaluate((node) => getComputedStyle(node).backgroundImage),
+  ).not.toBe("none");
+  const headerFilters = await header.evaluate((node) => {
+    const style = getComputedStyle(node);
+    return [
+      style.getPropertyValue("backdrop-filter"),
+      style.getPropertyValue("-webkit-backdrop-filter"),
+    ];
+  });
+  expect(headerFilters.join(" ")).toContain("blur");
+  expect(lampBox.x + lampBox.width).toBeLessThanOrEqual(menuBox.x + 2);
+
+  const pullBox = await page.locator(".theme-lamp__pull").boundingBox();
+  expect(pullBox).not.toBeNull();
+  if (!pullBox) return;
+  expect(pullBox.y + pullBox.height).toBeGreaterThan(
+    headerBox.y + headerBox.height,
+  );
+  const pendulum = page.locator(".theme-lamp__pendulum");
+  const handle = page.locator(".theme-lamp__handle");
+  await expect(pendulum).toHaveCount(1);
+  await expect(handle).toHaveCount(1);
+  await expect(page.locator(".theme-lamp__cord")).toHaveCount(1);
+  await expect(pendulum).toHaveCSS("animation-name", "lamp-cord-pendulum");
+  const attachmentGap = await pendulum.evaluate((element) => {
+    const pullHandle = element.querySelector<HTMLElement>(
+      ".theme-lamp__handle",
+    );
+    return pullHandle
+      ? Math.abs(element.clientHeight - pullHandle.offsetTop)
+      : Number.POSITIVE_INFINITY;
+  });
+  expect(attachmentGap).toBeLessThanOrEqual(1);
+
+  async function measureSwingDistance() {
+    return pendulum.evaluate((element) => {
+      const handle = element.querySelector<HTMLElement>(".theme-lamp__handle");
+      const animation = element.getAnimations()[0];
+      if (!handle || !animation) return 0;
+      const duration = Number(animation.effect?.getTiming().duration);
+      animation.pause();
+      animation.currentTime = 0;
+      const left = handle.getBoundingClientRect().x;
+      animation.currentTime = duration / 2;
+      const right = handle.getBoundingClientRect().x;
+      animation.play();
+      return Math.abs(right - left);
+    });
+  }
+
+  expect(await measureSwingDistance()).toBeGreaterThanOrEqual(10);
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(pendulum).toHaveCSS("animation-name", "lamp-cord-pendulum");
+  await expect(pendulum).toHaveCSS("animation-iteration-count", "infinite");
+  expect(await measureSwingDistance()).toBeGreaterThanOrEqual(10);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+
+  await menu.click();
+  const mobileNav = page.locator(".mobile-nav");
+  await expect(mobileNav).toHaveAttribute("data-open", "true");
+  const mobileNavBox = await mobileNav.boundingBox();
+  expect(mobileNavBox).not.toBeNull();
+  if (!mobileNavBox) return;
+  expect(mobileNavBox.x).toBeLessThanOrEqual(0);
+  expect(mobileNavBox.y).toBeLessThanOrEqual(0);
+  expect(mobileNavBox.width).toBeGreaterThanOrEqual(390);
+  expect(mobileNavBox.height).toBeGreaterThanOrEqual(843.5);
+  await expect(mobileNav).toHaveCSS("position", "fixed");
+  await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+  expect(
+    await mobileNav.evaluate((node) => getComputedStyle(node).backgroundImage),
+  ).toContain("linear-gradient");
+  expect(
+    await mobileNav.evaluate((node) =>
+      getComputedStyle(node).getPropertyValue("backdrop-filter"),
+    ),
+  ).toContain("blur");
+
+  await page.keyboard.press("Escape");
+  await expect(mobileNav).toHaveAttribute("data-open", "false");
+  await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
+});
+
+test("gives light mode a dimensional page and project visual system", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const lamp = page.locator(".theme-lamp__pull");
+  const box = await lamp.boundingBox();
+  expect(box).not.toBeNull();
+  if (!box) return;
+
+  const x = box.x + box.width / 2;
+  const y = box.y + box.height / 2;
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await page.mouse.move(x, y + 40, { steps: 8 });
+  await page.mouse.up();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+
+  const bodyBackground = await page
+    .locator("body")
+    .evaluate((node) => getComputedStyle(node).backgroundImage);
+  expect(bodyBackground).toContain("radial-gradient");
+  expect(bodyBackground).toContain("linear-gradient");
+
+  const projectVisual = page.locator(".project-card__visual").first();
+  const projectBackground = await projectVisual.evaluate(
+    (node) => getComputedStyle(node).backgroundImage,
+  );
+  expect(projectBackground).toContain("linear-gradient");
+  expect(projectBackground).not.toContain("rgb(13, 16, 14)");
+
+  const headerGlass = await page
+    .locator("html")
+    .evaluate((node) =>
+      getComputedStyle(node).getPropertyValue("--header-glass").trim(),
+    );
+  expect(headerGlass).toBe("rgba(214, 218, 195, 0.66)");
+
+  await page.locator("#capabilities").scrollIntoViewIfNeeded();
+  await expect(page.locator(".site-header")).toHaveAttribute(
+    "data-scrolled",
+    "true",
+  );
+  expect(
+    await page
+      .locator(".site-header")
+      .evaluate((node) => getComputedStyle(node).backgroundImage),
+  ).toContain("linear-gradient");
+});
+
+test("compacts capabilities and presents the completed education signal", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/#capabilities");
+
+  const firstSkills = page.locator(".capability-row").first().locator("li");
+  const firstFourBoxes = await Promise.all(
+    [0, 1, 2, 3].map((index) => firstSkills.nth(index).boundingBox()),
+  );
+  expect(firstFourBoxes.every(Boolean)).toBe(true);
+  const [first, second, third, fourth] = firstFourBoxes;
+  if (!first || !second || !third || !fourth) return;
+  expect(second.y).toBeCloseTo(first.y, 0);
+  expect(third.y).toBeCloseTo(first.y, 0);
+  expect(fourth.y).toBeGreaterThan(first.y + first.height - 1);
+
+  await expect(page.locator(".education-card__signal span").first()).toHaveCSS(
+    "animation-name",
+    "education-signal-pulse",
+  );
+  await expect(
+    page.getByText("Tehran Azad University · Sep 2021 — Jul 15, 2026"),
+  ).toBeVisible();
 });
 
 test("experience reader exposes scroll and button-driven page navigation", async ({
