@@ -54,7 +54,7 @@ test("renders a controllable workstation with reliable resume and lamp actions",
   });
   await expect(studio).toBeVisible();
   await expect(page.locator("[data-code-loop='active']")).toHaveText(
-    "Typing React",
+    "React Coding",
   );
 
   const viewport = page.locator(".hero-studio__viewport");

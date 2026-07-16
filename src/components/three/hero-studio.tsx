@@ -53,7 +53,7 @@ export function HeroStudio() {
 
         <div className="hero-studio__status" aria-hidden="true">
           <span>app/dashboard.tsx</span>
-          <span data-code-loop="active">Typing React</span>
+          <span data-code-loop="active">React Coding</span>
         </div>
       </div>
 
