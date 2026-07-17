@@ -19,6 +19,7 @@ Third-party source dependencies retain their respective licenses. The principal 
 ## User-provided assets
 
 - `public/assets/nima-moradirad.jpg` — portrait extracted from the résumé supplied by Nima Moradirad; used as personal portfolio content.
-- `public/nima-moradirad-resume.pdf` — public-safe derivative of the supplied résumé. The private phone number is redacted before web distribution.
+- `public/nima-moradirad-resume.pdf` and its optimized WebP preview — the one-page professional résumé supplied by Nima Moradirad for public portfolio use.
+- `public/assets/projects/xo-arena/*` — WebP captures and optimized H.264/VP9 derivatives of the XO Arena screenshots and recording supplied by Nima Moradirad.
 
-No client logos, project screenshots, or third-party stock imagery are included. Personal résumé content and portrait rights remain with Nima Moradirad.
+No third-party stock imagery is included. Personal résumé, portrait, and XO Arena media rights remain with Nima Moradirad.

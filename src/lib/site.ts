@@ -4,4 +4,4 @@ export const siteUrl =
 
 export const siteName = "Nima Moradirad · Portfolio";
 export const siteDescription =
-  "Senior Front-End Engineer Nima Moradirad builds production React and Next.js applications with scalable architecture, robust validation, and performance-aware rendering.";
+  "Senior Frontend Engineer Nima Moradirad builds secure, high-performance products across web, Android, and PWA surfaces with scalable architecture and creative product thinking.";

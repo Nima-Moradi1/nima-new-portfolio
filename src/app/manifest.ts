@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Signal Atelier Portfolio",
     short_name: "Signal Atelier",
     description:
-      "A design-led frontend engineering and creative technology portfolio.",
+      "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology.",
     start_url: "/",
     display: "standalone",
     background_color: "#090b0a",

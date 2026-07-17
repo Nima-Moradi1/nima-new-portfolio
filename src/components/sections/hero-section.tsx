@@ -28,8 +28,8 @@ export function HeroSection() {
             </Reveal>
             <Reveal delay={0.12}>
               <h1 id="hero-title">
-                I build digital
-                <span>systems with signal.</span>
+                I build for scalability,
+                <span>performance, and creativity.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.22}>

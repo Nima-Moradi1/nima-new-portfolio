@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { FileText, LampDesk, Move3d } from "lucide-react";
+import { Move3d } from "lucide-react";
 import { useInView, useReducedMotion } from "motion/react";
 import { useRef, useState } from "react";
 import { DeskFallback } from "@/components/three/desk-fallback";
@@ -23,11 +23,7 @@ export function HeroStudio() {
   const webGLSupported = useWebGLSupport();
   const reducedMotion = useReducedMotion() ?? false;
   const active = useInView(runtime, { margin: "20% 0px" });
-  const { isDark, theme, toggleTheme } = useTheme();
-
-  const lampLabel = isDark
-    ? "Switch the desk lamp off and use light mode"
-    : "Switch the desk lamp on and use dark mode";
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div
@@ -54,23 +50,10 @@ export function HeroStudio() {
         <div className="hero-studio__status" aria-hidden="true">
           <span>app/dashboard.tsx</span>
           <span data-code-loop="active">React Coding</span>
-        </div>
-      </div>
-
-      <div className="hero-studio__toolbar">
-        <p>
-          <Move3d aria-hidden="true" size={16} />
-          Drag sideways to inspect the studio
-        </p>
-        <div>
-          <button type="button" onClick={() => setResumeOpen(true)}>
-            <FileText aria-hidden="true" size={16} />
-            Raise résumé
-          </button>
-          <button type="button" onClick={toggleTheme} aria-label={lampLabel}>
-            <LampDesk aria-hidden="true" size={16} />
-            Pull desk lamp
-          </button>
+          <span>
+            <Move3d aria-hidden="true" size={13} />
+            Drag to inspect
+          </span>
         </div>
       </div>
 

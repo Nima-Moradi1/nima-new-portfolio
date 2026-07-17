@@ -82,6 +82,18 @@ The fixed reading lamp is both scene and control. Pulling its chain beyond the t
 
 Labels always remain visible. Errors sit directly beneath their fields. Pending, success, unavailable, and failure states are distinct. A missing provider is presented as “not sent,” followed by a mailto path.
 
+### First-frame loader
+
+The first uncached landing visit uses orbiting signal fields, a live percentage, and plain-language loading phases. The portfolio renders behind the overlay so its fonts, assets, and required WebGL frame can settle before reveal. A versioned local marker removes the loader from returning visits.
+
+### XO Arena case study
+
+XO Arena extends the editorial grid into a documented product walkthrough. The video is the primary evidence surface; engineering cards explain the surrounding systems, and lazy image frames use masked grid skeletons until their optimized captures decode.
+
+### Mobile experience reader
+
+Coarse pointers receive a CSS-rendered experience book with native previous/next controls. It preserves the paper, folio, chapter, and spine language while avoiding a continuous WebGL loop and long pinned scroll region.
+
 ## Motion rules
 
 | Motion          | Duration | Easing                       | Purpose                        |
@@ -98,7 +110,7 @@ Motion must be interruptible. No transition blocks scrolling or navigation. No s
 - Cameras: restrained 32–39° perspective selected per scene
 - Hero: emissive core, wireframe shell, orbital meshes, and instanced nodes
 - Book: procedural covers, page stacks, curved subdivided sheets, and scroll-derived rotation
-- Lamp: procedural metal stand, shade, bulb, cord, handle, and interpolated point light
+- Lamp: procedural metal stand, shade, bulb, cord, handle, animated 3D pull-hand cue, and interpolated point light
 - Lighting: bounded ambient, directional, and point lights matched to room theme
 - Renderer: DPR capped at 1.5 with adaptive reduction
 - No texture downloads, environment maps, postprocessing, or physics

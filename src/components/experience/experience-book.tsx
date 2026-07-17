@@ -16,8 +16,10 @@ import {
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { useTheme } from "@/components/theme/theme-provider";
 import { BookFallback } from "@/components/experience/book-fallback";
+import { MobileExperienceReader } from "@/components/experience/mobile-experience-reader";
 import { WebGLErrorBoundary } from "@/components/three/webgl-error-boundary";
 import { useWebGLSupport } from "@/hooks/use-webgl-support";
+import { useCompactViewport } from "@/hooks/use-compact-viewport";
 import type { ExperienceItem } from "@/types/portfolio";
 
 const ExperienceBookScene = dynamic(
@@ -69,6 +71,7 @@ export function ExperienceBook({ experiences }: ExperienceBookProps) {
   const progressRef = useRef(0);
   const [activePage, setActivePage] = useState(0);
   const reducedMotion = useReducedMotion() ?? false;
+  const compactViewport = useCompactViewport();
   const webGLSupported = useWebGLSupport();
   const isInView = useInView(root, { margin: "15% 0px" });
   const { theme } = useTheme();
@@ -108,6 +111,10 @@ export function ExperienceBook({ experiences }: ExperienceBookProps) {
       event.preventDefault();
       goToPage(activePage - 1);
     }
+  }
+
+  if (compactViewport) {
+    return <MobileExperienceReader experiences={experiences} />;
   }
 
   if (webGLSupported === false || reducedMotion) {

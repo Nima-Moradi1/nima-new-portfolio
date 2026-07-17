@@ -26,6 +26,14 @@ const themeInitScript = `(() => {
   } catch {}
 })();`;
 
+const portfolioCacheInitScript = `(() => {
+  try {
+    if (window.localStorage.getItem("nima-portfolio-ready-v5") === "ready") {
+      document.documentElement.dataset.portfolioCached = "true";
+    }
+  } catch {}
+})();`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -105,6 +113,9 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          dangerouslySetInnerHTML={{ __html: portfolioCacheInitScript }}
+        />
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>

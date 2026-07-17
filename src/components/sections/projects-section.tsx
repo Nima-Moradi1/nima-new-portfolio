@@ -1,4 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { portfolio } from "@/content/portfolio";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -16,8 +17,8 @@ export function ProjectsSection() {
           <SectionHeading
             index="03"
             eyebrow="Selected transmissions"
-            title="Three kinds of work. One standard of care."
-            description="A selection spanning custom e-commerce, full-stack publishing, and a multi-panel B2B product."
+            title="Three products, built beyond the interface."
+            description="Selected work across real-time multiplayer, full-stack commerce, and a multi-surface B2B financial platform."
           />
         </Reveal>
 
@@ -38,7 +39,11 @@ export function ProjectsSection() {
                 <div className="project-card__content">
                   <div className="project-card__kicker">
                     <span>{project.category}</span>
-                    <ArrowUpRight aria-hidden="true" size={19} />
+                    {project.href?.startsWith("/") ? (
+                      <ArrowRight aria-hidden="true" size={19} />
+                    ) : (
+                      <ArrowUpRight aria-hidden="true" size={19} />
+                    )}
                   </div>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
@@ -57,7 +62,15 @@ export function ProjectsSection() {
 
             return (
               <Reveal key={project.number} delay={index * 0.08}>
-                {project.href ? (
+                {project.href?.startsWith("/") ? (
+                  <Link
+                    className="project-card__link"
+                    href={project.href}
+                    aria-label={`View the ${project.title} case study`}
+                  >
+                    {content}
+                  </Link>
+                ) : project.href ? (
                   <a
                     className="project-card__link"
                     href={project.href}
