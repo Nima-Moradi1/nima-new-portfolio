@@ -16,8 +16,8 @@ export function CapabilitiesSection() {
           <SectionHeading
             index="04"
             eyebrow="Engineering capabilities"
-            title="Depth where it matters. Range where it helps."
-            description="The frontend platforms, architecture patterns, and quality practices I use across production applications."
+            title="From web architecture to Android delivery."
+            description="The product architecture, mobile and PWA delivery, quality practices, and AI-assisted systems I use across production work."
           />
         </Reveal>
       </div>

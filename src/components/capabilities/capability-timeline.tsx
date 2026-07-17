@@ -36,11 +36,20 @@ export function CapabilityTimeline({
   education,
 }: CapabilityTimelineProps) {
   const root = useRef<HTMLDivElement>(null);
+  const stage = useRef<HTMLDivElement>(null);
   const viewport = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLOListElement>(null);
   const [travel, setTravel] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [shortViewport, setShortViewport] = useState(false);
+  const horizontalDrag = useRef<{
+    axis: "horizontal" | "vertical" | null;
+    pointerId: number;
+    startScrollLeft: number;
+    startX: number;
+    startY: number;
+  } | null>(null);
+  const suppressClick = useRef(false);
   const reducedMotion = useReducedMotion() ?? false;
   const nativeTimeline = reducedMotion || shortViewport;
   const itemCount = groups.length + 1;
@@ -68,12 +77,85 @@ export function CapabilityTimeline({
   }, []);
 
   useEffect(() => {
-    const query = window.matchMedia("(max-height: 671px)");
+    const query = window.matchMedia(
+      "(max-height: 671px), (max-width: 54rem), (pointer: coarse)",
+    );
     const update = () => setShortViewport(query.matches);
     query.addEventListener("change", update);
     update();
     return () => query.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    const stageNode = stage.current;
+    const viewportNode = viewport.current;
+    if (!nativeTimeline || !stageNode || !viewportNode) return;
+    const activeStage = stageNode;
+    const activeViewport = viewportNode;
+    activeStage.dataset.horizontalDragReady = "true";
+
+    function handlePointerDown(event: globalThis.PointerEvent) {
+      if (!event.isPrimary || event.button !== 0) return;
+      activeStage.dataset.horizontalDragState = "tracking";
+      horizontalDrag.current = {
+        axis: null,
+        pointerId: event.pointerId,
+        startScrollLeft: activeViewport.scrollLeft,
+        startX: event.clientX,
+        startY: event.clientY,
+      };
+      suppressClick.current = false;
+    }
+
+    function handlePointerMove(event: globalThis.PointerEvent) {
+      const drag = horizontalDrag.current;
+      if (!drag || drag.pointerId !== event.pointerId) return;
+
+      const deltaX = event.clientX - drag.startX;
+      const deltaY = event.clientY - drag.startY;
+      if (drag.axis === null && Math.hypot(deltaX, deltaY) >= 8) {
+        drag.axis =
+          Math.abs(deltaX) > Math.abs(deltaY) * 1.08
+            ? "horizontal"
+            : "vertical";
+      }
+      if (drag.axis !== "horizontal") return;
+
+      event.preventDefault();
+      activeStage.dataset.horizontalDragState = "dragging";
+      suppressClick.current = true;
+      if (!activeStage.hasPointerCapture(event.pointerId)) {
+        activeStage.setPointerCapture(event.pointerId);
+      }
+      activeViewport.scrollLeft = drag.startScrollLeft - deltaX;
+    }
+
+    function finishPointerDrag(event: globalThis.PointerEvent) {
+      const drag = horizontalDrag.current;
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      if (activeStage.hasPointerCapture(event.pointerId)) {
+        activeStage.releasePointerCapture(event.pointerId);
+      }
+      horizontalDrag.current = null;
+      activeStage.dataset.horizontalDragState = "idle";
+    }
+
+    stageNode.addEventListener("pointerdown", handlePointerDown, true);
+    stageNode.addEventListener("pointermove", handlePointerMove, {
+      capture: true,
+      passive: false,
+    });
+    stageNode.addEventListener("pointerup", finishPointerDrag, true);
+    stageNode.addEventListener("pointercancel", finishPointerDrag, true);
+    return () => {
+      delete activeStage.dataset.horizontalDragReady;
+      delete activeStage.dataset.horizontalDragState;
+      stageNode.removeEventListener("pointerdown", handlePointerDown, true);
+      stageNode.removeEventListener("pointermove", handlePointerMove, true);
+      stageNode.removeEventListener("pointerup", finishPointerDrag, true);
+      stageNode.removeEventListener("pointercancel", finishPointerDrag, true);
+    };
+  }, [nativeTimeline]);
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     if (nativeTimeline) return;
@@ -154,17 +236,27 @@ export function CapabilityTimeline({
       style={timelineStyle}
     >
       <div
+        ref={stage}
         className="capability-timeline__stage"
         role="region"
         aria-label="Horizontal engineering capabilities timeline"
         tabIndex={0}
         onKeyDown={handleKeyDown}
+        onClickCapture={(event) => {
+          if (!suppressClick.current) return;
+          event.preventDefault();
+          event.stopPropagation();
+          suppressClick.current = false;
+        }}
         data-depth-plane
       >
         <header className="capability-timeline__chrome page-shell">
           <div>
-            <span>Horizontal signal path</span>
-            <p>Scroll to travel across each engineering discipline.</p>
+            <span>Skills &amp; experience</span>
+            <p>
+              Explore the tools, systems, and product work behind each
+              discipline.
+            </p>
           </div>
           <div className="capability-timeline__controls">
             <button
@@ -194,6 +286,10 @@ export function CapabilityTimeline({
         <div
           ref={viewport}
           className="capability-timeline__viewport"
+          tabIndex={nativeTimeline ? 0 : undefined}
+          aria-label={
+            nativeTimeline ? "Scrollable engineering capabilities" : undefined
+          }
           onScroll={handleNativeScroll}
         >
           <motion.ol

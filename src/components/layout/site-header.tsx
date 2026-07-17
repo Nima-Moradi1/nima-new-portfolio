@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ThemeLamp } from "@/components/theme/theme-lamp";
 import { portfolio } from "@/content/portfolio";
@@ -47,9 +48,9 @@ export function SiteHeader() {
   return (
     <>
       <header className="site-header" data-scrolled={scrolled}>
-        <a
+        <Link
           className="site-header__brand"
-          href="#top"
+          href="/"
           aria-label="Go to top"
           onClick={() => setMenuOpen(false)}
         >
@@ -60,23 +61,23 @@ export function SiteHeader() {
             <strong>{portfolio.identity.name}</strong>
             <small>{portfolio.identity.shortRole}</small>
           </span>
-        </a>
+        </Link>
 
         <nav
           className="site-header__desktop-nav"
           aria-label="Primary navigation"
         >
           {portfolio.navigation.map((item) => (
-            <a href={item.href} key={item.href}>
+            <Link href={item.href} key={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="site-header__actions">
-          <a className="site-header__contact" href="#contact">
+          <Link className="site-header__contact" href="/#contact">
             Start a conversation
-          </a>
+          </Link>
           <ThemeLamp />
           <button
             className="site-header__menu-button"
@@ -99,7 +100,7 @@ export function SiteHeader() {
       >
         <nav aria-label="Mobile navigation">
           {portfolio.navigation.map((item, index) => (
-            <a
+            <Link
               href={item.href}
               key={item.href}
               tabIndex={menuOpen ? 0 : -1}
@@ -107,7 +108,7 @@ export function SiteHeader() {
             >
               <span>0{index + 1}</span>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <p>{portfolio.identity.location}</p>

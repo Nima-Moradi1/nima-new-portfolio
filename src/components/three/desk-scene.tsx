@@ -388,8 +388,7 @@ function DeveloperPersona({
     right.position.y =
       0.48 + Math.sin(clock.elapsedTime * 7.8 + Math.PI) * 0.018;
     left.rotation.x = Math.sin(clock.elapsedTime * 7.8) * 0.035;
-    right.rotation.x =
-      Math.sin(clock.elapsedTime * 7.8 + Math.PI) * 0.035;
+    right.rotation.x = Math.sin(clock.elapsedTime * 7.8 + Math.PI) * 0.035;
   });
 
   const skin = "#c78664";
@@ -579,6 +578,108 @@ function ResumePaper({
   );
 }
 
+function PullHandHint({
+  palette,
+  reducedMotion,
+  visible,
+}: {
+  palette: Palette;
+  reducedMotion: boolean;
+  visible: boolean;
+}) {
+  const hand = useRef<THREE.Group>(null);
+  const baseY = 1.13;
+
+  useFrame(({ clock }) => {
+    const node = hand.current;
+    if (!node || reducedMotion) return;
+    node.position.y = baseY + Math.sin(clock.elapsedTime * 3.2) * 0.055;
+  });
+
+  const material = (
+    <meshStandardMaterial
+      color={palette.coral}
+      emissive={palette.coral}
+      emissiveIntensity={0.16}
+      metalness={0.08}
+      roughness={0.5}
+    />
+  );
+
+  if (!visible) return null;
+
+  return (
+    <group
+      ref={hand}
+      position={[1.02, baseY, 0.62]}
+      rotation={[0.08, -0.45, -0.04]}
+      scale={0.9}
+    >
+      <RoundedBox args={[0.36, 0.38, 0.13]} radius={0.09} smoothness={3}>
+        {material}
+      </RoundedBox>
+      <CylinderBetween
+        start={[0, 0.13, 0]}
+        end={[0, 0.43, 0]}
+        radius={0.105}
+        color={palette.coral}
+      />
+      <CylinderBetween
+        start={[-0.11, -0.12, 0]}
+        end={[-0.22, -0.58, 0]}
+        radius={0.052}
+        color={palette.coral}
+      />
+      <CylinderBetween
+        start={[-0.02, -0.13, 0]}
+        end={[-0.02, -0.36, 0]}
+        radius={0.052}
+        color={palette.coral}
+      />
+      <CylinderBetween
+        start={[0.07, -0.12, 0]}
+        end={[0.07, -0.33, 0]}
+        radius={0.048}
+        color={palette.coral}
+      />
+      <CylinderBetween
+        start={[0.15, -0.1, 0]}
+        end={[0.15, -0.28, 0]}
+        radius={0.042}
+        color={palette.coral}
+      />
+      <CylinderBetween
+        start={[-0.16, 0.03, 0]}
+        end={[-0.34, -0.1, 0]}
+        radius={0.05}
+        color={palette.coral}
+      />
+      <mesh position={[-0.22, -0.6, 0]}>
+        <sphereGeometry args={[0.053, 14, 10]} />
+        <meshStandardMaterial
+          color={palette.coral}
+          emissive={palette.coral}
+          emissiveIntensity={0.16}
+        />
+      </mesh>
+      <Html
+        center
+        position={[0.43, 0.02, 0.04]}
+        zIndexRange={[4, 3]}
+        style={{ pointerEvents: "none" }}
+      >
+        <span
+          className="lamp-pull-hand-copy"
+          data-lamp-hand-hint
+          aria-hidden="true"
+        >
+          Pull
+        </span>
+      </Html>
+    </group>
+  );
+}
+
 function DeskLamp({
   theme,
   palette,
@@ -596,6 +697,7 @@ function DeskLamp({
   const dragStart = useRef<number | null>(null);
   const pullDistance = useRef(0);
   const [hovered, setHovered] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   useCursor(hovered, "grab", "auto");
   const lit = theme === "dark";
 
@@ -617,6 +719,7 @@ function DeskLamp({
   });
 
   function beginPull(clientY: number) {
+    setHasInteracted(true);
     dragStart.current = clientY;
     pullDistance.current = 0;
   }
@@ -662,6 +765,11 @@ function DeskLamp({
 
   return (
     <group position={[2.68, 0.32, -0.2]}>
+      <PullHandHint
+        palette={palette}
+        reducedMotion={reducedMotion}
+        visible={!hasInteracted}
+      />
       <mesh position={[0, 0, 0]}>
         <cylinderGeometry args={[0.54, 0.68, 0.14, 28]} />
         <meshStandardMaterial

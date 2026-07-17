@@ -13,69 +13,71 @@ export const portfolio = {
   identity: {
     name: "Nima Moradirad",
     initials: "NM",
-    role: "Senior Front-End Engineer",
-    shortRole: "Senior frontend engineer",
+    role: "Senior Frontend Engineer",
+    shortRole: "Product engineering · Web + Mobile",
     location: "Tehran, Iran",
-    availability: "5+ years in production frontend engineering",
+    availability: "6+ years across web, mobile, and PWA engineering",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "nimamoradirad@gmail.com",
     resumeUrl: "/nima-moradirad-resume.pdf",
     intro:
-      "I build production React and Next.js applications with strong architecture, reliable validation, and performance-aware rendering—from PWA dashboards to role-based B2B platforms.",
+      "I engineer secure, high-performance products across web, Android, and PWA surfaces—combining React architecture, real-time systems, resilient delivery, and thoughtful product design.",
     statement:
-      "My work connects frontend architecture, rendering strategy, validation, and product performance across complex web applications.",
+      "My work connects scalable frontend architecture, mobile and PWA delivery, real-time systems, and AI-accelerated engineering without giving up human oversight.",
   },
   navigation: [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Work", href: "#work" },
-    { label: "Capabilities", href: "#capabilities" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Work", href: "/#work" },
+    { label: "Capabilities", href: "/#capabilities" },
+    { label: "Contact", href: "/#contact" },
   ] satisfies LinkItem[],
-  signals: ["React systems", "Rendering", "Performance", "Architecture"],
+  signals: ["Scalability", "Performance", "Creativity", "Product engineering"],
   about: {
-    eyebrow: "Frontend engineering from system to interface",
+    eyebrow: "Product engineering across web and mobile",
     paragraphs: [
-      "I work across React, Next.js, Vite, and TypeScript, choosing the right rendering strategy—SSR, CSR, SSG, ISR, or PPR—for each product. I care about official guidance, measurable performance, and code that stays understandable as the team and application grow.",
-      "My experience spans a B2B earned-wage platform, finance products, government dashboards, e-commerce, and publishing. Alongside delivery, I mentor junior developers, onboard teammates into business flows and DDD architecture, and build real-time experiences with WebSockets and SignalR.",
+      "I work across React, Next.js, Vite, and TypeScript, choosing the right rendering strategy—SSR, CSR, SSG, ISR, or PPR—for each product. My recent work extends that foundation into Capacitor-based Android delivery, custom Java integrations, and resilient service-worker systems.",
+      "My experience spans B2B finance, government dashboards, e-commerce, and real-time multiplayer products. I mentor engineers around domain-driven boundaries and use Codex and Claude Max for architecture exploration, refactoring, review, testing, and documentation—accelerating delivery while keeping engineering judgment in the loop.",
     ],
     principles: [
       {
         index: "01",
-        title: "Architecture before abstraction",
-        text: "Clear domain boundaries and modular components make complex products easier to evolve.",
+        title: "Scalability starts with boundaries",
+        text: "Clear domains, shared contracts, and modular components let products evolve across teams and surfaces.",
       },
       {
         index: "02",
         title: "Performance is product behavior",
-        text: "Rendering, bundles, and runtime decisions shape how reliable the product feels.",
+        text: "Rendering, caching, release, and runtime decisions shape how reliable a product feels.",
       },
       {
         index: "03",
-        title: "Validate every boundary",
-        text: "Typed data and consistent client/server validation keep workflows predictable.",
+        title: "Creativity needs engineering rigor",
+        text: "Expressive interfaces become useful products when validation, accessibility, and delivery stay dependable.",
       },
     ],
   },
   experience: [
     {
-      period: "Mar 2025 — Present",
-      role: "Senior React Developer",
+      period: "Feb 2025 — Present",
+      role: "Senior Frontend Developer",
       company: "Hesabo · Tehran, Iran",
       summary:
-        "Engineering role on a B2B earned-wage access product serving employers and employees through role-based operational panels.",
+        "Shaping frontend architecture and delivery for a B2B financial platform spanning Admin, Employer, Employee, and Support experiences.",
       highlights: [
-        "Optimized the Webpack build, strengthened XSS prevention, and developed admin, employer, user, and support panels.",
-        "Mentored junior developers and onboarded new teammates into the business flow and domain-driven architecture.",
-        "Developed real-time chatbot experiences using WebSockets and SignalR.",
+        "Mentor and onboard engineers around business flows, maintainable code, and domain-driven boundaries.",
+        "Develop and maintain Android applications with Capacitor, platform integrations, and custom Java plugins.",
+        "Own a customized PWA layer with controlled auto-updates, cache versioning, invalidation, and offline fallbacks.",
+        "Improve build performance, XSS defenses, validation, authorization, and real-time WebSocket/SignalR features.",
+        "Use Codex and Claude Max for architecture, refactoring, review, testing, documentation, and repeatable delivery workflows.",
       ],
       technologies: [
         "React",
         "TypeScript",
-        "Vite",
-        "MobX",
-        "WebSocket",
-        "SignalR",
-        "DDD",
+        "Capacitor",
+        "Android",
+        "PWA",
+        "WebSockets",
+        "AI-assisted delivery",
       ],
     },
     {
@@ -83,11 +85,10 @@ export const portfolio = {
       role: "Senior Frontend Engineer",
       company: "Basilica Finance · Tehran, Iran",
       summary:
-        "Led frontend development for a scalable finance PWA designed to support high request volumes and protected user journeys.",
+        "Led frontend delivery for a scalable finance PWA designed for protected user journeys and high request volumes.",
       highlights: [
-        "Built with Next.js, TypeScript, Zustand, Tailwind CSS, Material UI, and protected authentication flows.",
-        "Improved product performance through Lighthouse-led optimization and rendering decisions.",
-        "Reviewed GitHub and GitLab merge requests, resolved conflicts, and supported release quality.",
+        "Built protected authentication and product flows with Next.js, TypeScript, Zustand, Tailwind CSS, and MUI.",
+        "Delivered Lighthouse-focused performance improvements and maintained release quality through GitHub/GitLab review.",
       ],
       technologies: [
         "Next.js",
@@ -103,10 +104,9 @@ export const portfolio = {
       role: "Frontend Developer",
       company: "BarnameNegar · Tehran, Iran",
       summary:
-        "Developed internal government websites and operational panels with dynamic dashboards and REST-connected workflows.",
+        "Built internal government dashboards and panels with server-rendered, REST-connected workflows.",
       highlights: [
-        "Built TypeScript applications with Vite, server-rendering and build strategies, and reusable dashboard interfaces.",
-        "Delivered responsive UI with Tailwind CSS and shadcn/ui, with Redux for application state.",
+        "Delivered Vite and TypeScript applications with SSR, REST APIs, Tailwind CSS, shadcn/ui, and Redux-based state management.",
       ],
       technologies: [
         "Vite",
@@ -119,14 +119,14 @@ export const portfolio = {
       ],
     },
     {
-      period: "Dec 2021 — Sep 2022",
+      period: "Dec 2020 — Sep 2022",
       role: "React Developer",
       company: "KZI",
       summary:
-        "Developed e-commerce and blog applications with React, JavaScript, component libraries, and modern state management.",
+        "Delivered e-commerce and content experiences with React, JavaScript, component libraries, and modern state management.",
       highlights: [
-        "Worked on Lighthouse performance, progressive web app behavior, and single-page application delivery.",
-        "Used React Hook Form and Yup for validation alongside Vite, TypeScript, HeroUI, SSR, and React Router.",
+        "Maintained Lighthouse performance and dependable PWA/SPA behavior with Material UI and Redux Toolkit.",
+        "Worked across Vite, TypeScript, HeroUI, React Hook Form, Yup, and router-driven application architecture.",
       ],
       technologies: [
         "React",
@@ -142,6 +142,26 @@ export const portfolio = {
   projects: [
     {
       number: "01",
+      title: "XO Arena",
+      category: "Real-time multiplayer PWA · Product case study",
+      summary:
+        "A modular, type-safe Tic-Tac-Toe platform with online matchmaking, live Socket.IO rooms, secure sessions, computer opponents, profiles, and installable mobile support.",
+      contribution:
+        "Built shared contracts and a server-validated game engine with Next.js, TypeScript, Express, Socket.IO, Prisma, MySQL, Zod, avatar uploads, and httpOnly sessions.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Socket.IO",
+        "Prisma",
+        "MySQL",
+        "PWA",
+      ],
+      href: "/projects/xo-arena",
+      featured: true,
+      accent: "lime",
+    },
+    {
+      number: "02",
       title: "Emerald Case",
       category: "Full-stack e-commerce · Oct–Nov 2023",
       summary:
@@ -158,42 +178,23 @@ export const portfolio = {
       ],
       href: "https://emerald-case.vercel.app/en/",
       featured: true,
-      accent: "lime",
-    },
-    {
-      number: "02",
-      title: "Full-Stack Blog Application",
-      category: "Publishing platform · Apr–Sep 2022 · Archived",
-      summary:
-        "A full-stack publishing application with protected routes, administrative panels, and server-rendered and statically generated pages.",
-      contribution:
-        "Implemented the application with Next.js, TypeScript, Express.js, SQLite, Tailwind CSS, and shadcn/ui. The résumé-listed domain is no longer active.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Express.js",
-        "SQLite",
-        "SSR",
-        "SSG",
-      ],
-      featured: true,
       accent: "violet",
     },
     {
       number: "03",
-      title: "Hesabo Role-Based Platform",
-      category: "B2B product platform · Production",
+      title: "Hesabo Platform",
+      category: "B2B financial platform · Production",
       summary:
-        "Four connected experiences for administrators, employers, users, and support teams within an earned-wage access product.",
+        "Four connected product surfaces for Admin, Employer, Employee, and Support users within a B2B financial platform.",
       contribution:
-        "Developed role-based interfaces using Vite, TypeScript, MobX, React Context, HeroUI, Tailwind CSS, shared validation, and domain-driven architecture.",
+        "Developed domain-driven interfaces and real-time features across Vite, TypeScript, MobX, React Context, HeroUI, Tailwind CSS, Android delivery, and a controlled PWA cache layer.",
       technologies: [
         "Vite",
         "TypeScript",
         "MobX",
         "React Context",
         "HeroUI",
-        "DDD",
+        "Capacitor",
       ],
       href: "https://hesabo.com/",
       featured: true,
@@ -202,55 +203,70 @@ export const portfolio = {
   ] as ProjectItem[],
   capabilities: [
     {
-      label: "01 · Frontend systems",
+      label: "01 · Web architecture",
       description:
-        "Production interfaces built with modern React tooling and adaptable component systems.",
+        "Scalable interfaces, rendering strategies, and domain boundaries for production web products.",
       skills: [
         "React",
         "Next.js",
         "Vite",
         "TypeScript",
-        "Tailwind CSS",
-        "Material UI",
-        "shadcn/ui",
-        "Framer Motion",
-      ],
-    },
-    {
-      label: "02 · Architecture & state",
-      description:
-        "Rendering, state, and modular boundaries selected for the shape of the product.",
-      skills: [
         "SSR / CSR / SSG",
         "ISR / PPR",
-        "Redux Toolkit",
-        "Zustand",
-        "MobX",
-        "RTK Query",
+        "DDD",
         "Module Federation",
-        "Micro-Frontends",
       ],
     },
     {
-      label: "03 · Quality & integration",
+      label: "02 · Mobile & PWA delivery",
       description:
-        "Reliable data flows, real-time features, validation, observability, and test coverage.",
+        "Android and installable web experiences with deliberate release and cache behavior.",
       skills: [
-        "REST / GraphQL",
-        "WebSocket / SignalR",
-        "React Hook Form",
-        "Yup / Zod",
+        "Capacitor",
+        "Android",
+        "Java plugins",
+        "Service Workers",
+        "Safe auto-updates",
+        "Cache versioning",
+        "Offline fallbacks",
+        "Release stability",
+      ],
+    },
+    {
+      label: "03 · UI, state & quality",
+      description:
+        "Adaptable design systems, predictable state, validation, observability, and test coverage.",
+      skills: [
+        "Tailwind CSS",
+        "shadcn/ui",
+        "MUI / HeroUI",
+        "Zustand",
+        "Redux Toolkit",
+        "MobX",
         "Unit / E2E testing",
         "Sentry",
-        "PWA / Service Worker",
-        "Internationalization",
+      ],
+    },
+    {
+      label: "04 · AI, systems & data",
+      description:
+        "Human-directed AI workflows, real-time integrations, APIs, and supporting backend systems.",
+      skills: [
+        "Codex",
+        "Claude Max",
+        "Node.js",
+        "LangChain agents",
+        "WebSockets / SignalR",
+        "REST / GraphQL",
+        "Prisma / SQL / MongoDB",
+        "Docker",
       ],
     },
   ] satisfies CapabilityGroup[],
   education: {
-    title: "B.S. in Computer Engineering",
-    institution: "Tehran Azad University · Sep 2021 — Jul 15, 2026",
-    note: "Formal computer engineering study alongside professional frontend product work.",
+    title: "B.Sc. Computer Engineering",
+    institution: "Tehran Azad University · 2021 — Present",
+    note: "Computer engineering study alongside professional product delivery across web and mobile.",
     languages: [
       "Persian · Native/Bilingual",
       "English · Native/Bilingual",

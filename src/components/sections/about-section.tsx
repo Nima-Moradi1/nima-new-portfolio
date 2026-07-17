@@ -16,7 +16,7 @@ export function AboutSection() {
           <SectionHeading
             index="01"
             eyebrow={portfolio.about.eyebrow}
-            title="The work should feel clear before it feels clever."
+            title="Scalable systems can still feel distinctly human."
           />
         </Reveal>
 
@@ -26,9 +26,9 @@ export function AboutSection() {
               <p>{portfolio.identity.statement}</p>
             </Reveal>
             <div className="about__coordinate" aria-hidden="true">
-              <span>Architecture</span>
+              <span>Engineering</span>
               <span>×</span>
-              <span>Delivery</span>
+              <span>Creativity</span>
             </div>
             <Reveal delay={0.08}>
               <figure className="about__portrait">

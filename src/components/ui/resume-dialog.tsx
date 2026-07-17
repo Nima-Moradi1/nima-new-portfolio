@@ -56,18 +56,19 @@ export function ResumeDialog({ open, resumeUrl, onClose }: ResumeDialogProps) {
           </button>
         </header>
 
-        <div className="resume-dialog__viewport">
+        <div className="resume-dialog__viewport" tabIndex={0}>
           <Image
-            src="/assets/nima-moradirad-resume-preview.png"
-            alt="Preview of Nima Moradirad's one-page résumé"
-            width={595}
-            height={842}
-            sizes="(max-width: 640px) 92vw, 54rem"
+            src="/assets/nima-moradirad-resume-preview.webp"
+            alt="Nima Moradirad's résumé, covering profile, capabilities, professional experience, selected work, education, and technical toolkit"
+            width={1191}
+            height={1684}
+            sizes="(max-width: 640px) 92vw, 46rem"
+            loading={open ? "eager" : "lazy"}
           />
         </div>
 
         <footer className="resume-dialog__footer">
-          <p>A one-page, print-ready overview of experience and skills.</p>
+          <p>A concise, one-page overview of experience and selected work.</p>
           <div>
             <a href={resumeUrl} target="_blank" rel="noreferrer">
               Open full size
