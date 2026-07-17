@@ -22,18 +22,19 @@ export function HeroSection() {
         </Reveal>
 
         <div className="hero__layout">
-          <div className="hero__copy">
+          <div className="hero__copy lg:-ml-14">
             <Reveal delay={0.06}>
               <p className="hero__role">{portfolio.identity.role}</p>
             </Reveal>
             <Reveal delay={0.12}>
-              <h1 id="hero-title">
+              <h1 id="hero-title"
+              >
                 I build for scalability,
                 <span>performance, and creativity.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.22}>
-              <p className="hero__intro">{portfolio.identity.intro}</p>
+              <p className="hero__intro ">{portfolio.identity.intro}</p>
             </Reveal>
             <Reveal className="hero__actions" delay={0.3}>
               <MagneticLink href="#work" className="magnetic-link--primary">

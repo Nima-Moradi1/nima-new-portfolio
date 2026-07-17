@@ -870,6 +870,23 @@ test("presents XO Arena as a complete real-time product case study", async ({
   await expect(page.getByText("Socket.IO", { exact: true })).toBeVisible();
 });
 
+test("returns from XO selected work without unhydrated Motion refs", async ({
+  page,
+}) => {
+  const pageErrors: string[] = [];
+  page.on("pageerror", (error) => pageErrors.push(error.message));
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/projects/xo-arena");
+
+  await page.getByRole("link", { name: "Selected work", exact: true }).click();
+  await expect(page).toHaveURL(/\/#work$/);
+  await expect(page.locator("#work")).toBeInViewport();
+  await expect(page.getByRole("heading", { name: "XO Arena" })).toBeVisible();
+  await page.waitForTimeout(300);
+
+  expect(pageErrors).toEqual([]);
+});
+
 test("lazy-loads XO product captures with designed loading masks", async ({
   page,
 }) => {

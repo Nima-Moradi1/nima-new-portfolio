@@ -67,12 +67,40 @@ function ExperienceListFallback({ experiences }: ExperienceBookProps) {
 }
 
 export function ExperienceBook({ experiences }: ExperienceBookProps) {
-  const root = useRef<HTMLDivElement>(null);
-  const progressRef = useRef(0);
-  const [activePage, setActivePage] = useState(0);
   const reducedMotion = useReducedMotion() ?? false;
   const compactViewport = useCompactViewport();
   const webGLSupported = useWebGLSupport();
+
+  if (compactViewport) {
+    return <MobileExperienceReader experiences={experiences} />;
+  }
+
+  if (webGLSupported === false || reducedMotion) {
+    return <ExperienceListFallback experiences={experiences} />;
+  }
+
+  return (
+    <DesktopExperienceBook
+      experiences={experiences}
+      reducedMotion={reducedMotion}
+      webGLSupported={webGLSupported}
+    />
+  );
+}
+
+type DesktopExperienceBookProps = ExperienceBookProps & {
+  reducedMotion: boolean;
+  webGLSupported: boolean | null;
+};
+
+function DesktopExperienceBook({
+  experiences,
+  reducedMotion,
+  webGLSupported,
+}: DesktopExperienceBookProps) {
+  const root = useRef<HTMLDivElement>(null);
+  const progressRef = useRef(0);
+  const [activePage, setActivePage] = useState(0);
   const isInView = useInView(root, { margin: "15% 0px" });
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
@@ -111,14 +139,6 @@ export function ExperienceBook({ experiences }: ExperienceBookProps) {
       event.preventDefault();
       goToPage(activePage - 1);
     }
-  }
-
-  if (compactViewport) {
-    return <MobileExperienceReader experiences={experiences} />;
-  }
-
-  if (webGLSupported === false || reducedMotion) {
-    return <ExperienceListFallback experiences={experiences} />;
   }
 
   const activeExperience = experiences[activePage];
