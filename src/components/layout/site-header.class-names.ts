@@ -9,11 +9,11 @@ export const siteHeaderClassNames = {
   desktopNav:
     "site-header__desktop-nav flex items-center justify-center gap-[clamp(1rem,2.4vw,2.4rem)] max-[72rem]:hidden",
   desktopNavLink:
-    "relative py-[0.45rem] text-[0.78rem] text-[var(--muted-bright)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 motion-reduce:after:transition-none",
+    "relative cursor-pointer border-0 bg-transparent py-[0.45rem] text-[0.78rem] text-[var(--muted-bright)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 motion-reduce:after:transition-none",
   actions:
     "site-header__actions flex h-full items-center justify-self-end gap-[clamp(0.75rem,1.5vw,1.4rem)] max-[72rem]:gap-[0.35rem]",
   contact:
-    "site-header__contact relative justify-self-end py-[0.45rem] text-[0.78rem] text-signal-soft after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 max-[72rem]:hidden motion-reduce:after:transition-none",
+    "site-header__contact relative cursor-pointer justify-self-end border-0 bg-transparent py-[0.45rem] text-[0.78rem] text-signal-soft after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 max-[72rem]:hidden motion-reduce:after:transition-none",
   menuButton:
     "site-header__menu-button relative z-[2] hidden size-[2.8rem] cursor-pointer place-items-center rounded-full border border-line-strong bg-background-soft max-[72rem]:grid",
   menuIcon: "w-[1.15rem]",
@@ -23,7 +23,7 @@ export const siteHeaderClassNames = {
   mobileTitle: "sr-only",
   mobileNavList: "grid",
   mobileNavLink:
-    "flex min-w-0 items-baseline gap-[1.2rem] border-b border-border py-[0.65rem] text-[clamp(2.5rem,8vw,5rem)] leading-none font-[520] tracking-[-0.06em] break-words [html[lang=de]_&]:hyphens-auto [html[lang=fa]_&]:text-[clamp(1.75rem,5.6vw,3.5rem)] [html[lang=fa]_&]:leading-[1.15] [html[lang=fa]_&]:tracking-normal",
+    "flex w-full min-w-0 cursor-pointer items-baseline gap-[1.2rem] border-x-0 border-t-0 border-b border-border bg-transparent py-[0.65rem] text-start text-[clamp(2.5rem,8vw,5rem)] leading-none font-[520] tracking-[-0.06em] break-words [html[lang=de]_&]:hyphens-auto [html[lang=fa]_&]:text-[clamp(1.75rem,5.6vw,3.5rem)] [html[lang=fa]_&]:leading-[1.15] [html[lang=fa]_&]:tracking-normal",
   mobileNavIndex:
     "shrink-0 font-mono text-[0.62rem] tracking-normal text-primary [direction:ltr] [unicode-bidi:isolate]",
   mobileLocation:

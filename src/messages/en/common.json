@@ -124,6 +124,18 @@
     "titleAccent": "Let’s make it clear.",
     "description": "Share the product, the challenge, and the outcome you need."
   },
+  "ContactDialog": {
+    "eyebrow": "Direct channels",
+    "title": "Let’s connect.",
+    "description": "Choose whichever channel works best for you. I’m always open to meaningful products, ambitious teams, and thoughtful conversations.",
+    "linkedin": "LinkedIn",
+    "resume": "Résumé",
+    "resumeValue": "View or download PDF",
+    "telegram": "Telegram",
+    "gmail": "Gmail",
+    "phone": "Phone",
+    "close": "Close contact options"
+  },
   "ContactForm": {
     "fields": {
       "name": "Your name",
@@ -169,6 +181,7 @@
     "statement": "Designed as a signal system. Engineered for the real web.",
     "copyright": "© {year} {name}",
     "resume": "Résumé",
+    "phone": "Phone",
     "top": "Top ↑"
   },
   "Theme": {

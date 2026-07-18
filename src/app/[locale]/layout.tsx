@@ -8,6 +8,7 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ContactDialogProvider } from "@/components/contact/contact-dialog";
 import { materializePortfolio } from "@/content/portfolio";
 import { getLocaleDirection, routing } from "@/i18n/routing";
 import { getLanguagePaths, getLocalizedPath } from "@/i18n/paths";
@@ -162,7 +163,9 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <ContactDialogProvider>{children}</ContactDialogProvider>
+          </ThemeProvider>
         </NextIntlClientProvider>
         <script
           type="application/ld+json"

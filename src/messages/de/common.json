@@ -124,6 +124,18 @@
     "titleAccent": "Bringen wir Klarheit hinein.",
     "description": "Beschreiben Sie das Produkt, die Herausforderung und das gewünschte Ergebnis."
   },
+  "ContactDialog": {
+    "eyebrow": "Direkte Kanäle",
+    "title": "Lassen Sie uns sprechen.",
+    "description": "Wählen Sie den Kanal, der für Sie am besten passt. Ich freue mich auf sinnvolle Produkte, ambitionierte Teams und gute Gespräche.",
+    "linkedin": "LinkedIn",
+    "resume": "Lebenslauf",
+    "resumeValue": "PDF ansehen oder herunterladen",
+    "telegram": "Telegram",
+    "gmail": "Gmail",
+    "phone": "Telefon",
+    "close": "Kontaktoptionen schließen"
+  },
   "ContactForm": {
     "fields": {
       "name": "Ihr Name",
@@ -169,6 +181,7 @@
     "statement": "Als Signalsystem gestaltet. Für das echte Web entwickelt.",
     "copyright": "© {year} {name}",
     "resume": "Lebenslauf",
+    "phone": "Telefon",
     "top": "Nach oben ↑"
   },
   "Theme": {

@@ -603,8 +603,7 @@ body *::selection {
 
 /*
  * Used by: src/app/route-state.class-names.ts,
- * src/components/sections/hero-section.class-names.ts,
- * src/components/sections/contact-section.class-names.ts, and
+ * src/components/sections/hero-section.class-names.ts and
  * src/components/three/hero-studio.class-names.ts.
  * Reason: This is one intentionally shared status-signal motion primitive.
  */

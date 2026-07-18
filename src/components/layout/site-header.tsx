@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
+import { useContactDialog } from "@/components/contact/contact-dialog";
 import { ThemeLamp } from "@/components/theme/theme-lamp";
 import {
   Sheet,
@@ -22,6 +23,12 @@ export function SiteHeader() {
   const format = useFormatter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openContact } = useContactDialog();
+
+  const handleContact = () => {
+    setMenuOpen(false);
+    openContact();
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -63,21 +70,36 @@ export function SiteHeader() {
         </Link>
 
         <nav className={styles.desktopNav} aria-label={t("primaryLabel")}>
-          {portfolio.navigation.map((item) => (
-            <Link
-              className={styles.desktopNavLink}
-              href={item.href}
-              key={item.href}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {portfolio.navigation.map((item) =>
+            item.id === "contact" ? (
+              <button
+                className={styles.desktopNavLink}
+                type="button"
+                onClick={openContact}
+                key={item.id}
+              >
+                {item.label}
+              </button>
+            ) : (
+              <Link
+                className={styles.desktopNavLink}
+                href={item.href}
+                key={item.id}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className={styles.actions}>
-          <Link className={styles.contact} href="/#contact">
+          <button
+            className={styles.contact}
+            type="button"
+            onClick={openContact}
+          >
             {t("contactCta")}
-          </Link>
+          </button>
           <LocaleSwitcher />
           <ThemeLamp />
           <SheetTrigger asChild>
@@ -111,9 +133,14 @@ export function SiteHeader() {
           {t("mobileLabel")}
         </SheetTitle>
         <nav className={styles.mobileNavList} aria-label={t("mobileLabel")}>
-          {portfolio.navigation.map((item, index) => (
-            <SheetClose asChild key={item.href}>
-              <Link className={styles.mobileNavLink} href={item.href}>
+          {portfolio.navigation.map((item, index) =>
+            item.id === "contact" ? (
+              <button
+                className={styles.mobileNavLink}
+                type="button"
+                onClick={handleContact}
+                key={item.id}
+              >
                 <bdi className={styles.mobileNavIndex}>
                   {format.number(index + 1, {
                     minimumIntegerDigits: 2,
@@ -121,9 +148,21 @@ export function SiteHeader() {
                   })}
                 </bdi>
                 {item.label}
-              </Link>
-            </SheetClose>
-          ))}
+              </button>
+            ) : (
+              <SheetClose asChild key={item.id}>
+                <Link className={styles.mobileNavLink} href={item.href}>
+                  <bdi className={styles.mobileNavIndex}>
+                    {format.number(index + 1, {
+                      minimumIntegerDigits: 2,
+                      useGrouping: false,
+                    })}
+                  </bdi>
+                  {item.label}
+                </Link>
+              </SheetClose>
+            ),
+          )}
         </nav>
         <p className={styles.mobileLocation}>{portfolio.identity.location}</p>
       </SheetContent>

@@ -49,7 +49,9 @@ export function HeroSection() {
               <MagneticLink href={portfolio.identity.resumeUrl} download>
                 {t("resumeCta")}
               </MagneticLink>
-              <MagneticLink href="#contact">{t("contactCta")}</MagneticLink>
+              <MagneticLink href="#contact" contact>
+                {t("contactCta")}
+              </MagneticLink>
             </div>
           </div>
 

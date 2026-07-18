@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/cn";
+import { useContactDialog } from "@/components/contact/contact-dialog";
 import { magneticLinkClassNames as styles } from "./magnetic-link.class-names";
 
 type MagneticLinkProps = {
@@ -11,6 +12,7 @@ type MagneticLinkProps = {
   className?: string;
   external?: boolean;
   download?: boolean;
+  contact?: boolean;
 };
 
 export function MagneticLink({
@@ -19,8 +21,10 @@ export function MagneticLink({
   className,
   external = false,
   download = false,
+  contact = false,
 }: MagneticLinkProps) {
   const t = useTranslations("A11y");
+  const { openContact } = useContactDialog();
 
   return (
     <a
@@ -31,6 +35,14 @@ export function MagneticLink({
       rel={external ? "noreferrer noopener" : undefined}
       aria-label={
         external ? `${String(children)} (${t("externalSuffix")})` : undefined
+      }
+      onClick={
+        contact
+          ? (event) => {
+              event.preventDefault();
+              openContact();
+            }
+          : undefined
       }
     >
       <span>{children}</span>

@@ -1,4 +1,6 @@
+import { FileText, Mail, Phone, Send } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
+import { LinkedinIcon } from "@/components/contact/linkedin-icon";
 import { usePortfolio } from "@/content/use-portfolio";
 import { siteFooterClassNames as styles } from "./site-footer.class-names";
 
@@ -7,6 +9,44 @@ export function SiteFooter() {
   const t = useTranslations("Footer");
   const format = useFormatter();
   const year = format.number(new Date().getFullYear(), { useGrouping: false });
+  const linkedin = portfolio.socialLinks.find((link) => link.id === "linkedin");
+  const contactLinks = [
+    {
+      label: "LinkedIn",
+      href: linkedin?.href ?? "https://www.linkedin.com/",
+      icon: LinkedinIcon,
+      external: true,
+      download: false,
+    },
+    {
+      label: t("resume"),
+      href: portfolio.identity.resumeUrl,
+      icon: FileText,
+      external: false,
+      download: true,
+    },
+    {
+      label: "Telegram",
+      href: "https://t.me/Nimamoradirad",
+      icon: Send,
+      external: true,
+      download: false,
+    },
+    {
+      label: "Gmail",
+      href: `mailto:${portfolio.identity.email}`,
+      icon: Mail,
+      external: false,
+      download: false,
+    },
+    {
+      label: t("phone"),
+      href: "tel:+989036837788",
+      icon: Phone,
+      external: false,
+      download: false,
+    },
+  ];
 
   return (
     <footer className={styles.root}>
@@ -19,20 +59,23 @@ export function SiteFooter() {
         {t("copyright", { year, name: portfolio.identity.name })}
       </p>
       <div className={styles.links}>
-        {portfolio.socialLinks.map((link) => (
-          <a
-            href={link.href}
-            className={styles.link}
-            key={link.label}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {link.label}
-          </a>
-        ))}
-        <a href={portfolio.identity.resumeUrl} className={styles.link} download>
-          {t("resume")}
-        </a>
+        {contactLinks.map((link) => {
+          const Icon = link.icon;
+          return (
+            <a
+              href={link.href}
+              className={styles.link}
+              key={link.label}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noreferrer noopener" : undefined}
+              download={link.download || undefined}
+              aria-label={link.label}
+              title={link.label}
+            >
+              <Icon className={styles.linkIcon} aria-hidden="true" />
+            </a>
+          );
+        })}
         <a href="#top" className={styles.link}>
           {t("top")}
         </a>
