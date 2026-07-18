@@ -1,10 +1,10 @@
+import { useTranslations } from "next-intl";
+
 export function DeskFallback() {
+  const t = useTranslations("Studio");
+
   return (
-    <div
-      className="desk-fallback"
-      role="img"
-      aria-label="Stylized workstation with a developer, monitor, keyboard, résumé, and desk lamp"
-    >
+    <div className="desk-fallback" role="img" aria-label={t("fallbackAlt")}>
       <span className="desk-fallback__chair" />
       <span className="desk-fallback__person" />
       <span className="desk-fallback__hair" />
