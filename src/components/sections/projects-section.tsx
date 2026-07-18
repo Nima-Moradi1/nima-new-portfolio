@@ -53,13 +53,6 @@ export function ProjectsSection() {
                     fill
                     sizes="(max-width: 864px) 100vw, 33vw"
                   />
-                  <Badge
-                    className={styles.number}
-                    variant="outline"
-                    aria-hidden="true"
-                  >
-                    {formatIndex(Number(project.number))}
-                  </Badge>
                 </div>
                 <div className={styles.content}>
                   <div className={styles.kicker}>

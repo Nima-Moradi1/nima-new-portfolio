@@ -5,7 +5,7 @@ export const heroSectionClassNames = {
   content:
     "hero__content page-shell mx-auto flex min-h-svh w-full max-w-content flex-col px-[var(--gutter)] pt-[calc(var(--header-height)+0.55rem)] pb-[0.45rem] max-[54rem]:pt-[calc(var(--header-height)+1.4rem)]",
   status:
-    "hero__status mb-5 inline-flex max-w-full items-center self-start font-mono text-[0.68rem] leading-normal tracking-[0.12em] text-[var(--muted-bright)] uppercase max-[38rem]:max-w-[80%] max-[38rem]:leading-[1.5] [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.64rem,0.72vw,0.76rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case",
+    "hero__status mb-5 inline-flex max-w-full items-center self-start font-mono text-[0.68rem] leading-normal tracking-[0.12em] text-[var(--muted-bright)] uppercase max-[38rem]:max-w-[80%] max-[38rem]:leading-[1.5] [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.78rem,0.9vw,0.92rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:font-bold [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case max-[38rem]:[html[lang=fa]_&]:max-w-full",
   statusDot:
     "status-dot relative me-[0.6rem] inline-block size-2 shrink-0 rounded-full bg-primary shadow-[0_0_14px_rgba(184,255,69,0.7)] after:absolute after:-inset-[0.3rem] after:rounded-[inherit] after:border after:border-[rgba(184,255,69,0.36)] after:content-[''] after:[animation:status-pulse_2.4s_ease-out_infinite] motion-reduce:after:animate-none",
   layout:
