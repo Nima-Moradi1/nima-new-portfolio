@@ -61,7 +61,7 @@ export function HeroSection() {
         </div>
 
         <Reveal className={styles.footer} delay={0.36}>
-          <a href="#about" className={styles.scrollCue}>
+          <a href="#experience" className={styles.scrollCue}>
             <ArrowDown aria-hidden="true" size={16} />
             {t("scrollCue")}
           </a>

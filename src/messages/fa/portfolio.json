@@ -13,7 +13,6 @@
     "statement": "محصولات مقیاس‌پذیر وب و موبایل می‌سازم؛ جایی که کارایی، پایداری و طراحی شفاف در کنار هم کار می‌کنند."
   },
   "navigation": [
-    { "id": "about", "label": "دربارهٔ من", "href": "/#about" },
     { "id": "experience", "label": "تجربه‌ها", "href": "/#experience" },
     { "id": "work", "label": "پروژه‌ها", "href": "/#work" },
     { "id": "capabilities", "label": "توانمندی‌ها", "href": "/#capabilities" },

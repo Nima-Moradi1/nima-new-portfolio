@@ -13,7 +13,6 @@
     "statement": "I build scalable web and mobile products where performance, reliability, and clear design work together."
   },
   "navigation": [
-    { "id": "about", "label": "About", "href": "/#about" },
     { "id": "experience", "label": "Experience", "href": "/#experience" },
     { "id": "work", "label": "Work", "href": "/#work" },
     { "id": "capabilities", "label": "Capabilities", "href": "/#capabilities" },

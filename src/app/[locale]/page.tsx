@@ -1,4 +1,3 @@
-import { AboutSection } from "@/components/sections/about-section";
 import { CapabilitiesSection } from "@/components/sections/capabilities-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -34,7 +33,6 @@ export default async function HomePage({
       <main id="main-content">
         <DepthScrollController />
         <HeroSection />
-        <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
         <CapabilitiesSection />

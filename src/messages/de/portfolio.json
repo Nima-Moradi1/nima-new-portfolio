@@ -13,7 +13,6 @@
     "statement": "Ich entwickle skalierbare Web- und Mobile-Produkte, in denen Performance, Zuverlässigkeit und klares Design zusammenspielen."
   },
   "navigation": [
-    { "id": "about", "label": "Über mich", "href": "/#about" },
     { "id": "experience", "label": "Erfahrung", "href": "/#experience" },
     { "id": "work", "label": "Projekte", "href": "/#work" },
     { "id": "capabilities", "label": "Kompetenzen", "href": "/#capabilities" },

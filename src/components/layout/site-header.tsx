@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useFormatter, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
@@ -57,7 +58,14 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <span className={styles.mark} aria-hidden="true">
-            {portfolio.identity.initials}
+            <Image
+              className={styles.markImage}
+              src="/assets/nima-moradirad.jpg"
+              alt=""
+              width={48}
+              height={48}
+              priority
+            />
           </span>
           <span className={styles.identity}>
             <strong className={styles.identityName}>

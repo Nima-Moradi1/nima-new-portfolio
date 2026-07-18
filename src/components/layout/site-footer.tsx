@@ -1,4 +1,5 @@
 import { FileText, Mail, Phone, Send } from "lucide-react";
+import Image from "next/image";
 import { useFormatter, useTranslations } from "next-intl";
 import { LinkedinIcon } from "@/components/contact/linkedin-icon";
 import { usePortfolio } from "@/content/use-portfolio";
@@ -51,7 +52,13 @@ export function SiteFooter() {
   return (
     <footer className={styles.root}>
       <a href="#top" className={styles.mark} aria-label={t("backToTop")}>
-        {portfolio.identity.initials}
+        <Image
+          className={styles.markImage}
+          src="/assets/nima-moradirad.jpg"
+          alt=""
+          width={48}
+          height={48}
+        />
       </a>
       <p className={styles.copy}>
         {t("statement")}
