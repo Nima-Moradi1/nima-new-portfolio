@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { ExperienceItem } from "@/types/portfolio";
 
@@ -11,33 +12,48 @@ type MobileExperienceReaderProps = {
 export function MobileExperienceReader({
   experiences,
 }: MobileExperienceReaderProps) {
+  const locale = useLocale();
+  const isRtl = locale === "fa";
+  const t = useTranslations("Experience");
+  const format = useFormatter();
+  const formatIndex = (value: number) =>
+    format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
+  const PreviousIcon = isRtl ? ArrowRight : ArrowLeft;
+  const NextIcon = isRtl ? ArrowLeft : ArrowRight;
   const [activePage, setActivePage] = useState(0);
   const experience = experiences[activePage];
+  const activeNumber = formatIndex(activePage + 1);
 
   function goToPage(page: number) {
     setActivePage(Math.max(0, Math.min(experiences.length - 1, page)));
   }
 
   return (
-    <div className="mobile-experience-reader page-shell">
+    <div
+      className="mobile-experience-reader page-shell"
+      data-direction={isRtl ? "rtl" : "ltr"}
+    >
       <header className="mobile-experience-reader__heading">
         <p>
-          <span>02</span>
-          Professional trajectory
+          <span>
+            <bdi>{formatIndex(2)}</bdi>
+          </span>
+          {t("eyebrow")}
         </p>
-        <h2 id="experience-title">A career, bound in chapters.</h2>
-        <p>A touch-optimized edition of the experience book.</p>
+        <h2 id="experience-title">{t("title")}</h2>
+        <p>{t("mobileDescription")}</p>
       </header>
 
       <div className="mobile-experience-reader__book">
-        <article
-          key={`${experience.company}-${experience.period}`}
-          aria-live="polite"
-        >
-          <div className="mobile-experience-reader__page">
+        <article aria-live="polite">
+          <div className="mobile-experience-reader__page mobile-experience-reader__page--summary">
             <div className="mobile-experience-reader__folio">
-              <span>{String(activePage + 1).padStart(2, "0")}</span>
-              <span>{experience.period}</span>
+              <span>
+                <bdi>{activeNumber}</bdi>
+              </span>
+              <span>
+                <bdi>{experience.period}</bdi>
+              </span>
             </div>
             <p className="mobile-experience-reader__company">
               {experience.company}
@@ -48,15 +64,16 @@ export function MobileExperienceReader({
             </p>
             <div className="mobile-experience-reader__tags">
               {experience.technologies.slice(0, 4).map((technology) => (
-                <span key={technology}>{technology}</span>
+                <span key={technology}>
+                  <bdi>{technology}</bdi>
+                </span>
               ))}
             </div>
           </div>
 
-          <div className="mobile-experience-reader__page">
+          <div className="mobile-experience-reader__page mobile-experience-reader__page--highlights">
             <p className="mobile-experience-reader__chapter">
-              Selected signals · Chapter{" "}
-              {String(activePage + 1).padStart(2, "0")}
+              {t("selectedSignals")} · {t("chapter", { number: activeNumber })}
             </p>
             <ul>
               {experience.highlights.map((highlight) => (
@@ -69,28 +86,32 @@ export function MobileExperienceReader({
 
       <nav
         className="mobile-experience-reader__navigation"
-        aria-label="Experience chapters"
+        aria-label={t("chaptersLabel")}
       >
         <button
           type="button"
           onClick={() => goToPage(activePage - 1)}
           disabled={activePage === 0}
-          aria-label="Previous experience"
+          aria-label={t("previous")}
         >
-          <ArrowLeft aria-hidden="true" size={18} />
+          <PreviousIcon aria-hidden="true" size={18} />
         </button>
         <p>
-          <span>{String(activePage + 1).padStart(2, "0")}</span>
+          <span>
+            <bdi>{activeNumber}</bdi>
+          </span>
           <i aria-hidden="true" />
-          <span>{String(experiences.length).padStart(2, "0")}</span>
+          <span>
+            <bdi>{formatIndex(experiences.length)}</bdi>
+          </span>
         </p>
         <button
           type="button"
           onClick={() => goToPage(activePage + 1)}
           disabled={activePage === experiences.length - 1}
-          aria-label="Next experience"
+          aria-label={t("next")}
         >
-          <ArrowRight aria-hidden="true" size={18} />
+          <NextIcon aria-hidden="true" size={18} />
         </button>
       </nav>
     </div>

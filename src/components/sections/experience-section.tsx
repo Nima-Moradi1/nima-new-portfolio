@@ -1,7 +1,8 @@
 import { ExperienceBook } from "@/components/experience/experience-book";
-import { portfolio } from "@/content/portfolio";
+import { usePortfolio } from "@/content/use-portfolio";
 
 export function ExperienceSection() {
+  const portfolio = usePortfolio();
   return (
     <section
       className="experience"
