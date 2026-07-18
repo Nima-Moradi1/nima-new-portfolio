@@ -54,13 +54,31 @@ Signal green is used sparingly for status, focus, primary actions, and coordinat
 
 ## Components
 
+### Styling architecture
+
+Tailwind CSS 4 utilities are the default for layout, spacing, typography,
+responsive behavior, state variants, and semantic color use. Reusable class
+maps are colocated beside larger components so the preserved BEM tokens remain
+stable test and debugging hooks without carrying visual rules in the global
+stylesheet.
+
+Accessible controls are composed from the local shadcn-style primitives in
+`src/components/ui/`, backed by Radix where interaction semantics require it.
+CSS Modules are reserved for genuinely graphical work such as layered CSS
+illustrations, pseudo-elements, canvas framing, and component-specific
+keyframes. Each exception names its consumer and explains why utilities would
+make that artwork harder to maintain. `src/app/globals.css` owns only theme
+tokens, document defaults, locale inheritance, and the shared depth system.
+
 ### Header
 
 The header begins transparent and becomes a blurred, bordered control surface after scrolling. Desktop navigation is centered; mobile navigation becomes a large editorial index.
 
 ### Magnetic link
 
-Pointer movement creates a restrained 12% offset. Touch and reduced-motion users receive a conventional stable button. The effect must never compromise the pointer target.
+Hero action links remain spatially fixed. Hover may change only the border color;
+the label, icon, background, and position do not animate. The signal-green
+primary action always uses black text for reliable contrast.
 
 ### Section heading
 

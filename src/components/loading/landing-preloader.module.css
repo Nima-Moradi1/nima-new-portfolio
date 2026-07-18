@@ -1,0 +1,88 @@
+/*
+ * Used by: src/components/loading/landing-preloader.tsx
+ * Reason: The first-frame overlay uses layered grid artwork, direction-aware
+ * focal points, concentric pseudo-elements, and a bespoke core pulse that are
+ * clearer as one colocated visual definition than repeated arbitrary classes.
+ */
+.preloader {
+  background:
+    radial-gradient(
+      circle at 28% 48%,
+      color-mix(in srgb, var(--signal) 13%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(var(--book-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--book-grid) 1px, transparent 1px), var(--ink);
+  background-size:
+    auto,
+    5rem 5rem,
+    5rem 5rem,
+    auto;
+}
+
+.preloader::before,
+.preloader::after {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 23%;
+  aspect-ratio: 1;
+  transform: translate(var(--center-from-inline-start), -50%);
+  border: 1px solid color-mix(in srgb, var(--signal) 16%, transparent);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.preloader::before {
+  width: min(75vw, 68rem);
+}
+
+.preloader::after {
+  width: min(48vw, 42rem);
+}
+
+.core {
+  animation: preloader-core 1.6s ease-in-out infinite;
+}
+
+@keyframes preloader-core {
+  0%,
+  100% {
+    transform: scale(0.82);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+:global(html[dir="rtl"]) .preloader {
+  background:
+    radial-gradient(
+      circle at 72% 48%,
+      color-mix(in srgb, var(--signal) 13%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(var(--book-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--book-grid) 1px, transparent 1px), var(--ink);
+  background-size:
+    auto,
+    5rem 5rem,
+    5rem 5rem,
+    auto;
+}
+
+@media (max-width: 54rem) {
+  .preloader::before,
+  .preloader::after {
+    top: 27%;
+    inset-inline-start: 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .core {
+    animation: none !important;
+  }
+}

@@ -4,6 +4,7 @@ import { usePortfolio } from "@/content/use-portfolio";
 import { Reveal } from "@/components/motion/reveal";
 import { HeroStudio } from "@/components/three/hero-studio";
 import { MagneticLink } from "@/components/ui/magnetic-link";
+import { heroSectionClassNames as styles } from "./hero-section.class-names";
 
 export function HeroSection() {
   const portfolio = usePortfolio();
@@ -14,38 +15,34 @@ export function HeroSection() {
 
   return (
     <section
-      className="hero"
+      className={styles.root}
       id="top"
       aria-labelledby="hero-title"
       data-depth-section
     >
-      <div className="hero__grid" aria-hidden="true" />
-      <div className="hero__glow" aria-hidden="true" />
+      <div className={styles.grid} aria-hidden="true" />
+      <div className={styles.glow} aria-hidden="true" />
 
-      <div className="hero__content page-shell" data-depth-plane>
-        <Reveal className="hero__status">
-          <span className="status-dot" aria-hidden="true" />
-          {portfolio.identity.availability}
-        </Reveal>
-
-        <div className="hero__layout">
-          <div
-            className="hero__copy hero__copy--edge-offset"
-            data-landing-critical-copy
-          >
+      <div className={styles.content} data-depth-plane>
+        <div className={styles.layout}>
+          <div className={styles.copy} data-landing-critical-copy>
+            <Reveal className={styles.status}>
+              <span className={styles.statusDot} aria-hidden="true" />
+              {portfolio.identity.availability}
+            </Reveal>
             <Reveal delay={0.06}>
-              <p className="hero__role">{portfolio.identity.role}</p>
+              <p className={styles.role}>{portfolio.identity.role}</p>
             </Reveal>
             <Reveal delay={0.12}>
-              <h1 id="hero-title">
+              <h1 className={styles.title} id="hero-title">
                 {t("titleLine1")}
-                <span>{t("titleLine2")}</span>
+                <span className={styles.titleOutline}>{t("titleLine2")}</span>
               </h1>
             </Reveal>
             <Reveal delay={0.22}>
-              <p className="hero__intro ">{portfolio.identity.intro}</p>
+              <p className={styles.intro}>{portfolio.identity.intro}</p>
             </Reveal>
-            <Reveal className="hero__actions" delay={0.3}>
+            <div className={styles.actions}>
               <MagneticLink href="#work" className="magnetic-link--primary">
                 {t("primaryCta")}
               </MagneticLink>
@@ -53,23 +50,23 @@ export function HeroSection() {
                 {t("resumeCta")}
               </MagneticLink>
               <MagneticLink href="#contact">{t("contactCta")}</MagneticLink>
-            </Reveal>
+            </div>
           </div>
 
-          <div className="hero__workstation">
+          <div className={styles.workstation}>
             <HeroStudio />
           </div>
         </div>
 
-        <Reveal className="hero__footer" delay={0.36}>
-          <a href="#about" className="hero__scroll-cue">
+        <Reveal className={styles.footer} delay={0.36}>
+          <a href="#about" className={styles.scrollCue}>
             <ArrowDown aria-hidden="true" size={16} />
             {t("scrollCue")}
           </a>
-          <div className="hero__signals" aria-label={t("signalsLabel")}>
+          <div className={styles.signals} aria-label={t("signalsLabel")}>
             {portfolio.signals.map((signal, index) => (
-              <span key={signal}>
-                <small>
+              <span className={styles.signal} key={signal}>
+                <small className={styles.signalIndex}>
                   <bdi>{formatIndex(index + 1)}</bdi>
                 </small>
                 {signal}

@@ -1,0 +1,55 @@
+/*
+ * Used by: src/components/experience/book-fallback.tsx
+ * Reason: Preserves the perspective projection and layered leaf transforms
+ * that form the static open-book artwork.
+ * Third-party dependency: None.
+ */
+.root {
+  transform: translate(var(--center-from-inline-start), -50%) perspective(80rem)
+    rotateX(6deg);
+  filter: drop-shadow(0 2rem 3rem rgba(0, 0, 0, 0.25));
+}
+
+.leftCover {
+  transform: rotateY(5deg);
+  transform-origin: right;
+}
+
+.rightCover {
+  transform: rotateY(-5deg);
+  transform-origin: left;
+}
+
+:global(html[dir="rtl"]) .leftCover {
+  transform: rotateY(-5deg);
+  transform-origin: left;
+}
+
+:global(html[dir="rtl"]) .rightCover {
+  transform: rotateY(5deg);
+  transform-origin: right;
+}
+
+.page {
+  transform: scale(0.96);
+}
+
+.leftPage {
+  transform-origin: right;
+}
+
+.rightPage {
+  transform-origin: left;
+}
+
+:global(html[dir="rtl"]) .leftPage {
+  transform-origin: left;
+}
+
+:global(html[dir="rtl"]) .rightPage {
+  transform-origin: right;
+}
+
+.spine {
+  transform: translateX(var(--center-from-inline-start));
+}

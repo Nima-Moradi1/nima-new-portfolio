@@ -1,0 +1,117 @@
+/*
+ * Used by: src/components/capabilities/capability-timeline.tsx
+ * Reason: Keeps direction-aware grid artwork, layered card surfaces, a local
+ * signal keyframe, and browser-specific hidden-scrollbar pseudos colocated
+ * with the horizontal timeline that owns them.
+ */
+.stage {
+  background:
+    radial-gradient(
+      circle at 78% 32%,
+      color-mix(in srgb, var(--signal) 9%, transparent),
+      transparent 31rem
+    ),
+    linear-gradient(var(--book-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--book-grid) 1px, transparent 1px), var(--ink);
+  background-size:
+    auto,
+    5rem 5rem,
+    5rem 5rem,
+    auto;
+}
+
+.card {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--signal) 6%, transparent),
+      transparent 36%
+    ),
+    color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+.education {
+  background:
+    radial-gradient(
+      circle at 14% 30%,
+      color-mix(in srgb, var(--signal) 15%, transparent),
+      transparent 33%
+    ),
+    color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+.signalCore {
+  animation: education-signal-pulse 2.4s var(--ease-out) infinite;
+}
+
+@keyframes education-signal-pulse {
+  0%,
+  100% {
+    transform: scale(0.88);
+    box-shadow: 0 0 0.8rem rgba(184, 255, 69, 0.28);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow:
+      0 0 1.25rem rgba(184, 255, 69, 0.62),
+      0 0 2.4rem rgba(184, 255, 69, 0.24);
+  }
+}
+
+.viewport,
+.card {
+  scrollbar-width: none !important;
+  scrollbar-color: transparent transparent !important;
+  -ms-overflow-style: none !important;
+}
+
+.stage[data-horizontal-drag-state="dragging"] .viewport {
+  scroll-snap-type: none;
+}
+
+.viewport::-webkit-scrollbar,
+.card::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.viewport::-webkit-scrollbar-thumb,
+.viewport::-webkit-scrollbar-track,
+.card::-webkit-scrollbar-thumb,
+.card::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+:global(html[dir="rtl"]) .stage {
+  background:
+    radial-gradient(
+      circle at 22% 32%,
+      color-mix(in srgb, var(--signal) 9%, transparent),
+      transparent 31rem
+    ),
+    linear-gradient(var(--book-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--book-grid) 1px, transparent 1px), var(--ink);
+  background-size:
+    auto,
+    5rem 5rem,
+    5rem 5rem,
+    auto;
+}
+
+:global(html[dir="rtl"]) .education {
+  background:
+    radial-gradient(
+      circle at 86% 30%,
+      color-mix(in srgb, var(--signal) 15%, transparent),
+      transparent 33%
+    ),
+    color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signalCore {
+    animation: none !important;
+  }
+}

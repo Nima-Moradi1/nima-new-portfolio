@@ -14,6 +14,9 @@ import {
   type LandingHeroReadiness,
 } from "@/components/loading/landing-readiness";
 import { usePortfolio } from "@/content/use-portfolio";
+import { cn } from "@/lib/cn";
+import { landingPreloaderClassNames as styles } from "./landing-preloader.class-names";
+import artwork from "./landing-preloader.module.css";
 
 const MINIMUM_DISPLAY_MS = 1100;
 const MAXIMUM_PREPARATION_MS = 15_000;
@@ -245,33 +248,36 @@ export function LandingPreloader({ children }: LandingPreloaderProps) {
   return (
     <LandingReadinessContext.Provider value={readinessContext}>
       <div
-        className="landing-shell"
+        className={styles.shell}
         data-boot-state={bootState}
         data-hero-readiness={heroReadiness ?? "pending"}
       >
         {bootState !== "ready" ? (
           <div
-            className="landing-preloader"
+            className={cn(styles.preloader, artwork.preloader)}
             role="status"
             aria-live="polite"
             aria-label={t("ariaLabel", {
               progress: format.number(progress, { useGrouping: false }),
             })}
           >
-            <div className="landing-preloader__field" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-              <i />
+            <div className={styles.field} aria-hidden="true">
+              <span className={styles.orbitPrimary} />
+              <span className={styles.orbitSecondary} />
+              <span className={styles.orbitTertiary} />
+              <i className={cn(styles.core, artwork.core)} />
             </div>
-            <div className="landing-preloader__copy">
-              <p>{t("eyebrow")}</p>
-              <h1>{t("title")}</h1>
-              <div className="landing-preloader__meter" aria-hidden="true">
-                <span style={{ width: `${progress}%` }} />
+            <div className={styles.copy}>
+              <p className={styles.eyebrow}>{t("eyebrow")}</p>
+              <h1 className={styles.title}>{t("title")}</h1>
+              <div className={styles.meter} aria-hidden="true">
+                <span
+                  className={styles.meterValue}
+                  style={{ width: `${progress}%` }}
+                />
               </div>
-              <div className="landing-preloader__status">
-                <span>
+              <div className={styles.status}>
+                <span className={styles.progress}>
                   <bdi>
                     {format.number(progress, {
                       minimumIntegerDigits: 3,
@@ -294,7 +300,7 @@ export function LandingPreloader({ children }: LandingPreloaderProps) {
 
         <div
           ref={contentRef}
-          className="landing-content"
+          className={styles.content}
           aria-hidden={bootState === "loading" ? true : undefined}
         >
           {children}

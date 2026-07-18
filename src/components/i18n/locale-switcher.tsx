@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { localeSwitcherClassNames as styles } from "./locale-switcher.class-names";
 
 const localeMarks: Record<AppLocale, string> = {
   en: "EN",
@@ -31,14 +32,20 @@ export function LocaleSwitcher() {
   }, []);
 
   return (
-    <nav className="locale-switcher" aria-label={t("label")}>
-      <Languages aria-hidden="true" size={15} strokeWidth={1.7} />
-      <span className="sr-only">
+    <nav className={styles.root} aria-label={t("label")}>
+      <Languages
+        className={styles.icon}
+        aria-hidden="true"
+        size={15}
+        strokeWidth={1.7}
+      />
+      <span className={styles.currentLabel}>
         {t("current", { language: t(`locales.${locale}`) })}
       </span>
       {routing.locales.map((candidate) => (
         <Link
           key={candidate}
+          className={styles.link}
           href={`${pathname}${locationSuffix}`}
           locale={candidate}
           hrefLang={candidate}

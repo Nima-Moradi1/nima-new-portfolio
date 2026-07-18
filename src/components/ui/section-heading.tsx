@@ -1,3 +1,5 @@
+import { sectionHeadingClassNames as styles } from "./section-heading.class-names";
+
 type SectionHeadingProps = {
   id?: string;
   index: string;
@@ -14,14 +16,20 @@ export function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <header className="section-heading">
-      <div className="section-heading__meta">
-        <span aria-hidden="true">{index}</span>
+    <header className={styles.root}>
+      <div className={styles.meta}>
+        <span className={styles.index} aria-hidden="true">
+          {index}
+        </span>
         <p>{eyebrow}</p>
       </div>
-      <div className="section-heading__copy">
-        <h2 id={id}>{title}</h2>
-        {description ? <p>{description}</p> : null}
+      <div className={styles.copy}>
+        <h2 className={styles.title} id={id}>
+          {title}
+        </h2>
+        {description ? (
+          <p className={styles.description}>{description}</p>
+        ) : null}
       </div>
     </header>
   );

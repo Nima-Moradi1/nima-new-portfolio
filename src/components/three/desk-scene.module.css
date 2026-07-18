@@ -1,0 +1,64 @@
+/*
+ * Used by: src/components/three/desk-scene.tsx
+ * Reason: The animated double-ring hint is pseudo-element artwork rendered
+ * inside a Drei Html portal; keeping its keyframes here makes the exception
+ * local to the scene that owns it.
+ * Third-party dependency: @react-three/drei
+ */
+.resumeHint {
+  animation: resume-touch-float 1.8s ease-in-out infinite;
+}
+
+.resumeHint::before,
+.resumeHint::after {
+  position: absolute;
+  inset: -0.12rem;
+  border: 1px solid currentColor;
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+  animation: resume-touch-pulse 1.8s ease-out infinite;
+}
+
+.resumeHint::after {
+  animation-delay: 0.9s;
+}
+
+@keyframes resume-touch-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.22rem);
+  }
+}
+
+@keyframes resume-touch-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.72);
+  }
+  78%,
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resumeHint,
+  .resumeHint::before,
+  .resumeHint::after {
+    animation: none !important;
+  }
+
+  .resumeHint::before {
+    opacity: 0.35;
+    transform: scale(1.12);
+  }
+
+  .resumeHint::after {
+    display: none;
+  }
+}

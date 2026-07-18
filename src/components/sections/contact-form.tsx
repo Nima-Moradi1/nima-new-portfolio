@@ -10,6 +10,11 @@ import {
   type ContactFormValues,
 } from "@/lib/contact-schema";
 import { usePortfolio } from "@/content/use-portfolio";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { contactFormClassNames as styles } from "./contact-form.class-names";
 
 type SubmitState =
   | { kind: "idle" }
@@ -83,10 +88,13 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className="contact-form__field">
-        <label htmlFor="name">{t("fields.name")}</label>
-        <input
+    <form className={styles.root} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div className={styles.field}>
+        <Label className={styles.label} htmlFor="name">
+          {t("fields.name")}
+        </Label>
+        <Input
+          className={styles.input}
           id="name"
           autoComplete="name"
           aria-invalid={Boolean(errors.name)}
@@ -96,15 +104,18 @@ export function ContactForm() {
           {...register("name")}
         />
         {errors.name ? (
-          <p className="field-error" id="name-error">
+          <p className={styles.error} id="name-error">
             {errors.name.message}
           </p>
         ) : null}
       </div>
 
-      <div className="contact-form__field">
-        <label htmlFor="email">{t("fields.email")}</label>
-        <input
+      <div className={styles.field}>
+        <Label className={styles.label} htmlFor="email">
+          {t("fields.email")}
+        </Label>
+        <Input
+          className={styles.input}
           id="email"
           type="email"
           inputMode="email"
@@ -116,15 +127,18 @@ export function ContactForm() {
           {...register("email")}
         />
         {errors.email ? (
-          <p className="field-error" id="email-error">
+          <p className={styles.error} id="email-error">
             {errors.email.message}
           </p>
         ) : null}
       </div>
 
-      <div className="contact-form__field contact-form__field--full">
-        <label htmlFor="message">{t("fields.message")}</label>
-        <textarea
+      <div className={styles.fullField}>
+        <Label className={styles.label} htmlFor="message">
+          {t("fields.message")}
+        </Label>
+        <Textarea
+          className={styles.textarea}
           id="message"
           rows={5}
           aria-invalid={Boolean(errors.message)}
@@ -134,15 +148,15 @@ export function ContactForm() {
           {...register("message")}
         />
         {errors.message ? (
-          <p className="field-error" id="message-error">
+          <p className={styles.error} id="message-error">
             {errors.message.message}
           </p>
         ) : null}
       </div>
 
-      <div className="contact-form__honeypot" aria-hidden="true">
-        <label htmlFor="company">{t("fields.company")}</label>
-        <input
+      <div className={styles.honeypot} aria-hidden="true">
+        <Label htmlFor="company">{t("fields.company")}</Label>
+        <Input
           id="company"
           tabIndex={-1}
           autoComplete="off"
@@ -150,34 +164,39 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="contact-form__footer">
-        <button type="submit" disabled={isSubmitting}>
+      <div className={styles.footer}>
+        <Button className={styles.submit} type="submit" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
-              <LoaderCircle className="spin" aria-hidden="true" />
+              <LoaderCircle className={styles.spinner} aria-hidden="true" />
               {t("submitting")}
             </>
           ) : (
             <>
               {t("submit")}
-              <ArrowUpRight className="icon-directional" aria-hidden="true" />
+              <ArrowUpRight className={styles.submitIcon} aria-hidden="true" />
             </>
           )}
-        </button>
-        <p>
+        </Button>
+        <p className={styles.footerCopy}>
           {t("preferEmail")}{" "}
-          <a href={`mailto:${portfolio.identity.email}`}>
+          <a
+            className={styles.link}
+            href={`mailto:${portfolio.identity.email}`}
+          >
             <bdi>{portfolio.identity.email}</bdi>
           </a>
         </p>
       </div>
 
-      <div className="contact-form__status" aria-live="polite" role="status">
+      <div className={styles.status} aria-live="polite" role="status">
         {submitState.kind !== "idle" ? (
-          <p data-kind={submitState.kind}>
+          <p className={styles.statusMessage} data-kind={submitState.kind}>
             {submitState.message}{" "}
             {submitState.kind === "error" && submitState.mailto ? (
-              <a href={submitState.mailto}>{t("openEmail")}</a>
+              <a className={styles.link} href={submitState.mailto}>
+                {t("openEmail")}
+              </a>
             ) : null}
           </p>
         ) : null}

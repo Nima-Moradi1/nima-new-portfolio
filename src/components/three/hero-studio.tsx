@@ -15,6 +15,9 @@ import { useTheme } from "@/components/theme/theme-provider";
 import { ResumeDialog } from "@/components/ui/resume-dialog";
 import { usePortfolio } from "@/content/use-portfolio";
 import { useWebGLSupport } from "@/hooks/use-webgl-support";
+import { cn } from "@/lib/cn";
+import { heroStudioClassNames as styles } from "./hero-studio.class-names";
+import artwork from "./hero-studio.module.css";
 
 const DeskScene = dynamic(
   () =>
@@ -52,11 +55,11 @@ export function HeroStudio() {
   return (
     <div
       ref={runtime}
-      className="hero-studio"
+      className={styles.root}
       role="region"
       aria-label={t("regionLabel")}
     >
-      <div className="hero-studio__viewport">
+      <div className={cn(styles.viewport, artwork.viewport)}>
         <WebGLErrorBoundary fallback={readyFallback}>
           {webGLSupported === null ? (
             <DeskFallback />
@@ -75,10 +78,17 @@ export function HeroStudio() {
           )}
         </WebGLErrorBoundary>
 
-        <div className="hero-studio__status" aria-hidden="true">
-          <span>app/dashboard.tsx</span>
-          <span data-code-loop="active">{t("coding")}</span>
-          <span>
+        <div className={styles.status} aria-hidden="true">
+          <span className={cn(styles.statusChip, styles.statusFile)} dir="ltr">
+            app/dashboard.tsx
+          </span>
+          <span
+            className={cn(styles.statusChip, styles.statusCode)}
+            data-code-loop="active"
+          >
+            {t("coding")}
+          </span>
+          <span className={cn(styles.statusChip, styles.statusInteraction)}>
             <Move3d aria-hidden="true" size={13} />
             {t("drag")}
           </span>

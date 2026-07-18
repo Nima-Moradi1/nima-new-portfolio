@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { Download, ExternalLink, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, type MouseEvent } from "react";
+import { useEffect, useRef, type MouseEvent, type SyntheticEvent } from "react";
 import { usePortfolio } from "@/content/use-portfolio";
+import { cn } from "@/lib/cn";
+import { resumeDialogClassNames as styles } from "./resume-dialog.class-names";
+import backdrop from "./resume-dialog.module.css";
 
 type ResumeDialogProps = {
   open: boolean;
@@ -26,9 +29,16 @@ export function ResumeDialog({ open, resumeUrl, onClose }: ResumeDialogProps) {
 
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      node.close();
+    };
     document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleEscape, true);
 
     return () => {
+      document.removeEventListener("keydown", handleEscape, true);
       document.body.style.overflow = previousOverflow;
     };
   }, [open]);
@@ -37,21 +47,30 @@ export function ResumeDialog({ open, resumeUrl, onClose }: ResumeDialogProps) {
     if (event.target === event.currentTarget) event.currentTarget.close();
   }
 
+  function handleCancel(event: SyntheticEvent<HTMLDialogElement>) {
+    event.preventDefault();
+    dialog.current?.close();
+  }
+
   return (
     <dialog
       ref={dialog}
-      className="resume-dialog"
+      className={cn(styles.root, backdrop.dialog)}
       aria-labelledby="resume-dialog-title"
+      onCancel={handleCancel}
       onClose={onClose}
       onClick={handleBackdropClick}
     >
-      <article className="resume-dialog__paper">
-        <header className="resume-dialog__header">
+      <article className={styles.paper}>
+        <header className={styles.header}>
           <div>
-            <span>{t("label")}</span>
-            <h2 id="resume-dialog-title">{t("title")}</h2>
+            <span className={styles.label}>{t("label")}</span>
+            <h2 className={styles.title} id="resume-dialog-title">
+              {t("title")}
+            </h2>
           </div>
           <button
+            className={styles.close}
             type="button"
             aria-label={t("close")}
             onClick={() => dialog.current?.close()}
@@ -61,7 +80,7 @@ export function ResumeDialog({ open, resumeUrl, onClose }: ResumeDialogProps) {
         </header>
 
         <div
-          className="resume-dialog__viewport"
+          className={styles.viewport}
           tabIndex={0}
           lang="en"
           dir="ltr"
@@ -74,17 +93,23 @@ export function ResumeDialog({ open, resumeUrl, onClose }: ResumeDialogProps) {
             height={1684}
             sizes="(max-width: 640px) 92vw, 46rem"
             loading={open ? "eager" : "lazy"}
+            className={styles.preview}
           />
         </div>
 
-        <footer className="resume-dialog__footer">
-          <p>{t("description")}</p>
-          <div>
-            <a href={resumeUrl} target="_blank" rel="noreferrer">
+        <footer className={styles.footer}>
+          <p className={styles.description}>{t("description")}</p>
+          <div className={styles.actions}>
+            <a
+              className={styles.action}
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               {t("open")}
               <ExternalLink aria-hidden="true" size={15} />
             </a>
-            <a href={resumeUrl} download>
+            <a className={styles.action} href={resumeUrl} download>
               {t("download")}
               <Download aria-hidden="true" size={15} />
             </a>

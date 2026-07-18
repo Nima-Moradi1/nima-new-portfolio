@@ -5,8 +5,16 @@ import { useFormatter, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
 import { ThemeLamp } from "@/components/theme/theme-lamp";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { usePortfolio } from "@/content/use-portfolio";
 import { Link } from "@/i18n/navigation";
+import { siteHeaderClassNames as styles } from "./site-header.class-names";
 
 export function SiteHeader() {
   const portfolio = usePortfolio();
@@ -32,98 +40,93 @@ export function SiteHeader() {
       mobileViewport.removeEventListener("change", handleViewportChange);
   }, []);
 
-  useEffect(() => {
-    if (!menuOpen) return;
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
-    };
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [menuOpen]);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [menuOpen]);
-
   return (
-    <>
-      <header className="site-header" data-scrolled={scrolled}>
+    <Sheet open={menuOpen} onOpenChange={setMenuOpen} modal={menuOpen}>
+      <header className={styles.root} data-scrolled={scrolled}>
         <Link
-          className="site-header__brand"
+          className={styles.brand}
           href="/"
           aria-label={t("goTop")}
           onClick={() => setMenuOpen(false)}
         >
-          <span className="site-header__mark" aria-hidden="true">
+          <span className={styles.mark} aria-hidden="true">
             {portfolio.identity.initials}
           </span>
-          <span className="site-header__identity">
-            <strong>{portfolio.identity.name}</strong>
-            <small>{portfolio.identity.shortRole}</small>
+          <span className={styles.identity}>
+            <strong className={styles.identityName}>
+              {portfolio.identity.name}
+            </strong>
+            <small className={styles.identityRole}>
+              {portfolio.identity.shortRole}
+            </small>
           </span>
         </Link>
 
-        <nav
-          className="site-header__desktop-nav"
-          aria-label={t("primaryLabel")}
-        >
+        <nav className={styles.desktopNav} aria-label={t("primaryLabel")}>
           {portfolio.navigation.map((item) => (
-            <Link href={item.href} key={item.href}>
+            <Link
+              className={styles.desktopNavLink}
+              href={item.href}
+              key={item.href}
+            >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="site-header__actions">
-          <Link className="site-header__contact" href="/#contact">
+        <div className={styles.actions}>
+          <Link className={styles.contact} href="/#contact">
             {t("contactCta")}
           </Link>
           <LocaleSwitcher />
           <ThemeLamp />
-          <button
-            className="site-header__menu-button"
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-            aria-label={menuOpen ? t("close") : t("open")}
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          </button>
+          <SheetTrigger asChild>
+            <button
+              className={styles.menuButton}
+              type="button"
+              aria-controls="mobile-navigation"
+              aria-label={menuOpen ? t("close") : t("open")}
+            >
+              {menuOpen ? (
+                <X className={styles.menuIcon} aria-hidden="true" />
+              ) : (
+                <Menu className={styles.menuIcon} aria-hidden="true" />
+              )}
+            </button>
+          </SheetTrigger>
         </div>
       </header>
 
-      <div
-        className="mobile-nav"
+      <SheetContent
+        className={styles.mobileNav}
         id="mobile-navigation"
+        side="top"
+        forceMount
+        showCloseButton={false}
+        closeLabel={t("close")}
+        overlayClassName={styles.mobileOverlay}
         data-open={menuOpen}
-        aria-hidden={!menuOpen}
       >
-        <nav aria-label={t("mobileLabel")}>
+        <SheetTitle className={styles.mobileTitle}>
+          {t("mobileLabel")}
+        </SheetTitle>
+        <nav className={styles.mobileNavList} aria-label={t("mobileLabel")}>
           {portfolio.navigation.map((item, index) => (
-            <Link
-              href={item.href}
-              key={item.href}
-              tabIndex={menuOpen ? 0 : -1}
-              onClick={() => setMenuOpen(false)}
-            >
-              <bdi>
-                {format.number(index + 1, {
-                  minimumIntegerDigits: 2,
-                  useGrouping: false,
-                })}
-              </bdi>
-              {item.label}
-            </Link>
+            <SheetClose asChild key={item.href}>
+              <Link className={styles.mobileNavLink} href={item.href}>
+                <bdi className={styles.mobileNavIndex}>
+                  {format.number(index + 1, {
+                    minimumIntegerDigits: 2,
+                    useGrouping: false,
+                  })}
+                </bdi>
+                {item.label}
+              </Link>
+            </SheetClose>
           ))}
         </nav>
-        <p>{portfolio.identity.location}</p>
-      </div>
-    </>
+        <p className={styles.mobileLocation}>{portfolio.identity.location}</p>
+      </SheetContent>
+    </Sheet>
   );
 }

@@ -1,0 +1,92 @@
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: Registers the animatable angle used by the bespoke conic project
+ * border; Tailwind utilities cannot register typed custom properties.
+ */
+@property --project-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: The layered padding-box/conic-gradient border is bespoke artwork
+ * whose clipping relationship is substantially clearer as a CSS background.
+ */
+.headerFrame {
+  --project-border-angle: 0deg;
+  background:
+    linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--surface) 96%, transparent),
+        color-mix(in srgb, var(--ink-soft) 96%, transparent)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--project-border-angle),
+        transparent 0 18%,
+        var(--signal) 25%,
+        var(--violet) 34%,
+        transparent 43% 70%,
+        var(--coral) 78%,
+        transparent 86%
+      )
+      border-box;
+  animation: project-border-orbit 8s linear infinite;
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: This decorative scanning beam is generated content with layered
+ * glow and a custom keyframe, so keeping it beside the border artwork is clearer.
+ */
+.headerFrame::after {
+  position: absolute;
+  inset-inline-end: clamp(1.25rem, 2.5vw, 2.25rem);
+  bottom: 0;
+  width: clamp(4rem, 10vw, 8rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--signal), transparent);
+  box-shadow: 0 0 1.25rem var(--signal);
+  content: "";
+  animation: project-signal-scan 3.2s var(--ease-in-out) infinite alternate;
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: Animates the typed angle consumed by the conic border artwork.
+ */
+@keyframes project-border-orbit {
+  to {
+    --project-border-angle: 360deg;
+  }
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: Drives the bespoke scanning-beam artwork with locale-aware variables.
+ */
+@keyframes project-signal-scan {
+  from {
+    transform: translateX(var(--signal-scan-start));
+    opacity: 0.35;
+  }
+
+  to {
+    transform: translateX(var(--signal-scan-end));
+    opacity: 1;
+  }
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
+ * Reason: The two bespoke artwork animations need an explicit reduced-motion
+ * fallback because their keyframes live in this colocated CSS Module.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .headerFrame,
+  .headerFrame::after {
+    animation: none;
+  }
+}

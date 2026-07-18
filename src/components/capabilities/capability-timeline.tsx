@@ -1,19 +1,11 @@
 "use client";
 
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import {
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
-  type CSSProperties,
   type KeyboardEvent,
   type UIEvent,
 } from "react";
@@ -22,6 +14,10 @@ import {
   getLogicalScrollLeft,
   scrollToLogicalLeft,
 } from "@/lib/logical-scroll";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/cn";
+import { capabilityTimelineClassNames as styles } from "./capability-timeline.class-names";
+import artwork from "./capability-timeline.module.css";
 
 type Education = {
   title: string;
@@ -47,11 +43,8 @@ export function CapabilityTimeline({
     format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
   const PreviousIcon = isRtl ? ArrowRight : ArrowLeft;
   const NextIcon = isRtl ? ArrowLeft : ArrowRight;
-  const root = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const viewport = useRef<HTMLDivElement>(null);
-  const track = useRef<HTMLOListElement>(null);
-  const [travel, setTravel] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const horizontalDrag = useRef<{
     axis: "horizontal" | "vertical" | null;
@@ -61,39 +54,12 @@ export function CapabilityTimeline({
     startY: number;
   } | null>(null);
   const suppressClick = useRef(false);
-  const nativeTimeline = true;
   const itemCount = groups.length + 1;
-  const { scrollYProgress } = useScroll({
-    target: root,
-    offset: ["start start", "end end"],
-    trackContentSize: true,
-  });
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, isRtl ? travel : -travel],
-  );
-
-  useLayoutEffect(() => {
-    const viewportNode = viewport.current;
-    const trackNode = track.current;
-    if (!viewportNode || !trackNode) return;
-
-    const measure = () => {
-      setTravel(Math.max(trackNode.scrollWidth - viewportNode.clientWidth, 0));
-    };
-
-    const observer = new ResizeObserver(measure);
-    observer.observe(viewportNode);
-    observer.observe(trackNode);
-    measure();
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const stageNode = stage.current;
     const viewportNode = viewport.current;
-    if (!nativeTimeline || !stageNode || !viewportNode) return;
+    if (!stageNode || !viewportNode) return;
     const activeStage = stageNode;
     const activeViewport = viewportNode;
     activeStage.dataset.horizontalDragReady = "true";
@@ -162,40 +128,21 @@ export function CapabilityTimeline({
       stageNode.removeEventListener("pointerup", finishPointerDrag, true);
       stageNode.removeEventListener("pointercancel", finishPointerDrag, true);
     };
-  }, [isRtl, nativeTimeline]);
-
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    if (nativeTimeline) return;
-    const index = Math.min(
-      itemCount - 1,
-      Math.round(progress * (itemCount - 1)),
-    );
-    setActiveIndex((current) => (current === index ? current : index));
-  });
+  }, [isRtl]);
 
   function goTo(index: number) {
     const nextIndex = Math.max(0, Math.min(itemCount - 1, index));
     const progress = nextIndex / Math.max(itemCount - 1, 1);
+    const viewportNode = viewport.current;
 
-    if (nativeTimeline) {
-      if (viewport.current) {
-        scrollToLogicalLeft(viewport.current, progress * travel);
-      }
-      setActiveIndex(nextIndex);
-      return;
+    if (viewportNode) {
+      const maximum = Math.max(
+        viewportNode.scrollWidth - viewportNode.clientWidth,
+        0,
+      );
+      scrollToLogicalLeft(viewportNode, progress * maximum);
     }
-
-    const rootNode = root.current;
-    if (!rootNode) return;
-    const rootTop = window.scrollY + rootNode.getBoundingClientRect().top;
-    const verticalTravel = Math.max(
-      rootNode.offsetHeight - window.innerHeight,
-      0,
-    );
-    window.scrollTo({
-      top: rootTop + verticalTravel * progress,
-      behavior: "smooth",
-    });
+    setActiveIndex(nextIndex);
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
@@ -225,8 +172,12 @@ export function CapabilityTimeline({
   }
 
   function handleNativeScroll(event: UIEvent<HTMLDivElement>) {
-    if (!nativeTimeline || travel <= 0) return;
-    const progress = getLogicalScrollLeft(event.currentTarget, isRtl) / travel;
+    const maximum = Math.max(
+      event.currentTarget.scrollWidth - event.currentTarget.clientWidth,
+      0,
+    );
+    if (maximum <= 0) return;
+    const progress = getLogicalScrollLeft(event.currentTarget, isRtl) / maximum;
     const index = Math.min(
       itemCount - 1,
       Math.round(progress * (itemCount - 1)),
@@ -234,24 +185,16 @@ export function CapabilityTimeline({
     setActiveIndex((current) => (current === index ? current : index));
   }
 
-  const timelineStyle = {
-    "--capability-scroll-height": nativeTimeline
-      ? "auto"
-      : `calc(100svh + ${travel}px)`,
-  } as CSSProperties;
-
   return (
     <div
-      ref={root}
-      className="capability-timeline"
-      data-motion={nativeTimeline ? "native" : "depth-linked"}
+      className={styles.root}
+      data-motion="native"
       data-direction={isRtl ? "rtl" : "ltr"}
       data-active-index={activeIndex}
-      style={timelineStyle}
     >
       <div
         ref={stage}
-        className="capability-timeline__stage"
+        className={cn(styles.stage, artwork.stage)}
         role="region"
         aria-label={t("regionLabel")}
         tabIndex={0}
@@ -264,68 +207,72 @@ export function CapabilityTimeline({
         }}
         data-depth-plane
       >
-        <header className="capability-timeline__chrome page-shell">
+        <header className={styles.chrome}>
           <div>
-            <span>{t("chromeTitle")}</span>
-            <p>{t("chromeDescription")}</p>
+            <span className={styles.chromeLabel}>{t("chromeTitle")}</span>
+            <p className={styles.chromeDescription}>{t("chromeDescription")}</p>
           </div>
-          <div className="capability-timeline__controls">
-            <button
+          <div className={styles.controls}>
+            <Button
+              className={styles.controlButton}
+              size="icon"
+              variant="outline"
               type="button"
               onClick={() => goTo(activeIndex - 1)}
               disabled={activeIndex === 0}
               aria-label={t("previous")}
             >
               <PreviousIcon aria-hidden="true" size={17} />
-            </button>
-            <p aria-live="polite">
-              <span>
+            </Button>
+            <p className={styles.counter} aria-live="polite">
+              <span className={styles.activeCount}>
                 <bdi>{formatIndex(activeIndex + 1)}</bdi>
               </span>
-              <i aria-hidden="true" />
+              <i className={styles.counterRule} aria-hidden="true" />
               <span>
                 <bdi>{formatIndex(itemCount)}</bdi>
               </span>
             </p>
-            <button
+            <Button
+              className={styles.controlButton}
+              size="icon"
+              variant="outline"
               type="button"
               onClick={() => goTo(activeIndex + 1)}
               disabled={activeIndex === itemCount - 1}
               aria-label={t("next")}
             >
               <NextIcon aria-hidden="true" size={17} />
-            </button>
+            </Button>
           </div>
         </header>
 
         <div
           ref={viewport}
-          className="capability-timeline__viewport"
-          tabIndex={nativeTimeline ? 0 : undefined}
-          aria-label={nativeTimeline ? t("scrollableLabel") : undefined}
+          className={cn(styles.viewport, artwork.viewport)}
+          tabIndex={0}
+          aria-label={t("scrollableLabel")}
           onScroll={handleNativeScroll}
         >
-          <motion.ol
-            ref={track}
-            className="capability-timeline__track"
-            style={nativeTimeline ? undefined : { x }}
-          >
+          <ol className={styles.track}>
             {groups.map((group, index) => (
-              <li key={group.id} className="capability-timeline__item">
-                <article className="capability-row capability-timeline__card">
-                  <div className="capability-timeline__node" aria-hidden="true">
+              <li key={group.id} className={styles.item}>
+                <article className={cn(styles.card, artwork.card)}>
+                  <div className={styles.node} aria-hidden="true">
                     <span>
                       <bdi>{formatIndex(index + 1)}</bdi>
                     </span>
                   </div>
                   <div className="capability-timeline__copy">
-                    <span>{group.label}</span>
-                    <h3>{group.title}</h3>
-                    <p>{group.description}</p>
+                    <span className={styles.copyLabel}>{group.label}</span>
+                    <h3 className={styles.copyTitle}>{group.title}</h3>
+                    <p className={styles.copyDescription}>
+                      {group.description}
+                    </p>
                   </div>
-                  <ul>
+                  <ul className={styles.skills}>
                     {group.skills.map((skill) => (
-                      <li key={skill}>
+                      <li className={styles.skill} key={skill}>
                         <bdi>{skill}</bdi>
                       </li>
                     ))}
@@ -334,35 +281,41 @@ export function CapabilityTimeline({
               </li>
             ))}
 
-            <li className="capability-timeline__item">
-              <aside className="education-card capability-timeline__education">
-                <div className="education-card__signal" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
+            <li className={styles.item}>
+              <aside className={cn(styles.education, artwork.education)}>
+                <div className={styles.educationSignal} aria-hidden="true">
+                  <span className={cn(styles.signalCore, artwork.signalCore)} />
+                  <span className={styles.signalMiddle} />
+                  <span className={styles.signalOuter} />
                 </div>
                 <div>
-                  <span>{t("educationTitle")}</span>
-                  <h3>{education.title}</h3>
-                  <p>{education.institution}</p>
+                  <span className={styles.educationLabel}>
+                    {t("educationTitle")}
+                  </span>
+                  <h3 className={styles.educationTitle}>{education.title}</h3>
+                  <p className={styles.educationInstitution}>
+                    {education.institution}
+                  </p>
                 </div>
-                <div className="education-card__details">
-                  <p>{education.note}</p>
-                  <ul aria-label={t("languagesLabel")}>
+                <div className={styles.educationDetails}>
+                  <p className={styles.educationNote}>{education.note}</p>
+                  <ul
+                    className={styles.languages}
+                    aria-label={t("languagesLabel")}
+                  >
                     {education.languages.map((language) => (
-                      <li key={language}>{language}</li>
+                      <li className={styles.language} key={language}>
+                        {language}
+                      </li>
                     ))}
                   </ul>
                 </div>
               </aside>
             </li>
-          </motion.ol>
+          </ol>
         </div>
 
-        <nav
-          className="capability-timeline__steps"
-          aria-label={t("stepsLabel")}
-        >
+        <nav className={styles.steps} aria-label={t("stepsLabel")}>
           {Array.from({ length: itemCount }, (_, index) => (
             <button
               key={index}

@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/cn";
+import { xoArenaGalleryImageClassNames as styles } from "./xo-arena-gallery-image.class-names";
+import artwork from "./xo-arena-gallery-image.module.css";
 
 type XoArenaGalleryImageProps = {
   src: string;
@@ -25,9 +29,10 @@ export function XoArenaGalleryImage({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <figure className="xo-gallery-card" data-loaded={loaded}>
-      <div className="xo-gallery-card__media">
+    <figure className={styles.root} data-loaded={loaded}>
+      <div className={styles.media}>
         <Image
+          className={styles.image}
           src={src}
           alt={alt}
           width={width}
@@ -36,13 +41,13 @@ export function XoArenaGalleryImage({
           loading="lazy"
           onLoad={() => setLoaded(true)}
         />
-        <span className="xo-gallery-card__skeleton" aria-hidden="true" />
+        <Skeleton className={cn(styles.skeleton, artwork.skeleton)} />
       </div>
-      <figcaption>
-        <span>{index}</span>
-        <div>
-          <h3>{title}</h3>
-          <p>{description}</p>
+      <figcaption className={styles.caption}>
+        <span className={styles.index}>{index}</span>
+        <div className={styles.copy}>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
         </div>
       </figcaption>
     </figure>

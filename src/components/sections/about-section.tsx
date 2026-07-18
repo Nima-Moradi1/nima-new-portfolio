@@ -3,6 +3,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { usePortfolio } from "@/content/use-portfolio";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { aboutSectionClassNames as styles } from "./about-section.class-names";
 
 export function AboutSection() {
   const portfolio = usePortfolio();
@@ -13,12 +14,12 @@ export function AboutSection() {
 
   return (
     <section
-      className="section about"
+      className={styles.root}
       id="about"
       aria-labelledby="about-title"
       data-depth-section
     >
-      <div className="page-shell" data-depth-plane>
+      <div className={styles.shell} data-depth-plane>
         <Reveal>
           <SectionHeading
             id="about-title"
@@ -28,45 +29,58 @@ export function AboutSection() {
           />
         </Reveal>
 
-        <div className="about__body">
-          <div className="about__statement">
+        <div className={styles.body}>
+          <div className={styles.statement}>
             <Reveal>
-              <p>{portfolio.identity.statement}</p>
+              <p className={styles.statementText}>
+                {portfolio.identity.statement}
+              </p>
             </Reveal>
-            <div className="about__coordinate" aria-hidden="true">
+            <div className={styles.coordinate} aria-hidden="true">
               <span>{t("engineering")}</span>
-              <span>×</span>
+              <span className={styles.coordinateAccent}>×</span>
               <span>{t("creativity")}</span>
             </div>
             <Reveal delay={0.08}>
-              <figure className="about__portrait">
+              <figure className={styles.portrait}>
                 <Image
+                  className={styles.portraitImage}
                   src="/assets/nima-moradirad.jpg"
                   alt={t("portraitAlt")}
                   width={400}
                   height={400}
                   sizes="(max-width: 768px) 72vw, 28vw"
                 />
-                <figcaption>
-                  <span>{portfolio.identity.name}</span>
+                <figcaption className={styles.portraitCaption}>
+                  <span className={styles.portraitName}>
+                    {portfolio.identity.name}
+                  </span>
                   <span>{portfolio.identity.location}</span>
                 </figcaption>
               </figure>
             </Reveal>
           </div>
 
-          <div className="about__details">
-            <Reveal className="about__narrative">
+          <div className={styles.details}>
+            <Reveal className={styles.narrative}>
               {portfolio.about.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p className={styles.narrativeParagraph} key={paragraph}>
+                  {paragraph}
+                </p>
               ))}
             </Reveal>
             {portfolio.about.principles.map((principle, index) => (
-              <Reveal key={principle.index} delay={(index + 1) * 0.06}>
-                <article className="principle-card" key={principle.id}>
-                  <span>{formatIndex(Number(principle.index))}</span>
-                  <h3>{principle.title}</h3>
-                  <p>{principle.text}</p>
+              <Reveal
+                className={styles.detailCell}
+                key={principle.id}
+                delay={(index + 1) * 0.06}
+              >
+                <article className={styles.principleCard}>
+                  <span className={styles.principleIndex}>
+                    {formatIndex(Number(principle.index))}
+                  </span>
+                  <h3 className={styles.principleTitle}>{principle.title}</h3>
+                  <p className={styles.principleText}>{principle.text}</p>
                 </article>
               </Reveal>
             ))}

@@ -1,0 +1,69 @@
+/*
+ * Used by: src/components/three/hero-studio.tsx
+ * Reason: Preserves the layered workstation glass artwork and targets the
+ * canvas element generated internally by React Three Fiber.
+ * Third-party dependency: @react-three/fiber
+ */
+.viewport {
+  background:
+    radial-gradient(
+      circle at 58% 44%,
+      color-mix(in srgb, var(--signal) 12%, transparent),
+      transparent 44%
+    ),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    color-mix(in srgb, var(--ink-soft) 91%, transparent);
+  background-size:
+    auto,
+    3.5rem 3.5rem,
+    3.5rem 3.5rem,
+    auto;
+  box-shadow:
+    inset 0 1px color-mix(in srgb, var(--paper) 8%, transparent),
+    0 2rem 6rem rgba(0, 0, 0, 0.22);
+}
+
+.viewport::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      115deg,
+      color-mix(in srgb, var(--paper) 8%, transparent),
+      transparent 18% 76%,
+      color-mix(in srgb, var(--signal) 8%, transparent)
+    ),
+    radial-gradient(ellipse at 50% 115%, rgba(0, 0, 0, 0.35), transparent 50%);
+  content: "";
+  pointer-events: none;
+}
+
+.viewport canvas {
+  position: absolute !important;
+  z-index: 0;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  direction: ltr;
+  touch-action: pan-y;
+}
+
+:global(html[dir="rtl"]) .viewport {
+  background:
+    radial-gradient(
+      circle at 42% 44%,
+      color-mix(in srgb, var(--signal) 12%, transparent),
+      transparent 44%
+    ),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    color-mix(in srgb, var(--ink-soft) 91%, transparent);
+  background-size:
+    auto,
+    3.5rem 3.5rem,
+    3.5rem 3.5rem,
+    auto;
+}

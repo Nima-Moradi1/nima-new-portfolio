@@ -3,6 +3,9 @@
 import { useRef, type MouseEvent, type PointerEvent } from "react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "@/components/theme/theme-provider";
+import { cn } from "@/lib/cn";
+import { themeLampClassNames as styles } from "./theme-lamp.class-names";
+import artwork from "./theme-lamp.module.css";
 
 export function ThemeLamp() {
   const t = useTranslations("Theme");
@@ -70,14 +73,14 @@ export function ThemeLamp() {
   const actionLabel = isDark ? t("toLight") : t("toDark");
 
   return (
-    <div className="theme-lamp" data-lit={isDark}>
-      <div className="theme-lamp__fixture" aria-hidden="true">
-        <span className="theme-lamp__glow" />
-        <span className="theme-lamp__shade" />
-        <span className="theme-lamp__bulb" />
+    <div className={styles.root} data-lit={isDark}>
+      <div className={cn(styles.fixture, artwork.fixture)} aria-hidden="true">
+        <span className={cn(styles.glow, artwork.glow)} />
+        <span className={cn(styles.shade, artwork.shade)} />
+        <span className={cn(styles.bulb, artwork.bulb)} />
       </div>
       <button
-        className="theme-lamp__pull"
+        className={styles.pull}
         type="button"
         aria-label={actionLabel}
         aria-pressed={isDark}
@@ -88,9 +91,12 @@ export function ThemeLamp() {
         onPointerCancel={handlePointerCancel}
         onClick={handleClick}
       >
-        <span className="theme-lamp__pendulum" aria-hidden="true">
-          <span className="theme-lamp__cord" />
-          <span className="theme-lamp__handle" />
+        <span
+          className={cn(styles.pendulum, artwork.pendulum)}
+          aria-hidden="true"
+        >
+          <span className={cn(styles.cord, artwork.cord)} />
+          <span className={cn(styles.handle, artwork.handle)} />
         </span>
       </button>
     </div>

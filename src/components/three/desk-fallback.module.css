@@ -1,0 +1,156 @@
+/*
+ * Used by: src/components/three/desk-fallback.tsx
+ * Reason: The no-WebGL fallback is a layered CSS illustration whose
+ * percentage geometry, generated lines, gradients, and pseudo-element lamp
+ * are substantially clearer as a single colocated artwork definition.
+ */
+.root {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(88%, 37rem);
+  aspect-ratio: 1.35;
+  transform: translate(-50%, -50%);
+}
+
+.root span,
+.root i {
+  position: absolute;
+  display: block;
+}
+
+.chair {
+  top: 20%;
+  left: 41%;
+  width: 18%;
+  height: 52%;
+  border: 1px solid var(--line-strong);
+  border-radius: 1.5rem 1.5rem 0.7rem 0.7rem;
+  background: var(--surface);
+}
+
+.person {
+  top: 18%;
+  left: 45%;
+  width: 10%;
+  height: 21%;
+  border-radius: 48% 48% 44% 44%;
+  background: #c78664;
+  box-shadow: 0 5.6rem 0 1.7rem var(--paper);
+}
+
+.hair {
+  top: 17%;
+  left: 45%;
+  width: 10%;
+  height: 8%;
+  border-radius: 60% 60% 28% 28%;
+  background: #171713;
+}
+
+.desk {
+  right: 5%;
+  bottom: 20%;
+  left: 5%;
+  height: 9%;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.55rem;
+  background: var(--surface-lift);
+  box-shadow:
+    2rem 4rem 0 -1.85rem var(--surface),
+    -2rem 4rem 0 -1.85rem var(--surface);
+}
+
+.monitor {
+  top: 34%;
+  left: 33%;
+  width: 34%;
+  height: 31%;
+  padding: 5% 4%;
+  border: 0.4rem solid var(--surface);
+  border-radius: 0.7rem;
+  background: #0d110e;
+  box-shadow: 0 1.4rem 0 -0.65rem var(--surface);
+}
+
+.monitor i {
+  right: 8%;
+  left: 8%;
+  height: 2px;
+  background: var(--signal);
+}
+
+.monitor i:nth-child(1) {
+  top: 24%;
+}
+
+.monitor i:nth-child(2) {
+  top: 42%;
+  right: 24%;
+  background: var(--violet);
+}
+
+.monitor i:nth-child(3) {
+  top: 60%;
+  right: 15%;
+  background: var(--coral);
+}
+
+.monitor i:nth-child(4) {
+  top: 78%;
+  right: 34%;
+}
+
+.keyboard {
+  bottom: 27%;
+  left: 39%;
+  width: 22%;
+  height: 5%;
+  transform: skewX(-12deg);
+  border: 1px solid var(--line-strong);
+  border-radius: 0.35rem;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--surface) 0 8%,
+    transparent 8% 10%
+  );
+}
+
+.resume {
+  bottom: 30%;
+  left: 13%;
+  width: 17%;
+  height: 22%;
+  transform: rotate(-8deg) skewY(5deg);
+  border-radius: 0.25rem;
+  background:
+    linear-gradient(var(--signal) 0 0) 18% 18% / 48% 4% no-repeat,
+    repeating-linear-gradient(#8a9085 0 2px, transparent 2px 12px),
+    var(--book-paper);
+  box-shadow: 0 0 2rem var(--signal-wash);
+}
+
+.lamp {
+  right: 12%;
+  bottom: 29%;
+  width: 12%;
+  height: 34%;
+  border-bottom: 0.45rem solid var(--signal);
+  border-left: 0.32rem solid var(--signal);
+  border-radius: 0 0 0 1rem;
+}
+
+.lamp::before {
+  position: absolute;
+  top: -0.3rem;
+  left: -1.25rem;
+  width: 2.4rem;
+  height: 1.5rem;
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+  background: var(--signal);
+  content: "";
+}
+
+:global(html[dir="rtl"]) .root {
+  transform: translate(-50%, -50%) scaleX(-1);
+}

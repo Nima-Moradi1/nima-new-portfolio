@@ -4,7 +4,11 @@ import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { usePortfolio } from "@/content/use-portfolio";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/motion/reveal";
+import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { cn } from "@/lib/cn";
+import { projectsSectionClassNames as styles } from "./projects-section.class-names";
+import artwork from "./projects-section.module.css";
 
 export function ProjectsSection() {
   const locale = useLocale();
@@ -17,13 +21,13 @@ export function ProjectsSection() {
 
   return (
     <section
-      className="section projects"
+      className={styles.root}
       id="work"
       aria-labelledby="work-title"
       data-depth-section
     >
-      <div className="page-shell" data-depth-plane>
-        <Reveal className="projects__header-frame">
+      <div className={styles.shell} data-depth-plane>
+        <Reveal className={cn(styles.headerFrame, artwork.headerFrame)}>
           <SectionHeading
             id="work-title"
             index={formatIndex(3)}
@@ -33,27 +37,32 @@ export function ProjectsSection() {
           />
         </Reveal>
 
-        <div className="projects__grid">
+        <div className={styles.grid}>
           {portfolio.projects.map((project, index) => {
             const content = (
               <article
-                className="project-card"
+                className={styles.card}
                 data-accent={project.accent}
                 data-featured={index === 0}
               >
-                <div className="project-card__visual">
+                <div className={styles.visual}>
                   <Image
+                    className={styles.image}
                     src={project.image}
                     alt={project.imageAlt}
                     fill
                     sizes="(max-width: 864px) 100vw, 33vw"
                   />
-                  <span aria-hidden="true">
+                  <Badge
+                    className={styles.number}
+                    variant="outline"
+                    aria-hidden="true"
+                  >
                     {formatIndex(Number(project.number))}
-                  </span>
+                  </Badge>
                 </div>
-                <div className="project-card__content">
-                  <div className="project-card__kicker">
+                <div className={styles.content}>
+                  <div className={styles.kicker}>
                     <span>{project.category}</span>
                     {project.href?.startsWith("/") ? (
                       <InternalArrow aria-hidden="true" size={19} />
@@ -61,13 +70,17 @@ export function ProjectsSection() {
                       <ArrowUpRight aria-hidden="true" size={19} />
                     )}
                   </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.summary}</p>
-                  <div className="tag-list">
+                  <h3 className={styles.title}>{project.title}</h3>
+                  <p className={styles.summary}>{project.summary}</p>
+                  <div className={styles.tags}>
                     {project.technologies.slice(0, 4).map((technology) => (
-                      <span key={technology}>
+                      <Badge
+                        className={styles.tag}
+                        variant="outline"
+                        key={technology}
+                      >
                         <bdi>{technology}</bdi>
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -78,7 +91,7 @@ export function ProjectsSection() {
               <Reveal key={project.id} delay={index * 0.08}>
                 {project.href?.startsWith("/") ? (
                   <Link
-                    className="project-card__link"
+                    className={styles.cardLink}
                     href={project.href}
                     aria-label={t("internalLabel", { title: project.title })}
                   >
@@ -86,7 +99,7 @@ export function ProjectsSection() {
                   </Link>
                 ) : project.href ? (
                   <a
-                    className="project-card__link"
+                    className={styles.cardLink}
                     href={project.href}
                     target="_blank"
                     rel="noreferrer noopener"

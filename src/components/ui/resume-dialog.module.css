@@ -1,0 +1,9 @@
+/*
+ * Used by: src/components/ui/resume-dialog.tsx
+ * Reason: The native dialog backdrop is a top-layer pseudo-element that
+ * cannot receive a Tailwind class directly.
+ */
+.dialog::backdrop {
+  background: rgba(4, 6, 5, 0.76);
+  backdrop-filter: blur(14px) saturate(75%);
+}

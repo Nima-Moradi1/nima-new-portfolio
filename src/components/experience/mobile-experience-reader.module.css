@@ -1,0 +1,55 @@
+/*
+ * Used by: src/components/experience/mobile-experience-reader.tsx
+ * Reason: Keeps the layered paper surface, center-spine pseudo artwork, and
+ * custom list-marker geometry colocated with the compact book reader.
+ * Third-party dependency: None.
+ */
+.book {
+  border: 1px solid color-mix(in srgb, var(--signal) 45%, var(--line));
+  background: color-mix(in srgb, var(--surface) 92%, var(--signal) 8%);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.26);
+  perspective: 80rem;
+}
+
+.paper {
+  background: var(--book-paper);
+}
+
+.paper::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 50%;
+  width: 1px;
+  transform: translateX(var(--center-from-inline-start));
+  background: var(--book-rule);
+  box-shadow:
+    -0.4rem 0 1rem rgba(0, 0, 0, 0.07),
+    0.4rem 0 1rem rgba(0, 0, 0, 0.07);
+  content: "";
+}
+
+.highlightsPage {
+  background: transparent;
+}
+
+.highlights > li::before {
+  position: absolute;
+  top: 0.45em;
+  inset-inline-start: 0;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: var(--book-accent);
+  content: "";
+}
+
+@media (max-width: 44rem) {
+  .paper::after {
+    display: none;
+  }
+
+  .highlightsPage {
+    background: color-mix(in srgb, var(--book-paper) 96%, var(--book-rule));
+  }
+}

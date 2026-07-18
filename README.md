@@ -35,16 +35,16 @@ After running the site locally, open `http://localhost:3000`. Verified desktop a
 
 ## Technology stack
 
-| Layer      | Choice                                      | Why                                                     |
-| ---------- | ------------------------------------------- | ------------------------------------------------------- |
-| Framework  | Next.js 16 App Router                       | Server-first rendering, metadata routes, deployment fit |
-| UI         | React 19 + TypeScript                       | Strong component boundaries and type safety             |
-| Styling    | Tailwind CSS 4 + authored CSS tokens        | Build integration plus precise art direction            |
-| 3D         | Three.js + React Three Fiber + Drei         | Declarative scene graph and adaptive rendering helpers  |
-| Motion     | Motion                                      | Reduced-motion-aware reveal and interaction primitives  |
-| Forms      | React Hook Form + Zod                       | Shared client/server validation contract                |
-| Tests      | Vitest + Testing Library + Playwright + axe | Unit, interaction, browser, and accessibility coverage  |
-| Deployment | Vercel-compatible Next.js build             | No machine-specific filesystem assumptions              |
+| Layer      | Choice                                      | Why                                                      |
+| ---------- | ------------------------------------------- | -------------------------------------------------------- |
+| Framework  | Next.js 16 App Router                       | Server-first rendering, metadata routes, deployment fit  |
+| UI         | React 19 + TypeScript + Radix primitives    | Typed, accessible component boundaries                   |
+| Styling    | Tailwind CSS 4 + semantic CSS tokens        | Utility-first composition with scoped artwork exceptions |
+| 3D         | Three.js + React Three Fiber + Drei         | Declarative scene graph and adaptive rendering helpers   |
+| Motion     | Motion                                      | Reduced-motion-aware reveal and interaction primitives   |
+| Forms      | React Hook Form + Zod                       | Shared client/server validation contract                 |
+| Tests      | Vitest + Testing Library + Playwright + axe | Unit, interaction, browser, and accessibility coverage   |
+| Deployment | Vercel-compatible Next.js build             | No machine-specific filesystem assumptions               |
 
 ## Architecture
 
@@ -60,7 +60,7 @@ flowchart TD
   API --> Mail["Resend or honest email fallback"]
 ```
 
-The page and content remain server-rendered. Client JavaScript is limited to the mobile menu, theme lamp, scroll reader, reveal animation, magnetic links, form behavior, and dynamically loaded scenes.
+The page and content remain server-rendered. Client JavaScript is limited to the mobile menu, theme lamp, scroll reader, reveal animation, form behavior, and dynamically loaded scenes.
 
 ## Directory structure
 

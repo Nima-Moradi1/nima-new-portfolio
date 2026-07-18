@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { routeStateClassNames as styles } from "@/app/route-state.class-names";
 
 export default function ErrorPage({
   error,
@@ -17,11 +18,11 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <main className="route-message">
-      <p>{t("errorEyebrow")}</p>
-      <h1>{t("errorTitle")}</h1>
-      <p>{t("errorDescription")}</p>
-      <button type="button" onClick={reset}>
+    <main className={styles.message}>
+      <p className={styles.eyebrow}>{t("errorEyebrow")}</p>
+      <h1 className={styles.title}>{t("errorTitle")}</h1>
+      <p className={styles.description}>{t("errorDescription")}</p>
+      <button className={styles.button} type="button" onClick={reset}>
         {t("errorRetry")}
       </button>
     </main>

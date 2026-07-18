@@ -1,0 +1,41 @@
+/*
+ * Used by: src/components/projects/xo-arena-gallery-image.tsx
+ * Reason: The capture placeholder combines an animated directional scan with a
+ * generated grid, so it remains a local artwork exception to utility styling.
+ */
+.skeleton {
+  background:
+    linear-gradient(
+      105deg,
+      transparent 32%,
+      color-mix(in srgb, var(--paper) 8%, transparent) 47%,
+      transparent 62%
+    ),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px), var(--ink-soft);
+  background-size:
+    220% 100%,
+    3rem 3rem,
+    3rem 3rem,
+    auto;
+  animation: capture-scan 1.5s linear infinite;
+  transition:
+    opacity 420ms ease,
+    visibility 420ms;
+}
+
+@keyframes capture-scan {
+  to {
+    background-position:
+      var(--skeleton-scan-end) 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

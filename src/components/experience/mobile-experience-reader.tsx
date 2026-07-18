@@ -3,7 +3,12 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/cn";
 import type { ExperienceItem } from "@/types/portfolio";
+import { mobileExperienceReaderClassNames as styles } from "./mobile-experience-reader.class-names";
+import artwork from "./mobile-experience-reader.module.css";
 
 type MobileExperienceReaderProps = {
   experiences: readonly ExperienceItem[];
@@ -29,90 +34,100 @@ export function MobileExperienceReader({
   }
 
   return (
-    <div
-      className="mobile-experience-reader page-shell"
-      data-direction={isRtl ? "rtl" : "ltr"}
-    >
-      <header className="mobile-experience-reader__heading">
-        <p>
-          <span>
+    <div className={styles.root} data-direction={isRtl ? "rtl" : "ltr"}>
+      <header className={styles.heading}>
+        <p className={styles.headingEyebrow}>
+          <span className={styles.headingIndex}>
             <bdi>{formatIndex(2)}</bdi>
           </span>
           {t("eyebrow")}
         </p>
-        <h2 id="experience-title">{t("title")}</h2>
-        <p>{t("mobileDescription")}</p>
+        <h2 className={styles.headingTitle} id="experience-title">
+          {t("title")}
+        </h2>
+        <p className={styles.headingDescription}>{t("mobileDescription")}</p>
       </header>
 
-      <div className="mobile-experience-reader__book">
-        <article aria-live="polite">
-          <div className="mobile-experience-reader__page mobile-experience-reader__page--summary">
-            <div className="mobile-experience-reader__folio">
-              <span>
+      <div className={cn(styles.book, artwork.book)}>
+        <article className={cn(styles.paper, artwork.paper)} aria-live="polite">
+          <div className={cn(styles.page, styles.summaryPage)}>
+            <div className={styles.folio}>
+              <span className={styles.folioNumber}>
                 <bdi>{activeNumber}</bdi>
               </span>
-              <span>
+              <span className={styles.folioPeriod}>
                 <bdi>{experience.period}</bdi>
               </span>
             </div>
-            <p className="mobile-experience-reader__company">
-              {experience.company}
-            </p>
-            <h3>{experience.role}</h3>
-            <p className="mobile-experience-reader__summary">
-              {experience.summary}
-            </p>
-            <div className="mobile-experience-reader__tags">
+            <p className={styles.company}>{experience.company}</p>
+            <h3 className={styles.pageTitle}>{experience.role}</h3>
+            <p className={styles.summary}>{experience.summary}</p>
+            <div className={styles.tags}>
               {experience.technologies.slice(0, 4).map((technology) => (
-                <span key={technology}>
+                <Badge
+                  className={styles.tag}
+                  key={technology}
+                  variant="outline"
+                >
                   <bdi>{technology}</bdi>
-                </span>
+                </Badge>
               ))}
             </div>
           </div>
 
-          <div className="mobile-experience-reader__page mobile-experience-reader__page--highlights">
-            <p className="mobile-experience-reader__chapter">
+          <div
+            className={cn(
+              styles.page,
+              styles.highlightsPage,
+              artwork.highlightsPage,
+            )}
+          >
+            <p className={styles.chapter}>
               {t("selectedSignals")} · {t("chapter", { number: activeNumber })}
             </p>
-            <ul>
+            <ul className={cn(styles.highlights, artwork.highlights)}>
               {experience.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+                <li className={styles.highlight} key={highlight}>
+                  {highlight}
+                </li>
               ))}
             </ul>
           </div>
         </article>
       </div>
 
-      <nav
-        className="mobile-experience-reader__navigation"
-        aria-label={t("chaptersLabel")}
-      >
-        <button
+      <nav className={styles.navigation} aria-label={t("chaptersLabel")}>
+        <Button
+          className={styles.navigationButton}
           type="button"
+          variant="outline"
+          size="icon"
           onClick={() => goToPage(activePage - 1)}
           disabled={activePage === 0}
           aria-label={t("previous")}
         >
           <PreviousIcon aria-hidden="true" size={18} />
-        </button>
-        <p>
-          <span>
+        </Button>
+        <p className={styles.counter}>
+          <span className={styles.activeCount}>
             <bdi>{activeNumber}</bdi>
           </span>
-          <i aria-hidden="true" />
+          <i className={styles.counterRule} aria-hidden="true" />
           <span>
             <bdi>{formatIndex(experiences.length)}</bdi>
           </span>
         </p>
-        <button
+        <Button
+          className={styles.navigationButton}
           type="button"
+          variant="outline"
+          size="icon"
           onClick={() => goToPage(activePage + 1)}
           disabled={activePage === experiences.length - 1}
           aria-label={t("next")}
         >
           <NextIcon aria-hidden="true" size={18} />
-        </button>
+        </Button>
       </nav>
     </div>
   );

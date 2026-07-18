@@ -21,10 +21,11 @@ test("does not emit deprecated Three.js warnings", async ({ page }) => {
     test.skip(true, "WebGL is unavailable in this browser runtime.");
   }
 
-  await expect(page.locator(".resume-touch-hint")).toHaveCSS(
-    "animation-name",
-    "resume-touch-float",
-  );
+  expect(
+    await page.locator(".resume-touch-hint").evaluate((element) => {
+      return getComputedStyle(element).animationName;
+    }),
+  ).toContain("resume-touch-float");
   expect(deprecatedWarnings).toEqual([]);
 });
 
@@ -466,7 +467,11 @@ test("keeps the mobile glass navbar readable with adjacent lamp access", async (
   await expect(pendulum).toHaveCount(1);
   await expect(handle).toHaveCount(1);
   await expect(page.locator(".theme-lamp__cord")).toHaveCount(1);
-  await expect(pendulum).toHaveCSS("animation-name", "lamp-cord-pendulum");
+  expect(
+    await pendulum.evaluate((element) => {
+      return getComputedStyle(element).animationName;
+    }),
+  ).toContain("lamp-cord-pendulum");
   const attachmentGap = await pendulum.evaluate((element) => {
     const pullHandle = element.querySelector<HTMLElement>(
       ".theme-lamp__handle",
@@ -611,10 +616,12 @@ test("compacts capabilities and presents in-progress education", async ({
   expect(third.y).toBeCloseTo(first.y, 0);
   expect(fourth.y).toBeGreaterThan(first.y + first.height - 1);
 
-  await expect(page.locator(".education-card__signal span").first()).toHaveCSS(
-    "animation-name",
-    "education-signal-pulse",
-  );
+  expect(
+    await page
+      .locator(".education-card__signal span")
+      .first()
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toContain("education-signal-pulse");
   await expect(
     page.getByText("Tehran Azad University · 2021 — Present"),
   ).toBeAttached();

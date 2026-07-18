@@ -1,0 +1,93 @@
+/*
+ * Used by: src/components/theme/theme-lamp.tsx
+ * Reason: Defines the illustrated shade, bulb, glow, cord, and handle geometry.
+ * These layered gradients and clip paths are materially clearer as a single
+ * component-scoped artwork block than as repeated arbitrary Tailwind values.
+ */
+.fixture {
+  filter: drop-shadow(0 0.45rem 0.45rem rgb(0 0 0 / 18%));
+  transform: perspective(12rem) rotateX(-2deg) rotateY(-8deg);
+}
+
+.shade {
+  clip-path: polygon(31% 0, 69% 0, 100% 88%, 92% 100%, 8% 100%, 0 88%);
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 16%), transparent 28%),
+    linear-gradient(135deg, var(--signal-soft), var(--signal) 55%, #315b08);
+  box-shadow: inset -0.35rem -0.15rem 0.5rem rgb(0 0 0 / 22%);
+}
+
+.bulb {
+  background: #d2ceba;
+  box-shadow: 0 0 0 rgb(255 215 119 / 0%);
+}
+
+.glow {
+  background: radial-gradient(circle, rgb(255 215 119 / 38%), transparent 66%);
+}
+
+.cord {
+  background: linear-gradient(var(--muted-bright), var(--signal));
+}
+
+.handle {
+  background: linear-gradient(90deg, var(--surface), var(--surface-lift));
+  box-shadow:
+    0 0.25rem 0.45rem rgb(0 0 0 / 20%),
+    0 0 0.6rem var(--signal-wash);
+}
+
+/*
+ * Used by: src/components/theme/theme-lamp.tsx
+ * Reason: The physical cord's pendulum motion is part of the lamp illustration,
+ * so its transform keyframes stay colocated with the artwork they animate.
+ */
+.pendulum {
+  animation: lamp-cord-pendulum 2.6s ease-in-out infinite;
+}
+
+@keyframes lamp-cord-pendulum {
+  0%,
+  100% {
+    transform: translateX(-50%) rotateZ(-8deg);
+  }
+
+  50% {
+    transform: translateX(-50%) rotateZ(8deg);
+  }
+}
+
+/*
+ * Used by: src/components/theme/theme-lamp.tsx
+ * Reason: The lamp's lit and dragging states alter the illustrated light source
+ * and physical shade, including a relational :has() selector.
+ */
+:global(.theme-lamp[data-lit="true"]) .bulb {
+  background: #fff5c8;
+  box-shadow:
+    0 0 0.65rem rgb(255 215 119 / 90%),
+    0 0 1.5rem rgb(255 215 119 / 56%);
+}
+
+:global(.theme-lamp:has(.theme-lamp__pull[data-dragging="true"])) .shade {
+  transform: translateX(-50%) rotate(1.5deg);
+}
+
+/*
+ * Used by: src/components/theme/theme-lamp.tsx
+ * Reason: Mirrors only the lamp fixture's perspective for RTL art direction;
+ * the interactive control and readable content must not be mirrored.
+ */
+:global(html[dir="rtl"]) .fixture {
+  transform: perspective(12rem) rotateX(-2deg) rotateY(8deg);
+}
+
+@media (max-width: 54rem) {
+  .fixture {
+    transform: scale(0.9) perspective(12rem) rotateX(-2deg) rotateY(-8deg);
+  }
+
+  :global(html[dir="rtl"]) .fixture {
+    transform: scale(0.9) perspective(12rem) rotateX(-2deg) rotateY(8deg);
+  }
+}

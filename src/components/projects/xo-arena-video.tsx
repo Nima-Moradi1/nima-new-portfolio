@@ -3,6 +3,9 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { preload } from "react-dom";
+import { cn } from "@/lib/cn";
+import { xoArenaVideoClassNames as styles } from "./xo-arena-video.class-names";
+import artwork from "./xo-arena-video.module.css";
 
 export function XoArenaVideo() {
   const t = useTranslations("XoArena");
@@ -47,8 +50,9 @@ export function XoArenaVideo() {
   }
 
   return (
-    <div className="xo-video" data-ready={ready}>
+    <div className={cn(styles.root, artwork.frame)} data-ready={ready}>
       <video
+        className={styles.video}
         ref={video}
         controls
         loop
@@ -72,17 +76,23 @@ export function XoArenaVideo() {
         />
       </video>
 
-      <div className="xo-video__loading" aria-hidden="true">
-        <span />
-        <p>{t("video.buffering")}</p>
-        <div>
-          <i style={{ width: `${buffered}%` }} />
+      <div
+        className={cn(styles.loading, artwork.loadingSurface)}
+        aria-hidden="true"
+      >
+        <span className={styles.spinner} />
+        <p className={styles.loadingLabel}>{t("video.buffering")}</p>
+        <div className={styles.progressTrack}>
+          <i
+            className={styles.progressIndicator}
+            style={{ width: `${buffered}%` }}
+          />
         </div>
       </div>
 
-      <div className="xo-video__chrome" aria-hidden="true">
-        <span>{t("video.capture")}</span>
-        <span>
+      <div className={styles.chrome} aria-hidden="true">
+        <span className={styles.chromeBadge}>{t("video.capture")}</span>
+        <span className={cn(styles.chromeBadge, styles.chromeDimensions)}>
           <bdi dir="ltr">{t("video.dimensions")}</bdi>
         </span>
       </div>

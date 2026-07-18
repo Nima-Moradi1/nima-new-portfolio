@@ -20,8 +20,13 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { XoArenaGalleryImage } from "@/components/projects/xo-arena-gallery-image";
 import { XoArenaVideo } from "@/components/projects/xo-arena-video";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { cn } from "@/lib/cn";
+import { xoArenaPageClassNames as styles } from "./page.class-names";
+import artwork from "./page.module.css";
 
 type XoArenaPageProps = {
   params: Promise<{ locale: string }>;
@@ -168,34 +173,37 @@ export default async function XoArenaPage({ params }: XoArenaPageProps) {
 
   return (
     <>
-      <a className="skip-link" href="#xo-main">
+      <a className={styles.skipLink} href="#xo-main">
         {t("skip")}
       </a>
       <SiteHeader />
 
-      <main className="xo-case" id="xo-main">
-        <section className="xo-case__hero" id="top">
-          <div className="xo-case__grid" aria-hidden="true" />
-          <div className="page-shell">
-            <Link className="xo-case__back" href="/#work">
+      <main className={styles.root} id="xo-main">
+        <section className={cn(styles.hero, artwork.hero)} id="top">
+          <div
+            className={cn(styles.heroGrid, artwork.heroGrid)}
+            aria-hidden="true"
+          />
+          <div className={styles.heroShell}>
+            <Link className={styles.back} href="/#work">
               <BackIcon aria-hidden="true" size={16} />
               {t("back")}
             </Link>
 
-            <div className="xo-case__hero-copy">
-              <div>
-                <p className="xo-case__eyebrow">
-                  <span>
+            <div className={styles.heroCopy}>
+              <div className={styles.heroCopyCell}>
+                <p className={styles.eyebrow}>
+                  <span className={styles.eyebrowIndex}>
                     <bdi>{formatIndex(1)}</bdi>
                   </span>
                   {t("hero.eyebrow")}
                 </p>
-                <h1>{t("hero.title")}</h1>
+                <h1 className={styles.heroTitle}>{t("hero.title")}</h1>
               </div>
-              <div className="xo-case__intro">
-                <p>{t("hero.intro")}</p>
-                <div className="xo-case__availability">
-                  <span aria-hidden="true" />
+              <div className={styles.intro}>
+                <p className={styles.introCopy}>{t("hero.intro")}</p>
+                <div className={styles.availability}>
+                  <span className={styles.availabilityDot} aria-hidden="true" />
                   {t("hero.availability")}
                 </div>
               </div>
@@ -205,55 +213,75 @@ export default async function XoArenaPage({ params }: XoArenaPageProps) {
           </div>
         </section>
 
-        <section className="xo-system" aria-labelledby="xo-system-title">
-          <div className="page-shell">
-            <div className="xo-section-heading">
-              <p>{t("system.eyebrow")}</p>
-              <div>
-                <h2 id="xo-system-title">{t("system.title")}</h2>
-                <p>{t("system.description")}</p>
+        <section className={styles.system} aria-labelledby="xo-system-title">
+          <div className={styles.shell}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.sectionEyebrow}>{t("system.eyebrow")}</p>
+              <div className={styles.sectionCopy}>
+                <h2 className={styles.sectionTitle} id="xo-system-title">
+                  {t("system.title")}
+                </h2>
+                <p className={styles.sectionDescription}>
+                  {t("system.description")}
+                </p>
               </div>
             </div>
 
-            <div className="xo-system__grid">
+            <div className={styles.systemGrid}>
               {engineeringSignals.map(({ id, title, text }, index) => {
                 const Icon = signalIcons[id];
                 return (
-                  <article key={id}>
-                    <div>
+                  <article className={styles.signalCard} key={id}>
+                    <div className={styles.signalHeader}>
                       <Icon aria-hidden="true" size={21} />
-                      <span>
+                      <span className={styles.signalIndex}>
                         <bdi>{formatIndex(index + 1)}</bdi>
                       </span>
                     </div>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
+                    <h3 className={styles.signalTitle}>{title}</h3>
+                    <p className={styles.signalText}>{text}</p>
                   </article>
                 );
               })}
             </div>
 
-            <div className="xo-tech" aria-label={t("system.stackLabel")}>
+            <div
+              className={styles.technologyList}
+              aria-label={t("system.stackLabel")}
+            >
               {technologies.map((technology) => (
-                <span key={technology}>
-                  <bdi dir="ltr">{technology}</bdi>
-                </span>
+                <Badge
+                  className={styles.technologyBadge}
+                  key={technology}
+                  variant="outline"
+                >
+                  <bdi className={styles.latinToken} dir="ltr">
+                    {technology}
+                  </bdi>
+                </Badge>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="xo-gallery" aria-labelledby="xo-gallery-title">
-          <div className="page-shell">
-            <div className="xo-section-heading">
-              <p>{t("gallery.eyebrow")}</p>
-              <div>
-                <h2 id="xo-gallery-title">{t("gallery.title")}</h2>
-                <p>{t("gallery.description")}</p>
+        <section
+          className={cn(styles.gallery, artwork.gallery)}
+          aria-labelledby="xo-gallery-title"
+        >
+          <div className={styles.shell}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.sectionEyebrow}>{t("gallery.eyebrow")}</p>
+              <div className={styles.sectionCopy}>
+                <h2 className={styles.sectionTitle} id="xo-gallery-title">
+                  {t("gallery.title")}
+                </h2>
+                <p className={styles.sectionDescription}>
+                  {t("gallery.description")}
+                </p>
               </div>
             </div>
 
-            <div className="xo-gallery__grid">
+            <div className={styles.galleryGrid}>
               {galleryItems.map((item) => {
                 const asset = galleryAssets[item.id];
                 return (
@@ -274,34 +302,52 @@ export default async function XoArenaPage({ params }: XoArenaPageProps) {
         </section>
 
         <section
-          className="xo-deployment"
+          className={cn(styles.deployment, artwork.deployment)}
           aria-labelledby="xo-deployment-title"
         >
-          <div className="page-shell xo-deployment__layout">
-            <div>
-              <p>{t("deployment.eyebrow")}</p>
-              <h2 id="xo-deployment-title">{t("deployment.title")}</h2>
+          <div className={styles.deploymentLayout}>
+            <div className={styles.deploymentHeading}>
+              <p className={styles.sectionEyebrow}>{t("deployment.eyebrow")}</p>
+              <h2 className={styles.deploymentTitle} id="xo-deployment-title">
+                {t("deployment.title")}
+              </h2>
             </div>
-            <div>
-              <p>{t("deployment.paragraph1")}</p>
-              <p>{t("deployment.paragraph2")}</p>
+            <div className={styles.deploymentCopy}>
+              <p className={styles.deploymentParagraph}>
+                {t("deployment.paragraph1")}
+              </p>
+              <p
+                className={cn(
+                  styles.deploymentParagraph,
+                  styles.deploymentParagraphMuted,
+                )}
+              >
+                {t("deployment.paragraph2")}
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="xo-next">
-          <div className="page-shell">
-            <p>{t("next.eyebrow")}</p>
-            <h2>{t("next.title")}</h2>
-            <div>
-              <Link href="/#work">
-                {t("next.work")}
-                <ForwardIcon aria-hidden="true" size={17} />
-              </Link>
-              <Link href="/#contact">
-                {t("next.contact")}
-                <ForwardIcon aria-hidden="true" size={17} />
-              </Link>
+        <section className={styles.next}>
+          <div className={styles.nextShell}>
+            <p className={styles.sectionEyebrow}>{t("next.eyebrow")}</p>
+            <h2 className={styles.nextTitle}>{t("next.title")}</h2>
+            <div className={styles.nextActions}>
+              <Button
+                asChild
+                className={cn(styles.nextLink, styles.nextPrimaryLink)}
+              >
+                <Link href="/#work">
+                  {t("next.work")}
+                  <ForwardIcon aria-hidden="true" size={17} />
+                </Link>
+              </Button>
+              <Button asChild className={styles.nextLink} variant="outline">
+                <Link href="/#contact">
+                  {t("next.contact")}
+                  <ForwardIcon aria-hidden="true" size={17} />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>

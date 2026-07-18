@@ -19,9 +19,14 @@ import { useTheme } from "@/components/theme/theme-provider";
 import { BookFallback } from "@/components/experience/book-fallback";
 import { MobileExperienceReader } from "@/components/experience/mobile-experience-reader";
 import { WebGLErrorBoundary } from "@/components/three/webgl-error-boundary";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useWebGLSupport } from "@/hooks/use-webgl-support";
 import { useCompactViewport } from "@/hooks/use-compact-viewport";
+import { cn } from "@/lib/cn";
 import type { ExperienceItem } from "@/types/portfolio";
+import { experienceBookClassNames as styles } from "./experience-book.class-names";
+import artwork from "./experience-book.module.css";
 
 const ExperienceBookScene = dynamic(
   () =>
@@ -42,28 +47,32 @@ function ExperienceListFallback({ experiences }: ExperienceBookProps) {
     format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
 
   return (
-    <div className="experience-fallback page-shell">
-      <div className="experience-fallback__heading">
-        <span>
+    <div className={styles.fallbackRoot}>
+      <div className={styles.fallbackHeading}>
+        <span className={styles.fallbackEyebrow}>
           <bdi>{formatIndex(2)}</bdi> · {t("eyebrow")}
         </span>
-        <h2 id="experience-title">{t("fallbackTitle")}</h2>
-        <p>{t("fallbackDescription")}</p>
+        <h2 className={styles.fallbackTitle} id="experience-title">
+          {t("fallbackTitle")}
+        </h2>
+        <p className={styles.fallbackDescription}>{t("fallbackDescription")}</p>
       </div>
-      <ol>
+      <ol className={styles.fallbackList}>
         {experiences.map((experience, index) => (
-          <li key={experience.id}>
-            <article>
-              <span>
+          <li className={styles.fallbackItem} key={experience.id}>
+            <article className={styles.fallbackArticle}>
+              <span className={styles.fallbackIndex}>
                 <bdi>{formatIndex(index + 1)}</bdi>
               </span>
-              <p>
+              <p className={styles.fallbackPeriod}>
                 <bdi>{experience.period}</bdi>
               </p>
-              <h3>{experience.role}</h3>
-              <strong>{experience.company}</strong>
-              <p>{experience.summary}</p>
-              <ul>
+              <h3 className={styles.fallbackRole}>{experience.role}</h3>
+              <strong className={styles.fallbackCompany}>
+                {experience.company}
+              </strong>
+              <p className={styles.fallbackSummary}>{experience.summary}</p>
+              <ul className={styles.fallbackHighlights}>
                 {experience.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
                 ))}
@@ -179,29 +188,31 @@ function DesktopExperienceBook({
   return (
     <div
       ref={root}
-      className="experience-book"
+      className={styles.root}
       style={readerStyle}
       onKeyDown={handleKeyDown}
       data-direction={isRtl ? "rtl" : "ltr"}
     >
       <div
-        className="experience-book__stage"
+        className={cn(styles.stage, artwork.stage)}
         role="region"
         aria-label={t("regionLabel")}
         tabIndex={0}
       >
-        <header className="experience-book__heading page-shell">
-          <p>
-            <span>
+        <header className={styles.heading}>
+          <p className={styles.headingEyebrow}>
+            <span className={styles.headingIndex}>
               <bdi>{formatIndex(2)}</bdi>
             </span>
             {t("eyebrow")}
           </p>
-          <h2 id="experience-title">{t("title")}</h2>
-          <p>{t("desktopDescription")}</p>
+          <h2 className={styles.headingTitle} id="experience-title">
+            {t("title")}
+          </h2>
+          <p className={styles.headingDescription}>{t("desktopDescription")}</p>
         </header>
 
-        <div className="experience-book__scene" aria-hidden="true">
+        <div className={cn(styles.scene, artwork.scene)} aria-hidden="true">
           <WebGLErrorBoundary fallback={<BookFallback />}>
             {webGLSupported === null || !shouldMountScene ? (
               <BookFallback />
@@ -218,79 +229,94 @@ function DesktopExperienceBook({
           </WebGLErrorBoundary>
         </div>
 
-        <article className="experience-book__page-copy" aria-hidden="true">
-          <div className="experience-book__page experience-book__page--left experience-book__page--summary">
-            <div className="experience-book__folio">
-              <span>
+        <article
+          className={cn(styles.pageCopy, artwork.pageCopy)}
+          aria-hidden="true"
+        >
+          <div className={cn(styles.page, styles.summaryPage)}>
+            <div className={styles.folio}>
+              <span className={styles.folioToken}>
                 <bdi>{activeNumber}</bdi>
               </span>
-              <span>
+              <span className={styles.folioPeriod}>
                 <bdi>{activeExperience.period}</bdi>
               </span>
             </div>
-            <p className="experience-book__company">
-              {activeExperience.company}
-            </p>
-            <h3>{activeExperience.role}</h3>
-            <p className="experience-book__summary">
-              {activeExperience.summary}
-            </p>
-            <div className="experience-book__tags">
+            <p className={styles.company}>{activeExperience.company}</p>
+            <h3 className={styles.pageTitle}>{activeExperience.role}</h3>
+            <p className={styles.summary}>{activeExperience.summary}</p>
+            <div className={styles.tags}>
               {activeExperience.technologies.slice(0, 5).map((technology) => (
-                <span key={technology}>
+                <Badge
+                  className={styles.tag}
+                  key={technology}
+                  variant="outline"
+                >
                   <bdi>{technology}</bdi>
-                </span>
+                </Badge>
               ))}
             </div>
           </div>
-          <div className="experience-book__page experience-book__page--right experience-book__page--highlights">
-            <div className="experience-book__chapter-label">
-              <span>{t("selectedSignals")}</span>
-              <span>{t("chapter", { number: activeNumber })}</span>
+          <div className={cn(styles.page, styles.highlightsPage)}>
+            <div className={styles.chapterLabel}>
+              <span className={styles.chapterTitle}>
+                {t("selectedSignals")}
+              </span>
+              <span className={styles.chapterNumber}>
+                {t("chapter", { number: activeNumber })}
+              </span>
             </div>
-            <ul>
+            <ul className={cn(styles.highlights, artwork.highlights)}>
               {activeExperience.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+                <li className={styles.highlight} key={highlight}>
+                  {highlight}
+                </li>
               ))}
             </ul>
           </div>
         </article>
 
-        <div className="experience-book__navigation page-shell">
-          <div className="experience-book__instruction" aria-hidden="true">
+        <div className={styles.navigation}>
+          <div className={styles.instruction} aria-hidden="true">
             <ArrowDown size={15} />
             {t("scrollToTurn")}
           </div>
-          <div className="experience-book__pager">
-            <button
+          <div className={styles.pager}>
+            <Button
+              className={styles.pagerButton}
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => goToPage(activePage - 1)}
               disabled={activePage === 0}
               aria-label={t("previous")}
             >
               <PreviousIcon aria-hidden="true" size={17} />
-            </button>
-            <p aria-live="polite">
-              <span>
+            </Button>
+            <p className={styles.pagerCounter} aria-live="polite">
+              <span className={styles.pagerActive}>
                 <bdi>{activeNumber}</bdi>
               </span>
-              <i aria-hidden="true" />
+              <i className={styles.pagerRule} aria-hidden="true" />
               <span>
                 <bdi>{formatIndex(experiences.length)}</bdi>
               </span>
             </p>
-            <button
+            <Button
+              className={styles.pagerButton}
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => goToPage(activePage + 1)}
               disabled={activePage === experiences.length - 1}
               aria-label={t("next")}
             >
               <NextIcon aria-hidden="true" size={17} />
-            </button>
+            </Button>
           </div>
         </div>
 
-        <ol className="sr-only">
+        <ol className={styles.visuallyHidden}>
           {experiences.map((experience) => (
             <li key={experience.id}>
               <article>

@@ -18,6 +18,9 @@ import { Pointer } from "lucide-react";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { Theme } from "@/components/theme/theme-provider";
+import { cn } from "@/lib/cn";
+import { deskSceneClassNames as styles } from "./desk-scene.class-names";
+import artwork from "./desk-scene.module.css";
 
 const EDITOR_CODE = `type SignalProps = {
   accountId: string;
@@ -572,7 +575,10 @@ function ResumePaper({
         zIndexRange={[4, 3]}
         style={{ pointerEvents: "none" }}
       >
-        <span className="resume-touch-hint" aria-hidden="true">
+        <span
+          className={cn(styles.resumeHint, artwork.resumeHint)}
+          aria-hidden="true"
+        >
           <Pointer aria-hidden="true" size={12} strokeWidth={1.8} />
         </span>
       </Html>
@@ -673,7 +679,7 @@ function PullHandHint({
         style={{ pointerEvents: "none" }}
       >
         <span
-          className="lamp-pull-hand-copy"
+          className={styles.pullHandCopy}
           data-lamp-hand-hint
           aria-hidden="true"
         >
@@ -856,7 +862,7 @@ function DeskLamp({
           </mesh>
           <Html center zIndexRange={[4, 3]}>
             <span
-              className="desk-lamp__pull-target"
+              className={styles.pullTarget}
               aria-hidden="true"
               onPointerDown={(event) => {
                 if (event.button !== 0) return;

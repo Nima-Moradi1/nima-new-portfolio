@@ -1,0 +1,26 @@
+export const projectsSectionClassNames = {
+  root: "section projects relative border-b border-border py-[clamp(1.25rem,2vw,2rem)] [--projects-accent-angle:135deg] [--projects-glow-position:88%] [background:linear-gradient(var(--projects-accent-angle),rgba(184,255,69,0.025),transparent_32%),var(--ink-soft)] rtl:[--projects-accent-angle:225deg] rtl:[--projects-glow-position:12%] [html[data-theme=light]_&]:[background:radial-gradient(circle_at_var(--projects-glow-position)_12%,rgba(77,122,18,0.12),transparent_27rem),linear-gradient(var(--projects-accent-angle),rgba(77,122,18,0.05),transparent_32%),linear-gradient(rgba(23,26,21,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(23,26,21,0.035)_1px,transparent_1px),rgba(231,227,215,0.86)] [html[data-theme=light]_&]:[background-size:auto,auto,5rem_5rem,5rem_5rem,auto]",
+  shell: "page-shell mx-auto w-full max-w-content px-[var(--gutter)]",
+  headerFrame:
+    "projects__header-frame relative mb-[clamp(0.65rem,1vw,1rem)] overflow-hidden rounded-lg border border-transparent p-[clamp(0.55rem,0.8vw,0.8rem)] shadow-[inset_0_1px_color-mix(in_srgb,var(--paper)_7%,transparent),0_1.5rem_5rem_rgba(0,0,0,0.15)] max-[38rem]:p-[0.6rem] [&_.section-heading]:mb-0",
+  grid: "projects__grid grid grid-cols-3 items-stretch gap-[clamp(0.4rem,0.7vw,0.65rem)] max-[54rem]:mx-auto max-[54rem]:max-w-[44rem] max-[54rem]:grid-cols-1",
+  cardLink:
+    "project-card__link block h-full rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary",
+  card: "project-card group/project-card grid h-full min-h-0 grid-rows-[auto_1fr] overflow-hidden rounded-lg border border-border bg-card shadow-soft [--project-accent:var(--signal)] [transition:transform_var(--duration-base)_var(--ease-out),border-color_var(--duration-base)_ease] hover:-translate-y-[0.35rem] hover:border-[color-mix(in_srgb,var(--project-accent)_55%,transparent)] data-[accent=coral]:[--project-accent:var(--brand-coral)] data-[accent=violet]:[--project-accent:var(--brand-violet)] motion-reduce:hover:translate-y-0 [@media(hover:none)]:hover:translate-y-0 [@media(pointer:coarse)]:hover:translate-y-0 [html[data-theme=light]_&]:shadow-[inset_0_1px_0_rgba(255,255,255,0.82),0_1.5rem_4rem_rgba(58,48,29,0.13)]",
+  visual:
+    "project-card__visual relative isolate aspect-[16/10] min-h-0 overflow-hidden [--project-sheen-angle:115deg] [background:linear-gradient(145deg,var(--surface),var(--ink))] after:pointer-events-none after:absolute after:inset-0 after:z-1 after:[background:linear-gradient(180deg,transparent_56%,rgba(4,7,5,0.48)),linear-gradient(var(--project-sheen-angle),rgba(255,255,255,0.08),transparent_28%)] after:content-[''] rtl:[--project-sheen-angle:245deg] [html[data-theme=light]_&]:[background:radial-gradient(circle_at_50%_50%,color-mix(in_srgb,var(--project-accent)_25%,transparent),transparent_45%),radial-gradient(circle_at_20%_12%,rgba(255,255,255,0.9),transparent_34%),linear-gradient(rgba(23,26,21,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(23,26,21,0.09)_1px,transparent_1px),linear-gradient(145deg,#f3efe2,#d8d1bd)] [html[data-theme=light]_&]:[background-size:auto,auto,3.5rem_3.5rem,3.5rem_3.5rem,auto] [html[data-theme=light]_&]:shadow-[inset_0_1px_rgba(255,255,255,0.9),inset_0_-2.5rem_5rem_rgba(68,60,43,0.08)] [html[data-theme=light]_&]:after:[background:linear-gradient(var(--project-sheen-angle),transparent_25%,rgba(255,255,255,0.44),transparent_48%),radial-gradient(circle_at_50%_115%,rgba(77,122,18,0.13),transparent_42%)]",
+  image:
+    "object-cover object-top [direction:ltr] [transition:transform_750ms_var(--ease-out),filter_750ms_ease] group-hover/project-card:scale-[1.035] group-hover/project-card:saturate-[1.08] group-hover/project-card:contrast-[1.02] motion-reduce:transition-none motion-reduce:group-hover/project-card:scale-100 motion-reduce:group-hover/project-card:saturate-100 motion-reduce:group-hover/project-card:contrast-100",
+  number:
+    "absolute top-5 start-5 z-2 rounded-full border-[color-mix(in_srgb,var(--project-accent)_52%,transparent)] bg-[rgba(8,11,9,0.74)] px-[0.55rem] py-[0.42rem] font-mono text-[0.62rem] font-normal text-[var(--project-accent)] [unicode-bidi:plaintext]",
+  content:
+    "project-card__content flex min-w-0 flex-col bg-[linear-gradient(180deg,rgba(255,255,255,0.018),transparent)] p-[clamp(0.7rem,1vw,0.95rem)]",
+  kicker:
+    "project-card__kicker flex items-center justify-between gap-4 font-mono text-[0.58rem] tracking-[0.08em] text-muted-foreground uppercase [&_svg]:text-[var(--project-accent)]",
+  title:
+    "mt-[clamp(0.35rem,0.5vw,0.45rem)] mb-1 text-[clamp(1.65rem,2.35vw,2.65rem)] leading-[0.95] font-[520] tracking-[-0.065em] [html[lang=fa]_&]:max-w-[24ch] [html[lang=fa]_&]:text-[clamp(1.16rem,1.65vw,1.86rem)] [html[lang=fa]_&]:leading-[1.25] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:break-words",
+  summary:
+    "max-w-[42rem] text-[0.82rem] leading-[1.58] text-[var(--muted-bright)]",
+  tags: "tag-list mt-auto flex flex-wrap gap-2 pt-[0.45rem]",
+  tag: "rounded-full border-border bg-transparent px-[0.55rem] py-[0.36rem] font-mono text-[0.54rem] font-normal text-[var(--muted-bright)] [unicode-bidi:plaintext]",
+} as const;

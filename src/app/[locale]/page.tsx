@@ -13,6 +13,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { homePageClassNames as styles } from "./page.class-names";
 
 export default async function HomePage({
   params,
@@ -27,7 +28,7 @@ export default async function HomePage({
   return (
     <LandingPreloader>
       <HashScrollManager />
-      <a className="skip-link" href="#main-content">
+      <a className={styles.skipLink} href="#main-content">
         {t("skipMain")}
       </a>
       <SiteHeader />

@@ -1,0 +1,72 @@
+/*
+ * Used by: src/app/[locale]/projects/xo-arena/page.tsx
+ * Reason: The case-study hero, grid veil, gallery glow, and deployment wash are
+ * generated, direction-sensitive artwork rather than reusable layout styles.
+ */
+.hero {
+  background:
+    radial-gradient(
+      circle at 82% 15%,
+      color-mix(in srgb, var(--signal) 10%, transparent),
+      transparent 32rem
+    ),
+    var(--ink);
+}
+
+.heroGrid {
+  background-image:
+    linear-gradient(var(--book-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--book-grid) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.gallery {
+  background:
+    radial-gradient(
+      circle at 86% 15%,
+      color-mix(in srgb, var(--violet) 7%, transparent),
+      transparent 30rem
+    ),
+    var(--ink);
+}
+
+.deployment {
+  background:
+    linear-gradient(
+      130deg,
+      color-mix(in srgb, var(--signal) 4%, transparent),
+      transparent 42%
+    ),
+    var(--ink-soft);
+}
+
+:global(html[dir="rtl"]) .hero {
+  background:
+    radial-gradient(
+      circle at 18% 15%,
+      color-mix(in srgb, var(--signal) 10%, transparent),
+      transparent 32rem
+    ),
+    var(--ink);
+}
+
+:global(html[dir="rtl"]) .gallery {
+  background:
+    radial-gradient(
+      circle at 14% 15%,
+      color-mix(in srgb, var(--violet) 7%, transparent),
+      transparent 30rem
+    ),
+    var(--ink);
+}
+
+:global(html[dir="rtl"]) .deployment {
+  background:
+    linear-gradient(
+      230deg,
+      color-mix(in srgb, var(--signal) 4%, transparent),
+      transparent 42%
+    ),
+    var(--ink-soft);
+}
