@@ -1,7 +1,7 @@
 export const capabilityTimelineClassNames = {
-  root: "capability-timeline relative h-auto min-h-0 pb-[clamp(1.25rem,2.25vw,2rem)] min-[54.01rem]:pb-2",
+  root: "capability-timeline relative h-auto min-h-0 pb-[clamp(1.25rem,2.25vw,2rem)] min-[54.01rem]:pb-2  mx-auto rounded-lg",
   stage:
-    "capability-timeline__stage relative isolate h-auto min-h-0 touch-pan-y overflow-clip pt-[calc(var(--header-height)+1.5rem)] pb-[1.1rem] focus-visible:outline-2 focus-visible:-outline-offset-[0.6rem] focus-visible:outline-primary min-[54.01rem]:pt-[calc(var(--header-height)+3rem)] min-[54.01rem]:pb-2",
+    "capability-timeline__stage relative isolate h-auto min-h-0 touch-pan-y overflow-clip pt-[calc(var(--header-height)+1.5rem)] pb-[1.1rem] focus-visible:outline-2 focus-visible:-outline-offset-[0.6rem] focus-visible:outline-primary min-[54.01rem]:pt-[calc(var(--header-height)+3rem)] min-[54.01rem]:pb-2 rounded-lg p-1",
   chrome:
     "capability-timeline__chrome page-shell pointer-events-none absolute inset-x-0 top-8 z-4 mx-auto flex w-full max-w-content items-center justify-between gap-8 px-[var(--gutter)] min-[54.01rem]:top-[calc(var(--header-height)-64px)]",
   chromeLabel:
