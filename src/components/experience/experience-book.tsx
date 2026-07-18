@@ -143,7 +143,7 @@ function DesktopExperienceBook({
 
   const activeExperience = experiences[activePage];
   const readerStyle = {
-    "--book-scroll-height": `${experiences.length * 32}svh`,
+    "--book-scroll-height": `${experiences.length * 85}svh`,
   } as CSSProperties;
 
   return (

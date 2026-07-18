@@ -4308,6 +4308,43 @@ ol {
   bottom: calc(var(--header-height) + 2.5rem);
 }
 
+@media (min-width: 54.01rem) {
+  .experience-book__stage {
+    --experience-book-content-top: calc(var(--header-height) + 0.55rem);
+    --experience-book-heading-width: clamp(18rem, 31vw, 28rem);
+    --experience-book-visual-offset: clamp(-5rem, -7vh, -3.5rem);
+    --book-scene-left: var(--experience-book-heading-width);
+  }
+
+  .experience-book__heading {
+    top: var(--experience-book-content-top);
+    right: auto;
+    left: 0;
+    width: var(--experience-book-heading-width);
+    height: fit-content;
+    margin: 0;
+    padding: 0 clamp(1.25rem, 3vw, 3rem) 0 var(--gutter);
+  }
+
+  .experience-book__scene {
+    top: var(--experience-book-content-top);
+    right: 0;
+    bottom: calc(var(--header-height) + 1rem);
+    left: var(--experience-book-heading-width);
+    margin: 0;
+    padding: 0;
+    transform: none;
+  }
+
+  .experience-book__scene > canvas {
+    transform: translateY(var(--experience-book-visual-offset));
+  }
+
+  .experience-book__page-copy {
+    top: calc(51% + var(--experience-book-visual-offset));
+  }
+}
+
 .experience-fallback {
   padding-block: clamp(1.75rem, 3vw, 3rem);
 }
