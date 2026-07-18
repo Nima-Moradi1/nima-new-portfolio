@@ -61,8 +61,6 @@ export function SiteFooter() {
         />
       </a>
       <p className={styles.copy}>
-        {t("statement")}
-        <br />
         {t("copyright", { year, name: portfolio.identity.name })}
       </p>
       <div className={styles.links}>
