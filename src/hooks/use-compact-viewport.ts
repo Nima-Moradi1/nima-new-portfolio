@@ -2,7 +2,12 @@
 
 import { useSyncExternalStore } from "react";
 
-const COMPACT_QUERY = "(max-width: 54rem), (pointer: coarse)";
+// The overlaid two-page WebGL book only has a comfortable reading measure on
+// genuinely large, tall screens. Laptops with a short viewport and tablets get
+// the intrinsic-height reader so translated copy is never squeezed into the
+// decorative canvas projection.
+const COMPACT_QUERY =
+  "(max-width: 72rem), (max-height: 48rem), (pointer: coarse)";
 
 function subscribe(callback: () => void) {
   const query = window.matchMedia(COMPACT_QUERY);

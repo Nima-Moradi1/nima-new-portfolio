@@ -28,14 +28,12 @@ test("does not emit deprecated Three.js warnings", async ({ page }) => {
   expect(deprecatedWarnings).toEqual([]);
 });
 
-test("prepares the first landing frame once and reuses the cached result", async ({
+test("prepares a complete first frame on every document load", async ({
   page,
 }) => {
   await page.addInitScript(() => {
-    if (!window.sessionStorage.getItem("portfolio-test-cleared")) {
-      window.localStorage.removeItem("nima-portfolio-ready-v5");
-      window.sessionStorage.setItem("portfolio-test-cleared", "true");
-    }
+    // A stale value from the retired cache must never bypass readiness.
+    window.localStorage.setItem("nima-portfolio-ready-v5", "ready");
   });
   await page.goto("/");
 
@@ -47,6 +45,10 @@ test("prepares the first landing frame once and reuses the cached result", async
     "true",
   );
   await expect(preloader).toHaveCount(0, { timeout: 10_000 });
+  await expect(page.locator(".landing-shell")).toHaveAttribute(
+    "data-hero-readiness",
+    /^(webgl-frame|static-fallback)$/,
+  );
   await expect(
     page.getByRole("heading", {
       name: /I build for scalability, performance, and creativity/i,
@@ -54,11 +56,21 @@ test("prepares the first landing frame once and reuses the cached result", async
   ).toBeVisible();
 
   await page.reload();
-  await expect(page.locator("html")).toHaveAttribute(
-    "data-portfolio-cached",
+  await expect(preloader).toBeVisible();
+  await expect(page.locator(".landing-content")).toHaveAttribute(
+    "aria-hidden",
     "true",
   );
-  await expect(page.locator(".landing-preloader")).not.toBeVisible();
+  await expect(preloader).toHaveCount(0, { timeout: 20_000 });
+  await expect(page.locator(".landing-shell")).toHaveAttribute(
+    "data-hero-readiness",
+    /^(webgl-frame|static-fallback)$/,
+  );
+  await expect(
+    page.getByRole("heading", {
+      name: /I build for scalability, performance, and creativity/i,
+    }),
+  ).toBeVisible();
 });
 
 test("renders the portfolio narrative and navigation", async ({ page }) => {
@@ -622,51 +634,28 @@ test("moves capabilities across a finite horizontal timeline", async ({
   });
 
   const timeline = page.locator(".capability-timeline");
-  const track = page.locator(".capability-timeline__track");
-  await expect(timeline).toHaveAttribute("data-motion", "depth-linked");
+  const stage = page.locator(".capability-timeline__stage");
+  const viewport = page.locator(".capability-timeline__viewport");
+  await expect(timeline).toHaveAttribute("data-motion", "native");
   await expect(page.locator(".capability-timeline__item")).toHaveCount(5);
-
+  await expect(stage).toHaveCSS("position", "relative");
+  await expect(viewport).toHaveCSS("overflow-x", "auto");
+  await expect(stage).toHaveAttribute("data-horizontal-drag-ready", "true");
   await expect
     .poll(() =>
-      timeline.evaluate((element) =>
-        Math.max((element as HTMLElement).offsetHeight - window.innerHeight, 0),
-      ),
+      viewport.evaluate((element) => element.scrollWidth - element.clientWidth),
     )
     .toBeGreaterThan(300);
-  const travel = await timeline.evaluate((element) =>
-    Math.max((element as HTMLElement).offsetHeight - window.innerHeight, 0),
-  );
-  const timelineTop = await timeline.evaluate(
-    (element) => element.getBoundingClientRect().top + window.scrollY,
-  );
 
-  async function forceScroll(target: number) {
-    await expect
-      .poll(() =>
-        page.evaluate((nextTop) => {
-          document.documentElement.style.scrollBehavior = "auto";
-          document.body.style.scrollBehavior = "auto";
-          window.scrollTo(0, nextTop);
-          return Math.abs(window.scrollY - nextTop);
-        }, target),
-      )
-      .toBeLessThan(3);
-  }
-
-  await forceScroll(timelineTop + travel * 0.56);
+  await viewport.evaluate((element) => {
+    const maximum = element.scrollWidth - element.clientWidth;
+    element.scrollTo({ left: maximum * 0.56, behavior: "auto" });
+  });
 
   await expect(timeline).toHaveAttribute("data-active-index", "2");
-  await expect(page.locator(".capability-timeline__stage")).toHaveCSS(
-    "position",
-    "sticky",
-  );
-  const horizontalOffset = await track.evaluate((element) => {
-    const transform = getComputedStyle(element).transform;
-    return transform === "none" ? 0 : new DOMMatrix(transform).m41;
+  await viewport.evaluate((element) => {
+    element.scrollTo({ left: element.scrollWidth, behavior: "auto" });
   });
-  expect(horizontalOffset).toBeLessThan(-100);
-
-  await forceScroll(timelineTop + travel);
   await expect(timeline).toHaveAttribute("data-active-index", "4");
   await expect(
     page.getByText("Tehran Azad University · 2021 — Present"),
@@ -767,7 +756,7 @@ test("drags the mobile capability timeline from every section surface", async ({
   await dragFrom(".capability-timeline__stage", 0.72, 0.17);
   await dragFrom(".capability-timeline__card", 0.72);
   await dragFrom(".capability-timeline__card > ul li", 0.72);
-  await dragFrom(".capability-timeline__steps", 0.92);
+  await dragFrom(".capability-timeline__controls", 0.72);
 });
 
 test("experience reader exposes scroll and button-driven page navigation", async ({

@@ -52,9 +52,11 @@ const KEY_POSITIONS = Array.from({ length: 60 }, (_, index) => {
 
 type DeskSceneProps = {
   active: boolean;
+  pullLabel: string;
   reducedMotion: boolean;
   theme: Theme;
   onOpenResume: () => void;
+  onReady: () => void;
   onToggleTheme: () => void;
 };
 
@@ -579,10 +581,12 @@ function ResumePaper({
 }
 
 function PullHandHint({
+  label,
   palette,
   reducedMotion,
   visible,
 }: {
+  label: string;
   palette: Palette;
   reducedMotion: boolean;
   visible: boolean;
@@ -673,7 +677,7 @@ function PullHandHint({
           data-lamp-hand-hint
           aria-hidden="true"
         >
-          Pull
+          {label}
         </span>
       </Html>
     </group>
@@ -681,11 +685,13 @@ function PullHandHint({
 }
 
 function DeskLamp({
+  pullLabel,
   theme,
   palette,
   reducedMotion,
   onToggle,
 }: {
+  pullLabel: string;
   theme: Theme;
   palette: Palette;
   reducedMotion: boolean;
@@ -766,6 +772,7 @@ function DeskLamp({
   return (
     <group position={[2.68, 0.32, -0.2]}>
       <PullHandHint
+        label={pullLabel}
         palette={palette}
         reducedMotion={reducedMotion}
         visible={!hasInteracted}
@@ -884,6 +891,7 @@ function DeskLamp({
 
 function Workstation({
   active,
+  pullLabel,
   reducedMotion,
   theme,
   onOpenResume,
@@ -946,6 +954,7 @@ function Workstation({
       <Keyboard palette={palette} />
       <ResumePaper palette={palette} onOpen={onOpenResume} />
       <DeskLamp
+        pullLabel={pullLabel}
         theme={theme}
         palette={palette}
         reducedMotion={reducedMotion}
@@ -962,6 +971,28 @@ function Workstation({
       </mesh>
     </group>
   );
+}
+
+function FirstUsableFrame({ onReady }: { onReady: () => void }) {
+  const invalidate = useThree((state) => state.invalidate);
+  const reported = useRef(false);
+  const readyFrame = useRef(0);
+
+  useLayoutEffect(() => {
+    invalidate();
+    return () => window.cancelAnimationFrame(readyFrame.current);
+  }, [invalidate]);
+
+  useFrame(() => {
+    if (reported.current) return;
+    reported.current = true;
+
+    // Fiber renders the canvas after frame subscribers run. Reporting on the
+    // following browser frame guarantees that the first composed frame exists.
+    readyFrame.current = window.requestAnimationFrame(onReady);
+  }, -1000);
+
+  return null;
 }
 
 export function DeskScene(props: DeskSceneProps) {
@@ -984,6 +1015,7 @@ export function DeskScene(props: DeskSceneProps) {
       performance={{ min: 0.55 }}
       shadows={false}
     >
+      <FirstUsableFrame onReady={props.onReady} />
       <ResponsiveCamera />
       <ambientLight intensity={isDark ? 1.35 : 2.6} />
       <directionalLight

@@ -1,9 +1,22 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { useFormatter, useTranslations } from "next-intl";
+import {
+  LandingReadinessContext,
+  type LandingHeroReadiness,
+} from "@/components/loading/landing-readiness";
+import { usePortfolio } from "@/content/use-portfolio";
 
-const CACHE_KEY = "nima-portfolio-ready-v5";
 const MINIMUM_DISPLAY_MS = 1100;
+const MAXIMUM_PREPARATION_MS = 15_000;
 
 type LandingPreloaderProps = {
   children: ReactNode;
@@ -11,114 +24,208 @@ type LandingPreloaderProps = {
 
 type BootState = "loading" | "exiting" | "ready";
 
-function preloadImage(source: string) {
+type Deferred<T> = {
+  promise: Promise<T>;
+  resolve: (value: T) => void;
+};
+
+function createDeferred<T>(): Deferred<T> {
+  let resolvePromise: ((value: T) => void) | undefined;
+  const promise = new Promise<T>((resolve) => {
+    resolvePromise = resolve;
+  });
+
+  return {
+    promise,
+    resolve: (value) => resolvePromise?.(value),
+  };
+}
+
+function preloadImage(source: string, signal: AbortSignal) {
   return new Promise<void>((resolve) => {
     const image = new Image();
-    image.onload = () => resolve();
-    image.onerror = () => resolve();
+    let settled = false;
+
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      image.onload = null;
+      image.onerror = null;
+      signal.removeEventListener("abort", finish);
+      resolve();
+    };
+
+    image.onload = () => {
+      if (typeof image.decode === "function") {
+        void image.decode().then(finish, finish);
+      } else {
+        finish();
+      }
+    };
+    image.onerror = finish;
+    signal.addEventListener("abort", finish, { once: true });
     image.src = source;
+
+    if (image.complete) image.onload?.(new Event("load"));
   });
 }
 
-function waitForWindowLoad() {
+function waitForWindowLoad(signal: AbortSignal) {
   if (document.readyState === "complete") return Promise.resolve();
   return new Promise<void>((resolve) => {
-    window.addEventListener("load", () => resolve(), { once: true });
+    const finish = () => {
+      window.removeEventListener("load", finish);
+      signal.removeEventListener("abort", finish);
+      resolve();
+    };
+    window.addEventListener("load", finish, { once: true });
+    signal.addEventListener("abort", finish, { once: true });
   });
 }
 
-function waitForLandingCanvas() {
-  return new Promise<void>((resolve) => {
-    const compact = window.matchMedia(
-      "(max-width: 54rem), (pointer: coarse)",
-    ).matches;
-    const expectedCanvasCount = compact ? 1 : 2;
-    const timeoutAt = performance.now() + 1800;
+function waitForFonts() {
+  if (!("fonts" in document)) return Promise.resolve();
+  return document.fonts.ready.then(
+    () => undefined,
+    () => undefined,
+  );
+}
 
-    function inspect() {
-      const canvasCount = document.querySelectorAll(
-        ".hero-studio canvas, .experience-book canvas",
-      ).length;
-      if (canvasCount >= expectedCanvasCount || performance.now() > timeoutAt) {
-        window.requestAnimationFrame(() =>
-          window.requestAnimationFrame(() => resolve()),
-        );
-        return;
-      }
-      window.requestAnimationFrame(inspect);
+function afterNextPaint(signal: AbortSignal) {
+  if (signal.aborted) return Promise.resolve();
+  return new Promise<void>((resolve) => {
+    let firstFrame = 0;
+    let secondFrame = 0;
+    let settled = false;
+
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      if (firstFrame) window.cancelAnimationFrame(firstFrame);
+      if (secondFrame) window.cancelAnimationFrame(secondFrame);
+      signal.removeEventListener("abort", finish);
+      resolve();
+    };
+
+    signal.addEventListener("abort", finish, { once: true });
+    firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(finish);
+    });
+  });
+}
+
+function waitForLocalizedContent(content: HTMLElement, signal: AbortSignal) {
+  return new Promise<void>((resolve) => {
+    let settled = false;
+    const observer = new MutationObserver(check);
+
+    function finish() {
+      if (settled) return;
+      settled = true;
+      observer.disconnect();
+      signal.removeEventListener("abort", finish);
+      void afterNextPaint(signal).then(resolve);
     }
 
-    inspect();
+    function check() {
+      const criticalCopy = content.querySelector<HTMLElement>(
+        "[data-landing-critical-copy]",
+      );
+      if (criticalCopy?.textContent?.trim()) finish();
+    }
+
+    signal.addEventListener("abort", finish, { once: true });
+    observer.observe(content, { childList: true, subtree: true });
+    check();
+  });
+}
+
+function waitForMountedContent() {
+  return new Promise<void>(() => {
+    // The failure-only deadline owns recovery if the landing subtree is absent.
   });
 }
 
 export function LandingPreloader({ children }: LandingPreloaderProps) {
+  const portfolio = usePortfolio();
+  const t = useTranslations("Preloader");
+  const format = useFormatter();
   const [bootState, setBootState] = useState<BootState>("loading");
   const [progress, setProgress] = useState(8);
+  const [heroReadiness, setHeroReadiness] =
+    useState<LandingHeroReadiness | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [heroReady] = useState(() => createDeferred<LandingHeroReadiness>());
+
+  const reportHeroReady = useCallback(
+    (readiness: LandingHeroReadiness) => {
+      setHeroReadiness((current) => current ?? readiness);
+      heroReady.resolve(readiness);
+    },
+    [heroReady],
+  );
+  const readinessContext = useMemo(
+    () => ({ reportHeroReady }),
+    [reportHeroReady],
+  );
 
   useEffect(() => {
-    try {
-      if (window.localStorage.getItem(CACHE_KEY) === "ready") {
-        document.documentElement.dataset.portfolioCached = "true";
-        const readyTimer = window.setTimeout(() => {
-          setProgress(100);
-          setBootState("ready");
-        }, 0);
-        return () => window.clearTimeout(readyTimer);
-      }
-    } catch {
-      // A private browsing policy may disable storage; loading still completes.
-    }
-
     let active = true;
+    let released = false;
+    let exitTimer = 0;
+    let minimumTimer = 0;
+    let deadlineTimer = 0;
+    const abortController = new AbortController();
+    const { signal } = abortController;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     async function prepareLanding() {
-      const compact = window.matchMedia(
-        "(max-width: 54rem), (pointer: coarse)",
-      ).matches;
+      const content = contentRef.current;
       const tasks: Promise<unknown>[] = [
-        waitForWindowLoad(),
-        document.fonts.ready,
+        waitForWindowLoad(signal),
+        waitForFonts(),
         Promise.all([
-          preloadImage("/assets/nima-moradirad.jpg"),
-          preloadImage("/assets/nima-moradirad-resume-preview.webp"),
+          preloadImage("/assets/nima-moradirad.jpg", signal),
+          preloadImage(portfolio.identity.resumePreview, signal),
         ]),
-        import("@/components/three/desk-scene"),
-        waitForLandingCanvas(),
+        content
+          ? waitForLocalizedContent(content, signal)
+          : waitForMountedContent(),
+        heroReady.promise,
       ];
-
-      if (!compact) {
-        tasks.push(import("@/components/experience/experience-book-scene"));
-      }
 
       let completed = 0;
       const trackedTasks = tasks.map((task) =>
         task.finally(() => {
           completed += 1;
-          if (active) {
+          if (active && !released) {
             setProgress(Math.round(8 + (completed / tasks.length) * 88));
           }
         }),
       );
       const minimumDisplay = new Promise<void>((resolve) => {
-        window.setTimeout(resolve, MINIMUM_DISPLAY_MS);
+        minimumTimer = window.setTimeout(resolve, MINIMUM_DISPLAY_MS);
+      });
+      const hardDeadline = new Promise<void>((resolve) => {
+        deadlineTimer = window.setTimeout(resolve, MAXIMUM_PREPARATION_MS);
       });
 
-      await Promise.all([Promise.allSettled(trackedTasks), minimumDisplay]);
+      await Promise.all([
+        Promise.race([Promise.allSettled(trackedTasks), hardDeadline]),
+        minimumDisplay,
+      ]);
       if (!active) return;
 
+      released = true;
+      abortController.abort();
+      window.clearTimeout(deadlineTimer);
       setProgress(100);
-      try {
-        window.localStorage.setItem(CACHE_KEY, "ready");
-        document.documentElement.dataset.portfolioCached = "true";
-      } catch {
-        // The transition can finish without persistence.
-      }
       setBootState("exiting");
-      window.setTimeout(() => {
-        if (active) setBootState("ready");
+      exitTimer = window.setTimeout(() => {
+        if (!active) return;
+        document.body.style.overflow = previousOverflow;
+        setBootState("ready");
       }, 560);
     }
 
@@ -126,55 +233,73 @@ export function LandingPreloader({ children }: LandingPreloaderProps) {
 
     return () => {
       active = false;
+      released = true;
+      abortController.abort();
+      window.clearTimeout(exitTimer);
+      window.clearTimeout(minimumTimer);
+      window.clearTimeout(deadlineTimer);
       document.body.style.overflow = previousOverflow;
     };
-  }, []);
-
-  useEffect(() => {
-    if (bootState === "ready") document.body.style.overflow = "";
-  }, [bootState]);
+  }, [heroReady, portfolio.identity.resumePreview]);
 
   return (
-    <div className="landing-shell" data-boot-state={bootState}>
-      {bootState !== "ready" ? (
-        <div
-          className="landing-preloader"
-          role="status"
-          aria-live="polite"
-          aria-label={`Preparing portfolio: ${progress}%`}
-        >
-          <div className="landing-preloader__field" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <i />
-          </div>
-          <div className="landing-preloader__copy">
-            <p>Signal atelier · Initializing</p>
-            <h1>Building the first frame.</h1>
-            <div className="landing-preloader__meter" aria-hidden="true">
-              <span style={{ width: `${progress}%` }} />
-            </div>
-            <div className="landing-preloader__status">
-              <span>{String(progress).padStart(3, "0")}%</span>
-              <span>
-                {progress < 42
-                  ? "Loading assets"
-                  : progress < 88
-                    ? "Warming the studio"
-                    : "Rendering the room"}
-              </span>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
+    <LandingReadinessContext.Provider value={readinessContext}>
       <div
-        className="landing-content"
-        aria-hidden={bootState === "loading" ? true : undefined}
+        className="landing-shell"
+        data-boot-state={bootState}
+        data-hero-readiness={heroReadiness ?? "pending"}
       >
-        {children}
+        {bootState !== "ready" ? (
+          <div
+            className="landing-preloader"
+            role="status"
+            aria-live="polite"
+            aria-label={t("ariaLabel", {
+              progress: format.number(progress, { useGrouping: false }),
+            })}
+          >
+            <div className="landing-preloader__field" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+              <i />
+            </div>
+            <div className="landing-preloader__copy">
+              <p>{t("eyebrow")}</p>
+              <h1>{t("title")}</h1>
+              <div className="landing-preloader__meter" aria-hidden="true">
+                <span style={{ width: `${progress}%` }} />
+              </div>
+              <div className="landing-preloader__status">
+                <span>
+                  <bdi>
+                    {format.number(progress, {
+                      minimumIntegerDigits: 3,
+                      useGrouping: false,
+                    })}
+                    %
+                  </bdi>
+                </span>
+                <span>
+                  {progress < 42
+                    ? t("stages.assets")
+                    : progress < 88
+                      ? t("stages.studio")
+                      : t("stages.room")}
+                </span>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        <div
+          ref={contentRef}
+          className="landing-content"
+          aria-hidden={bootState === "loading" ? true : undefined}
+        >
+          {children}
+        </div>
       </div>
-    </div>
+    </LandingReadinessContext.Provider>
   );
 }

@@ -34,6 +34,7 @@ function ResponsiveCamera() {
 }
 
 type TurningPageProps = {
+  isRtl: boolean;
   index: number;
   pageCount: number;
   progressRef: MutableRefObject<number>;
@@ -41,6 +42,7 @@ type TurningPageProps = {
 };
 
 function TurningPage({
+  isRtl,
   index,
   pageCount,
   progressRef,
@@ -58,10 +60,13 @@ function TurningPage({
     );
 
     for (let vertex = 0; vertex < positions.count; vertex += 1) {
-      positions.setX(vertex, positions.getX(vertex) + PAGE_WIDTH / 2);
+      positions.setX(
+        vertex,
+        positions.getX(vertex) + (isRtl ? -PAGE_WIDTH / 2 : PAGE_WIDTH / 2),
+      );
     }
     positions.needsUpdate = true;
-  }, []);
+  }, [isRtl]);
 
   useFrame(() => {
     if (!pivot.current || !geometry.current || !originalPositions.current)
@@ -70,7 +75,7 @@ function TurningPage({
     const bookPosition = progressRef.current * Math.max(pageCount - 1, 1);
     const localProgress = THREE.MathUtils.clamp(bookPosition - index, 0, 1);
     const eased = THREE.MathUtils.smootherstep(localProgress, 0, 1);
-    pivot.current.rotation.y = -Math.PI * eased;
+    pivot.current.rotation.y = (isRtl ? Math.PI : -Math.PI) * eased;
 
     const positions = geometry.current.attributes
       .position as THREE.BufferAttribute;
@@ -80,8 +85,13 @@ function TurningPage({
     for (let vertex = 0; vertex < positions.count; vertex += 1) {
       const sourceIndex = vertex * 3;
       const sourceX = original[sourceIndex];
-      const normalizedX = (sourceX + PAGE_WIDTH / 2) / PAGE_WIDTH;
-      positions.setX(vertex, sourceX + PAGE_WIDTH / 2);
+      const normalizedX = isRtl
+        ? (PAGE_WIDTH / 2 - sourceX) / PAGE_WIDTH
+        : (sourceX + PAGE_WIDTH / 2) / PAGE_WIDTH;
+      positions.setX(
+        vertex,
+        sourceX + (isRtl ? -PAGE_WIDTH / 2 : PAGE_WIDTH / 2),
+      );
       positions.setY(vertex, original[sourceIndex + 1]);
       positions.setZ(
         vertex,
@@ -110,6 +120,7 @@ function TurningPage({
 }
 
 type BookModelProps = {
+  isRtl: boolean;
   pageCount: number;
   progressRef: MutableRefObject<number>;
   reducedMotion: boolean;
@@ -117,6 +128,7 @@ type BookModelProps = {
 };
 
 function BookModel({
+  isRtl,
   pageCount,
   progressRef,
   reducedMotion,
@@ -138,7 +150,10 @@ function BookModel({
   });
 
   return (
-    <group ref={book} rotation={[0.045, -0.04, -0.018]}>
+    <group
+      ref={book}
+      rotation={[0.045, isRtl ? 0.04 : -0.04, isRtl ? 0.018 : -0.018]}
+    >
       <RoundedBox
         args={[3.68, PAGE_HEIGHT + 0.26, 0.16]}
         radius={0.09}
@@ -206,6 +221,7 @@ function BookModel({
       {Array.from({ length: Math.max(pageCount - 1, 0) }, (_, index) => (
         <TurningPage
           key={index}
+          isRtl={isRtl}
           index={index}
           pageCount={pageCount}
           progressRef={progressRef}
@@ -223,6 +239,7 @@ function BookModel({
 
 type ExperienceBookSceneProps = {
   active: boolean;
+  isRtl: boolean;
   pageCount: number;
   progressRef: MutableRefObject<number>;
   reducedMotion: boolean;
@@ -231,6 +248,7 @@ type ExperienceBookSceneProps = {
 
 export function ExperienceBookScene({
   active,
+  isRtl,
   pageCount,
   progressRef,
   reducedMotion,
@@ -269,6 +287,7 @@ export function ExperienceBookScene({
         position={[-4, 1, 5]}
       />
       <BookModel
+        isRtl={isRtl}
         pageCount={pageCount}
         progressRef={progressRef}
         reducedMotion={reducedMotion}

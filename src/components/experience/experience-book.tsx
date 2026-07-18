@@ -14,6 +14,7 @@ import {
   type KeyboardEvent,
 } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { useTheme } from "@/components/theme/theme-provider";
 import { BookFallback } from "@/components/experience/book-fallback";
 import { MobileExperienceReader } from "@/components/experience/mobile-experience-reader";
@@ -35,21 +36,30 @@ type ExperienceBookProps = {
 };
 
 function ExperienceListFallback({ experiences }: ExperienceBookProps) {
+  const t = useTranslations("Experience");
+  const format = useFormatter();
+  const formatIndex = (value: number) =>
+    format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
+
   return (
     <div className="experience-fallback page-shell">
       <div className="experience-fallback__heading">
-        <span>02 · Professional trajectory</span>
-        <h2 id="experience-title">A career path written in four chapters.</h2>
-        <p>
-          The 3D reader is replaced with a motion-safe edition on this device.
-        </p>
+        <span>
+          <bdi>{formatIndex(2)}</bdi> · {t("eyebrow")}
+        </span>
+        <h2 id="experience-title">{t("fallbackTitle")}</h2>
+        <p>{t("fallbackDescription")}</p>
       </div>
       <ol>
         {experiences.map((experience, index) => (
-          <li key={`${experience.company}-${experience.period}`}>
+          <li key={experience.id}>
             <article>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{experience.period}</p>
+              <span>
+                <bdi>{formatIndex(index + 1)}</bdi>
+              </span>
+              <p>
+                <bdi>{experience.period}</bdi>
+              </p>
               <h3>{experience.role}</h3>
               <strong>{experience.company}</strong>
               <p>{experience.summary}</p>
@@ -98,9 +108,21 @@ function DesktopExperienceBook({
   reducedMotion,
   webGLSupported,
 }: DesktopExperienceBookProps) {
+  const locale = useLocale();
+  const isRtl = locale === "fa";
+  const t = useTranslations("Experience");
+  const format = useFormatter();
+  const formatIndex = (value: number) =>
+    format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
+  const PreviousIcon = isRtl ? ArrowRight : ArrowLeft;
+  const NextIcon = isRtl ? ArrowLeft : ArrowRight;
   const root = useRef<HTMLDivElement>(null);
   const progressRef = useRef(0);
   const [activePage, setActivePage] = useState(0);
+  const shouldMountScene = useInView(root, {
+    margin: "75% 0px",
+    once: true,
+  });
   const isInView = useInView(root, { margin: "15% 0px" });
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
@@ -131,11 +153,18 @@ function DesktopExperienceBook({
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+    const isNextKey =
+      event.key === "ArrowDown" ||
+      (isRtl ? event.key === "ArrowLeft" : event.key === "ArrowRight");
+    const isPreviousKey =
+      event.key === "ArrowUp" ||
+      (isRtl ? event.key === "ArrowRight" : event.key === "ArrowLeft");
+
+    if (isNextKey) {
       event.preventDefault();
       goToPage(activePage + 1);
     }
-    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+    if (isPreviousKey) {
       event.preventDefault();
       goToPage(activePage - 1);
     }
@@ -145,6 +174,7 @@ function DesktopExperienceBook({
   const readerStyle = {
     "--book-scroll-height": `${experiences.length * 85}svh`,
   } as CSSProperties;
+  const activeNumber = formatIndex(activePage + 1);
 
   return (
     <div
@@ -152,32 +182,33 @@ function DesktopExperienceBook({
       className="experience-book"
       style={readerStyle}
       onKeyDown={handleKeyDown}
+      data-direction={isRtl ? "rtl" : "ltr"}
     >
       <div
         className="experience-book__stage"
         role="region"
-        aria-label="Scroll-controlled experience book"
+        aria-label={t("regionLabel")}
         tabIndex={0}
-        data-depth-plane
       >
         <header className="experience-book__heading page-shell">
           <p>
-            <span>02</span>
-            Professional trajectory
+            <span>
+              <bdi>{formatIndex(2)}</bdi>
+            </span>
+            {t("eyebrow")}
           </p>
-          <h2 id="experience-title">A career, bound in chapters.</h2>
-          <p>
-            Scroll to turn the pages. Use arrow keys when the reader is focused.
-          </p>
+          <h2 id="experience-title">{t("title")}</h2>
+          <p>{t("desktopDescription")}</p>
         </header>
 
         <div className="experience-book__scene" aria-hidden="true">
           <WebGLErrorBoundary fallback={<BookFallback />}>
-            {webGLSupported === null ? (
+            {webGLSupported === null || !shouldMountScene ? (
               <BookFallback />
             ) : (
               <ExperienceBookScene
                 active={isInView}
+                isRtl={isRtl}
                 pageCount={experiences.length}
                 progressRef={progressRef}
                 reducedMotion={reducedMotion}
@@ -187,15 +218,15 @@ function DesktopExperienceBook({
           </WebGLErrorBoundary>
         </div>
 
-        <article
-          className="experience-book__page-copy"
-          key={`${activeExperience.company}-${activeExperience.period}`}
-          aria-hidden="true"
-        >
-          <div className="experience-book__page experience-book__page--left">
+        <article className="experience-book__page-copy" aria-hidden="true">
+          <div className="experience-book__page experience-book__page--left experience-book__page--summary">
             <div className="experience-book__folio">
-              <span>{String(activePage + 1).padStart(2, "0")}</span>
-              <span>{activeExperience.period}</span>
+              <span>
+                <bdi>{activeNumber}</bdi>
+              </span>
+              <span>
+                <bdi>{activeExperience.period}</bdi>
+              </span>
             </div>
             <p className="experience-book__company">
               {activeExperience.company}
@@ -206,14 +237,16 @@ function DesktopExperienceBook({
             </p>
             <div className="experience-book__tags">
               {activeExperience.technologies.slice(0, 5).map((technology) => (
-                <span key={technology}>{technology}</span>
+                <span key={technology}>
+                  <bdi>{technology}</bdi>
+                </span>
               ))}
             </div>
           </div>
-          <div className="experience-book__page experience-book__page--right">
+          <div className="experience-book__page experience-book__page--right experience-book__page--highlights">
             <div className="experience-book__chapter-label">
-              <span>Selected signals</span>
-              <span>Chapter {String(activePage + 1).padStart(2, "0")}</span>
+              <span>{t("selectedSignals")}</span>
+              <span>{t("chapter", { number: activeNumber })}</span>
             </div>
             <ul>
               {activeExperience.highlights.map((highlight) => (
@@ -226,36 +259,40 @@ function DesktopExperienceBook({
         <div className="experience-book__navigation page-shell">
           <div className="experience-book__instruction" aria-hidden="true">
             <ArrowDown size={15} />
-            Scroll to turn
+            {t("scrollToTurn")}
           </div>
           <div className="experience-book__pager">
             <button
               type="button"
               onClick={() => goToPage(activePage - 1)}
               disabled={activePage === 0}
-              aria-label="Previous experience"
+              aria-label={t("previous")}
             >
-              <ArrowLeft aria-hidden="true" size={17} />
+              <PreviousIcon aria-hidden="true" size={17} />
             </button>
             <p aria-live="polite">
-              <span>{String(activePage + 1).padStart(2, "0")}</span>
+              <span>
+                <bdi>{activeNumber}</bdi>
+              </span>
               <i aria-hidden="true" />
-              <span>{String(experiences.length).padStart(2, "0")}</span>
+              <span>
+                <bdi>{formatIndex(experiences.length)}</bdi>
+              </span>
             </p>
             <button
               type="button"
               onClick={() => goToPage(activePage + 1)}
               disabled={activePage === experiences.length - 1}
-              aria-label="Next experience"
+              aria-label={t("next")}
             >
-              <ArrowRight aria-hidden="true" size={17} />
+              <NextIcon aria-hidden="true" size={17} />
             </button>
           </div>
         </div>
 
         <ol className="sr-only">
           {experiences.map((experience) => (
-            <li key={`${experience.company}-${experience.period}`}>
+            <li key={experience.id}>
               <article>
                 <p>{experience.period}</p>
                 <h3>{experience.role}</h3>
