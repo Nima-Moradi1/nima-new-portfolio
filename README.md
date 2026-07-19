@@ -179,7 +179,9 @@ See `DESIGN_SYSTEM.md` for the full interaction and accessibility rules.
 Production is deployed to the Liara app `nimamoradirad` from the `main` branch by
 `.github/workflows/deploy-liara.yml`. The workflow validates the project, builds it,
 and deploys it with Liara CLI 9. Concurrent pushes cancel an older in-progress
-deployment so the newest `main` commit is the release that goes live.
+deployment so the newest `main` commit is the release that goes live. A failed
+Liara build is retried once so transient builder or five-minute plan timeouts can
+reuse Liara's build cache without manual intervention.
 
 One repository secret is required in GitHub under **Settings > Secrets and
 variables > Actions**:
