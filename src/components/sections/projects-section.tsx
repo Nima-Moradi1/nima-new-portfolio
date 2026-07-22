@@ -51,8 +51,18 @@ export function ProjectsSection() {
                     src={project.image}
                     alt={project.imageAlt}
                     fill
-                    sizes="(max-width: 864px) 100vw, 33vw"
+                    sizes="(max-width: 864px) 100vw, 25vw"
                   />
+                  {project.logo ? (
+                    <div className={styles.logo}>
+                      <Image
+                        src={project.logo}
+                        alt={project.logoAlt ?? `${project.title} logo`}
+                        fill
+                        sizes="9rem"
+                      />
+                    </div>
+                  ) : null}
                 </div>
                 <div className={styles.content}>
                   <div className={styles.kicker}>

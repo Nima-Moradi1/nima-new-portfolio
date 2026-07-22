@@ -196,6 +196,22 @@
       "href": "https://hesabo.com/",
       "featured": true,
       "accent": "coral"
+    },
+    {
+      "id": "lingo-learn",
+      "number": "04",
+      "title": "Lingo Learn",
+      "category": "Sprachlernplattform · Produktivbetrieb",
+      "summary": "Eine persischsprachige Sprachlernplattform mit kostenlosen Lernressourcen, niveaubasierten Kursen und kostenpflichtigen Lernpaketen.",
+      "contribution": "Entwicklung einer responsiven Lern- und Commerce-Erfahrung für eine RTL-Zielgruppe.",
+      "image": "/assets/projects/lingo-learn/homepage.jpg",
+      "imageAlt": "Lingo-Learn-Startseite mit persischer Navigation und Karten für Sprachlernangebote",
+      "logo": "/assets/projects/lingo-learn/logo.png",
+      "logoAlt": "Lingo-Learn-Logo",
+      "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
+      "href": "https://lingo-learn.ir/",
+      "featured": true,
+      "accent": "lime"
     }
   ],
   "capabilities": [

@@ -191,6 +191,22 @@
       "href": "https://hesabo.com/",
       "featured": true,
       "accent": "coral"
+    },
+    {
+      "id": "lingo-learn",
+      "number": "۰۴",
+      "title": "Lingo Learn",
+      "category": "پلتفرم آموزش زبان · محصول عملیاتی",
+      "summary": "پلتفرم فارسی‌زبان آموزش زبان با منابع رایگان، دوره‌های مبتنی بر سطح و پکیج‌های آموزشی.",
+      "contribution": "توسعهٔ تجربهٔ واکنش‌گرای منابع آموزشی و فروش که برای کاربران RTL پیاده‌سازی شد.",
+      "image": "/assets/projects/lingo-learn/homepage.jpg",
+      "imageAlt": "صفحهٔ اصلی لینگو لرن با مسیریابی فارسی و کارت‌های خدمات آموزش زبان",
+      "logo": "/assets/projects/lingo-learn/logo.png",
+      "logoAlt": "نشان لینگو لرن",
+      "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
+      "href": "https://lingo-learn.ir/",
+      "featured": true,
+      "accent": "lime"
     }
   ],
   "capabilities": [

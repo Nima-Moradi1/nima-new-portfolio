@@ -21,6 +21,13 @@ describe("optimized portfolio assets", () => {
     }
   });
 
+  it("ships a compact Lingo Learn preview and logo", () => {
+    expect(size("assets/projects/lingo-learn/homepage.jpg")).toBeLessThan(
+      100_000,
+    );
+    expect(size("assets/projects/lingo-learn/logo.png")).toBeLessThan(25_000);
+  });
+
   it("ships fast-start-ready video alternatives within the route budget", () => {
     expect(size("assets/projects/xo-arena/xo-arena-preview.mp4")).toBeLessThan(
       500_000,

@@ -29,15 +29,20 @@ describe("updated professional portfolio content", () => {
     expect(portfolio.experience[3].period).toBe("Dec 2020 — Sep 2022");
   });
 
-  it("promotes XO Arena and retains the two current selected products", () => {
+  it("promotes XO Arena and retains the selected production products", () => {
     expect(portfolio.projects.map((project) => project.title)).toEqual([
       "XO Arena",
       "Emerald Case",
       "Hesabo Platform",
+      "Lingo Learn",
     ]);
     expect(portfolio.projects[0]).toMatchObject({
       href: "/projects/xo-arena",
       technologies: expect.arrayContaining(["Socket.IO", "Prisma", "MySQL"]),
+    });
+    expect(portfolio.projects[3]).toMatchObject({
+      href: "https://lingo-learn.ir/",
+      logo: "/assets/projects/lingo-learn/logo.png",
     });
   });
 

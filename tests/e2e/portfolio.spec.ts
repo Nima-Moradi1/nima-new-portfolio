@@ -75,6 +75,7 @@ test("prepares a complete first frame on every document load", async ({
 });
 
 test("renders the portfolio narrative and navigation", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
   await expect(
@@ -86,8 +87,22 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   await expect(page.locator("#work")).toBeInViewport();
   await expect(page.getByRole("heading", { name: "XO Arena" })).toBeVisible();
   await expect(
+    page.getByRole("heading", { name: "Lingo Learn" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("link", { name: "View the XO Arena case study" }),
   ).toHaveAttribute("href", "/projects/xo-arena");
+
+  const projectCards = page.locator(".projects__grid > *");
+  await expect(projectCards).toHaveCount(4);
+  expect(
+    await projectCards.evaluateAll(
+      (cards) =>
+        new Set(
+          cards.map((card) => Math.round(card.getBoundingClientRect().top)),
+        ).size,
+    ),
+  ).toBe(1);
 });
 
 test("renders a controllable workstation with in-scene resume and lamp actions", async ({
