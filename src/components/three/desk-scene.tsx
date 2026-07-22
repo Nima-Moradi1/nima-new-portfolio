@@ -402,7 +402,6 @@ function EngineerWallArtwork({
           <meshBasicMaterial map={plaque} toneMapped={false} />
         </mesh>
       </group>
-
     </group>
   );
 }
@@ -917,6 +916,114 @@ function HumanFace({ skin, hair }: { skin: string; hair: string }) {
   );
 }
 
+function OfficeChair({ palette }: { palette: Palette }) {
+  const casterDirections = [
+    [0, 1],
+    [0.95, 0.31],
+    [0.59, -0.81],
+    [-0.59, -0.81],
+    [-0.95, 0.31],
+  ] as const;
+
+  return (
+    <group>
+      <RoundedBox
+        args={[1.86, 0.22, 1.55]}
+        radius={0.14}
+        smoothness={3}
+        position={[0, 0, -0.18]}
+      >
+        <meshStandardMaterial
+          color={palette.surfaceLift}
+          metalness={0.26}
+          roughness={0.46}
+        />
+      </RoundedBox>
+
+      {[-0.75, 0.75].map((x) => (
+        <mesh key={`back-post-${x}`} position={[x, 0.84, 0.56]}>
+          <boxGeometry args={[0.15, 1.52, 0.2]} />
+          <meshStandardMaterial
+            color={palette.surface}
+            metalness={0.48}
+            roughness={0.3}
+          />
+        </mesh>
+      ))}
+      {[0.13, 1.56].map((y) => (
+        <mesh key={`back-rail-${y}`} position={[0, y, 0.56]}>
+          <boxGeometry args={[1.62, 0.14, 0.2]} />
+          <meshStandardMaterial
+            color={palette.surface}
+            metalness={0.48}
+            roughness={0.3}
+          />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.84, 0.45]}>
+        <planeGeometry args={[1.34, 1.24]} />
+        <meshStandardMaterial
+          color={palette.ink}
+          transparent
+          opacity={0.36}
+          side={THREE.DoubleSide}
+          roughness={0.84}
+        />
+      </mesh>
+
+      {[-1.03, 1.03].map((x) => (
+        <group key={`chair-arm-${x}`}>
+          <CylinderBetween
+            start={[x, 0.1, 0]}
+            end={[x, 0.48, 0]}
+            radius={0.055}
+            color={palette.surface}
+          />
+          <RoundedBox
+            args={[0.18, 0.1, 0.58]}
+            radius={0.05}
+            smoothness={2}
+            position={[x, 0.5, -0.03]}
+          >
+            <meshStandardMaterial color={palette.surface} roughness={0.38} />
+          </RoundedBox>
+        </group>
+      ))}
+
+      <mesh position={[0, -0.68, 0.08]}>
+        <cylinderGeometry args={[0.1, 0.14, 1.3, 20]} />
+        <meshStandardMaterial
+          color={palette.surface}
+          metalness={0.62}
+          roughness={0.26}
+        />
+      </mesh>
+      <mesh position={[0, -1.35, 0.08]}>
+        <cylinderGeometry args={[0.29, 0.23, 0.12, 24]} />
+        <meshStandardMaterial
+          color={palette.surface}
+          metalness={0.6}
+          roughness={0.3}
+        />
+      </mesh>
+      {casterDirections.map(([x, z], index) => (
+        <group key={`caster-${index}`}>
+          <CylinderBetween
+            start={[0, -1.35, 0.08]}
+            end={[x * 0.88, -1.48, 0.08 + z * 0.88]}
+            radius={0.052}
+            color={palette.surface}
+          />
+          <mesh position={[x * 0.96, -1.59, 0.08 + z * 0.96]}>
+            <sphereGeometry args={[0.13, 16, 12]} />
+            <meshStandardMaterial color={palette.ink} roughness={0.48} />
+          </mesh>
+        </group>
+      ))}
+    </group>
+  );
+}
+
 function DeveloperPersona({
   palette,
   reducedMotion,
@@ -927,6 +1034,7 @@ function DeveloperPersona({
   const skin = "#c78664";
   const hair = "#28211c";
   const shirt = themeAwareShirt(palette);
+  const trousers = palette.surface;
 
   return (
     <group
@@ -934,55 +1042,42 @@ function DeveloperPersona({
       rotation={[0, 0.28, 0]}
       scale={[0.9, 1, 0.9]}
     >
-      <group position={[0, 0, -0.78]}>
-        <RoundedBox
-          args={[1.72, 2.1, 0.34]}
-          radius={0.34}
-          smoothness={3}
-          position={[0, 0.2, 0]}
-        >
-          <meshStandardMaterial color={palette.surface} roughness={0.48} />
-        </RoundedBox>
-        <mesh position={[0, 0.42, 0.22]}>
-          <boxGeometry args={[1.35, 0.08, 0.06]} />
-          <meshStandardMaterial color={palette.signal} />
-        </mesh>
-        <RoundedBox
-          args={[1.8, 0.3, 1.5]}
-          radius={0.2}
-          smoothness={2}
-          position={[0, -1.12, 0.55]}
-        >
-          <meshStandardMaterial color={palette.surfaceLift} roughness={0.58} />
-        </RoundedBox>
-      </group>
+      <OfficeChair palette={palette} />
 
       <RoundedBox
-        args={[1.42, 1.75, 0.76]}
+        args={[1.3, 0.48, 0.76]}
+        radius={0.22}
+        smoothness={3}
+        position={[0, 0.35, -0.42]}
+      >
+        <meshStandardMaterial color={trousers} roughness={0.6} />
+      </RoundedBox>
+      <RoundedBox
+        args={[1.46, 1.72, 0.76]}
         radius={0.35}
         smoothness={3}
-        position={[0, 1.1, -1.42]}
+        position={[0, 1.26, -0.6]}
       >
         <meshStandardMaterial color={shirt} roughness={0.78} />
       </RoundedBox>
-      {[-0.63, 0.63].map((x) => (
+      {[-0.66, 0.66].map((x) => (
         <mesh
           key={`shoulder-${x}`}
-          position={[x, 1.5, -1.4]}
-          scale={[0.3, 0.36, 0.38]}
+          position={[x, 1.86, -0.6]}
+          scale={[0.31, 0.34, 0.38]}
         >
           <sphereGeometry args={[1, 18, 14]} />
           <meshStandardMaterial color={shirt} roughness={0.78} />
         </mesh>
       ))}
-      <mesh position={[0, 2.08, -1.32]}>
+      <mesh position={[0, 2.18, -0.52]}>
         <cylinderGeometry args={[0.22, 0.25, 0.38, 16]} />
         <meshStandardMaterial color={skin} roughness={0.72} />
       </mesh>
       {[-0.18, 0.18].map((x) => (
         <mesh
           key={`collar-${x}`}
-          position={[x, 2.04, -1.7]}
+          position={[x, 2.14, -0.9]}
           rotation={[0.1, 0, x < 0 ? -0.34 : 0.34]}
         >
           <coneGeometry args={[0.22, 0.46, 3]} />
@@ -990,79 +1085,101 @@ function DeveloperPersona({
         </mesh>
       ))}
 
-      <mesh position={[0, 2.72, -1.24]} scale={[0.55, 0.66, 0.52]}>
+      <mesh position={[0, 2.82, -0.44]} scale={[0.55, 0.66, 0.52]}>
         <sphereGeometry args={[1, 36, 28]} />
         <meshStandardMaterial color={skin} roughness={0.57} />
       </mesh>
-      <mesh position={[0, 3.15, -1.31]} scale={[0.52, 0.22, 0.51]}>
+      <mesh position={[0, 3.25, -0.51]} scale={[0.52, 0.22, 0.51]}>
         <sphereGeometry args={[1, 32, 20]} />
         <meshStandardMaterial color={hair} roughness={0.92} />
       </mesh>
       {[-0.38, -0.19, 0, 0.19, 0.38].map((x, index) => (
         <mesh
           key={`hair-${x}`}
-          position={[x, 3.1 + (index % 2) * 0.055, -1.57]}
+          position={[x, 3.2 + (index % 2) * 0.055, -0.77]}
           scale={[0.135, 0.13, 0.13]}
         >
           <sphereGeometry args={[1, 18, 14]} />
           <meshStandardMaterial color={hair} roughness={0.94} />
         </mesh>
       ))}
-      <HumanFace skin={skin} hair={hair} />
-
-      <CylinderBetween
-        start={[-0.58, 1.57, -1.34]}
-        end={[-0.48, 0.88, -1.36]}
-        radius={0.19}
-        color={shirt}
-      />
-      <CylinderBetween
-        start={[-0.48, 0.88, -1.36]}
-        end={[-0.36, 0.6, -1.5]}
-        radius={0.15}
-        color={skin}
-      />
-      <CylinderBetween
-        start={[0.58, 1.57, -1.34]}
-        end={[0.48, 0.88, -1.31]}
-        radius={0.19}
-        color={shirt}
-      />
-      <CylinderBetween
-        start={[0.48, 0.88, -1.31]}
-        end={[0.36, 0.6, -1.4]}
-        radius={0.15}
-        color={skin}
-      />
-      <group position={[-0.36, 0.6, -1.5]}>
-        <TypingHand
-          side="left"
-          skin={skin}
-          reducedMotion={reducedMotion}
-          phaseOffset={0.5}
-        />
-      </group>
-      <group position={[0.36, 0.6, -1.4]}>
-        <TypingHand
-          side="right"
-          skin={skin}
-          reducedMotion={reducedMotion}
-          phaseOffset={Math.PI}
-        />
+      <group position={[0, 0.1, 0.8]}>
+        <HumanFace skin={skin} hair={hair} />
       </group>
 
-      <CylinderBetween
-        start={[-0.38, 0.38, -1.45]}
-        end={[-0.46, -1.5, -1.05]}
-        radius={0.24}
-        color={palette.surface}
-      />
-      <CylinderBetween
-        start={[0.38, 0.38, -1.45]}
-        end={[0.46, -1.5, -1.05]}
-        radius={0.24}
-        color={palette.surface}
-      />
+      {[-1, 1].map((side) => {
+        const shoulder = side * 0.62;
+        const elbow = side * 0.72;
+        const wrist = side * 0.38;
+        const hand = side < 0 ? "left" : "right";
+
+        return (
+          <group key={hand}>
+            <CylinderBetween
+              start={[shoulder, 1.8, -0.58]}
+              end={[elbow, 1.06, -0.67]}
+              radius={0.18}
+              color={shirt}
+            />
+            <mesh position={[elbow, 1.06, -0.67]} scale={0.19}>
+              <sphereGeometry args={[1, 18, 14]} />
+              <meshStandardMaterial color={skin} roughness={0.64} />
+            </mesh>
+            <CylinderBetween
+              start={[elbow, 1.03, -0.67]}
+              end={[wrist, 0.55, -0.72]}
+              radius={0.135}
+              color={skin}
+            />
+            <group position={[wrist, 0.54, -0.72]} scale={0.82}>
+              <TypingHand
+                side={hand}
+                skin={skin}
+                reducedMotion={reducedMotion}
+                phaseOffset={side < 0 ? 0.5 : Math.PI}
+              />
+            </group>
+          </group>
+        );
+      })}
+
+      {[-1, 1].map((side) => {
+        const hip = side * 0.4;
+        const knee = side * 0.48;
+
+        return (
+          <group key={`leg-${side}`}>
+            <CylinderBetween
+              start={[hip, 0.26, -0.48]}
+              end={[knee, -0.72, -0.94]}
+              radius={0.235}
+              color={trousers}
+            />
+            <mesh position={[knee, -0.72, -0.94]} scale={0.255}>
+              <sphereGeometry args={[1, 18, 14]} />
+              <meshStandardMaterial color={trousers} roughness={0.6} />
+            </mesh>
+            <CylinderBetween
+              start={[knee, -0.76, -0.92]}
+              end={[knee, -1.54, -0.56]}
+              radius={0.19}
+              color={trousers}
+            />
+            <RoundedBox
+              args={[0.5, 0.27, 0.88]}
+              radius={0.11}
+              smoothness={3}
+              position={[knee, -1.63, -0.96]}
+            >
+              <meshStandardMaterial
+                color={palette.ink}
+                metalness={0.14}
+                roughness={0.42}
+              />
+            </RoundedBox>
+          </group>
+        );
+      })}
     </group>
   );
 }
