@@ -212,6 +212,26 @@
       "href": "https://lingo-learn.ir/",
       "featured": true,
       "accent": "lime"
+    },
+    {
+      "id": "exam-hub",
+      "number": "05",
+      "title": "Exam Hub",
+      "category": "Interaktive Bewertung von Webkenntnissen · Produktivbetrieb",
+      "summary": "Eine persischsprachige Plattform für praxisnahe HTML- und CSS-Tests mit klarer Zeitvorgabe, fokussiertem Feedback und responsiven Lernabläufen.",
+      "contribution": "Entwicklung einer ausgereiften Next.js-Prüfungserfahrung mit sicherer serverseitiger Auswertung, strukturierten Frageabläufen, Theme-Unterstützung und zugänglicher RTL-Navigation.",
+      "image": "/assets/projects/exam-hub/preview.svg",
+      "imageAlt": "Exam-Hub-Oberfläche mit persischen Karten für HTML- und CSS-Tests",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Server Actions",
+        "RTL",
+        "Responsive UI"
+      ],
+      "href": "https://full-exam-project.vercel.app/",
+      "featured": true,
+      "accent": "violet"
     }
   ],
   "capabilities": [

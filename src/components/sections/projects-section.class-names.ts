@@ -3,7 +3,7 @@ export const projectsSectionClassNames = {
   shell: "page-shell mx-auto w-full max-w-content px-[var(--gutter)]",
   headerFrame:
     "projects__header-frame relative mb-[clamp(0.65rem,1vw,1rem)] overflow-hidden rounded-lg border border-transparent p-[clamp(0.55rem,0.8vw,0.8rem)] shadow-[inset_0_1px_color-mix(in_srgb,var(--paper)_7%,transparent),0_1.5rem_5rem_rgba(0,0,0,0.15)] max-[38rem]:p-[0.6rem] [&_.section-heading]:mb-0",
-  grid: "projects__grid grid grid-cols-4 items-stretch gap-[clamp(0.4rem,0.7vw,0.65rem)] max-[54rem]:mx-auto max-[54rem]:max-w-[44rem] max-[54rem]:grid-cols-1",
+  grid: "projects__grid grid grid-cols-3 items-stretch gap-[clamp(0.55rem,0.9vw,0.9rem)] max-[72rem]:grid-cols-2 max-[54rem]:mx-auto max-[54rem]:max-w-[44rem] max-[54rem]:grid-cols-1",
   cardLink:
     "project-card__link block h-full rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary",
   card: "project-card group/project-card grid h-full min-h-0 grid-rows-[auto_1fr] overflow-hidden rounded-lg border border-border bg-card shadow-soft [--project-accent:var(--signal)] [transition:transform_var(--duration-base)_var(--ease-out),border-color_var(--duration-base)_ease] hover:-translate-y-[0.35rem] hover:border-[color-mix(in_srgb,var(--project-accent)_55%,transparent)] data-[accent=coral]:[--project-accent:var(--brand-coral)] data-[accent=violet]:[--project-accent:var(--brand-violet)] motion-reduce:hover:translate-y-0 [@media(hover:none)]:hover:translate-y-0 [@media(pointer:coarse)]:hover:translate-y-0 [html[data-theme=light]_&]:shadow-[inset_0_1px_0_rgba(255,255,255,0.82),0_1.5rem_4rem_rgba(58,48,29,0.13)]",
@@ -17,9 +17,9 @@ export const projectsSectionClassNames = {
   kicker:
     "project-card__kicker flex items-center justify-between gap-4 font-mono text-[0.58rem] tracking-[0.08em] text-muted-foreground uppercase [&_svg]:text-[var(--project-accent)]",
   title:
-    "mt-[clamp(0.35rem,0.5vw,0.45rem)] mb-1 text-[clamp(1.65rem,2.35vw,2.65rem)] leading-[0.95] font-[520] tracking-[-0.065em] [html[lang=fa]_&]:max-w-[24ch] [html[lang=fa]_&]:text-[clamp(1.16rem,1.65vw,1.86rem)] [html[lang=fa]_&]:leading-[1.25] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:break-words",
+    "mt-[clamp(0.5rem,0.7vw,0.7rem)] mb-[0.35rem] text-[clamp(1.65rem,2.35vw,2.65rem)] leading-[0.95] font-[520] tracking-[-0.065em] [html[lang=fa]_&]:max-w-[26ch] [html[lang=fa]_&]:text-[clamp(1.08rem,1.45vw,1.65rem)] [html[lang=fa]_&]:leading-[1.38] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:break-words",
   summary:
-    "max-w-[42rem] text-[0.82rem] leading-[1.58] text-[var(--muted-bright)]",
+    "max-w-[42rem] text-[0.84rem] leading-[1.68] text-[var(--muted-bright)]",
   tags: "tag-list mt-auto flex flex-wrap gap-2 pt-[0.45rem]",
   tag: "rounded-full border-border bg-transparent px-[0.55rem] py-[0.36rem] font-mono text-[0.54rem] font-normal text-[var(--muted-bright)] [unicode-bidi:plaintext]",
 } as const;

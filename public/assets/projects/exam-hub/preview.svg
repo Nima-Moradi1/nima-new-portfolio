@@ -1,0 +1,159 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="750"
+  viewBox="0 0 1200 750"
+  fill="none"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">Exam Hub project preview</title>
+  <desc id="description">
+    A Persian web-skills assessment dashboard for HTML and CSS.
+  </desc>
+  <defs>
+    <linearGradient
+      id="background"
+      x1="80"
+      y1="24"
+      x2="1134"
+      y2="724"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#15201B" />
+      <stop offset="1" stop-color="#0B100E" />
+    </linearGradient>
+    <linearGradient
+      id="html-card"
+      x1="174"
+      y1="349"
+      x2="531"
+      y2="632"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#D88B54" />
+      <stop offset="1" stop-color="#A2472D" />
+    </linearGradient>
+    <linearGradient
+      id="css-card"
+      x1="599"
+      y1="349"
+      x2="956"
+      y2="632"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#698ED2" />
+      <stop offset="1" stop-color="#394E9B" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" />
+    </filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#background)" />
+  <circle
+    cx="1024"
+    cy="103"
+    r="206"
+    fill="#C9FA58"
+    fill-opacity=".13"
+    filter="url(#glow)"
+  />
+  <circle
+    cx="142"
+    cy="694"
+    r="165"
+    fill="#8171DF"
+    fill-opacity=".15"
+    filter="url(#glow)"
+  />
+  <rect x="72" y="53" width="1056" height="644" rx="27" fill="#F8F5EF" />
+  <rect x="72" y="53" width="1056" height="82" rx="27" fill="#EDE9DF" />
+  <path
+    d="M72 108c0-15 12-27 27-27h1002c15 0 27 12 27 27v27H72v-27Z"
+    fill="#EDE9DF"
+  />
+  <circle cx="113" cy="94" r="8" fill="#D36E58" />
+  <circle cx="139" cy="94" r="8" fill="#D9AE55" />
+  <circle cx="165" cy="94" r="8" fill="#74A470" />
+  <g font-family="Arial, sans-serif" text-anchor="end">
+    <text x="1018" y="88" fill="#1D2721" font-size="22" font-weight="700">
+      آزمون‌خانه
+    </text>
+    <text x="1018" y="113" fill="#6F766C" font-size="13">
+      سنجش هدفمند مهارت‌های وب
+    </text>
+  </g>
+  <rect x="106" y="175" width="988" height="128" rx="21" fill="#18221D" />
+  <circle cx="175" cy="239" r="32" fill="#C9FA58" fill-opacity=".18" />
+  <path
+    d="m164 230-12 10 12 10m22-20 12 10-12 10m-5-23-10 26"
+    stroke="#C9FA58"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <g font-family="Arial, sans-serif" text-anchor="end">
+    <text x="1010" y="222" fill="#C9FA58" font-size="15">
+      پلتفرم سنجش مهارت وب
+    </text>
+    <text x="1010" y="259" fill="#FFFDF7" font-size="29" font-weight="700">
+      یادگیریت را با آزمون‌های هدفمند بسنج.
+    </text>
+    <text x="1010" y="284" fill="#B7C1B8" font-size="15">
+      زمان‌بندی روشن، ارزیابی امن و بازخورد کاربردی
+    </text>
+  </g>
+  <text
+    x="106"
+    y="355"
+    fill="#263129"
+    font-family="Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    آزمون‌های موجود
+  </text>
+  <rect
+    x="106"
+    y="379"
+    width="452"
+    height="247"
+    rx="19"
+    fill="url(#html-card)"
+  />
+  <rect
+    x="642"
+    y="379"
+    width="452"
+    height="247"
+    rx="19"
+    fill="url(#css-card)"
+  />
+  <g font-family="Arial, sans-serif" text-anchor="end">
+    <text x="520" y="429" fill="#FFF9F4" font-size="15">
+      مبانی ساخت صفحات وب
+    </text>
+    <text x="520" y="475" fill="white" font-size="35" font-weight="700">
+      آزمون HTML
+    </text>
+    <text x="520" y="512" fill="#FFF5EC" font-size="16">
+      ۳۰ پرسش · ۳۵ دقیقه
+    </text>
+    <text x="1056" y="429" fill="#EFF3FF" font-size="15">
+      طراحی و چیدمان رابط
+    </text>
+    <text x="1056" y="475" fill="white" font-size="35" font-weight="700">
+      آزمون‌های CSS
+    </text>
+    <text x="1056" y="512" fill="#EEF2FF" font-size="16">
+      ۲ بخش · هر بخش ۴۰ پرسش
+    </text>
+  </g>
+  <path
+    d="M148 574h89m229 0h89m129 0h89m229 0h89"
+    stroke="white"
+    stroke-opacity=".75"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+</svg>

@@ -89,12 +89,13 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Lingo Learn" }),
   ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Exam Hub" })).toBeVisible();
   await expect(
     page.getByRole("link", { name: "View the XO Arena case study" }),
   ).toHaveAttribute("href", "/projects/xo-arena");
 
   const projectCards = page.locator(".projects__grid > *");
-  await expect(projectCards).toHaveCount(4);
+  await expect(projectCards).toHaveCount(5);
   expect(
     await projectCards.evaluateAll(
       (cards) =>
@@ -102,7 +103,27 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
           cards.map((card) => Math.round(card.getBoundingClientRect().top)),
         ).size,
     ),
-  ).toBe(1);
+  ).toBeGreaterThan(1);
+});
+
+test("localizes Exam Hub and applies IranYekanX to Persian project copy", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/fa");
+
+  const persianTitle = page.getByRole("heading", { name: "آزمون‌خانه" });
+  await expect(persianTitle).toBeVisible();
+  await expect(persianTitle).toHaveCSS("font-family", /IRANYekanX/);
+  await expect(
+    page.locator("a[href='https://full-exam-project.vercel.app/']"),
+  ).toHaveCount(1);
+
+  await page.goto("/de");
+  await expect(page.getByRole("heading", { name: "Exam Hub" })).toBeVisible();
+  await expect(
+    page.locator("a[href='https://full-exam-project.vercel.app/']"),
+  ).toHaveCount(1);
 });
 
 test("renders a controllable workstation with in-scene resume and lamp actions", async ({
