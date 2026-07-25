@@ -5,7 +5,7 @@ export const sectionHeadingClassNames = {
   index: "text-primary [html[lang=fa]_&]:text-lg",
   copy: "section-heading__copy col-start-2 flex flex-col items-center justify-center text-center max-[54rem]:col-start-1",
   title:
-    "max-w-[16ch] text-center text-[clamp(2.35rem,4.15vw,4.8rem)] leading-[0.98] font-[530] tracking-[-0.065em] text-balance max-[38rem]:text-[clamp(2.3rem,11.5vw,3.6rem)] [html[lang=fa]_&]:max-w-[min(100%,28ch)] [html[lang=fa]_&]:text-[clamp(1.65rem,2.91vw,3.36rem)] [html[lang=fa]_&]:leading-[1.16] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:break-words max-[38rem]:[html[lang=fa]_&]:text-[clamp(1.61rem,8.05vw,2.52rem)]",
+    "max-w-[16ch] text-center text-[clamp(2.35rem,4.15vw,4.8rem)] leading-[0.98] font-[530] tracking-[-0.065em] text-balance max-[38rem]:text-[clamp(2.3rem,11.5vw,3.6rem)] [html[lang=fa]_&]:max-w-[min(100%,30ch)] [html[lang=fa]_&]:text-[clamp(1.48rem,2.35vw,2.66rem)] [html[lang=fa]_&]:leading-[1.3] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:break-words max-[38rem]:[html[lang=fa]_&]:text-[clamp(1.42rem,7.2vw,2.16rem)]",
   description:
     "mt-[0.25rem] max-w-[41rem] text-center text-base leading-[1.7] text-muted-foreground",
 } as const;

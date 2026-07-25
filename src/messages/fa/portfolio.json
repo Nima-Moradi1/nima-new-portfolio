@@ -207,6 +207,26 @@
       "href": "https://lingo-learn.ir/",
       "featured": true,
       "accent": "lime"
+    },
+    {
+      "id": "exam-hub",
+      "number": "۰۵",
+      "title": "آزمون‌خانه",
+      "category": "پلتفرم تعاملی سنجش مهارت وب · محصول عملیاتی",
+      "summary": "پلتفرمی فارسی برای آزمون‌های کاربردی HTML و CSS با زمان‌بندی روشن، بازخورد متمرکز و تجربهٔ یادگیری واکنش‌گرا.",
+      "contribution": "ساخت تجربهٔ آزمون با Next.js، ارزیابی امن سمت سرور، جریان‌های ساخت‌یافتهٔ پرسش، پشتیبانی از پوسته و ناوبری RTL دسترس‌پذیر.",
+      "image": "/assets/projects/exam-hub/preview.svg",
+      "imageAlt": "پیش‌نمایش رابط آزمون‌خانه با کارت‌های آزمون HTML و CSS به زبان فارسی",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Server Actions",
+        "RTL",
+        "رابط واکنش‌گرا"
+      ],
+      "href": "https://full-exam-project.vercel.app/",
+      "featured": true,
+      "accent": "violet"
     }
   ],
   "capabilities": [

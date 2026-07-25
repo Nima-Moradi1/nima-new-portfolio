@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Vazirmatn } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
@@ -25,13 +25,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
-});
-
-const vazirmatn = Vazirmatn({
-  variable: "--font-vazirmatn",
-  subsets: ["arabic", "latin"],
-  display: "swap",
-  preload: false,
 });
 
 const themeInitScript = `(() => {
@@ -161,7 +154,7 @@ export default async function LocaleLayout({
       data-locale={locale}
       data-theme="dark"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
