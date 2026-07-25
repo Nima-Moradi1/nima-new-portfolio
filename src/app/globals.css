@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "IRANYekanX";
+  src: url("/fonts/iran-yekan/IRANYekanX-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanX";
+  src: url("/fonts/iran-yekan/IRANYekanX-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanX";
+  src: url("/fonts/iran-yekan/IRANYekanX-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Used by: src/components/theme/theme-provider.tsx and every semantic color
  * consumer through the tokens in this file.
@@ -194,6 +218,9 @@
   --font-body:
     var(--font-geist-sans), "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-label: var(--font-geist-mono), "Geist Mono", ui-monospace, monospace;
+  --font-iran-yekan: "IRANYekanX", Tahoma, Arial, sans-serif;
+  /* Keep existing localized component utilities on the same Persian family. */
+  --font-vazirmatn: var(--font-iran-yekan);
 }
 
 html[dir="rtl"] {
@@ -209,8 +236,8 @@ html[dir="rtl"] {
 }
 
 html[lang="fa"] {
-  --font-body: var(--font-vazirmatn), Tahoma, Arial, sans-serif;
-  --font-label: var(--font-vazirmatn), Tahoma, Arial, sans-serif;
+  --font-body: var(--font-iran-yekan);
+  --font-label: var(--font-iran-yekan);
 }
 
 [data-theme="light"] {
@@ -529,13 +556,57 @@ body *::selection {
       strong,
       figcaption
     ):not(:is(code, pre, kbd, samp, [dir="ltr"])) {
-    font-family: var(--font-vazirmatn), Tahoma, Arial, sans-serif;
+    font-family: var(--font-iran-yekan);
   }
 
   html[lang="de"] :where(h1, h2, h3) {
     hyphens: auto;
     overflow-wrap: break-word;
   }
+}
+
+/*
+ * Persian needs a calmer text rhythm than the condensed Latin display system.
+ * These overrides also cover utility-based technical labels and controls.
+ */
+html[lang="fa"] :is(h1, h2, h3) {
+  font-family: var(--font-iran-yekan);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+html[lang="fa"] h1 {
+  line-height: 1.28;
+}
+
+html[lang="fa"] h2 {
+  line-height: 1.34;
+}
+
+html[lang="fa"] h3 {
+  line-height: 1.42;
+}
+
+html[lang="fa"] .font-mono {
+  font-family: var(--font-iran-yekan);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[lang="fa"] p {
+  line-height: 1.86;
+}
+
+html[lang="fa"] .hero__actions {
+  margin-top: 1.15rem;
+  gap: 0.9rem;
+}
+
+html[lang="fa"] .magnetic-link {
+  min-height: 3.15rem;
+  padding-block: 0.72rem;
+  padding-inline: 1.2rem;
 }
 
 /*
