@@ -38,6 +38,25 @@
 
 /*
  * Used by: src/components/sections/projects-section.tsx
+ * Reason: The projects eyebrow belongs centered above its title within this
+ * framed header, unlike the shared side-meta layout used by other sections.
+ */
+.headerFrame :global(.section-heading) {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+}
+
+.headerFrame :global(.section-heading__meta),
+.headerFrame :global(.section-heading__copy) {
+  grid-column-start: 1;
+}
+
+.headerFrame :global(.section-heading__meta) {
+  justify-self: center;
+}
+
+/*
+ * Used by: src/components/sections/projects-section.tsx
  * Reason: This decorative scanning beam is generated content with layered
  * glow and a custom keyframe, so keeping it beside the border artwork is clearer.
  */

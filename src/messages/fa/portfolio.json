@@ -2,14 +2,14 @@
   "identity": {
     "name": "نیما مرادی‌راد",
     "initials": "NM",
-    "role": "مهندس ارشد فرانت‌اند",
-    "shortRole": "مهندسی محصول · وب + موبایل",
+    "role": "مهندس نرم‌افزار",
+    "shortRole": "مهندس محصول · وب، PWA و Android",
     "location": "تهران، ایران",
-    "availability": "بیش از ۶ سال تجربه در مهندسی وب، موبایل و PWA",
+    "availability": "بیش از ۶ سال تجربه در توسعه محصولات واقعی برای وب، PWA و Android",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "محصولاتی امن و پربازده برای وب، Android و PWA می‌سازم؛ از معماری React تا سامانه‌های بلادرنگ.",
+    "intro": "به تیم‌های فنی کمک می‌کنم نیازهای پیچیده محصول را به تجربه‌هایی سریع، امن و قابل نگهداری تبدیل کنند؛ از معماری React و تعاملات لحظه‌ای تا انتشار پایدار PWA و Android.",
     "statement": "محصولات مقیاس‌پذیر وب و موبایل می‌سازم؛ جایی که کارایی، پایداری و طراحی شفاف در کنار هم کار می‌کنند."
   },
   "navigation": [

@@ -2,9 +2,7 @@ export const mobileExperienceReaderClassNames = {
   root: "mobile-experience-reader page-shell mx-auto w-full max-w-[var(--content-width)] px-[var(--gutter)] py-[clamp(2.5rem,6vw,5rem)] max-[38rem]:pt-8",
   heading: "mobile-experience-reader__heading",
   headingEyebrow:
-    "flex items-center gap-3 font-mono text-[0.6rem] tracking-[0.09em] text-primary uppercase [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.64rem,0.72vw,0.76rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case",
-  headingIndex:
-    "grid size-8 shrink-0 place-items-center rounded-full border border-line-strong",
+    "font-mono text-[0.6rem] tracking-[0.09em] text-primary uppercase [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.64rem,0.72vw,0.76rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case",
   headingTitle:
     "mt-3 max-w-[min(100%,12ch)] break-words text-[clamp(2.25rem,7vw,4rem)] leading-none font-[520] tracking-[-0.065em] [html[lang=fa]_&]:max-w-[min(100%,16ch)] [html[lang=fa]_&]:text-[clamp(1.58rem,4.9vw,2.8rem)] [html[lang=fa]_&]:leading-[1.14] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:text-balance",
   headingDescription:
