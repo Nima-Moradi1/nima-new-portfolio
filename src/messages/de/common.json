@@ -2,7 +2,7 @@
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
     "homeTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeDescription": "Senior Frontend Engineer Nima Moradirad entwickelt sichere, leistungsstarke Produkte für Web, Android und PWA – mit skalierbarer Architektur und kreativem Produktdenken.",
+    "homeDescription": "Senior Frontend Engineer Nima Moradirad unterstützt technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen – von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
     "homeOgTitle": "Nima Moradirad · Senior Frontend Engineer",
     "homeOgDescription": "Ein Portfolio für Produktentwicklung rund um skalierbare Webanwendungen, Android, PWA, Echtzeitsysteme und kreative Technologien.",
     "xoTitle": "XO Arena · Echtzeit-Multiplayer-PWA",
@@ -66,11 +66,11 @@
     }
   },
   "Hero": {
-    "titleLine1": "Ich entwickle mit Fokus auf Skalierbarkeit,",
-    "titleLine2": "Performance und Kreativität.",
-    "primaryCta": "Ausgewählte Projekte entdecken",
+    "titleLine1": "Ich entwickle Systeme,",
+    "titleLine2": "die mitwachsen.",
+    "primaryCta": "Ausgewählte Projekte ansehen",
     "resumeCta": "Lebenslauf herunterladen",
-    "contactCta": "Kontakt aufnehmen",
+    "contactCta": "Gespräch beginnen",
     "scrollCue": "Weiter zum nächsten System scrollen",
     "signalsLabel": "Arbeitsfelder"
   },

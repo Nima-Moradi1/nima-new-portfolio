@@ -36,12 +36,7 @@ export function MobileExperienceReader({
   return (
     <div className={styles.root} data-direction={isRtl ? "rtl" : "ltr"}>
       <header className={styles.heading}>
-        <p className={styles.headingEyebrow}>
-          <span className={styles.headingIndex}>
-            <bdi>{formatIndex(2)}</bdi>
-          </span>
-          {t("eyebrow")}
-        </p>
+        <p className={styles.headingEyebrow}>{t("eyebrow")}</p>
         <h2 className={styles.headingTitle} id="experience-title">
           {t("title")}
         </h2>

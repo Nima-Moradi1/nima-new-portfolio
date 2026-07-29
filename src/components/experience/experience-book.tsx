@@ -49,9 +49,7 @@ function ExperienceListFallback({ experiences }: ExperienceBookProps) {
   return (
     <div className={styles.fallbackRoot}>
       <div className={styles.fallbackHeading}>
-        <span className={styles.fallbackEyebrow}>
-          <bdi>{formatIndex(2)}</bdi> · {t("eyebrow")}
-        </span>
+        <span className={styles.fallbackEyebrow}>{t("eyebrow")}</span>
         <h2 className={styles.fallbackTitle} id="experience-title">
           {t("fallbackTitle")}
         </h2>
@@ -200,12 +198,7 @@ function DesktopExperienceBook({
         tabIndex={0}
       >
         <header className={styles.heading}>
-          <p className={styles.headingEyebrow}>
-            <span className={styles.headingIndex}>
-              <bdi>{formatIndex(2)}</bdi>
-            </span>
-            {t("eyebrow")}
-          </p>
+          <p className={styles.headingEyebrow}>{t("eyebrow")}</p>
           <h2 className={styles.headingTitle} id="experience-title">
             {t("title")}
           </h2>

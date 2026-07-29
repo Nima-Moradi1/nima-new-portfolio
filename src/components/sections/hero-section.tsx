@@ -35,7 +35,7 @@ export function HeroSection() {
             </Reveal>
             <Reveal delay={0.12}>
               <h1 className={styles.title} id="hero-title">
-                {t("titleLine1")}
+                {t("titleLine1")}{" "}
                 <span className={styles.titleOutline}>{t("titleLine2")}</span>
               </h1>
             </Reveal>
@@ -46,11 +46,11 @@ export function HeroSection() {
               <MagneticLink href="#work" className="magnetic-link--primary">
                 {t("primaryCta")}
               </MagneticLink>
-              <MagneticLink href={portfolio.identity.resumeUrl} download>
-                {t("resumeCta")}
-              </MagneticLink>
               <MagneticLink href="#contact" contact>
                 {t("contactCta")}
+              </MagneticLink>
+              <MagneticLink href={portfolio.identity.resumeUrl} download>
+                {t("resumeCta")}
               </MagneticLink>
             </div>
           </div>

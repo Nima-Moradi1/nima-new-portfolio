@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { useFormatter, useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePortfolio } from "@/content/use-portfolio";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/motion/reveal";
@@ -14,9 +14,6 @@ export function ProjectsSection() {
   const locale = useLocale();
   const portfolio = usePortfolio();
   const t = useTranslations("Projects");
-  const format = useFormatter();
-  const formatIndex = (value: number) =>
-    format.number(value, { minimumIntegerDigits: 2, useGrouping: false });
   const InternalArrow = locale === "fa" ? ArrowLeft : ArrowRight;
 
   return (
@@ -30,7 +27,6 @@ export function ProjectsSection() {
         <Reveal className={cn(styles.headerFrame, artwork.headerFrame)}>
           <SectionHeading
             id="work-title"
-            index={formatIndex(3)}
             eyebrow={t("eyebrow")}
             title={t("title")}
             description={t("description")}

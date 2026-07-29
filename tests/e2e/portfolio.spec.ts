@@ -52,7 +52,7 @@ test("prepares a complete first frame on every document load", async ({
   );
   await expect(
     page.getByRole("heading", {
-      name: /I build for scalability, performance, and creativity/i,
+      name: /I build systems that scale/i,
     }),
   ).toBeVisible();
 
@@ -69,7 +69,7 @@ test("prepares a complete first frame on every document load", async ({
   );
   await expect(
     page.getByRole("heading", {
-      name: /I build for scalability, performance, and creativity/i,
+      name: /I build systems that scale/i,
     }),
   ).toBeVisible();
 });
@@ -80,10 +80,10 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
 
   await expect(
     page.getByRole("heading", {
-      name: /I build for scalability, performance, and creativity/i,
+      name: /I build systems that scale/i,
     }),
   ).toBeVisible();
-  await page.getByRole("link", { name: "Explore selected work" }).click();
+  await page.getByRole("link", { name: "View selected work" }).click();
   await expect(page.locator("#work")).toBeInViewport();
   await expect(page.getByRole("heading", { name: "XO Arena" })).toBeVisible();
   await expect(
@@ -842,7 +842,11 @@ test("renders the updated mobile, PWA, and AI engineering depth", async ({
   await page.goto("/");
 
   await expect(
-    page.getByText("6+ years across web, mobile, and PWA engineering").first(),
+    page
+      .getByText(
+        "6+ years building production products across web, PWA, and Android",
+      )
+      .first(),
   ).toBeVisible();
   await page.goto("/#experience");
   await expect(

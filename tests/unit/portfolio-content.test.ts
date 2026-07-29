@@ -3,7 +3,7 @@ import { portfolio } from "@/content/portfolio";
 
 describe("updated professional portfolio content", () => {
   it("uses the 2026 professional identity and hero signals", () => {
-    expect(portfolio.identity.role).toBe("Senior Frontend Engineer");
+    expect(portfolio.identity.role).toBe("Product Engineer");
     expect(portfolio.identity.availability).toContain("6+ years");
     expect(portfolio.signals).toEqual([
       "Scalability",

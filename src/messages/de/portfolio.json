@@ -2,14 +2,14 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Senior Frontend Engineer",
-    "shortRole": "Produktentwicklung · Web + Mobile",
+    "role": "Produktentwickler",
+    "shortRole": "Produktentwickler · Web, PWA & Android",
     "location": "Teheran, Iran",
-    "availability": "Mehr als 6 Jahre Erfahrung in Web-, Mobile- und PWA-Entwicklung",
+    "availability": "Mehr als 6 Jahre Entwicklung produktiver Anwendungen für Web, PWA und Android",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "Ich entwickle sichere, leistungsstarke Produkte für Web, Android und PWA – von React-Architekturen bis zu Echtzeitsystemen.",
+    "intro": "Ich unterstütze technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen – von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
     "statement": "Ich entwickle skalierbare Web- und Mobile-Produkte, in denen Performance, Zuverlässigkeit und klares Design zusammenspielen."
   },
   "navigation": [

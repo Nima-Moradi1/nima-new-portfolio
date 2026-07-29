@@ -1,0 +1,18 @@
+/*
+ * Used by: src/components/sections/capabilities-section.tsx
+ * Reason: The capabilities eyebrow is centered above its heading to match the
+ * projects header, while the shared SectionHeading defaults to side metadata.
+ */
+.intro :global(.section-heading) {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+}
+
+.intro :global(.section-heading__meta),
+.intro :global(.section-heading__copy) {
+  grid-column-start: 1;
+}
+
+.intro :global(.section-heading__meta) {
+  justify-self: center;
+}

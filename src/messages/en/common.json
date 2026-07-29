@@ -2,7 +2,7 @@
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
     "homeTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeDescription": "Senior Frontend Engineer Nima Moradirad builds secure, high-performance products across web, Android, and PWA surfaces with scalable architecture and creative product thinking.",
+    "homeDescription": "Senior Frontend Engineer Nima Moradirad helps technical teams turn complex product requirements into fast, secure, and maintainable experiences—from React architecture and real-time features to reliable PWA and Android delivery.",
     "homeOgTitle": "Nima Moradirad · Senior Frontend Engineer",
     "homeOgDescription": "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology.",
     "xoTitle": "XO Arena · Real-time multiplayer PWA",
@@ -66,11 +66,11 @@
     }
   },
   "Hero": {
-    "titleLine1": "I build for scalability,",
-    "titleLine2": "performance, and creativity.",
-    "primaryCta": "Explore selected work",
+    "titleLine1": "I build systems",
+    "titleLine2": "that scale.",
+    "primaryCta": "View selected work",
     "resumeCta": "Download résumé",
-    "contactCta": "Open a channel",
+    "contactCta": "Start a conversation",
     "scrollCue": "Scroll forward into the next system",
     "signalsLabel": "Areas of practice"
   },
@@ -97,14 +97,14 @@
   },
   "Projects": {
     "eyebrow": "Selected work",
-    "title": "Work that ships.",
+    "title": "Work that ships",
     "description": "Production-minded products across multiplayer, commerce, B2B finance, language learning, and web-skills assessment.",
     "internalLabel": "View the {title} case study",
     "externalLabel": "View {title} project in a new tab"
   },
   "Capabilities": {
     "eyebrow": "Engineering capabilities",
-    "title": "Web to Android.",
+    "title": "Web to Android",
     "description": "Architecture, delivery, quality, and AI-assisted systems for production products.",
     "regionLabel": "Horizontal engineering capabilities timeline",
     "chromeTitle": "Skills & experience",

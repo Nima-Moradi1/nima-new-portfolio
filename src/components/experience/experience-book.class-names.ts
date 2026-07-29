@@ -30,9 +30,7 @@ export const experienceBookClassNames = {
   heading:
     "experience-book__heading page-shell pointer-events-none absolute inset-x-0 top-[calc(var(--header-height)+0.55rem)] z-4 mx-auto w-full max-w-[var(--content-width)] px-[var(--gutter)] min-[72.01rem]:inset-e-auto min-[72.01rem]:start-[var(--experience-book-page-edge)] min-[72.01rem]:m-0 min-[72.01rem]:h-fit min-[72.01rem]:w-[var(--experience-book-heading-copy-width)] min-[72.01rem]:max-w-none min-[72.01rem]:py-0 min-[72.01rem]:ps-0 min-[72.01rem]:pe-[clamp(0.5rem,1vw,1rem)] min-[72.01rem]:top-[var(--experience-book-content-top)]",
   headingEyebrow:
-    "flex items-center gap-3 font-mono text-[0.62rem] tracking-[0.1em] text-primary uppercase [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.64rem,0.72vw,0.76rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case",
-  headingIndex:
-    "grid size-8 shrink-0 place-items-center rounded-full border border-line-strong",
+    "font-mono text-[0.62rem] tracking-[0.1em] text-primary uppercase [html[lang=fa]_&]:font-[var(--font-vazirmatn),Tahoma,Arial,sans-serif] [html[lang=fa]_&]:text-[clamp(0.64rem,0.72vw,0.76rem)] [html[lang=fa]_&]:leading-[1.55] [html[lang=fa]_&]:tracking-normal [html[lang=fa]_&]:normal-case",
   headingTitle:
     "mt-1 max-w-[7ch] text-[clamp(2.25rem,3.9vw,4.65rem)] leading-[0.92] font-[520] tracking-[-0.065em] text-balance max-[72rem]:text-[clamp(2.3rem,4vw,4rem)] max-[54rem]:max-w-[11ch] max-[54rem]:text-[clamp(2.35rem,8vw,4rem)] max-[38rem]:text-[clamp(2rem,9vw,2.8rem)] [html[lang=fa]_&]:max-w-[min(100%,16ch)] [html[lang=fa]_&]:break-words [html[lang=fa]_&]:text-[clamp(1.58rem,2.73vw,3.26rem)] [html[lang=fa]_&]:leading-[1.12] [html[lang=fa]_&]:tracking-normal",
   headingDescription:

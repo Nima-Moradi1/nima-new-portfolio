@@ -6,7 +6,6 @@ describe("SectionHeading", () => {
   it("renders a semantic heading and optional description", () => {
     render(
       <SectionHeading
-        index="01"
         eyebrow="About"
         title="A deliberate practice"
         description="Useful supporting context."
