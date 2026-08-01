@@ -11,6 +11,17 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
+  images: {
+    unoptimized: true,
+  },
+  outputFileTracingExcludes: {
+    "/*": [
+      "./node_modules/@img/**",
+      "./node_modules/sharp/**",
+      "./node_modules/caniuse-lite/**",
+      "./node_modules/baseline-browser-mapping/**",
+    ],
+  },
   turbopack: {
     root: process.cwd(),
   },
