@@ -35,3 +35,4 @@ next-env.d.ts
 # The Liara Next builder's locked-install paths fail in its current image.
 # Excluding both lockfiles makes it use npm install without changing local tooling.
 package-lock.json
+pnpm-lock.yaml
