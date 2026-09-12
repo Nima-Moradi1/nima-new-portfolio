@@ -6,9 +6,9 @@
     "description": "Fallstudie zu Azita Mohajer: eine persische Beratungsbuchungsplattform mit sicherer Administrationskonsole und Telegram-Bot."
   },
   "hero": {
-    "eyebrow": "Azita Mohajer ? Website & Telegram-Bot",
+    "eyebrow": "Azita Mohajer · Website & Telegram-Bot",
     "title": "Beratung buchen, ganz einfach.",
-    "intro": "Ich habe Azita Mohajer entwickelt, um die Beratungsbuchung einfacher zu machen: vom passenden Termin bis zur Nachfrage, auf der Website oder ?ber Telegram.",
+    "intro": "Ich habe Azita Mohajer entwickelt, um die Beratungsbuchung einfacher zu machen: vom passenden Termin bis zur Nachfrage, auf der Website oder über Telegram.",
     "availability": "Öffentliches Live-Produkt · azitamohajer.com",
     "imageAlt": "Screenshot der neu gestalteten Azita-Mohajer-Startseite"
   },
@@ -22,7 +22,7 @@
     {
       "id": "journey",
       "title": "Schrittweise buchen",
-      "text": "Daten eingeben, Beratung w?hlen und einen Termin buchen."
+      "text": "Daten eingeben, Beratung wählen und einen Termin buchen."
     },
     {
       "id": "calendar",
@@ -44,14 +44,14 @@
     "eyebrow": "Engineering-Notiz · 03",
     "title": "Hinter dem Projekt",
     "securityLabel": "Sicherer Verwaltungszugang",
-    "paragraph1": "Entwickelt mit Next.js und TypeScript, PostgreSQL und Drizzle f?r Daten sowie HeroUI und Tailwind CSS f?r die Oberfl?che.",
-    "paragraph2": "Klare Rollen, sichere Anmeldung und Aktivit?tsprotokolle unterst?tzen die Verwaltung der Buchungen."
+    "paragraph1": "Entwickelt mit Next.js und TypeScript, PostgreSQL und Drizzle für Daten sowie HeroUI und Tailwind CSS für die Oberfläche.",
+    "paragraph2": "Klare Rollen, sichere Anmeldung und Aktivitätsprotokolle unterstützen die Verwaltung der Buchungen."
   },
   "links": {
     "eyebrow": "Selbst ausprobieren",
     "title": "Entdecke die Website oder den Bot.",
     "website": "Website entdecken",
-    "bot": "Telegram-Bot ?ffnen",
+    "bot": "Telegram-Bot öffnen",
     "work": "Ausgewählte Arbeiten",
     "contact": "Gespräch beginnen"
   }

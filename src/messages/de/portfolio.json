@@ -218,7 +218,7 @@
       "number": "05",
       "title": "Azita Mohajer",
       "category": "Beratungsplattform · Produktivbetrieb",
-      "summary": "Beratungsbuchung mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich f?r persischsprachige Nutzer.",
+      "summary": "Beratungsbuchung mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich für persischsprachige Nutzer.",
       "contribution": "Design und Entwicklung von Website, Buchungsablauf, Verwaltungsbereich und Telegram-Bot mit Next.js und TypeScript.",
       "image": "/assets/projects/azita-mohajer/desktop-site.png",
       "imageAlt": "Öffentliche Azita-Mohajer-Website in der Desktopansicht",
