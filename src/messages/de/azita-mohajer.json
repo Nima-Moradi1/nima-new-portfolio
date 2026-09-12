@@ -1,0 +1,58 @@
+{
+  "skip": "Zur Fallstudie springen",
+  "back": "Zurück zu ausgewählten Arbeiten",
+  "metadata": {
+    "title": "Azita Mohajer · Beratungsplattform",
+    "description": "Fallstudie zu Azita Mohajer: eine persische Beratungsbuchungsplattform mit sicherer Administrationskonsole und Telegram-Bot."
+  },
+  "hero": {
+    "eyebrow": "Azita Mohajer ? Website & Telegram-Bot",
+    "title": "Beratung buchen, ganz einfach.",
+    "intro": "Ich habe Azita Mohajer entwickelt, um die Beratungsbuchung einfacher zu machen: vom passenden Termin bis zur Nachfrage, auf der Website oder ?ber Telegram.",
+    "availability": "Öffentliches Live-Produkt · azitamohajer.com",
+    "imageAlt": "Screenshot der neu gestalteten Azita-Mohajer-Startseite"
+  },
+  "system": {
+    "eyebrow": "Produktkarte · 02",
+    "title": "Von der Terminwahl zur Buchungsverwaltung.",
+    "description": "Eine persische Buchungsplattform mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich.",
+    "stackLabel": "Azita Mohajer Technologie-Stack"
+  },
+  "signals": [
+    {
+      "id": "journey",
+      "title": "Schrittweise buchen",
+      "text": "Daten eingeben, Beratung w?hlen und einen Termin buchen."
+    },
+    {
+      "id": "calendar",
+      "title": "Jalali-Kalender",
+      "text": "Freie Tage und Uhrzeiten ansehen und einen passenden Termin finden."
+    },
+    {
+      "id": "bot",
+      "title": "Telegram-Bot",
+      "text": "Beratungen direkt in Telegram buchen und nachverfolgen."
+    },
+    {
+      "id": "admin",
+      "title": "Verwaltungsbereich",
+      "text": "Anfragen und Termine in einem separaten, sicheren Bereich verwalten."
+    }
+  ],
+  "architecture": {
+    "eyebrow": "Engineering-Notiz · 03",
+    "title": "Hinter dem Projekt",
+    "securityLabel": "Sicherer Verwaltungszugang",
+    "paragraph1": "Entwickelt mit Next.js und TypeScript, PostgreSQL und Drizzle f?r Daten sowie HeroUI und Tailwind CSS f?r die Oberfl?che.",
+    "paragraph2": "Klare Rollen, sichere Anmeldung und Aktivit?tsprotokolle unterst?tzen die Verwaltung der Buchungen."
+  },
+  "links": {
+    "eyebrow": "Selbst ausprobieren",
+    "title": "Entdecke die Website oder den Bot.",
+    "website": "Website entdecken",
+    "bot": "Telegram-Bot ?ffnen",
+    "work": "Ausgewählte Arbeiten",
+    "contact": "Gespräch beginnen"
+  }
+}

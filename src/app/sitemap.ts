@@ -6,6 +6,7 @@ import { siteUrl } from "@/lib/site";
 const routes = [
   { pathname: "/", priority: 1 },
   { pathname: "/projects/xo-arena", priority: 0.8 },
+  { pathname: "/projects/azita-mohajer", priority: 0.8 },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

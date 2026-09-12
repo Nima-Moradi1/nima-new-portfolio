@@ -1,0 +1,35 @@
+.heroTitle {
+  max-width: 13ch;
+  font-size: clamp(2.65rem, 5vw, 5.15rem) !important;
+  line-height: 0.98 !important;
+}
+
+.sectionTitle,
+.architectureTitle {
+  max-width: 16ch;
+  font-size: clamp(2.15rem, 3.8vw, 3.85rem) !important;
+  line-height: 1.02 !important;
+}
+
+.exploreTitle {
+  max-width: 20ch;
+  font-size: clamp(2rem, 3.3vw, 3.35rem) !important;
+  line-height: 1.05 !important;
+}
+
+:global(html[lang="fa"]) .heroTitle {
+  max-width: 15ch;
+  font-size: clamp(2.25rem, 4.35vw, 4.5rem) !important;
+  line-height: 1.18 !important;
+}
+
+:global(html[lang="fa"]) .sectionTitle,
+:global(html[lang="fa"]) .architectureTitle {
+  font-size: clamp(1.8rem, 3.25vw, 3.35rem) !important;
+  line-height: 1.25 !important;
+}
+
+:global(html[lang="fa"]) .exploreTitle {
+  font-size: clamp(1.7rem, 3vw, 3rem) !important;
+  line-height: 1.3 !important;
+}

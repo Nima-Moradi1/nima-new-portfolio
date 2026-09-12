@@ -214,24 +214,24 @@
       "accent": "lime"
     },
     {
-      "id": "exam-hub",
+      "id": "azita-mohajer",
       "number": "05",
-      "title": "Exam Hub",
-      "category": "Interactive web-skills assessment · Live product",
-      "summary": "A Persian-first assessment platform for practical HTML and CSS quizzes, with clear timing, focused feedback, and responsive learning flows.",
-      "contribution": "Built a polished Next.js assessment experience with secure server-side evaluation, structured question flows, theme support, and accessible RTL navigation.",
-      "image": "/assets/projects/exam-hub/preview.svg",
-      "imageAlt": "Exam Hub interface preview showing HTML and CSS assessment cards in Persian",
+      "title": "Azita Mohajer",
+      "category": "Consultation platform · Live product",
+      "summary": "Consultation booking with a Jalali calendar, Telegram bot and admin dashboard, built for Persian speakers.",
+      "contribution": "Designed and built the website, booking flow, admin dashboard and Telegram bot with Next.js and TypeScript.",
+      "image": "/assets/projects/azita-mohajer/desktop-site.png",
+      "imageAlt": "Azita Mohajer public website shown on desktop",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Server Actions",
+        "Drizzle ORM",
         "RTL",
-        "Responsive UI"
+        "Telegram Bot"
       ],
-      "href": "https://full-exam-project.vercel.app/",
+      "href": "/projects/azita-mohajer",
       "featured": true,
-      "accent": "violet"
+      "accent": "lime"
     }
   ],
   "capabilities": [

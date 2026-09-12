@@ -214,24 +214,24 @@
       "accent": "lime"
     },
     {
-      "id": "exam-hub",
+      "id": "azita-mohajer",
       "number": "05",
-      "title": "Exam Hub",
-      "category": "Interaktive Bewertung von Webkenntnissen · Produktivbetrieb",
-      "summary": "Eine persischsprachige Plattform für praxisnahe HTML- und CSS-Tests mit klarer Zeitvorgabe, fokussiertem Feedback und responsiven Lernabläufen.",
-      "contribution": "Entwicklung einer ausgereiften Next.js-Prüfungserfahrung mit sicherer serverseitiger Auswertung, strukturierten Frageabläufen, Theme-Unterstützung und zugänglicher RTL-Navigation.",
-      "image": "/assets/projects/exam-hub/preview.svg",
-      "imageAlt": "Exam-Hub-Oberfläche mit persischen Karten für HTML- und CSS-Tests",
+      "title": "Azita Mohajer",
+      "category": "Beratungsplattform · Produktivbetrieb",
+      "summary": "Beratungsbuchung mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich f?r persischsprachige Nutzer.",
+      "contribution": "Design und Entwicklung von Website, Buchungsablauf, Verwaltungsbereich und Telegram-Bot mit Next.js und TypeScript.",
+      "image": "/assets/projects/azita-mohajer/desktop-site.png",
+      "imageAlt": "Öffentliche Azita-Mohajer-Website in der Desktopansicht",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Server Actions",
+        "Drizzle ORM",
         "RTL",
-        "Responsive UI"
+        "Telegram Bot"
       ],
-      "href": "https://full-exam-project.vercel.app/",
+      "href": "/projects/azita-mohajer",
       "featured": true,
-      "accent": "violet"
+      "accent": "lime"
     }
   ],
   "capabilities": [

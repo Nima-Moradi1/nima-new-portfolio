@@ -209,24 +209,24 @@
       "accent": "lime"
     },
     {
-      "id": "exam-hub",
+      "id": "azita-mohajer",
       "number": "۰۵",
-      "title": "آزمون‌خانه",
-      "category": "پلتفرم تعاملی سنجش مهارت وب · محصول عملیاتی",
-      "summary": "پلتفرمی فارسی برای آزمون‌های کاربردی HTML و CSS با زمان‌بندی روشن، بازخورد متمرکز و تجربهٔ یادگیری واکنش‌گرا.",
-      "contribution": "ساخت تجربهٔ آزمون با Next.js، ارزیابی امن سمت سرور، جریان‌های ساخت‌یافتهٔ پرسش، پشتیبانی از پوسته و ناوبری RTL دسترس‌پذیر.",
-      "image": "/assets/projects/exam-hub/preview.svg",
-      "imageAlt": "پیش‌نمایش رابط آزمون‌خانه با کارت‌های آزمون HTML و CSS به زبان فارسی",
+      "title": "آزیتا مهاجر",
+      "category": "پلتفرم رزرو مشاوره · محصول عملیاتی",
+      "summary": "???? ?????? ?? ????? ????? ???? ?????? ? ??? ??????? ????? ????? ? ?? ?????.",
+      "contribution": "????? ? ?????? ????? ???? ????? ??? ?????? ? ???? ?????? ?? Next.js ? TypeScript.",
+      "image": "/assets/projects/azita-mohajer/desktop-site.png",
+      "imageAlt": "وب‌سایت عمومی آزیتا مهاجر در نمای دسکتاپ",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Server Actions",
+        "Drizzle ORM",
         "RTL",
-        "رابط واکنش‌گرا"
+        "Telegram Bot"
       ],
-      "href": "https://full-exam-project.vercel.app/",
+      "href": "/projects/azita-mohajer",
       "featured": true,
-      "accent": "violet"
+      "accent": "lime"
     }
   ],
   "capabilities": [

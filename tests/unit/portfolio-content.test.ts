@@ -35,7 +35,7 @@ describe("updated professional portfolio content", () => {
       "Emerald Case",
       "Hesabo Platform",
       "Lingo Learn",
-      "Exam Hub",
+      "Azita Mohajer",
     ]);
     expect(portfolio.projects[0]).toMatchObject({
       href: "/projects/xo-arena",
@@ -46,8 +46,8 @@ describe("updated professional portfolio content", () => {
       logo: "/assets/projects/lingo-learn/logo.png",
     });
     expect(portfolio.projects[4]).toMatchObject({
-      href: "https://full-exam-project.vercel.app/",
-      technologies: expect.arrayContaining(["Next.js", "TypeScript"]),
+      href: "/projects/azita-mohajer",
+      technologies: expect.arrayContaining(["Drizzle ORM", "Telegram Bot"]),
     });
   });
 

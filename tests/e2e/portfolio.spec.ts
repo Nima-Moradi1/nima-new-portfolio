@@ -89,7 +89,9 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Lingo Learn" }),
   ).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Exam Hub" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Azita Mohajer" }),
+  ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "View the XO Arena case study" }),
   ).toHaveAttribute("href", "/projects/xo-arena");
@@ -106,24 +108,47 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   ).toBeGreaterThan(1);
 });
 
-test("localizes Exam Hub and applies IranYekanX to Persian project copy", async ({
+test("localizes Azita Mohajer and applies IranYekanX to Persian project copy", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/fa");
 
-  const persianTitle = page.getByRole("heading", { name: "آزمون‌خانه" });
+  const persianTitle = page.getByRole("heading", { name: "آزیتا مهاجر" });
   await expect(persianTitle).toBeVisible();
   await expect(persianTitle).toHaveCSS("font-family", /IRANYekanX/);
-  await expect(
-    page.locator("a[href='https://full-exam-project.vercel.app/']"),
-  ).toHaveCount(1);
+  await expect(page.locator("a[href='/projects/azita-mohajer']")).toHaveCount(
+    1,
+  );
 
   await page.goto("/de");
-  await expect(page.getByRole("heading", { name: "Exam Hub" })).toBeVisible();
   await expect(
-    page.locator("a[href='https://full-exam-project.vercel.app/']"),
-  ).toHaveCount(1);
+    page.getByRole("heading", { name: "Azita Mohajer" }),
+  ).toBeVisible();
+  await expect(page.locator("a[href='/projects/azita-mohajer']")).toHaveCount(
+    1,
+  );
+});
+
+test("presents Azita Mohajer with public and Telegram links only", async ({
+  page,
+}) => {
+  await page.goto("/projects/azita-mohajer");
+
+  await expect(
+    page.getByRole("heading", {
+      name: "One consultation journey, available wherever people start.",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Open Azita Mohajer" }),
+  ).toHaveAttribute("href", "https://azitamohajer.com");
+  await expect(
+    page.getByRole("link", { name: "Open Telegram bot" }),
+  ).toHaveAttribute("href", "https://t.me/azita_apply_bot");
+  await expect(page.locator("a[href*='admin.azitamohajer.com']")).toHaveCount(
+    0,
+  );
 });
 
 test("renders a controllable workstation with in-scene resume and lamp actions", async ({
