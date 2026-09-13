@@ -8,7 +8,6 @@ const nextConfig = {
   // CI packages this server and its assets; Liara only runs the tested build.
   output: "standalone",
   deploymentId: deploymentSha,
-  ...(deploymentSha && { generateBuildId: async () => deploymentSha }),
   env: { DEPLOYMENT_SHA: deploymentSha || "development" },
   poweredByHeader: false,
   reactStrictMode: true,
