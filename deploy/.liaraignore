@@ -1,0 +1,4 @@
+# The tar contains the entire tested runtime, including hidden Next.js files.
+/*
+!/Dockerfile
+!/runtime.tar.gz

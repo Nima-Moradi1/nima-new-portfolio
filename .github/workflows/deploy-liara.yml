@@ -2,44 +2,62 @@ name: Deploy to Liara
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
+# Let an accepted release finish. A newer push replaces the pending run.
 concurrency:
   group: liara-production
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: read
 
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://nimamoradirad.com' }}
+  NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL || 'nimamoradirad@gmail.com' }}
+
 jobs:
   deploy:
-    name: Validate and deploy
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    name: Build once, deploy, verify production
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment:
+      name: production
+      url: https://nimamoradirad.com
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out the pushed commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
 
       - name: Verify deployment credentials
         env:
           LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
-        run: |
-          if [ -z "$LIARA_API_TOKEN" ]; then
-            echo "::error::Add LIARA_API_TOKEN under Settings > Secrets and variables > Actions."
-            exit 1
-          fi
+        run: test -n "$LIARA_API_TOKEN" || { echo '::error::Missing LIARA_API_TOKEN secret'; exit 1; }
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: "22"
+          node-version: "22.23.2"
           cache: npm
+          cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Restore Next.js compiler cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          # Never restore generated pages, the runtime, or the fetch/data cache.
+          path: .next/cache/webpack
+          key: next-webpack-${{ runner.os }}-node22-${{ hashFiles('package-lock.json', 'next.config.js') }}-${{ github.sha }}
+          restore-keys: |
+            next-webpack-${{ runner.os }}-node22-${{ hashFiles('package-lock.json', 'next.config.js') }}-
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Lint
         run: npm run lint
@@ -53,34 +71,76 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Install Liara CLI
-        run: npm install --global @liara/cli@9
+      - name: Package the Linux standalone runtime
+        run: bash deploy/package.sh
 
-      - name: Deploy production to Liara
+      - name: Test the production container before deployment
+        timeout-minutes: 8
+        run: |
+          docker build --tag portfolio-smoke build/liara
+          docker run --detach --name portfolio-smoke --publish 3000:3000 portfolio-smoke
+          trap 'docker logs portfolio-smoke; docker rm -f portfolio-smoke' EXIT
+          node deploy/verify.mjs http://localhost:3000 "$GITHUB_SHA" 6
+          docker exec portfolio-smoke node /app/healthcheck.cjs
+
+      - name: Save the tested deployment bundle
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: liara-runtime-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            build/liara/runtime.tar.gz
+            build/liara/Dockerfile
+            build/liara/liara.json
+            build/runtime.sha256
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Install pinned Liara CLI
+        run: npm install --global @liara/cli@9.5.1 --no-audit --no-fund
+
+      - name: Deploy the tested release safely
+        id: release
+        timeout-minutes: 25
         env:
           LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          set +e
+          sha256sum --check build/runtime.sha256
+          node deploy/release.mjs 2>&1 | tee build/liara-deploy.log
 
-          for attempt in 1 2; do
-            liara deploy \
-              --app="nimamoradirad" \
-              --port=3000 \
-              --build-location="iran" \
-              --api-token="$LIARA_API_TOKEN" \
-              --message="GitHub ${GITHUB_SHA::7} (attempt ${attempt})" \
-              --no-app-logs
+      - name: Verify live commit, translations, and assets
+        if: steps.release.outputs.deployed == 'true'
+        timeout-minutes: 6
+        run: |
+          node deploy/verify.mjs https://nimamoradirad.liara.run "$GITHUB_SHA" 6
+          node deploy/verify.mjs "$NEXT_PUBLIC_SITE_URL" "$GITHUB_SHA" 6
 
-            exit_code=$?
-
-            if [ "$exit_code" -eq 0 ]; then
-              exit 0
+      - name: Record deployment result
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          DEPLOYED: ${{ steps.release.outputs.deployed }}
+          RELEASE: ${{ steps.release.outputs.release }}
+        run: |
+          {
+            echo "Commit: $GITHUB_SHA"
+            echo "Result: $JOB_STATUS"
+            echo "Liara release: ${RELEASE:-none}"
+            if [ "$DEPLOYED" = false ]; then
+              echo 'Skipped: a newer main commit is queued.'
+            elif [ "$JOB_STATUS" = success ] && [ "$DEPLOYED" = true ]; then
+              echo 'Verified the exact commit, all three languages, JS/CSS, project image, and resume on Liara and the public domain.'
+            else
+              echo 'Production deployment is NOT verified. Inspect the failed step and deployment log.'
             fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
-            if [ "$attempt" -eq 2 ]; then
-              exit "$exit_code"
-            fi
-
-            echo "::warning::Liara deployment failed with exit code ${exit_code}; retrying once to reuse the build cache."
-            sleep 20
-          done
+      - name: Save deployment diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: liara-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/liara-deploy.log
+          if-no-files-found: ignore
+          retention-days: 7

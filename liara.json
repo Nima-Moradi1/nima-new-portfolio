@@ -1,9 +1,12 @@
 {
   "app": "nimamoradirad",
-  "platform": "next",
+  "platform": "docker",
   "port": 3000,
-  "next": {
-    "nodeVersion": "22",
-    "mirror": true
+  "healthCheck": {
+    "command": ["CMD", "node", "/app/healthcheck.cjs"],
+    "interval": 15,
+    "timeout": 10,
+    "retries": 3,
+    "startPeriod": 20
   }
 }

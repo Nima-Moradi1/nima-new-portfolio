@@ -44,7 +44,7 @@ After running the site locally, open `http://localhost:3000`. Verified desktop a
 | Motion     | Motion                                      | Reduced-motion-aware reveal and interaction primitives   |
 | Forms      | React Hook Form + Zod                       | Shared client/server validation contract                 |
 | Tests      | Vitest + Testing Library + Playwright + axe | Unit, interaction, browser, and accessibility coverage   |
-| Deployment | Liara Next.js platform                      | Managed production releases from GitHub Actions          |
+| Deployment | Liara Docker runtime                        | Tested standalone builds from GitHub Actions             |
 
 ## Architecture
 
@@ -176,25 +176,51 @@ See `DESIGN_SYSTEM.md` for the full interaction and accessibility rules.
 
 ## Liara deployment
 
-Production is deployed to the Liara app `nimamoradirad` from the `main` branch by
-`.github/workflows/deploy-liara.yml`. The workflow validates the project, builds it,
-and deploys it with Liara CLI 9. Concurrent pushes cancel an older in-progress
-deployment so the newest `main` commit is the release that goes live. A failed
-Liara build is retried once so transient builder or five-minute plan timeouts can
-reuse Liara's build cache without manual intervention.
+Every push to `main` runs `.github/workflows/deploy-liara.yml`. GitHub installs
+the exact `package-lock.json` dependencies with Node 22.23.2, runs lint, TypeScript
+and unit tests, and builds Next.js once. npm downloads and the webpack compiler
+cache are reused; generated pages, data caches, and old runtimes are never restored.
 
-One repository secret is required in GitHub under **Settings > Secrets and
-variables > Actions**:
+The workflow packages the Linux standalone server, `public`, and `.next/static`
+into a compressed runtime. It tests that runtime in the same pinned Node Docker
+image used on Liara, then uploads the bundle. Liara only assembles the runtime
+image: it does not reinstall npm packages or rebuild Next.js. The existing app
+`nimamoradirad` uses Docker releases on port 3000; its domain and runtime
+environment variables are preserved. `liara.json` defines the readiness check.
 
-- `LIARA_API_TOKEN`: an API token created in the Liara console
+Required GitHub Actions secret: `LIARA_API_TOKEN`. Optional repository variables:
+`NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL` (defaults match production).
+These public values must be configured in GitHub because Next.js embeds them at
+build time. Keep private contact-service credentials in the Liara app.
 
-The Liara app must use the Next.js platform, Node.js 22, and port 3000, matching
-`liara.json`. Keep production environment variables in the Liara app rather than
-GitHub. At minimum, set `NEXT_PUBLIC_SITE_URL=https://nimamoradirad.com`; add the
-contact-related values listed above when direct contact delivery is enabled.
+Production deployments are serialized, never canceled by a newer push. Superseded
+runs skip deployment after checking the current `main` commit. Before deployment,
+the workflow enables/verifies Liara zero-downtime mode and waits for existing
+releases to settle. A failed attempt is retried up to twice using the same bundle;
+a lost CLI connection is reconciled with Liara release state before any retry.
 
-After the one-time secret is present, every push to `main` triggers the deployment.
-The same workflow can also be rerun manually from the GitHub **Actions** tab.
+Liara checks `/api/health` and the Persian homepage before switching traffic.
+GitHub then checks the exact commit on both the Liara subdomain and public domain,
+the English/Persian/German home and Azita pages, current translated copy, and
+byte-for-byte JS/CSS, project image, and resume files. A green deployment requires
+those checks to pass. The commit is available at `/api/health` and in the
+`X-Deployment-Sha` response header. Next.js also uses it as its deployment ID to
+detect navigation across releases. Existing open pages update on navigation or
+reload; deployment does not forcibly refresh a page someone is reading.
+
+Use **Actions > Deploy to Liara > Run workflow** on `main` to retry. Rerunning an
+older commit skips publishing it if `main` has advanced. Tested bundles are
+retained for seven days; deployment failures include diagnostic logs. For rollback,
+revert the faulty commit on `main` and push, or use Liara release history in an
+emergency. Network/provider outages can still fail a run. A failed build or
+readiness check keeps the previous healthy release serving. Failure in external
+verification needs investigation; it does not automatically roll back a release
+that already passed Liara readiness.
+
+Manual deployment must use the Linux bundle from a validated workflow run.
+Place `deploy/.liaraignore` alongside the extracted `runtime.tar.gz`, Dockerfile,
+and `liara.json`, then run `liara deploy --path=<bundle-directory>`. Do not deploy
+Windows-built native dependencies or repository source with this config.
 
 ## Security and privacy
 
