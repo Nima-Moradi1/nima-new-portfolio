@@ -13,6 +13,11 @@ concurrency:
 permissions:
   contents: read
 
+defaults:
+  run:
+    # Explicit bash enables pipefail, including deployment logging through tee.
+    shell: bash
+
 env:
   NEXT_TELEMETRY_DISABLED: "1"
   NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://nimamoradirad.com' }}
