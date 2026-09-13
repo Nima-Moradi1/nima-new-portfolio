@@ -104,6 +104,7 @@ async function main() {
       return;
     }
     const message = `GitHub ${sha} run ${process.env.GITHUB_RUN_ID} attempt ${attempt}`;
+    let cliOutput = "";
     const exitCode = await new Promise((resolve, reject) => {
       const child = spawn(
         "liara",
@@ -118,8 +119,14 @@ async function main() {
           `--message=${message}`,
           "--no-app-logs",
         ],
-        { stdio: "inherit" },
+        { stdio: ["ignore", "pipe", "pipe"] },
       );
+      for (const stream of [child.stdout, child.stderr]) {
+        stream.on("data", (chunk) => {
+          process.stdout.write(chunk);
+          cliOutput = (cliOutput + chunk.toString()).slice(-64000);
+        });
+      }
       child.once("error", reject);
       child.once("exit", resolve);
     });
@@ -142,6 +149,11 @@ async function main() {
     console.error(
       `Attempt ${attempt}: CLI exit ${exitCode}, release ${release?.state || "not created"}`,
     );
+    if (!release && /CODE\s+(?:400|401|403|404|428)\b/.test(cliOutput)) {
+      throw new Error(
+        "Liara rejected the deployment configuration or credentials; retrying the same upload would not fix it",
+      );
+    }
     if (attempt < 3) await delay(attempt * 20000);
   }
   throw new Error(
