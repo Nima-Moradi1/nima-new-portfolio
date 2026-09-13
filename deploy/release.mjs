@@ -76,12 +76,22 @@ async function waitForIdle() {
 async function main() {
   const { project } = await api(`v1/projects/${app}`);
   if (!project.zeroDowntime) {
-    await api(`v1/projects/${project._id}/zero-downtime/enable`, "POST");
-    assert(
-      (await api(`v1/projects/${app}`)).project.zeroDowntime,
-      "Zero-downtime deployment is required",
-    );
-    console.log("Enabled Liara zero-downtime deployment");
+    const { plans } = await api("v1/me");
+    const supportsZeroDowntime =
+      plans.projectBundlePlans[project.planID]?.[project.bundlePlanID]
+        ?.zeroDowntime;
+    if (supportsZeroDowntime === false) {
+      console.warn(
+        "::warning::This Liara plan does not support zero downtime. Deployment may briefly restart the app. No billing changes were made.",
+      );
+    } else {
+      await api(`v1/projects/${project._id}/zero-downtime/enable`, "POST");
+      assert(
+        (await api(`v1/projects/${app}`)).project.zeroDowntime,
+        "Could not enable zero-downtime deployment",
+      );
+      console.log("Enabled Liara zero-downtime deployment");
+    }
   }
 
   for (let attempt = 1; attempt <= 3; attempt++) {

@@ -195,11 +195,14 @@ build time. Keep private contact-service credentials in the Liara app.
 
 Production deployments are serialized, never canceled by a newer push. Superseded
 runs skip deployment after checking the current `main` commit. Before deployment,
-the workflow enables/verifies Liara zero-downtime mode and waits for existing
-releases to settle. A failed attempt is retried up to twice using the same bundle;
+the workflow enables/verifies Liara zero-downtime mode when the feature plan
+supports it, and waits for existing releases to settle. On Basic it reports the
+limitation and continues; the workflow never upgrades billing. A failed attempt
+is retried up to twice using the same bundle;
 a lost CLI connection is reconciled with Liara release state before any retry.
 
-Liara checks `/api/health` and the Persian homepage before switching traffic.
+The Liara readiness check requests `/api/health` and the Persian homepage.
+With zero downtime enabled, traffic switches only after readiness passes.
 GitHub then checks the exact commit on both the Liara subdomain and public domain,
 the English/Persian/German home and Azita pages, current translated copy, and
 byte-for-byte JS/CSS, project image, and resume files. A green deployment requires
@@ -212,8 +215,10 @@ Use **Actions > Deploy to Liara > Run workflow** on `main` to retry. Rerunning a
 older commit skips publishing it if `main` has advanced. Tested bundles are
 retained for seven days; deployment failures include diagnostic logs. For rollback,
 revert the faulty commit on `main` and push, or use Liara release history in an
-emergency. Network/provider outages can still fail a run. A failed build or
-readiness check keeps the previous healthy release serving. Failure in external
+emergency. Network/provider outages can still fail a run. Failed builds leave the
+running app untouched. Keeping the previous container serving until readiness
+passes requires Standard's zero-downtime feature; Basic can briefly restart during
+deployment. Failure in external
 verification needs investigation; it does not automatically roll back a release
 that already passed Liara readiness.
 
