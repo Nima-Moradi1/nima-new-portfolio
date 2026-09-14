@@ -87,6 +87,12 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   await expect(page.locator("#work")).toBeInViewport();
   await expect(page.getByRole("heading", { name: "XO Arena" })).toBeVisible();
   await expect(
+    page.getByRole("heading", { name: "Moradi Gallery" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Emerald Case" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("heading", { name: "Lingo Learn" }),
   ).toBeVisible();
   await expect(
@@ -97,7 +103,7 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   ).toHaveAttribute("href", "/projects/xo-arena");
 
   const projectCards = page.locator(".projects__grid > *");
-  await expect(projectCards).toHaveCount(5);
+  await expect(projectCards).toHaveCount(6);
   expect(
     await projectCards.evaluateAll(
       (cards) =>
@@ -117,17 +123,44 @@ test("localizes Azita Mohajer and applies IranYekanX to Persian project copy", a
   const persianTitle = page.getByRole("heading", { name: "آزیتا مهاجر" });
   await expect(persianTitle).toBeVisible();
   await expect(persianTitle).toHaveCSS("font-family", /IRANYekanX/);
-  await expect(page.locator("a[href='/projects/azita-mohajer']")).toHaveCount(
-    1,
-  );
+  await expect(
+    page.locator("a[href='/fa/projects/azita-mohajer']"),
+  ).toHaveCount(1);
 
   await page.goto("/de");
   await expect(
     page.getByRole("heading", { name: "Azita Mohajer" }),
   ).toBeVisible();
-  await expect(page.locator("a[href='/projects/azita-mohajer']")).toHaveCount(
-    1,
-  );
+  await expect(
+    page.locator("a[href='/de/projects/azita-mohajer']"),
+  ).toHaveCount(1);
+});
+
+test("opens compact live case studies for Moradi Gallery and Emerald Case", async ({
+  page,
+}) => {
+  await page.goto("/projects/moradi-gallery");
+  await expect(
+    page.getByRole("heading", {
+      name: "Watchmaking told through space and motion.",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Open Moradi Gallery" }),
+  ).toHaveAttribute("href", "https://moradi-gallery.vercel.app/fa");
+  await expect(
+    page.getByRole("link", { name: "View source code" }),
+  ).toHaveAttribute("href", "https://github.com/Nima-Moradi1/moradi-gallery");
+
+  await page.goto("/projects/emerald-case");
+  await expect(
+    page.getByRole("heading", {
+      name: "From personal image to checkout in one flow.",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Open Emerald Case" }),
+  ).toHaveAttribute("href", "https://emerald-case.vercel.app/en/");
 });
 
 test("presents Azita Mohajer with public and Telegram links only", async ({

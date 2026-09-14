@@ -1,0 +1,73 @@
+{
+  "skip": "Skip to case study",
+  "back": "Back to selected work",
+  "metadata": {
+    "title": "Emerald Case · Custom phone-case commerce",
+    "description": "A compact product and engineering case study for a multilingual custom phone-case storefront with uploads, accounts, checkout and transactional email."
+  },
+  "hero": {
+    "eyebrow": "Emerald Case · Full-stack commerce",
+    "title": "From personal image to checkout in one flow.",
+    "intro": "A multilingual storefront that lets people turn their own image into a custom phone case, then move through account, order and payment flows without losing context.",
+    "availability": "Live storefront · Responsive & multilingual"
+  },
+  "live": {
+    "eyebrow": "Live view",
+    "title": "Build a case in the real product.",
+    "description": "Open the storefront to explore the upload, customization, authentication and checkout journey directly.",
+    "primaryLabel": "Open Emerald Case"
+  },
+  "screenshot": {
+    "alt": "Emerald Case homepage with its custom phone-case builder and product preview"
+  },
+  "product": {
+    "eyebrow": "Product, at a glance",
+    "title": "Personalization carried through commerce.",
+    "description": "The core product idea stays visible from landing page to purchase: the customer’s own image is the product, not an optional detail hidden after signup.",
+    "features": [
+      {
+        "id": "customizer",
+        "title": "Image-led customizer",
+        "text": "Upload and preview a personal image as the center of the phone-case creation flow."
+      },
+      {
+        "id": "accounts",
+        "title": "Account journeys",
+        "text": "Authentication connects saved user context to orders and the wider shopping experience."
+      },
+      {
+        "id": "checkout",
+        "title": "Integrated checkout",
+        "text": "Stripe completes the purchase path while order data remains tied to the customized product."
+      },
+      {
+        "id": "experience",
+        "title": "Localized, responsive UI",
+        "text": "Language switching, theme support and responsive layouts keep the product coherent across contexts."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technology & decisions",
+    "title": "Product state from upload to order.",
+    "description": "The full-stack architecture joins client customization state, persisted product data, payment processing and transactional email in one product journey.",
+    "stackLabel": "Emerald Case technology stack",
+    "notes": [
+      {
+        "id": "state",
+        "title": "Focused client state",
+        "text": "Zustand and React Context separate fast customization interactions from shared application state."
+      },
+      {
+        "id": "data",
+        "title": "Typed persistence",
+        "text": "Prisma provides a typed data layer over MongoDB for users, products and order workflows."
+      },
+      {
+        "id": "commerce",
+        "title": "Commerce services",
+        "text": "Stripe handles payment flow and Resend supports the transactional communication around it."
+      }
+    ]
+  }
+}

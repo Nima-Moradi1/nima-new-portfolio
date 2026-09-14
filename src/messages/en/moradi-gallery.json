@@ -1,0 +1,74 @@
+{
+  "skip": "Skip to case study",
+  "back": "Back to selected work",
+  "metadata": {
+    "title": "Moradi Gallery · Immersive watch experience",
+    "description": "A visual engineering case study for Moradi Gallery: a bilingual luxury watch experience built around WebGL, 3D storytelling and precise motion."
+  },
+  "hero": {
+    "eyebrow": "Moradi Gallery · Immersive commerce concept",
+    "title": "Watchmaking told through space and motion.",
+    "intro": "A bilingual luxury-gallery concept where an original watch moves from hero object to an explorable mechanical story, without losing a fast server-rendered foundation.",
+    "availability": "Live visual experience · Persian & English"
+  },
+  "live": {
+    "eyebrow": "Live view",
+    "title": "Experience the gallery in motion.",
+    "description": "The live product is the best way to see the WebGL camera travel, staged watch assembly and responsive storytelling together.",
+    "primaryLabel": "Open Moradi Gallery",
+    "sourceLabel": "View source code"
+  },
+  "screenshot": {
+    "alt": "Persian Moradi Gallery homepage featuring an original black and gold watch"
+  },
+  "product": {
+    "eyebrow": "Product, at a glance",
+    "title": "A visual storefront with an engineering spine.",
+    "description": "The experience balances cinematic art direction with the practical boundaries a real catalog, localization system and accessible fallback need.",
+    "features": [
+      {
+        "id": "bilingual",
+        "title": "Bilingual by design",
+        "text": "Persian RTL and English LTR routes share one structured content and navigation system."
+      },
+      {
+        "id": "story",
+        "title": "Continuous 3D story",
+        "text": "One persistent scene connects camera movement, editorial copy and the watch’s mechanical narrative."
+      },
+      {
+        "id": "assembly",
+        "title": "Staged assembly",
+        "text": "Separately modeled watch parts, material finishes and keyframes reveal the object layer by layer."
+      },
+      {
+        "id": "adaptive",
+        "title": "Adaptive experience",
+        "text": "Quality tiers, reduced-motion behavior and a static fallback keep the concept usable across devices."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technology & decisions",
+    "title": "A motion stack with clear ownership.",
+    "description": "GSAP owns scroll choreography, React Three Fiber renders the persistent scene, and Motion stays focused on isolated interface transitions.",
+    "stackLabel": "Moradi Gallery technology stack",
+    "notes": [
+      {
+        "id": "rendering",
+        "title": "Server shell, client scene",
+        "text": "The localized page remains server-rendered while the WebGL experience loads behind a controlled client boundary."
+      },
+      {
+        "id": "timeline",
+        "title": "Ref-driven choreography",
+        "text": "Normalized GSAP progress feeds camera and object transforms without per-frame React state updates."
+      },
+      {
+        "id": "resilience",
+        "title": "Designed to degrade well",
+        "text": "Reduced motion, device quality tiers and error fallback preserve the story when full 3D is unavailable."
+      }
+    ]
+  }
+}

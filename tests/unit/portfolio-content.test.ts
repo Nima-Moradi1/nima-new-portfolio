@@ -29,8 +29,9 @@ describe("updated professional portfolio content", () => {
     expect(portfolio.experience[3].period).toBe("Dec 2020 — Sep 2022");
   });
 
-  it("promotes XO Arena and retains the selected production products", () => {
+  it("promotes the visual case studies and retains production products", () => {
     expect(portfolio.projects.map((project) => project.title)).toEqual([
+      "Moradi Gallery",
       "XO Arena",
       "Emerald Case",
       "Hesabo Platform",
@@ -38,14 +39,26 @@ describe("updated professional portfolio content", () => {
       "Azita Mohajer",
     ]);
     expect(portfolio.projects[0]).toMatchObject({
+      href: "/projects/moradi-gallery",
+      technologies: expect.arrayContaining([
+        "Three.js",
+        "React Three Fiber",
+        "GSAP",
+      ]),
+    });
+    expect(portfolio.projects[1]).toMatchObject({
       href: "/projects/xo-arena",
       technologies: expect.arrayContaining(["Socket.IO", "Prisma", "MySQL"]),
     });
-    expect(portfolio.projects[3]).toMatchObject({
+    expect(portfolio.projects[2]).toMatchObject({
+      href: "/projects/emerald-case",
+      technologies: expect.arrayContaining(["Prisma", "MongoDB", "Stripe"]),
+    });
+    expect(portfolio.projects[4]).toMatchObject({
       href: "https://lingo-learn.ir/",
       logo: "/assets/projects/lingo-learn/logo.png",
     });
-    expect(portfolio.projects[4]).toMatchObject({
+    expect(portfolio.projects[5]).toMatchObject({
       href: "/projects/azita-mohajer",
       technologies: expect.arrayContaining(["Drizzle ORM", "Telegram Bot"]),
     });

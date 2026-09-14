@@ -130,8 +130,29 @@
   ],
   "projects": [
     {
-      "id": "xo-arena",
+      "id": "moradi-gallery",
       "number": "۰۱",
+      "title": "گالری مرادی",
+      "category": "تجربهٔ سه‌بعدی تعاملی · مطالعهٔ موردی بصری",
+      "summary": "گالری دو‌زبانهٔ ساعت لوکس با صحنهٔ ماندگار WebGL، روایت سینمایی اسکرولی و مسیرهای جایگزین واکنش‌گرا.",
+      "contribution": "طراحی و توسعهٔ سیستم بصری و فنی با Next.js 16، React 19، TypeScript، Three.js، React Three Fiber، Drei، GSAP، Motion، next-intl و Tailwind CSS 4.",
+      "image": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "imageAlt": "صفحهٔ اصلی فارسی گالری مرادی با ساعت اختصاصی مشکی و طلایی",
+      "technologies": [
+        "Next.js",
+        "Three.js",
+        "React Three Fiber",
+        "GSAP",
+        "TypeScript",
+        "WebGL"
+      ],
+      "href": "/projects/moradi-gallery",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
+      "id": "xo-arena",
+      "number": "۰۲",
       "title": "XO Arena",
       "category": "PWA چندنفرهٔ بلادرنگ · مطالعهٔ موردی محصول",
       "summary": "یک PWA چندنفره و type-safe با اتاق‌های زنده، نشست‌های امن، حریفان رایانه‌ای و پشتیبانی از نصب روی موبایل.",
@@ -152,7 +173,7 @@
     },
     {
       "id": "emerald-case",
-      "number": "۰۲",
+      "number": "۰۳",
       "title": "Emerald Case",
       "category": "تجارت الکترونیک فول‌استک · اکتبر–نوامبر ۲۰۲۳",
       "summary": "فروشگاه چندزبانهٔ قاب سفارشی موبایل با بارگذاری تصویر، احراز هویت، پرداخت و پوستهٔ واکنش‌گرا.",
@@ -167,13 +188,13 @@
         "Stripe",
         "i18n"
       ],
-      "href": "https://emerald-case.vercel.app/en/",
+      "href": "/projects/emerald-case",
       "featured": true,
       "accent": "violet"
     },
     {
       "id": "hesabo-platform",
-      "number": "۰۳",
+      "number": "۰۴",
       "title": "Hesabo Platform",
       "category": "پلتفرم مالی B2B · محصول عملیاتی",
       "summary": "چهار سطح متصل مدیریت، کارفرما، کارمند و پشتیبانی برای یک پلتفرم مالی B2B در حال بهره‌برداری.",
@@ -194,7 +215,7 @@
     },
     {
       "id": "lingo-learn",
-      "number": "۰۴",
+      "number": "۰۵",
       "title": "Lingo Learn",
       "category": "پلتفرم آموزش زبان · محصول عملیاتی",
       "summary": "پلتفرم فارسی‌زبان آموزش زبان با منابع رایگان، دوره‌های مبتنی بر سطح و پکیج‌های آموزشی.",
@@ -210,7 +231,7 @@
     },
     {
       "id": "azita-mohajer",
-      "number": "۰۵",
+      "number": "۰۶",
       "title": "آزیتا مهاجر",
       "category": "پلتفرم رزرو مشاوره · محصول عملیاتی",
       "summary": "رزرو مشاوره با تقویم شمسی، ربات تلگرام و پنل مدیریت؛ ساده، فارسی و در دسترس.",

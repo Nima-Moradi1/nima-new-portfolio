@@ -135,8 +135,29 @@
   ],
   "projects": [
     {
-      "id": "xo-arena",
+      "id": "moradi-gallery",
       "number": "01",
+      "title": "Moradi Gallery",
+      "category": "Immersive 3D experience · Visual case study",
+      "summary": "A bilingual luxury watch gallery shaped by a persistent WebGL scene, cinematic scroll storytelling, and responsive fallbacks.",
+      "contribution": "Built the visual and technical system with Next.js 16, React 19, TypeScript, Three.js, React Three Fiber, Drei, GSAP, Motion, next-intl, and Tailwind CSS 4.",
+      "image": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "imageAlt": "Persian Moradi Gallery homepage with an original black and gold watch",
+      "technologies": [
+        "Next.js",
+        "Three.js",
+        "React Three Fiber",
+        "GSAP",
+        "TypeScript",
+        "WebGL"
+      ],
+      "href": "/projects/moradi-gallery",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
+      "id": "xo-arena",
+      "number": "02",
       "title": "XO Arena",
       "category": "Real-time multiplayer PWA · Product case study",
       "summary": "A type-safe multiplayer PWA with live rooms, secure sessions, computer opponents, and mobile install support.",
@@ -157,7 +178,7 @@
     },
     {
       "id": "emerald-case",
-      "number": "02",
+      "number": "03",
       "title": "Emerald Case",
       "category": "Full-stack e-commerce · Oct–Nov 2023",
       "summary": "A multilingual custom phone-case storefront with image uploads, authentication, checkout, and responsive theming.",
@@ -172,13 +193,13 @@
         "Stripe",
         "i18n"
       ],
-      "href": "https://emerald-case.vercel.app/en/",
+      "href": "/projects/emerald-case",
       "featured": true,
       "accent": "violet"
     },
     {
       "id": "hesabo-platform",
-      "number": "03",
+      "number": "04",
       "title": "Hesabo Platform",
       "category": "B2B financial platform · Production",
       "summary": "Four connected Admin, Employer, Employee, and Support surfaces for a production B2B financial platform.",
@@ -199,7 +220,7 @@
     },
     {
       "id": "lingo-learn",
-      "number": "04",
+      "number": "05",
       "title": "Lingo Learn",
       "category": "Language-learning platform · Production",
       "summary": "A Persian language-learning platform with free learning resources, level-based courses, and paid study packages.",
@@ -215,7 +236,7 @@
     },
     {
       "id": "azita-mohajer",
-      "number": "05",
+      "number": "06",
       "title": "Azita Mohajer",
       "category": "Consultation platform · Live product",
       "summary": "Consultation booking with a Jalali calendar, Telegram bot and admin dashboard, built for Persian speakers.",

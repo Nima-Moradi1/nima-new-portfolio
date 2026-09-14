@@ -16,16 +16,18 @@ type ProjectPageProps = {
 
 type ContentCard = { id: string; title: string; text: string };
 
-const slug = "azita-mohajer";
+const slug = "moradi-gallery";
 const technologies = [
-  "Next.js",
+  "Next.js 16",
+  "React 19",
   "TypeScript",
-  "PostgreSQL",
-  "Drizzle ORM",
-  "HeroUI",
-  "Tailwind CSS",
-  "RTL",
-  "Telegram Bot",
+  "Three.js",
+  "React Three Fiber",
+  "Drei",
+  "GSAP",
+  "Motion",
+  "next-intl",
+  "Tailwind CSS 4",
 ] as const;
 
 export async function generateMetadata({
@@ -36,7 +38,7 @@ export async function generateMetadata({
 
   const [metadata, project] = await Promise.all([
     getTranslations({ locale, namespace: "Metadata" }),
-    getTranslations({ locale, namespace: "AzitaMohajer" }),
+    getTranslations({ locale, namespace: "MoradiGallery" }),
   ]);
   const canonical = localizedProjectPath(locale, slug);
 
@@ -63,17 +65,17 @@ export async function generateMetadata({
   };
 }
 
-export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
+export default async function MoradiGalleryPage({ params }: ProjectPageProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "AzitaMohajer" });
+  const t = await getTranslations({ locale, namespace: "MoradiGallery" });
 
   return (
     <CompactCaseStudy
       locale={locale}
-      index="06"
+      index="01"
       skip={t("skip")}
       back={t("back")}
       hero={{
@@ -87,21 +89,21 @@ export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
         title: t("live.title"),
         description: t("live.description"),
         primaryLabel: t("live.primaryLabel"),
-        primaryHref: "https://azitamohajer.com",
+        primaryHref: "https://moradi-gallery.vercel.app/fa",
         secondaryLinks: [
           {
-            href: "https://t.me/azita_apply_bot",
-            label: t("live.botLabel"),
-            kind: "bot",
+            href: "https://github.com/Nima-Moradi1/moradi-gallery",
+            label: t("live.sourceLabel"),
+            kind: "github",
           },
         ],
       }}
       screenshot={{
-        src: "/assets/projects/azita-mohajer/desktop-site.png",
+        src: "/assets/projects/moradi-gallery/homepage-fa.png",
         alt: t("screenshot.alt"),
         width: 1440,
-        height: 960,
-        address: "azitamohajer.com",
+        height: 900,
+        address: "moradi-gallery.vercel.app/fa",
       }}
       product={{
         eyebrow: t("product.eyebrow"),

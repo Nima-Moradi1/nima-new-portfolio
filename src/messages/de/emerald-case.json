@@ -1,0 +1,73 @@
+{
+  "skip": "Zur Fallstudie springen",
+  "back": "Zurück zu ausgewählten Arbeiten",
+  "metadata": {
+    "title": "Emerald Case · Individuelle Smartphone-Hüllen",
+    "description": "Eine kompakte Produkt- und Engineering-Fallstudie eines mehrsprachigen Shops für individuelle Smartphone-Hüllen mit Uploads, Konten, Checkout und Transaktions-E-Mails."
+  },
+  "hero": {
+    "eyebrow": "Emerald Case · Full-Stack-Commerce",
+    "title": "Vom eigenen Bild bis zum Checkout in einem Ablauf.",
+    "intro": "Ein mehrsprachiger Store, in dem Menschen ihr eigenes Bild in eine individuelle Smartphone-Hülle verwandeln und Kontext über Konto, Bestellung und Zahlung hinweg behalten.",
+    "availability": "Live-Store · Responsiv & mehrsprachig"
+  },
+  "live": {
+    "eyebrow": "Live-Ansicht",
+    "title": "Gestalte eine Hülle im echten Produkt.",
+    "description": "Öffne den Store und erlebe Upload, Personalisierung, Authentifizierung und Checkout direkt.",
+    "primaryLabel": "Emerald Case öffnen"
+  },
+  "screenshot": {
+    "alt": "Emerald-Case-Startseite mit Konfigurator und Vorschau einer individuellen Smartphone-Hülle"
+  },
+  "product": {
+    "eyebrow": "Das Produkt im Überblick",
+    "title": "Personalisierung durch den gesamten Kaufprozess.",
+    "description": "Die Kernidee bleibt vom Einstieg bis zum Kauf sichtbar: Das Bild der Kundschaft ist das Produkt und kein später verstecktes Zusatzdetail.",
+    "features": [
+      {
+        "id": "customizer",
+        "title": "Bildbasierter Konfigurator",
+        "text": "Upload und Vorschau des eigenen Bildes stehen im Zentrum der Produkterstellung."
+      },
+      {
+        "id": "accounts",
+        "title": "Kontobasierte Abläufe",
+        "text": "Authentifizierung verbindet gespeicherten Nutzerkontext mit Bestellungen und Einkaufserlebnis."
+      },
+      {
+        "id": "checkout",
+        "title": "Integrierter Checkout",
+        "text": "Stripe schließt den Kauf ab, während Bestelldaten mit dem personalisierten Produkt verbunden bleiben."
+      },
+      {
+        "id": "experience",
+        "title": "Lokalisierte responsive UI",
+        "text": "Sprachwechsel, Theme-Unterstützung und responsive Layouts halten das Produkt konsistent."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technologie & Entscheidungen",
+    "title": "Produktzustand vom Upload bis zur Bestellung.",
+    "description": "Die Full-Stack-Architektur verbindet Personalisierungs-State, persistierte Produktdaten, Zahlungsabwicklung und Transaktions-E-Mail in einer Produktreise.",
+    "stackLabel": "Technologie-Stack von Emerald Case",
+    "notes": [
+      {
+        "id": "state",
+        "title": "Fokussierter Client-State",
+        "text": "Zustand und React Context trennen schnelle Personalisierungsinteraktionen vom gemeinsamen App-State."
+      },
+      {
+        "id": "data",
+        "title": "Typisierte Persistenz",
+        "text": "Prisma bietet eine typisierte Datenschicht über MongoDB für Nutzer-, Produkt- und Bestellabläufe."
+      },
+      {
+        "id": "commerce",
+        "title": "Commerce-Dienste",
+        "text": "Stripe verarbeitet Zahlungen und Resend unterstützt die zugehörige Transaktionskommunikation."
+      }
+    ]
+  }
+}

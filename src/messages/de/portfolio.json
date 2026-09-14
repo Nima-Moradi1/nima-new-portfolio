@@ -135,8 +135,29 @@
   ],
   "projects": [
     {
-      "id": "xo-arena",
+      "id": "moradi-gallery",
       "number": "01",
+      "title": "Moradi Gallery",
+      "category": "Immersives 3D-Erlebnis · Visuelle Fallstudie",
+      "summary": "Eine zweisprachige Luxusuhrengalerie mit persistenter WebGL-Szene, filmischem Scroll-Storytelling und responsiven Fallbacks.",
+      "contribution": "Entwicklung des visuellen und technischen Systems mit Next.js 16, React 19, TypeScript, Three.js, React Three Fiber, Drei, GSAP, Motion, next-intl und Tailwind CSS 4.",
+      "image": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "imageAlt": "Persische Moradi-Gallery-Startseite mit einer eigenen schwarz-goldenen Uhr",
+      "technologies": [
+        "Next.js",
+        "Three.js",
+        "React Three Fiber",
+        "GSAP",
+        "TypeScript",
+        "WebGL"
+      ],
+      "href": "/projects/moradi-gallery",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
+      "id": "xo-arena",
+      "number": "02",
       "title": "XO Arena",
       "category": "Echtzeit-Multiplayer-PWA · Produktfallstudie",
       "summary": "Eine typsichere Multiplayer-PWA mit Live-Spielräumen, sicheren Sessions, Computergegnern und Unterstützung für die mobile Installation.",
@@ -157,7 +178,7 @@
     },
     {
       "id": "emerald-case",
-      "number": "02",
+      "number": "03",
       "title": "Emerald Case",
       "category": "Full-Stack-E-Commerce · Okt.–Nov. 2023",
       "summary": "Ein mehrsprachiger Shop für individuelle Smartphone-Hüllen mit Bild-Uploads, Authentifizierung, Checkout und responsiver Theme-Unterstützung.",
@@ -172,13 +193,13 @@
         "Stripe",
         "i18n"
       ],
-      "href": "https://emerald-case.vercel.app/en/",
+      "href": "/projects/emerald-case",
       "featured": true,
       "accent": "violet"
     },
     {
       "id": "hesabo-platform",
-      "number": "03",
+      "number": "04",
       "title": "Hesabo Platform",
       "category": "B2B-Finanzplattform · Produktivbetrieb",
       "summary": "Vier verbundene Anwendungen für Administration, Arbeitgeber, Mitarbeitende und Support innerhalb einer produktiven B2B-Finanzplattform.",
@@ -199,7 +220,7 @@
     },
     {
       "id": "lingo-learn",
-      "number": "04",
+      "number": "05",
       "title": "Lingo Learn",
       "category": "Sprachlernplattform · Produktivbetrieb",
       "summary": "Eine persischsprachige Sprachlernplattform mit kostenlosen Lernressourcen, niveaubasierten Kursen und kostenpflichtigen Lernpaketen.",
@@ -215,7 +236,7 @@
     },
     {
       "id": "azita-mohajer",
-      "number": "05",
+      "number": "06",
       "title": "Azita Mohajer",
       "category": "Beratungsplattform · Produktivbetrieb",
       "summary": "Beratungsbuchung mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich für persischsprachige Nutzer.",

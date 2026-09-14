@@ -3,56 +3,72 @@
   "back": "Zurück zu ausgewählten Arbeiten",
   "metadata": {
     "title": "Azita Mohajer · Beratungsplattform",
-    "description": "Fallstudie zu Azita Mohajer: eine persische Beratungsbuchungsplattform mit sicherer Administrationskonsole und Telegram-Bot."
+    "description": "Eine kompakte Fallstudie einer persischen Beratungsplattform mit Buchung, sicherer Administration und begleitendem Telegram-Bot."
   },
   "hero": {
-    "eyebrow": "Azita Mohajer · Website & Telegram-Bot",
-    "title": "Beratung buchen, ganz einfach.",
-    "intro": "Ich habe Azita Mohajer entwickelt, um die Beratungsbuchung einfacher zu machen: vom passenden Termin bis zur Nachfrage, auf der Website oder über Telegram.",
-    "availability": "Öffentliches Live-Produkt · azitamohajer.com",
-    "imageAlt": "Screenshot der neu gestalteten Azita-Mohajer-Startseite"
+    "eyebrow": "Azita Mohajer · Beratungsplattform",
+    "title": "Eine Beratungsreise – unabhängig vom Einstieg.",
+    "intro": "Ein persisch ausgerichtetes Produkt, das Servicewahl, Jalali-Terminfindung und Nachverfolgung in einen klaren Ablauf bringt.",
+    "availability": "Öffentliches Live-Produkt · azitamohajer.com"
   },
-  "system": {
-    "eyebrow": "Produktkarte · 02",
-    "title": "Von der Terminwahl zur Buchungsverwaltung.",
-    "description": "Eine persische Buchungsplattform mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich.",
-    "stackLabel": "Azita Mohajer Technologie-Stack"
+  "live": {
+    "eyebrow": "Live-Ansicht",
+    "title": "Erlebe den echten Buchungsablauf.",
+    "description": "Öffne die öffentliche Website oder setze denselben Weg über den Telegram-Bot fort.",
+    "primaryLabel": "Azita Mohajer öffnen",
+    "botLabel": "Telegram-Bot öffnen"
   },
-  "signals": [
-    {
-      "id": "journey",
-      "title": "Schrittweise buchen",
-      "text": "Daten eingeben, Beratung wählen und einen Termin buchen."
-    },
-    {
-      "id": "calendar",
-      "title": "Jalali-Kalender",
-      "text": "Freie Tage und Uhrzeiten ansehen und einen passenden Termin finden."
-    },
-    {
-      "id": "bot",
-      "title": "Telegram-Bot",
-      "text": "Beratungen direkt in Telegram buchen und nachverfolgen."
-    },
-    {
-      "id": "admin",
-      "title": "Verwaltungsbereich",
-      "text": "Anfragen und Termine in einem separaten, sicheren Bereich verwalten."
-    }
-  ],
-  "architecture": {
-    "eyebrow": "Engineering-Notiz · 03",
-    "title": "Hinter dem Projekt",
-    "securityLabel": "Sicherer Verwaltungszugang",
-    "paragraph1": "Entwickelt mit Next.js und TypeScript, PostgreSQL und Drizzle für Daten sowie HeroUI und Tailwind CSS für die Oberfläche.",
-    "paragraph2": "Klare Rollen, sichere Anmeldung und Aktivitätsprotokolle unterstützen die Verwaltung der Buchungen."
+  "screenshot": {
+    "alt": "Azita-Mohajer-Startseite mit vierstufigem Beratungsablauf"
   },
-  "links": {
-    "eyebrow": "Selbst ausprobieren",
-    "title": "Entdecke die Website oder den Bot.",
-    "website": "Website entdecken",
-    "bot": "Telegram-Bot öffnen",
-    "work": "Ausgewählte Arbeiten",
-    "contact": "Gespräch beginnen"
+  "product": {
+    "eyebrow": "Das Produkt im Überblick",
+    "title": "Buchung und Betrieb in einem System.",
+    "description": "Die öffentliche Erfahrung bleibt einfach, während ein separater Verwaltungsbereich die operativen Details jeder Buchung steuert.",
+    "features": [
+      {
+        "id": "journey",
+        "title": "Geführte Buchung",
+        "text": "Ein klarer vierstufiger Weg von persönlichen Daten bis zum bestätigten Termin."
+      },
+      {
+        "id": "calendar",
+        "title": "Jalali-Terminplanung",
+        "text": "Lokalisierte Daten und freie Zeiten machen den Ablauf für persischsprachige Menschen vertraut."
+      },
+      {
+        "id": "bot",
+        "title": "Telegram-Begleiter",
+        "text": "Buchung und Nachverfolgung funktionieren direkt in einer vertrauten Messaging-Umgebung."
+      },
+      {
+        "id": "admin",
+        "title": "Sicherer Betrieb",
+        "text": "Rollen, geschützter Zugriff und Aktivitätsprotokolle organisieren Anfragen im Hintergrund."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technologie & Entscheidungen",
+    "title": "Ein Full-Stack-Fundament für Buchungen.",
+    "description": "Der Stack verbindet eine lokalisierte Weboberfläche, relationale Buchungsdaten und Telegram-Automatisierung, ohne den privaten Verwaltungsbereich offenzulegen.",
+    "stackLabel": "Technologie-Stack von Azita Mohajer",
+    "notes": [
+      {
+        "id": "data",
+        "title": "Typisierte relationale Daten",
+        "text": "PostgreSQL und Drizzle modellieren Buchungs-, Termin- und Verwaltungsabläufe."
+      },
+      {
+        "id": "localization",
+        "title": "Persisch ausgerichtete UI",
+        "text": "RTL-Layout, Jalali-Daten und lokalisierte Interaktionen prägen das gesamte Produkt."
+      },
+      {
+        "id": "security",
+        "title": "Geschützte Administration",
+        "text": "Authentifizierung, Rollen und nachvollziehbare Einträge trennen den operativen Zugriff."
+      }
+    ]
   }
 }

@@ -16,16 +16,17 @@ type ProjectPageProps = {
 
 type ContentCard = { id: string; title: string; text: string };
 
-const slug = "azita-mohajer";
+const slug = "emerald-case";
 const technologies = [
   "Next.js",
   "TypeScript",
-  "PostgreSQL",
-  "Drizzle ORM",
-  "HeroUI",
-  "Tailwind CSS",
-  "RTL",
-  "Telegram Bot",
+  "Prisma",
+  "MongoDB",
+  "Stripe",
+  "Resend",
+  "Zustand",
+  "React Context",
+  "i18n",
 ] as const;
 
 export async function generateMetadata({
@@ -36,7 +37,7 @@ export async function generateMetadata({
 
   const [metadata, project] = await Promise.all([
     getTranslations({ locale, namespace: "Metadata" }),
-    getTranslations({ locale, namespace: "AzitaMohajer" }),
+    getTranslations({ locale, namespace: "EmeraldCase" }),
   ]);
   const canonical = localizedProjectPath(locale, slug);
 
@@ -63,17 +64,17 @@ export async function generateMetadata({
   };
 }
 
-export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
+export default async function EmeraldCasePage({ params }: ProjectPageProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "AzitaMohajer" });
+  const t = await getTranslations({ locale, namespace: "EmeraldCase" });
 
   return (
     <CompactCaseStudy
       locale={locale}
-      index="06"
+      index="03"
       skip={t("skip")}
       back={t("back")}
       hero={{
@@ -87,21 +88,14 @@ export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
         title: t("live.title"),
         description: t("live.description"),
         primaryLabel: t("live.primaryLabel"),
-        primaryHref: "https://azitamohajer.com",
-        secondaryLinks: [
-          {
-            href: "https://t.me/azita_apply_bot",
-            label: t("live.botLabel"),
-            kind: "bot",
-          },
-        ],
+        primaryHref: "https://emerald-case.vercel.app/en/",
       }}
       screenshot={{
-        src: "/assets/projects/azita-mohajer/desktop-site.png",
+        src: "/assets/projects/emerald-case/homepage.jpg",
         alt: t("screenshot.alt"),
         width: 1440,
-        height: 960,
-        address: "azitamohajer.com",
+        height: 1000,
+        address: "emerald-case.vercel.app/en",
       }}
       product={{
         eyebrow: t("product.eyebrow"),
