@@ -204,8 +204,8 @@ a lost CLI connection is reconciled with Liara release state before any retry.
 The Liara readiness check requests `/api/health` and the Persian homepage.
 With zero downtime enabled, traffic switches only after readiness passes.
 GitHub then checks the exact commit on both the Liara subdomain and public domain,
-the English/Persian/German home and Azita pages, current translated copy, and
-byte-for-byte JS/CSS, project image, and resume files. A green deployment requires
+the English/Persian/German home and Tarabari Nima pages, current translated copy, and
+byte-for-byte JS/CSS, project images and video, and resume files. A green deployment requires
 those checks to pass. The commit is available at `/api/health` and in the
 `X-Deployment-Sha` response header. Next.js also uses it as its deployment ID to
 detect navigation across releases. Existing open pages update on navigation or

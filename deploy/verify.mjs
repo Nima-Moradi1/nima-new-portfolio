@@ -33,9 +33,9 @@ async function verify() {
   for (const locale of ["en", "fa", "de"]) {
     const prefix = locale === "en" ? "" : `/${locale}`;
     const copy = JSON.parse(
-      await readFile(`src/messages/${locale}/azita-mohajer.json`, "utf8"),
+      await readFile(`src/messages/${locale}/tarabari-nima.json`, "utf8"),
     );
-    for (const route of [prefix || "/", `${prefix}/projects/azita-mohajer`]) {
+    for (const route of [prefix || "/", `${prefix}/projects/tarabari-nima`]) {
       const response = await request(route);
       assert.equal(
         response.headers.get("x-deployment-sha"),
@@ -48,7 +48,7 @@ async function verify() {
         new RegExp(`<html\\b[^>]*\\blang="${locale}"`),
         `${route}: wrong locale`,
       );
-      if (route.includes("azita-mohajer")) {
+      if (route.includes("tarabari-nima")) {
         // Compare actual rendered text with the checked-out translations.
         const escape = (text) =>
           text
@@ -60,6 +60,11 @@ async function verify() {
         assert(
           html.includes(escape(copy.hero.title)),
           `${route}: current hero text missing`,
+        );
+        assert(
+          html.includes("https://tarabari-nima.vercel.app/") &&
+            html.includes("https://github.com/Nima-Moradi1/tarabari-nima"),
+          `${route}: live or source link missing`,
         );
       }
       const references = [...html.matchAll(/(?:src|href)="([^"<>]+)"/g)].map(
@@ -80,9 +85,31 @@ async function verify() {
       chunks.forEach((url) => assets.add(url));
       console.log(`Verified ${route}: ${locale}, ${sha.slice(0, 7)}`);
     }
+    const removedRoute = `${prefix}/projects/azita-mohajer`;
+    const removedResponse = await fetch(new URL(removedRoute, origin), {
+      redirect: "error",
+      signal: AbortSignal.timeout(15000),
+      headers: { "Cache-Control": "no-cache" },
+    });
+    assert.equal(
+      removedResponse.status,
+      404,
+      `${removedRoute}: removed project is still published`,
+    );
   }
 
-  assets.add("/assets/projects/azita-mohajer/desktop-site.png");
+  for (const name of [
+    "home.webp",
+    "container-pickup.webp",
+    "loaded-truck.webp",
+    "port-loading.webp",
+    "ship-passage.webp",
+    "aircraft-takeoff.webp",
+    "freight-loading.webm",
+    "freight-loading.mp4",
+  ]) {
+    assets.add(`/assets/projects/tarabari-nima/${name}`);
+  }
   assets.add("/nima-moradirad-resume.pdf");
   // Compare bytes, so a 200 response containing an error page or old asset fails.
   for (const asset of assets) {
