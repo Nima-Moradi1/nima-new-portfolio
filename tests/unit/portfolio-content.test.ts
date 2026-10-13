@@ -36,7 +36,7 @@ describe("updated professional portfolio content", () => {
       "Emerald Case",
       "Hesabo Platform",
       "Lingo Learn",
-      "Azita Mohajer",
+      "Tarabari Nima",
     ]);
     expect(portfolio.projects[0]).toMatchObject({
       href: "/projects/moradi-gallery",
@@ -59,8 +59,12 @@ describe("updated professional portfolio content", () => {
       logo: "/assets/projects/lingo-learn/logo.png",
     });
     expect(portfolio.projects[5]).toMatchObject({
-      href: "/projects/azita-mohajer",
-      technologies: expect.arrayContaining(["Drizzle ORM", "Telegram Bot"]),
+      href: "/projects/tarabari-nima",
+      technologies: expect.arrayContaining([
+        "GSAP",
+        "Three.js",
+        "React Three Fiber",
+      ]),
     });
   });
 

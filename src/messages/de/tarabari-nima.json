@@ -1,0 +1,106 @@
+{
+  "skip": "Zur Fallstudie springen",
+  "back": "Zurück zu den ausgewählten Arbeiten",
+  "metadata": {
+    "title": "Tarabari Nima · Interaktive Frachtreise",
+    "description": "Eine persische Logistikdemo mit interaktivem Routenglobus und scrollgesteuerter Frachtreise vom Lager über Straße, Hafen und Meer bis zum Flugzeug."
+  },
+  "hero": {
+    "eyebrow": "Tarabari Nima · Logistikerlebnis",
+    "title": "Einen Container bis zum Ziel begleiten.",
+    "intro": "Eine persischsprachige Logistikdemo erzählt den Weg einer Fracht als visuelle Geschichte: vom ersten Hub im Lager über Straße, Hafen und Meer bis zur Startbahn.",
+    "availability": "Interaktive Live-Demo · tarabari-nima.vercel.app"
+  },
+  "live": {
+    "eyebrow": "Live ansehen",
+    "title": "Die echte Reise durchscrollen.",
+    "description": "Die interaktive Frachtsequenz auf der Live-Website erkunden oder den Quellcode auf GitHub ansehen.",
+    "primaryLabel": "Tarabari Nima öffnen",
+    "sourceLabel": "Quellcode ansehen"
+  },
+  "screenshot": {
+    "alt": "Persische Tarabari-Nima-Startseite mit gepunktetem Routenglobus und großer Logistiküberschrift"
+  },
+  "showcase": {
+    "eyebrow": "Die Reise in Bewegung",
+    "title": "Die Fracht bleibt im Bild.",
+    "description": "Derselbe markierte Container wird angehoben, auf den Auflieger gesetzt und vom Lkw auf die Straße gebracht. Auf der Live-Website steuert das Scrollen die gesamte Sequenz.",
+    "videoTitle": "Vom Containerhub zur Fahrt des Lkw",
+    "videoDescription": "Ein Mitschnitt der scrollgesteuerten Live-Sequenz.",
+    "videoAria": "Video: Ein Container wird auf einen Lkw geladen, der anschließend auf die Straße fährt",
+    "galleryTitle": "Szenen der Reise",
+    "galleryDescription": "Lager, Hafen, Meer und Luftverkehr aus der funktionierenden Demo.",
+    "gallery": [
+      {
+        "id": "pickup",
+        "title": "Der Container wird angehoben",
+        "alt": "Ein Reachstacker hebt den markierten Frachtcontainer im Lager an"
+      },
+      {
+        "id": "port",
+        "title": "Der Hafenkran übernimmt",
+        "alt": "Ein Hafenkran hebt denselben Container vom Auflieger in Richtung Schiff"
+      },
+      {
+        "id": "sea",
+        "title": "Das beladene Schiff fährt ab",
+        "alt": "Ein Containerschiff fährt mit seiner Ladung über bewegtes offenes Wasser"
+      },
+      {
+        "id": "air",
+        "title": "Die Route geht in der Luft weiter",
+        "alt": "Ein Frachtflugzeug beginnt seinen Startlauf unter blauem Himmel"
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Das Produkt im Überblick",
+    "title": "Eine Route, die beim Scrollen verständlich wird.",
+    "description": "Die Website stellt ein Logistikunternehmen durch eine interaktive Geschichte vor. Seiten zu Leistungen, Branchen und Einblicken ergänzen die Demo; das Anfrageformular ist ein lokaler Prototyp.",
+    "features": [
+      {
+        "id": "journey",
+        "title": "Scrollgesteuerte Frachtreise",
+        "text": "Ein markierter Container wechselt zwischen Reachstacker, Lkw, Hafenkran, Schiff und Flugzeug."
+      },
+      {
+        "id": "globe",
+        "title": "Interaktiver Routenglobus",
+        "text": "Ein gepunkteter Globus mit Städten und Routenbögen führt vor der Reise in das Netzwerk ein."
+      },
+      {
+        "id": "content",
+        "title": "Persischsprachige Inhalte",
+        "text": "Responsive RTL-Seiten erklären Leistungen, Branchen und Themen der Logistik."
+      },
+      {
+        "id": "inquiry",
+        "title": "Geführte Anfrage-Demo",
+        "text": "Ein lokal validiertes Formular zeigt den Anfrageablauf, ohne Daten an einen Server zu senden."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technik & Entscheidungen",
+    "title": "Bewegung mit nachvollziehbaren Übergaben.",
+    "description": "Next.js und GSAP koordinieren die Scroll-Zeitleiste, während Three.js den Globus zum Leben erweckt. Die Fracht bleibt in jeder Phase verfolgbar.",
+    "stackLabel": "Technologien von Tarabari Nima",
+    "notes": [
+      {
+        "id": "handoffs",
+        "title": "Durchgehende Frachtübergaben",
+        "text": "Der Container setzt vor der Abfahrt auf dem Auflieger auf und wird anschließend sichtbar mit dem Kran auf das Schiff gebracht."
+      },
+      {
+        "id": "responsive",
+        "title": "Responsive Bewegung",
+        "text": "Desktop und Mobilgeräte haben eigene Bildausschnitte und Zeitabläufe; eine Ansicht mit reduzierter Bewegung bleibt lesbar."
+      },
+      {
+        "id": "globe",
+        "title": "Vorbereitete Kartengeometrie",
+        "text": "Vorberechnete Landpunkte halten den interaktiven Globus in der Eröffnungsszene reaktionsschnell."
+      }
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -74,6 +75,7 @@ type CompactCaseStudyProps = {
     technologies: readonly string[];
     notes: EngineeringNote[];
   };
+  showcase?: ReactNode;
 };
 
 const secondaryIcons = {
@@ -92,6 +94,7 @@ export function CompactCaseStudy({
   screenshot,
   product,
   engineering,
+  showcase,
 }: CompactCaseStudyProps) {
   const isRtl = locale === "fa";
   const BackIcon = isRtl ? ArrowRight : ArrowLeft;
@@ -193,6 +196,8 @@ export function CompactCaseStudy({
             </figure>
           </div>
         </section>
+
+        {showcase}
 
         <section className={styles.details} aria-labelledby="product-title">
           <div className={cn(styles.shell, styles.detailsGrid)}>

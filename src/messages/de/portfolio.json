@@ -235,24 +235,25 @@
       "accent": "lime"
     },
     {
-      "id": "azita-mohajer",
+      "id": "tarabari-nima",
       "number": "06",
-      "title": "Azita Mohajer",
-      "category": "Beratungsplattform · Produktivbetrieb",
-      "summary": "Beratungsbuchung mit Jalali-Kalender, Telegram-Bot und Verwaltungsbereich für persischsprachige Nutzer.",
-      "contribution": "Design und Entwicklung von Website, Buchungsablauf, Verwaltungsbereich und Telegram-Bot mit Next.js und TypeScript.",
-      "image": "/assets/projects/azita-mohajer/desktop-site.png",
-      "imageAlt": "Öffentliche Azita-Mohajer-Website in der Desktopansicht",
+      "title": "Tarabari Nima",
+      "category": "Interaktive Logistik · Visuelle Fallstudie",
+      "summary": "Eine persische Frachtreise, bei der ein Container vom Lager per Lkw, Hafenkran, Schiff und Flugzeug weiterreist.",
+      "contribution": "Entwicklung der RTL-Marketingdemo, des interaktiven Routenglobus und der scrollgesteuerten Frachtgeschichte mit Next.js, GSAP, Three.js und React Three Fiber.",
+      "image": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "imageAlt": "Markierter Container auf einem blauen Fracht-Lkw in der Tarabari-Nima-Reise",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Drizzle ORM",
-        "RTL",
-        "Telegram Bot"
+        "GSAP",
+        "Three.js",
+        "React Three Fiber",
+        "Tailwind CSS"
       ],
-      "href": "/projects/azita-mohajer",
+      "href": "/projects/tarabari-nima",
       "featured": true,
-      "accent": "lime"
+      "accent": "coral"
     }
   ],
   "capabilities": [

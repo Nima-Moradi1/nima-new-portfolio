@@ -96,7 +96,7 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
     page.getByRole("heading", { name: "Lingo Learn" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Azita Mohajer" }),
+    page.getByRole("heading", { name: "Tarabari Nima" }),
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "View the XO Arena case study" }),
@@ -114,25 +114,25 @@ test("renders the portfolio narrative and navigation", async ({ page }) => {
   ).toBeGreaterThan(1);
 });
 
-test("localizes Azita Mohajer and applies IranYekanX to Persian project copy", async ({
+test("localizes Tarabari Nima and applies IranYekanX to Persian project copy", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/fa");
 
-  const persianTitle = page.getByRole("heading", { name: "آزیتا مهاجر" });
+  const persianTitle = page.getByRole("heading", { name: "ترابری نیما" });
   await expect(persianTitle).toBeVisible();
   await expect(persianTitle).toHaveCSS("font-family", /IRANYekanX/);
   await expect(
-    page.locator("a[href='/fa/projects/azita-mohajer']"),
+    page.locator("a[href='/fa/projects/tarabari-nima']"),
   ).toHaveCount(1);
 
   await page.goto("/de");
   await expect(
-    page.getByRole("heading", { name: "Azita Mohajer" }),
+    page.getByRole("heading", { name: "Tarabari Nima" }),
   ).toBeVisible();
   await expect(
-    page.locator("a[href='/de/projects/azita-mohajer']"),
+    page.locator("a[href='/de/projects/tarabari-nima']"),
   ).toHaveCount(1);
 });
 
@@ -163,25 +163,38 @@ test("opens compact live case studies for Moradi Gallery and Emerald Case", asyn
   ).toHaveAttribute("href", "https://emerald-case.vercel.app/en/");
 });
 
-test("presents Azita Mohajer with public and Telegram links only", async ({
+test("presents Tarabari Nima with live media and source links", async ({
   page,
 }) => {
-  await page.goto("/projects/azita-mohajer");
+  await page.goto("/projects/tarabari-nima");
 
   await expect(
     page.getByRole("heading", {
-      name: "One consultation journey, available wherever people start.",
+      name: "Follow one container all the way.",
     }),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Open Azita Mohajer" }),
-  ).toHaveAttribute("href", "https://azitamohajer.com");
+    page.getByRole("link", { name: "Open Tarabari Nima" }),
+  ).toHaveAttribute("href", "https://tarabari-nima.vercel.app/");
   await expect(
-    page.getByRole("link", { name: "Open Telegram bot" }),
-  ).toHaveAttribute("href", "https://t.me/azita_apply_bot");
-  await expect(page.locator("a[href*='admin.azitamohajer.com']")).toHaveCount(
-    0,
+    page.getByRole("link", { name: "View source code" }),
+  ).toHaveAttribute("href", "https://github.com/Nima-Moradi1/tarabari-nima");
+  await expect(
+    page.locator(
+      'video[aria-label="Video of the container being loaded onto a truck and the truck driving onto the road"]',
+    ),
+  ).toHaveAttribute(
+    "poster",
+    "/assets/projects/tarabari-nima/container-pickup.webp",
   );
+  await expect(
+    page.getByTestId("tarabari-gallery").locator("figure"),
+  ).toHaveCount(4);
+  await expect(
+    page.locator('[aria-label="Tarabari Nima technology stack"]'),
+  ).toContainText("GSAP ScrollTrigger");
+  await page.goto("/projects/azita-mohajer");
+  await expect(page.getByText("404 · No signal here")).toBeVisible();
 });
 
 test("renders a controllable workstation with in-scene resume and lamp actions", async ({

@@ -1,0 +1,106 @@
+{
+  "skip": "Skip to case study",
+  "back": "Back to selected work",
+  "metadata": {
+    "title": "Tarabari Nima · Interactive freight journey",
+    "description": "A Persian logistics marketing demo with an interactive route globe and a scroll-driven cargo journey from warehouse to road, port, sea and air."
+  },
+  "hero": {
+    "eyebrow": "Tarabari Nima · Logistics experience",
+    "title": "Follow one container all the way.",
+    "intro": "A Persian-first logistics demo that turns a freight journey into a visual story, from the first lift in the warehouse to the road, port, sea and runway.",
+    "availability": "Live interactive demo · tarabari-nima.vercel.app"
+  },
+  "live": {
+    "eyebrow": "Live view",
+    "title": "Scroll through the real journey.",
+    "description": "Explore the live site and its interactive freight sequence, or inspect the source on GitHub.",
+    "primaryLabel": "Open Tarabari Nima",
+    "sourceLabel": "View source code"
+  },
+  "screenshot": {
+    "alt": "Tarabari Nima Persian homepage with a dotted route globe and bold logistics headline"
+  },
+  "showcase": {
+    "eyebrow": "The journey in motion",
+    "title": "Cargo moves through the story.",
+    "description": "The same marked container is lifted, set on a trailer and carried out onto the road. Scroll the live site to drive the full sequence yourself.",
+    "videoTitle": "From container lift to loaded truck",
+    "videoDescription": "A capture of the live scroll-driven sequence.",
+    "videoAria": "Video of the container being loaded onto a truck and the truck driving onto the road",
+    "galleryTitle": "Frames from the journey",
+    "galleryDescription": "Warehouse, port, sea and air scenes from the working demo.",
+    "gallery": [
+      {
+        "id": "pickup",
+        "title": "The container is lifted",
+        "alt": "Reach stacker holding the marked freight container inside the warehouse"
+      },
+      {
+        "id": "port",
+        "title": "A crane takes over at port",
+        "alt": "Port crane lifting the same marked container from the trailer toward the ship"
+      },
+      {
+        "id": "sea",
+        "title": "The loaded ship sails",
+        "alt": "Container ship carrying cargo across textured open water"
+      },
+      {
+        "id": "air",
+        "title": "The route continues by air",
+        "alt": "Cargo aircraft beginning its runway departure under a blue sky"
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Product, at a glance",
+    "title": "A route you can understand by moving through it.",
+    "description": "The site presents a logistics company through an interactive story, with supporting service, industry and insight pages. Its inquiry form is a demo flow.",
+    "features": [
+      {
+        "id": "journey",
+        "title": "Scroll-driven freight",
+        "text": "A marked container moves between a reach stacker, truck, port crane, ship and aircraft."
+      },
+      {
+        "id": "globe",
+        "title": "Interactive route globe",
+        "text": "A dotted globe, city labels and route arcs introduce the network before the journey begins."
+      },
+      {
+        "id": "content",
+        "title": "Persian-first content",
+        "text": "Responsive RTL pages explain services, industries and logistics insights."
+      },
+      {
+        "id": "inquiry",
+        "title": "Guided inquiry demo",
+        "text": "A validated local form demonstrates the request flow without sending data to a server."
+      }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technology & decisions",
+    "title": "Motion with a readable handoff.",
+    "description": "Next.js and GSAP coordinate the scroll timeline, while Three.js brings the globe to life. The cargo remains traceable across each stage.",
+    "stackLabel": "Tarabari Nima technology stack",
+    "notes": [
+      {
+        "id": "handoffs",
+        "title": "Continuous cargo handoffs",
+        "text": "The container settles on the trailer before departure, then moves under a visible crane and onto the vessel."
+      },
+      {
+        "id": "responsive",
+        "title": "Responsive motion",
+        "text": "Desktop and mobile use separate framing and timing, with a readable reduced-motion view."
+      },
+      {
+        "id": "globe",
+        "title": "Prepared map geometry",
+        "text": "Precomputed land points keep the interactive globe responsive during the opening scene."
+      }
+    ]
+  }
+}

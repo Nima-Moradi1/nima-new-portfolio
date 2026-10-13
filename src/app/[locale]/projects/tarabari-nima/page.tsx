@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { CompactCaseStudy } from "@/components/projects/compact-case-study";
+import { TarabariShowcase } from "@/components/projects/tarabari-showcase";
 import { routing } from "@/i18n/routing";
 import {
   localizedProjectPath,
@@ -15,17 +16,18 @@ type ProjectPageProps = {
 };
 
 type ContentCard = { id: string; title: string; text: string };
+type GalleryItem = { id: string; title: string; alt: string };
 
-const slug = "azita-mohajer";
+const slug = "tarabari-nima";
 const technologies = [
-  "Next.js",
+  "Next.js 15",
+  "React 19",
   "TypeScript",
-  "PostgreSQL",
-  "Drizzle ORM",
-  "HeroUI",
-  "Tailwind CSS",
-  "RTL",
-  "Telegram Bot",
+  "GSAP ScrollTrigger",
+  "Three.js",
+  "React Three Fiber",
+  "Tailwind CSS 4",
+  "CSS Modules",
 ] as const;
 
 export async function generateMetadata({
@@ -36,7 +38,7 @@ export async function generateMetadata({
 
   const [metadata, project] = await Promise.all([
     getTranslations({ locale, namespace: "Metadata" }),
-    getTranslations({ locale, namespace: "AzitaMohajer" }),
+    getTranslations({ locale, namespace: "TarabariNima" }),
   ]);
   const canonical = localizedProjectPath(locale, slug);
 
@@ -54,21 +56,23 @@ export async function generateMetadata({
       alternateLocale: routing.locales
         .filter((candidate) => candidate !== locale)
         .map((candidate) => projectOgLocales[candidate]),
+      images: ["/assets/projects/tarabari-nima/loaded-truck.webp"],
     },
     twitter: {
       card: "summary_large_image",
       title: project("metadata.title"),
       description: project("metadata.description"),
+      images: ["/assets/projects/tarabari-nima/loaded-truck.webp"],
     },
   };
 }
 
-export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
+export default async function TarabariNimaPage({ params }: ProjectPageProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "AzitaMohajer" });
+  const t = await getTranslations({ locale, namespace: "TarabariNima" });
 
   return (
     <CompactCaseStudy
@@ -87,22 +91,35 @@ export default async function AzitaMohajerPage({ params }: ProjectPageProps) {
         title: t("live.title"),
         description: t("live.description"),
         primaryLabel: t("live.primaryLabel"),
-        primaryHref: "https://azitamohajer.com",
+        primaryHref: "https://tarabari-nima.vercel.app/",
         secondaryLinks: [
           {
-            href: "https://t.me/azita_apply_bot",
-            label: t("live.botLabel"),
-            kind: "bot",
+            href: "https://github.com/Nima-Moradi1/tarabari-nima",
+            label: t("live.sourceLabel"),
+            kind: "github",
           },
         ],
       }}
       screenshot={{
-        src: "/assets/projects/azita-mohajer/desktop-site.png",
+        src: "/assets/projects/tarabari-nima/home.webp",
         alt: t("screenshot.alt"),
         width: 1440,
-        height: 960,
-        address: "azitamohajer.com",
+        height: 900,
+        address: "tarabari-nima.vercel.app",
       }}
+      showcase={
+        <TarabariShowcase
+          eyebrow={t("showcase.eyebrow")}
+          title={t("showcase.title")}
+          description={t("showcase.description")}
+          videoTitle={t("showcase.videoTitle")}
+          videoDescription={t("showcase.videoDescription")}
+          videoAria={t("showcase.videoAria")}
+          galleryTitle={t("showcase.galleryTitle")}
+          galleryDescription={t("showcase.galleryDescription")}
+          gallery={t.raw("showcase.gallery") as GalleryItem[]}
+        />
+      }
       product={{
         eyebrow: t("product.eyebrow"),
         title: t("product.title"),

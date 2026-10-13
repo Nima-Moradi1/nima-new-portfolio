@@ -230,24 +230,25 @@
       "accent": "lime"
     },
     {
-      "id": "azita-mohajer",
+      "id": "tarabari-nima",
       "number": "۰۶",
-      "title": "آزیتا مهاجر",
-      "category": "پلتفرم رزرو مشاوره · محصول عملیاتی",
-      "summary": "رزرو مشاوره با تقویم شمسی، ربات تلگرام و پنل مدیریت؛ ساده، فارسی و در دسترس.",
-      "contribution": "طراحی و توسعهٔ سایت، مسیر رزرو، پنل مدیریت و ربات تلگرام با Next.js و TypeScript.",
-      "image": "/assets/projects/azita-mohajer/desktop-site.png",
-      "imageAlt": "وب‌سایت عمومی آزیتا مهاجر در نمای دسکتاپ",
+      "title": "ترابری نیما",
+      "category": "لجستیک تعاملی · مطالعهٔ موردی تصویری",
+      "summary": "سفر فارسی یک محموله که در آن کانتینر از انبار با کامیون، جرثقیل بندر، کشتی و هواپیما جابه‌جا می‌شود.",
+      "contribution": "توسعهٔ دموی راست‌به‌چپ، کرهٔ تعاملی مسیرها و روایت اسکرولی محموله با Next.js، GSAP، Three.js و React Three Fiber.",
+      "image": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "imageAlt": "کانتینر نشان‌دار روی کامیون آبی در سفر محمولهٔ ترابری نیما",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Drizzle ORM",
-        "RTL",
-        "Telegram Bot"
+        "GSAP",
+        "Three.js",
+        "React Three Fiber",
+        "Tailwind CSS"
       ],
-      "href": "/projects/azita-mohajer",
+      "href": "/projects/tarabari-nima",
       "featured": true,
-      "accent": "lime"
+      "accent": "coral"
     }
   ],
   "capabilities": [
