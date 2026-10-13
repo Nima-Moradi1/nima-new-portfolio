@@ -73,6 +73,25 @@ async function waitForIdle() {
   );
 }
 
+async function verifyLive() {
+  for (const origin of [
+    "https://nimamoradirad.liara.run",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://nimamoradirad.com",
+  ]) {
+    const exitCode = await new Promise((resolve, reject) => {
+      const child = spawn(
+        process.execPath,
+        ["deploy/verify.mjs", origin, sha, "6"],
+        { stdio: "inherit" },
+      );
+      child.once("error", reject);
+      child.once("exit", resolve);
+    });
+    if (exitCode !== 0) return false;
+  }
+  return true;
+}
+
 async function main() {
   const { project } = await api(`v1/projects/${app}`);
   if (!project.zeroDowntime) {
@@ -146,8 +165,23 @@ async function main() {
       );
       return;
     }
+    // Liara's CLI can finish successfully while its release list omits the
+    // supplied message. The exact live build is stronger evidence in that case.
+    if (await verifyLive()) {
+      const current = data.releases.find(
+        (candidate) => candidate._id === data.currentRelease,
+      );
+      console.log(
+        `Verified live commit and assets on both domains (CLI exit ${exitCode})`,
+      );
+      await appendFile(
+        process.env.GITHUB_OUTPUT,
+        `deployed=true\nrelease=${current?.tag || "verified-live"}\n`,
+      );
+      return;
+    }
     console.error(
-      `Attempt ${attempt}: CLI exit ${exitCode}, release ${release?.state || "not created"}`,
+      `Attempt ${attempt}: CLI exit ${exitCode}, release ${release?.state || "not found"}, live verification failed`,
     );
     if (!release && /CODE\s+(?:400|401|403|404|428)\b/.test(cliOutput)) {
       throw new Error(
