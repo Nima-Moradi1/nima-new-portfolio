@@ -91,11 +91,19 @@ async function verify() {
       signal: AbortSignal.timeout(15000),
       headers: { "Cache-Control": "no-cache" },
     });
-    assert.equal(
-      removedResponse.status,
-      404,
-      `${removedRoute}: removed project is still published`,
-    );
+    if (removedResponse.status === 200) {
+      // Next.js can stream the 404 UI after sending HTTP headers. In that
+      // case, require its noindex marker and 404 fallback in the HTML.
+      const removedHtml = await removedResponse.text();
+      assert.match(removedHtml, /<meta name="robots" content="noindex"\s*\/>/);
+      assert.match(removedHtml, /NEXT_HTTP_ERROR_FALLBACK;404/);
+    } else {
+      assert.equal(
+        removedResponse.status,
+        404,
+        `${removedRoute}: removed project is still published`,
+      );
+    }
   }
 
   for (const name of [
