@@ -1,0 +1,77 @@
+.contact {
+  --contact-fg: var(--nm-fg, #f4f7fc);
+  --contact-muted: var(--nm-muted, #99a5b8);
+  --contact-line: var(--nm-line, #354153);
+  --contact-accent: var(--nm-ice, #8be9f4);
+  --contact-danger: var(--nm-danger, #ff7777);
+  position: relative;
+  z-index: 2;
+  padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 5vw, 6rem) 4rem;
+  color: var(--contact-fg);
+  background: var(--nm-void, #05070b);
+  scroll-margin-top: 6rem;
+}
+
+.heading { max-width: 72rem; margin-inline: auto; }
+.eyebrow { display: flex; align-items: center; gap: .75rem; color: var(--contact-accent); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+.eyebrow span { font-size: 1.5rem; }
+.title { max-width: 16ch; margin-block: 1.5rem; font-size: clamp(2.75rem, 6vw, 6rem); font-weight: 650; letter-spacing: -.055em; line-height: 1.04; text-wrap: balance; }
+.contact:dir(rtl) .title { max-width: 20ch; font-size: clamp(2rem, 4.3vw, 4.3rem); line-height: 1.4; letter-spacing: 0; }
+.contact:dir(rtl) .eyebrow { letter-spacing: 0; }
+.description { max-width: 38rem; color: var(--contact-muted); font-size: 1rem; line-height: 1.8; }
+.body { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(3rem, 6vw, 7rem); max-width: 72rem; margin: 4rem auto 0; padding-top: 2.5rem; border-top: 1px solid var(--contact-line); }
+.channels a { color: inherit; text-decoration: none; }
+.email { display: flex; align-items: center; gap: .75rem; min-height: 3rem; width: fit-content; max-width: 100%; font-size: clamp(.9rem, 1.6vw, 1.25rem); }
+.email bdi { overflow-wrap: anywhere; }
+.email svg { width: 1.125rem; height: 1.125rem; flex-shrink: 0; color: var(--contact-accent); }
+.socials { display: flex; flex-wrap: wrap; column-gap: 1.5rem; row-gap: .25rem; margin-top: 1.25rem; }
+.socials a { display: inline-flex; align-items: center; min-height: 2.75rem; gap: .5rem; color: var(--contact-muted); font-size: .875rem; }
+.socials svg { width: .875rem; height: .875rem; }
+.resume { display: inline-flex; align-items: center; gap: 1rem; min-height: 4rem; margin-top: 3rem; }
+.resume > svg { width: 1.1rem; height: 1.1rem; color: var(--contact-accent); }
+.resume small { display: block; margin-top: .4rem; color: var(--contact-muted); font-size: .8rem; }
+.channels a:hover, .fallback a:hover, .status a:hover { color: var(--contact-accent); }
+.channels a:focus-visible, .fallback a:focus-visible, .status a:focus-visible { border-radius: 2px; outline: 2px solid var(--contact-accent); outline-offset: 5px; }
+.form { min-width: 0; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1.25rem; min-width: 0; margin: 0; padding: 0; border: 0; }
+.field { min-width: 0; }
+.field > label { margin-bottom: .85rem; color: var(--contact-fg); font-size: .875rem; line-height: 1.5; }
+.field > input, .field > textarea { border: 0; border-bottom: 1px solid var(--contact-line); border-radius: 0; color: var(--contact-fg); background: transparent; box-shadow: none; font-size: 1rem; padding: .75rem 0; }
+.field > input { min-height: 3rem; }
+.field > textarea { min-height: 9rem; resize: vertical; }
+.field > input::placeholder, .field > textarea::placeholder { color: var(--contact-muted); opacity: .85; }
+.field > input:focus-visible, .field > textarea:focus-visible { border-color: var(--contact-accent); box-shadow: 0 1px 0 var(--contact-accent); outline: none; }
+.field > input[aria-invalid="true"], .field > textarea[aria-invalid="true"] { border-color: var(--contact-danger); }
+.message { grid-column: 1 / -1; }
+.fieldError { margin-top: .6rem; font-size: .8125rem; line-height: 1.6; color: var(--contact-danger); }
+.honeypot { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; grid-column: 1 / -1; }
+.submit { min-height: 3rem; border: 1px solid var(--contact-accent); border-radius: 999px; padding-inline: 1.5rem; background: var(--contact-accent); color: var(--nm-void, #05070b); font-size: .875rem; }
+.submit:hover { background: var(--contact-fg); border-color: var(--contact-fg); color: var(--nm-void, #05070b); }
+.submit:focus-visible { outline: 2px solid var(--contact-accent); outline-offset: 4px; }
+.fallback { color: var(--contact-muted); font-size: .8125rem; line-height: 1.75; }
+.fallback a, .status a { display: inline-block; min-height: 1.75rem; color: var(--contact-fg); text-underline-offset: .3em; }
+.status { min-height: 3rem; margin-top: 1rem; }
+.status p { display: flex; align-items: flex-start; gap: .6rem; font-size: .875rem; line-height: 1.8; }
+.status svg { margin-top: .25rem; width: 1rem; height: 1rem; flex-shrink: 0; }
+.success { color: var(--contact-accent); }
+.error { color: var(--contact-danger); }
+.spinner { animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 767px) {
+  .body { grid-template-columns: minmax(0, 1fr); margin-top: 2.5rem; gap: 3rem; }
+  .resume { margin-top: 1.5rem; }
+  .title { font-size: clamp(2.6rem, 10vw, 4rem); }
+  .contact:dir(rtl) .title { font-size: clamp(2rem, 7.5vw, 3rem); }
+}
+
+@media (max-width: 430px) {
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .email { font-size: .875rem; gap: .5rem; }
+  .actions { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}
