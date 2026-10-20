@@ -1,43 +1,22 @@
-import { CapabilitiesSection } from "@/components/sections/capabilities-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
-import { HeroSection } from "@/components/sections/hero-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { DepthScrollController } from "@/components/motion/depth-scroll-controller";
-import { LandingPreloader } from "@/components/loading/landing-preloader";
-import { HashScrollManager } from "@/components/navigation/hash-scroll-manager";
 import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { KineticExperience } from "@/components/kinetic/kinetic-experience";
+import { getKineticContent } from "@/content/kinetic-content";
+import { materializePortfolio } from "@/content/portfolio";
 import { routing } from "@/i18n/routing";
-import { homePageClassNames as styles } from "./page.class-names";
+import type { PortfolioContent } from "@/types/portfolio";
 
 export default async function HomePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ view?: string; item?: string }>;
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "Routes" });
-
-  return (
-    <LandingPreloader>
-      <HashScrollManager />
-      <a className={styles.skipLink} href="#main-content">
-        {t("skipMain")}
-      </a>
-      <SiteHeader />
-      <main id="main-content">
-        <DepthScrollController />
-        <HeroSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <CapabilitiesSection />
-      </main>
-      <SiteFooter />
-    </LandingPreloader>
-  );
+  const [messages, query] = await Promise.all([getMessages({ locale }), searchParams]);
+  return <KineticExperience key={locale} locale={locale} content={materializePortfolio(messages.Portfolio as PortfolioContent)} copy={getKineticContent(locale)} initialMode={query.view === "experience" ? "experience" : "projects"} initialItem={query.item} />;
 }
