@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Concept study of an original three-dimensional NM logo for Nima Moradirad">
+ <defs>
+  <radialGradient id="bg" cx="50%" cy="45%" r="72%"><stop stop-color="#172132"/><stop offset="0.60" stop-color="#090D14"/><stop offset="1" stop-color="#05070B"/></radialGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2=".85"><stop stop-color="#D9E8F0"/><stop offset=".22" stop-color="#758799"/><stop offset=".45" stop-color="#F2F7FC"/><stop offset=".62" stop-color="#596678"/><stop offset=".82" stop-color="#C2D0DC"/><stop offset="1" stop-color="#657587"/></linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A6EDFB"/><stop offset=".5" stop-color="#33536B"/><stop offset="1" stop-color="#102334"/></linearGradient>
+  <linearGradient id="light" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8BE9F4" stop-opacity="0"/><stop offset=".5" stop-color="#8BE9F4"/><stop offset="1" stop-color="#8BE9F4" stop-opacity="0"/></linearGradient>
+  <filter id="halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="22"/></filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+  <path id="n" d="M57 260V42h51l113 141V42h51v218h-51L108 118v142Z"/>
+  <path id="m" d="M307 260V42h48l79 101 79-101h48v218h-49V119l-78 95-77-95v141Z"/>
+ </defs>
+ <rect width="1200" height="750" fill="url(#bg)"/>
+ <g stroke="#8BE9F4" stroke-opacity=".13" stroke-width="1"><path d="M55 80h55 M55 80v55 M1090 80h55 M1145 80v55 M55 615v55 M55 670h55 M1090 670h55 M1145 615v55" fill="none"/><path d="M600 90v18 M600 616v18 M94 380h18 M1088 380h18"/></g>
+ <ellipse cx="600" cy="362" rx="260" ry="115" fill="#6ECDEB" opacity=".13" filter="url(#halo)"/>
+ <g transform="translate(287 128) scale(1.0)">
+   <g transform="translate(24 30)" fill="#1D2D40"><use href="#n"/><use href="#m"/></g>
+   <g transform="translate(16 19)" fill="url(#edge)" opacity=".85"><use href="#n"/><use href="#m"/></g>
+   <g fill="url(#metal)" stroke="#D9F3FC" stroke-opacity=".50" stroke-width="1.5" stroke-linejoin="round"><use href="#n"/><use href="#m"/></g>
+   <path d="M126 89L230 217 M374 91l60 81 61-81" stroke="#8BE9F4" stroke-width="2.5" stroke-linecap="round" opacity=".92"/>
+   <path d="M126 89L230 217 M374 91l60 81 61-81" stroke="#8BE9F4" stroke-width="9" stroke-linecap="round" opacity=".36" filter="url(#soft)"/>
+ </g>
+ <g text-anchor="middle" fill="#F4F7FC" font-family="Arial, Helvetica, sans-serif">
+   <text x="600" y="489" font-weight="700" font-size="47" letter-spacing="10">NIMA MORADIRAD</text>
+   <text x="600" y="539" fill="#8BE9F4" font-weight="500" font-size="17" letter-spacing="7">AI FULL-STACK DEVELOPER</text>
+ </g>
+ <path d="M310 590h580" stroke="#354153" stroke-width="1"/><path d="M460 590h280" stroke="url(#light)" stroke-width="2"/>
+ <g fill="#9AA7B9" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="3"><text x="60" y="705">BRAND CONCEPT / ORIGINAL VECTOR STUDY</text><text x="915" y="705">NM • V1 / NOT FINAL 3D</text></g>
+</svg>
