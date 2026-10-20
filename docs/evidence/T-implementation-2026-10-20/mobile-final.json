@@ -1,0 +1,14 @@
+[
+  {
+    "phase": "carousel",
+    "overflow": false,
+    "headlinePx": "22.4px",
+    "bodyPx": "14px"
+  },
+  {
+    "phase": "proof",
+    "overflow": false,
+    "headlinePx": "22.4px",
+    "bodyPx": "14px"
+  }
+]

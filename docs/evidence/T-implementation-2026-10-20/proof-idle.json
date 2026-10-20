@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-20T12:09:09.989Z",
+  "checks": [
+    "valid proof deep link overrides item scroll",
+    "idle rendering sleeps, pointer wakes, rendering sleeps again"
+  ],
+  "proof": "proof-shipping",
+  "idle": {
+    "first": 13563,
+    "after400ms": 13563
+  },
+  "wake": {
+    "woke": 15406,
+    "settled": 22487,
+    "sleeping": 22487
+  }
+}

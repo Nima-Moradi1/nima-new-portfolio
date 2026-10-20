@@ -1,0 +1,387 @@
+{
+  "date": "2026-10-20T12:03:41.515Z",
+  "browser": "155.0.8059.85",
+  "errors": [],
+  "profiles": [
+    {
+      "profile": "desktop-en",
+      "status": 200,
+      "url": "http://127.0.0.1:3100/",
+      "title": "Nima Moradirad · AI Full-Stack Developer",
+      "steps": [
+        {
+          "name": "hero",
+          "mode": "projects",
+          "phase": "hero",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 0
+        },
+        {
+          "name": "work-0.06",
+          "mode": "projects",
+          "phase": "assembly",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1565
+        },
+        {
+          "name": "work-0.105",
+          "mode": "projects",
+          "phase": "assembly",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1895
+        },
+        {
+          "name": "work-0.55",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-emerald-case",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 5159
+        },
+        {
+          "name": "work-1",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 8460
+        },
+        {
+          "name": "proof-0.55",
+          "mode": "projects",
+          "phase": "proof",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 11340
+        },
+        {
+          "name": "recap-0.5",
+          "mode": "projects",
+          "phase": "recap",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 15255
+        },
+        {
+          "name": "faq-0",
+          "mode": "projects",
+          "phase": "faq",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 16200
+        },
+        {
+          "name": "work-0.4",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-xo-arena",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 4059
+        },
+        {
+          "name": "top-0",
+          "mode": "projects",
+          "phase": "hero",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-xo-arena",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 0
+        },
+        {
+          "name": "keyboard-end",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 7973
+        },
+        {
+          "name": "experience-mode",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-hesabo",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1921
+        },
+        {
+          "name": "history-restoration",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-hesabo",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1896
+        },
+        {
+          "name": "reader",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "true",
+          "active": "item-hesabo",
+          "canvas": 0,
+          "overflow": false,
+          "scrollY": 745
+        },
+        {
+          "name": "faq-keyboard",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-basilica",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 3515
+        },
+        {
+          "name": "context-loss-fallback",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "true",
+          "active": "item-basilica",
+          "canvas": 0,
+          "overflow": false,
+          "scrollY": 2852
+        }
+      ]
+    },
+    {
+      "profile": "mobile-fa",
+      "status": 200,
+      "url": "http://127.0.0.1:3100/fa",
+      "title": "نیما مرادی‌راد · توسعه‌دهنده فول‌استک و هوش مصنوعی",
+      "steps": [
+        {
+          "name": "hero",
+          "mode": "projects",
+          "phase": "hero",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 0
+        },
+        {
+          "name": "work-0.06",
+          "mode": "projects",
+          "phase": "assembly",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1426
+        },
+        {
+          "name": "work-0.105",
+          "mode": "projects",
+          "phase": "assembly",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-sarochi-3d-shop",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1735
+        },
+        {
+          "name": "work-0.55",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-emerald-case",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 4796
+        },
+        {
+          "name": "work-1",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 7892
+        },
+        {
+          "name": "proof-0.55",
+          "mode": "projects",
+          "phase": "proof",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 10592
+        },
+        {
+          "name": "recap-0.5",
+          "mode": "projects",
+          "phase": "recap",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 14053
+        },
+        {
+          "name": "faq-0",
+          "mode": "projects",
+          "phase": "faq",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 14854
+        },
+        {
+          "name": "work-0.4",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-xo-arena",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 3764
+        },
+        {
+          "name": "top-0",
+          "mode": "projects",
+          "phase": "hero",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-xo-arena",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 0
+        },
+        {
+          "name": "keyboard-end",
+          "mode": "projects",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-lingo-learn",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 7418
+        },
+        {
+          "name": "experience-mode",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-hesabo",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1757
+        },
+        {
+          "name": "history-restoration",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-hesabo",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 1736
+        },
+        {
+          "name": "reader",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "true",
+          "active": "item-hesabo",
+          "canvas": 0,
+          "overflow": false,
+          "scrollY": 831
+        },
+        {
+          "name": "faq-keyboard",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "false",
+          "active": "item-basilica",
+          "canvas": 1,
+          "overflow": false,
+          "scrollY": 3216
+        },
+        {
+          "name": "context-loss-fallback",
+          "mode": "experience",
+          "phase": "carousel",
+          "ready": "true",
+          "reader": "true",
+          "active": "item-basilica",
+          "canvas": 0,
+          "overflow": false,
+          "scrollY": 2216
+        }
+      ]
+    }
+  ],
+  "reducedMotion": {
+    "url": "http://127.0.0.1:3100/de?view=experience&item=kzi",
+    "title": "Nima Moradirad · AI Full-Stack-Entwickler",
+    "canvas": 0,
+    "items": 4
+  },
+  "shop": {
+    "status": 200,
+    "url": "http://127.0.0.1:3100/de/projects/sarochi-3d-shop",
+    "title": "Sarochi · Interaktiver 3D-Showroom für Bekleidung · Nima Moradirad",
+    "images": 3
+  }
+}
