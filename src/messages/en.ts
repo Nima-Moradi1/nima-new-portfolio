@@ -1,3 +1,5 @@
+import kinetic from "./en/kinetic.json";
+import sarochiShop from "./en/sarochi-shop.json";
 import common from "./en/common.json";
 import emeraldCase from "./en/emerald-case.json";
 import moradiGallery from "./en/moradi-gallery.json";
@@ -7,6 +9,8 @@ import xoArena from "./en/xo-arena.json";
 
 const messages = {
   ...common,
+  Kinetic: kinetic,
+  SarochiShop: sarochiShop,
   EmeraldCase: emeraldCase,
   MoradiGallery: moradiGallery,
   Portfolio: portfolio,
