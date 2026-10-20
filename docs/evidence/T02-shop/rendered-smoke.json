@@ -1,0 +1,266 @@
+{
+  "startedAt": "2026-10-20T11:25:19.150Z",
+  "target": "https://3d-shop-design.ir",
+  "renderer": "Installed Chrome, isolated headless context; no device emulation of GPU",
+  "playwrightVersion": "1.62.0",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "boundaries": [
+    "No fresh generation action",
+    "All unsafe HTTP methods blocked",
+    "Provider domains blocked",
+    "No contact, checkout, uploads, source edits or deployment"
+  ],
+  "phases": [
+    {
+      "name": "canonical-scene-ready",
+      "at": "2026-10-20T11:25:19.553Z",
+      "elapsedMs": 403,
+      "result": {
+        "status": 200,
+        "title": "فروشگاه پوشاک | بوتیک تعاملی",
+        "dir": "rtl",
+        "loaderReady": "true",
+        "canvas": {
+          "width": 1280,
+          "height": 900
+        },
+        "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 630 (0x00003E92) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "navigation": [
+          "رگال تیشرت",
+          "رگال پیراهن",
+          "رگال شکت و جکت",
+          "لباس‌های تاشده",
+          "ویترین اکسسوری"
+        ],
+        "timing": [
+          {
+            "domContentLoadedMs": 145,
+            "loadMs": 257.40000000037253
+          }
+        ]
+      },
+      "status": "passed",
+      "durationMs": 7918
+    },
+    {
+      "name": "keyboard-rack-entry-and-browse",
+      "at": "2026-10-20T11:25:27.471Z",
+      "elapsedMs": 8321,
+      "result": {
+        "before": "پیراهن کلاسیک یقه نیم بک چهارخانه سفید آبی",
+        "after": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+        "index": "2 / 12"
+      },
+      "status": "passed",
+      "durationMs": 2425
+    },
+    {
+      "name": "product-information-and-gallery",
+      "at": "2026-10-20T11:25:29.897Z",
+      "elapsedMs": 10747,
+      "result": {
+        "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+        "galleryCount": 4,
+        "selectedGallery": 1,
+        "galleryLabel": "جزئیات و زوایای واقعی محصول · تصویر بررسی‌شده در ۲۰۲۶/۱۰/۱۴",
+        "canonicalLink": "https://sarochi.ir/product/%d9%be%db%8c%d8%b1%d8%a7%d9%87%d9%86-%da%a9%d9%84%d8%a7%d8%b3%db%8c%da%a9-%db%8c%d9%82%d9%87-%d9%86%db%8c%d9%85-%d8%a8%da%a9-%d8%b7%d8%b1%d8%ad-%d8%af%d8%a7%d8%b1-%d8%b3%d9%81%db%8c%d8%af-%d8%b3-2/",
+        "freshness": "قیمت و موجودی فعلی در دسترس نیست.تازه‌سازی"
+      },
+      "status": "passed",
+      "durationMs": 3139
+    },
+    {
+      "name": "prepared-fitting-room-and-pants-color",
+      "at": "2026-10-20T11:25:33.036Z",
+      "elapsedMs": 13886,
+      "result": {
+        "before": {
+          "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+          "counter": "۲ / ۱۲",
+          "busy": "false",
+          "canvas": {
+            "width": 576,
+            "height": 864,
+            "hash": 96563818,
+            "nontransparentSamples": 28688
+          },
+          "selectedPants": [
+            "مشکی"
+          ],
+          "documentWidth": 1280,
+          "viewportWidth": 1280
+        },
+        "cream": {
+          "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+          "counter": "۲ / ۱۲",
+          "busy": "false",
+          "canvas": {
+            "width": 576,
+            "height": 864,
+            "hash": 3303401589,
+            "nontransparentSamples": 28688
+          },
+          "selectedPants": [
+            "کرم"
+          ],
+          "documentWidth": 1280,
+          "viewportWidth": 1280
+        },
+        "next": {
+          "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+          "counter": "۳ / ۱۲",
+          "busy": "false",
+          "canvas": {
+            "width": 576,
+            "height": 864,
+            "hash": 742836840,
+            "nontransparentSamples": 28107
+          },
+          "selectedPants": [
+            "کرم"
+          ],
+          "documentWidth": 1280,
+          "viewportWidth": 1280
+        },
+        "generationButtonVisible": false
+      },
+      "status": "passed",
+      "durationMs": 1063
+    },
+    {
+      "name": "mobile-fitting-room-and-return",
+      "at": "2026-10-20T11:25:34.099Z",
+      "elapsedMs": 14949,
+      "result": {
+        "mobile": {
+          "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+          "counter": "۳ / ۱۲",
+          "busy": "false",
+          "canvas": {
+            "width": 576,
+            "height": 864,
+            "hash": 742836840,
+            "nontransparentSamples": 28107
+          },
+          "selectedPants": [
+            "کرم"
+          ],
+          "documentWidth": 390,
+          "viewportWidth": 390
+        },
+        "returnedProduct": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+        "productInfoButtonVisible": true
+      },
+      "status": "passed",
+      "durationMs": 334
+    }
+  ],
+  "console": [
+    {
+      "at": "2026-10-20T11:25:20.763Z",
+      "elapsedMs": 1613,
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "https://3d-shop-design.ir/_next/static/chunks/0kwtxnkq_h25e.js",
+        "line": 0,
+        "column": 6369,
+        "lineNumber": 0,
+        "columnNumber": 6369
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "blockedRequests": [],
+  "browserVersion": "155.0.8059.85",
+  "screenshots": [
+    {
+      "at": "2026-10-20T11:25:27.471Z",
+      "elapsedMs": 8321,
+      "name": "01-desktop-overview.png"
+    },
+    {
+      "at": "2026-10-20T11:25:29.875Z",
+      "elapsedMs": 10725,
+      "name": "02-desktop-rack-browse.png"
+    },
+    {
+      "at": "2026-10-20T11:25:33.036Z",
+      "elapsedMs": 13886,
+      "name": "03-desktop-product-info-gallery.png"
+    },
+    {
+      "at": "2026-10-20T11:25:34.096Z",
+      "elapsedMs": 14946,
+      "name": "04-desktop-prepared-fitting-room.png"
+    },
+    {
+      "at": "2026-10-20T11:25:34.271Z",
+      "elapsedMs": 15121,
+      "name": "05-mobile-prepared-fitting-room.png"
+    },
+    {
+      "at": "2026-10-20T11:25:34.428Z",
+      "elapsedMs": 15278,
+      "name": "06-mobile-product-return.png"
+    }
+  ],
+  "preparedPhotoCheckpoints": {
+    "before": {
+      "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+      "counter": "۲ / ۱۲",
+      "busy": "false",
+      "canvas": {
+        "width": 576,
+        "height": 864,
+        "hash": 96563818,
+        "nontransparentSamples": 28688
+      },
+      "selectedPants": [
+        "مشکی"
+      ],
+      "documentWidth": 1280,
+      "viewportWidth": 1280
+    },
+    "cream": {
+      "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+      "counter": "۲ / ۱۲",
+      "busy": "false",
+      "canvas": {
+        "width": 576,
+        "height": 864,
+        "hash": 3303401589,
+        "nontransparentSamples": 28688
+      },
+      "selectedPants": [
+        "کرم"
+      ],
+      "documentWidth": 1280,
+      "viewportWidth": 1280
+    },
+    "next": {
+      "product": "پیراهن کلاسیک یقه نیم بک طرح دار سفید سرمه ای",
+      "counter": "۳ / ۱۲",
+      "busy": "false",
+      "canvas": {
+        "width": 576,
+        "height": 864,
+        "hash": 742836840,
+        "nontransparentSamples": 28107
+      },
+      "selectedPants": [
+        "کرم"
+      ],
+      "documentWidth": 1280,
+      "viewportWidth": 1280
+    }
+  },
+  "status": "completed",
+  "finishedAt": "2026-10-20T11:25:34.432Z",
+  "durationMs": 15282
+}
