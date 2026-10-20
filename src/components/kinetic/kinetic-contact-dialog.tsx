@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Code2, Mail, Send, X, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Code2, Mail, Phone, Send, X, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Dialog } from "radix-ui";
 import { useLayoutEffect, useRef } from "react";
@@ -29,6 +29,7 @@ export function KineticContactDialog({ open, onOpenChange, locale, content }: Pr
   const github = content.socialLinks.find((link) => link.id === "github");
   const linkedin = content.socialLinks.find((link) => link.id === "linkedin");
   const channels: Channel[] = [
+    { id: "phone", label: locale === "fa" ? "تماس تلفنی" : locale === "de" ? "Anrufen" : "Call", value: "+98 903 683 7788", href: "tel:+989036837788", icon: Phone, external: false },
     { id: "email", label: locale === "fa" ? "ایمیل" : locale === "de" ? "E-Mail" : "Email", value: content.identity.email, href: `mailto:${content.identity.email}`, icon: Mail, external: false },
     { id: "telegram", label: t("telegram"), value: "@Nimamoradirad", href: "https://t.me/Nimamoradirad", icon: Send, external: true },
     ...(github ? [{ id: "github", label: "GitHub", value: "Nima-Moradi1", href: github.href, icon: Code2, external: true }] : []),
@@ -58,7 +59,7 @@ export function KineticContactDialog({ open, onOpenChange, locale, content }: Pr
                 <span className={styles.icon}><Icon size={19} aria-hidden="true" /></span>
                 <span className={styles.channelText}>
                   <span className={styles.label}>{label}</span>
-                  <span className={styles.value}><bdi>{value}</bdi></span>
+                  <span className={styles.value}><bdi dir={id === "phone" ? "ltr" : undefined}>{value}</bdi></span>
                 </span>
                 <ArrowUpRight className={styles.arrow} size={17} aria-hidden="true" />
               </a>
