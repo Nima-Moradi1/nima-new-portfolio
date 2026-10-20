@@ -1,8 +1,8 @@
 export const siteHeaderClassNames = {
   root: "site-header fixed inset-x-0 top-0 z-[100] grid h-[var(--header-height)] grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)] items-center border-b border-transparent px-[var(--gutter)] backdrop-blur-none backdrop-saturate-100 transition-[height,border-color,backdrop-filter] duration-[var(--duration-base)] ease-expressive data-[scrolled=true]:h-[4.6rem] data-[scrolled=true]:border-border data-[scrolled=true]:bg-[linear-gradient(110deg,color-mix(in_srgb,var(--header-glass)_96%,transparent),color-mix(in_srgb,var(--header-glass)_72%,transparent))] data-[scrolled=true]:shadow-[0_8px_32px_rgb(0_0_0/15%)] data-[scrolled=true]:backdrop-blur-[18px] data-[scrolled=true]:backdrop-saturate-[130%] rtl:data-[scrolled=true]:bg-[linear-gradient(250deg,color-mix(in_srgb,var(--header-glass)_96%,transparent),color-mix(in_srgb,var(--header-glass)_72%,transparent))] max-[72rem]:isolate max-[72rem]:grid-cols-[1fr_auto] max-[72rem]:border-border max-[72rem]:bg-[linear-gradient(110deg,color-mix(in_srgb,var(--header-glass)_92%,transparent),color-mix(in_srgb,var(--header-glass)_68%,transparent))] max-[72rem]:shadow-[0_0.5rem_2rem_rgb(0_0_0/12%),inset_0_1px_color-mix(in_srgb,var(--paper)_8%,transparent)] max-[72rem]:backdrop-blur-[22px] max-[72rem]:backdrop-saturate-[145%] max-[72rem]:transition-[height,border-color,box-shadow] max-[72rem]:data-[scrolled=true]:bg-[linear-gradient(110deg,color-mix(in_srgb,var(--header-glass)_92%,transparent),color-mix(in_srgb,var(--header-glass)_68%,transparent))] max-[72rem]:rtl:bg-[linear-gradient(250deg,color-mix(in_srgb,var(--header-glass)_92%,transparent),color-mix(in_srgb,var(--header-glass)_68%,transparent))] max-[72rem]:rtl:data-[scrolled=true]:bg-[linear-gradient(250deg,color-mix(in_srgb,var(--header-glass)_92%,transparent),color-mix(in_srgb,var(--header-glass)_68%,transparent))] motion-reduce:transition-none",
   brand: "site-header__brand inline-flex items-center justify-self-start gap-3",
-  mark: "site-header__mark block size-[2.6rem] overflow-hidden rounded-full border border-line-strong bg-background-soft",
-  markImage: "size-full object-cover object-center",
+  mark: "site-header__mark block size-11 shrink-0 text-foreground",
+  markImage: "size-full",
   identity: "site-header__identity grid gap-[0.08rem] max-[22rem]:hidden",
   identityName: "text-[0.86rem] font-[620]",
   identityRole:
@@ -10,7 +10,7 @@ export const siteHeaderClassNames = {
   desktopNav:
     "site-header__desktop-nav flex items-center justify-center gap-[clamp(1rem,2.4vw,2.4rem)] max-[72rem]:hidden",
   desktopNavLink:
-    "relative cursor-pointer border-0 bg-transparent py-[0.45rem] text-[0.78rem] text-[var(--muted-bright)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 motion-reduce:after:transition-none",
+    "relative inline-flex min-h-11 cursor-pointer items-center border-0 bg-transparent px-2 py-[0.45rem] text-sm text-[var(--muted-bright)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-[var(--underline-rest-origin)] after:scale-x-0 after:bg-primary after:content-[''] after:transition-transform after:duration-[var(--duration-base)] after:ease-expressive hover:after:origin-[var(--underline-active-origin)] hover:after:scale-x-100 motion-reduce:after:transition-none",
   actions:
     "site-header__actions flex h-full items-center justify-self-end gap-[clamp(0.75rem,1.5vw,1.4rem)] max-[72rem]:gap-[0.35rem]",
   contact:

@@ -1,0 +1,183 @@
+{
+  "hero": {
+    "eyebrow": "NIMA MORADIRAD · AI FULL-STACK-ENTWICKLER",
+    "title": "Engineering in Bewegung.",
+    "description": "Ich konzipiere, entwickle und veröffentliche komplette Produkte — von ausdrucksstarken Interfaces über robuste Backends bis zu KI-gestützten Workflows und Deployment.",
+    "scroll": "Scrollen und entdecken",
+    "availability": "Frontend · Backend · KI-Workflows · Auslieferung"
+  },
+  "chrome": {
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "contact": "Kontakt",
+    "locale": "Sprache",
+    "skip": "Zum Portfolio-Inhalt springen",
+    "reader": "Leseansicht",
+    "immersive": "Immersive Ansicht"
+  },
+  "controls": {
+    "previous": "Vorheriger Eintrag",
+    "next": "Nächster Eintrag",
+    "select": "Eintrag auswählen",
+    "modeLabel": "Portfolio-Modus",
+    "itemLabel": "Ausgewählter Eintrag",
+    "resume": "Lebenslauf",
+    "source": "Quellcode",
+    "viewProject": "Projekt entdecken",
+    "viewExperience": "Erfahrung entdecken"
+  },
+  "loading": {
+    "preparing": "Szene wird vorbereitet",
+    "ready": "Szene bereit",
+    "enter": "Portfolio öffnen",
+    "fallback": "In Leseansicht fortfahren"
+  },
+  "proof": {
+    "eyebrow": "DAS ENGINEERING HINTER DEM ERLEBNIS",
+    "title": "Vier Disziplinen. Ein Produkt.",
+    "items": [
+      {
+        "id": "frontend",
+        "kicker": "KOMPLEXITÄT → KLARHEIT",
+        "title": "Interfaces mit Absicht.",
+        "description": "Typisierte React-Systeme, durchdachte Bewegung und nutzbare Interaktion. Von einer räumlichen Uhrengalerie bis zu Oberflächen für den Arbeitsalltag.",
+        "technologies": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Three.js"
+        ],
+        "evidenceLabel": "Moradi Gallery entdecken",
+        "evidenceHref": "/projects/moradi-gallery"
+      },
+      {
+        "id": "backend",
+        "kicker": "EINZELNE OBERFLÄCHEN → VERBUNDENE SYSTEME",
+        "title": "Systeme hinter dem Interface.",
+        "description": "Gemeinsame Verträge, persistente Daten und serverseitig validierte Aktionen. XO Arena verbindet die Mehrspieleroberfläche mit einer autoritativen Echtzeit-Spielengine.",
+        "technologies": [
+          "Node.js",
+          "Express",
+          "Socket.IO",
+          "Prisma",
+          "MySQL"
+        ],
+        "evidenceLabel": "XO Arena entdecken",
+        "evidenceHref": "/projects/xo-arena"
+      },
+      {
+        "id": "ai",
+        "kicker": "AUTOMATISIERUNG → TECHNISCHES URTEIL",
+        "title": "KI-gestützt. Menschlich gesteuert.",
+        "description": "KI unterstützt Implementierung, Review und Dokumentation. Sarochi untersucht außerdem fotografische Bekleidungsvorschauen: Vorbereitete Bilder zeigen die Erscheinung, ohne eine präzise Passform zu versprechen.",
+        "technologies": [
+          "AI-assisted development",
+          "TypeScript",
+          "Image workflows"
+        ],
+        "evidenceLabel": "Sarochi entdecken",
+        "evidenceHref": "/projects/sarochi-3d-shop"
+      },
+      {
+        "id": "shipping",
+        "kicker": "PROTOTYP → AUSLIEFERBARES PRODUKT",
+        "title": "Gebaut, um Menschen zu erreichen.",
+        "description": "Responsive Interfaces, Release-Arbeit und Deployment verbinden die Entwicklung mit ihren Nutzern. Meine Erfahrung umfasst produktive Web-, PWA- und Android-Auslieferung sowie öffentliche Full-Stack-Projekte.",
+        "technologies": [
+          "PWA",
+          "Capacitor",
+          "Deployment",
+          "Performance"
+        ],
+        "evidenceLabel": "Emerald Case entdecken",
+        "evidenceHref": "/projects/emerald-case"
+      }
+    ]
+  },
+  "statement": {
+    "eyebrow": "VON DER ERSTEN INTERAKTION BIS ZUM RELEASE",
+    "title": "Klar gestalten. Solide bauen. Wirklich ausliefern.",
+    "description": "Kreative Technologie überzeugt, wenn das Produkt nützlich bleibt. Ich verbinde Gestaltungsentscheidungen mit den Systemen, die sie verlässlich machen."
+  },
+  "recap": {
+    "title": "Sieben Projekte. Vier Kapitel Erfahrung.",
+    "description": "Unterschiedliche Produkte, ein gemeinsamer Ansatz: das Problem verstehen, sorgfältig bauen und Ergebnisse belegen."
+  },
+  "faq": {
+    "eyebrow": "EIN PAAR NÜTZLICHE ANTWORTEN",
+    "title": "Bevor wir bauen.",
+    "items": [
+      {
+        "id": "full-stack",
+        "question": "Was macht deine Arbeit zu Full-Stack-Entwicklung?",
+        "answer": "Meine eigenständigen Projekte umfassen Frontend, Serverlogik, Daten und Deployment. XO Arena zeigt ein Express- und Socket.IO-Backend; Emerald Case verbindet Daten, Authentifizierung und Checkout. Meine bisherigen Berufsbezeichnungen bleiben Frontend-Rollen.",
+        "href": "/projects/xo-arena",
+        "linkLabel": "XO Arena ansehen"
+      },
+      {
+        "id": "frontend",
+        "question": "Mit welchen Frontend-Systemen arbeitest du?",
+        "answer": "React, Next.js und TypeScript bilden den Kern. Dazu kommen Rendering-Strategien, gemeinsame UI-Systeme, Echtzeitfunktionen, mehrsprachige Interfaces, PWA-Auslieferung und interaktive Three.js-Erlebnisse."
+      },
+      {
+        "id": "backend",
+        "question": "Welche Backend-Werkzeuge kannst du belegen?",
+        "answer": "XO Arena verwendet Express, Socket.IO, Prisma und MySQL. Emerald Case nutzt Prisma und MongoDB sowie Authentifizierung, Stripe-Checkout und E-Mail. Jede Fallstudie beschreibt den jeweiligen Umfang.",
+        "href": "/projects/emerald-case",
+        "linkLabel": "Emerald Case ansehen"
+      },
+      {
+        "id": "ai",
+        "question": "Wie setzt du KI im Engineering ein?",
+        "answer": "Ich nutze KI als beaufsichtigtes Werkzeug für Implementierung, Erkundung, Code-Review und Dokumentation. Architektur, Sicherheit, Ergebnisprüfung und die Entscheidung über eine Veröffentlichung bleiben meine Verantwortung."
+      },
+      {
+        "id": "motion",
+        "question": "Kann ich das Portfolio ohne 3D-Bewegung ansehen?",
+        "answer": "Ja. Die Leseansicht zeigt Projekte und Berufserfahrung ohne die immersive Szene. Einstellungen für reduzierte Bewegung und ein Weg ohne WebGL halten die wesentlichen Informationen und Links zugänglich."
+      },
+      {
+        "id": "hesabo",
+        "question": "Welche Rolle hast du bei Hesabo?",
+        "answer": "Als Senior Frontend Developer wirke ich an Architektur und Auslieferung der Admin-, Arbeitgeber-, Mitarbeiter- und Support-Oberflächen sowie an Mentoring und PWA-/Android-Arbeit mit. Das ist gemeinschaftliche Produktentwicklung und keine alleinige Verantwortung für die Finanzplattform."
+      },
+      {
+        "id": "sarochi",
+        "question": "Was zeigt der 3D-Shop?",
+        "answer": "Sarochi ist ein räumliches Bekleidungs-Showroom-Konzept mit Navigation an Kleiderständern, Produktgalerien und vorbereiteter fotografischer Vorschau. Der Kauf erfolgt im offiziellen Shop. Die experimentelle Vorschau belegt weder exakte Passform noch beliebige fotorealistische Anproben.",
+        "href": "/projects/sarochi-3d-shop",
+        "linkLabel": "Showroom entdecken"
+      },
+      {
+        "id": "delivery",
+        "question": "Begleitest du Produkte von der Idee bis zum Deployment?",
+        "answer": "Ja, im vereinbarten Umfang. Meine öffentlichen Projekte zeigen Implementierung und Deployment; meine Berufserfahrung ergänzt gemeinsame Architektur, Reviews, Releases und mobile Auslieferung."
+      },
+      {
+        "id": "collaboration",
+        "question": "Wie starten wir ein Gespräch?",
+        "answer": "Beschreibe das Produkt, die Herausforderung und das gewünschte Ergebnis. Über das Kontaktformular oder einen bestehenden direkten Kanal können wir den Umfang und den nächsten sinnvollen Schritt besprechen.",
+        "href": "#contact",
+        "linkLabel": "Zum Kontakt"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "BAUEN WIR ETWAS NÜTZLICHES",
+    "title": "Deine nächste Idee. Unser erstes Gespräch.",
+    "description": "Erzähl mir, was du baust, wo es schwierig wird und wie ein gutes Ergebnis aussieht."
+  },
+  "footer": {
+    "note": "Bewusst gestaltet. Für das echte Web entwickelt.",
+    "backToTop": "Nach oben"
+  },
+  "detail": {
+    "live": "Live-Demo",
+    "preview": "Bewegte Vorschau",
+    "visit": "Website öffnen",
+    "back": "Zurück zu Projekten",
+    "interact": "Demo bedienen",
+    "scroll": "Weiterscrollen, um zum Karussell zurückzukehren",
+    "tools": "Entwickelt mit"
+  }
+}

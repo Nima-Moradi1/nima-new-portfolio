@@ -1,0 +1,1623 @@
+{
+  "profile": "desktop",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "dpr": 1,
+  "startedUtc": "2026-10-20T11:16:23.978Z",
+  "errors": [],
+  "checkpoints": [
+    {
+      "label": "settled-hero",
+      "png": "settled-hero.png",
+      "requestedProgress": 0,
+      "elapsedMs": 10617,
+      "capturedUtc": "2026-10-20T11:16:34.595Z",
+      "t": 10339.60000000149,
+      "scrollY": 0,
+      "scrollHeight": 12807,
+      "innerHeight": 900,
+      "innerWidth": 1440,
+      "dpr": 1,
+      "overflow": {
+        "html": "visible",
+        "body": "visible"
+      },
+      "canvas": [
+        {
+          "tag": "CANVAS",
+          "class": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "opacity": "1",
+          "display": "block",
+          "position": "fixed",
+          "transform": "none",
+          "text": "",
+          "bufferWidth": 1440,
+          "bufferHeight": 900
+        }
+      ],
+      "overlays": [
+        {
+          "tag": "H1",
+          "class": "",
+          "x": 474,
+          "y": 806.03125,
+          "width": 1,
+          "height": 1,
+          "opacity": "1",
+          "display": "block",
+          "position": "absolute",
+          "transform": "none",
+          "text": "Ciao Energy – L'energy drink parfaite"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "x": 147.4375,
+          "y": 382.328125,
+          "width": 392,
+          "height": 86.09375,
+          "opacity": "1",
+          "display": "block",
+          "position": "static",
+          "transform": "none",
+          "text": "Moins de sucre"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "x": 147.4375,
+          "y": 382.328125,
+          "width": 392,
+          "height": 86.09375,
+          "opacity": "1",
+          "display": "block",
+          "position": "static",
+          "transform": "none",
+          "text": "arômesnaturels"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "x": 147.4375,
+          "y": 382.328125,
+          "width": 392,
+          "height": 86.09375,
+          "opacity": "1",
+          "display": "block",
+          "position": "static",
+          "transform": "none",
+          "text": "caféine issue de grains de café"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "x": 147.4375,
+          "y": 387.046875,
+          "width": 392,
+          "height": 50.390625,
+          "opacity": "1",
+          "display": "block",
+          "position": "static",
+          "transform": "none",
+          "text": "stevia"
+        }
+      ],
+      "sections": [
+        {
+          "tag": "SECTION",
+          "class": "section is-gamme",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "Ciao Energy – L'energy drink parfaite\n  Double\n  Litchi\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.\n  Coco\n  Citro"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-profile",
+          "x": 0,
+          "y": 1125,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "Double\n  Litchi\n\n  \nUne explosion exotique. Une recette intense en litchi qui rappelle les saveurs d’Asie tropicale.\n  \n\n  Coco\n  Citron Vert\n\n  \nUne parenthèse tropicale. On a mél"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-benefits",
+          "x": 0,
+          "y": 2250,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "×11G de sucresMoins de sucreUne boisson énergisante moins sucrée, avec exclusivement du sucre de canne, choisi pour son origine végétale et son caractère en bouche."
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-benefits",
+          "x": 0,
+          "y": 3375,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "×Arômes artificielsarômesnaturelsPour leur puissance aromatique et leur richesse gustative, on a soigneusement sélectionné des arômes naturels issus de fruits et de plantes."
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-benefits",
+          "x": 0,
+          "y": 4500,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "×Caféine artificiellecaféine issue de grains de caféPour l’énergie, on a choisi des grains de café, source naturelle de caféine, complétés par du guarana, lui aussi naturel."
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-benefits",
+          "x": 0,
+          "y": 5625,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "×Aspartame sucralose acéfulfame KsteviaPour compléter le sucre de canne et apporter douceur et gourmandise, on a choisi d’ajouter un édulcorant d’origine végétale avec des extraits"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-argument",
+          "x": 0,
+          "y": 6750,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-full-gamme",
+          "x": 0,
+          "y": 7875,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-faq",
+          "x": 0,
+          "y": 9000,
+          "width": 1440,
+          "height": 1557.421875,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": "FOIRE AUXQUESTIONSQu'est-ce qui distingue Ciao Energy des autres boissons énergisantes ?\n  \n  \n  \n  \n  \nCiao Energy a été pensée comme la boisson énergisante parfaite.\nOn a fait le"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-last-copy",
+          "x": 0,
+          "y": 10557.421875,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "SECTION",
+          "class": "section is-last",
+          "x": 0,
+          "y": 11682.421875,
+          "width": 1440,
+          "height": 1125,
+          "opacity": "1",
+          "display": "block",
+          "position": "relative",
+          "transform": "none",
+          "text": ""
+        }
+      ],
+      "webgl": {
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 630 (0x00003E92) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      },
+      "textExcerpt": "ON\nMENU\nCONTACT\nCONTACT\nCIAO ENERGY – L'ENERGY DRINK PARFAITE\nDOUBLE\nLITCHI\nSCROLLER POUR DÉCOUVRIR\nFOIRE AUX\nQUESTIONS\nQu'est-ce qui distingue Ciao Energy des autres boissons énergisantes ?\n\nCiao Energy a été pensée comme la boisson énergisante parfaite. On a fait le choix d'une recette à teneur réduite en sucres par rapport aux boissons énergisantes classiques, de mettre des arômes naturels plutôt que des arômes artificiels, de mettre de la caféine issue de grains de café plutôt que de la caféine de synthèse, et de mettre un édulcorant d’origine végétale (la stévia) plutôt que des édulcorants de synthèse (aspartame, sucralose et acésulfame K).\n\nCiao Energy est-elle une boisson pétillante ?\n\nOui, Ciao Energy est une boisson gazeuse. On a choisi une effervescence marquée pour amplifier la fraîcheur en bouche.\n\nQuelle est la teneur en sucres et en calories de Ciao Energy ?\n\nCiao Energy contient 4 g de sucre et 17 kcal pour 100 mL. On a dosé le sucre avec parcimonie en associant sucre de canne et extraits de stévia.\n\nQuelles sont les vitamines présentes dans Ciao Energy ?\n\nUne canette de Ciao Energy contient de la niacine (vitamine B3), de la vitamine B6 et de la biotine (vitamine B8",
+      "actualProgress": 0
+    }
+  ],
+  "status": 200,
+  "frames": [
+    {
+      "t": 807.3,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 840.8,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 874.1,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 907.4,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 940.8,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 974.2,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 1007.6,
+      "y": 0,
+      "h": 900,
+      "viewportH": 900
+    },
+    {
+      "t": 1040.9,
+      "y": 0,
+      "h": 9630,
+      "viewportH": 900
+    },
+    {
+      "t": 1091,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1124.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1157.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1675,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1708.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1758.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1891.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1925.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 1958.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2142,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2175.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2242.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2275.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2308.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2342.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2375.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2408.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2442.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2475.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2509,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2542.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2575.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2609.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2642.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2675.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2709.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2742.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2776,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2809.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2842.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2876.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2909.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2942.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 2976.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3009.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3042.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3076.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3109.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3143,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3176.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3209.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3243.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3276.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3309.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3343.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3510,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3543.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3576.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3610.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3643.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3676.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3710.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3743.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3777.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3810.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3843.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3877,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3910.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3943.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 3977.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4010.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4043.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4077.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4110.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4144.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4177.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4210.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 4244.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5595.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5628.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5662.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5695.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5729,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5762.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5795.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5829.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5862.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5895.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5929.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5962.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 5995.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6029.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6062.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6096,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6129.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6162.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6196.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6229.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6262.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6296.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6329.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6362.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6396.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6429.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6463,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6496.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6529.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6563,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6596.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6629.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6663.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6696.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6730,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6763.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6796.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6830.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6863.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6896.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6930.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6963.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 6997,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7030.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7063.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7097.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7130.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7163.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7197.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7230.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7263.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7297.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7330.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7363.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7397.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7430.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7464.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7497.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7530.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7564.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7597.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7630.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7664.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7697.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7731,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7764.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7797.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7831,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7864.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7897.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7931.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7964.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 7998,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8031.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8064.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8098,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8131.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8164.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8198,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8231.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8264.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8298.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8331.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8365,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8398.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8431.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8465,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8498.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8531.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8565.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8598.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8631.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8665.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8698.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8732,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8765.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8798.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8832.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8865.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8898.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8932.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8965.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 8998.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9032.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9065.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9099,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9132.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9165.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9199.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9232.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9265.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9299.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9332.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9365.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9399.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9432.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9466,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9499.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9532.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9566.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9599.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9632.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9666.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9699.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9733,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9766.3,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9799.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9833,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9866.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9899.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9933.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9966.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 9999.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10033.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10066.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10100,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10133.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10166.7,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10200.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10233.5,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10266.9,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10300.2,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10333.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10367,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10400.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10433.6,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10467,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10500.4,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10533.8,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    },
+    {
+      "t": 10567.1,
+      "y": 0,
+      "h": 12807,
+      "viewportH": 900
+    }
+  ]
+}

@@ -99,8 +99,8 @@ export async function generateMetadata({
     },
     manifest: getLocalizedPath(locale, "/manifest.webmanifest"),
     icons: {
-      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-      shortcut: "/favicon.svg",
+      icon: [{ url: "/brand/nm-favicon.svg", type: "image/svg+xml" }],
+      shortcut: "/brand/nm-favicon.svg",
       apple: "/assets/nima-moradirad.jpg",
     },
     robots: {
@@ -119,7 +119,7 @@ export async function generateMetadata({
 
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#090b0a",
+  themeColor: "#05070b",
   width: "device-width",
   initialScale: 1,
 };

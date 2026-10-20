@@ -13,7 +13,7 @@ export type ContactValidationMessages = {
 export function createContactSchema(messages: ContactValidationMessages) {
   return z.object({
     name: z.string().trim().min(2, messages.nameMin).max(80, messages.nameMax),
-    email: z.email(messages.email),
+    email: z.string().trim().max(254, messages.email).pipe(z.email(messages.email)),
     message: z
       .string()
       .trim()

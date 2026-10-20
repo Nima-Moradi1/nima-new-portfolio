@@ -11,6 +11,9 @@ const nextConfig = {
   env: { DEPLOYMENT_SHA: deploymentSha || "development" },
   poweredByHeader: false,
   reactStrictMode: true,
+  // Keep loopback rewrites on 127.0.0.1; normalizing them to localhost makes
+  // the internal /en rewrite external and starts an /en -> / redirect loop.
+  skipProxyUrlNormalize: true,
   compress: true,
   images: {
     unoptimized: true,

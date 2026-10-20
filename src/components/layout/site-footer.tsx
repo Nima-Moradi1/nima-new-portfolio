@@ -1,7 +1,7 @@
-import { FileText, Mail, Phone, Send } from "lucide-react";
-import Image from "next/image";
+import { Code2, FileText, Mail, Send } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 import { LinkedinIcon } from "@/components/contact/linkedin-icon";
+import { NMBrandMark } from "@/components/branding/nm-brand-mark";
 import { usePortfolio } from "@/content/use-portfolio";
 import { siteFooterClassNames as styles } from "./site-footer.class-names";
 
@@ -9,16 +9,16 @@ export function SiteFooter() {
   const portfolio = usePortfolio();
   const t = useTranslations("Footer");
   const format = useFormatter();
+  const contact = useTranslations("ContactDialog");
   const year = format.number(new Date().getFullYear(), { useGrouping: false });
-  const linkedin = portfolio.socialLinks.find((link) => link.id === "linkedin");
   const contactLinks = [
-    {
-      label: "LinkedIn",
-      href: linkedin?.href ?? "https://www.linkedin.com/",
-      icon: LinkedinIcon,
+    ...portfolio.socialLinks.map(link => ({
+      label: link.label,
+      href: link.href,
+      icon: link.id === "linkedin" ? LinkedinIcon : Code2,
       external: true,
       download: false,
-    },
+    })),
     {
       label: t("resume"),
       href: portfolio.identity.resumeUrl,
@@ -27,23 +27,16 @@ export function SiteFooter() {
       download: true,
     },
     {
-      label: "Telegram",
+      label: contact("telegram"),
       href: "https://t.me/Nimamoradirad",
       icon: Send,
       external: true,
       download: false,
     },
     {
-      label: "Gmail",
+      label: contact("gmail"),
       href: `mailto:${portfolio.identity.email}`,
       icon: Mail,
-      external: false,
-      download: false,
-    },
-    {
-      label: t("phone"),
-      href: "tel:+989036837788",
-      icon: Phone,
       external: false,
       download: false,
     },
@@ -52,12 +45,8 @@ export function SiteFooter() {
   return (
     <footer className={styles.root}>
       <a href="#top" className={styles.mark} aria-label={t("backToTop")}>
-        <Image
+        <NMBrandMark
           className={styles.markImage}
-          src="/assets/nima-moradirad.jpg"
-          alt=""
-          width={48}
-          height={48}
         />
       </a>
       <p className={styles.copy}>

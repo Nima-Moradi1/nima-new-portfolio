@@ -1,0 +1,55 @@
+{
+  "skip": "Skip to case study",
+  "back": "Back to selected work",
+  "metadata": {
+    "title": "Sarochi · Interactive 3D apparel showroom",
+    "description": "An interactive 3D apparel-showroom concept with spatial product browsing, source-backed galleries and an experimental prepared photographic appearance preview."
+  },
+  "hero": {
+    "eyebrow": "3D Interactive Shop / Sarochi",
+    "title": "Step into the collection.",
+    "intro": "A small boutique becomes a spatial interface. Explore the racks, move from a garment to its source gallery, and open an experimental photographic appearance preview.",
+    "availability": "Live showroom concept · 3d-shop-design.ir"
+  },
+  "live": {
+    "eyebrow": "Explore the real product",
+    "title": "From the room to the details.",
+    "description": "Browse the live boutique or inspect the implementation. Purchasing continues on the official Sarochi product page.",
+    "primaryLabel": "Enter the showroom",
+    "sourceLabel": "View source code"
+  },
+  "screenshot": {
+    "alt": "Live Sarochi 3D boutique showing apparel racks, a mirror, seating and interactive navigation zones"
+  },
+  "showcase": {
+    "eyebrow": "CAPTURED FROM THE LIVE SHOWROOM",
+    "title": "A room, a product, a closer look.",
+    "description": "These are captures of the working showroom. The prepared photographic preview explores appearance; it is not a measurement of physical fit.",
+    "gallery": [
+      { "id": "product", "title": "Product details and source gallery", "alt": "Sarochi garment details alongside the source-backed product image gallery" },
+      { "id": "preview", "title": "Prepared photographic appearance preview", "alt": "Sarochi experimental appearance-preview room with a prepared garment photograph and color controls" }
+    ]
+  },
+  "product": {
+    "eyebrow": "Product, at a glance",
+    "title": "Spatial discovery. Familiar next steps.",
+    "description": "The 3D scene gives apparel exploration a sense of place, then hands off to product information and the official store. It is a showroom concept, rather than a separate payment platform.",
+    "features": [
+      { "id": "showroom", "title": "Navigable boutique", "text": "Five selectable zones connect the room to apparel racks and focused product browsing." },
+      { "id": "gallery", "title": "Source-backed product galleries", "text": "Product information leads to available source photography and the official product page for purchasing." },
+      { "id": "preview", "title": "Experimental appearance preview", "text": "Prepared photographic apparel previews support garment selection and local pants-color changes. They do not promise exact sizing, drape or arbitrary human try-on." },
+      { "id": "controls", "title": "Several ways to explore", "text": "The implementation includes keyboard and responsive controls, with a non-WebGL product-link fallback when the scene cannot render." }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technology & decisions",
+    "title": "A scene connected to a product flow.",
+    "description": "Next.js and React Three Fiber connect a Three.js boutique to structured catalog data, product panels and a bounded photographic-preview workflow.",
+    "stackLabel": "Sarochi technology stack",
+    "notes": [
+      { "id": "catalog", "title": "Bounded catalog adapter", "text": "An allowlisted read adapter uses timeouts, response limits and short-lived caching. The upstream commerce backend remains the official store’s system." },
+      { "id": "handoff", "title": "Keep exploration connected", "text": "Scene selection, rack navigation, product information and the return from the appearance preview share a coherent product context." },
+      { "id": "limits", "title": "Clear preview boundaries", "text": "Prepared previews are distinct from optional fresh generation. Exact-person garment reconstruction, physical fit and guaranteed generation availability are not claimed." }
+    ]
+  }
+}

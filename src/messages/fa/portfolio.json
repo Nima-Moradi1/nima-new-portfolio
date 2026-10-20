@@ -2,23 +2,44 @@
   "identity": {
     "name": "نیما مرادی‌راد",
     "initials": "NM",
-    "role": "مهندس نرم‌افزار",
-    "shortRole": "مهندس محصول · وب، PWA و Android",
+    "role": "توسعه‌دهنده فول‌استک با تمرکز بر هوش مصنوعی",
+    "shortRole": "توسعه‌دهنده فول‌استک · از رابط کاربری تا استقرار",
     "location": "تهران، ایران",
     "availability": "بیش از ۶ سال تجربه در توسعه محصولات واقعی برای وب، PWA و Android",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "به تیم‌های فنی کمک می‌کنم نیازهای پیچیده محصول را به تجربه‌هایی سریع، امن و قابل نگهداری تبدیل کنند؛ از معماری React و تعاملات لحظه‌ای تا انتشار پایدار PWA و Android.",
-    "statement": "محصولات مقیاس‌پذیر وب و موبایل می‌سازم؛ جایی که کارایی، پایداری و طراحی شفاف در کنار هم کار می‌کنند."
+    "intro": "از رابط کاربری و معماری فرانت‌اند تا بک‌اند، جریان‌های کاری مبتنی بر هوش مصنوعی و استقرار پایدار، محصول را طراحی و توسعه می‌دهم.",
+    "statement": "رابط کاربری حساب‌شده، سیستم قابل اتکا و جریان‌های کاربردی هوش مصنوعی را به هم پیوند می‌دهم تا محصولی مفید منتشر شود."
   },
   "navigation": [
-    { "id": "experience", "label": "تجربه‌ها", "href": "/#experience" },
-    { "id": "work", "label": "پروژه‌ها", "href": "/#work" },
-    { "id": "capabilities", "label": "توانمندی‌ها", "href": "/#capabilities" },
-    { "id": "contact", "label": "ارتباط", "href": "/#contact" }
+    {
+      "id": "experience",
+      "label": "تجربه‌ها",
+      "href": "/#experience"
+    },
+    {
+      "id": "work",
+      "label": "پروژه‌ها",
+      "href": "/#work"
+    },
+    {
+      "id": "capabilities",
+      "label": "توانمندی‌ها",
+      "href": "/#capabilities"
+    },
+    {
+      "id": "contact",
+      "label": "ارتباط",
+      "href": "/#contact"
+    }
   ],
-  "signals": ["مقیاس‌پذیری", "کارایی", "خلاقیت", "مهندسی محصول"],
+  "signals": [
+    "مقیاس‌پذیری",
+    "کارایی",
+    "خلاقیت",
+    "مهندسی محصول"
+  ],
   "about": {
     "eyebrow": "مهندسی محصول برای وب + موبایل",
     "paragraphs": [
@@ -130,6 +151,26 @@
   ],
   "projects": [
     {
+      "id": "sarochi-3d-shop",
+      "number": "07",
+      "title": "بوتیک سه‌بعدی تعاملی / سارُچی",
+      "category": "تجارت تعاملی · نمایشگاه سه‌بعدی پوشاک",
+      "summary": "مفهومی از نمایشگاه فضایی پوشاک با مرور محصولات، گالری‌های متکی بر منبع و پیش‌نمایش تصویری آزمایشی ظاهر لباس.",
+      "contribution": "طراحی و توسعه نمایشگاه سه‌بعدی، اتصال به گالری محصول و پیش‌نمایش تصویری آماده؛ خرید در فروشگاه رسمی ادامه دارد و پیش‌نمایش، دقت اندازه یا تن‌خور را اثبات نمی‌کند.",
+      "imageAlt": "بوتیک سه‌بعدی تعاملی سارُچی با رگال‌های پوشاک و پیمایش فضایی",
+      "image": "/assets/projects/sarochi-3d-shop/showroom.webp",
+      "technologies": [
+        "Next.js",
+        "React Three Fiber",
+        "Three.js",
+        "TypeScript",
+        "Zustand"
+      ],
+      "href": "/projects/sarochi-3d-shop",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
       "id": "moradi-gallery",
       "number": "۰۱",
       "title": "گالری مرادی",
@@ -214,22 +255,6 @@
       "accent": "coral"
     },
     {
-      "id": "lingo-learn",
-      "number": "۰۵",
-      "title": "Lingo Learn",
-      "category": "پلتفرم آموزش زبان · محصول عملیاتی",
-      "summary": "پلتفرم فارسی‌زبان آموزش زبان با منابع رایگان، دوره‌های مبتنی بر سطح و پکیج‌های آموزشی.",
-      "contribution": "توسعهٔ تجربهٔ واکنش‌گرای منابع آموزشی و فروش که برای کاربران RTL پیاده‌سازی شد.",
-      "image": "/assets/projects/lingo-learn/homepage.jpg",
-      "imageAlt": "صفحهٔ اصلی لینگو لرن با مسیریابی فارسی و کارت‌های خدمات آموزش زبان",
-      "logo": "/assets/projects/lingo-learn/logo.png",
-      "logoAlt": "نشان لینگو لرن",
-      "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
-      "href": "https://lingo-learn.ir/",
-      "featured": true,
-      "accent": "lime"
-    },
-    {
       "id": "tarabari-nima",
       "number": "۰۶",
       "title": "ترابری نیما",
@@ -249,6 +274,27 @@
       "href": "/projects/tarabari-nima",
       "featured": true,
       "accent": "coral"
+    },
+    {
+      "id": "lingo-learn",
+      "number": "۰۵",
+      "title": "Lingo Learn",
+      "category": "پلتفرم آموزش زبان · محصول عملیاتی",
+      "summary": "پلتفرم فارسی‌زبان آموزش زبان با منابع رایگان، دوره‌های مبتنی بر سطح و پکیج‌های آموزشی.",
+      "contribution": "توسعهٔ تجربهٔ واکنش‌گرای منابع آموزشی و فروش که برای کاربران RTL پیاده‌سازی شد.",
+      "image": "/assets/projects/lingo-learn/homepage.jpg",
+      "imageAlt": "صفحهٔ اصلی لینگو لرن با مسیریابی فارسی و کارت‌های خدمات آموزش زبان",
+      "logo": "/assets/projects/lingo-learn/logo.png",
+      "logoAlt": "نشان لینگو لرن",
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "Elementor",
+        "RTL"
+      ],
+      "href": "https://lingo-learn.ir/",
+      "featured": true,
+      "accent": "lime"
     }
   ],
   "capabilities": [
@@ -323,7 +369,7 @@
   ],
   "education": {
     "title": "کارشناسی مهندسی کامپیوتر",
-    "institution": "دانشگاه آزاد تهران · ۲۰۲۱ — اکنون",
+    "institution": "دانشگاه آزاد تهران",
     "note": "تحصیل در مهندسی کامپیوتر هم‌زمان با تحویل حرفه‌ای محصولات وب و موبایل.",
     "languages": [
       "فارسی · زبان مادری/دوزبانه",

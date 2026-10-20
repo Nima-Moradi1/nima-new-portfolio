@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Name":  "next",
+        "Version":  "16.2.10"
+    },
+    {
+        "Name":  "react",
+        "Version":  "19.2.4"
+    },
+    {
+        "Name":  "next-intl",
+        "Version":  "4.13.4"
+    },
+    {
+        "Name":  "@playwright/test",
+        "Version":  "1.62.0"
+    },
+    {
+        "Name":  "@axe-core/playwright",
+        "Version":  "4.12.1"
+    }
+]

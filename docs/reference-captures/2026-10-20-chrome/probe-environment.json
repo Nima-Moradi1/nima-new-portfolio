@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-20T11:16:23.818Z",
+  "browser": "155.0.8059.85",
+  "headless": true,
+  "probe": true,
+  "profiles": [
+    {
+      "profile": "desktop",
+      "path": "C:\\Users\\n_moradirad\\Desktop\\updated-portfolio\\docs\\reference-captures\\2026-10-20-chrome\\desktop",
+      "checkpoints": 1,
+      "status": 200,
+      "errors": 0,
+      "videoPath": null
+    }
+  ]
+}

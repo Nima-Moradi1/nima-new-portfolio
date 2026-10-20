@@ -2,21 +2,37 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Product Engineer",
-    "shortRole": "Product Engineer · Web, PWA & Android",
+    "role": "AI Full-Stack Developer",
+    "shortRole": "AI Full-Stack Developer · Frontend to deployment",
     "location": "Tehran, Iran",
     "availability": "6+ years building production products across web, PWA, and Android",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "I help technical teams turn complex product requirements into fast, secure, and maintainable experiences—from React architecture and real-time features to reliable PWA and Android delivery.",
-    "statement": "I build scalable web and mobile products where performance, reliability, and clear design work together."
+    "intro": "I design, build and ship complete products — from expressive interfaces to reliable backends, AI-assisted workflows and deployment.",
+    "statement": "I connect thoughtful interfaces, dependable systems and practical AI workflows to ship useful products."
   },
   "navigation": [
-    { "id": "experience", "label": "Experience", "href": "/#experience" },
-    { "id": "work", "label": "Work", "href": "/#work" },
-    { "id": "capabilities", "label": "Capabilities", "href": "/#capabilities" },
-    { "id": "contact", "label": "Contact", "href": "/#contact" }
+    {
+      "id": "experience",
+      "label": "Experience",
+      "href": "/#experience"
+    },
+    {
+      "id": "work",
+      "label": "Work",
+      "href": "/#work"
+    },
+    {
+      "id": "capabilities",
+      "label": "Capabilities",
+      "href": "/#capabilities"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "href": "/#contact"
+    }
   ],
   "signals": [
     "Scalability",
@@ -135,6 +151,26 @@
   ],
   "projects": [
     {
+      "id": "sarochi-3d-shop",
+      "number": "07",
+      "title": "3D Interactive Shop / Sarochi",
+      "category": "Interactive commerce · 3D apparel showroom",
+      "summary": "A spatial apparel-showroom concept with product browsing, source-backed galleries and an experimental photographic appearance preview.",
+      "contribution": "Designed and developed the 3D showroom, product-gallery handoffs and prepared photographic preview. Purchases continue at the official store; the preview does not establish exact physical fit.",
+      "imageAlt": "Sarochi interactive 3D boutique with apparel racks and spatial navigation",
+      "image": "/assets/projects/sarochi-3d-shop/showroom.webp",
+      "technologies": [
+        "Next.js",
+        "React Three Fiber",
+        "Three.js",
+        "TypeScript",
+        "Zustand"
+      ],
+      "href": "/projects/sarochi-3d-shop",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
       "id": "moradi-gallery",
       "number": "01",
       "title": "Moradi Gallery",
@@ -219,22 +255,6 @@
       "accent": "coral"
     },
     {
-      "id": "lingo-learn",
-      "number": "05",
-      "title": "Lingo Learn",
-      "category": "Language-learning platform · Production",
-      "summary": "A Persian language-learning platform with free learning resources, level-based courses, and paid study packages.",
-      "contribution": "Built the responsive learning-resource and commerce experience for an RTL audience.",
-      "image": "/assets/projects/lingo-learn/homepage.jpg",
-      "imageAlt": "Lingo Learn homepage with Persian navigation and language-learning service cards",
-      "logo": "/assets/projects/lingo-learn/logo.png",
-      "logoAlt": "Lingo Learn logo",
-      "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
-      "href": "https://lingo-learn.ir/",
-      "featured": true,
-      "accent": "lime"
-    },
-    {
       "id": "tarabari-nima",
       "number": "06",
       "title": "Tarabari Nima",
@@ -254,6 +274,27 @@
       "href": "/projects/tarabari-nima",
       "featured": true,
       "accent": "coral"
+    },
+    {
+      "id": "lingo-learn",
+      "number": "05",
+      "title": "Lingo Learn",
+      "category": "Language-learning platform · Production",
+      "summary": "A Persian language-learning platform with free learning resources, level-based courses, and paid study packages.",
+      "contribution": "Built the responsive learning-resource and commerce experience for an RTL audience.",
+      "image": "/assets/projects/lingo-learn/homepage.jpg",
+      "imageAlt": "Lingo Learn homepage with Persian navigation and language-learning service cards",
+      "logo": "/assets/projects/lingo-learn/logo.png",
+      "logoAlt": "Lingo Learn logo",
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "Elementor",
+        "RTL"
+      ],
+      "href": "https://lingo-learn.ir/",
+      "featured": true,
+      "accent": "lime"
     }
   ],
   "capabilities": [
@@ -328,7 +369,7 @@
   ],
   "education": {
     "title": "B.Sc. Computer Engineering",
-    "institution": "Tehran Azad University · 2021 — 2026",
+    "institution": "Tehran Azad University",
     "note": "Computer engineering study alongside professional product delivery across web and mobile.",
     "languages": [
       "Persian · Native/Bilingual",

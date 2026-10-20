@@ -1,0 +1,1147 @@
+{
+  "generatedAtUtc": "2026-10-20T11:16:34.119Z",
+  "command": "node docs/evidence/validate-source.cjs",
+  "node": "v24.18.0",
+  "source": {
+    "branch": "feat/nm-kinetic-portfolio",
+    "head": "a18911c0f9f493eed70fd8c65f844d6853be1e44",
+    "trackedChanges": ""
+  },
+  "status": "PASS",
+  "summary": {
+    "checks": 119,
+    "failed": 0,
+    "localeSummary": [
+      {
+        "locale": "en",
+        "catalogs": 6,
+        "projects": 6,
+        "experiences": 4,
+        "ids": {
+          "navigation": [
+            "experience",
+            "work",
+            "capabilities",
+            "contact"
+          ],
+          "experience": [
+            "hesabo",
+            "basilica",
+            "barname-negar",
+            "kzi"
+          ],
+          "projects": [
+            "moradi-gallery",
+            "xo-arena",
+            "emerald-case",
+            "hesabo-platform",
+            "lingo-learn",
+            "tarabari-nima"
+          ],
+          "capabilities": [
+            "web-architecture",
+            "mobile-pwa",
+            "ui-quality",
+            "ai-systems-data"
+          ],
+          "socialLinks": [
+            "linkedin",
+            "github"
+          ],
+          "about.principles": [
+            "boundaries",
+            "performance",
+            "rigor"
+          ]
+        }
+      },
+      {
+        "locale": "fa",
+        "catalogs": 6,
+        "projects": 6,
+        "experiences": 4,
+        "ids": {
+          "navigation": [
+            "experience",
+            "work",
+            "capabilities",
+            "contact"
+          ],
+          "experience": [
+            "hesabo",
+            "basilica",
+            "barname-negar",
+            "kzi"
+          ],
+          "projects": [
+            "moradi-gallery",
+            "xo-arena",
+            "emerald-case",
+            "hesabo-platform",
+            "lingo-learn",
+            "tarabari-nima"
+          ],
+          "capabilities": [
+            "web-architecture",
+            "mobile-pwa",
+            "ui-quality",
+            "ai-systems-data"
+          ],
+          "socialLinks": [
+            "linkedin",
+            "github"
+          ],
+          "about.principles": [
+            "boundaries",
+            "performance",
+            "rigor"
+          ]
+        }
+      },
+      {
+        "locale": "de",
+        "catalogs": 6,
+        "projects": 6,
+        "experiences": 4,
+        "ids": {
+          "navigation": [
+            "experience",
+            "work",
+            "capabilities",
+            "contact"
+          ],
+          "experience": [
+            "hesabo",
+            "basilica",
+            "barname-negar",
+            "kzi"
+          ],
+          "projects": [
+            "moradi-gallery",
+            "xo-arena",
+            "emerald-case",
+            "hesabo-platform",
+            "lingo-learn",
+            "tarabari-nima"
+          ],
+          "capabilities": [
+            "web-architecture",
+            "mobile-pwa",
+            "ui-quality",
+            "ai-systems-data"
+          ],
+          "socialLinks": [
+            "linkedin",
+            "github"
+          ],
+          "about.principles": [
+            "boundaries",
+            "performance",
+            "rigor"
+          ]
+        }
+      }
+    ],
+    "modeledLocalizedRoutes": [
+      "/",
+      "/projects/emerald-case",
+      "/projects/moradi-gallery",
+      "/projects/tarabari-nima",
+      "/projects/xo-arena",
+      "/fa",
+      "/fa/projects/emerald-case",
+      "/fa/projects/moradi-gallery",
+      "/fa/projects/tarabari-nima",
+      "/fa/projects/xo-arena",
+      "/de",
+      "/de/projects/emerald-case",
+      "/de/projects/moradi-gallery",
+      "/de/projects/tarabari-nima",
+      "/de/projects/xo-arena"
+    ],
+    "publicFiles": 29,
+    "publicBytes": 7794778
+  },
+  "scope": "Local JSON/schema/ordered IDs/asset/source-route validation only. This is not a test-suite, live-route, browser, contact, PDF, Lighthouse or Sarochi runtime result.",
+  "t02CombinedStatus": "PARTIAL: Sarochi Git access is resolved in T04_CLAIMS_AND_SAROCHI.md; live rendered Sarochi remains unverified.",
+  "failures": [],
+  "checks": [
+    {
+      "name": "json:en/common.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:en/emerald-case.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:en/moradi-gallery.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:en/portfolio.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:en/tarabari-nima.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:en/xo-arena.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/common.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/emerald-case.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/moradi-gallery.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/portfolio.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/tarabari-nima.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:fa/xo-arena.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/common.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/emerald-case.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/moradi-gallery.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/portfolio.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/tarabari-nima.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "json:de/xo-arena.json",
+      "pass": true,
+      "detail": "Parsed without importing application code"
+    },
+    {
+      "name": "catalog-files:en",
+      "pass": true,
+      "detail": [
+        "common.json",
+        "emerald-case.json",
+        "moradi-gallery.json",
+        "portfolio.json",
+        "tarabari-nima.json",
+        "xo-arena.json"
+      ]
+    },
+    {
+      "name": "catalog-shape:en/common.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:en/emerald-case.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:en/moradi-gallery.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:en/portfolio.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:en/tarabari-nima.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:en/xo-arena.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "portfolio-schema:en",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "ordered-ids:en/navigation",
+      "pass": true,
+      "detail": [
+        "experience",
+        "work",
+        "capabilities",
+        "contact"
+      ]
+    },
+    {
+      "name": "unique-ids:en/navigation",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:en/experience",
+      "pass": true,
+      "detail": [
+        "hesabo",
+        "basilica",
+        "barname-negar",
+        "kzi"
+      ]
+    },
+    {
+      "name": "unique-ids:en/experience",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:en/projects",
+      "pass": true,
+      "detail": [
+        "moradi-gallery",
+        "xo-arena",
+        "emerald-case",
+        "hesabo-platform",
+        "lingo-learn",
+        "tarabari-nima"
+      ]
+    },
+    {
+      "name": "unique-ids:en/projects",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "name": "ordered-ids:en/capabilities",
+      "pass": true,
+      "detail": [
+        "web-architecture",
+        "mobile-pwa",
+        "ui-quality",
+        "ai-systems-data"
+      ]
+    },
+    {
+      "name": "unique-ids:en/capabilities",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:en/socialLinks",
+      "pass": true,
+      "detail": [
+        "linkedin",
+        "github"
+      ]
+    },
+    {
+      "name": "unique-ids:en/socialLinks",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "ordered-ids:en/about.principles",
+      "pass": true,
+      "detail": [
+        "boundaries",
+        "performance",
+        "rigor"
+      ]
+    },
+    {
+      "name": "unique-ids:en/about.principles",
+      "pass": true,
+      "detail": 3
+    },
+    {
+      "name": "asset:en//nima-moradirad-resume.pdf",
+      "pass": true,
+      "detail": 2051762
+    },
+    {
+      "name": "asset:en//assets/nima-moradirad-resume-preview.webp",
+      "pass": true,
+      "detail": 247618
+    },
+    {
+      "name": "asset:en//assets/projects/moradi-gallery/homepage-fa.png",
+      "pass": true,
+      "detail": 53199
+    },
+    {
+      "name": "asset:en//assets/projects/xo-arena/game-room.webp",
+      "pass": true,
+      "detail": 32848
+    },
+    {
+      "name": "asset:en//assets/projects/emerald-case/homepage.jpg",
+      "pass": true,
+      "detail": 117325
+    },
+    {
+      "name": "asset:en//assets/projects/hesabo/homepage.jpg",
+      "pass": true,
+      "detail": 73715
+    },
+    {
+      "name": "asset:en//assets/projects/lingo-learn/homepage.jpg",
+      "pass": true,
+      "detail": 81843
+    },
+    {
+      "name": "asset:en//assets/projects/lingo-learn/logo.png",
+      "pass": true,
+      "detail": 7806
+    },
+    {
+      "name": "asset:en//assets/projects/tarabari-nima/loaded-truck.webp",
+      "pass": true,
+      "detail": 36556
+    },
+    {
+      "name": "catalog-files:fa",
+      "pass": true,
+      "detail": [
+        "common.json",
+        "emerald-case.json",
+        "moradi-gallery.json",
+        "portfolio.json",
+        "tarabari-nima.json",
+        "xo-arena.json"
+      ]
+    },
+    {
+      "name": "catalog-shape:fa/common.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:fa/emerald-case.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:fa/moradi-gallery.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:fa/portfolio.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:fa/tarabari-nima.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:fa/xo-arena.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "portfolio-schema:fa",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "ordered-ids:fa/navigation",
+      "pass": true,
+      "detail": [
+        "experience",
+        "work",
+        "capabilities",
+        "contact"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/navigation",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:fa/experience",
+      "pass": true,
+      "detail": [
+        "hesabo",
+        "basilica",
+        "barname-negar",
+        "kzi"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/experience",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:fa/projects",
+      "pass": true,
+      "detail": [
+        "moradi-gallery",
+        "xo-arena",
+        "emerald-case",
+        "hesabo-platform",
+        "lingo-learn",
+        "tarabari-nima"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/projects",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "name": "ordered-ids:fa/capabilities",
+      "pass": true,
+      "detail": [
+        "web-architecture",
+        "mobile-pwa",
+        "ui-quality",
+        "ai-systems-data"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/capabilities",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:fa/socialLinks",
+      "pass": true,
+      "detail": [
+        "linkedin",
+        "github"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/socialLinks",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "ordered-ids:fa/about.principles",
+      "pass": true,
+      "detail": [
+        "boundaries",
+        "performance",
+        "rigor"
+      ]
+    },
+    {
+      "name": "unique-ids:fa/about.principles",
+      "pass": true,
+      "detail": 3
+    },
+    {
+      "name": "asset:fa//nima-moradirad-resume.pdf",
+      "pass": true,
+      "detail": 2051762
+    },
+    {
+      "name": "asset:fa//assets/nima-moradirad-resume-preview.webp",
+      "pass": true,
+      "detail": 247618
+    },
+    {
+      "name": "asset:fa//assets/projects/moradi-gallery/homepage-fa.png",
+      "pass": true,
+      "detail": 53199
+    },
+    {
+      "name": "asset:fa//assets/projects/xo-arena/game-room.webp",
+      "pass": true,
+      "detail": 32848
+    },
+    {
+      "name": "asset:fa//assets/projects/emerald-case/homepage.jpg",
+      "pass": true,
+      "detail": 117325
+    },
+    {
+      "name": "asset:fa//assets/projects/hesabo/homepage.jpg",
+      "pass": true,
+      "detail": 73715
+    },
+    {
+      "name": "asset:fa//assets/projects/lingo-learn/homepage.jpg",
+      "pass": true,
+      "detail": 81843
+    },
+    {
+      "name": "asset:fa//assets/projects/lingo-learn/logo.png",
+      "pass": true,
+      "detail": 7806
+    },
+    {
+      "name": "asset:fa//assets/projects/tarabari-nima/loaded-truck.webp",
+      "pass": true,
+      "detail": 36556
+    },
+    {
+      "name": "catalog-files:de",
+      "pass": true,
+      "detail": [
+        "common.json",
+        "emerald-case.json",
+        "moradi-gallery.json",
+        "portfolio.json",
+        "tarabari-nima.json",
+        "xo-arena.json"
+      ]
+    },
+    {
+      "name": "catalog-shape:de/common.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:de/emerald-case.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:de/moradi-gallery.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:de/portfolio.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:de/tarabari-nima.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "catalog-shape:de/xo-arena.json",
+      "pass": true,
+      "detail": "Recursive key/type/array-length parity against EN"
+    },
+    {
+      "name": "portfolio-schema:de",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "ordered-ids:de/navigation",
+      "pass": true,
+      "detail": [
+        "experience",
+        "work",
+        "capabilities",
+        "contact"
+      ]
+    },
+    {
+      "name": "unique-ids:de/navigation",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:de/experience",
+      "pass": true,
+      "detail": [
+        "hesabo",
+        "basilica",
+        "barname-negar",
+        "kzi"
+      ]
+    },
+    {
+      "name": "unique-ids:de/experience",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:de/projects",
+      "pass": true,
+      "detail": [
+        "moradi-gallery",
+        "xo-arena",
+        "emerald-case",
+        "hesabo-platform",
+        "lingo-learn",
+        "tarabari-nima"
+      ]
+    },
+    {
+      "name": "unique-ids:de/projects",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "name": "ordered-ids:de/capabilities",
+      "pass": true,
+      "detail": [
+        "web-architecture",
+        "mobile-pwa",
+        "ui-quality",
+        "ai-systems-data"
+      ]
+    },
+    {
+      "name": "unique-ids:de/capabilities",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "ordered-ids:de/socialLinks",
+      "pass": true,
+      "detail": [
+        "linkedin",
+        "github"
+      ]
+    },
+    {
+      "name": "unique-ids:de/socialLinks",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "ordered-ids:de/about.principles",
+      "pass": true,
+      "detail": [
+        "boundaries",
+        "performance",
+        "rigor"
+      ]
+    },
+    {
+      "name": "unique-ids:de/about.principles",
+      "pass": true,
+      "detail": 3
+    },
+    {
+      "name": "asset:de//nima-moradirad-resume.pdf",
+      "pass": true,
+      "detail": 2051762
+    },
+    {
+      "name": "asset:de//assets/nima-moradirad-resume-preview.webp",
+      "pass": true,
+      "detail": 247618
+    },
+    {
+      "name": "asset:de//assets/projects/moradi-gallery/homepage-fa.png",
+      "pass": true,
+      "detail": 53199
+    },
+    {
+      "name": "asset:de//assets/projects/xo-arena/game-room.webp",
+      "pass": true,
+      "detail": 32848
+    },
+    {
+      "name": "asset:de//assets/projects/emerald-case/homepage.jpg",
+      "pass": true,
+      "detail": 117325
+    },
+    {
+      "name": "asset:de//assets/projects/hesabo/homepage.jpg",
+      "pass": true,
+      "detail": 73715
+    },
+    {
+      "name": "asset:de//assets/projects/lingo-learn/homepage.jpg",
+      "pass": true,
+      "detail": 81843
+    },
+    {
+      "name": "asset:de//assets/projects/lingo-learn/logo.png",
+      "pass": true,
+      "detail": 7806
+    },
+    {
+      "name": "asset:de//assets/projects/tarabari-nima/loaded-truck.webp",
+      "pass": true,
+      "detail": 36556
+    },
+    {
+      "name": "routes:internal-project-links",
+      "pass": true,
+      "detail": {
+        "sourceProjectRoutes": [
+          "/projects/emerald-case",
+          "/projects/moradi-gallery",
+          "/projects/tarabari-nima",
+          "/projects/xo-arena"
+        ],
+        "linkedProjectRoutes": [
+          "/projects/emerald-case",
+          "/projects/moradi-gallery",
+          "/projects/tarabari-nima",
+          "/projects/xo-arena"
+        ]
+      }
+    },
+    {
+      "name": "routes:sitemap-source",
+      "pass": true,
+      "detail": [
+        "/",
+        "/projects/emerald-case",
+        "/projects/moradi-gallery",
+        "/projects/tarabari-nima",
+        "/projects/xo-arena"
+      ]
+    },
+    {
+      "name": "route-file:src/app/[locale]/page.tsx",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/[locale]/layout.tsx",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/[locale]/[...rest]/page.tsx",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/[locale]/manifest.webmanifest/route.ts",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/manifest.webmanifest/route.ts",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/api/contact/route.ts",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/api/health/route.ts",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-file:src/app/robots.ts",
+      "pass": true,
+      "detail": "Source file presence only"
+    },
+    {
+      "name": "route-metadata:/projects/emerald-case",
+      "pass": true,
+      "detail": "Metadata declaration tokens; no server rendering assertion"
+    },
+    {
+      "name": "route-metadata:/projects/moradi-gallery",
+      "pass": true,
+      "detail": "Metadata declaration tokens; no server rendering assertion"
+    },
+    {
+      "name": "route-metadata:/projects/tarabari-nima",
+      "pass": true,
+      "detail": "Metadata declaration tokens; no server rendering assertion"
+    },
+    {
+      "name": "route-metadata:/projects/xo-arena",
+      "pass": true,
+      "detail": "Metadata declaration tokens; no server rendering assertion"
+    }
+  ],
+  "assetReferences": [
+    {
+      "locale": "en",
+      "path": "/nima-moradirad-resume.pdf",
+      "bytes": 2051762
+    },
+    {
+      "locale": "en",
+      "path": "/assets/nima-moradirad-resume-preview.webp",
+      "bytes": 247618
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "bytes": 53199
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/xo-arena/game-room.webp",
+      "bytes": 32848
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/emerald-case/homepage.jpg",
+      "bytes": 117325
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/hesabo/homepage.jpg",
+      "bytes": 73715
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/lingo-learn/homepage.jpg",
+      "bytes": 81843
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/lingo-learn/logo.png",
+      "bytes": 7806
+    },
+    {
+      "locale": "en",
+      "path": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "bytes": 36556
+    },
+    {
+      "locale": "fa",
+      "path": "/nima-moradirad-resume.pdf",
+      "bytes": 2051762
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/nima-moradirad-resume-preview.webp",
+      "bytes": 247618
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "bytes": 53199
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/xo-arena/game-room.webp",
+      "bytes": 32848
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/emerald-case/homepage.jpg",
+      "bytes": 117325
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/hesabo/homepage.jpg",
+      "bytes": 73715
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/lingo-learn/homepage.jpg",
+      "bytes": 81843
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/lingo-learn/logo.png",
+      "bytes": 7806
+    },
+    {
+      "locale": "fa",
+      "path": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "bytes": 36556
+    },
+    {
+      "locale": "de",
+      "path": "/nima-moradirad-resume.pdf",
+      "bytes": 2051762
+    },
+    {
+      "locale": "de",
+      "path": "/assets/nima-moradirad-resume-preview.webp",
+      "bytes": 247618
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "bytes": 53199
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/xo-arena/game-room.webp",
+      "bytes": 32848
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/emerald-case/homepage.jpg",
+      "bytes": 117325
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/hesabo/homepage.jpg",
+      "bytes": 73715
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/lingo-learn/homepage.jpg",
+      "bytes": 81843
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/lingo-learn/logo.png",
+      "bytes": 7806
+    },
+    {
+      "locale": "de",
+      "path": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "bytes": 36556
+    }
+  ],
+  "publicInventory": [
+    {
+      "path": "public/assets/hero/senior-engineer-systems-painting.webp",
+      "bytes": 205728
+    },
+    {
+      "path": "public/assets/nima-moradirad-resume-preview.webp",
+      "bytes": 247618
+    },
+    {
+      "path": "public/assets/nima-moradirad.jpg",
+      "bytes": 72549
+    },
+    {
+      "path": "public/assets/projects/emerald-case/homepage.jpg",
+      "bytes": 117325
+    },
+    {
+      "path": "public/assets/projects/exam-hub/preview.svg",
+      "bytes": 4310
+    },
+    {
+      "path": "public/assets/projects/hesabo/homepage.jpg",
+      "bytes": 73715
+    },
+    {
+      "path": "public/assets/projects/lingo-learn/homepage.jpg",
+      "bytes": 81843
+    },
+    {
+      "path": "public/assets/projects/lingo-learn/logo.png",
+      "bytes": 7806
+    },
+    {
+      "path": "public/assets/projects/moradi-gallery/homepage-fa.png",
+      "bytes": 53199
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/aircraft-takeoff.webp",
+      "bytes": 176284
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/container-pickup.webp",
+      "bytes": 44814
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/freight-loading.mp4",
+      "bytes": 982689
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/freight-loading.webm",
+      "bytes": 2433167
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/home.webp",
+      "bytes": 69572
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/loaded-truck.webp",
+      "bytes": 36556
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/port-loading.webp",
+      "bytes": 95106
+    },
+    {
+      "path": "public/assets/projects/tarabari-nima/ship-passage.webp",
+      "bytes": 189808
+    },
+    {
+      "path": "public/assets/projects/xo-arena/game-room.webp",
+      "bytes": 32848
+    },
+    {
+      "path": "public/assets/projects/xo-arena/landing.webp",
+      "bytes": 52554
+    },
+    {
+      "path": "public/assets/projects/xo-arena/lobby.webp",
+      "bytes": 34446
+    },
+    {
+      "path": "public/assets/projects/xo-arena/profile.webp",
+      "bytes": 59074
+    },
+    {
+      "path": "public/assets/projects/xo-arena/video-poster.webp",
+      "bytes": 14828
+    },
+    {
+      "path": "public/assets/projects/xo-arena/xo-arena-preview.mp4",
+      "bytes": 300317
+    },
+    {
+      "path": "public/assets/projects/xo-arena/xo-arena-preview.webm",
+      "bytes": 272824
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 204
+    },
+    {
+      "path": "public/fonts/iran-yekan/IRANYekanX-Bold.woff2",
+      "bytes": 28820
+    },
+    {
+      "path": "public/fonts/iran-yekan/IRANYekanX-Medium.woff2",
+      "bytes": 28720
+    },
+    {
+      "path": "public/fonts/iran-yekan/IRANYekanX-Regular.woff2",
+      "bytes": 26292
+    },
+    {
+      "path": "public/nima-moradirad-resume.pdf",
+      "bytes": 2051762
+    }
+  ]
+}

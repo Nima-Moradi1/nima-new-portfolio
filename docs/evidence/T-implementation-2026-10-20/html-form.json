@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-20T12:10:58.427Z",
+  "html": [
+    {
+      "path": "/",
+      "status": 200,
+      "projectsAndHistory": true,
+      "canonicalAndAlternates": true
+    },
+    {
+      "path": "/fa",
+      "status": 200,
+      "projectsAndHistory": true,
+      "canonicalAndAlternates": true
+    },
+    {
+      "path": "/de",
+      "status": 200,
+      "projectsAndHistory": true,
+      "canonicalAndAlternates": true
+    }
+  ],
+  "form": {
+    "emptySubmission": "client errors shown",
+    "contactPosts": 0
+  }
+}

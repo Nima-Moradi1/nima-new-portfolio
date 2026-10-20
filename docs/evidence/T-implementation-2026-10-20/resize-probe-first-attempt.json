@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-20T12:06:41.120Z",
+  "checks": [
+    "experience direct link selects kzi",
+    "desktop to mobile preserves selected ID",
+    "short landscape uses semantic edition",
+    "portrait restores selected ID and canvas",
+    "Persian selected project screenshot after mobile spacing fix"
+  ],
+  "errors": [],
+  "proof": "proof-frontend"
+}

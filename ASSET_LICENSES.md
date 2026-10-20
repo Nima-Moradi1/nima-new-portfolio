@@ -2,6 +2,10 @@
 
 ## Original project assets
 
+- `src/components/kinetic/nm-geometry.tsx`, `monolith-scene.tsx` and `public/brand/nm-*.svg` — original NM ligature, mathematically authored bevelled cartridge geometry, engineered rail assembly and studio composition created for Nima Moradirad on October 20, 2026. Geometry, materials and environment light panels are generated locally in source. No Ciao model, logo, font, texture, audio, source code or other third-party brand artwork is included. The reference informs the observable spatial interaction pattern only.
+- `public/assets/projects/sarochi-3d-shop/*.webp` — optimized captures of the owner's canonical Sarochi scene, product and prepared-photo appearance preview from the bounded read-only audit in `docs/evidence/T02-shop/`. These document observed UI, not newly generated garments, physical fit or completion of arbitrary human dressing. Three images total 188,066 bytes at 1280×900 each.
+- `assets/NM_BRAND_PROTOTYPES.svg` — three original vector studies, label geometry and 24px previews authored for this project on October 20, 2026. Candidate A reuses the project's own production-symbol paths exactly; B/C are original comparison sketches. No external font, image or model is embedded.
+
 The signal sculpture, interface composition, gradients, icon, and Open Graph artwork are generated from source code and CSS in this repository. The 3D workstation uses procedural geometry and the original generated painting documented below; it does not embed third-party models, video, or audio.
 
 ## Generated assets
