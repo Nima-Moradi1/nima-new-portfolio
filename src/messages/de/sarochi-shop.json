@@ -1,0 +1,55 @@
+{
+  "skip": "Zur Fallstudie springen",
+  "back": "Zurück zu den Projekten",
+  "metadata": {
+    "title": "Sarochi · Interaktiver 3D-Showroom für Bekleidung",
+    "description": "Ein interaktives 3D-Showroom-Konzept mit räumlicher Produkterkundung, quellengestützten Galerien und experimenteller vorbereiteter fotografischer Vorschau."
+  },
+  "hero": {
+    "eyebrow": "Interaktiver 3D-Shop / Sarochi",
+    "title": "Die Kollektion betreten.",
+    "intro": "Eine kleine Boutique wird zum räumlichen Interface. Entdecke die Kleiderständer, wechsle vom Kleidungsstück zur Quellgalerie und öffne eine experimentelle fotografische Vorschau.",
+    "availability": "Live-Showroom-Konzept · 3d-shop-design.ir"
+  },
+  "live": {
+    "eyebrow": "Das echte Produkt entdecken",
+    "title": "Vom Raum ins Detail.",
+    "description": "Erkunde die Live-Boutique oder die Implementierung. Der Kauf erfolgt auf der offiziellen Sarochi-Produktseite.",
+    "primaryLabel": "Showroom betreten",
+    "sourceLabel": "Quellcode ansehen"
+  },
+  "screenshot": {
+    "alt": "Live-3D-Boutique Sarochi mit Kleiderständern, Spiegel, Sitzbereich und interaktiven Navigationszonen"
+  },
+  "showcase": {
+    "eyebrow": "AUFNAHMEN AUS DEM LIVE-SHOWROOM",
+    "title": "Ein Raum, ein Produkt, ein genauerer Blick.",
+    "description": "Diese Aufnahmen stammen aus dem laufenden Showroom. Die vorbereitete fotografische Vorschau zeigt die Erscheinung und misst keine physische Passform.",
+    "gallery": [
+      { "id": "product", "title": "Produktdetails und Quellgalerie", "alt": "Sarochi-Produktdetails neben der quellengestützten Bildergalerie des Kleidungsstücks" },
+      { "id": "preview", "title": "Vorbereitete fotografische Vorschau", "alt": "Experimenteller Sarochi-Vorschauraum mit vorbereitetem Bekleidungsfoto und Farbsteuerung" }
+    ]
+  },
+  "product": {
+    "eyebrow": "Das Produkt auf einen Blick",
+    "title": "Räumlich entdecken. Vertraut fortfahren.",
+    "description": "Die 3D-Szene gibt der Produkterkundung einen Ort und führt anschließend zu Produktinformationen und dem offiziellen Shop. Sie ist ein Showroom-Konzept und keine eigene Zahlungsplattform.",
+    "features": [
+      { "id": "showroom", "title": "Navigierbare Boutique", "text": "Fünf auswählbare Zonen verbinden den Raum mit Kleiderständern und gezielter Produkterkundung." },
+      { "id": "gallery", "title": "Quellengestützte Produktgalerien", "text": "Produktinformationen führen zur verfügbaren Originalfotografie und zur offiziellen Produktseite für den Kauf." },
+      { "id": "preview", "title": "Experimentelle Vorschau", "text": "Vorbereitete fotografische Vorschauen ermöglichen die Auswahl von Kleidung und lokale Änderungen der Hosenfarbe. Sie versprechen weder genaue Größen noch Stofffall oder beliebige menschliche Anproben." },
+      { "id": "controls", "title": "Mehrere Wege zum Produkt", "text": "Die Implementierung enthält Tastatur- und responsive Steuerung sowie Produktlinks ohne WebGL, falls die Szene nicht gerendert werden kann." }
+    ]
+  },
+  "engineering": {
+    "eyebrow": "Technik & Entscheidungen",
+    "title": "Eine Szene im Produktfluss.",
+    "description": "Next.js und React Three Fiber verbinden die Three.js-Boutique mit strukturierten Katalogdaten, Produktansichten und einem begrenzten fotografischen Vorschauablauf.",
+    "stackLabel": "Sarochi-Technologie-Stack",
+    "notes": [
+      { "id": "catalog", "title": "Begrenzter Katalogadapter", "text": "Ein Leseadapter mit erlaubten Quellen nutzt Timeouts, Antwortlimits und kurzzeitiges Caching. Das Commerce-Backend bleibt das System des offiziellen Shops." },
+      { "id": "handoff", "title": "Verbundene Produkterkundung", "text": "Szenenauswahl, Navigation am Kleiderständer, Produktinformationen und die Rückkehr aus der Vorschau behalten einen gemeinsamen Produktkontext." },
+      { "id": "limits", "title": "Klare Grenzen der Vorschau", "text": "Vorbereitete Vorschauen unterscheiden sich von optionaler neuer Bildgenerierung. Exakte Kleidungsrekonstruktion, physische Passform und garantierte Verfügbarkeit der Generierung werden nicht behauptet." }
+    ]
+  }
+}
