@@ -1,12 +1,12 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { useFormatter, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
 import { useContactDialog } from "@/components/contact/contact-dialog";
 import { ThemeLamp } from "@/components/theme/theme-lamp";
+import { NMBrandMark } from "@/components/branding/nm-brand-mark";
 import {
   Sheet,
   SheetClose,
@@ -21,10 +21,15 @@ import { siteHeaderClassNames as styles } from "./site-header.class-names";
 export function SiteHeader() {
   const portfolio = usePortfolio();
   const t = useTranslations("Navigation");
+  const kinetic = useTranslations("Kinetic");
   const format = useFormatter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { openContact } = useContactDialog();
+  const navigation = [
+    { id: "projects", label: kinetic("chrome.projects"), href: "/#work" },
+    { id: "experience", label: kinetic("chrome.experience"), href: "/?view=experience#work" },
+  ];
 
   const handleContact = () => {
     setMenuOpen(false);
@@ -58,13 +63,8 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <span className={styles.mark} aria-hidden="true">
-            <Image
+            <NMBrandMark
               className={styles.markImage}
-              src="/assets/nima-moradirad.jpg"
-              alt=""
-              width={48}
-              height={48}
-              priority
             />
           </span>
           <span className={styles.identity}>
@@ -72,23 +72,13 @@ export function SiteHeader() {
               {portfolio.identity.name}
             </strong>
             <small className={styles.identityRole}>
-              {portfolio.identity.shortRole}
+              {portfolio.identity.role}
             </small>
           </span>
         </Link>
 
         <nav className={styles.desktopNav} aria-label={t("primaryLabel")}>
-          {portfolio.navigation.map((item) =>
-            item.id === "contact" ? (
-              <button
-                className={styles.desktopNavLink}
-                type="button"
-                onClick={openContact}
-                key={item.id}
-              >
-                {item.label}
-              </button>
-            ) : (
+          {navigation.map((item) => (
               <Link
                 className={styles.desktopNavLink}
                 href={item.href}
@@ -96,8 +86,7 @@ export function SiteHeader() {
               >
                 {item.label}
               </Link>
-            ),
-          )}
+          ))}
         </nav>
 
         <div className={styles.actions}>
@@ -141,23 +130,7 @@ export function SiteHeader() {
           {t("mobileLabel")}
         </SheetTitle>
         <nav className={styles.mobileNavList} aria-label={t("mobileLabel")}>
-          {portfolio.navigation.map((item, index) =>
-            item.id === "contact" ? (
-              <button
-                className={styles.mobileNavLink}
-                type="button"
-                onClick={handleContact}
-                key={item.id}
-              >
-                <bdi className={styles.mobileNavIndex}>
-                  {format.number(index + 1, {
-                    minimumIntegerDigits: 2,
-                    useGrouping: false,
-                  })}
-                </bdi>
-                {item.label}
-              </button>
-            ) : (
+          {navigation.map((item, index) => (
               <SheetClose asChild key={item.id}>
                 <Link className={styles.mobileNavLink} href={item.href}>
                   <bdi className={styles.mobileNavIndex}>
@@ -169,8 +142,11 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               </SheetClose>
-            ),
-          )}
+          ))}
+          <button className={styles.mobileNavLink} type="button" onClick={handleContact}>
+            <bdi className={styles.mobileNavIndex}>{format.number(3, { minimumIntegerDigits: 2, useGrouping: false })}</bdi>
+            {kinetic("chrome.contact")}
+          </button>
         </nav>
         <p className={styles.mobileLocation}>{portfolio.identity.location}</p>
       </SheetContent>
