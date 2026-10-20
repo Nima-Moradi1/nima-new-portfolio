@@ -19,11 +19,11 @@ export async function createManifest(
     lang: locale,
     dir: getLocaleDirection(locale),
     display: "standalone",
-    background_color: "#090b0a",
-    theme_color: "#b8ff45",
+    background_color: "#05070b",
+    theme_color: "#05070b",
     icons: [
       {
-        src: "/favicon.svg",
+        src: "/brand/nm-favicon.svg",
         sizes: "any",
         type: "image/svg+xml",
       },
