@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-20T11:17:40.900Z",
+  "browser": "155.0.8059.85",
+  "headless": true,
+  "probe": false,
+  "profiles": [
+    {
+      "profile": "desktop",
+      "path": "C:\\Users\\n_moradirad\\Desktop\\updated-portfolio\\docs\\reference-captures\\2026-10-20-full\\desktop",
+      "checkpoints": 34,
+      "status": 200,
+      "errors": 0,
+      "videoPath": "C:\\Users\\n_moradirad\\Desktop\\updated-portfolio\\docs\\reference-captures\\2026-10-20-full\\desktop\\page@cee91e3bf2b8b2b223e5966d9f7a2b01.webm"
+    },
+    {
+      "profile": "mobile",
+      "path": "C:\\Users\\n_moradirad\\Desktop\\updated-portfolio\\docs\\reference-captures\\2026-10-20-full\\mobile",
+      "checkpoints": 34,
+      "status": 200,
+      "errors": 0,
+      "videoPath": "C:\\Users\\n_moradirad\\Desktop\\updated-portfolio\\docs\\reference-captures\\2026-10-20-full\\mobile\\page@fc879b1b181f867d41f14be0ae156b86.webm"
+    }
+  ]
+}
