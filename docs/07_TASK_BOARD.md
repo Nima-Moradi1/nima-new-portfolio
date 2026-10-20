@@ -85,4 +85,4 @@ Use `templates/TASK_UPDATE.md`. One task done ≠ every related integration done
 
 ## Owner publication request - 2026-10-20
 
-- [ ] **U02 - Categorized GitHub publication and master merge:** Preserve all current work in at least 50 meaningful categorized commits, push the feature branch, merge it into `master` and push `master`. 65 scoped commits prepared; remote publication and merge pending. Existing app acceptance gates remain unchanged. No tests/builds requested for this Git-only task.
+- [x] **U02 - Categorized GitHub publication and master merge:** Preserve all current work in at least 50 meaningful categorized commits, push the feature branch, merge it into `master` and push `master`. 66 scoped nonempty commits pushed on `feat/nm-kinetic-portfolio`; merged with `--no-ff` into new `master` and pushed. Remote SHA and ancestry verification passed; main baseline preserved. Final publication documentation is an additional master commit. Existing app acceptance gates remain unchanged. No tests/builds requested for this Git-only task.
