@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="NM flat vector symbol concept">
+ <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F4F7FC"/><stop offset="1" stop-color="#8BE9F4"/></linearGradient></defs>
+ <g fill="url(#g)"><path d="M54 268V32h52l116 156V32h51v236h-52L106 116v152Z"/><path d="M313 268V32h49l79 105 80-105h49v236h-51V113l-78 104-77-104v155Z"/></g>
+</svg>
