@@ -1,0 +1,183 @@
+{
+  "hero": {
+    "eyebrow": "NIMA MORADIRAD · AI FULL-STACK DEVELOPER",
+    "title": "Engineering in motion.",
+    "description": "I design, build and ship complete products — from expressive interfaces to reliable backends, AI-assisted workflows and deployment.",
+    "scroll": "Scroll to explore",
+    "availability": "Frontend · Backend · AI workflows · Delivery"
+  },
+  "chrome": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Let’s talk",
+    "locale": "Language",
+    "skip": "Skip to portfolio content",
+    "reader": "Reading view",
+    "immersive": "Immersive view"
+  },
+  "controls": {
+    "previous": "Previous item",
+    "next": "Next item",
+    "select": "Select an item",
+    "modeLabel": "Portfolio mode",
+    "itemLabel": "Selected item",
+    "resume": "Résumé",
+    "source": "Source code",
+    "viewProject": "Explore project",
+    "viewExperience": "Explore experience"
+  },
+  "loading": {
+    "preparing": "Preparing the scene",
+    "ready": "Scene ready",
+    "enter": "Enter portfolio",
+    "fallback": "Continue in reading view"
+  },
+  "proof": {
+    "eyebrow": "THE ENGINEERING BEHIND THE EXPERIENCE",
+    "title": "Four disciplines. One product.",
+    "items": [
+      {
+        "id": "frontend",
+        "kicker": "COMPLEXITY → CLARITY",
+        "title": "Interfaces with intention.",
+        "description": "Typed React systems, thoughtful motion and usable interaction. From a spatial watch gallery to the interfaces people rely on at work.",
+        "technologies": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Three.js"
+        ],
+        "evidenceLabel": "Explore Moradi Gallery",
+        "evidenceHref": "/projects/moradi-gallery"
+      },
+      {
+        "id": "backend",
+        "kicker": "ISOLATED SCREENS → CONNECTED SYSTEMS",
+        "title": "Systems behind the screen.",
+        "description": "Shared contracts, persistent data and server-validated actions. XO Arena connects a multiplayer interface to an authoritative real-time game engine.",
+        "technologies": [
+          "Node.js",
+          "Express",
+          "Socket.IO",
+          "Prisma",
+          "MySQL"
+        ],
+        "evidenceLabel": "Explore XO Arena",
+        "evidenceHref": "/projects/xo-arena"
+      },
+      {
+        "id": "ai",
+        "kicker": "AUTOMATION → ENGINEERING JUDGMENT",
+        "title": "AI-assisted. Human-directed.",
+        "description": "AI supports implementation, review and documentation. Sarochi also explores photographic apparel previews; prepared images demonstrate appearance, without promising physical fit.",
+        "technologies": [
+          "AI-assisted development",
+          "TypeScript",
+          "Image workflows"
+        ],
+        "evidenceLabel": "Explore Sarochi",
+        "evidenceHref": "/projects/sarochi-3d-shop"
+      },
+      {
+        "id": "shipping",
+        "kicker": "PROTOTYPE → DELIVERABLE PRODUCT",
+        "title": "Built to reach people.",
+        "description": "Responsive interfaces, release work and deployment connect the build to its audience. My experience includes production web, PWA and Android delivery alongside public full-stack projects.",
+        "technologies": [
+          "PWA",
+          "Capacitor",
+          "Deployment",
+          "Performance"
+        ],
+        "evidenceLabel": "Explore Emerald Case",
+        "evidenceHref": "/projects/emerald-case"
+      }
+    ]
+  },
+  "statement": {
+    "eyebrow": "FROM FIRST INTERACTION TO FINAL RELEASE",
+    "title": "Make it clear. Make it work. Make it real.",
+    "description": "Creative technology earns its place when the product remains useful. I connect design decisions to the systems that make them dependable."
+  },
+  "recap": {
+    "title": "Seven projects. Four chapters of experience.",
+    "description": "Different products, a consistent approach: understand the problem, build with care and keep the evidence close."
+  },
+  "faq": {
+    "eyebrow": "A FEW USEFUL ANSWERS",
+    "title": "Before we build.",
+    "items": [
+      {
+        "id": "full-stack",
+        "question": "What makes your work full-stack?",
+        "answer": "My independent projects include frontend, server logic, data and deployment. XO Arena demonstrates an Express and Socket.IO backend; Emerald Case brings together data, authentication and checkout. My historic job titles remain frontend roles.",
+        "href": "/projects/xo-arena",
+        "linkLabel": "See XO Arena"
+      },
+      {
+        "id": "frontend",
+        "question": "Which frontend systems do you work with?",
+        "answer": "React, Next.js and TypeScript form the core. My work also includes rendering strategies, shared UI systems, real-time features, multilingual interfaces, PWA delivery and interactive Three.js experiences."
+      },
+      {
+        "id": "backend",
+        "question": "Which backend tools can you demonstrate?",
+        "answer": "XO Arena uses Express, Socket.IO, Prisma and MySQL. Emerald Case uses Prisma and MongoDB alongside authentication, Stripe checkout and email. Each case study describes its own scope.",
+        "href": "/projects/emerald-case",
+        "linkLabel": "See Emerald Case"
+      },
+      {
+        "id": "ai",
+        "question": "How do you use AI in engineering?",
+        "answer": "I use AI as a supervised tool for implementation, exploration, code review and documentation. I remain responsible for architecture, security, checking the result and deciding what is ready to ship."
+      },
+      {
+        "id": "motion",
+        "question": "Can I explore this portfolio without 3D motion?",
+        "answer": "Yes. Reading view presents the project and experience content without the immersive scene. Reduced-motion preferences and a non-WebGL path keep the essential links and information available."
+      },
+      {
+        "id": "hesabo",
+        "question": "What is your role at Hesabo?",
+        "answer": "As a Senior Frontend Developer, I contribute to frontend architecture and delivery across Admin, Employer, Employee and Support surfaces, along with mentorship and PWA/Android work. This is collaborative product work, not sole ownership of the financial platform."
+      },
+      {
+        "id": "sarochi",
+        "question": "What does the 3D shop demonstrate?",
+        "answer": "Sarochi is a spatial apparel-showroom concept with rack navigation, product galleries and a prepared photographic appearance preview. Purchasing continues at the official store. The preview is experimental; it does not establish exact fit or arbitrary photoreal human try-on.",
+        "href": "/projects/sarochi-3d-shop",
+        "linkLabel": "Explore the showroom"
+      },
+      {
+        "id": "delivery",
+        "question": "Do you work from idea to deployment?",
+        "answer": "Yes, within an agreed scope. My public projects demonstrate product implementation and deployment, while my employment experience adds collaborative architecture, review, release and mobile delivery."
+      },
+      {
+        "id": "collaboration",
+        "question": "How can we start a conversation?",
+        "answer": "Share the product, the challenge and the outcome you need. Use the contact form or an existing direct channel, and we can discuss scope and the next useful step.",
+        "href": "#contact",
+        "linkLabel": "Open contact"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "LET’S BUILD SOMETHING USEFUL",
+    "title": "Your next idea. Our first conversation.",
+    "description": "Tell me what you are building, where it gets difficult and what a good outcome looks like."
+  },
+  "footer": {
+    "note": "Designed with intention. Engineered for the real web.",
+    "backToTop": "Back to top"
+  },
+  "detail": {
+    "live": "Live demo",
+    "preview": "Motion preview",
+    "visit": "Visit website",
+    "back": "Back to projects",
+    "interact": "Interact with demo",
+    "scroll": "Scroll to return to the rack",
+    "tools": "Built with"
+  }
+}
