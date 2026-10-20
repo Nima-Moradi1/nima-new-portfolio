@@ -2,21 +2,37 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Produktentwickler",
-    "shortRole": "Produktentwickler · Web, PWA & Android",
+    "role": "AI Full-Stack-Entwickler",
+    "shortRole": "AI Full-Stack-Entwickler · Vom Interface zum Deployment",
     "location": "Teheran, Iran",
     "availability": "Mehr als 6 Jahre Entwicklung produktiver Anwendungen für Web, PWA und Android",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "Ich unterstütze technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen – von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
-    "statement": "Ich entwickle skalierbare Web- und Mobile-Produkte, in denen Performance, Zuverlässigkeit und klares Design zusammenspielen."
+    "intro": "Ich konzipiere, entwickle und veröffentliche komplette Produkte — von ausdrucksstarken Interfaces über robuste Backends bis zu KI-gestützten Workflows und Deployment.",
+    "statement": "Ich verbinde durchdachte Interfaces, verlässliche Systeme und praktische KI-Workflows zu nützlichen Produkten."
   },
   "navigation": [
-    { "id": "experience", "label": "Erfahrung", "href": "/#experience" },
-    { "id": "work", "label": "Projekte", "href": "/#work" },
-    { "id": "capabilities", "label": "Kompetenzen", "href": "/#capabilities" },
-    { "id": "contact", "label": "Kontakt", "href": "/#contact" }
+    {
+      "id": "experience",
+      "label": "Erfahrung",
+      "href": "/#experience"
+    },
+    {
+      "id": "work",
+      "label": "Projekte",
+      "href": "/#work"
+    },
+    {
+      "id": "capabilities",
+      "label": "Kompetenzen",
+      "href": "/#capabilities"
+    },
+    {
+      "id": "contact",
+      "label": "Kontakt",
+      "href": "/#contact"
+    }
   ],
   "signals": [
     "Skalierbarkeit",
@@ -135,6 +151,26 @@
   ],
   "projects": [
     {
+      "id": "sarochi-3d-shop",
+      "number": "07",
+      "title": "Interaktiver 3D-Shop / Sarochi",
+      "category": "Interaktiver Handel · 3D-Showroom für Bekleidung",
+      "summary": "Ein räumliches Showroom-Konzept mit Produkterkundung, quellengestützten Galerien und experimenteller fotografischer Vorschau.",
+      "contribution": "Konzeption und Entwicklung des 3D-Showrooms, der Produktgalerie-Übergänge und vorbereiteten fotografischen Vorschau. Der Kauf erfolgt im offiziellen Shop; die Vorschau belegt keine exakte Passform.",
+      "imageAlt": "Interaktive 3D-Boutique Sarochi mit Kleiderständern und räumlicher Navigation",
+      "image": "/assets/projects/sarochi-3d-shop/showroom.webp",
+      "technologies": [
+        "Next.js",
+        "React Three Fiber",
+        "Three.js",
+        "TypeScript",
+        "Zustand"
+      ],
+      "href": "/projects/sarochi-3d-shop",
+      "featured": true,
+      "accent": "violet"
+    },
+    {
       "id": "moradi-gallery",
       "number": "01",
       "title": "Moradi Gallery",
@@ -219,22 +255,6 @@
       "accent": "coral"
     },
     {
-      "id": "lingo-learn",
-      "number": "05",
-      "title": "Lingo Learn",
-      "category": "Sprachlernplattform · Produktivbetrieb",
-      "summary": "Eine persischsprachige Sprachlernplattform mit kostenlosen Lernressourcen, niveaubasierten Kursen und kostenpflichtigen Lernpaketen.",
-      "contribution": "Entwicklung einer responsiven Lern- und Commerce-Erfahrung für eine RTL-Zielgruppe.",
-      "image": "/assets/projects/lingo-learn/homepage.jpg",
-      "imageAlt": "Lingo-Learn-Startseite mit persischer Navigation und Karten für Sprachlernangebote",
-      "logo": "/assets/projects/lingo-learn/logo.png",
-      "logoAlt": "Lingo-Learn-Logo",
-      "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
-      "href": "https://lingo-learn.ir/",
-      "featured": true,
-      "accent": "lime"
-    },
-    {
       "id": "tarabari-nima",
       "number": "06",
       "title": "Tarabari Nima",
@@ -254,6 +274,27 @@
       "href": "/projects/tarabari-nima",
       "featured": true,
       "accent": "coral"
+    },
+    {
+      "id": "lingo-learn",
+      "number": "05",
+      "title": "Lingo Learn",
+      "category": "Sprachlernplattform · Produktivbetrieb",
+      "summary": "Eine persischsprachige Sprachlernplattform mit kostenlosen Lernressourcen, niveaubasierten Kursen und kostenpflichtigen Lernpaketen.",
+      "contribution": "Entwicklung einer responsiven Lern- und Commerce-Erfahrung für eine RTL-Zielgruppe.",
+      "image": "/assets/projects/lingo-learn/homepage.jpg",
+      "imageAlt": "Lingo-Learn-Startseite mit persischer Navigation und Karten für Sprachlernangebote",
+      "logo": "/assets/projects/lingo-learn/logo.png",
+      "logoAlt": "Lingo-Learn-Logo",
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "Elementor",
+        "RTL"
+      ],
+      "href": "https://lingo-learn.ir/",
+      "featured": true,
+      "accent": "lime"
     }
   ],
   "capabilities": [
@@ -328,7 +369,7 @@
   ],
   "education": {
     "title": "B.Sc. Computer Engineering",
-    "institution": "Tehran Azad University · 2021 — 2026",
+    "institution": "Tehran Azad University",
     "note": "Computer-Engineering-Studium parallel zur professionellen Produktentwicklung für Web und Mobile.",
     "languages": [
       "Persisch · Muttersprache/Zweisprachig",
