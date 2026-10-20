@@ -1,0 +1,4285 @@
+{
+  "generatedAtUtc": "2026-10-20T11:20:19.539Z",
+  "origin": "https://nimamoradirad.com",
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "cpu": "Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz",
+    "logicalCpus": 6,
+    "node": "v24.18.0",
+    "browser": "155.0.8059.85"
+  },
+  "method": "Chrome headless, fresh contexts, no network/CPU throttling, real browser mouse/keyboard input. RAF cadence is a browser scheduling proxy, not GPU/presentation FPS or field INP.",
+  "ssr": [
+    {
+      "locale": "en",
+      "requestedUrl": "https://nimamoradirad.com/",
+      "finalUrl": "https://nimamoradirad.com/",
+      "status": 200,
+      "bytesDecoded": 268406,
+      "sha256": "883da47f6e1d4ba97f09539c811a10e5e9fa2d020ff3eba4a87368947152d525",
+      "headers": {
+        "date": "Tue, 20 Oct 2026 11:20:20 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "x-deployment-sha": "a18911c0f9f493eed70fd8c65f844d6853be1e44",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-frame-options": "DENY",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "link": "<https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"en\", <https://nimamoradirad.com/fa>; rel=\"alternate\"; hreflang=\"fa\", <https://nimamoradirad.com/de>; rel=\"alternate\"; hreflang=\"de\", <https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"x-default\", </_next/static/media/22a5144ee8d83bca-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/7d4881bb7e1bf84d-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </assets/nima-moradirad.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"image\"",
+        "x-middleware-rewrite": "/en",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "gzip",
+        "server": "Liara"
+      },
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Nima Moradirad · Senior Frontend Engineer",
+      "description": "Senior Frontend Engineer Nima Moradirad helps technical teams turn complex product requirements into fast, secure, and maintainable experiences—from React architecture and real-time features to reliable PWA and Android delivery.",
+      "canonical": "https://nimamoradirad.com/",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://nimamoradirad.com/"
+        },
+        {
+          "lang": "fa",
+          "href": "https://nimamoradirad.com/fa"
+        },
+        {
+          "lang": "de",
+          "href": "https://nimamoradirad.com/de"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://nimamoradirad.com/"
+        }
+      ],
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Nima Moradirad · Senior Frontend Engineer"
+        },
+        {
+          "property": "og:description",
+          "content": "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology."
+        },
+        {
+          "property": "og:url",
+          "content": "https://nimamoradirad.com"
+        },
+        {
+          "property": "og:site_name",
+          "content": "Nima Moradirad · Portfolio"
+        },
+        {
+          "property": "og:locale",
+          "content": "en_US"
+        },
+        {
+          "property": "og:image",
+          "content": "https://nimamoradirad.com/en/opengraph-image/default?b622e026868667c7"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/png"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "Nima Moradirad — senior frontend engineer"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "fa_IR"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "de_DE"
+        },
+        {
+          "property": "og:type",
+          "content": "profile"
+        }
+      ],
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Building the first frame.",
+          "ariaHiddenAncestor": false
+        },
+        {
+          "level": "H1",
+          "text": "I build systems that scale.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Nima Moradirad — Résumé",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "A career, bound in chapters.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Engineer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "React Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Work that ships",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Moradi Gallery",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "XO Arena",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Emerald Case",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Hesabo Platform",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Lingo Learn",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Tarabari Nima",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Web to Android",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Web architecture",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Mobile & PWA delivery",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "UI, state & quality",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "AI, systems & data",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "B.Sc. Computer Engineering",
+          "ariaHiddenAncestor": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "top",
+          "ariaLabelledBy": "hero-title"
+        },
+        {
+          "id": "experience",
+          "ariaLabelledBy": "experience-title"
+        },
+        {
+          "id": "work",
+          "ariaLabelledBy": "work-title"
+        },
+        {
+          "id": "capabilities",
+          "ariaLabelledBy": "capabilities-title"
+        }
+      ],
+      "mainCount": 1,
+      "canvas": [],
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Nima Moradirad",
+          "url": "https://nimamoradirad.com/",
+          "jobTitle": "Product Engineer",
+          "email": "mailto:nimamoradirad@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/nima-moradi-rad-1380s",
+            "https://github.com/Nima-Moradi1"
+          ],
+          "knowsLanguage": [
+            "en",
+            "fa",
+            "de"
+          ]
+        }
+      ],
+      "projectLinks": [
+        {
+          "href": "/projects/moradi-gallery",
+          "text": "Immersive 3D experience · Visual case studyMoradi GalleryA bilingual luxury watch gallery shaped by a persistent WebGL scene, cinematic scroll storytelling, and responsive fallbacks.Next.jsThree.jsReact Three FiberGSAP"
+        },
+        {
+          "href": "/projects/xo-arena",
+          "text": "Real-time multiplayer PWA · Product case studyXO ArenaA type-safe multiplayer PWA with live rooms, secure sessions, computer opponents, and mobile install support.Next.jsTypeScriptSocket.IOPrisma"
+        },
+        {
+          "href": "/projects/emerald-case",
+          "text": "Full-stack e-commerce · Oct–Nov 2023Emerald CaseA multilingual custom phone-case storefront with image uploads, authentication, checkout, and responsive theming.Next.jsTypeScriptPrismaMongoDB"
+        },
+        {
+          "href": "/projects/tarabari-nima",
+          "text": "Interactive logistics · Visual case studyTarabari NimaA Persian freight journey where one container moves from warehouse lift to truck, port crane, ship and aircraft.Next.jsTypeScriptGSAPThree.js"
+        }
+      ],
+      "bodyTextLength": 130013,
+      "bootState": "loading",
+      "initialMainAriaHidden": true
+    },
+    {
+      "locale": "fa",
+      "requestedUrl": "https://nimamoradirad.com/fa",
+      "finalUrl": "https://nimamoradirad.com/fa",
+      "status": 200,
+      "bytesDecoded": 289973,
+      "sha256": "20b00a84e39fe0816d576c2f9acb088b5db715d51e1b1a9df510eb9ae4a20788",
+      "headers": {
+        "date": "Tue, 20 Oct 2026 11:20:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "x-deployment-sha": "a18911c0f9f493eed70fd8c65f844d6853be1e44",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-frame-options": "DENY",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "link": "<https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"en\", <https://nimamoradirad.com/fa>; rel=\"alternate\"; hreflang=\"fa\", <https://nimamoradirad.com/de>; rel=\"alternate\"; hreflang=\"de\", <https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"x-default\", </_next/static/media/22a5144ee8d83bca-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/7d4881bb7e1bf84d-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </assets/nima-moradirad.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"image\"",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "gzip",
+        "server": "Liara"
+      },
+      "lang": "fa",
+      "dir": "rtl",
+      "title": "نیما مرادی‌راد · مهندس ارشد فرانت‌اند",
+      "description": "نیما مرادی‌راد، مهندس ارشد فرانت‌اند، به تیم‌های فنی کمک می‌کند نیازهای پیچیدهٔ محصول را به تجربه‌هایی سریع، امن و قابل نگهداری تبدیل کنند؛ از معماری React و تعاملات لحظه‌ای تا انتشار پایدار PWA و Android.",
+      "canonical": "https://nimamoradirad.com/fa",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://nimamoradirad.com/"
+        },
+        {
+          "lang": "fa",
+          "href": "https://nimamoradirad.com/fa"
+        },
+        {
+          "lang": "de",
+          "href": "https://nimamoradirad.com/de"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://nimamoradirad.com/"
+        }
+      ],
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "نیما مرادی‌راد · مهندس ارشد فرانت‌اند"
+        },
+        {
+          "property": "og:description",
+          "content": "نمونه‌کاری در مهندسی محصول؛ از وب مقیاس‌پذیر و Android تا PWA، سامانه‌های بلادرنگ و فناوری خلاق."
+        },
+        {
+          "property": "og:url",
+          "content": "https://nimamoradirad.com/fa"
+        },
+        {
+          "property": "og:site_name",
+          "content": "نیما مرادی‌راد · نمونه‌کار"
+        },
+        {
+          "property": "og:locale",
+          "content": "fa_IR"
+        },
+        {
+          "property": "og:image",
+          "content": "https://nimamoradirad.com/fa/opengraph-image/default?b622e026868667c7"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/png"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "نیما مرادی‌راد — مهندس ارشد فرانت‌اند"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "en_US"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "de_DE"
+        },
+        {
+          "property": "og:type",
+          "content": "profile"
+        }
+      ],
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "در حال ساخت نخستین قاب.",
+          "ariaHiddenAncestor": false
+        },
+        {
+          "level": "H1",
+          "text": "سیستم‌هایی می‌سازم که برای رشد آماده‌اند.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "نیما مرادی‌راد — رزومه",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "هر ورق، یک فصل از مسیر من",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "توسعه‌دهندهٔ ارشد فرانت‌اند",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "توسعه‌دهندهٔ ارشد فرانت‌اند",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "مهندس ارشد فرانت‌اند",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "توسعه‌دهندهٔ فرانت‌اند",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "توسعه‌دهندهٔ React",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "محصولات منتشر شده",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "گالری مرادی",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "XO Arena",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Emerald Case",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Hesabo Platform",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Lingo Learn",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "ترابری نیما",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "از Web تا Android",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "معماری وب",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "تحویل موبایل و PWA",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "رابط کاربری، وضعیت و کیفیت",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "هوش مصنوعی، سامانه‌ها و داده",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "کارشناسی مهندسی کامپیوتر",
+          "ariaHiddenAncestor": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "top",
+          "ariaLabelledBy": "hero-title"
+        },
+        {
+          "id": "experience",
+          "ariaLabelledBy": "experience-title"
+        },
+        {
+          "id": "work",
+          "ariaLabelledBy": "work-title"
+        },
+        {
+          "id": "capabilities",
+          "ariaLabelledBy": "capabilities-title"
+        }
+      ],
+      "mainCount": 1,
+      "canvas": [],
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "نیما مرادی‌راد",
+          "url": "https://nimamoradirad.com/fa",
+          "jobTitle": "مهندس نرم‌افزار",
+          "email": "mailto:nimamoradirad@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/nima-moradi-rad-1380s",
+            "https://github.com/Nima-Moradi1"
+          ],
+          "knowsLanguage": [
+            "en",
+            "fa",
+            "de"
+          ]
+        }
+      ],
+      "projectLinks": [
+        {
+          "href": "/fa/projects/moradi-gallery",
+          "text": "تجربهٔ سه‌بعدی تعاملی · مطالعهٔ موردی بصریگالری مرادیگالری دو‌زبانهٔ ساعت لوکس با صحنهٔ ماندگار WebGL، روایت سینمایی اسکرولی و مسیرهای جایگزین واکنش‌گرا.Next.jsThree.jsReact Three FiberGSAP"
+        },
+        {
+          "href": "/fa/projects/xo-arena",
+          "text": "PWA چندنفرهٔ بلادرنگ · مطالعهٔ موردی محصولXO Arenaیک PWA چندنفره و type-safe با اتاق‌های زنده، نشست‌های امن، حریفان رایانه‌ای و پشتیبانی از نصب روی موبایل.Next.jsTypeScriptSocket.IOPrisma"
+        },
+        {
+          "href": "/fa/projects/emerald-case",
+          "text": "تجارت الکترونیک فول‌استک · اکتبر–نوامبر ۲۰۲۳Emerald Caseفروشگاه چندزبانهٔ قاب سفارشی موبایل با بارگذاری تصویر، احراز هویت، پرداخت و پوستهٔ واکنش‌گرا.Next.jsTypeScriptPrismaMongoDB"
+        },
+        {
+          "href": "/fa/projects/tarabari-nima",
+          "text": "لجستیک تعاملی · مطالعهٔ موردی تصویریترابری نیماسفر فارسی یک محموله که در آن کانتینر از انبار با کامیون، جرثقیل بندر، کشتی و هواپیما جابه‌جا می‌شود.Next.jsTypeScriptGSAPThree.js"
+        }
+      ],
+      "bodyTextLength": 127839,
+      "bootState": "loading",
+      "initialMainAriaHidden": true
+    },
+    {
+      "locale": "de",
+      "requestedUrl": "https://nimamoradirad.com/de",
+      "finalUrl": "https://nimamoradirad.com/de",
+      "status": 200,
+      "bytesDecoded": 272800,
+      "sha256": "b736c98d6e99daae53772ccfb6330134f44e5d0af55ccbca82ff36fe20611c2e",
+      "headers": {
+        "date": "Tue, 20 Oct 2026 11:20:22 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "x-deployment-sha": "a18911c0f9f493eed70fd8c65f844d6853be1e44",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-frame-options": "DENY",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "link": "<https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"en\", <https://nimamoradirad.com/fa>; rel=\"alternate\"; hreflang=\"fa\", <https://nimamoradirad.com/de>; rel=\"alternate\"; hreflang=\"de\", <https://nimamoradirad.com/>; rel=\"alternate\"; hreflang=\"x-default\", </_next/static/media/22a5144ee8d83bca-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/7d4881bb7e1bf84d-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </assets/nima-moradirad.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44>; rel=preload; as=\"image\"",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "gzip",
+        "server": "Liara"
+      },
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Nima Moradirad · Senior Frontend Engineer",
+      "description": "Senior Frontend Engineer Nima Moradirad unterstützt technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen – von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
+      "canonical": "https://nimamoradirad.com/de",
+      "hreflang": [
+        {
+          "lang": "en",
+          "href": "https://nimamoradirad.com/"
+        },
+        {
+          "lang": "fa",
+          "href": "https://nimamoradirad.com/fa"
+        },
+        {
+          "lang": "de",
+          "href": "https://nimamoradirad.com/de"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://nimamoradirad.com/"
+        }
+      ],
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Nima Moradirad · Senior Frontend Engineer"
+        },
+        {
+          "property": "og:description",
+          "content": "Ein Portfolio für Produktentwicklung rund um skalierbare Webanwendungen, Android, PWA, Echtzeitsysteme und kreative Technologien."
+        },
+        {
+          "property": "og:url",
+          "content": "https://nimamoradirad.com/de"
+        },
+        {
+          "property": "og:site_name",
+          "content": "Nima Moradirad · Portfolio"
+        },
+        {
+          "property": "og:locale",
+          "content": "de_DE"
+        },
+        {
+          "property": "og:image",
+          "content": "https://nimamoradirad.com/de/opengraph-image/default?b622e026868667c7"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/png"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "Nima Moradirad — Senior Frontend Engineer"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "en_US"
+        },
+        {
+          "property": "og:locale:alternate",
+          "content": "fa_IR"
+        },
+        {
+          "property": "og:type",
+          "content": "profile"
+        }
+      ],
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Der erste Frame entsteht.",
+          "ariaHiddenAncestor": false
+        },
+        {
+          "level": "H1",
+          "text": "Ich entwickle Systeme, die mitwachsen.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Nima Moradirad — Lebenslauf",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Eine Laufbahn in Kapiteln.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Senior Frontend Engineer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Frontend Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "React Developer",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Arbeit, die live geht.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Moradi Gallery",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "XO Arena",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Emerald Case",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Hesabo Platform",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Lingo Learn",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Tarabari Nima",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H2",
+          "text": "Vom Web bis Android.",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Webarchitektur",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "Mobile- & PWA-Delivery",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "UI, State & Qualität",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "KI, Systeme & Daten",
+          "ariaHiddenAncestor": true
+        },
+        {
+          "level": "H3",
+          "text": "B.Sc. Computer Engineering",
+          "ariaHiddenAncestor": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "top",
+          "ariaLabelledBy": "hero-title"
+        },
+        {
+          "id": "experience",
+          "ariaLabelledBy": "experience-title"
+        },
+        {
+          "id": "work",
+          "ariaLabelledBy": "work-title"
+        },
+        {
+          "id": "capabilities",
+          "ariaLabelledBy": "capabilities-title"
+        }
+      ],
+      "mainCount": 1,
+      "canvas": [],
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Nima Moradirad",
+          "url": "https://nimamoradirad.com/de",
+          "jobTitle": "Produktentwickler",
+          "email": "mailto:nimamoradirad@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/nima-moradi-rad-1380s",
+            "https://github.com/Nima-Moradi1"
+          ],
+          "knowsLanguage": [
+            "en",
+            "fa",
+            "de"
+          ]
+        }
+      ],
+      "projectLinks": [
+        {
+          "href": "/de/projects/moradi-gallery",
+          "text": "Immersives 3D-Erlebnis · Visuelle FallstudieMoradi GalleryEine zweisprachige Luxusuhrengalerie mit persistenter WebGL-Szene, filmischem Scroll-Storytelling und responsiven Fallbacks.Next.jsThree.jsReact Three FiberGSAP"
+        },
+        {
+          "href": "/de/projects/xo-arena",
+          "text": "Echtzeit-Multiplayer-PWA · ProduktfallstudieXO ArenaEine typsichere Multiplayer-PWA mit Live-Spielräumen, sicheren Sessions, Computergegnern und Unterstützung für die mobile Installation.Next.jsTypeScriptSocket.IOPrisma"
+        },
+        {
+          "href": "/de/projects/emerald-case",
+          "text": "Full-Stack-E-Commerce · Okt.–Nov. 2023Emerald CaseEin mehrsprachiger Shop für individuelle Smartphone-Hüllen mit Bild-Uploads, Authentifizierung, Checkout und responsiver Theme-Unterstützung.Next.jsTypeScriptPrismaMongoDB"
+        },
+        {
+          "href": "/de/projects/tarabari-nima",
+          "text": "Interaktive Logistik · Visuelle FallstudieTarabari NimaEine persische Frachtreise, bei der ein Container vom Lager per Lkw, Hafenkran, Schiff und Flugzeug weiterreist.Next.jsTypeScriptGSAPThree.js"
+        }
+      ],
+      "bodyTextLength": 133825,
+      "bootState": "loading",
+      "initialMainAriaHidden": true
+    }
+  ],
+  "flows": [
+    {
+      "profile": "desktop",
+      "settings": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://nimamoradirad.com/?_rsc=1vwYfVB7_E9t4fEj",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ],
+      "interactions": [
+        {
+          "action": "Open contact dialog by mouse/touch",
+          "automationCompletionMs": 88,
+          "result": "dialog visible; no form submitted"
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://nimamoradirad.com/",
+      "loaderReady": true,
+      "loaderMeasurement": {
+        "observedAtMs": 4158.299999998882,
+        "bootState": "ready",
+        "heroReadiness": "webgl-frame"
+      },
+      "dom": {
+        "title": "Nima Moradirad · Senior Frontend Engineer",
+        "lang": "en",
+        "dir": "ltr",
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollHeight": 5961,
+        "scrollWidth": 1440,
+        "canvasCount": 2,
+        "h1": [
+          "I build systems that scale."
+        ],
+        "buttons": [
+          {
+            "text": "Contact",
+            "label": null,
+            "hasPopup": null
+          },
+          {
+            "text": "Start a conversation",
+            "label": null,
+            "hasPopup": null
+          },
+          {
+            "text": "EN",
+            "label": "Current language: English",
+            "hasPopup": "menu"
+          },
+          {
+            "text": "",
+            "label": "Turn the reading lamp off and switch to light mode",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Open navigation",
+            "hasPopup": "dialog"
+          },
+          {
+            "text": "",
+            "label": "Close résumé preview",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Previous capability group",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Next capability group",
+            "hasPopup": null
+          }
+        ]
+      },
+      "gpu": {
+        "canvasPresent": true,
+        "contextAvailable": true,
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 630 (0x00003E92) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "drawingBuffer": [
+          687,
+          734
+        ]
+      },
+      "performanceBefore": {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 15098.752916
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 1060
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 849
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 1042
+          },
+          {
+            "name": "Resources",
+            "value": 49
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 19
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 2
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 812
+          },
+          {
+            "name": "LayoutCount",
+            "value": 0
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 0
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000013
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.001081
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0
+          },
+          {
+            "name": "TaskDuration",
+            "value": 0.00113
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 0.000036
+          },
+          {
+            "name": "ThreadTime",
+            "value": 0.001158
+          },
+          {
+            "name": "ProcessTime",
+            "value": 1.922914
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 21557172
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 61136896
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 15094.925311
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 15095.455244
+          },
+          {
+            "name": "NavigationStart",
+            "value": 15094.240391
+          }
+        ]
+      },
+      "rafCadence": {
+        "durationMs": 6050.89999999851,
+        "frames": 269,
+        "averageRafPerSecond": 44.54084842865185,
+        "intervalMedianMs": 16.699999999999818,
+        "intervalP95Ms": 50.100000000000364,
+        "intervalsOver50ms": 19,
+        "intervalsMs": [
+          16.600000000000364,
+          33.399999999999636,
+          16.699999999999818,
+          216.80000000000018,
+          33.400000000000546,
+          83.39999999999964,
+          100.10000000000036,
+          33.399999999999636,
+          66.69999999999982,
+          66.80000000000018,
+          16.699999999999818,
+          100.10000000000036,
+          33.19999999999982,
+          16.899999999999636,
+          83.30000000000018,
+          33.30000000000018,
+          16.800000000000182,
+          50,
+          33.30000000000018,
+          16.699999999999818,
+          50.099999999999454,
+          50,
+          16.800000000000182,
+          66.60000000000036,
+          50.099999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          16.599999999999454,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.5,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.800000000000182,
+          16.600000000000364,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          16.800000000000182,
+          16.599999999999454,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.599999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.5,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.699999999999818,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999272,
+          16.5,
+          16.900000000000546,
+          16.599999999999454,
+          16.600000000000364,
+          16.600000000000364,
+          16.799999999999272,
+          16.700000000000728,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.599999999999454,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.899999999999636,
+          16.600000000000364,
+          16.599999999999454,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.5,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.69999999999891,
+          16.700000000000728,
+          16.799999999999272,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.80000000000109,
+          16.69999999999891,
+          16.600000000000364,
+          16.700000000000728,
+          16.799999999999272,
+          16.5,
+          16.700000000000728,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.600000000000364,
+          16.799999999999272,
+          16.700000000000728,
+          16.69999999999891,
+          16.700000000000728,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.799999999999272,
+          16.700000000000728,
+          16.5,
+          16.799999999999272,
+          16.600000000000364,
+          16.80000000000109,
+          16.599999999998545,
+          16.700000000000728,
+          16.700000000000728,
+          16.69999999999891,
+          16.80000000000109,
+          16.599999999998545,
+          16.5,
+          16.80000000000109,
+          16.69999999999891,
+          16.700000000000728,
+          16.700000000000728,
+          16.599999999998545,
+          16.80000000000109,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.69999999999891,
+          16.600000000000364,
+          16.700000000000728,
+          16.799999999999272,
+          16.600000000000364,
+          16.600000000000364,
+          16.69999999999891,
+          16.700000000000728,
+          16.700000000000728,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          16.69999999999891,
+          16.80000000000109,
+          16.599999999998545,
+          16.700000000000728,
+          16.600000000000364,
+          16.69999999999891,
+          16.80000000000109,
+          16.69999999999891,
+          16.80000000000109,
+          16.5,
+          16.799999999999272,
+          50,
+          16.700000000000728,
+          49.899999999999636,
+          16.700000000000728,
+          50.099999999998545,
+          33.30000000000109,
+          16.69999999999891,
+          100.10000000000036,
+          50.100000000000364,
+          16.700000000000728,
+          66.79999999999927,
+          49.899999999999636,
+          16.80000000000109,
+          50.099999999998545,
+          49.900000000001455,
+          33.399999999999636,
+          100,
+          16.799999999999272,
+          33.30000000000109,
+          66.69999999999891,
+          50.100000000000364,
+          16.600000000000364,
+          16.69999999999891,
+          100.30000000000109
+        ]
+      },
+      "performanceAfter": {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 15104.810699
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 1352
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 931
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 1114
+          },
+          {
+            "name": "Resources",
+            "value": 49
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 19
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 2
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 812
+          },
+          {
+            "name": "LayoutCount",
+            "value": 21
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 400
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.01068
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.473544
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000514
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.444956
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0
+          },
+          {
+            "name": "TaskDuration",
+            "value": 1.395051
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 0.465357
+          },
+          {
+            "name": "ThreadTime",
+            "value": 1.379004
+          },
+          {
+            "name": "ProcessTime",
+            "value": 3.985664
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 29435512
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 61661184
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 15094.925311
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 15095.455244
+          },
+          {
+            "name": "NavigationStart",
+            "value": 15094.240391
+          }
+        ]
+      },
+      "error": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-haspopup=\"menu\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-state=\"closed\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"radix-_R_5msltmivb_\" aria-label=\"Current language: English\" class=\"group locale-switcher inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-full border border-border bg-[color-mix(in_srgb,var(--floating-surface)_88%,transparent)] px-2.5 text-[var(--muted-bright)] shadow-[inset_0_1px_color-mix(in_srgb,var(--paper)_7%,transparent)] backdrop-blur-[12px] transition-[border-color,background-color] duration-150…>…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div data-state=\"open\" aria-hidden=\"true\" data-aria-hidden=\"true\" class=\"fixed inset-0 z-[200] bg-black/70 backdrop-blur-md\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  16 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div data-state=\"open\" aria-hidden=\"true\" data-aria-hidden=\"true\" class=\"fixed inset-0 z-[200] bg-black/70 backdrop-blur-md\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "profile": "mobile",
+      "settings": {
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.34 Mobile Safari/537.36",
+        "viewport": {
+          "width": 412,
+          "height": 839
+        },
+        "screen": {
+          "width": 412,
+          "height": 915
+        },
+        "deviceScaleFactor": 2.625,
+        "isMobile": true,
+        "hasTouch": true,
+        "defaultBrowserType": "chromium"
+      },
+      "consoleErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://nimamoradirad.com/?_rsc=1vwYfVB7_E9t4fEj",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "https://nimamoradirad.com/projects/moradi-gallery?_rsc=1vwYfVB7_E9t4fEj",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "https://nimamoradirad.com/projects/xo-arena?_rsc=ry-B8umWgNEV4JR9",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "https://nimamoradirad.com/projects/xo-arena?_rsc=ohhGb_7CpcktP17S",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "https://nimamoradirad.com/projects/emerald-case?_rsc=ry-B8umWgNEV4JR9",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "https://nimamoradirad.com/projects/emerald-case?_rsc=1vwYfVB7_E9t4fEj",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ],
+      "interactions": [
+        {
+          "action": "Open locale menu; Escape",
+          "result": "menu opened"
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://nimamoradirad.com/",
+      "loaderReady": true,
+      "loaderMeasurement": {
+        "observedAtMs": 3068.5999999996275,
+        "bootState": "ready",
+        "heroReadiness": "webgl-frame"
+      },
+      "dom": {
+        "title": "Nima Moradirad · Senior Frontend Engineer",
+        "lang": "en",
+        "dir": "ltr",
+        "viewport": {
+          "width": 412,
+          "height": 839,
+          "dpr": 2.625
+        },
+        "scrollHeight": 5791,
+        "scrollWidth": 412,
+        "canvasCount": 1,
+        "h1": [
+          "I build systems that scale."
+        ],
+        "buttons": [
+          {
+            "text": "Contact",
+            "label": null,
+            "hasPopup": null
+          },
+          {
+            "text": "Start a conversation",
+            "label": null,
+            "hasPopup": null
+          },
+          {
+            "text": "EN",
+            "label": "Current language: English",
+            "hasPopup": "menu"
+          },
+          {
+            "text": "",
+            "label": "Turn the reading lamp off and switch to light mode",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Open navigation",
+            "hasPopup": "dialog"
+          },
+          {
+            "text": "",
+            "label": "Close résumé preview",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Previous capability group",
+            "hasPopup": null
+          },
+          {
+            "text": "",
+            "label": "Next capability group",
+            "hasPopup": null
+          }
+        ]
+      },
+      "gpu": {
+        "canvasPresent": true,
+        "contextAvailable": true,
+        "vendor": "Google Inc. (Intel)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 630 (0x00003E92) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "drawingBuffer": [
+          555,
+          741
+        ]
+      },
+      "performanceBefore": {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 15118.583245
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 1018
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 744
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 944
+          },
+          {
+            "name": "Resources",
+            "value": 48
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 18
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 2
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 769
+          },
+          {
+            "name": "LayoutCount",
+            "value": 0
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 0
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000012
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.000636
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0
+          },
+          {
+            "name": "TaskDuration",
+            "value": 0.000767
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 0.000119
+          },
+          {
+            "name": "ThreadTime",
+            "value": 0.000775
+          },
+          {
+            "name": "ProcessTime",
+            "value": 2.038412
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 18808924
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 56680448
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 15115.746227
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 15116.207278
+          },
+          {
+            "name": "NavigationStart",
+            "value": 15115.058095
+          }
+        ]
+      },
+      "rafCadence": {
+        "durationMs": 6002.4000000003725,
+        "frames": 335,
+        "averageRafPerSecond": 55.9340145595405,
+        "intervalMedianMs": 16.699999999999818,
+        "intervalP95Ms": 16.80000000000109,
+        "intervalsOver50ms": 4,
+        "intervalsMs": [
+          16.59999999999991,
+          16.700000000000273,
+          16.59999999999991,
+          16.799999999999727,
+          16.600000000000364,
+          16.799999999999727,
+          16.59999999999991,
+          16.600000000000364,
+          16.799999999999727,
+          16.700000000000273,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.699999999999818,
+          16.5,
+          16.699999999999818,
+          16.700000000000273,
+          16.59999999999991,
+          16.800000000000182,
+          16.699999999999818,
+          16.59999999999991,
+          16.800000000000182,
+          16.59999999999991,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999727,
+          16.59999999999991,
+          16.700000000000273,
+          16.799999999999727,
+          16.600000000000364,
+          16.59999999999991,
+          16.799999999999727,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.5,
+          16.899999999999636,
+          16.600000000000364,
+          16.5,
+          16.699999999999818,
+          16.900000000000546,
+          16.599999999999454,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.600000000000364,
+          16.800000000000182,
+          50,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.800000000000182,
+          16.5,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.800000000000182,
+          16.600000000000364,
+          16.800000000000182,
+          16.5,
+          16.799999999999272,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999272,
+          16.700000000000728,
+          16.599999999999454,
+          83.30000000000018,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.599999999999454,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.699999999999818,
+          33.400000000000546,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          166.80000000000018,
+          16.699999999999818,
+          16.800000000000182,
+          16.699999999999818,
+          16.5,
+          16.800000000000182,
+          16.600000000000364,
+          16.800000000000182,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          100.09999999999945,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.599999999999454,
+          16.800000000000182,
+          16.5,
+          16.699999999999818,
+          16.800000000000182,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.599999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.800000000000182,
+          16.600000000000364,
+          16.599999999999454,
+          16.700000000000728,
+          16.599999999999454,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          50.099999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.5,
+          16.899999999999636,
+          16.699999999999818,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.5,
+          16.800000000000182,
+          16.600000000000364,
+          16.599999999999454,
+          16.699999999999818,
+          16.700000000000728,
+          16.699999999999818,
+          16.899999999999636,
+          16.600000000000364,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.600000000000364,
+          16.699999999999818,
+          16.899999999999636,
+          16.699999999999818,
+          16.5,
+          16.700000000000728,
+          16.799999999999272,
+          16.700000000000728,
+          16.699999999999818,
+          16.5,
+          16.800000000000182,
+          16.699999999999818,
+          16.599999999999454,
+          16.700000000000728,
+          16.599999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.699999999999818,
+          16.700000000000728,
+          16.599999999999454,
+          16.600000000000364,
+          16.800000000000182,
+          16.599999999999454,
+          16.800000000000182,
+          16.699999999999818,
+          16.600000000000364,
+          16.599999999999454,
+          16.800000000000182,
+          16.600000000000364,
+          16.699999999999818,
+          16.800000000000182,
+          16.699999999999818,
+          16.5,
+          16.800000000000182,
+          16.599999999999454,
+          16.700000000000728,
+          16.699999999999818,
+          16.699999999999818,
+          16.800000000000182,
+          16.599999999999454,
+          16.700000000000728,
+          16.799999999999272,
+          16.5,
+          16.80000000000109,
+          16.599999999998545,
+          16.80000000000109,
+          16.600000000000364,
+          16.69999999999891,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.80000000000109,
+          16.599999999998545,
+          16.600000000000364,
+          16.80000000000109,
+          16.599999999998545,
+          16.80000000000109,
+          16.69999999999891,
+          16.600000000000364,
+          16.80000000000109,
+          16.599999999998545,
+          16.600000000000364,
+          16.80000000000109,
+          16.599999999998545,
+          16.700000000000728,
+          16.799999999999272,
+          16.5,
+          16.700000000000728,
+          16.799999999999272,
+          16.700000000000728,
+          16.600000000000364,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          16.799999999999272,
+          16.700000000000728,
+          16.600000000000364,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.69999999999891,
+          16.80000000000109,
+          16.600000000000364,
+          16.599999999998545,
+          16.80000000000109,
+          16.5,
+          16.799999999999272,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.600000000000364,
+          16.799999999999272,
+          16.600000000000364,
+          16.700000000000728,
+          16.69999999999891,
+          16.600000000000364,
+          16.80000000000109,
+          16.69999999999891,
+          16.700000000000728,
+          16.600000000000364,
+          33.399999999999636,
+          16.69999999999891,
+          16.80000000000109,
+          16.5,
+          16.69999999999891,
+          16.80000000000109,
+          16.5,
+          16.799999999999272,
+          16.600000000000364,
+          16.700000000000728
+        ]
+      },
+      "performanceAfter": {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 15124.595842
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 1020
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 714
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 952
+          },
+          {
+            "name": "Resources",
+            "value": 49
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 18
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 2
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 769
+          },
+          {
+            "name": "LayoutCount",
+            "value": 44
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 1053
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.004957
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.919059
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000592
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.458732
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0
+          },
+          {
+            "name": "TaskDuration",
+            "value": 1.98099
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 0.59765
+          },
+          {
+            "name": "ThreadTime",
+            "value": 1.95852
+          },
+          {
+            "name": "ProcessTime",
+            "value": 4.826715
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 25864300
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 50651136
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 15115.746227
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 15116.207278
+          },
+          {
+            "name": "NavigationStart",
+            "value": 15115.058095
+          }
+        ]
+      },
+      "keyboardFocus": {
+        "tag": "SPAN",
+        "text": "",
+        "label": null
+      },
+      "browserEntries": {
+        "navigation": [
+          {
+            "name": "https://nimamoradirad.com/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 1205,
+            "navigationId": 2520,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.5,
+            "domainLookupStart": 1,
+            "domainLookupEnd": 1,
+            "connectStart": 1,
+            "secureConnectionStart": 5.900000000372529,
+            "connectEnd": 18.40000000037253,
+            "requestStart": 18.59999999962747,
+            "responseStart": 367.30000000074506,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 367.30000000074506,
+            "responseEnd": 1147.9000000003725,
+            "transferSize": 61005,
+            "encodedBodySize": 60705,
+            "decodedBodySize": 268406,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 1149.2000000011176,
+            "domContentLoadedEventStart": 1149.2000000011176,
+            "domContentLoadedEventEnd": 1149.4000000003725,
+            "domComplete": 1205,
+            "loadEventStart": 1205,
+            "loadEventEnd": 1205,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 692,
+            "duration": 0,
+            "navigationId": 2520,
+            "paintTime": 659,
+            "presentationTime": 692
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 692,
+            "duration": 0,
+            "navigationId": 2520,
+            "paintTime": 659,
+            "presentationTime": 692
+          }
+        ],
+        "resources": [
+          {
+            "name": "https://nimamoradirad.com/_next/static/media/22a5144ee8d83bca-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 387.2000000011176,
+            "duration": 35.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 387.2000000011176,
+            "domainLookupStart": 387.2000000011176,
+            "domainLookupEnd": 387.2000000011176,
+            "connectStart": 387.2000000011176,
+            "secureConnectionStart": 387.2000000011176,
+            "connectEnd": 387.2000000011176,
+            "requestStart": 390.09999999962747,
+            "responseStart": 421.09999999962747,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 421.09999999962747,
+            "responseEnd": 422.90000000037253,
+            "transferSize": 29588,
+            "encodedBodySize": 29288,
+            "decodedBodySize": 29288,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/media/7d4881bb7e1bf84d-s.p.woff2?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 387.90000000037253,
+            "duration": 39.40000000037253,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 387.90000000037253,
+            "domainLookupStart": 387.90000000037253,
+            "domainLookupEnd": 387.90000000037253,
+            "connectStart": 387.90000000037253,
+            "secureConnectionStart": 387.90000000037253,
+            "connectEnd": 387.90000000037253,
+            "requestStart": 390.90000000037253,
+            "responseStart": 424.90000000037253,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 424.90000000037253,
+            "responseEnd": 427.30000000074506,
+            "transferSize": 23408,
+            "encodedBodySize": 23108,
+            "decodedBodySize": 23108,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/nima-moradirad.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 388.09999999962747,
+            "duration": 137.60000000149012,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/jpeg",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 388.09999999962747,
+            "domainLookupStart": 388.09999999962747,
+            "domainLookupEnd": 388.09999999962747,
+            "connectStart": 388.09999999962747,
+            "secureConnectionStart": 388.09999999962747,
+            "connectEnd": 388.09999999962747,
+            "requestStart": 480.2000000011176,
+            "responseStart": 510.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 510.5,
+            "responseEnd": 525.7000000011176,
+            "transferSize": 72849,
+            "encodedBodySize": 72549,
+            "decodedBodySize": 72549,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/css/c4460c4988423364.css?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398,
+            "duration": 169.40000000037253,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398,
+            "domainLookupStart": 398,
+            "domainLookupEnd": 398,
+            "connectStart": 398,
+            "secureConnectionStart": 398,
+            "connectEnd": 398,
+            "requestStart": 398.7000000011176,
+            "responseStart": 487.80000000074506,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 487.80000000074506,
+            "responseEnd": 567.4000000003725,
+            "transferSize": 24652,
+            "encodedBodySize": 24352,
+            "decodedBodySize": 139849,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/css/be9a0ac6637d5310.css?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.2000000011176,
+            "duration": 79.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.2000000011176,
+            "domainLookupStart": 398.2000000011176,
+            "domainLookupEnd": 398.2000000011176,
+            "connectStart": 398.2000000011176,
+            "secureConnectionStart": 398.2000000011176,
+            "connectEnd": 398.2000000011176,
+            "requestStart": 399.40000000037253,
+            "responseStart": 476.90000000037253,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 476.90000000037253,
+            "responseEnd": 477.90000000037253,
+            "transferSize": 1131,
+            "encodedBodySize": 831,
+            "decodedBodySize": 4200,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/css/fb02de61ae65facf.css?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.30000000074506,
+            "duration": 80.90000000037253,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.30000000074506,
+            "domainLookupStart": 398.30000000074506,
+            "domainLookupEnd": 398.30000000074506,
+            "connectStart": 398.30000000074506,
+            "secureConnectionStart": 398.30000000074506,
+            "connectEnd": 398.30000000074506,
+            "requestStart": 399.5,
+            "responseStart": 477.30000000074506,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 477.30000000074506,
+            "responseEnd": 479.2000000011176,
+            "transferSize": 6597,
+            "encodedBodySize": 6297,
+            "decodedBodySize": 29323,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/webpack-f0e6801a53fabacb.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.40000000037253,
+            "duration": 172.40000000037253,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.40000000037253,
+            "domainLookupStart": 398.40000000037253,
+            "domainLookupEnd": 398.40000000037253,
+            "connectStart": 398.40000000037253,
+            "secureConnectionStart": 398.40000000037253,
+            "connectEnd": 398.40000000037253,
+            "requestStart": 526.5,
+            "responseStart": 569.9000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 569.9000000003725,
+            "responseEnd": 570.8000000007451,
+            "transferSize": 2665,
+            "encodedBodySize": 2365,
+            "decodedBodySize": 4881,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/4bd1b696-e356ca5ba0218e27.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.40000000037253,
+            "duration": 504.19999999925494,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.40000000037253,
+            "domainLookupStart": 398.40000000037253,
+            "domainLookupEnd": 398.40000000037253,
+            "connectStart": 398.40000000037253,
+            "secureConnectionStart": 398.40000000037253,
+            "connectEnd": 398.40000000037253,
+            "requestStart": 568.2000000011176,
+            "responseStart": 668.2000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 668.2000000011176,
+            "responseEnd": 902.5999999996275,
+            "transferSize": 63180,
+            "encodedBodySize": 62880,
+            "decodedBodySize": 199870,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/main-app-42c45c4c211b62a7.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.59999999962747,
+            "duration": 264.30000000074506,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.59999999962747,
+            "domainLookupStart": 398.59999999962747,
+            "domainLookupEnd": 398.59999999962747,
+            "connectStart": 398.59999999962747,
+            "secureConnectionStart": 398.59999999962747,
+            "connectEnd": 398.59999999962747,
+            "requestStart": 571.5999999996275,
+            "responseStart": 662.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 662.5999999996275,
+            "responseEnd": 662.9000000003725,
+            "transferSize": 869,
+            "encodedBodySize": 569,
+            "decodedBodySize": 569,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/6385-00c6728c328b06f2.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.59999999962747,
+            "duration": 584.4000000003725,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.59999999962747,
+            "domainLookupStart": 398.59999999962747,
+            "domainLookupEnd": 398.59999999962747,
+            "connectStart": 398.59999999962747,
+            "secureConnectionStart": 398.59999999962747,
+            "connectEnd": 398.59999999962747,
+            "requestStart": 571.2000000011176,
+            "responseStart": 681.4000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 681.4000000003725,
+            "responseEnd": 983,
+            "transferSize": 73229,
+            "encodedBodySize": 72929,
+            "decodedBodySize": 262787,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/8500-f62a38ff68ab7f42.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.7000000011176,
+            "duration": 284.2999999988824,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.7000000011176,
+            "domainLookupStart": 398.7000000011176,
+            "domainLookupEnd": 398.7000000011176,
+            "connectStart": 398.7000000011176,
+            "secureConnectionStart": 398.7000000011176,
+            "connectEnd": 398.7000000011176,
+            "requestStart": 571.5999999996275,
+            "responseStart": 675.4000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 675.4000000003725,
+            "responseEnd": 683,
+            "transferSize": 3846,
+            "encodedBodySize": 3546,
+            "decodedBodySize": 8734,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/app/not-found-d6f2209849f11104.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.80000000074506,
+            "duration": 368.59999999962747,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.80000000074506,
+            "domainLookupStart": 398.80000000074506,
+            "domainLookupEnd": 398.80000000074506,
+            "connectStart": 398.80000000074506,
+            "secureConnectionStart": 398.80000000074506,
+            "connectEnd": 398.80000000074506,
+            "requestStart": 572.0999999996275,
+            "responseStart": 711.7000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 711.7000000011176,
+            "responseEnd": 767.4000000003725,
+            "transferSize": 1425,
+            "encodedBodySize": 1125,
+            "decodedBodySize": 2517,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/3952-78908ba11e746564.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.80000000074506,
+            "duration": 375.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.80000000074506,
+            "domainLookupStart": 398.80000000074506,
+            "domainLookupEnd": 398.80000000074506,
+            "connectStart": 398.80000000074506,
+            "secureConnectionStart": 398.80000000074506,
+            "connectEnd": 398.80000000074506,
+            "requestStart": 572.0999999996275,
+            "responseStart": 768.0999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 768.0999999996275,
+            "responseEnd": 774.5,
+            "transferSize": 13386,
+            "encodedBodySize": 13086,
+            "decodedBodySize": 37368,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/8355-5b851360d0103ddb.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.80000000074506,
+            "duration": 759.4000000003725,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.80000000074506,
+            "domainLookupStart": 398.80000000074506,
+            "domainLookupEnd": 398.80000000074506,
+            "connectStart": 398.80000000074506,
+            "secureConnectionStart": 398.80000000074506,
+            "connectEnd": 398.80000000074506,
+            "requestStart": 572.5999999996275,
+            "responseStart": 768.3000000007451,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 768.3000000007451,
+            "responseEnd": 1158.2000000011176,
+            "transferSize": 78345,
+            "encodedBodySize": 78045,
+            "decodedBodySize": 255255,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/20-0e02f9c2bf6ce722.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 398.90000000037253,
+            "duration": 686.5,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 398.90000000037253,
+            "domainLookupStart": 398.90000000037253,
+            "domainLookupEnd": 398.90000000037253,
+            "connectStart": 398.90000000037253,
+            "secureConnectionStart": 398.90000000037253,
+            "connectEnd": 398.90000000037253,
+            "requestStart": 572.7000000011176,
+            "responseStart": 886.2000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 886.2000000011176,
+            "responseEnd": 1085.4000000003725,
+            "transferSize": 45085,
+            "encodedBodySize": 44785,
+            "decodedBodySize": 136228,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/927-d66cec8c43c1aaac.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 399,
+            "duration": 491.5,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 399,
+            "domainLookupStart": 399,
+            "domainLookupEnd": 399,
+            "connectStart": 399,
+            "secureConnectionStart": 399,
+            "connectEnd": 399,
+            "requestStart": 573.2000000011176,
+            "responseStart": 874.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 874.5,
+            "responseEnd": 890.5,
+            "transferSize": 6455,
+            "encodedBodySize": 6155,
+            "decodedBodySize": 16077,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/9669-3f41fc5e24d61c27.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 399,
+            "duration": 498.09999999962747,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 399,
+            "domainLookupStart": 399,
+            "domainLookupEnd": 399,
+            "connectStart": 399,
+            "secureConnectionStart": 399,
+            "connectEnd": 399,
+            "requestStart": 573.3000000007451,
+            "responseStart": 892.8000000007451,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 892.8000000007451,
+            "responseEnd": 897.0999999996275,
+            "transferSize": 5845,
+            "encodedBodySize": 5545,
+            "decodedBodySize": 19294,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/app/%5Blocale%5D/layout-73b2faf70b734597.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 399.2000000011176,
+            "duration": 496.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 399.2000000011176,
+            "domainLookupStart": 399.2000000011176,
+            "domainLookupEnd": 399.2000000011176,
+            "connectStart": 399.2000000011176,
+            "secureConnectionStart": 399.2000000011176,
+            "connectEnd": 399.2000000011176,
+            "requestStart": 573.8000000007451,
+            "responseStart": 895.7000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 895.7000000011176,
+            "responseEnd": 895.9000000003725,
+            "transferSize": 970,
+            "encodedBodySize": 670,
+            "decodedBodySize": 670,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/app/%5Blocale%5D/page-1f06ca0505632094.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 399.2000000011176,
+            "duration": 584.5,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 399.2000000011176,
+            "domainLookupStart": 399.2000000011176,
+            "domainLookupEnd": 399.2000000011176,
+            "connectStart": 399.2000000011176,
+            "secureConnectionStart": 399.2000000011176,
+            "connectEnd": 399.2000000011176,
+            "requestStart": 573.5,
+            "responseStart": 982.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 982.5999999996275,
+            "responseEnd": 983.7000000011176,
+            "transferSize": 16277,
+            "encodedBodySize": 15977,
+            "decodedBodySize": 62911,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/app/%5Blocale%5D/error-4af01b7cb0c01d72.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 399.30000000074506,
+            "duration": 583.0999999996275,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 399.30000000074506,
+            "domainLookupStart": 399.30000000074506,
+            "domainLookupEnd": 399.30000000074506,
+            "connectStart": 399.30000000074506,
+            "secureConnectionStart": 399.30000000074506,
+            "connectEnd": 399.30000000074506,
+            "requestStart": 573.8000000007451,
+            "responseStart": 970.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 970.5999999996275,
+            "responseEnd": 982.4000000003725,
+            "transferSize": 1493,
+            "encodedBodySize": 1193,
+            "decodedBodySize": 2722,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/favicon.svg",
+            "entryType": "resource",
+            "startTime": 1231,
+            "duration": 14.300000000745058,
+            "navigationId": 2520,
+            "initiatorType": "other",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/svg+xml",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1231,
+            "domainLookupStart": 1231,
+            "domainLookupEnd": 1231,
+            "connectStart": 1231,
+            "secureConnectionStart": 1231,
+            "connectEnd": 1231,
+            "requestStart": 1231.4000000003725,
+            "responseStart": 1244.9000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1244.9000000003725,
+            "responseEnd": 1245.300000000745,
+            "transferSize": 504,
+            "encodedBodySize": 204,
+            "decodedBodySize": 204,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/bd904a5c.52aed36031f8e51b.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1266.300000000745,
+            "duration": 344.09999999962747,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1266.300000000745,
+            "domainLookupStart": 1266.300000000745,
+            "domainLookupEnd": 1266.300000000745,
+            "connectStart": 1266.300000000745,
+            "secureConnectionStart": 1266.300000000745,
+            "connectEnd": 1266.300000000745,
+            "requestStart": 1266.7000000011176,
+            "responseStart": 1328.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1328.5999999996275,
+            "responseEnd": 1610.4000000003725,
+            "transferSize": 100221,
+            "encodedBodySize": 99921,
+            "decodedBodySize": 371896,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/b79b7286.3fd8f5b4412d6568.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1266.5999999996275,
+            "duration": 280.80000000074506,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1266.5999999996275,
+            "domainLookupStart": 1266.5999999996275,
+            "domainLookupEnd": 1266.5999999996275,
+            "connectStart": 1266.5999999996275,
+            "secureConnectionStart": 1266.5999999996275,
+            "connectEnd": 1266.5999999996275,
+            "requestStart": 1266.9000000003725,
+            "responseStart": 1385.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1385.5999999996275,
+            "responseEnd": 1547.4000000003725,
+            "transferSize": 46177,
+            "encodedBodySize": 45877,
+            "decodedBodySize": 145273,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/b536a0f1.91474812198ed64f.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1266.800000000745,
+            "duration": 337,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1266.800000000745,
+            "domainLookupStart": 1266.800000000745,
+            "domainLookupEnd": 1266.800000000745,
+            "connectStart": 1266.800000000745,
+            "secureConnectionStart": 1266.800000000745,
+            "connectEnd": 1266.800000000745,
+            "requestStart": 1267.0999999996275,
+            "responseStart": 1384.7000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1384.7000000011176,
+            "responseEnd": 1603.800000000745,
+            "transferSize": 85182,
+            "encodedBodySize": 84882,
+            "decodedBodySize": 349075,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/8035.fddc286a0d94c872.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1267,
+            "duration": 120,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1267,
+            "domainLookupStart": 1267,
+            "domainLookupEnd": 1267,
+            "connectStart": 1267,
+            "secureConnectionStart": 1267,
+            "connectEnd": 1267,
+            "requestStart": 1267.300000000745,
+            "responseStart": 1327.4000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1327.4000000003725,
+            "responseEnd": 1387,
+            "transferSize": 7106,
+            "encodedBodySize": 6806,
+            "decodedBodySize": 17443,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/6376.aae26e17131a627a.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1267.300000000745,
+            "duration": 140.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1267.300000000745,
+            "domainLookupStart": 1267.300000000745,
+            "domainLookupEnd": 1267.300000000745,
+            "connectStart": 1267.300000000745,
+            "secureConnectionStart": 1267.300000000745,
+            "connectEnd": 1267.300000000745,
+            "requestStart": 1267.5,
+            "responseStart": 1372,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1372,
+            "responseEnd": 1408,
+            "transferSize": 16034,
+            "encodedBodySize": 15734,
+            "decodedBodySize": 46138,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/chunks/8299.d1dac50117283960.js?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1267.5,
+            "duration": 127.40000000037253,
+            "navigationId": 2520,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1267.5,
+            "domainLookupStart": 1267.5,
+            "domainLookupEnd": 1267.5,
+            "connectStart": 1267.5,
+            "secureConnectionStart": 1267.5,
+            "connectEnd": 1267.5,
+            "requestStart": 1267.9000000003725,
+            "responseStart": 1371,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1371,
+            "responseEnd": 1394.9000000003725,
+            "transferSize": 9062,
+            "encodedBodySize": 8762,
+            "decodedBodySize": 29849,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/css/536c7b9a9e17f981.css?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 1275.4000000003725,
+            "duration": 180.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/css",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1275.4000000003725,
+            "domainLookupStart": 1275.4000000003725,
+            "domainLookupEnd": 1275.4000000003725,
+            "connectStart": 1275.4000000003725,
+            "secureConnectionStart": 1275.4000000003725,
+            "connectEnd": 1275.4000000003725,
+            "requestStart": 1275.9000000003725,
+            "responseStart": 1454.7000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1454.7000000011176,
+            "responseEnd": 1456.0999999996275,
+            "transferSize": 1228,
+            "encodedBodySize": 928,
+            "decodedBodySize": 928,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/nima-moradirad.jpg",
+            "entryType": "resource",
+            "startTime": 1276.7000000011176,
+            "duration": 228.89999999850988,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/jpeg",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1276.7000000011176,
+            "domainLookupStart": 1276.7000000011176,
+            "domainLookupEnd": 1276.7000000011176,
+            "connectStart": 1276.7000000011176,
+            "secureConnectionStart": 1276.7000000011176,
+            "connectEnd": 1276.7000000011176,
+            "requestStart": 1277.0999999996275,
+            "responseStart": 1464.7000000011176,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1464.7000000011176,
+            "responseEnd": 1505.5999999996275,
+            "transferSize": 72849,
+            "encodedBodySize": 72549,
+            "decodedBodySize": 72549,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/nima-moradirad-resume-preview.webp",
+            "entryType": "resource",
+            "startTime": 1276.9000000003725,
+            "duration": 314.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/webp",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1276.9000000003725,
+            "domainLookupStart": 1276.9000000003725,
+            "domainLookupEnd": 1276.9000000003725,
+            "connectStart": 1276.9000000003725,
+            "secureConnectionStart": 1276.9000000003725,
+            "connectEnd": 1276.9000000003725,
+            "requestStart": 1277.4000000003725,
+            "responseStart": 1511.4000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1511.4000000003725,
+            "responseEnd": 1591.5999999996275,
+            "transferSize": 247918,
+            "encodedBodySize": 247618,
+            "decodedBodySize": 247618,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/favicon.svg",
+            "entryType": "resource",
+            "startTime": 1295.300000000745,
+            "duration": 196.2999999988824,
+            "navigationId": 2520,
+            "initiatorType": "other",
+            "deliveryType": "cache",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/svg+xml",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1295.300000000745,
+            "domainLookupStart": 1295.300000000745,
+            "domainLookupEnd": 1295.300000000745,
+            "connectStart": 1295.300000000745,
+            "secureConnectionStart": 1295.300000000745,
+            "connectEnd": 1295.300000000745,
+            "requestStart": 1295.800000000745,
+            "responseStart": 1490.5999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1490.5999999996275,
+            "responseEnd": 1491.5999999996275,
+            "transferSize": 300,
+            "encodedBodySize": 204,
+            "decodedBodySize": 204,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/?_rsc=1vwYfVB7_E9t4fEj",
+            "entryType": "resource",
+            "startTime": 1298,
+            "duration": 293.7000000011176,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1298,
+            "domainLookupStart": 1298,
+            "domainLookupEnd": 1298,
+            "connectStart": 1298,
+            "secureConnectionStart": 1298,
+            "connectEnd": 1298,
+            "requestStart": 1298.5999999996275,
+            "responseStart": 1496,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1496,
+            "responseEnd": 1591.7000000011176,
+            "transferSize": 1746,
+            "encodedBodySize": 1446,
+            "decodedBodySize": 4410,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/hero/senior-engineer-systems-painting.webp",
+            "entryType": "resource",
+            "startTime": 1759.0999999996275,
+            "duration": 55.600000001490116,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/webp",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1759.0999999996275,
+            "domainLookupStart": 1759.0999999996275,
+            "domainLookupEnd": 1759.0999999996275,
+            "connectStart": 1759.0999999996275,
+            "secureConnectionStart": 1759.0999999996275,
+            "connectEnd": 1759.0999999996275,
+            "requestStart": 1759.5999999996275,
+            "responseStart": 1779.9000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1779.9000000003725,
+            "responseEnd": 1814.7000000011176,
+            "transferSize": 206028,
+            "encodedBodySize": 205728,
+            "decodedBodySize": 205728,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/moradi-gallery/homepage-fa.png?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 3795.9000000003725,
+            "duration": 37.80000000074506,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/png",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 3795.9000000003725,
+            "domainLookupStart": 3795.9000000003725,
+            "domainLookupEnd": 3795.9000000003725,
+            "connectStart": 3795.9000000003725,
+            "secureConnectionStart": 3795.9000000003725,
+            "connectEnd": 3795.9000000003725,
+            "requestStart": 3796.7000000011176,
+            "responseStart": 3826.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3826.5,
+            "responseEnd": 3833.7000000011176,
+            "transferSize": 53499,
+            "encodedBodySize": 53199,
+            "decodedBodySize": 53199,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/xo-arena/game-room.webp?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 4301.0999999996275,
+            "duration": 19.300000000745058,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/webp",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 4301.0999999996275,
+            "domainLookupStart": 4301.0999999996275,
+            "domainLookupEnd": 4301.0999999996275,
+            "connectStart": 4301.0999999996275,
+            "secureConnectionStart": 4301.0999999996275,
+            "connectEnd": 4301.0999999996275,
+            "requestStart": 4302.0999999996275,
+            "responseStart": 4318.800000000745,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4318.800000000745,
+            "responseEnd": 4320.4000000003725,
+            "transferSize": 33148,
+            "encodedBodySize": 32848,
+            "decodedBodySize": 32848,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/emerald-case/homepage.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 4762.9000000003725,
+            "duration": 38.40000000037253,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/jpeg",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 4762.9000000003725,
+            "domainLookupStart": 4762.9000000003725,
+            "domainLookupEnd": 4762.9000000003725,
+            "connectStart": 4762.9000000003725,
+            "secureConnectionStart": 4762.9000000003725,
+            "connectEnd": 4762.9000000003725,
+            "requestStart": 4763.4000000003725,
+            "responseStart": 4787.700000001118,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4787.700000001118,
+            "responseEnd": 4801.300000000745,
+            "transferSize": 117625,
+            "encodedBodySize": 117325,
+            "decodedBodySize": 117325,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/moradi-gallery?_rsc=ry-B8umWgNEV4JR9",
+            "entryType": "resource",
+            "startTime": 5050.700000001118,
+            "duration": 79.09999999962747,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5050.700000001118,
+            "domainLookupStart": 5050.700000001118,
+            "domainLookupEnd": 5050.700000001118,
+            "connectStart": 5050.700000001118,
+            "secureConnectionStart": 5050.700000001118,
+            "connectEnd": 5050.700000001118,
+            "requestStart": 5051.4000000003725,
+            "responseStart": 5126.300000000745,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5126.300000000745,
+            "responseEnd": 5129.800000000745,
+            "transferSize": 465,
+            "encodedBodySize": 165,
+            "decodedBodySize": 259,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/moradi-gallery?_rsc=1vwYfVB7_E9t4fEj",
+            "entryType": "resource",
+            "startTime": 5134.0999999996275,
+            "duration": 72.5,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5134.0999999996275,
+            "domainLookupStart": 5134.0999999996275,
+            "domainLookupEnd": 5134.0999999996275,
+            "connectStart": 5134.0999999996275,
+            "secureConnectionStart": 5134.0999999996275,
+            "connectEnd": 5134.0999999996275,
+            "requestStart": 5134.700000001118,
+            "responseStart": 5195.0999999996275,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5195.0999999996275,
+            "responseEnd": 5206.5999999996275,
+            "transferSize": 1568,
+            "encodedBodySize": 1268,
+            "decodedBodySize": 3756,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/hesabo/homepage.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 5264.4000000003725,
+            "duration": 26.5,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/jpeg",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5264.4000000003725,
+            "domainLookupStart": 5264.4000000003725,
+            "domainLookupEnd": 5264.4000000003725,
+            "connectStart": 5264.4000000003725,
+            "secureConnectionStart": 5264.4000000003725,
+            "connectEnd": 5264.4000000003725,
+            "requestStart": 5264.800000000745,
+            "responseStart": 5278.800000000745,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5278.800000000745,
+            "responseEnd": 5290.9000000003725,
+            "transferSize": 74015,
+            "encodedBodySize": 73715,
+            "decodedBodySize": 73715,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/xo-arena?_rsc=ry-B8umWgNEV4JR9",
+            "entryType": "resource",
+            "startTime": 5490.200000001118,
+            "duration": 33.69999999925494,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5490.200000001118,
+            "domainLookupStart": 5490.200000001118,
+            "domainLookupEnd": 5490.200000001118,
+            "connectStart": 5490.200000001118,
+            "secureConnectionStart": 5490.200000001118,
+            "connectEnd": 5490.200000001118,
+            "requestStart": 5490.700000001118,
+            "responseStart": 5520.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5520.5,
+            "responseEnd": 5523.9000000003725,
+            "transferSize": 466,
+            "encodedBodySize": 166,
+            "decodedBodySize": 310,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/xo-arena?_rsc=ohhGb_7CpcktP17S",
+            "entryType": "resource",
+            "startTime": 5524.9000000003725,
+            "duration": 77.5,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5524.9000000003725,
+            "domainLookupStart": 5524.9000000003725,
+            "domainLookupEnd": 5524.9000000003725,
+            "connectStart": 5524.9000000003725,
+            "secureConnectionStart": 5524.9000000003725,
+            "connectEnd": 5524.9000000003725,
+            "requestStart": 5525.200000001118,
+            "responseStart": 5593.300000000745,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5593.300000000745,
+            "responseEnd": 5602.4000000003725,
+            "transferSize": 2624,
+            "encodedBodySize": 2324,
+            "decodedBodySize": 7350,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/_next/static/css/02a3aa1e74fe269c.css?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 5603.300000000745,
+            "duration": 26.699999999254942,
+            "navigationId": 2520,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/css",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5603.300000000745,
+            "domainLookupStart": 5603.300000000745,
+            "domainLookupEnd": 5603.300000000745,
+            "connectStart": 5603.300000000745,
+            "secureConnectionStart": 5603.300000000745,
+            "connectEnd": 5603.300000000745,
+            "requestStart": 5603.800000000745,
+            "responseStart": 5629.700000001118,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5629.700000001118,
+            "responseEnd": 5630,
+            "transferSize": 640,
+            "encodedBodySize": 340,
+            "decodedBodySize": 340,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/lingo-learn/homepage.jpg?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 5746.5999999996275,
+            "duration": 33.5,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/jpeg",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5746.5999999996275,
+            "domainLookupStart": 5746.5999999996275,
+            "domainLookupEnd": 5746.5999999996275,
+            "connectStart": 5746.5999999996275,
+            "secureConnectionStart": 5746.5999999996275,
+            "connectEnd": 5746.5999999996275,
+            "requestStart": 5747.0999999996275,
+            "responseStart": 5769,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5769,
+            "responseEnd": 5780.0999999996275,
+            "transferSize": 82143,
+            "encodedBodySize": 81843,
+            "decodedBodySize": 81843,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/lingo-learn/logo.png?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 5746.700000001118,
+            "duration": 32.399999998509884,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/png",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 5746.700000001118,
+            "domainLookupStart": 5746.700000001118,
+            "domainLookupEnd": 5746.700000001118,
+            "connectStart": 5746.700000001118,
+            "secureConnectionStart": 5746.700000001118,
+            "connectEnd": 5746.700000001118,
+            "requestStart": 5747.5,
+            "responseStart": 5778.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5778.5,
+            "responseEnd": 5779.0999999996275,
+            "transferSize": 8106,
+            "encodedBodySize": 7806,
+            "decodedBodySize": 7806,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/emerald-case?_rsc=ry-B8umWgNEV4JR9",
+            "entryType": "resource",
+            "startTime": 6044.5999999996275,
+            "duration": 49.30000000074506,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 6044.5999999996275,
+            "domainLookupStart": 6044.5999999996275,
+            "domainLookupEnd": 6044.5999999996275,
+            "connectStart": 6044.5999999996275,
+            "secureConnectionStart": 6044.5999999996275,
+            "connectEnd": 6044.5999999996275,
+            "requestStart": 6045.300000000745,
+            "responseStart": 6086.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 6086.5,
+            "responseEnd": 6093.9000000003725,
+            "transferSize": 462,
+            "encodedBodySize": 162,
+            "decodedBodySize": 257,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/projects/emerald-case?_rsc=1vwYfVB7_E9t4fEj",
+            "entryType": "resource",
+            "startTime": 6097.700000001118,
+            "duration": 85.59999999962747,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 6097.700000001118,
+            "domainLookupStart": 6097.700000001118,
+            "domainLookupEnd": 6097.700000001118,
+            "connectStart": 6097.700000001118,
+            "secureConnectionStart": 6097.700000001118,
+            "connectEnd": 6097.700000001118,
+            "requestStart": 6098.700000001118,
+            "responseStart": 6180.200000001118,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 6180.200000001118,
+            "responseEnd": 6183.300000000745,
+            "transferSize": 1572,
+            "encodedBodySize": 1272,
+            "decodedBodySize": 3757,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/assets/projects/tarabari-nima/loaded-truck.webp?dpl=a18911c0f9f493eed70fd8c65f844d6853be1e44",
+            "entryType": "resource",
+            "startTime": 6229.800000000745,
+            "duration": 20.199999999254942,
+            "navigationId": 2520,
+            "initiatorType": "img",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "image/webp",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 6229.800000000745,
+            "domainLookupStart": 6229.800000000745,
+            "domainLookupEnd": 6229.800000000745,
+            "connectStart": 6229.800000000745,
+            "secureConnectionStart": 6229.800000000745,
+            "connectEnd": 6229.800000000745,
+            "requestStart": 6230.5999999996275,
+            "responseStart": 6244.9000000003725,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 6244.9000000003725,
+            "responseEnd": 6250,
+            "transferSize": 36856,
+            "encodedBodySize": 36556,
+            "decodedBodySize": 36556,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "https://nimamoradirad.com/en?_rsc=ry-B8umWgNEV4JR9",
+            "entryType": "resource",
+            "startTime": 9992.400000000373,
+            "duration": 127.5,
+            "navigationId": 2520,
+            "initiatorType": "fetch",
+            "deliveryType": "",
+            "nextHopProtocol": "h2",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/x-component",
+            "contentEncoding": "gzip",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 9992.400000000373,
+            "redirectEnd": 10016.5,
+            "fetchStart": 10029,
+            "domainLookupStart": 10029,
+            "domainLookupEnd": 10029,
+            "connectStart": 10029,
+            "secureConnectionStart": 10029,
+            "connectEnd": 10029,
+            "requestStart": 10029.099999999627,
+            "responseStart": 10109.200000001118,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 10109.200000001118,
+            "responseEnd": 10119.900000000373,
+            "transferSize": 440,
+            "encodedBodySize": 140,
+            "decodedBodySize": 201,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "events": [
+          {
+            "name": "pointerover",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9955.5,
+            "processingEnd": 9955.900000000373,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9955.900000000373,
+            "processingEnd": 9955.900000000373,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9955.900000000373,
+            "processingEnd": 9955.900000000373,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9955.900000000373,
+            "processingEnd": 9955.900000000373,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9955.900000000373,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerenter",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956,
+            "interactionId": 0
+          },
+          {
+            "name": "mouseover",
+            "duration": 72,
+            "startTime": 9955.200000001118,
+            "processingStart": 9956,
+            "processingEnd": 9956.099999999627,
+            "interactionId": 0
+          },
+          {
+            "name": "pointerdown",
+            "duration": 72,
+            "startTime": 9955.300000000745,
+            "processingStart": 9956.400000000373,
+            "processingEnd": 9980.5,
+            "interactionId": 9651
+          },
+          {
+            "name": "pointerup",
+            "duration": 72,
+            "startTime": 9955.300000000745,
+            "processingStart": 9981.700000001118,
+            "processingEnd": 9982,
+            "interactionId": 9651
+          },
+          {
+            "name": "click",
+            "duration": 72,
+            "startTime": 9955.300000000745,
+            "processingStart": 9982,
+            "processingEnd": 9982.200000001118,
+            "interactionId": 9651
+          },
+          {
+            "name": "keydown",
+            "duration": 56,
+            "startTime": 9994.5,
+            "processingStart": 9994.800000000745,
+            "processingEnd": 9999.200000001118,
+            "interactionId": 9658
+          },
+          {
+            "name": "keyup",
+            "duration": 64,
+            "startTime": 9999.700000001118,
+            "processingStart": 10003.300000000745,
+            "processingEnd": 10003.5,
+            "interactionId": 9658
+          },
+          {
+            "name": "keydown",
+            "duration": 56,
+            "startTime": 10004.5,
+            "processingStart": 10004.700000001118,
+            "processingEnd": 10005.300000000745,
+            "interactionId": 9665
+          },
+          {
+            "name": "keyup",
+            "duration": 56,
+            "startTime": 10005.800000000745,
+            "processingStart": 10006,
+            "processingEnd": 10006,
+            "interactionId": 9665
+          }
+        ],
+        "longTasks": [
+          {
+            "startTime": 575.7000000011176,
+            "duration": 86
+          },
+          {
+            "startTime": 2058.4000000003725,
+            "duration": 108
+          },
+          {
+            "startTime": 2167.300000000745,
+            "duration": 228
+          },
+          {
+            "startTime": 2396.0999999996275,
+            "duration": 68
+          },
+          {
+            "startTime": 10354.800000000745,
+            "duration": 99
+          }
+        ],
+        "errors": []
+      },
+      "inpProxy": {
+        "observedInteractionCount": 3,
+        "maxRecordedEventDurationMs": 72,
+        "note": "Event Timing >=16ms observer threshold; a short synthetic lab interaction sample is not field INP. 0 means no qualifying recorded event, not proven zero latency."
+      }
+    }
+  ],
+  "errors": []
+}

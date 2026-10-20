@@ -1,0 +1,21 @@
+﻿{
+    "TimeUtc":  "2026-10-20T11:17:28.3820706Z",
+    "Url":  "http://127.0.0.1:3100/",
+    "Status":  307,
+    "Headers":  {
+                    "x-content-type-options":  "nosniff",
+                    "referrer-policy":  "strict-origin-when-cross-origin",
+                    "x-frame-options":  "DENY",
+                    "permissions-policy":  "camera=(), microphone=(), geolocation=()",
+                    "link":  "\u003chttp://127.0.0.1:3100/\u003e; rel=\"alternate\"; hreflang=\"en\", \u003chttp://127.0.0.1:3100/fa\u003e; rel=\"alternate\"; hreflang=\"fa\", \u003chttp://127.0.0.1:3100/de\u003e; rel=\"alternate\"; hreflang=\"de\", \u003chttp://127.0.0.1:3100/\u003e; rel=\"alternate\"; hreflang=\"x-default\"",
+                    "x-middleware-rewrite":  "http://localhost:3100/en",
+                    "connection":  "close",
+                    "transfer-encoding":  "chunked",
+                    "Date":  "Tue, 20 Oct 2026 11:17:28 GMT",
+                    "Location":  "/",
+                    "Set-Cookie":  "NEXT_LOCALE=en; Path=/; SameSite=lax"
+                },
+    "Body":  [
+                 47
+             ]
+}
