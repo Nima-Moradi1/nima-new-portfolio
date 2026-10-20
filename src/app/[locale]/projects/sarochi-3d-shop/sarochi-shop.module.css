@@ -1,0 +1,71 @@
+.showcase {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 3.5rem clamp(1.25rem, 4vw, 3rem) 4.5rem;
+}
+
+.heading {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--nm-ice, #8be9f4);
+}
+
+.heading h2 {
+  margin-block: 0.8rem 1rem;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.heading > p:last-child {
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 1px solid var(--nm-line, #354153);
+}
+
+.gallery figcaption {
+  margin-block-start: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+:global(html[lang="fa"]) .heading h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.5;
+}
+
+:global(html[dir="rtl"]) .eyebrow {
+  letter-spacing: normal;
+}
+
+@media (max-width: 760px) {
+  .gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
