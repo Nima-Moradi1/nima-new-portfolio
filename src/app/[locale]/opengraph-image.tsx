@@ -55,16 +55,15 @@ export default async function OpenGraphImage({
     messages.Portfolio as PortfolioContent,
   );
   const isRtl = getLocaleDirection(locale) === "rtl";
-  const artPosition = isRtl ? { left: 90 } : { right: 90 };
-  const corePosition = isRtl ? { left: 165 } : { right: 165 };
+  const artPosition = isRtl ? { left: 60 } : { right: 60 };
 
   return new ImageResponse(
     <div
       dir={isRtl ? "rtl" : "ltr"}
       style={{
         alignItems: "stretch",
-        background: "#090b0a",
-        color: "#f3f6ef",
+        background: "#05070b",
+        color: "#f4f7fc",
         display: "flex",
         flexDirection: "column",
         fontFamily: "Vazirmatn",
@@ -78,32 +77,27 @@ export default async function OpenGraphImage({
       <div
         style={{
           ...artPosition,
-          border: "1px solid rgba(184,255,69,.35)",
-          borderRadius: 999,
           display: "flex",
-          height: 310,
+          height: 420,
           position: "absolute",
-          top: 150,
-          transform: `rotate(${isRtl ? 18 : -18}deg)`,
-          width: 310,
+          top: 120,
+          transform: "rotate(8deg)",
+          width: 350,
         }}
-      />
+      >
+        <svg width="350" height="420" viewBox="0 0 350 420" fill="none">
+          <path d="m76 15 194 15 43 45-14 301-199 25-54-42Z" fill="#10141e" stroke="#354153" strokeWidth="2" />
+          <path d="m76 15 24 386-54-42V70Z" fill="#1a2330" />
+          <path d="m270 30 43 45-14 301-27-28Z" fill="#1a2330" />
+          <path d="m84 53 173 11 13 280-158 20Z" fill="#151b26" />
+          <path d="m95 83 164 10" stroke="#8be9f4" strokeWidth="3" />
+          <path d="M105 263V156h25l42 65v-65h25v107h-25l-42-65v65h-25Zm101 0V156h22l24 42 24-42h22v107h-25v-59l-21 34-21-34v59h-25Z" fill="#f4f7fc" opacity="0.85" transform="translate(-12 0) scale(.96 1)" />
+          <path d="m113 310 142-12" stroke="#354153" strokeWidth="2" />
+        </svg>
+      </div>
       <div
         style={{
-          ...corePosition,
-          background: "#b8ff45",
-          borderRadius: 999,
-          boxShadow: "0 0 90px rgba(184,255,69,.45)",
-          display: "flex",
-          height: 160,
-          position: "absolute",
-          top: 225,
-          width: 160,
-        }}
-      />
-      <div
-        style={{
-          color: "#b8ff45",
+          color: "#8be9f4",
           display: "flex",
           fontSize: 25,
           justifyContent: isRtl ? "flex-end" : "flex-start",
@@ -118,13 +112,13 @@ export default async function OpenGraphImage({
           display: "flex",
           flexDirection: "column",
           textAlign: isRtl ? "right" : "left",
-          width: 760,
+          width: 720,
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: 82,
+            fontSize: isRtl ? 64 : 82,
             fontWeight: 400,
             lineHeight: 1.08,
           }}
@@ -133,7 +127,7 @@ export default async function OpenGraphImage({
         </div>
         <div
           style={{
-            color: "#9da59a",
+            color: "#99a5b8",
             display: "flex",
             fontSize: 24,
             marginTop: 28,
