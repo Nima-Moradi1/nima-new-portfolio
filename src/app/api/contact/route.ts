@@ -6,6 +6,8 @@ import { createContactSchema } from "@/lib/contact-schema";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_ATTEMPTS = 5;
+const MAX_BODY_BYTES = 12_000;
+const MAX_RATE_ENTRIES = 2_000;
 
 type RateEntry = { count: number; resetAt: number };
 const rateLimitStore = new Map<string, RateEntry>();
@@ -24,17 +26,22 @@ function response(
 
 function getClientKey(request: Request): string {
   return (
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim().slice(0, 128) ||
+    request.headers.get("x-real-ip")?.slice(0, 128) ||
     "unknown"
   );
 }
 
 function exceedsRateLimit(key: string): boolean {
   const now = Date.now();
+  for (const [storedKey, entry] of rateLimitStore) {
+    if (entry.resetAt <= now) rateLimitStore.delete(storedKey);
+  }
   const current = rateLimitStore.get(key);
 
   if (!current || current.resetAt <= now) {
+    // Keep the best-effort, process-local store bounded without resetting active limits.
+    if (rateLimitStore.size >= MAX_RATE_ENTRIES) return true;
     rateLimitStore.set(key, { count: 1, resetAt: now + WINDOW_MS });
     return false;
   }
@@ -42,6 +49,29 @@ function exceedsRateLimit(key: string): boolean {
   if (current.count >= MAX_ATTEMPTS) return true;
   current.count += 1;
   return false;
+}
+
+async function readBoundedBody(request: Request): Promise<string | null> {
+  if (!request.body) return "";
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder();
+  let bytes = 0;
+  let body = "";
+  try {
+    while (true) {
+      const chunk = await reader.read();
+      if (chunk.done) break;
+      bytes += chunk.value.byteLength;
+      if (bytes > MAX_BODY_BYTES) {
+        await reader.cancel();
+        return null;
+      }
+      body += decoder.decode(chunk.value, { stream: true });
+    }
+    return body + decoder.decode();
+  } finally {
+    reader.releaseLock();
+  }
 }
 
 function fallbackMailto(subject: string, message = ""): string {
@@ -68,7 +98,7 @@ export async function POST(request: Request) {
   });
 
   const contentLength = Number(request.headers.get("content-length") ?? 0);
-  if (contentLength > 12_000) {
+  if (contentLength > MAX_BODY_BYTES) {
     return response("too_large", t("tooLarge"), 413);
   }
 
@@ -80,7 +110,9 @@ export async function POST(request: Request) {
 
   let body: unknown;
   try {
-    body = await request.json();
+    const rawBody = await readBoundedBody(request);
+    if (rawBody === null) return response("too_large", t("tooLarge"), 413);
+    body = JSON.parse(rawBody);
   } catch {
     return response("invalid_body", t("invalidBody"), 400);
   }
@@ -92,8 +124,7 @@ export async function POST(request: Request) {
     });
   }
 
-  const { name, email, message, company } = parsed.data;
-  if (company) return response("received", t("received"), 200);
+  const { name, email, message } = parsed.data;
 
   const apiKey = process.env.RESEND_API_KEY;
   const destination = process.env.CONTACT_DESTINATION_EMAIL;
