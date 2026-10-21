@@ -95,3 +95,11 @@ Use `templates/TASK_UPDATE.md`. One task done ≠ every related integration done
 ## Owner theme request - 2026-10-21
 
 - [x] **U05 - Animated light/dark studio:** Add a polished light edition, compact 3D theme instrument, timed transitions/translations, corresponding NM logos/loaders and EN/FA/DE labels. Bounded acceptance PASS: shared palette reaches scene/portals/fallback/loading; preference and hydration persist; native reveal and fallback/reduced motion exercised; mobile controls fit. Full lint/typecheck, 57 tests and final production build PASS. Seven recorded production profiles plus API-disabled fallback; live native motion telemetry and screenshot hashes retained in `docs/evidence/U05-2026-10-21/`. Scoped theme/scene/evidence commits published to GitHub `master` through `0e2976c`, remote SHA verified; final publication record follows. Existing first-item detail-anchor boundary and wider release/device/reference gates remain outside this task; no deployment.
+
+## Owner U06 performance request - 2026-10-21
+
+- [ ] **U06 - Measured performance optimization:** In progress. Local production Lighthouse/browser loop; prioritize CLS/LCP, FCP, TTFB, TBT, synthetic INP and diagnostic TTI. See latest HANDOFF checkpoint. Owner separately requested publication of the current checkpoint; three implementation commits preserve it with fresh typecheck, scoped lint and six focused tests passing. Final performance/browser/milestone acceptance remains pending; field p75 is not established.
+
+## Owner Git publication request - 2026-10-21
+
+- [x] **U07 - Commit current checkpoint with meaningful messages:** Grouped asset delivery, home/scene startup, contact effects and handoff/task-board documentation. Source snapshot preserved; GitHub target is `origin/master`. Normal push and exact SHA/clean-worktree verification are the closure step. No deployment or changes to `main`.
