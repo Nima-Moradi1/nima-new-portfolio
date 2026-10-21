@@ -25,6 +25,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 const themeInitScript = `(() => {
@@ -41,6 +42,10 @@ const ogLocales = {
   fa: "fa_IR",
   de: "de_DE",
 } as const;
+
+// These case studies render their translations on the server. Shipping their
+// full prose in the global client provider duplicates it on every home visit.
+const serverOnlyNamespaces = new Set(["SarochiShop", "EmeraldCase", "MoradiGallery", "TarabariNima"]);
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -133,6 +138,9 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages({ locale });
+  const clientMessages = Object.fromEntries(
+    Object.entries(messages).filter(([namespace]) => !serverOnlyNamespaces.has(namespace)),
+  );
   const portfolio = materializePortfolio(
     messages.Portfolio as PortfolioContent,
   );
@@ -158,9 +166,13 @@ export default async function LocaleLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {locale === "fa" && <><link rel="preload" href="/fonts/iran-yekan/IRANYekanX-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/iran-yekan/IRANYekanX-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></>}
       </head>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        {/* Streaming segments need a CSS-only reveal when their hydration script
+            cannot run. This applies only to the semantic kinetic home. */}
+        <noscript><style>{'@layer base{body > div[hidden]:has([data-nm-portfolio]){display:block!important}body:has([data-nm-portfolio]) .route-loading,[data-nm-boot-loader]{display:none!important}}'}</style></noscript>
+        <NextIntlClientProvider locale={locale} messages={clientMessages}>
           <ThemeProvider>
             <ContactDialogProvider>{children}</ContactDialogProvider>
           </ThemeProvider>
