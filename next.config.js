@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const bundleAnalyzer = require("@next/bundle-analyzer");
 const createNextIntlPlugin = require("next-intl/plugin");
-const deploymentSha = process.env.GITHUB_SHA || process.env.DEPLOYMENT_SHA;
+const deploymentSha = process.env.GITHUB_SHA || process.env.DEPLOYMENT_SHA || process.env.VERCEL_GIT_COMMIT_SHA;
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -47,6 +47,22 @@ const nextConfig = {
           value: "camera=(), microphone=(), geolocation=()",
         },
       ],
+    },
+    // Public media retain readable, unversioned URLs. Revalidate them instead
+    // of using immutable; hashed /_next/static assets keep Next's own policy.
+    ...["/assets/:path*", "/fonts/:path*", "/brand/:path*"].map((source) => ({
+      source,
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600",
+        },
+      ],
+    })),
+    {
+      // Dedicated content-hashed derivatives; any changed bytes get a new URL.
+      source: "/assets/kinetic/:path*",
+      headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
     },
   ],
 };
