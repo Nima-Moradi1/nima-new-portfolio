@@ -1,0 +1,106 @@
+{
+  "rawDirectory": "C:\\Users\\N_MORA~1\\AppData\\Local\\Temp\\nm-outline-final",
+  "concept": "C:/Users/n_moradirad/.codex/generated_images/01a15e39-11d8-7f40-8c5a-10cb5741ee56/exec-19bbc5e4-5fab-48f7-9182-5c33fec3dc47.png",
+  "artifacts": [
+    {
+      "name": "concept-native-ai.png",
+      "bytes": 265057,
+      "sha256": "e710eb1bdf7a040ef615cf961a37fa1bf89bf097be61d7441c5e24e2d849c825"
+    },
+    {
+      "name": "concept-native.png",
+      "bytes": 243784,
+      "sha256": "85257bd578024b2bd68741242f5060f4d1609d545b460507ad649a30ae1ae50d"
+    },
+    {
+      "name": "de-mobile-ai.png",
+      "bytes": 114206,
+      "sha256": "2300e8ab73df1af46baf68fc8fa40b5ebd32ac47fad6fecaf056f2b3877c6cc9"
+    },
+    {
+      "name": "de-mobile.png",
+      "bytes": 93237,
+      "sha256": "e8af4f6975c4b86760a511913f024f2c60de165bd81e055595ddb67c0910ead6"
+    },
+    {
+      "name": "desktop-hero.png",
+      "bytes": 122093,
+      "sha256": "43b0ab9fe21611439915388d33882b042af3b7552ec021d0edfc5194816cd9cb"
+    },
+    {
+      "name": "desktop-light.png",
+      "bytes": 234871,
+      "sha256": "366b17b62f6ffb12d41ae16486e3beff5f00cd92136382a21dc3e9d243c26309"
+    },
+    {
+      "name": "desktop-stage-0.png",
+      "bytes": 228468,
+      "sha256": "589600feb092740fa5db2fa959f22a7ab03ba4805b97cfba4e32a3bb953fac5b"
+    },
+    {
+      "name": "desktop-stage-1.png",
+      "bytes": 240381,
+      "sha256": "985749ff78cdb388f7896ba4ce6ba698d8f83694eb7ca08e01d68682d29cdc77"
+    },
+    {
+      "name": "desktop-stage-2.png",
+      "bytes": 248848,
+      "sha256": "cd377146e43f9b4736971c4dba3974ec56650fcddb089af87d5fc9578116d460"
+    },
+    {
+      "name": "desktop-stage-3.png",
+      "bytes": 244054,
+      "sha256": "d0b76debd03583f7a15d7d2afc2009a8c05a4736b580e9c1ad678abcb207c226"
+    },
+    {
+      "name": "fa-mobile-ai.png",
+      "bytes": 97291,
+      "sha256": "46e68191f6314567cb3b5d6931fcd43c951ed26b8cba4912da6bbd789883ec46"
+    },
+    {
+      "name": "fa-mobile-light.png",
+      "bytes": 103187,
+      "sha256": "941409fac6d1334a67af1ad49082fca2b9cdf3dde4462a7e300ebc5744b29605"
+    },
+    {
+      "name": "fa-mobile.png",
+      "bytes": 82032,
+      "sha256": "9c85634b606728138683eb96be9fce89fd3abb6e86df4a959469b5408ad883dd"
+    },
+    {
+      "name": "landscape-ai.png",
+      "bytes": 107551,
+      "sha256": "d7a5be44704d277f272e1bd2ebc0c51434587ac648b1f1b067ef31cf70c05b38"
+    },
+    {
+      "name": "landscape.png",
+      "bytes": 95710,
+      "sha256": "db37be1cf2a6ab6913f0212ed43590d73cfdd98b01f8114120a5ab958276041f"
+    },
+    {
+      "name": "mid-rotation.png",
+      "bytes": 126680,
+      "sha256": "646b1f700cb8affe9c46504df758c2025c49a40aee5afde81a53b2f8b79ee80a"
+    },
+    {
+      "name": "native-rotation.webm",
+      "bytes": 1865888,
+      "sha256": "89e334a3a4fc28da665d136ee8877528a28d33a3b3864cee8fa1d3a554331db3"
+    },
+    {
+      "name": "small-mobile-ai.png",
+      "bytes": 88011,
+      "sha256": "8eeb40693e373ebf4db2f7b5da320b6d34f307aa52475972aa4e57dbdb20b60a"
+    },
+    {
+      "name": "small-mobile.png",
+      "bytes": 75849,
+      "sha256": "0d12d80632a1a7e04713cc648bd3850cf40fec2aca69f25314513450726882ae"
+    },
+    {
+      "name": "validation.json",
+      "bytes": 6833,
+      "sha256": "1e056262f0dcb899834285f77e2a26aaf797f86e2be9b9d51072d3ded3cab259"
+    }
+  ]
+}

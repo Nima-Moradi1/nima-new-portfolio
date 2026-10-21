@@ -130,3 +130,7 @@ Use official GSAP/Lenis API guides and install versions compatible with Next 16.
 ```
 
 The values above are illustrative **only**. Never put fake results in actual QA evidence.
+
+## Owner U08 - outline symbol handoff (2026-10-21)
+
+The proof chapter now turns four open engineering symbols through the existing reversible quarter-turn schedule. Keep its HTML copy timing and native scrolling. Separate side/rear station heights, enlarge the foreground symbol, and expose rounded stroke volume through bounded yaw/pitch instead of billboarding. Real area-light intensity settles with the existing illumination envelope; no visible beam cone. The same demand-render owner sleeps after interaction; no perpetual idle spin or additional ticker. Mobile retains these meshes above semantic copy; reduced motion retains the reading edition. Bounded forward/reverse and responsive evidence: `evidence/U08-2026-10-21/SUMMARY.md`.

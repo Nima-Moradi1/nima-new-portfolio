@@ -103,3 +103,7 @@ Use `templates/TASK_UPDATE.md`. One task done ≠ every related integration done
 ## Owner Git publication request - 2026-10-21
 
 - [x] **U07 - Commit current checkpoint with meaningful messages:** Grouped asset delivery, home/scene startup, contact effects and handoff/task-board documentation. Source snapshot preserved; GitHub target is `origin/master`. Normal push and exact SHA/clean-worktree verification are the closure step. No deployment or changes to `main`.
+
+## Owner outline redesign request - 2026-10-21
+
+- [x] **U08 - Minimal conceptual 3D outline icons:** Replaced the proof sun/discs with original open interface/systems/AI/delivery metal symbols, raised orderly stations, reversible quarter-turns and physical softbox/rim/environment lighting. Existing text, locales, theme and scroll contracts preserved. Full lint/typecheck, 63 tests, one production build and six production viewport/locale profiles PASS; native forward/reverse, both theme endpoints, modal/mode and reduced motion pass with errors=[]. Concept/render comparison, repairs, limits, hashes and raw artifact locations: `docs/evidence/U08-2026-10-21/SUMMARY.md`. Owner authorized scoped commits and normal `master` push; exact remote SHA verification follows. U06 and wider release gates remain open; no deployment.

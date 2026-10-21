@@ -99,3 +99,7 @@ The owner requested a light edition and animated 3D theme switching. This is an 
 - The small-screen header gives the mode control its own full grid row, preserving an unwrapped contact label and unobstructed theme/language targets in both directions. EN/FA/DE action labels have matching keys.
 
 Bounded evidence and remaining release limits: `docs/evidence/U05-2026-10-21/SUMMARY.md`.
+
+## Owner U08 - minimal outline symbols (2026-10-21)
+
+This owner correction supersedes the earlier U03 solar/planet appearance in the proof chapter. Use four original free-standing outline metal symbols: interface window, hollow systems stack, AI chip/diamond and delivery rocket. The strokes themselves have rounded physical volume; no disc, backing plate, sun, visible orbital rail or emissive icon face. Keep open centers, consistent stroke weights, readable negative space and restrained silver/ink finishes for dark/light themes. One broad white studio key, cool rim and existing environment provide physical reflections. Existing localized typography and page composition remain authoritative. See `evidence/U08-2026-10-21/SUMMARY.md` for adopted concept, comparison repairs and bounded production evidence.
