@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
@@ -14,19 +13,6 @@ import { getLocaleDirection, routing } from "@/i18n/routing";
 import { getLanguagePaths, getLocalizedPath } from "@/i18n/paths";
 import { siteUrl } from "@/lib/site";
 import type { PortfolioContent } from "@/types/portfolio";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
 
 const themeInitScript = `(() => {
   try {
@@ -164,10 +150,10 @@ export default async function LocaleLayout({
       data-locale={locale}
       data-theme="dark"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link rel="preload" href="/fonts/geist/geist-latin.9b6f5ff45b27.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {locale === "fa" && <><link rel="preload" href="/fonts/iran-yekan/IRANYekanX-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/iran-yekan/IRANYekanX-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></>}
       </head>
       <body>

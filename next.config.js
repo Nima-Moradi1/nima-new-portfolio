@@ -30,6 +30,9 @@ const nextConfig = {
     root: process.cwd(),
   },
   experimental: {
+    // Ship the existing route CSS with its static HTML, avoiding a separate
+    // render-blocking stylesheet round trip on a cold mobile connection.
+    inlineCss: true,
     optimizePackageImports: ["lucide-react", "@react-three/drei", "motion"],
   },
   headers: async () => [
@@ -63,6 +66,17 @@ const nextConfig = {
       // Dedicated content-hashed derivatives; any changed bytes get a new URL.
       source: "/assets/kinetic/:path*",
       headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+    },
+    ...["/fonts/geist/geist-latin.9b6f5ff45b27.woff2", "/fonts/geist/geist-mono-latin.5f3d6ad60f29.woff2"].map(source => ({
+      source,
+      headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+    })),
+    {
+      source: "/brand/nm-studio-pmrem-2e044b9d72b8.bin",
+      headers: [
+        { key: "Content-Encoding", value: "gzip" },
+        { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+      ],
     },
   ],
 };

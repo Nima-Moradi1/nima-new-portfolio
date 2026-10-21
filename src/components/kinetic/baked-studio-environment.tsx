@@ -2,13 +2,17 @@
 
 import { useLayoutEffect } from "react";
 import { useLoader, useThree } from "@react-three/fiber";
-import { CubeUVReflectionMapping, HalfFloatType, LinearFilter, LinearSRGBColorSpace, type DataTexture } from "three";
-import { EXRLoader } from "three/examples/jsm/loaders/EXRLoader.js";
+import { CubeUVReflectionMapping, DataTextureLoader, HalfFloatType, LinearFilter, LinearSRGBColorSpace, RGBAFormat, type DataTexture } from "three";
 
-export const NM_STUDIO_ENVIRONMENT = "/brand/nm-studio-pmrem-ca2c15880201.exr";
+export const NM_STUDIO_ENVIRONMENT = "/brand/nm-studio-pmrem-2e044b9d72b8.bin";
 
-function configureLoader(loader: EXRLoader) {
-  loader.setDataType(HalfFloatType);
+class StudioTextureLoader extends DataTextureLoader {
+  parse(buffer: ArrayBuffer) {
+    // The server delivers gzip Content-Encoding; the browser decompresses it
+    // natively. No EXR/ZIP decoder executes on the page's main thread.
+    if (buffer.byteLength !== 384 * 512 * 4 * 2) throw new Error("Invalid NM studio texture");
+    return { width: 384, height: 512, data: new Uint16Array(buffer), format: RGBAFormat, type: HalfFloatType };
+  }
 }
 
 function prepareCubeUV(texture: DataTexture) {
@@ -22,12 +26,12 @@ function prepareCubeUV(texture: DataTexture) {
 
 /** Original four-light studio, captured at 128 and filtered once offline with
  * the installed Three r182 PMREM generator. The 384x512 HalfFloat ZIP EXR is a
- * lossless atlas, not an equirectangular source: CubeUV mapping makes Three use
- * its existing roughness levels directly without runtime capture/convolution.
- * SHA256 ca2c158802016429b8758bde941b5a381c051f269f5663650acc5d23c57f70b9.
+ * lossless atlas, not an equirectangular source. The precompressed binary has
+ * exactly the original EXR's decoded half-float pixels and roughness levels.
+ * Native HTTP decompression avoids both runtime PMREM and JS ZIP decoding.
  */
 export function BakedStudioEnvironment() {
-  const texture = useLoader(EXRLoader, NM_STUDIO_ENVIRONMENT, configureLoader);
+  const texture = useLoader(StudioTextureLoader, NM_STUDIO_ENVIRONMENT);
   const invalidate = useThree(state => state.invalidate);
 
   useLayoutEffect(() => {

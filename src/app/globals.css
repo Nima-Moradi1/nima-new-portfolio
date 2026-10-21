@@ -1,6 +1,42 @@
 @import "tailwindcss";
 @import "./kinetic-theme.css";
 
+/* Identical licensed Latin subsets, with an explicit server font preload. */
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/geist-latin.9b6f5ff45b27.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial");
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0%;
+  size-adjust: 104.76%;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist/geist-mono-latin.5f3d6ad60f29.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: "Geist Mono Fallback";
+  src: local("Arial");
+  ascent-override: 74.67%;
+  descent-override: 21.92%;
+  line-gap-override: 0%;
+  size-adjust: 134.59%;
+}
+:root {
+  --font-geist-sans: "Geist", "Geist Fallback";
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback";
+}
+
 @font-face {
   font-family: "IRANYekanX";
   src: url("/fonts/iran-yekan/IRANYekanX-Regular.woff2") format("woff2");
