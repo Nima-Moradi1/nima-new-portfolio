@@ -1,8 +1,9 @@
 ﻿"use client";
 
-import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { Component, Suspense, useEffect, useLayoutEffect, useMemo, useRef, type ReactNode } from "react";
+import { useThree } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
-import { CanvasTexture, Color, ExtrudeGeometry, InstancedMesh, Object3D, Shape, SRGBColorSpace, type ColorRepresentation, type MeshPhysicalMaterial } from "three";
+import { CanvasTexture, ExtrudeGeometry, InstancedMesh, Object3D, Shape, SRGBColorSpace, type ColorRepresentation, type MeshPhysicalMaterial } from "three";
 
 export const STUDIO = {
   void: "#05070b",
@@ -59,6 +60,27 @@ function glassReflections(shader: Parameters<MeshPhysicalMaterial["onBeforeCompi
   `);
 }
 
+/** A narrow travelling reflection belongs to the metal track itself. It shares
+ * the scene's existing clock and sleeps whenever that scene stops rendering. */
+function railReflections(shader: Parameters<MeshPhysicalMaterial["onBeforeCompile"]>[0]) {
+  shader.uniforms.uNMGlassTime = glassTime;
+  shader.vertexShader = shader.vertexShader.replace("#include <common>", `#include <common>
+    varying vec2 vNMRailPosition;
+  `).replace("#include <begin_vertex>", `#include <begin_vertex>
+    vNMRailPosition = position.xy;
+  `);
+  shader.fragmentShader = shader.fragmentShader.replace("#include <common>", `#include <common>
+    uniform float uNMGlassTime;
+    varying vec2 vNMRailPosition;
+  `).replace("#include <opaque_fragment>", `
+    float nmRailAngle = atan(vNMRailPosition.y, vNMRailPosition.x);
+    float nmRailSweep = max(0.0, cos(nmRailAngle - uNMGlassTime * 0.24));
+    float nmRailGlint = pow(nmRailSweep, 48.0);
+    outgoingLight += vec3(0.38, 0.61, 0.68) * nmRailGlint * 0.7;
+    #include <opaque_fragment>
+  `);
+}
+
 function polygon(points: readonly (readonly [number, number])[]) {
   const shape = new Shape();
   points.forEach(([x, y], index) => {
@@ -89,11 +111,15 @@ export function useNMGeometry() {
     const shell = extrude(polygon([
       [-0.61, -1.31], [0.40, -1.31], [0.66, -1.06],
       [0.66, 1.19], [0.52, 1.34], [-0.61, 1.34],
-    ]), 0.25);
+    ]), 0.34, 0.045);
     const face = extrude(polygon([
       [-0.52, -1.20], [0.35, -1.20], [0.55, -1.00],
       [0.55, 1.15], [0.46, 1.23], [-0.52, 1.23],
     ]), 0.024, 0.012);
+    // Broader capture windows preserve the original faceted silhouette while
+    // avoiding the narrow phone-shaped plates of the first rig.
+    shell.scale(1.22, 1, 1);
+    face.scale(1.22, 1, 1);
     const n = extrude(polygon([
       [-0.92, -0.58], [-0.92, 0.58], [-0.66, 0.58], [-0.17, -0.13],
       [-0.17, 0.58], [0.08, 0.58], [0.08, -0.58], [-0.17, -0.58],
@@ -144,38 +170,62 @@ export function useNMGeometry() {
 
 export type NMGeometry = ReturnType<typeof useNMGeometry>;
 
-function IndexEtching({ index }: { index: number }) {
-  const mesh = useRef<InstancedMesh>(null);
+function CartridgeHardware() {
+  const brackets = useRef<InstancedMesh>(null);
+  const collars = useRef<InstancedMesh>(null);
+  const fasteners = useRef<InstancedMesh>(null);
   useLayoutEffect(() => {
-    if (!mesh.current) return;
-    const marker = new Object3D();
-    const color = new Color();
-    for (let tick = 0; tick < 7; tick++) {
-      marker.position.set(-0.4 + tick * 0.105, -0.82, 0.198);
-      marker.scale.set(tick <= index ? 0.048 : 0.018, 0.11, 0.008);
-      marker.updateMatrix();
-      mesh.current.setMatrixAt(tick, marker.matrix);
-      mesh.current.setColorAt(tick, color.set(tick <= index ? STUDIO.edge : STUDIO.line));
+    if (!brackets.current || !collars.current || !fasteners.current) return;
+    const part = new Object3D();
+    for (let side = 0; side < 2; side++) {
+      const direction = side === 0 ? -1 : 1;
+      part.position.set(0, direction * 1.465, -0.015);
+      part.scale.set(0.24, 0.29, 0.21);
+      part.rotation.set(0, 0, 0);
+      part.updateMatrix();
+      brackets.current.setMatrixAt(side, part.matrix);
+      part.position.set(0, direction * 1.6, -0.015);
+      part.scale.set(1, 1, 1);
+      part.rotation.set(0, 0, Math.PI / 2);
+      part.updateMatrix();
+      collars.current.setMatrixAt(side, part.matrix);
+      for (let edge = 0; edge < 2; edge++) {
+        part.position.set(edge === 0 ? -0.64 : 0.64, direction * 1.19, 0.254);
+        part.rotation.set(Math.PI / 2, 0, 0);
+        part.updateMatrix();
+        fasteners.current.setMatrixAt(side * 2 + edge, part.matrix);
+      }
     }
-    mesh.current.instanceMatrix.needsUpdate = true;
-    if (mesh.current.instanceColor) mesh.current.instanceColor.needsUpdate = true;
-  }, [index]);
+    brackets.current.instanceMatrix.needsUpdate = true;
+    collars.current.instanceMatrix.needsUpdate = true;
+    fasteners.current.instanceMatrix.needsUpdate = true;
+  }, []);
   return (
-    <instancedMesh ref={mesh} args={[undefined, undefined, 7]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial metalness={0.65} roughness={0.38} />
-    </instancedMesh>
+    <>
+      <instancedMesh ref={brackets} args={[undefined, undefined, 2]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={STUDIO.titanium} metalness={0.92} roughness={0.24} />
+      </instancedMesh>
+      <instancedMesh ref={collars} args={[undefined, undefined, 2]}>
+        <cylinderGeometry args={[0.105, 0.105, 0.43, 10]} />
+        <meshStandardMaterial color={STUDIO.smoke} metalness={0.86} roughness={0.27} />
+      </instancedMesh>
+      <instancedMesh ref={fasteners} args={[undefined, undefined, 4]}>
+        <cylinderGeometry args={[0.026, 0.026, 0.018, 8]} />
+        <meshStandardMaterial color={STUDIO.edge} metalness={0.95} roughness={0.19} />
+      </instancedMesh>
+    </>
   );
 }
 
-function RailClips() {
+function RailBridges() {
   const mesh = useRef<InstancedMesh>(null);
   useLayoutEffect(() => {
     if (!mesh.current) return;
     const clip = new Object3D();
-    for (let index = 0; index < 12; index++) {
-      const angle = (index / 12) * Math.PI * 2;
-      clip.position.set(Math.sin(angle) * 3.45, 0, Math.cos(angle) * 3.45);
+    for (let index = 0; index < 28; index++) {
+      const angle = (index / 28) * Math.PI * 2;
+      clip.position.set(Math.sin(angle) * 3.375, 0, Math.cos(angle) * 3.375);
       clip.rotation.set(0, angle, 0);
       clip.updateMatrix();
       mesh.current.setMatrixAt(index, clip.matrix);
@@ -183,21 +233,28 @@ function RailClips() {
     mesh.current.instanceMatrix.needsUpdate = true;
   }, []);
   return (
-    <instancedMesh ref={mesh} args={[undefined, undefined, 12]}>
-      <boxGeometry args={[0.12, 0.16, 0.15]} />
-      <meshStandardMaterial color={STUDIO.smoke} metalness={0.85} roughness={0.35} />
+    <instancedMesh ref={mesh} args={[undefined, undefined, 28]}>
+      <boxGeometry args={[0.044, 0.055, 0.17]} />
+      <meshStandardMaterial color={STUDIO.titanium} metalness={0.9} roughness={0.3} />
     </instancedMesh>
   );
 }
 
 export function NMMonogram({ geometry, accent = STUDIO.ice }: { geometry: NMGeometry; accent?: ColorRepresentation }) {
+  const compact = useThree(state => state.size.width < 1024);
   return (
     <group position={[-0.13, 0, 0]}>
       <mesh geometry={geometry.n}>
-        <meshPhysicalMaterial name="nm-glass" color="#d9f4fa" metalness={0.08} roughness={0.065} transmission={0.88} thickness={0.68} ior={1.46} clearcoat={1} clearcoatRoughness={0.045} envMapIntensity={2.1} attenuationColor="#a6e4ee" attenuationDistance={2.8} transparent depthWrite={false} onBeforeCompile={glassReflections} />
+        {/* The authored surface bands and Fresnel alpha retain the dimensional
+            glass silhouette on compact GPUs without Three's transmission pass. */}
+        {compact
+          ? <meshStandardMaterial name="nm-glass" color="#d9f4fa" metalness={0.12} roughness={0.085} envMapIntensity={2.1} transparent depthWrite={false} onBeforeCompile={glassReflections} />
+          : <meshPhysicalMaterial name="nm-glass" color="#d9f4fa" metalness={0.08} roughness={0.065} transmission={0.88} thickness={0.68} ior={1.46} clearcoat={1} clearcoatRoughness={0.045} envMapIntensity={2.1} attenuationColor="#a6e4ee" attenuationDistance={2.8} transparent depthWrite={false} onBeforeCompile={glassReflections} />}
       </mesh>
       <mesh geometry={geometry.m}>
-        <meshPhysicalMaterial name="nm-glass" color="#c7e9f2" metalness={0.06} roughness={0.085} transmission={0.9} thickness={0.74} ior={1.48} clearcoat={1} clearcoatRoughness={0.055} envMapIntensity={2.4} attenuationColor="#b5d9ed" attenuationDistance={2.5} transparent depthWrite={false} onBeforeCompile={glassReflections} />
+        {compact
+          ? <meshStandardMaterial name="nm-glass" color="#c7e9f2" metalness={0.10} roughness={0.10} envMapIntensity={2.4} transparent depthWrite={false} onBeforeCompile={glassReflections} />
+          : <meshPhysicalMaterial name="nm-glass" color="#c7e9f2" metalness={0.06} roughness={0.085} transmission={0.9} thickness={0.74} ior={1.48} clearcoat={1} clearcoatRoughness={0.055} envMapIntensity={2.4} attenuationColor="#b5d9ed" attenuationDistance={2.5} transparent depthWrite={false} onBeforeCompile={glassReflections} />}
       </mesh>
       <mesh position={[0.135, 0, -0.02]}>
         <boxGeometry args={[0.018, 1.16, 0.13]} />
@@ -207,8 +264,17 @@ export function NMMonogram({ geometry, accent = STUDIO.ice }: { geometry: NMGeom
   );
 }
 
+/** A failed optional preview settles the readiness gate and retains its physical
+ * smoked backing. It cannot tear down the rest of the portfolio's renderer. */
+class ProjectAssetBoundary extends Component<{ children: ReactNode; onSettled?: () => void }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  componentDidCatch() { this.props.onSettled?.(); }
+  render() { return this.state.failed ? null : this.props.children; }
+}
+
 /** A real owner-project capture, animated through its UV window by the scene. */
-function ProjectScreen({ image, index }: { image: string; index: number }) {
+function ProjectScreen({ image, index, onAssetReady }: { image: string; index: number; onAssetReady?: () => void }) {
   const source = useTexture(image);
   const texture = useMemo(() => {
     const map = source.clone();
@@ -217,8 +283,9 @@ function ProjectScreen({ image, index }: { image: string; index: number }) {
     return map;
   }, [source]);
   useEffect(() => () => texture.dispose(), [texture]);
+  useEffect(() => { onAssetReady?.(); }, [texture, onAssetReady]);
   return (
-    <mesh name={`nm-preview-${index}`} position={[0.015, 0.015, 0.183]} scale={[1.025, 2.2, 1]}>
+    <mesh name={`nm-preview-${index}`} position={[0.018, 0.015, 0.271]} scale={[1.25, 2.2, 1]}>
       <planeGeometry args={[1, 1]} />
       <meshBasicMaterial map={texture} toneMapped={false} />
     </mesh>
@@ -262,7 +329,7 @@ function CompanyPlate({ company, index }: { company: string; index: number }) {
   }, [company, index]);
   useEffect(() => () => texture.dispose(), [texture]);
   return (
-    <mesh name="nm-company" position={[0.015, 0.015, 0.184]} scale={[1.025, 2.2, 1]} visible={false}>
+    <mesh name="nm-company" position={[0.018, 0.015, 0.272]} scale={[1.25, 2.2, 1]} visible={false}>
       <planeGeometry args={[1, 1]} />
       <meshBasicMaterial map={texture} toneMapped={false} />
     </mesh>
@@ -277,6 +344,7 @@ export function NMCartridge({
   image,
   company,
   onRendered,
+  onAssetReady,
 }: {
   geometry: NMGeometry;
   accent: string;
@@ -284,55 +352,49 @@ export function NMCartridge({
   image?: string;
   company?: string;
   onRendered?: () => void;
+  onAssetReady?: () => void;
 }) {
+  const compact = useThree(state => state.size.width < 1024);
   return (
     <group>
       <group name="nm-body">
         {[-1, 1].map((side) => (
-          <group key={side} name={side < 0 ? "nm-wing-left" : "nm-wing-right"} position={[side * 0.63, 0, -0.16]} rotation={[0, side * Math.PI, 0]} visible={false}>
-            <mesh geometry={geometry.shell} position={[side * 0.63, 0, 0]}>
+          <group key={side} name={side < 0 ? "nm-wing-left" : "nm-wing-right"} position={[side * 0.77, 0, -0.16]} rotation={[0, side * Math.PI, 0]} visible={false}>
+            <mesh geometry={geometry.shell} position={[side * 0.77, 0, 0]}>
               <meshStandardMaterial color={STUDIO.titanium} metalness={0.91} roughness={0.27} />
             </mesh>
-            <mesh geometry={geometry.face} position={[side * 0.63, 0, 0.153]}>
-              <meshPhysicalMaterial color={STUDIO.smoke} metalness={0.52} roughness={0.2} clearcoat={0.75} />
+            <mesh geometry={geometry.face} position={[side * 0.77, 0, 0.237]}>
+              {compact
+                ? <meshStandardMaterial color={STUDIO.smoke} metalness={0.52} roughness={0.2} />
+                : <meshPhysicalMaterial color={STUDIO.smoke} metalness={0.52} roughness={0.2} clearcoat={0.75} />}
             </mesh>
           </group>
         ))}
+        <mesh geometry={geometry.shell} position={[0, 0, -0.14]} scale={[0.965, 0.98, 0.7]}>
+          <meshStandardMaterial color="#080e17" metalness={0.76} roughness={0.32} />
+        </mesh>
         <mesh geometry={geometry.shell} onAfterRender={onRendered}>
-          <meshStandardMaterial name="nm-shell" color={STUDIO.titanium} metalness={0.91} roughness={0.27} />
+          <meshStandardMaterial name="nm-shell" color={STUDIO.titanium} metalness={0.93} roughness={0.22} />
         </mesh>
-        <mesh geometry={geometry.face} position={[0, 0, 0.153]}>
-          <meshPhysicalMaterial name="nm-smoke" color={STUDIO.smoke} metalness={0.52} roughness={0.2} clearcoat={0.75} clearcoatRoughness={0.26} />
+        <mesh geometry={geometry.face} position={[0, 0, 0.207]} scale={[1.04, 1.025, 1]}>
+          <meshStandardMaterial color="#c3d3db" metalness={0.94} roughness={0.2} />
         </mesh>
-        {image && <Suspense fallback={null}><ProjectScreen image={image} index={index} /></Suspense>}
+        <mesh geometry={geometry.face} position={[0, 0, 0.237]}>
+          {compact
+            ? <meshStandardMaterial name="nm-smoke" color={STUDIO.smoke} metalness={0.48} roughness={0.16} />
+            : <meshPhysicalMaterial name="nm-smoke" color={STUDIO.smoke} metalness={0.48} roughness={0.16} clearcoat={0.85} clearcoatRoughness={0.18} />}
+        </mesh>
+        {image && <ProjectAssetBoundary key={image} onSettled={onAssetReady}><Suspense fallback={null}><ProjectScreen image={image} index={index} onAssetReady={onAssetReady} /></Suspense></ProjectAssetBoundary>}
         {company && <CompanyPlate company={company} index={index} />}
-        <mesh position={[0.014, 0.94, 0.185]}>
-          <boxGeometry args={[0.88, 0.014, 0.009]} />
-          <meshStandardMaterial color={accent} emissive={accent} emissiveIntensity={0.9} />
+        <mesh position={[0.014, 1.258, 0.247]}>
+          <boxGeometry args={[1.08, 0.012, 0.012]} />
+          <meshStandardMaterial color={accent} emissive={accent} emissiveIntensity={0.65} />
         </mesh>
-        <mesh position={[-0.34, -0.63, 0.2]}>
-          <boxGeometry args={[0.19, 0.025, 0.012]} />
+        <mesh position={[0.018, -1.252, 0.247]}>
+          <boxGeometry args={[0.24, 0.022, 0.014]} />
           <meshStandardMaterial color={accent} emissive={accent} emissiveIntensity={0.45} />
         </mesh>
-        <IndexEtching index={index} />
-        <mesh position={[0, 1.43, 0]}>
-          <boxGeometry args={[0.35, 0.16, 0.23]} />
-          <meshStandardMaterial color={STUDIO.smoke} metalness={0.85} roughness={0.28} />
-        </mesh>
-        <mesh position={[0, 1.52, 0]}>
-          <boxGeometry args={[0.18, 0.035, 0.18]} />
-          <meshStandardMaterial color={STUDIO.edge} metalness={0.8} roughness={0.25} />
-        </mesh>
-        <mesh position={[0, -1.43, 0]}>
-          <boxGeometry args={[0.4, 0.2, 0.22]} />
-          <meshStandardMaterial color={STUDIO.smoke} metalness={0.85} roughness={0.28} />
-        </mesh>
-        {[0, 1].map((side) => (
-          <mesh key={side} position={[side === 0 ? -0.48 : 0.48, 1.1, 0.19]}>
-            <cylinderGeometry args={[0.025, 0.025, 0.018, 8]} />
-            <meshStandardMaterial color={STUDIO.edge} metalness={0.9} roughness={0.22} />
-          </mesh>
-        ))}
+        <CartridgeHardware />
         <mesh name="nm-proof-mark" geometry={geometry.interfaceTrace} position={[0, -0.34, 0.2]} visible={false}>
           <meshStandardMaterial color={accent} metalness={0.72} roughness={0.3} emissive={accent} emissiveIntensity={0.25} />
         </mesh>
@@ -350,14 +412,18 @@ export function EngineeredRail() {
       {[-1, 1].map((side) => (
         <group key={side} position={[0, side * 1.6, 0]}>
           <mesh rotation={[Math.PI / 2, 0, 0]}>
-            <torusGeometry args={[3.45, 0.052, 5, 72]} />
-            <meshStandardMaterial color={STUDIO.titanium} metalness={0.88} roughness={0.35} />
+            <torusGeometry args={[3.45, 0.075, 8, 96]} />
+            <meshStandardMaterial color={STUDIO.titanium} metalness={0.94} roughness={0.24} onBeforeCompile={railReflections} />
           </mesh>
-          <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, side * 0.07, 0]}>
-            <torusGeometry args={[3.37, 0.012, 4, 72]} />
-            <meshStandardMaterial color={STUDIO.ice} emissive={STUDIO.ice} emissiveIntensity={0.32} roughness={0.7} />
+          <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, -side * 0.035, 0]}>
+            <torusGeometry args={[3.3, 0.03, 6, 96]} />
+            <meshStandardMaterial color="#233441" metalness={0.85} roughness={0.29} />
           </mesh>
-          <RailClips />
+          <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, side * 0.069, 0]}>
+            <torusGeometry args={[3.45, 0.009, 4, 96]} />
+            <meshStandardMaterial color={STUDIO.ice} emissive={STUDIO.ice} emissiveIntensity={0.23} metalness={0.7} roughness={0.3} onBeforeCompile={railReflections} />
+          </mesh>
+          <RailBridges />
         </group>
       ))}
     </group>
