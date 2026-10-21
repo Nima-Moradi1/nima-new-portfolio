@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./kinetic-theme.css";
 
 @font-face {
   font-family: "IRANYekanX";
@@ -241,33 +242,33 @@ html[lang="fa"] {
 }
 
 [data-theme="light"] {
-  --ink: #f0eee5;
-  --ink-soft: #e7e3d7;
-  --surface: #ddd8ca;
-  --surface-lift: #faf7ee;
-  --paper: #171a15;
-  --muted: #666b61;
-  --muted-bright: #33382f;
-  --line: rgba(23, 26, 21, 0.14);
-  --line-strong: rgba(23, 26, 21, 0.28);
-  --signal: #4d7a12;
-  --signal-soft: #315b08;
-  --violet: #6948c8;
+  --ink: #edf2f3;
+  --ink-soft: #e3ebee;
+  --surface: #f6f9fa;
+  --surface-lift: #ffffff;
+  --paper: #172b36;
+  --muted: #506570;
+  --muted-bright: #354e5c;
+  --line: rgba(23, 43, 54, 0.14);
+  --line-strong: rgba(23, 43, 54, 0.28);
+  --signal: #086b78;
+  --signal-soft: #075663;
+  --violet: #69539e;
   --coral: #bd4f3e;
   --error: #a43c2b;
   --success: #477512;
-  --header-glass: rgba(214, 218, 195, 0.66);
-  --mobile-nav-bg: rgba(224, 225, 207, 0.94);
-  --floating-surface: rgba(250, 247, 238, 0.84);
-  --signal-wash: rgba(77, 122, 18, 0.09);
-  --book-grid: rgba(23, 26, 21, 0.045);
-  --book-glow: rgba(216, 151, 68, 0.15);
+  --header-glass: rgba(237, 242, 243, 0.78);
+  --mobile-nav-bg: rgba(237, 242, 243, 0.97);
+  --floating-surface: rgba(255, 255, 255, 0.88);
+  --signal-wash: rgba(8, 107, 120, 0.09);
+  --book-grid: rgba(23, 43, 54, 0.045);
+  --book-glow: rgba(8, 107, 120, 0.09);
   --book-paper: #fffdf2;
   --book-ink: #1c2018;
   --book-muted: #5a6053;
   --book-rule: rgba(28, 32, 24, 0.2);
   --book-accent: #477512;
-  --shadow-elevation: 0 24px 80px rgba(46, 38, 24, 0.14);
+  --shadow-elevation: 0 24px 80px rgba(50, 79, 98, 0.14);
 }
 
 @theme inline {
@@ -366,7 +367,15 @@ html {
     --book-ink var(--theme-duration) ease,
     --book-muted var(--theme-duration) ease,
     --book-rule var(--theme-duration) ease,
-    --book-accent var(--theme-duration) ease;
+    --book-accent var(--theme-duration) ease,
+    --nm-void var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-space var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-fg var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-muted var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-copy var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-line var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-ice var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1),
+    --nm-orbit var(--nm-theme-duration) cubic-bezier(.4, 0, .2, 1);
 }
 
 html[data-theme="light"] {
@@ -405,16 +414,16 @@ html[data-theme="light"] body {
   background:
     radial-gradient(
       circle at 12% 4%,
-      rgba(216, 151, 68, 0.16),
+      rgba(8, 107, 120, 0.08),
       transparent 27rem
     ),
     radial-gradient(
       circle at 88% 24%,
-      rgba(77, 122, 18, 0.12),
+      rgba(105, 83, 158, 0.06),
       transparent 31rem
     ),
-    linear-gradient(rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 26, 21, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(23, 43, 54, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 43, 54, 0.035) 1px, transparent 1px),
     var(--ink);
   background-attachment: fixed;
   background-size:
@@ -429,16 +438,16 @@ html[dir="rtl"][data-theme="light"] body {
   background:
     radial-gradient(
       circle at 88% 4%,
-      rgba(216, 151, 68, 0.16),
+      rgba(8, 107, 120, 0.08),
       transparent 27rem
     ),
     radial-gradient(
       circle at 12% 24%,
-      rgba(77, 122, 18, 0.12),
+      rgba(105, 83, 158, 0.06),
       transparent 31rem
     ),
-    linear-gradient(rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 26, 21, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(23, 43, 54, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 43, 54, 0.035) 1px, transparent 1px),
     var(--ink);
   background-size:
     auto,

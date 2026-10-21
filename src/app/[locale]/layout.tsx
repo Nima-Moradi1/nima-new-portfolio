@@ -34,6 +34,8 @@ const themeInitScript = `(() => {
     const theme = stored === "light" ? "light" : "dark";
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#edf2f3" : "#05070b");
+    document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]').forEach(link => { link.href = theme === "light" ? "/brand/nm-favicon-light.svg" : "/brand/nm-favicon.svg"; });
   } catch {}
 })();`;
 
@@ -123,7 +125,7 @@ export async function generateMetadata({
 }
 
 export const viewport: Viewport = {
-  colorScheme: "dark",
+  colorScheme: "dark light",
   themeColor: "#05070b",
   width: "device-width",
   initialScale: 1,

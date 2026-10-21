@@ -185,6 +185,8 @@
     "top": "Nach oben ↑"
   },
   "Theme": {
+    "switchToLight": "Zum hellen Design wechseln",
+    "switchToDark": "Zum dunklen Design wechseln",
     "toLight": "Leselampe ausschalten und zum hellen Modus wechseln",
     "toDark": "Leselampe einschalten und zum dunklen Modus wechseln",
     "instruction": "{action}. Ziehen Sie die Kette nach unten."

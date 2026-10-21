@@ -185,6 +185,8 @@
     "top": "Top ↑"
   },
   "Theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
     "toLight": "Turn the reading lamp off and switch to light mode",
     "toDark": "Turn the reading lamp on and switch to dark mode",
     "instruction": "{action}. Pull the chain downward."
