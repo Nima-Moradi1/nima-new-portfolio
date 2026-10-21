@@ -4,9 +4,11 @@ import { useCallback, useEffect, useLayoutEffect, useRef, type RefObject } from 
 import { addAfterEffect, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
 import { Color, Group, MathUtils, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, MeshStandardMaterial, PerspectiveCamera, PointLight, Vector3 } from "three";
-import type { KineticSceneState } from "@/lib/kinetic-model";
+import { proofSceneBlend, type KineticSceneState } from "@/lib/kinetic-model";
 import type { ExperienceItem, ProjectItem } from "@/types/portfolio";
 import { EngineeredRail, NMCartridge, setNMGlassTime, STUDIO, useNMGeometry } from "./nm-geometry";
+import { SolarSystem } from "./solar-system";
+import { PROJECT_TEXTURES } from "@/content/project-textures";
 
 export type SceneProps = {
   state: RefObject<KineticSceneState>;
@@ -21,6 +23,14 @@ const TAU = Math.PI * 2;
 const clamp = MathUtils.clamp;
 const smooth = (value: number) => MathUtils.smoothstep(value, 0, 1);
 const angleDistance = (value: number) => Math.atan2(Math.sin(value), Math.cos(value));
+type FadeMaterial = { material: MeshBasicMaterial | MeshStandardMaterial; opacity: number; transparent: boolean; depthWrite: boolean };
+
+function rememberMaterials(mesh: Mesh, materials: Map<MeshBasicMaterial | MeshStandardMaterial, FadeMaterial>) {
+  for (const material of Array.isArray(mesh.material) ? mesh.material : [mesh.material]) {
+    if (!(material instanceof MeshBasicMaterial || material instanceof MeshStandardMaterial) || materials.has(material)) continue;
+    materials.set(material, { material, opacity: material.opacity, transparent: material.transparent, depthWrite: material.depthWrite });
+  }
+}
 
 /** A single continuous rig: the same cartridges survive every chapter and mode. */
 export function MonolithScene({ state, accents, projects, experiences, onProjectClick, onReady }: SceneProps) {
@@ -33,6 +43,9 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   const accentLight = useRef<PointLight>(null);
   const sunLight = useRef<PointLight>(null);
   const firstFrame = useRef(false);
+  const assetsReady = useRef(new Set<number>());
+  const revealStyle = useRef<HTMLElement | null>(null);
+  const lastReveal = useRef(-1);
   const exitSettled = useRef(false);
   const activityUntil = useRef(0);
   const modeChange = useRef({ revision: -1, elapsed: 2, count: 7, nextCount: 7, item: 0 });
@@ -40,6 +53,8 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   const targetColor = useRef(new Color(STUDIO.ice));
   const adaptive = useRef({ frames: 0, total: 0, lowered: false });
   const displayedMode = useRef<string | null>(null);
+  const narrativeTransition = useRef({ entrance: 0, exit: 0 });
+  const fadeMaterials = useRef(new Map<MeshBasicMaterial | MeshStandardMaterial, FadeMaterial>());
   const { gl, size, invalidate, setDpr } = useThree();
 
   useLayoutEffect(() => {
@@ -51,6 +66,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
       right: group!.getObjectByName("nm-wing-right") as Group,
       company: group!.getObjectByName("nm-company") as Mesh | undefined,
     }));
+    rig.current?.traverse(object => { if (object instanceof Mesh) rememberMaterials(object, fadeMaterials.current); });
   }, []);
 
   useEffect(() => {
@@ -61,18 +77,24 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   }, [size.width, setDpr, invalidate]);
 
   const ready = useCallback(() => {
-    if (firstFrame.current) return;
+    if (firstFrame.current || assetsReady.current.size < projects.length) return;
     firstFrame.current = true;
     onReady();
-  }, [onReady]);
+  }, [onReady, projects.length]);
+
+  const assetReady = useCallback((index: number) => {
+    assetsReady.current.add(index);
+    invalidate();
+  }, [invalidate]);
 
   useEffect(() => {
     // Deep links may initially place every cartridge outside the camera. The
     // renderer's completed frame still makes that semantic page ready to enter.
     const remove = addAfterEffect(() => {
       if (firstFrame.current) { remove(); return; }
-      if (gl.info.render.frame > 0) { ready(); remove(); }
+      if (gl.info.render.frame > 0) { ready(); if (firstFrame.current) remove(); }
     });
+    revealStyle.current = gl.domElement.closest<HTMLElement>("[data-scene-ready]");
     invalidate();
     return remove;
   }, [gl, invalidate, ready]);
@@ -81,7 +103,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     const wake = () => {
       const model = state.current;
       if (!model.visible || document.hidden) return;
-      if (exitSettled.current && (model.phase === "faq" || model.phase === "contact") && modeChange.current.revision === model.modeRevision) return;
+      if (exitSettled.current && model.proofExit >= 0.9999 && model.proofEntrance >= 0.9999 && (model.phase === "faq" || model.phase === "contact") && modeChange.current.revision === model.modeRevision) return;
       activityUntil.current = performance.now() + 1500;
       invalidate();
     };
@@ -98,11 +120,22 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   useFrame(({ clock, camera }, delta) => {
     const model = state.current;
     if (!rig.current || !pivot.current || !rails.current || !model) return;
-    const mobile = size.width < 768;
+    const mobile = size.width < 768 && size.height > size.width;
     const reduced = model.reducedMotion;
     const step = reduced || !firstFrame.current ? 1 : 1 - Math.exp(-Math.min(delta, 0.05) * 10);
     const dormant = !model.visible || document.hidden;
     if (dormant) return;
+    // One continuous physical overlap drives both instruments, including the
+    // early chapter threshold and reverse scroll. Phase changes never cut it.
+    narrativeTransition.current.entrance = MathUtils.lerp(narrativeTransition.current.entrance, model.proofEntrance, step);
+    narrativeTransition.current.exit = MathUtils.lerp(narrativeTransition.current.exit, model.proofExit, step);
+    const entrance = narrativeTransition.current.entrance;
+    const exit = narrativeTransition.current.exit;
+    const sceneBlend = proofSceneBlend(entrance, exit);
+    rig.current.visible = sceneBlend.rack > 0.0001;
+    rig.current.userData.proofEntrance = entrance;
+    rig.current.userData.proofExit = exit;
+    rig.current.userData.rackVisibility = sceneBlend.rack;
     setNMGlassTime(reduced ? 1.8 : clock.elapsedTime);
     const transition = modeChange.current;
     const requestedCount = Math.max(1, Math.min(7, model.count));
@@ -132,11 +165,11 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
           if (material instanceof MeshStandardMaterial && material.name === "nm-shell") {
             material.roughness = matte ? 0.62 : 0.27;
             material.color.set(matte ? "#8b969f" : STUDIO.titanium);
-          } else if (material instanceof MeshPhysicalMaterial && material.name === "nm-smoke") {
+          } else if (material instanceof MeshStandardMaterial && material.name === "nm-smoke") {
             material.color.set(matte ? "#29333e" : STUDIO.smoke);
             material.metalness = matte ? 0.74 : 0.52;
             material.roughness = matte ? 0.56 : 0.2;
-            material.clearcoat = matte ? 0.15 : 0.75;
+            if (material instanceof MeshPhysicalMaterial) material.clearcoat = matte ? 0.15 : 0.75;
           }
         });
       }
@@ -154,23 +187,20 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     // The single-mark opening is the original NM adaptation in docs/05; the
     // measured reference itself starts with its ring already assembled.
     const deployment = phase === "hero" ? 0 : phase === "assembly" ? smooth(p) : 1;
-    const focus = phase === "proof" || phase === "statement" ? 1
-        : phase === "recap" ? 1 - smooth(p) : 0;
-    const exit = phase === "faq" || phase === "contact" ? 1 : 0;
-    const recap = phase === "recap" ? smooth(p) : exit;
     const active = detailActive ? detailIndex : Math.round(transition.item) % count;
     const direction = model.isRtl ? -1 : 1;
-    const centered = phase === "statement" ? smooth(p) : phase === "recap" || exit ? 1 : 0;
-    const poseX = mobile ? 0 : direction * (1.7 + focus * 0.2) * (1 - centered) * (1 - detailOpen);
+    const poseX = mobile ? 0 : direction * (1.7 + deployment * .45) * (1 - detailOpen);
     const pointerX = reduced || dormant ? 0 : clamp(model.pointerX, -1, 1);
     const pointerY = reduced || dormant ? 0 : clamp(model.pointerY, -1, 1);
     const activityRemaining = activityUntil.current - performance.now();
     // Float only during an input wake; ease to a fixed pose before demand sleep.
     const idleWeight = smooth(activityRemaining / 600);
-    const idle = reduced || dormant || exit ? 0 : Math.sin(clock.elapsedTime * 0.42) * 0.045 * idleWeight;
-    target.current.set(poseX + pointerX * (mobile ? 0.05 : 0.13) * (1 - detailOpen), mobile ? MathUtils.lerp(1.8, 0.65, detailOpen) : 0.12, -0.3);
+    const idle = reduced || dormant || entrance > 0 ? 0 : Math.sin(clock.elapsedTime * 0.42) * 0.045 * idleWeight;
+    target.current.set(poseX + pointerX * (mobile ? 0.05 : 0.13) * (1 - detailOpen) * (1 - entrance), (mobile ? MathUtils.lerp(size.height < 710 ? 1.5 : 1.8, 0.65, detailOpen) : 0.12) + entrance * 0.45, -0.3 - entrance * 10);
     rig.current.position.lerp(target.current, step);
-    rig.current.rotation.x = MathUtils.lerp(rig.current.rotation.x, (-0.045 + pointerY * 0.035) * (1 - detailOpen), step);
+    const rackScale = mobile ? (size.height < 710 ? .82 : .87) : .91;
+    rig.current.scale.setScalar(MathUtils.lerp(rig.current.scale.x, (1 - (1 - rackScale) * deployment * (1 - detailOpen)) * (1 - entrance * 0.44), step));
+    rig.current.rotation.x = MathUtils.lerp(rig.current.rotation.x, (-0.045 + pointerY * 0.035) * (1 - detailOpen) + entrance * 0.16, step);
     const glassYaw = deployment < 1 && !reduced ? Math.sin(clock.elapsedTime * 0.34) * 0.11 * (1 - deployment) : 0;
     rig.current.rotation.y = MathUtils.lerp(rig.current.rotation.y, (pointerX * 0.035 + glassYaw) * (1 - detailOpen), step);
     rig.current.rotation.z = MathUtils.lerp(rig.current.rotation.z, (-0.045 + idle * 0.1) * (1 - detailOpen), step);
@@ -185,7 +215,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     for (let index = 0; index < 7; index++) {
       const group = cartridges.current[index];
       if (!group) continue;
-      group.visible = index < count;
+      group.visible = index < count && (deployment > .001 || index === active);
       if (!group.visible) continue;
       const baseAngle = index * TAU / count;
       const angle = angleDistance(baseAngle + pivotYaw);
@@ -198,32 +228,14 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
       let yaw = angle;
       let scale = 0.91 + closeness * 0.1;
       if (mobile) {
-        // Keep complete foreground geometry; distant pieces occupy depth, not copy.
+        // Compress one coherent physical ring; rail mounts keep their depth.
         x *= 0.73;
-        z -= (1 - closeness) * 1.5;
-        scale *= 0.88 + closeness * 0.12;
       }
       x = MathUtils.lerp(chosen ? 0 : Math.sin(angle) * 0.035, x, deployment);
       y = MathUtils.lerp(chosen ? 0 : -0.02 * index, y, deployment);
       z = MathUtils.lerp(chosen ? 2 : 1.5 - index * 0.06, z, deployment);
       yaw = MathUtils.lerp(-0.2, yaw, deployment);
       if (!chosen) scale *= smooth((deployment - 0.12) / 0.88);
-      if (focus > 0) {
-        x = MathUtils.lerp(x, chosen ? 0 : Math.sin(angle) * 0.8, focus);
-        z = MathUtils.lerp(z, chosen ? 2.3 : -2.8, focus);
-        y = MathUtils.lerp(y, chosen ? 0 : 0.2 + index * 0.06, focus);
-        scale = MathUtils.lerp(scale, chosen ? (mobile ? 1 : 1.16) : 0.42, focus);
-        yaw = MathUtils.lerp(yaw, chosen ? -0.17 + model.proofIndex * 0.1 + model.proofProgress * 0.04 : angle, focus);
-        if (chosen && phase === "statement") yaw = MathUtils.lerp(yaw, 0, smooth(p));
-      }
-      if (recap > 0) {
-        const fan = (index - (count - 1) / 2) / Math.max(1, count - 1);
-        x = MathUtils.lerp(x, fan * (mobile ? 5 : 10), recap);
-        y = MathUtils.lerp(y, Math.abs(fan) * 0.65 + recap * 2.4 + exit * 7, recap);
-        z = MathUtils.lerp(z, -1.2 - Math.abs(fan) * 2, recap);
-        scale = MathUtils.lerp(scale, 0.74 - exit * 0.5, recap);
-        yaw = MathUtils.lerp(yaw, -fan * 0.8, recap);
-      }
       if (detailOpen > 0) {
         x = MathUtils.lerp(x, chosen ? 0 : Math.sin(angle) * 3.6, detailOpen);
         y = MathUtils.lerp(y, chosen ? 0 : 0.15, detailOpen);
@@ -248,6 +260,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
       const part = parts.current[index];
       if (part) {
         const shellDeployment = smooth((deployment - 0.08) / 0.92);
+        part.body.visible = shellDeployment > .001;
         target.current.set(shellDeployment, shellDeployment * (1 - (chosen ? detailOpen * 0.18 : 0)), shellDeployment);
         part.body.scale.lerp(target.current, step);
         // Two hinges unfold from behind the same central cartridge. The image
@@ -257,12 +270,15 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
         part.left.rotation.y = MathUtils.lerp(part.left.rotation.y, -Math.PI * (1 - opening), step);
         part.right.rotation.y = MathUtils.lerp(part.right.rotation.y, Math.PI * (1 - opening), step);
         part.left.position.z = part.right.position.z = -0.16 * (1 - opening);
-        part.preview ||= group.getObjectByName(`nm-preview-${index}`) as Mesh | undefined;
+        if (!part.preview) {
+          part.preview = group.getObjectByName(`nm-preview-${index}`) as Mesh | undefined;
+          if (part.preview) rememberMaterials(part.preview, fadeMaterials.current);
+        }
         if (part.preview) {
           const preview = part.preview;
           preview.visible = model.mode === "projects";
           const screenOpening = smooth((opening - 0.34) / 0.66);
-          preview.scale.x = MathUtils.lerp(preview.scale.x, 1.025 + screenOpening * 2.5, step);
+          preview.scale.x = MathUtils.lerp(preview.scale.x, 1.25 + screenOpening * 2.5, step);
           const material = preview.material as MeshBasicMaterial;
           const map = material.map;
           if (map?.image) {
@@ -282,21 +298,24 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
         part.identity.visible = chosen && deployment < 0.98;
         target.current.set(-0.035 * deployment, 0.21 * deployment, 0.2);
         part.identity.position.lerp(target.current, step);
-        part.signature.visible = chosen && phase === "proof";
-        if (part.signature.visible) {
-          part.signature.geometry = [geometry.interfaceTrace, geometry.serviceTrace, geometry.intelligenceTrace, geometry.deliveryTrace][clamp(model.proofIndex, 0, 3)];
-          const reveal = smooth(model.proofProgress / 0.16) * smooth((1 - model.proofProgress) / 0.16);
-          part.signature.scale.setScalar(reveal);
-        }
+        part.signature.visible = false;
       }
     }
 
-    const railScale = deployment * (1 - collect * 0.78) * (1 - focus * 0.15);
+    const railScale = deployment * (1 - collect * 0.78);
+    rails.current.visible = railScale > .001;
     target.current.set(railScale * (mobile ? 0.73 : 1), railScale, railScale);
     rails.current.scale.lerp(target.current, step);
-    rails.current.position.y = MathUtils.lerp(rails.current.position.y, focus * 0.2 + recap * 6 + exit * 5, step);
+    // Semantic copy follows the rendered mechanism rather than leading its
+    // damped arrival, including direct anchors and fast reverse scroll.
+    const reveal = phase === "carousel" ? smooth((rails.current.scale.y - .82) / .18) * sceneBlend.rack : 0;
+    if (Math.abs(reveal - lastReveal.current) > .002) {
+      revealStyle.current?.style.setProperty("--rig-reveal", String(reveal));
+      lastReveal.current = reveal;
+    }
+    rails.current.position.y = MathUtils.lerp(rails.current.position.y, 0, step);
     // Compensate the fixed track depth inside the common rotating parent.
-    const railDepth = -focus * 3.5 - detailOpen * 2.5;
+    const railDepth = -detailOpen * 2.5;
     rails.current.position.x = MathUtils.lerp(rails.current.position.x, -sinPivot * railDepth, step);
     rails.current.position.z = MathUtils.lerp(rails.current.position.z, cosPivot * railDepth, step);
 
@@ -312,14 +331,22 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     if (accentLight.current) {
       targetColor.current.set(accents[model.activeIndex % Math.max(1, accents.length)] || STUDIO.ice);
       accentLight.current.color.lerp(targetColor.current, step * 0.5);
-      accentLight.current.intensity = MathUtils.lerp(accentLight.current.intensity, 7 + focus * 4, step);
-      const scan = phase === "proof" ? model.proofProgress : 0.75;
+      accentLight.current.intensity = MathUtils.lerp(accentLight.current.intensity, 7 * sceneBlend.rack, step);
+      const scan = 0.75;
       accentLight.current.position.set(poseX - 1.5 + scan * 3.5, 1.7 - scan * 0.8, 3.8);
     }
     if (sunLight.current) {
       const time = reduced ? 0.5 : clock.elapsedTime * 0.35;
       sunLight.current.position.set(poseX + Math.sin(time) * 3.2, 2.5 + Math.cos(time * 0.7) * 1.3, 4 + Math.cos(time) * 1.4);
-      sunLight.current.intensity = 12 * (1 - deployment) + 1.4;
+      sunLight.current.intensity = (12 * (1 - deployment) + 1.4) * sceneBlend.rack;
+    }
+
+    for (const { material, opacity, transparent, depthWrite } of fadeMaterials.current.values()) {
+      const fading = sceneBlend.rack < 0.9999;
+      const nextTransparent = transparent || fading;
+      if (material.transparent !== nextTransparent) { material.transparent = nextTransparent; material.needsUpdate = true; }
+      material.opacity = opacity * sceneBlend.rack;
+      material.depthWrite = depthWrite && !fading;
     }
 
     // Lower quality once on a sustained slow rendering sample. No render-loop setState.
@@ -331,14 +358,14 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
         setDpr(mobile ? 1 : 1.15);
       }
     }
-    const railTargetY = focus * 0.2 + recap * 6 + exit * 5;
-    exitSettled.current = !!exit && Math.abs(rails.current.position.y - railTargetY) <= 0.01 && modeTime >= 1.3;
+    const narrativeSettled = Math.abs(entrance - model.proofEntrance) < 0.0001 && Math.abs(exit - model.proofExit) < 0.0001;
+    exitSettled.current = exit > 0.9999 && narrativeSettled && modeTime >= 1.3;
     const morphing = modeTime < 1.3;
     // Only visible animated media and glass reflections keep the existing frame
     // callback awake. Hidden, reduced-motion and later narrative poses sleep.
-    const animatedMedia = phase === "hero" || phase === "assembly" || phase === "carousel" || detailActive;
-    if (!reduced && (morphing || animatedMedia || (exit ? !exitSettled.current : activityRemaining > 0))) invalidate();
-  });
+    const animatedMedia = sceneBlend.rack > 0.0001 && (phase === "hero" || phase === "assembly" || phase === "carousel" || detailActive);
+    if (!reduced && (morphing || animatedMedia || !narrativeSettled || (exit > 0.9999 ? !exitSettled.current : activityRemaining > 0))) invalidate();
+  }, -1);
 
   return (
     <>
@@ -357,7 +384,8 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
       <pointLight ref={accentLight} position={[2.8, 1.5, 3.8]} intensity={8} distance={10} decay={2} color={STUDIO.ice} />
       <pointLight ref={sunLight} position={[1, 4, 5]} intensity={14} distance={12} decay={2} color="#fff4df" />
       <pointLight position={[-5, 1.5, 0]} intensity={9} distance={12} color="#b29bff" />
-      <group ref={rig} position={[1.7, 0.12, -0.3]}>
+      <SolarSystem state={state} transition={narrativeTransition} />
+      <group ref={rig} name="nm-project-rack" position={[1.7, 0.12, -0.3]}>
         <group ref={pivot} position={[0, 0, -1.45]}>
           <group ref={rails}>
             <EngineeredRail />
@@ -374,7 +402,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
               onPointerOver={() => { if (state.current.mode === "projects" && state.current.phase === "carousel") gl.domElement.style.cursor = "pointer"; }}
               onPointerOut={() => { gl.domElement.style.cursor = ""; }}
             >
-              <NMCartridge geometry={geometry} accent={accents[index % Math.max(1, accents.length)] || STUDIO.ice} image={projects[index]?.image} company={experiences?.[index]?.company} index={index} onRendered={index === 0 ? ready : undefined} />
+              <NMCartridge geometry={geometry} accent={accents[index % Math.max(1, accents.length)] || STUDIO.ice} image={PROJECT_TEXTURES[projects[index]?.id] ?? projects[index]?.image} company={experiences?.[index]?.company} index={index} onAssetReady={() => assetReady(index)} />
             </group>
           ))}
         </group>

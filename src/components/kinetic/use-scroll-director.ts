@@ -1,12 +1,12 @@
 "use client";
 /* eslint-disable react-hooks/immutability -- This imperative controller owns DOM styles and the shared mutable R3F scene ref; neither is React render state. */
 import { useEffect, type RefObject } from "react";
-import { clamp, DETAIL_VIEWPORTS, itemPosition, notifyScene, type KineticSceneState, type ScenePhase } from "@/lib/kinetic-model";
+import { carouselCopyOpacity, clamp, DETAIL_VIEWPORTS, itemPosition, notifyScene, proofFrame, proofIllumination, proofSceneBlend, type KineticSceneState, type ScenePhase } from "@/lib/kinetic-model";
 
-type Options = { root: RefObject<HTMLDivElement | null>; scene: RefObject<KineticSceneState>; count: number; detailIndex: number; enabled: boolean; onDetail: (visible: boolean) => void; onSelection: (index: number) => void; onPhase: (phase: ScenePhase) => void };
+type Options = { root: RefObject<HTMLDivElement | null>; scene: RefObject<KineticSceneState>; count: number; detailIndex: number; enabled: boolean; onDetail: (visible: boolean) => void; onSelection: (index: number) => void; onProofSelection: (index: number) => void; onPhase: (phase: ScenePhase) => void };
 
 /** One passive native-scroll controller; only settled selection changes enter React state. */
-export function useScrollDirector({ root, scene, count, detailIndex, enabled, onDetail, onSelection, onPhase }: Options) {
+export function useScrollDirector({ root, scene, count, detailIndex, enabled, onDetail, onSelection, onProofSelection, onPhase }: Options) {
   useEffect(() => {
     const node = root.current;
     if (!node || !enabled) return;
@@ -14,10 +14,11 @@ export function useScrollDirector({ root, scene, count, detailIndex, enabled, on
     let frame = 0;
     let disposed = false;
     let lastIndex = -1;
+    let lastProofIndex = -1;
     let lastPhase: ScenePhase | null = null;
     let lastDetail = false;
     const measure = () => {
-      bounds = ["top", "work", "proof", "statement", "recap", "faq", "contact"].flatMap(id => {
+      bounds = ["top", "work", "proof", "faq", "contact"].flatMap(id => {
         const element = node.querySelector<HTMLElement>(`[data-chapter="${id}"]`);
         if (!element) return [];
         const rect = element.getBoundingClientRect();
@@ -31,6 +32,14 @@ export function useScrollDirector({ root, scene, count, detailIndex, enabled, on
       const vh = window.innerHeight;
       const s = scene.current;
       s.progress = clamp(y / Math.max(1, document.documentElement.scrollHeight - vh));
+      const proofBound = bounds.find(bound => bound.id === "proof");
+      const faqBound = bounds.find(bound => bound.id === "faq");
+      s.proofEntrance = proofBound ? clamp((y - proofBound.top + vh * .85) / (vh * 1.05)) : 0;
+      s.proofExit = faqBound ? clamp((y - faqBound.top + vh * .95) / (vh * .7)) : 0;
+      const blend = proofSceneBlend(s.proofEntrance, s.proofExit);
+      node.style.setProperty("--solar-presence", String(blend.solar));
+      node.dataset.proofEntrance = s.proofEntrance.toFixed(3);
+      node.dataset.proofExit = s.proofExit.toFixed(3);
       node.style.setProperty("--story-progress", String(s.progress));
       let phase: ScenePhase = "hero";
       let p = 0;
@@ -60,19 +69,23 @@ export function useScrollDirector({ root, scene, count, detailIndex, enabled, on
       node.style.setProperty("--detail-read", String(clamp((detailProgress - .32) / .25)));
       if (lastDetail !== detailVisible) { lastDetail = detailVisible; onDetail(detailVisible); }
       s.activeIndex = Math.min(count - 1, Math.round(s.itemProgress));
-      if (phase === "proof") { const proof = p * 3.999; s.proofIndex = Math.floor(proof); s.proofProgress = proof - s.proofIndex; }
+      if (phase === "proof") { const proof = proofFrame(p); s.proofIndex = proof.index; s.proofProgress = proof.progress; }
       node.querySelectorAll<HTMLElement>("[data-track-copy]").forEach((article, index) => {
-        const active = index === s.activeIndex && opening < .05;
-        article.style.setProperty("--copy-opacity", String(clamp(1 - Math.abs(s.itemProgress - index) * 2.5) * (1 - opening)));
+        const active = phase === "carousel" && index === s.activeIndex && opening < .05;
+        article.style.setProperty("--copy-opacity", String(carouselCopyOpacity(phase, s.itemProgress, index, opening) * (1 - Math.min(1, s.proofEntrance / .5))));
         article.style.setProperty("--copy-shift", `${(index - s.itemProgress) * 32}px`);
         article.dataset.active = String(active); article.inert = !active;
       });
-      node.querySelectorAll<HTMLElement>("[data-proof-copy]").forEach((article, index) => { const active = index === s.proofIndex; article.dataset.active = String(active); article.inert = !active; });
-      node.querySelectorAll<HTMLElement>("[data-proof-index]").forEach((link, index) => {
-        if (index === s.proofIndex) link.setAttribute("aria-current", "step");
-        else link.removeAttribute("aria-current");
-      });
+      node.style.setProperty("--proof-light", String(phase === "proof" ? proofIllumination(s.proofProgress).copy * blend.solar : 0));
+      node.querySelectorAll<HTMLElement>("[data-proof-copy]").forEach((article, index) => { const active = phase === "proof" && index === s.proofIndex; article.dataset.active = String(active); article.inert = !active; });
+      const slider = node.querySelector<HTMLElement>('[role="slider"]');
+      if (slider) {
+        slider.setAttribute("aria-valuenow", String((phase === "proof" ? s.proofIndex : s.activeIndex) + 1));
+        const title = node.querySelector<HTMLElement>(phase === "proof" ? '[data-proof-copy][data-active="true"] h3' : '[data-track-copy][data-active="true"] h2');
+        if (title) slider.setAttribute("aria-valuetext", title.textContent || "");
+      }
       if (lastIndex !== s.activeIndex) { lastIndex = s.activeIndex; onSelection(lastIndex); }
+      if (lastProofIndex !== s.proofIndex) { lastProofIndex = s.proofIndex; onProofSelection(lastProofIndex); }
       if (lastPhase !== phase) { lastPhase = phase; node.dataset.phase = phase; onPhase(phase); }
       notifyScene();
     };
@@ -113,5 +126,5 @@ export function useScrollDirector({ root, scene, count, detailIndex, enabled, on
         article.style.removeProperty("--copy-opacity"); article.style.removeProperty("--copy-shift");
       });
     };
-  }, [root, scene, count, detailIndex, enabled, onDetail, onSelection, onPhase]);
+  }, [root, scene, count, detailIndex, enabled, onDetail, onSelection, onProofSelection, onPhase]);
 }
