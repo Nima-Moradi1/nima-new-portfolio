@@ -8,7 +8,7 @@ import { KINETIC_THEMES, THEME_TRANSITION_SECONDS, themeProgress } from "@/lib/k
 import { proofSceneBlend, type KineticSceneState } from "@/lib/kinetic-model";
 import type { ExperienceItem, ProjectItem } from "@/types/portfolio";
 import { EngineeredRail, NMCartridge, setNMGlassTheme, setNMGlassTime, STUDIO, useNMGeometry } from "./nm-geometry";
-import { SolarSystem } from "./solar-system";
+import { EngineeringSymbols } from "./engineering-symbols";
 import { PROJECT_TEXTURES } from "@/content/project-textures";
 
 export type SceneProps = {
@@ -434,7 +434,7 @@ export const MonolithScene = memo(function MonolithScene({ state, accents, proje
       <pointLight ref={sunLight} position={[1, 4, 5]} intensity={14} distance={12} decay={2} color="#fff4df" />
       <pointLight position={[-5, 1.5, 0]} intensity={9} distance={12} color="#b29bff" />
       <group ref={themeRig} name="nm-theme-rig">
-      <SolarSystem state={state} transition={narrativeTransition} />
+      <EngineeringSymbols state={state} transition={narrativeTransition} />
       <group ref={rig} name="nm-project-rack" position={[1.7, 0.12, -0.3]}>
         <group ref={pivot} position={[0, 0, -1.45]}>
           <group ref={rails}>
