@@ -8,7 +8,9 @@
 
 **U05 application commits:** `ea0109c` (theme controller, palette, native reveal, labels and regressions), `d1e4e96` (scene, surfaces, branding and loading). Evidence/docs commit follows.
 
-**Next exact action:** Finish the evidence commit, push `master` to `origin`, and compare `git ls-remote --heads origin master` with local HEAD. Confirm clean status, then await the next owner task. Do not deploy or modify `main`; its verified baseline is `a18911c0f9f493eed70fd8c65f844d6853be1e44`.
+**U05 publication:** Theme, scene and evidence commits were pushed to `origin/master` through `0e2976cb8dc3d739ae8548dc4bde4e6dbe46cb1f`; fresh `git ls-remote` matched local HEAD and status was clean. This final publication record is an additional documentation commit. `main` remains at `a18911c0f9f493eed70fd8c65f844d6853be1e44`. No deployment occurred.
+
+**Next exact action:** Await the next owner task. The separate first-project detail-anchor boundary is recorded for future scoping; do not begin it, deploy, or alter `main` automatically.
 
 > **Earlier state - 2026-10-21 / categorized publication:** Owner authorized committing and pushing the current work. Current branch was `master`; verified public remote is `https://github.com/Nima-Moradi1/nima-new-portfolio`. Seven application commits (including the two existing local loader/contact commits) were pushed through `5ba6e6451ffe93902d92edbd16b39fae836dfd37`; `git ls-remote` confirmed the remote SHA. This publication record and existing U03/U04 evidence were the final documentation commit. No merge, force-push, deployment, package installation or application edits were performed during publication. Historical uncommitted/unpublished statements below describe earlier sessions.
 
@@ -186,3 +188,5 @@ Closure documentation: root `README.md` now describes the kinetic implementation
 - Paths: existing modified source/configuration plus new `public/assets/kinetic/`, baked environment/solar components, texture map, choreography tests and U03/U04 evidence. No product behavior changed in this Git task.
 - Validation: Git diff checks, media hashes/byte totals and evidence JSON parsing PASS. Earlier runtime evidence retained with its original limits; no fresh runtime tests/build/deployment. Final documentation commit is pushed separately and its SHA checked before reporting completion.
 | 2026-10-21 | U05 / PASS | Animated light/dark studio, translated orbital instrument, theme-aware NM logos/loading and responsive chrome | Theme provider/toggle, shared tokens, kinetic scene/materials/surfaces, localized layout/loading/catalogs, branding and focused tests | Full lint/types, 57 tests, final build, production profiles and native timing probe PASS; docs/evidence/U05-2026-10-21/ | Authorized scoped commits and master push; no deployment |
+
+| 2026-10-21 | U05 publication / PASS | Theme, scene and QA commits pushed to origin/master through 0e2976c; remote SHA and clean status confirmed; main unchanged | Final handoff record only | git ls-remote and git status PASS; no deployment | Await owner task |
