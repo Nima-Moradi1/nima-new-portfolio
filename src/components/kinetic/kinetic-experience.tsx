@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Check, Minus, Plus } from "lucide-react";
 import { NMBrandMark } from "@/components/branding/nm-brand-mark";
+import { KineticThemeToggle } from "@/components/theme/kinetic-theme-toggle";
 import { KineticContactDialog } from "./kinetic-contact-dialog";
 import { KineticLocaleSelect } from "./kinetic-locale-select";
 import { ProjectViewer } from "./project-viewer";
@@ -269,6 +270,7 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
         <div className={styles.modeSwitch} role="group" aria-label={copy.controls.modeLabel}>{(["projects", "experience"] as const).map(value => <button type="button" key={value} aria-pressed={mode === value} onClick={() => changeMode(value)}>{copy.chrome[value]}</button>)}</div>
         <a className={styles.brand} href="#top" aria-label={content.identity.name}><NMBrandMark aria-hidden="true" /><span>NIMA MORADIRAD</span></a>
         <div className={styles.headerActions}>
+          <KineticThemeToggle />
           <KineticLocaleSelect locale={locale} label={copy.chrome.locale} href={`${pathname}${suffix}`} />
           <button type="button" className={styles.contactButton} onClick={() => setContactOpen(true)}>{copy.chrome.contact}<ArrowUpRight size={13} aria-hidden="true" /></button>
         </div>

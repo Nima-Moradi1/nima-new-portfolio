@@ -15,12 +15,15 @@ export const STUDIO = {
 } as const;
 
 const glassTime = { value: 0 };
+const glassTheme = { value: 0 };
 export function setNMGlassTime(value: number) { glassTime.value = value; }
+export function setNMGlassTheme(value: number) { glassTheme.value = value; }
 
 /** Light bands are evaluated on the authored letter surfaces, so every glint
  * stays inside the N/M silhouette and follows its actual depth and bevels. */
 function glassReflections(shader: Parameters<MeshPhysicalMaterial["onBeforeCompile"]>[0]) {
   shader.uniforms.uNMGlassTime = glassTime;
+  shader.uniforms.uNMGlassTheme = glassTheme;
   shader.vertexShader = shader.vertexShader.replace("#include <common>", `#include <common>
     varying vec3 vNMGlassPosition;
     varying vec3 vNMGlassNormal;
@@ -30,6 +33,7 @@ function glassReflections(shader: Parameters<MeshPhysicalMaterial["onBeforeCompi
   `);
   shader.fragmentShader = shader.fragmentShader.replace("#include <common>", `#include <common>
     uniform float uNMGlassTime;
+    uniform float uNMGlassTheme;
     varying vec3 vNMGlassPosition;
     varying vec3 vNMGlassNormal;
   `).replace("#include <opaque_fragment>", `
@@ -49,13 +53,13 @@ function glassReflections(shader: Parameters<MeshPhysicalMaterial["onBeforeCompi
     float nmFresnel = nmFresnelBase * nmFresnelBase;
     vec3 nmWarm = vec3(1.0, 0.86, 0.65);
     vec3 nmIce = vec3(0.44, 0.9, 1.0);
-    vec3 nmInterior = vec3(0.012, 0.04, 0.058) + outgoingLight * 0.11;
-    vec3 nmPolishedEdge = outgoingLight * 0.7 + vec3(0.15, 0.34, 0.43);
+    vec3 nmInterior = mix(vec3(0.012, 0.04, 0.058), vec3(0.025, 0.14, 0.18), uNMGlassTheme) + outgoingLight * 0.11;
+    vec3 nmPolishedEdge = outgoingLight * mix(0.7, 0.38, uNMGlassTheme) + mix(vec3(0.15, 0.34, 0.43), vec3(0.08, 0.21, 0.27), uNMGlassTheme);
     outgoingLight = mix(nmPolishedEdge, nmInterior, nmFace)
       + nmFace * (nmWarm * nmSoft * 0.48 + vec3(1.0, 0.98, 0.91) * nmWhite * 2.4
       + nmIce * nmCyan * 1.05 + nmIce * nmSecond * 0.36)
       + nmFresnel * nmIce * 0.55;
-    diffuseColor.a = mix(0.32, 0.94, clamp(1.0 - nmFace + nmWhite * 0.75 + nmSoft * 0.28 + nmFresnel, 0.0, 1.0));
+    diffuseColor.a = mix(mix(0.32, 0.72, uNMGlassTheme), 0.94, clamp(1.0 - nmFace + nmWhite * 0.75 + nmSoft * 0.28 + nmFresnel, 0.0, 1.0));
     #include <opaque_fragment>
   `);
 }

@@ -3,10 +3,12 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, type RefObject } from "react";
 import { addAfterEffect, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
-import { Color, Group, MathUtils, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, MeshStandardMaterial, PerspectiveCamera, PointLight, Vector3 } from "three";
+import { Color, Fog, Group, HemisphereLight, MathUtils, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, MeshStandardMaterial, PerspectiveCamera, PointLight, Vector3 } from "three";
+import { THEME_EVENT, useTheme } from "@/components/theme/theme-provider";
+import { KINETIC_THEMES, THEME_TRANSITION_SECONDS, themeProgress } from "@/lib/kinetic-theme";
 import { proofSceneBlend, type KineticSceneState } from "@/lib/kinetic-model";
 import type { ExperienceItem, ProjectItem } from "@/types/portfolio";
-import { EngineeredRail, NMCartridge, setNMGlassTime, STUDIO, useNMGeometry } from "./nm-geometry";
+import { EngineeredRail, NMCartridge, setNMGlassTheme, setNMGlassTime, STUDIO, useNMGeometry } from "./nm-geometry";
 import { SolarSystem } from "./solar-system";
 import { PROJECT_TEXTURES } from "@/content/project-textures";
 
@@ -35,6 +37,13 @@ function rememberMaterials(mesh: Mesh, materials: Map<MeshBasicMaterial | MeshSt
 /** A single continuous rig: the same cartridges survive every chapter and mode. */
 export function MonolithScene({ state, accents, projects, experiences, onProjectClick, onReady }: SceneProps) {
   const geometry = useNMGeometry();
+  const { isDark } = useTheme();
+  const themeRig = useRef<Group>(null);
+  const hemisphere = useRef<HemisphereLight>(null);
+  const themeMotion = useRef({ value: isDark ? 0 : 1, from: isDark ? 0 : 1, target: isDark ? 0 : 1, elapsed: THEME_TRANSITION_SECONDS, started: 0 });
+  const palette = useRef(Object.fromEntries(Object.entries(KINETIC_THEMES.dark).map(([key, color]) => [key, new Color(color)])));
+  const darkPalette = useRef(Object.fromEntries(Object.entries(KINETIC_THEMES.dark).map(([key, color]) => [key, new Color(color)])));
+  const lightPalette = useRef(Object.fromEntries(Object.entries(KINETIC_THEMES.light).map(([key, color]) => [key, new Color(color)])));
   const rig = useRef<Group>(null);
   const pivot = useRef<Group>(null);
   const rails = useRef<Group>(null);
@@ -55,7 +64,31 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   const displayedMode = useRef<string | null>(null);
   const narrativeTransition = useRef({ entrance: 0, exit: 0 });
   const fadeMaterials = useRef(new Map<MeshBasicMaterial | MeshStandardMaterial, FadeMaterial>());
-  const { gl, size, invalidate, setDpr } = useThree();
+  const { gl, size, invalidate, setDpr, advance } = useThree();
+
+  const syncTheme = useCallback(() => {
+    const motion = themeMotion.current;
+    const target = document.documentElement.dataset.theme === "light" ? 1 : 0;
+    const changed = motion.target !== target;
+    if (changed) {
+      motion.from = motion.value;
+      motion.target = target;
+      motion.elapsed = 0;
+      motion.started = performance.now();
+    }
+    // The browser suspends RAF while preparing its native snapshot. Advance
+    // this same scene callback once, rather than starting another render loop.
+    if (document.documentElement.dataset.themeReveal === "true" && (changed || motion.value !== target)) advance(performance.now() / 1000);
+    invalidate();
+  }, [invalidate, advance]);
+
+  useLayoutEffect(() => { syncTheme(); }, [isDark, syncTheme]);
+  useEffect(() => {
+    // The Canvas has a separate React root; this direct event handoff also
+    // paints synchronously when its context bridge has not reconciled yet.
+    window.addEventListener(THEME_EVENT, syncTheme);
+    return () => window.removeEventListener(THEME_EVENT, syncTheme);
+  }, [syncTheme]);
 
   useLayoutEffect(() => {
     parts.current = cartridges.current.map((group) => ({
@@ -117,7 +150,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     };
   }, [invalidate, state]);
 
-  useFrame(({ clock, camera }, delta) => {
+  useFrame(({ clock, camera, scene }, delta) => {
     const model = state.current;
     if (!rig.current || !pivot.current || !rails.current || !model) return;
     const mobile = size.width < 768 && size.height > size.width;
@@ -125,6 +158,29 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     const step = reduced || !firstFrame.current ? 1 : 1 - Math.exp(-Math.min(delta, 0.05) * 10);
     const dormant = !model.visible || document.hidden;
     if (dormant) return;
+    const theme = themeMotion.current;
+    theme.elapsed = Math.min(THEME_TRANSITION_SECONDS, (performance.now() - theme.started) / 1000);
+    const progress = reduced ? 1 : themeProgress(theme.elapsed);
+    const revealing = document.documentElement.dataset.themeReveal === "true";
+    theme.value = revealing ? theme.target : MathUtils.lerp(theme.from, theme.target, progress);
+    for (const key of Object.keys(palette.current)) palette.current[key].copy(darkPalette.current[key]).lerp(lightPalette.current[key], theme.value);
+    if (scene.background instanceof Color) scene.background.copy(palette.current.background);
+    if (scene.fog instanceof Fog) scene.fog.color.copy(palette.current.background);
+    if (hemisphere.current) hemisphere.current.groundColor.copy(palette.current.ground);
+    setNMGlassTheme(theme.value);
+    if (themeRig.current) {
+      const lift = reduced ? 0 : Math.sin(progress * Math.PI) * Math.abs(theme.target - theme.from);
+      themeRig.current.rotation.y = lift * (theme.target === 1 ? 0.12 : -0.12);
+      themeRig.current.rotation.x = lift * 0.035;
+      themeRig.current.position.z = -lift * 0.32;
+      themeRig.current.position.y = lift * 0.07;
+    }
+    // Keep the physical finish coherent with both theme and Projects/Experience.
+    for (const { material } of fadeMaterials.current.values()) {
+      if (!(material instanceof MeshStandardMaterial)) continue;
+      if (material.name === "nm-shell") material.color.copy(palette.current.shell);
+      else if (material.name === "nm-smoke") material.color.copy(palette.current.smoke);
+    }
     // One continuous physical overlap drives both instruments, including the
     // early chapter threshold and reverse scroll. Phase changes never cut it.
     narrativeTransition.current.entrance = MathUtils.lerp(narrativeTransition.current.entrance, model.proofEntrance, step);
@@ -164,9 +220,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
           const material = object.material;
           if (material instanceof MeshStandardMaterial && material.name === "nm-shell") {
             material.roughness = matte ? 0.62 : 0.27;
-            material.color.set(matte ? "#8b969f" : STUDIO.titanium);
           } else if (material instanceof MeshStandardMaterial && material.name === "nm-smoke") {
-            material.color.set(matte ? "#29333e" : STUDIO.smoke);
             material.metalness = matte ? 0.74 : 0.52;
             material.roughness = matte ? 0.56 : 0.2;
             if (material instanceof MeshPhysicalMaterial) material.clearcoat = matte ? 0.15 : 0.75;
@@ -364,7 +418,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     // Only visible animated media and glass reflections keep the existing frame
     // callback awake. Hidden, reduced-motion and later narrative poses sleep.
     const animatedMedia = sceneBlend.rack > 0.0001 && (phase === "hero" || phase === "assembly" || phase === "carousel" || detailActive);
-    if (!reduced && (morphing || animatedMedia || !narrativeSettled || (exit > 0.9999 ? !exitSettled.current : activityRemaining > 0))) invalidate();
+    if ((!reduced && theme.elapsed < THEME_TRANSITION_SECONDS) || (!reduced && (morphing || animatedMedia || !narrativeSettled || (exit > 0.9999 ? !exitSettled.current : activityRemaining > 0)))) invalidate();
   }, -1);
 
   return (
@@ -378,12 +432,13 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
         <Lightformer form="rect" intensity={1.1} color={STUDIO.ice} position={[0, -4, 2]} rotation={[Math.PI / 2, 0, 0]} scale={[6, 2, 1]} />
       </Environment>
       <ambientLight intensity={0.65} color="#a3b5c6" />
-      <hemisphereLight args={["#eaf4ff", "#11151d", 1.15]} />
+      <hemisphereLight ref={hemisphere} args={["#eaf4ff", "#11151d", 1.15]} />
       <directionalLight position={[-3, 6, 5]} intensity={3.4} color="#e3edf6" />
       <directionalLight position={[6, -1, -2]} intensity={2.8} color="#a6bdcf" />
       <pointLight ref={accentLight} position={[2.8, 1.5, 3.8]} intensity={8} distance={10} decay={2} color={STUDIO.ice} />
       <pointLight ref={sunLight} position={[1, 4, 5]} intensity={14} distance={12} decay={2} color="#fff4df" />
       <pointLight position={[-5, 1.5, 0]} intensity={9} distance={12} color="#b29bff" />
+      <group ref={themeRig} name="nm-theme-rig">
       <SolarSystem state={state} transition={narrativeTransition} />
       <group ref={rig} name="nm-project-rack" position={[1.7, 0.12, -0.3]}>
         <group ref={pivot} position={[0, 0, -1.45]}>
@@ -406,6 +461,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
             </group>
           ))}
         </group>
+      </group>
       </group>
     </>
   );

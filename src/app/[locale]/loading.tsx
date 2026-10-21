@@ -1,13 +1,12 @@
 import { useTranslations } from "next-intl";
-import { routeStateClassNames as styles } from "@/app/route-state.class-names";
+import { usePortfolio } from "@/content/use-portfolio";
+import { BootLoader } from "@/components/kinetic/boot-loader";
 
 export default function Loading() {
   const t = useTranslations("Routes");
+  const { identity } = usePortfolio();
 
   return (
-    <div className={styles.loading} role="status" aria-live="polite">
-      <span className={styles.loadingCore} aria-hidden="true" />
-      <p className={styles.loadingLabel}>{t("loading")}</p>
-    </div>
+    <BootLoader visible name={identity.name} status={t("loading")} />
   );
 }

@@ -22,8 +22,8 @@ function StaticSculpture() {
   // Canvas fallback children also mount when WebGL works. Keep them
   // effect-free; actual renderer errors reach SceneBoundary.
   return (
-    <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", background: "radial-gradient(ellipse at 65% 40%, #14212b 0%, #05070b 65%)" }}>
-      <NMBrandMark style={{ width: "min(43vw, 320px)", color: "#b8c4ce", transform: "perspective(800px) rotateY(-15deg) rotateZ(-5deg)", filter: "drop-shadow(18px 26px 0 #101822)" }} />
+    <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", background: "radial-gradient(ellipse at 65% 40%, var(--nm-space) 0%, var(--nm-void) 65%)" }}>
+      <NMBrandMark style={{ width: "min(43vw, 320px)", color: "var(--nm-copy)", transform: "perspective(800px) rotateY(-15deg) rotateZ(-5deg)", filter: "drop-shadow(18px 26px 0 var(--nm-line))" }} />
     </div>
   );
 }
