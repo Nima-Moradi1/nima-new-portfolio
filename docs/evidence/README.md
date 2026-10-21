@@ -1,5 +1,7 @@
 # Execution evidence index — 2026-10-20
 
+**Latest — U03:** [Ten owner visual/mobile corrections](U03-2026-10-20/SUMMARY.md): seven locale/viewport profiles, synchronized physical rack, solar proof scene, initial loader/asset gate, restored mobile 3D, direct manipulation and five-channel contact. Current checkout `master` at starting `9c56bcf`; local modifications remain uncommitted. Prior publication and baseline records below are historical.
+
 Working branch `feat/nm-kinetic-portfolio`, baseline commit `a18911c0f9f493eed70fd8c65f844d6853be1e44`. The requested `updated-portfolio` workspace is an isolated worktree. **Current application implementation is uncommitted and has changed from baseline**; no lockfile, deployment workflow, contact setting or deployed site was changed. Earlier Stage A reports below describe the unchanged source at audit time.
 
 **Current integration:** [Implementation summary](T-implementation-2026-10-20/SUMMARY.md), [desktop/mobile flow](T-implementation-2026-10-20/rendered-flow.json), [corrected proof/idle rendering](T-implementation-2026-10-20/proof-idle.json), [HTML/form](T-implementation-2026-10-20/html-form.json), brand studies, final FA spacing screenshots and explicitly retained first-attempt resize harness output. T05/T07/T17/T19 are accepted within their documented scopes. Broader QA/build/fidelity remains pending.

@@ -1,0 +1,44 @@
+{
+  "profiles": [],
+  "flow": {
+    "mouseDrag": {
+      "before": "item-moradi-gallery",
+      "after": "item-xo-arena"
+    },
+    "afterPreviewDrag": {
+      "closedAt": "item-xo-arena",
+      "draggedAfterClose": "item-emerald-case"
+    },
+    "keyboard": true,
+    "contactLinks": [
+      {
+        "href": "tel:+989036837788",
+        "text": "Call\n+98 903 683 7788"
+      },
+      {
+        "href": "mailto:nimamoradirad@gmail.com",
+        "text": "Email\nnimamoradirad@gmail.com"
+      },
+      {
+        "href": "https://t.me/Nimamoradirad",
+        "text": "Telegram\n@Nimamoradirad"
+      },
+      {
+        "href": "https://github.com/Nima-Moradi1",
+        "text": "GitHub\nNima-Moradi1"
+      },
+      {
+        "href": "https://www.linkedin.com/in/nima-moradi-rad-1380s",
+        "text": "LinkedIn\nNima Moradirad"
+      }
+    ],
+    "removedControls": true
+  },
+  "boot": {
+    "delayedAssetHeld": true,
+    "releasedOnReady": true,
+    "reducedMotion": true,
+    "noJavaScript": true
+  },
+  "errors": []
+}

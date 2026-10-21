@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-20",
+  "encoder": "Pillow 11.2.1 / WebP quality82 method6; Lanczos proportional maximum720px",
+  "sourceBytes": 470684,
+  "textureBytes": 132410,
+  "captures": [
+    {
+      "id": "sarochi-3d-shop",
+      "source": "/assets/projects/sarochi-3d-shop/showroom.webp",
+      "sourceBytes": 75198,
+      "path": "/assets/kinetic/sarochi-3d-shop.f0176d7ca597.webp",
+      "bytes": 28152,
+      "width": 720,
+      "height": 506
+    },
+    {
+      "id": "moradi-gallery",
+      "source": "/assets/projects/moradi-gallery/homepage-fa.png",
+      "sourceBytes": 53199,
+      "path": "/assets/kinetic/moradi-gallery.6c59dd9daa52.webp",
+      "bytes": 11986,
+      "width": 720,
+      "height": 450
+    },
+    {
+      "id": "xo-arena",
+      "source": "/assets/projects/xo-arena/game-room.webp",
+      "sourceBytes": 32848,
+      "path": "/assets/kinetic/xo-arena.233c5bab32de.webp",
+      "bytes": 11470,
+      "width": 720,
+      "height": 418
+    },
+    {
+      "id": "emerald-case",
+      "source": "/assets/projects/emerald-case/homepage.jpg",
+      "sourceBytes": 117325,
+      "path": "/assets/kinetic/emerald-case.025256440d7d.webp",
+      "bytes": 28126,
+      "width": 720,
+      "height": 500
+    },
+    {
+      "id": "hesabo-platform",
+      "source": "/assets/projects/hesabo/homepage.jpg",
+      "sourceBytes": 73715,
+      "path": "/assets/kinetic/hesabo-platform.8d68b8a406b7.webp",
+      "bytes": 15668,
+      "width": 720,
+      "height": 500
+    },
+    {
+      "id": "tarabari-nima",
+      "source": "/assets/projects/tarabari-nima/loaded-truck.webp",
+      "sourceBytes": 36556,
+      "path": "/assets/kinetic/tarabari-nima.4ad7d99fb22e.webp",
+      "bytes": 14928,
+      "width": 720,
+      "height": 450
+    },
+    {
+      "id": "lingo-learn",
+      "source": "/assets/projects/lingo-learn/homepage.jpg",
+      "sourceBytes": 81843,
+      "path": "/assets/kinetic/lingo-learn.a1d91034638d.webp",
+      "bytes": 22080,
+      "width": 720,
+      "height": 450
+    }
+  ]
+}

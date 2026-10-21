@@ -1,0 +1,11 @@
+{
+  "touchDrag": {
+    "before": "item-emerald-case",
+    "after": "item-xo-arena"
+  },
+  "nativeVerticalTouch": true,
+  "experienceMode": true,
+  "phone": true,
+  "mobilePageErrors": [],
+  "deniedWebGLFallback": true
+}
