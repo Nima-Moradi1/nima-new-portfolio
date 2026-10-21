@@ -7,7 +7,7 @@ import styles from "./boot-loader.module.css";
 export const BOOT_DEADLINE_MS = 6500;
 
 type BootReadinessOptions = {
-  /** Reported only after the scene's critical assets and first frame commit. */
+  /** Reported after the studio environment and first scene frame commit. */
   sceneReady: boolean;
   /** An intentional reading edition, reduced motion, or renderer failure. */
   staticEdition: boolean;
@@ -15,8 +15,8 @@ type BootReadinessOptions = {
 };
 
 /**
- * Start closed in server HTML. Release as soon as real critical work settles;
- * an unavailable renderer/font must never keep the semantic page inaccessible.
+ * Keep the sculpture placeholder until critical work settles. The semantic
+ * page is usable throughout; optional project captures never gate entry.
  */
 export function useBootReadiness({ sceneReady, staticEdition, onTimeout }: BootReadinessOptions) {
   const [fontsSettled, setFontsSettled] = useState(false);
@@ -45,6 +45,7 @@ export function useBootReadiness({ sceneReady, staticEdition, onTimeout }: BootR
 
 type BootLoaderProps = {
   visible: boolean;
+  scene?: boolean;
   name: string;
   status: string;
 };
@@ -53,12 +54,12 @@ const DEPTH_LAYERS = [0, 1, 2, 3, 4, 5];
 const MARK_PATH = "M7 59V21h9l15 23V21h9v38h-9L16 36v23H7Zm36 0V21h8l8.5 15L68 21h8v38h-9V38l-7.5 12L52 38v21h-9Z";
 
 /** Original NM silhouette, CSS extrusion and orbital light; no second canvas. */
-export function BootLoader({ visible, name, status }: BootLoaderProps) {
+export function BootLoader({ visible, scene = false, name, status }: BootLoaderProps) {
   const metalId = useId();
   if (!visible) return null;
 
   return (
-    <div className={styles.loader} data-nm-boot-loader>
+    <div className={`${styles.loader}${scene ? ` ${styles.sceneLoader}` : ""}`} data-nm-boot-loader>
       <p className={styles.identity}>{name}</p>
       <div className={styles.art} aria-hidden="true">
         <div className={styles.halo} />

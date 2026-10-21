@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
-import { useReducedMotion } from "motion/react";
+import { startTransition, useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Check, Minus, Plus } from "lucide-react";
@@ -32,6 +31,12 @@ const KineticStage = dynamic<KineticStageProps>(() => import("./kinetic-stage").
 const noSubscription = () => () => {};
 const clientSnapshot = () => true;
 const serverSnapshot = () => false;
+const reducedMotionSnapshot = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function subscribeReducedMotion(update: () => void) {
+  const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+  query.addEventListener("change", update);
+  return () => query.removeEventListener("change", update);
+}
 const suffixSnapshot = () => `${window.location.search}${window.location.hash}`;
 const serverSuffix = () => "";
 function subscribeLocation(update: () => void) {
@@ -50,6 +55,7 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
   const enhanced = useSyncExternalStore(noSubscription, clientSnapshot, serverSnapshot);
   const [reader, setReader] = useState(false);
   const [ready, setReady] = useState(false);
+  const [sceneEnabled, setSceneEnabled] = useState(false);
   const [failed, setFailed] = useState(false);
   const [openFaq, setOpenFaq] = useState<string | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
@@ -57,7 +63,7 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
   const [detailVisible, setDetailVisible] = useState(false);
   const suffix = useSyncExternalStore(subscribeLocation, suffixSnapshot, serverSuffix);
   const [restorationRevision, setRestorationRevision] = useState(0);
-  const reducedMotion = useReducedMotion();
+  const reducedMotion = useSyncExternalStore(subscribeReducedMotion, reducedMotionSnapshot, serverSnapshot);
   const pathname = usePathname();
   const rtl = locale === "fa";
   const items = mode === "projects" ? content.projects : content.experience;
@@ -76,6 +82,31 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
   const onProofSelection = useCallback((index: number) => setProofIndex(index), []);
   const onPhase = useCallback((next: ScenePhase) => setPhase(next), []);
   const onDetail = useCallback((visible: boolean) => setDetailVisible(visible), []);
+
+  useEffect(() => {
+    if (!enhanced || staticEdition) return;
+    let active = true;
+    let frame = 0;
+    // Wait for a presented content frame, rather than assuming two RAFs mean
+    // the compositor has painted. WebGL must not compete with that first paint.
+    const enable = () => {
+      if (!active) return;
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => { if (active) startTransition(() => setSceneEnabled(true)); });
+      });
+    };
+    const afterPaint = () => { Promise.resolve(document.fonts?.ready).then(enable, enable); };
+    let observer: PerformanceObserver | undefined;
+    if (typeof PerformanceObserver !== "undefined" && PerformanceObserver.supportedEntryTypes?.includes("paint")) {
+      observer = new PerformanceObserver(list => {
+        if (!list.getEntries().some(entry => entry.name === "first-contentful-paint")) return;
+        observer?.disconnect();
+        afterPaint();
+      });
+      observer.observe({ type: "paint", buffered: true });
+    } else afterPaint();
+    return () => { active = false; observer?.disconnect(); cancelAnimationFrame(frame); };
+  }, [enhanced, staticEdition]);
 
   const scrollToItem = useCallback((index: number, behavior: ScrollBehavior = "smooth") => {
     const element = root.current?.querySelector<HTMLElement>('[data-chapter="work"]');
@@ -130,18 +161,13 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
       pendingSelection.current = { id: url.searchParams.get("item") || undefined, index: 0, jump: true, honorHash: true };
       setMode(next); setRestorationRevision(value => value + 1); syncSuffix(); notifyScene();
     };
+    if (window.location.search) restore();
     window.addEventListener("popstate", restore); window.addEventListener("hashchange", syncSuffix);
     return () => { window.removeEventListener("popstate", restore); window.removeEventListener("hashchange", syncSuffix); };
   }, [content.projects.length, content.experience.length, syncSuffix]);
   useEffect(() => { scene.current.reducedMotion = !!reducedMotion || reader; scene.current.visible = !reader && !contactOpen && !document.hidden; notifyScene(); }, [reducedMotion, reader, contactOpen]);
   useEffect(() => {
-    if (!enhanced || bootComplete) return;
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = overflow; };
-  }, [enhanced, bootComplete]);
-  useEffect(() => {
-    if (!enhanced) return;
+    if (!enhanced || mode !== scene.current.mode) return;
     const pending = pendingSelection.current;
     const editionChanged = previousStaticEdition.current !== staticEdition;
     previousStaticEdition.current = staticEdition;
@@ -264,9 +290,9 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
     <div ref={root} className={styles.root} dir={rtl ? "rtl" : "ltr"} data-nm-portfolio="" data-enhanced={enhanced} data-reader={staticEdition} data-mode={mode} data-phase={phase} data-scene-ready={ready} data-boot-complete={bootComplete}
       onPointerMove={event => { if (event.pointerType !== "mouse" || staticEdition) return; scene.current.pointerX = (event.clientX / window.innerWidth - .5) * 2; scene.current.pointerY = (event.clientY / window.innerHeight - .5) * 2; notifyScene(); }}
       onPointerLeave={() => { scene.current.pointerX = 0; scene.current.pointerY = 0; notifyScene(); }}>
-      <a className={styles.skip} href="#main-content" tabIndex={enhanced && !bootComplete ? -1 : undefined}>{copy.chrome.skip}</a>
+      <a className={styles.skip} href="#main-content">{copy.chrome.skip}</a>
       <div className={styles.progress} aria-hidden="true"><span /></div>
-      <header className={styles.header} inert={enhanced && !bootComplete}>
+      <header className={styles.header}>
         <div className={styles.modeSwitch} role="group" aria-label={copy.controls.modeLabel}>{(["projects", "experience"] as const).map(value => <button type="button" key={value} aria-pressed={mode === value} onClick={() => changeMode(value)}>{copy.chrome[value]}</button>)}</div>
         <a className={styles.brand} href="#top" aria-label={content.identity.name}><NMBrandMark aria-hidden="true" /><span>NIMA MORADIRAD</span></a>
         <div className={styles.headerActions}>
@@ -280,14 +306,14 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
         aria-label={sceneInteractive ? copy.controls.select : undefined} aria-valuemin={sceneInteractive ? 1 : undefined} aria-valuemax={sceneInteractive ? (phase === "proof" ? 4 : items.length) : undefined}
         aria-valuenow={sceneInteractive ? (phase === "proof" ? proofIndex + 1 : activeIndex + 1) : undefined} aria-valuetext={sceneInteractive ? (phase === "proof" ? copy.proof.items[proofIndex].title : "title" in active ? active.title : active.company) : undefined}
         onKeyDown={selectorKeys} onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={endDrag}>
-        {!staticEdition && enhanced && <KineticStage state={scene} accents={accents} projects={content.projects} experiences={content.experience} onProjectClick={handleProjectClick} onReady={onReady} onFailure={onFailure} />}
+        {!staticEdition && sceneEnabled && <KineticStage state={scene} accents={accents} projects={content.projects} experiences={content.experience} onProjectClick={handleProjectClick} onReady={onReady} onFailure={onFailure} />}
       </div>
       <div className={styles.studioGlow} aria-hidden="true" /><div className={styles.frame} aria-hidden="true"><i /><i /><i /><i /></div>
       <span className={styles.ambient} aria-hidden="true">NM / ENGINEERING IN MOTION</span>
-      <BootLoader visible={!bootComplete} name={content.identity.name} status={copy.loading.preparing} />
-      <main id="main-content" className={styles.main} tabIndex={-1} inert={enhanced && !bootComplete}>
-        <noscript><nav className={styles.noScriptNav} aria-label={copy.controls.modeLabel}><a href="?view=projects#work">{copy.chrome.projects}</a><a href="?view=experience#work">{copy.chrome.experience}</a></nav></noscript>
+      <main id="main-content" className={styles.main} tabIndex={-1}>
+        <noscript><nav className={styles.noScriptNav} aria-label={copy.controls.modeLabel}><a href="#work">{copy.chrome.projects}</a><a href="#experience-history">{copy.chrome.experience}</a></nav></noscript>
         <section className={styles.hero} id="top" data-chapter="top" aria-labelledby="hero-title">
+          <BootLoader visible={!bootComplete} scene name={content.identity.name} status={copy.loading.preparing} />
           <div className={styles.heroCopy}><p className={styles.eyebrow}><span className={styles.statusDot} />{copy.hero.eyebrow}</p><h1 id="hero-title">{copy.hero.title}</h1><p className={styles.heroDescription}>{copy.hero.description}</p></div>
           <div className={styles.heroFallback} aria-hidden="true"><NMBrandMark /></div>
           <div className={styles.heroFoot}><span>{copy.hero.availability}</span><a href="#work">{copy.hero.scroll}<ArrowDown size={14} aria-hidden="true" /></a><span className={styles.edition}>PORTFOLIO — 2026</span></div>
@@ -327,7 +353,7 @@ export function KineticExperience({ locale, content, copy, initialMode = "projec
             <div className={styles.faqAnswer}><p>{faq.answer}</p>{faq.href && (faq.href === "#contact" || faq.href.startsWith("/projects/") ? <button type="button" className={styles.textLink} onClick={() => openRelated(faq.href!)}>{faq.linkLabel}<ArrowUpRight size={15} aria-hidden="true" /></button> : faq.href.startsWith("#") ? <a className={styles.textLink} href={faq.href}>{faq.linkLabel}<ArrowDown size={15} aria-hidden="true" /></a> : <a className={styles.textLink} href={faq.href} target="_blank" rel="noreferrer noopener">{faq.linkLabel}<ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </details>)}</div>
         </section>
-        <section className={styles.fallbackHistory} aria-label={copy.chrome.experience}>{mode === "projects" && <><h2>{copy.chrome.experience}</h2>{content.experience.map(job => <article key={job.id}><p>{job.period}</p><h3>{job.company} — {job.role}</h3><p>{job.summary}</p><ul>{job.highlights.map(line => <li key={line}>{line}</li>)}</ul></article>)}</>}<article><h3>{content.education.title}</h3><p>{content.education.institution}</p><p>{content.education.note}</p><ul>{content.education.languages.map(language => <li key={language}>{language}</li>)}</ul></article>{content.capabilities.map(group => <article key={group.id}><h3>{group.title}</h3><p>{group.description}</p><ul className={styles.tools}>{group.skills.map(skill => <li key={skill}><bdi>{skill}</bdi></li>)}</ul></article>)}</section>
+        <section className={styles.fallbackHistory} id="experience-history" aria-label={copy.chrome.experience}>{mode === "projects" && <><h2>{copy.chrome.experience}</h2>{content.experience.map(job => <article key={job.id}><p>{job.period}</p><h3>{job.company} — {job.role}</h3><p>{job.summary}</p><ul>{job.highlights.map(line => <li key={line}>{line}</li>)}</ul></article>)}</>}<article><h3>{content.education.title}</h3><p>{content.education.institution}</p><p>{content.education.note}</p><ul>{content.education.languages.map(language => <li key={language}>{language}</li>)}</ul></article>{content.capabilities.map(group => <article key={group.id}><h3>{group.title}</h3><p>{group.description}</p><ul className={styles.tools}>{group.skills.map(skill => <li key={skill}><bdi>{skill}</bdi></li>)}</ul></article>)}</section>
         <footer className={styles.footer}><a className={styles.footerBrand} href="#top"><NMBrandMark aria-hidden="true" /><span>{content.identity.name}</span></a><p>{copy.footer.note}</p><a href="#top">{copy.footer.backToTop}<ArrowUpRight size={15} aria-hidden="true" /></a></footer>
       </main>
       <KineticContactDialog open={contactOpen} onOpenChange={setContactOpen} locale={locale} content={content} />

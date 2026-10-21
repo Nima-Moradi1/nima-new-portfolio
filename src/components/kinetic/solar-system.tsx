@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, type RefObject } from "react";
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, type RefObject } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import {
   AdditiveBlending, DoubleSide, ExtrudeGeometry, Group, MathUtils, Mesh,
@@ -89,7 +89,7 @@ function useEmblems() {
 
 /** One native-scroll-driven solar instrument. The existing scene owns the
  * demand-render wake/sleep policy; this component never starts another ticker. */
-export function SolarSystem({ state, transition }: {
+export const SolarSystem = memo(function SolarSystem({ state, transition }: {
   state: RefObject<KineticSceneState>;
   transition: RefObject<{ entrance: number; exit: number }>;
 }) {
@@ -112,7 +112,8 @@ export function SolarSystem({ state, transition }: {
   const lastReveal = useRef(-1);
   const vectors = useMemo(() => ({ planet: new Vector3(), direction: new Vector3() }), []);
   const geometry = useEmblems();
-  const { size, gl } = useThree();
+  const size = useThree(state => state.size);
+  const gl = useThree(state => state.gl);
   const solarUniforms = useRef({ time: { value: 0 }, light: { value: 0 } });
   const solarSurface = useMemo(() => (shader: Parameters<MeshStandardMaterial["onBeforeCompile"]>[0]) => {
     shader.uniforms.uNMSolarTime = solarUniforms.current.time;
@@ -316,4 +317,4 @@ export function SolarSystem({ state, transition }: {
       <object3D ref={beamTarget} name="nm-solar-beam-target" />
     </group>
   );
-}
+});

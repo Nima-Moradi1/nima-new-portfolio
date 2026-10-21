@@ -7,16 +7,19 @@ import { materializePortfolio } from "@/content/portfolio";
 import { routing } from "@/i18n/routing";
 import type { PortfolioContent } from "@/types/portfolio";
 
+export const dynamic = "force-static";
+
 export default async function HomePage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ view?: string; item?: string }>;
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const [messages, query] = await Promise.all([getMessages({ locale }), searchParams]);
-  return <KineticExperience key={locale} locale={locale} content={materializePortfolio(messages.Portfolio as PortfolioContent)} copy={getKineticContent(locale)} initialMode={query.view === "experience" ? "experience" : "projects"} initialItem={query.item} />;
+  // Query selection is restored by the existing client history controller.
+  // Keeping the home static sends the real hero in the first response instead
+  // of hiding it in a streamed segment behind the route loader's JS handoff.
+  const messages = await getMessages({ locale });
+  return <KineticExperience key={locale} locale={locale} content={materializePortfolio(messages.Portfolio as PortfolioContent)} copy={getKineticContent(locale)} />;
 }

@@ -1,12 +1,13 @@
 "use client";
 
 import { Canvas, useThree } from "@react-three/fiber";
-import { Component, useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from "react";
+import { Component, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { ACESFilmicToneMapping, SRGBColorSpace } from "three";
 import { NMBrandMark } from "@/components/branding/nm-brand-mark";
 import type { KineticSceneState } from "@/lib/kinetic-model";
 import type { ExperienceItem, ProjectItem } from "@/types/portfolio";
 import { MonolithScene } from "./monolith-scene";
+import { BakedStudioEnvironment } from "./baked-studio-environment";
 
 export type KineticStageProps = {
   state: RefObject<KineticSceneState>;
@@ -37,6 +38,8 @@ class SceneBoundary extends Component<{ children: ReactNode; onFailure: () => vo
 
 export function KineticStage({ state, accents, projects, experiences, onProjectClick, onReady, onFailure }: KineticStageProps) {
   const [failed, setFailed] = useState(false);
+  const [compiled, setCompiled] = useState(false);
+  const onCompiled = useCallback(() => setCompiled(true), []);
   const failureReported = useRef(false);
   const failure = useRef(onFailure);
   useEffect(() => { failure.current = onFailure; }, [onFailure]);
@@ -51,7 +54,7 @@ export function KineticStage({ state, accents, projects, experiences, onProjectC
     <div aria-hidden="true" data-nm-scene="single-stage" data-scene-failed={failed} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
       <SceneBoundary onFailure={fail}>
         {failed ? <StaticSculpture /> : <Canvas
-          frameloop="demand"
+          frameloop={compiled ? "demand" : "never"}
           dpr={[1, 1.5]}
           camera={{ position: [0, 0.25, 12.1], fov: 37, near: 0.1, far: 45 }}
           gl={{ antialias: true, alpha: false, powerPreference: "high-performance", stencil: false, depth: true }}
@@ -60,16 +63,35 @@ export function KineticStage({ state, accents, projects, experiences, onProjectC
             gl.toneMapping = ACESFilmicToneMapping;
             gl.toneMappingExposure = 1.2;
             gl.outputColorSpace = SRGBColorSpace;
+            gl.transmissionResolutionScale = 0.5;
             setDpr(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.15 : 1.5));
           }}
           style={{ position: "absolute", inset: 0 }}
         >
           <ContextGuard onFailure={fail} />
           <MonolithScene state={state} accents={accents} projects={projects} experiences={experiences} onProjectClick={onProjectClick} onReady={onReady} />
+          <Suspense fallback={null}>
+            <BakedStudioEnvironment />
+            <PrepareScene onCompiled={onCompiled} onFailure={fail} />
+          </Suspense>
         </Canvas>}
       </SceneBoundary>
     </div>
   );
+}
+
+/** Compile with the driver's parallel extension before the demand loop starts.
+ * The semantic page stays usable while the GPU prepares its real materials. */
+function PrepareScene({ onCompiled, onFailure }: { onCompiled: () => void; onFailure: () => void }) {
+  const gl = useThree(state => state.gl);
+  const scene = useThree(state => state.scene);
+  const camera = useThree(state => state.camera);
+  useEffect(() => {
+    let active = true;
+    gl.compileAsync(scene, camera).then(() => { if (active) onCompiled(); }, () => { if (active) onFailure(); });
+    return () => { active = false; };
+  }, [gl, scene, camera, onCompiled, onFailure]);
+  return null;
 }
 
 /** The renderer owns the native canvas before this effect can attach listeners. */

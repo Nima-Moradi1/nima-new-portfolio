@@ -29,7 +29,7 @@ describe("kinetic boot readiness", () => {
     expect(renderToStaticMarkup(<BootLoader visible={false} name="Nima" status="Ready" />)).toBe("");
   });
 
-  it("keeps the gate until fonts and the asset-complete scene frame are both ready", async () => {
+  it("keeps the sculpture placeholder until fonts and the first scene frame are ready", async () => {
     const settleFonts = pendingFonts();
     const onTimeout = vi.fn();
     const { result, rerender } = renderHook(({ sceneReady }) => useBootReadiness({ sceneReady, staticEdition: false, onTimeout }), { initialProps: { sceneReady: false } });

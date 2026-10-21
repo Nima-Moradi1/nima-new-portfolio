@@ -6,7 +6,5 @@ export default function Loading() {
   const t = useTranslations("Routes");
   const { identity } = usePortfolio();
 
-  return (
-    <BootLoader visible name={identity.name} status={t("loading")} />
-  );
+  return <BootLoader visible name={identity.name} status={t("loading")} />;
 }

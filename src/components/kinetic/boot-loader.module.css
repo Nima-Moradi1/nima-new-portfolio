@@ -164,6 +164,29 @@
 }
 .signature span { width: 36px; height: 1px; background: var(--nm-line); }
 
+/* Reserve the sculpture's space without covering or moving the SSR copy. */
+.sceneLoader {
+  position: absolute;
+  inset: 16svh 4% auto 50%;
+  min-height: 0;
+  height: 68svh;
+  z-index: 3;
+  background: transparent;
+  pointer-events: none;
+}
+:global(html[dir="rtl"]) .sceneLoader { inset-inline: 50% 4%; }
+.sceneLoader .identity, .sceneLoader .signature { display: none; }
+.sceneLoader .art { width: min(42vw, 570px); height: min(34vw, 420px); }
+.sceneLoader .status { margin-top: 8px; font-size: 12px; }
+@media (max-width: 767px) and (min-height: 501px) {
+  .sceneLoader, :global(html[dir="rtl"]) .sceneLoader { inset: 16svh 5% auto; height: 37svh; }
+  .sceneLoader .art { width: min(70vw, 350px); height: min(48vw, 240px); }
+}
+@media (max-height: 500px) {
+  .sceneLoader { top: 18svh; height: 66svh; }
+  .sceneLoader .art { width: 260px; height: 180px; }
+}
+
 @keyframes suspension {
   0%, 100% { transform: translateY(4px) rotateY(-8deg) rotateZ(-3deg); }
   50% { transform: translateY(-9px) rotateY(8deg) rotateZ(2deg); }

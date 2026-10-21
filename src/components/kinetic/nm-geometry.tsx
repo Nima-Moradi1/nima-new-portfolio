@@ -1,9 +1,8 @@
 ﻿"use client";
 
-import { Component, Suspense, useEffect, useLayoutEffect, useMemo, useRef, type ReactNode } from "react";
-import { useThree } from "@react-three/fiber";
-import { useTexture } from "@react-three/drei";
-import { CanvasTexture, ExtrudeGeometry, InstancedMesh, Object3D, Shape, SRGBColorSpace, type ColorRepresentation, type MeshPhysicalMaterial } from "three";
+import { Component, memo, Suspense, useEffect, useLayoutEffect, useMemo, useRef, type ReactNode } from "react";
+import { useLoader, useThree } from "@react-three/fiber";
+import { CanvasTexture, ExtrudeGeometry, InstancedMesh, Object3D, Shape, SRGBColorSpace, TextureLoader, type ColorRepresentation, type MeshPhysicalMaterial } from "three";
 
 export const STUDIO = {
   void: "#05070b",
@@ -279,7 +278,8 @@ class ProjectAssetBoundary extends Component<{ children: ReactNode; onSettled?: 
 
 /** A real owner-project capture, animated through its UV window by the scene. */
 function ProjectScreen({ image, index, onAssetReady }: { image: string; index: number; onAssetReady?: () => void }) {
-  const source = useTexture(image);
+  // Only the SRGB clone is rendered. Avoid uploading the unused source too.
+  const source = useLoader(TextureLoader, image);
   const texture = useMemo(() => {
     const map = source.clone();
     map.colorSpace = SRGBColorSpace;
@@ -341,7 +341,7 @@ function CompanyPlate({ company, index }: { company: string; index: number }) {
 }
 
 /** Shared original geometry with authentic project media, never repeated branding. */
-export function NMCartridge({
+export const NMCartridge = memo(function NMCartridge({
   geometry,
   accent,
   index,
@@ -408,9 +408,9 @@ export function NMCartridge({
       </group>
     </group>
   );
-}
+});
 
-export function EngineeredRail() {
+export const EngineeredRail = memo(function EngineeredRail() {
   return (
     <group>
       {[-1, 1].map((side) => (
@@ -432,4 +432,4 @@ export function EngineeredRail() {
       ))}
     </group>
   );
-}
+});

@@ -1,8 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useRef, type RefObject } from "react";
+import { memo, useCallback, useEffect, useLayoutEffect, useRef, type RefObject } from "react";
 import { addAfterEffect, useFrame, useThree } from "@react-three/fiber";
-import { Environment, Lightformer } from "@react-three/drei";
 import { Color, Fog, Group, HemisphereLight, MathUtils, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, MeshStandardMaterial, PerspectiveCamera, PointLight, Vector3 } from "three";
 import { THEME_EVENT, useTheme } from "@/components/theme/theme-provider";
 import { KINETIC_THEMES, THEME_TRANSITION_SECONDS, themeProgress } from "@/lib/kinetic-theme";
@@ -35,7 +34,7 @@ function rememberMaterials(mesh: Mesh, materials: Map<MeshBasicMaterial | MeshSt
 }
 
 /** A single continuous rig: the same cartridges survive every chapter and mode. */
-export function MonolithScene({ state, accents, projects, experiences, onProjectClick, onReady }: SceneProps) {
+export const MonolithScene = memo(function MonolithScene({ state, accents, projects, experiences, onProjectClick, onReady }: SceneProps) {
   const geometry = useNMGeometry();
   const { isDark } = useTheme();
   const themeRig = useRef<Group>(null);
@@ -52,7 +51,6 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   const accentLight = useRef<PointLight>(null);
   const sunLight = useRef<PointLight>(null);
   const firstFrame = useRef(false);
-  const assetsReady = useRef(new Set<number>());
   const revealStyle = useRef<HTMLElement | null>(null);
   const lastReveal = useRef(-1);
   const exitSettled = useRef(false);
@@ -64,7 +62,11 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   const displayedMode = useRef<string | null>(null);
   const narrativeTransition = useRef({ entrance: 0, exit: 0 });
   const fadeMaterials = useRef(new Map<MeshBasicMaterial | MeshStandardMaterial, FadeMaterial>());
-  const { gl, size, invalidate, setDpr, advance } = useThree();
+  const gl = useThree(state => state.gl);
+  const size = useThree(state => state.size);
+  const invalidate = useThree(state => state.invalidate);
+  const setDpr = useThree(state => state.setDpr);
+  const advance = useThree(state => state.advance);
 
   const syncTheme = useCallback(() => {
     const motion = themeMotion.current;
@@ -110,13 +112,12 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
   }, [size.width, setDpr, invalidate]);
 
   const ready = useCallback(() => {
-    if (firstFrame.current || assetsReady.current.size < projects.length) return;
+    if (firstFrame.current) return;
     firstFrame.current = true;
     onReady();
-  }, [onReady, projects.length]);
+  }, [onReady]);
 
-  const assetReady = useCallback((index: number) => {
-    assetsReady.current.add(index);
+  const assetReady = useCallback(() => {
     invalidate();
   }, [invalidate]);
 
@@ -425,12 +426,6 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
     <>
       <color attach="background" args={[STUDIO.void]} />
       <fog attach="fog" args={[STUDIO.void, 13, 26]} />
-      <Environment resolution={128} frames={1}>
-        <Lightformer form="circle" intensity={6} color="#fff4df" position={[2.4, 3.2, 4]} scale={2.1} />
-        <Lightformer form="rect" intensity={4} color="#e3edf6" position={[-4, 5, 4]} rotation={[0, Math.PI / 4, 0]} scale={[4, 7, 1]} />
-        <Lightformer form="rect" intensity={2.5} color="#a6bdcf" position={[5, 1, -3]} rotation={[0, -Math.PI / 2, 0]} scale={[3, 6, 1]} />
-        <Lightformer form="rect" intensity={1.1} color={STUDIO.ice} position={[0, -4, 2]} rotation={[Math.PI / 2, 0, 0]} scale={[6, 2, 1]} />
-      </Environment>
       <ambientLight intensity={0.65} color="#a3b5c6" />
       <hemisphereLight ref={hemisphere} args={["#eaf4ff", "#11151d", 1.15]} />
       <directionalLight position={[-3, 6, 5]} intensity={3.4} color="#e3edf6" />
@@ -457,7 +452,7 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
               onPointerOver={() => { if (state.current.mode === "projects" && state.current.phase === "carousel") gl.domElement.style.cursor = "pointer"; }}
               onPointerOut={() => { gl.domElement.style.cursor = ""; }}
             >
-              <NMCartridge geometry={geometry} accent={accents[index % Math.max(1, accents.length)] || STUDIO.ice} image={PROJECT_TEXTURES[projects[index]?.id] ?? projects[index]?.image} company={experiences?.[index]?.company} index={index} onAssetReady={() => assetReady(index)} />
+              <NMCartridge geometry={geometry} accent={accents[index % Math.max(1, accents.length)] || STUDIO.ice} image={PROJECT_TEXTURES[projects[index]?.id] ?? projects[index]?.image} company={experiences?.[index]?.company} index={index} onAssetReady={assetReady} />
             </group>
           ))}
         </group>
@@ -465,4 +460,4 @@ export function MonolithScene({ state, accents, projects, experiences, onProject
       </group>
     </>
   );
-}
+});
