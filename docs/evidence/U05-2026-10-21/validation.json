@@ -1,0 +1,363 @@
+{
+  "environment": "Production Next start / Chrome / Playwright; Browser plugin not available",
+  "profiles": [
+    {
+      "profile": "EN desktop dark",
+      "url": "http://127.0.0.1:3100/",
+      "theme": "dark",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack Developer",
+      "background": "rgb(5, 7, 11)",
+      "text": "rgb(244, 247, 252)",
+      "muted": "rgb(168, 178, 195)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 1440,
+      "overflow": false,
+      "overlay": false,
+      "stored": null,
+      "favicon": "/brand/nm-favicon.svg",
+      "meta": "#05070b"
+    },
+    {
+      "profile": "EN desktop light",
+      "theme": "light",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack Developer",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 1440,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3"
+    },
+    {
+      "profile": "fa-mobile",
+      "theme": "light",
+      "dir": "rtl",
+      "title": "نیما مرادی‌راد · توسعه‌دهنده فول‌استک و هوش مصنوعی",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 390,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3",
+      "controls": [
+        {
+          "label": "پروژه‌ها",
+          "x": 308.546875,
+          "y": 85,
+          "width": 56.953125,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "تجربه‌ها",
+          "x": 249.5625,
+          "y": 85,
+          "width": 58.984375,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "تغییر به پوستهٔ تیره",
+          "x": 179.75,
+          "y": 22,
+          "width": 44,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "زبان",
+          "x": 105.75,
+          "y": 22,
+          "width": 66,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "گفت‌وگو کنیم",
+          "x": 19.5,
+          "y": 24,
+          "width": 78.25,
+          "height": 40,
+          "clipped": false
+        }
+      ],
+      "label": "تغییر به پوستهٔ تیره"
+    },
+    {
+      "profile": "de-desktop",
+      "theme": "light",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack-Entwickler",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 1440,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3",
+      "controls": [
+        {
+          "label": "Projekte",
+          "x": 62.59375,
+          "y": 37,
+          "width": 76,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Erfahrung",
+          "x": 138.59375,
+          "y": 37,
+          "width": 83.375,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Zum dunklen Design wechseln",
+          "x": 1098.609375,
+          "y": 37,
+          "width": 44,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Sprache",
+          "x": 1167.609375,
+          "y": 37,
+          "width": 89.71875,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Kontakt",
+          "x": 1282.328125,
+          "y": 37,
+          "width": 100.078125,
+          "height": 44,
+          "clipped": false
+        }
+      ],
+      "label": "Zum dunklen Design wechseln"
+    },
+    {
+      "profile": "de-mobile",
+      "theme": "light",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack-Entwickler",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 430,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3",
+      "controls": [
+        {
+          "label": "Projekte",
+          "x": 26.5,
+          "y": 85,
+          "width": 64.171875,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Erfahrung",
+          "x": 90.671875,
+          "y": 85,
+          "width": 70.890625,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Zum dunklen Design wechseln",
+          "x": 222.96875,
+          "y": 22,
+          "width": 44,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Sprache",
+          "x": 274.96875,
+          "y": 22,
+          "width": 66,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Kontakt",
+          "x": 348.96875,
+          "y": 24,
+          "width": 59.53125,
+          "height": 40,
+          "clipped": false
+        }
+      ],
+      "label": "Zum dunklen Design wechseln"
+    },
+    {
+      "profile": "en-mobile",
+      "theme": "light",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack Developer",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 1,
+      "sceneReady": "true",
+      "reader": "false",
+      "width": 360,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3",
+      "controls": [
+        {
+          "label": "Projects",
+          "x": 23,
+          "y": 85,
+          "width": 63.5625,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Experience",
+          "x": 86.5625,
+          "y": 85,
+          "width": 76.53125,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Switch to dark theme",
+          "x": 167.90625,
+          "y": 22,
+          "width": 44,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Language",
+          "x": 213.90625,
+          "y": 22,
+          "width": 66,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Let’s talk",
+          "x": 281.90625,
+          "y": 24,
+          "width": 60.09375,
+          "height": 40,
+          "clipped": false
+        }
+      ],
+      "label": "Switch to dark theme"
+    },
+    {
+      "profile": "en-reduced",
+      "theme": "light",
+      "dir": "ltr",
+      "title": "Nima Moradirad · AI Full-Stack Developer",
+      "background": "rgb(237, 242, 243)",
+      "text": "rgb(23, 43, 54)",
+      "muted": "rgb(80, 101, 112)",
+      "canvas": 0,
+      "sceneReady": "false",
+      "reader": "true",
+      "width": 360,
+      "overflow": false,
+      "overlay": false,
+      "stored": "light",
+      "favicon": "/brand/nm-favicon-light.svg",
+      "meta": "#edf2f3",
+      "controls": [
+        {
+          "label": "Projects",
+          "x": 23,
+          "y": 85,
+          "width": 63.5625,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Experience",
+          "x": 86.5625,
+          "y": 85,
+          "width": 76.53125,
+          "height": 40,
+          "clipped": false
+        },
+        {
+          "label": "Switch to dark theme",
+          "x": 167.90625,
+          "y": 22,
+          "width": 44,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Language",
+          "x": 213.90625,
+          "y": 22,
+          "width": 66,
+          "height": 44,
+          "clipped": false
+        },
+        {
+          "label": "Let’s talk",
+          "x": 281.90625,
+          "y": 24,
+          "width": 60.09375,
+          "height": 40,
+          "clipped": false
+        }
+      ],
+      "label": "Switch to dark theme"
+    }
+  ],
+  "errors": [],
+  "nativeReveal": true,
+  "contact": {
+    "color": "rgb(23, 43, 54)",
+    "background": "linear-gradient(145deg, color(srgb 0.891569 0.917647 0.927255), rgb(255, 255, 255) 42%, rgb(237, 242, 243))",
+    "links": 5
+  },
+  "focusAfterEnter": true,
+  "keyboard": true,
+  "rapidSwitches": true,
+  "persistence": true,
+  "preview": true,
+  "experienceAndFaq": true,
+  "reducedDuration": "0s",
+  "loaderRelease": true,
+  "fallback": true
+}

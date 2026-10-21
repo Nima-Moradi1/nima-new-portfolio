@@ -1,0 +1,191 @@
+[
+  {
+    "file": "after-preview-click-diagnostic.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\after-preview-click-diagnostic.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 146910,
+    "capturedAtUtc": "2026-10-21T06:42:52.732854+00:00",
+    "sha256": "503edb8436a1cedd0808b096a5bc305a16b6873e5af7e7993f2079e3c8bb4fd0"
+  },
+  {
+    "file": "de-desktop-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\de-desktop-dark.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 111233,
+    "capturedAtUtc": "2026-10-21T06:43:07.413548+00:00",
+    "sha256": "0147f9067e3891502df1492bcfeca922bf32d59707a06631cee7217b8d1150ac"
+  },
+  {
+    "file": "de-desktop-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\de-desktop-light.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 121252,
+    "capturedAtUtc": "2026-10-21T06:43:06.166267+00:00",
+    "sha256": "87a10ed423a16b05570a0a85bc8a4dcee4e47c5e507d6b6d0dbb789b075719f2"
+  },
+  {
+    "file": "de-mobile-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\de-mobile-dark.png",
+    "width": 430,
+    "height": 932,
+    "bytes": 54397,
+    "capturedAtUtc": "2026-10-21T06:43:11.133615+00:00",
+    "sha256": "63610b5b503093ae53f9f0967622be0857a3c8c33fe0ae82d1e2927a917c4b45"
+  },
+  {
+    "file": "de-mobile-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\de-mobile-light.png",
+    "width": 430,
+    "height": 932,
+    "bytes": 56977,
+    "capturedAtUtc": "2026-10-21T06:43:09.933558+00:00",
+    "sha256": "7210fad57b8ebcee1a85f0de151c1b6b249aab023a695f431ab3fbc77d4f9462"
+  },
+  {
+    "file": "desktop-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-dark.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 97180,
+    "capturedAtUtc": "2026-10-21T06:42:35.320549+00:00",
+    "sha256": "c31da83804cea705a7cce4d662df4cb07d3875ed116aa483f490084b08dbaf45"
+  },
+  {
+    "file": "desktop-light-carousel.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light-carousel.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 251875,
+    "capturedAtUtc": "2026-10-21T06:42:49.482260+00:00",
+    "sha256": "d30a249860d770f7cf428eeca516095d3201361b1f6b4e208c919ffd40698bc6"
+  },
+  {
+    "file": "desktop-light-contact.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light-contact.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 319858,
+    "capturedAtUtc": "2026-10-21T06:42:37.654984+00:00",
+    "sha256": "76f5696972416d9f37a6b5cb01c7004eb72cffcb2474f16b904089035af0e4c1"
+  },
+  {
+    "file": "desktop-light-experience.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light-experience.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 165761,
+    "capturedAtUtc": "2026-10-21T06:42:55.037639+00:00",
+    "sha256": "11d42747ac2ddd346b4aae0649e2cf8486a701ea8c038be1b9c17fa892499d76"
+  },
+  {
+    "file": "desktop-light-faq.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light-faq.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 86157,
+    "capturedAtUtc": "2026-10-21T06:42:59.330853+00:00",
+    "sha256": "17eb8ebe7627e53a2b2f58d643b167808d742ea30f489adf4351b1b0d84f944a"
+  },
+  {
+    "file": "desktop-light-preview.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light-preview.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 146384,
+    "capturedAtUtc": "2026-10-21T06:42:53.564484+00:00",
+    "sha256": "36a116117f337fdc23680c1c05be99bed6b0e1dd810a17232bf9cd2c379d280c"
+  },
+  {
+    "file": "desktop-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-light.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 97651,
+    "capturedAtUtc": "2026-10-21T06:42:36.857240+00:00",
+    "sha256": "dcbe3fbf3dc4c2736c484ee5a6b16065a4ae081496b64681a433e79a4e44d718"
+  },
+  {
+    "file": "desktop-transition-260ms.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\desktop-transition-260ms.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 102711,
+    "capturedAtUtc": "2026-10-21T06:42:35.766492+00:00",
+    "sha256": "a4b5728348f58ff6311cedeff1438bf9a079a376625b0a011b496f1516126d5d"
+  },
+  {
+    "file": "en-mobile-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\en-mobile-dark.png",
+    "width": 360,
+    "height": 640,
+    "bytes": 44406,
+    "capturedAtUtc": "2026-10-21T06:43:14.836308+00:00",
+    "sha256": "9c05ce598188268240c30f26099d8da23279aacc2817c55c9f049c969b3f1921"
+  },
+  {
+    "file": "en-mobile-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\en-mobile-light.png",
+    "width": 360,
+    "height": 640,
+    "bytes": 45782,
+    "capturedAtUtc": "2026-10-21T06:43:13.638936+00:00",
+    "sha256": "f5b24f4247d349b17ef2e711030f323cb470940664ba6137934711a61536abaf"
+  },
+  {
+    "file": "en-reduced-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\en-reduced-dark.png",
+    "width": 360,
+    "height": 640,
+    "bytes": 102577,
+    "capturedAtUtc": "2026-10-21T06:43:16.735005+00:00",
+    "sha256": "ea4c64b07f9cd9cd1707c6f149a11a3712e3a7306ac704803df4b066bd58c66d"
+  },
+  {
+    "file": "en-reduced-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\en-reduced-light.png",
+    "width": 360,
+    "height": 640,
+    "bytes": 116860,
+    "capturedAtUtc": "2026-10-21T06:43:16.532453+00:00",
+    "sha256": "dd2e40a2cf5dc2f6376564518e0c76041abc46eb517f1b53408fbb5ae1d7a827"
+  },
+  {
+    "file": "fa-mobile-dark.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\fa-mobile-dark.png",
+    "width": 390,
+    "height": 844,
+    "bytes": 46725,
+    "capturedAtUtc": "2026-10-21T06:43:03.625554+00:00",
+    "sha256": "c5b5723d4d3230e33e78891da0e3ad86ad1b56d880e89c281ccd4372ed8ac373"
+  },
+  {
+    "file": "fa-mobile-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\fa-mobile-light.png",
+    "width": 390,
+    "height": 844,
+    "bytes": 48578,
+    "capturedAtUtc": "2026-10-21T06:43:02.341980+00:00",
+    "sha256": "12e2efa43fad0c8e4b02ef18876a780c7b52d82a3203564cb4ae226fff9d2c3e"
+  },
+  {
+    "file": "fallback-light.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\fallback-light.png",
+    "width": 390,
+    "height": 844,
+    "bytes": 51504,
+    "capturedAtUtc": "2026-10-21T06:43:20.716158+00:00",
+    "sha256": "93d652b7c78ebe98cce5981f75cb0bf200fb406f421513b0ed130cca7f1a79c8"
+  },
+  {
+    "file": "light-loader.png",
+    "path": "C:\\Users\\n_moradirad\\AppData\\Local\\Temp\\nm-theme-20261021-verified\\light-loader.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 173089,
+    "capturedAtUtc": "2026-10-21T06:43:17.865698+00:00",
+    "sha256": "4ec787a54f7dc095750eed6bf5b919b30e31d941f47f308c2c6784aec098febc"
+  }
+]

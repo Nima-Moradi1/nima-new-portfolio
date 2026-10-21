@@ -86,3 +86,16 @@ Timeline is **suggested UX design**, not source-site measurement. Must not add f
 - Do not use Ciao logo/metadata/text/audio/cans/camera textures or copyrighted `.glb` models. Code your own meshes or author in Blender, with a license ledger.
 - Pointer `hover` is enhancement; keyboard/focus/touch always equal functionality; current item announced via accessible status **on settled index**, not spammed every frame.
 - Contrast ≥ 4.5:1 for body, ≥3:1 large text; focused controls at least 24×24 px WCAG AA, prefer 44×44 touch targets.
+
+## Owner U05 — light studio and theme choreography (2026-10-21)
+
+The owner requested a light edition and animated 3D theme switching. This is an original NM variation; it is not a newly measured Ciao interaction. Preserve the existing spatial narrative and compact Projects/Experience control.
+
+- Light palette: pearl `#edf2f3`, porcelain `#ffffff`, ink `#172b36`, slate copy `#506570`, teal `#086b78`, restrained violet `#69539e`. Dark endpoint values remain intact. Shared `--nm-*` tokens live on the document so portalled menus/dialogs and server-first loaders receive the same palette.
+- The 44px orbital instrument flips moon/sun. Supporting browsers reveal the new page from that control over 1000ms with perspective, vertical translation and a circular aperture. Its independent old/new snapshots turn for 450ms + 550ms. Capture endpoint colors without simultaneous descendant color tweens, keeping both palettes legible through the reveal.
+- The existing R3F callback owns the small physical rig turn/lift/recede and background, ground light, cartridge and glass-uniform changes. There is no extra canvas, package, continuous ticker or postprocessing. A synchronous advance of that same R3F owner prepares the native snapshot without waiting on a suspended RAF. Rapid requests cancel stale callbacks; the latest requested theme wins.
+- Browsers without native view transitions use registered CSS color interpolation and the physical scene transition. Reduced motion switches directly with a static instrument and reading edition. No additional loading gate or artificial delay is introduced.
+- Inline NM marks and the dimensional boot/route loader inherit the palette. `nm-symbol-dark.svg` and `nm-wordmark-dark.svg` contain dark ink for light backgrounds; original pale assets remain for dark backgrounds. The selected theme also updates the favicon and browser theme color.
+- The small-screen header gives the mode control its own full grid row, preserving an unwrapped contact label and unobstructed theme/language targets in both directions. EN/FA/DE action labels have matching keys.
+
+Bounded evidence and remaining release limits: `docs/evidence/U05-2026-10-21/SUMMARY.md`.

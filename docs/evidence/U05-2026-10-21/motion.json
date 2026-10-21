@@ -1,0 +1,165 @@
+{
+  "samples": [
+    {
+      "elapsed": 91,
+      "reveal": "true",
+      "clip": "circle(0.478292px at 1113.05px 59px)",
+      "transform": "matrix3d(0.976277, 0, 0.0853941, -4.74412e-05, 0, 0.980004, 0, 0, -0.0871365, 0, 0.996196, -0.000553442, 0, 11.9973, 0, 1)",
+      "orbTransform": "matrix3d(0, 0, 0.86, -0.00477778, 0, 0.86, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1)",
+      "animations": [
+        {
+          "pseudo": "::view-transition-group(root)",
+          "time": 16.59099999917668,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-group(nm-theme-orb)",
+          "time": 16.59099999917668,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(root)",
+          "time": 16.59099999917668,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(nm-theme-orb)",
+          "time": 16.59099999917668,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-old(nm-theme-orb)",
+          "time": 16.59099999917668,
+          "state": "running"
+        }
+      ]
+    },
+    {
+      "elapsed": 263,
+      "reveal": "true",
+      "clip": "circle(89.9164px at 1113.05px 59px)",
+      "transform": "matrix3d(0.977404, 0, 0.0819351, -4.55195e-05, 0, 0.980833, 0, 0, -0.0835363, 0, 0.996505, -0.000553614, 0, 11.5005, 0, 1)",
+      "orbTransform": "matrix3d(0, 0, 0.86, -0.00477778, 0, 0.86, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1)",
+      "animations": [
+        {
+          "pseudo": "::view-transition-group(root)",
+          "time": 200.19099999917688,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-group(nm-theme-orb)",
+          "time": 200.19099999917688,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(root)",
+          "time": 200.19099999917688,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(nm-theme-orb)",
+          "time": 200.19099999917688,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-old(nm-theme-orb)",
+          "time": 200.19099999917688,
+          "state": "running"
+        }
+      ]
+    },
+    {
+      "elapsed": 551,
+      "reveal": "true",
+      "clip": "circle(1083.65px at 1113.05px 59px)",
+      "transform": "matrix3d(0.989098, 0, 0.0430389, -2.39105e-05, 0, 0.990034, 0, 0, -0.0434722, 0, 0.999055, -0.00055503, 0, 5.97974, 0, 1)",
+      "orbTransform": "matrix3d(0.616802, 0, 0.689402, -0.00383001, 0, 0.925051, 0, 0, -0.745258, 0, 0.666776, -0.00370431, 0, 0, 0, 1)",
+      "animations": [
+        {
+          "pseudo": "::view-transition-group(root)",
+          "time": 500.5909999991767,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-group(nm-theme-orb)",
+          "time": 500.5909999991767,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(root)",
+          "time": 500.5909999991767,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(nm-theme-orb)",
+          "time": 500.5909999991767,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-old(nm-theme-orb)",
+          "time": 450,
+          "state": "finished"
+        }
+      ]
+    },
+    {
+      "elapsed": 901,
+      "reveal": "true",
+      "clip": "circle(2113.95px at 1113.05px 59px)",
+      "transform": "matrix3d(0.999572, 0, 0.00185972, -1.03318e-06, 0, 0.999574, 0, 0, -0.00186051, 0, 0.999998, -0.000555555, 0, 0.255839, 0, 1)",
+      "orbTransform": "matrix3d(0.999561, 0, 0.00479638, -2.66466e-05, 0, 0.999572, 0, 0, -0.00479843, 0, 0.999988, -0.00555549, 0, 0, 0, 1)",
+      "animations": [
+        {
+          "pseudo": "::view-transition-group(root)",
+          "time": 850.8909999991765,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-group(nm-theme-orb)",
+          "time": 850.8909999991765,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(root)",
+          "time": 850.8909999991765,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-new(nm-theme-orb)",
+          "time": 850.8909999991765,
+          "state": "running"
+        },
+        {
+          "pseudo": "::view-transition-old(nm-theme-orb)",
+          "time": 450,
+          "state": "finished"
+        }
+      ]
+    },
+    {
+      "elapsed": 1601,
+      "clip": "none",
+      "transform": "none",
+      "orbTransform": "none",
+      "animations": []
+    }
+  ],
+  "events": [
+    {
+      "event": "callback",
+      "at": 3218.7000000029802
+    },
+    {
+      "event": "callback-end",
+      "at": 3221.5999999940395
+    },
+    {
+      "event": "ready",
+      "at": 3242.5999999940395
+    },
+    {
+      "event": "finished",
+      "at": 4253.79999999702
+    }
+  ]
+}

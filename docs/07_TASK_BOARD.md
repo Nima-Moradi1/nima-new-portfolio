@@ -91,3 +91,7 @@ Use `templates/TASK_UPDATE.md`. One task done ≠ every related integration done
 ## Owner publication request - 2026-10-21
 
 - [x] **Categorized GitHub publication:** Existing loader/contact commits plus scoped media, geometry, solar/carousel choreography, locale payload, SEO/cache and evidence documentation published on `master` to verified public `Nima-Moradi1/nima-new-portfolio`. Application push through `5ba6e64` confirmed by remote SHA; final documentation commit follows. Fresh diff/media integrity/JSON checks PASS. No new runtime tests, build or deployment; U04 integrated performance acceptance and prior release gates remain open.
+
+## Owner theme request - 2026-10-21
+
+- [x] **U05 - Animated light/dark studio:** Add a polished light edition, compact 3D theme instrument, timed transitions/translations, corresponding NM logos/loaders and EN/FA/DE labels. Bounded acceptance PASS: shared palette reaches scene/portals/fallback/loading; preference and hydration persist; native reveal and fallback/reduced motion exercised; mobile controls fit. Full lint/typecheck, 57 tests and final production build PASS. Seven recorded production profiles plus API-disabled fallback; live native motion telemetry and screenshot hashes retained in `docs/evidence/U05-2026-10-21/`. Owner authorized scoped commits and GitHub `master` push. Existing first-item detail-anchor boundary and wider release/device/reference gates remain outside this task; no deployment.
