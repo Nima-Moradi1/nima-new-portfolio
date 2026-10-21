@@ -38,3 +38,7 @@ No material mismatch remains in the requested icon treatment. Existing small-scr
 - Owner dev server 3000 was never stopped. A second dev server was rejected by Next's lock; inspection reused `localhost:3000` after `127.0.0.1:3000` hit its dev-origin restriction. Owned production verifier 3100 is stopped after QA. `next start` prints the existing standalone advisory; served production pages/assets passed.
 
 Limits: emulated mobile, no physical-device GPU/FPS/memory, Safari/Firefox, new Lighthouse, field performance, full reference calibration, contact transmission or live deployment claim. U06 and wider release gates remain open. Publication: normal scoped commits to `origin/master`, followed by exact SHA/clean-status verification. Main, Liara, secrets and workflows are untouched.
+
+## Publication result
+
+Implementation 9728146 and evidence 8f5dfe3 pushed normally to origin/master. Fresh git ls-remote matched local HEAD at 8f5dfe36e9a6262a0cd027792a3eb50d08f5f26d; status was clean and starting-baseline ancestry passed. Main remains a18911c. This additional documentation record is pushed separately and the final SHA is checked before delivery. No deployment occurred.
