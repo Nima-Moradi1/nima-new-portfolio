@@ -32,3 +32,9 @@ Third-party source dependencies retain their respective licenses. The principal 
 - `public/assets/projects/tarabari-nima/*` — optimized screenshots and a 14.5-second WebM/MP4 recording captured from Nima Moradirad's Tarabari Nima project and its live site for this case study. The underlying scene artwork and generated plates are documented in that project's `docs/ASSET_REGISTER.md`.
 
 No third-party stock imagery is included. Personal résumé, portrait, and XO Arena media rights remain with Nima Moradirad.
+
+## Employer-focused revision (22 October 2026)
+
+- `public/assets/hero/desk-still.webp`: genuine browser capture of the existing portfolio workstation scene, with its decorative HTML labels hidden. Optimized locally to WebP; not a generated product screenshot.
+- `public/assets/projects/3d-online-shop/boutique.webp`: genuine capture of the owner-confirmed personal project at https://3d-shop-design.ir/, rendered on 22 October 2026. The project contains SAROCHI product/brand material; this portfolio capture documents that actual implementation and does not assert ownership of the retailer's brand or photographs.
+- `public/nima-moradirad-resume.pdf` and its preview: regenerated from the supplied, corrected portfolio content; selectable text, no private phone number.

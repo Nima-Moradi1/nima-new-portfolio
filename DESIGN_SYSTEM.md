@@ -160,3 +160,7 @@ The mobile site is recomposed, not scaled. Hover-only affordances are removed on
 - Never rely only on green, violet, or coral to communicate a state.
 - Honor reduced motion, high contrast, forced colors, touch, and keyboard use.
 - Keep mobile navigation items out of the tab order while closed.
+
+## Employer-focused revision
+
+The current homepage supersedes the earlier theatrical/chapter layout: restrained variation/motion/density 5/3/4; 1200px content shell; 72px compact header; one green accent; semantic dark/light tokens; 16px media panels and rounded actions. Hero title is solid and fluid (approximately 38-64px), section headings 29-40px, body 16-18px, essential metadata 14-15px. Persian uses the existing IranYekanX font without letter spacing. Ordinary vertical reading order and visible evidence take priority over motion. No full-page loader or canvas-dependent navigation.

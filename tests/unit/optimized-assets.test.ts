@@ -60,8 +60,8 @@ describe("optimized portfolio assets", () => {
         resolve(root, "assets/nima-moradirad-resume-preview-page-2.png"),
       ),
     ).toBe(false);
-    expect(size("nima-moradirad-resume.pdf")).toBeGreaterThan(1_000_000);
-    expect(size("nima-moradirad-resume.pdf")).toBeLessThan(3_000_000);
+    expect(size("nima-moradirad-resume.pdf")).toBeGreaterThan(10_000);
+    expect(size("nima-moradirad-resume.pdf")).toBeLessThan(300_000);
     const source = readFileSync(
       resolve(root, "nima-moradirad-resume.pdf"),
       "latin1",

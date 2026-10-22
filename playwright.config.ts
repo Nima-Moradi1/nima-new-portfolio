@@ -8,7 +8,8 @@ export default defineConfig({
   workers: 1,
   reporter: "html",
   use: {
-    baseURL: "http://127.0.0.1:3100",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3100",
+    channel: process.env.PLAYWRIGHT_CHROME ? "chrome" : undefined,
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -16,10 +17,12 @@ export default defineConfig({
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile-chrome", use: { ...devices["Pixel 7"] } },
   ],
-  webServer: {
-    command: "npm run build && npm run start -- --port 3100",
-    url: "http://127.0.0.1:3100",
-    reuseExistingServer: false,
-    timeout: 180_000,
-  },
+  webServer: process.env.PLAYWRIGHT_BASE_URL
+    ? undefined
+    : {
+        command: "npm run build && npm run start -- --port 3100",
+        url: "http://127.0.0.1:3100",
+        reuseExistingServer: false,
+        timeout: 180_000,
+      },
 });

@@ -1,86 +1,63 @@
 import { describe, expect, it } from "vitest";
 import { portfolio } from "@/content/portfolio";
+import { projectEvidence } from "@/content/project-evidence";
 
-describe("updated professional portfolio content", () => {
-  it("uses the 2026 professional identity and hero signals", () => {
-    expect(portfolio.identity.role).toBe("Product Engineer");
-    expect(portfolio.identity.availability).toContain("6+ years");
-    expect(portfolio.signals).toEqual([
-      "Scalability",
-      "Performance",
-      "Creativity",
-      "Product engineering",
+describe("employer-focused content contract", () => {
+  it("uses one primary role and ordinary section destinations", () => {
+    expect(portfolio.identity.role).toBe("Senior Frontend Engineer");
+    expect(portfolio.identity.shortRole).toBe(portfolio.identity.role);
+    expect(portfolio.identity.availability).not.toMatch(/6\+ years/);
+    expect(portfolio.navigation.map((p) => p.href)).toEqual([
+      "/#work",
+      "/#experience",
+      "/#capabilities",
+      "/#contact",
     ]);
   });
-
-  it("reflects the updated employment dates and delivery scope", () => {
+  it("retains all four historical roles and the owner-corrected chronology", () => {
+    expect(portfolio.experience).toHaveLength(4);
     expect(portfolio.experience[0]).toMatchObject({
-      period: "Feb 2025 — Present",
+      period: "Feb 2025 - Present",
       role: "Senior Frontend Developer",
-      company: "Hesabo · Tehran, Iran",
     });
-    expect(portfolio.experience[0].highlights.join(" ")).toMatch(/Capacitor/i);
-    expect(portfolio.experience[0].highlights.join(" ")).toMatch(
-      /cache versioning/i,
-    );
-    expect(portfolio.experience[0].highlights.join(" ")).toMatch(
-      /Codex and Claude Max/i,
-    );
-    expect(portfolio.experience[3].period).toBe("Dec 2020 — Sep 2022");
+    expect(portfolio.experience[1].period).toBe("Mar 2024 - Dec 2024");
+    expect(
+      portfolio.experience.every(
+        (p) => p.highlights.length >= 2 && p.highlights.length <= 4,
+      ),
+    ).toBe(true);
   });
-
-  it("promotes the visual case studies and retains production products", () => {
-    expect(portfolio.projects.map((project) => project.title)).toEqual([
-      "Moradi Gallery",
-      "XO Arena",
-      "Emerald Case",
-      "Hesabo Platform",
-      "Lingo Learn",
-      "Tarabari Nima",
-    ]);
-    expect(portfolio.projects[0]).toMatchObject({
-      href: "/projects/moradi-gallery",
-      technologies: expect.arrayContaining([
-        "Three.js",
-        "React Three Fiber",
-        "GSAP",
-      ]),
-    });
-    expect(portfolio.projects[1]).toMatchObject({
-      href: "/projects/xo-arena",
-      technologies: expect.arrayContaining(["Socket.IO", "Prisma", "MySQL"]),
-    });
-    expect(portfolio.projects[2]).toMatchObject({
-      href: "/projects/emerald-case",
-      technologies: expect.arrayContaining(["Prisma", "MongoDB", "Stripe"]),
-    });
-    expect(portfolio.projects[4]).toMatchObject({
-      href: "https://lingo-learn.ir/",
-      logo: "/assets/projects/lingo-learn/logo.png",
-    });
-    expect(portfolio.projects[5]).toMatchObject({
-      href: "/projects/tarabari-nima",
-      technologies: expect.arrayContaining([
-        "GSAP",
-        "Three.js",
-        "React Three Fiber",
-      ]),
-    });
+  it("leads with professional work and only publishes the owner-confirmed shop destination", () => {
+    expect(
+      portfolio.projects.filter((p) => p.featured).map((p) => p.id),
+    ).toEqual(["hesabo-platform", "xo-arena", "3d-online-shop"]);
+    const shop = portfolio.projects.find((p) => p.id === "3d-online-shop")!;
+    expect(shop.requestedDestination).toBe("https://3d-shop-design.ir/");
+    expect(shop.sourceUrl).toBe(
+      "https://github.com/Nima-Moradi1/sarochi-shop-design",
+    );
+    expect(shop.liveVerified).toBe(true);
+    expect(projectEvidence["3d-online-shop"].liveUrl).toBe(
+      shop.requestedDestination,
+    );
+    expect(
+      portfolio.projects.find((p) => p.id === "hesabo-platform")?.href,
+    ).toBe("/projects/hesabo");
   });
-
-  it("covers web, mobile, quality, AI, systems, and in-progress education", () => {
+  it("keeps source-backed database and education claims consistent", () => {
+    const emerald = portfolio.projects.find((p) => p.id === "emerald-case")!;
+    expect(emerald.technologies).toContain("PostgreSQL");
+    expect(emerald.technologies).not.toContain("MongoDB");
+    expect(portfolio.education.institution).toBe("Tehran Azad University");
+    expect(portfolio.education.note).toContain("2026");
+    expect(portfolio.education.languages).toContain(
+      "English: Professional working proficiency",
+    );
     expect(portfolio.capabilities).toHaveLength(4);
-    expect(portfolio.capabilities.flatMap((group) => group.skills)).toEqual(
-      expect.arrayContaining([
-        "Module Federation",
-        "Java plugins",
-        "Unit / E2E testing",
-        "LangChain agents",
-        "Docker",
-      ]),
-    );
-    expect(portfolio.education.institution).toBe(
-      "Tehran Azad University · 2021 — 2026",
-    );
+    expect(
+      portfolio.capabilities.every((g) =>
+        g.evidenceHref?.startsWith("/projects/"),
+      ),
+    ).toBe(true);
   });
 });
