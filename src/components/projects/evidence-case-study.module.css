@@ -1,0 +1,101 @@
+.root {
+  padding-block: calc(var(--header-height) + 3rem) 4rem;
+}
+.shell {
+  width: min(100% - 2 * var(--gutter), 72rem);
+  margin-inline: auto;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--signal-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  margin-bottom: 2rem;
+}
+.kind {
+  color: var(--signal-soft);
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+}
+.title {
+  max-width: 24ch;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+.intro {
+  max-width: 60ch;
+  color: var(--muted-bright);
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.status {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--muted-bright);
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-block: 1rem 2rem;
+}
+.links a,
+.prose a {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--signal-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.figure {
+  margin-block: 2rem 3rem;
+}
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 42rem;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--ink-soft);
+}
+.figure figcaption {
+  margin-top: 1rem;
+  color: var(--muted-bright);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 75ch;
+}
+.prose {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+.prose section {
+  margin-bottom: 2.5rem;
+}
+.prose h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 620;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.prose p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--muted-bright);
+  margin-bottom: 1rem;
+}
+.notice {
+  font-size: 0.9375rem;
+  color: var(--muted-bright);
+  margin-bottom: 2rem;
+}

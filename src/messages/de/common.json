@@ -2,9 +2,9 @@
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
     "homeTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeDescription": "Senior Frontend Engineer Nima Moradirad unterstützt technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen – von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
-    "homeOgTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeOgDescription": "Ein Portfolio für Produktentwicklung rund um skalierbare Webanwendungen, Android, PWA, Echtzeitsysteme und kreative Technologien.",
+    "homeDescription": "Senior Frontend Engineer Nima Moradirad unterstützt technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen - von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
+    "homeOgTitle": "Senior Frontend Engineer",
+    "homeOgDescription": "Ich entwickle React- und Next.js-Anwendungen und habe Erfahrung mit Finanzplattformen, Echtzeitoberflächen, PWAs und Android-Auslieferung.",
     "xoTitle": "XO Arena · Echtzeit-Multiplayer-PWA",
     "xoDescription": "Eine Produktfallstudie zu XO Arena: eine typsichere Echtzeitplattform für Tic-Tac-Toe mit Socket.IO-Matchmaking, sicheren Sessions, servervalidierten Spielzügen, Profilen und installierbarer PWA-Unterstützung.",
     "xoOgDescription": "Eine aufgezeichnete Produktführung und technische Fallstudie zu einer modularen Echtzeit-Multiplayer-Plattform.",
@@ -19,12 +19,12 @@
       "Three.js",
       "Portfolio"
     ],
-    "manifestName": "Signal Atelier Portfolio",
-    "manifestShortName": "Signal Atelier",
+    "manifestName": "Nima Moradirad Portfolio",
+    "manifestShortName": "Nima Moradirad",
     "manifestDescription": "Ein Portfolio für Produktentwicklung rund um skalierbare Webanwendungen, Android, PWA, Echtzeitsysteme und kreative Technologien.",
-    "openGraphAlt": "Nima Moradirad — Senior Frontend Engineer",
-    "openGraphLabel": "SIGNAL ATELIER · PORTFOLIO",
-    "openGraphHeadline": "Digitale Systeme mit klarer Wirkung."
+    "openGraphAlt": "Nima Moradirad - Senior Frontend Engineer",
+    "openGraphLabel": "Nima Moradirad",
+    "openGraphHeadline": "Senior Frontend Engineer"
   },
   "LocaleSwitcher": {
     "label": "Sprache wechseln",
@@ -191,7 +191,7 @@
   },
   "ResumeDialog": {
     "label": "Dokument · PDF",
-    "title": "Nima Moradirad — Lebenslauf",
+    "title": "Nima Moradirad - Lebenslauf",
     "close": "Lebenslaufvorschau schließen",
     "previewAlt": "Lebenslauf von Nima Moradirad mit Profil, Kompetenzen, Berufserfahrung, ausgewählten Projekten, Ausbildung und technischem Werkzeugkasten",
     "description": "Ein kompakter einseitiger Überblick über Erfahrung und ausgewählte Projekte.",
@@ -207,5 +207,38 @@
   },
   "A11y": {
     "externalSuffix": "wird in einem neuen Tab geöffnet"
+  },
+  "Employer": {
+    "work": "Ausgewählte Arbeiten",
+    "workIntro": "Berufliche Erfahrung und eigene Projekte mit meinem Beitrag und den technischen Entscheidungen.",
+    "experience": "Berufserfahrung",
+    "skills": "Kenntnisse",
+    "about": "Über mich",
+    "education": "Ausbildung",
+    "languages": "Sprachen",
+    "contact": "Kontakt",
+    "contactCopy": "Sie besetzen eine Frontend-Stelle? Ich spreche gern über das Produkt, das Team und die technischen Herausforderungen.",
+    "email": "E-Mail",
+    "resume": "Lebenslauf herunterladen",
+    "viewWork": "Arbeiten ansehen",
+    "caseStudy": "Fallstudie lesen",
+    "source": "Quellcode",
+    "live": "Live-Demo",
+    "company": "Unternehmenswebsite",
+    "walkthrough": "Rundgang ansehen",
+    "supporting": "Weitere Projekte",
+    "evidence": "Relevante Arbeit ansehen",
+    "menu": "Menü",
+    "explore": "3D erkunden",
+    "close3d": "3D schließen",
+    "sceneUnavailable": "Die 3D-Szene ist nicht verfügbar. Die statische Vorschau bleibt zugänglich.",
+    "englishNotice": "Die ausführlichen Projektnotizen sind auf Englisch verfügbar.",
+    "translationNotice": "Aktualisierte Übersetzungen wurden mit KI unterstützt und warten auf sprachliche Prüfung.",
+    "back": "Zurück zu den Arbeiten",
+    "themeDark": "Zum dunklen Design wechseln",
+    "themeLight": "Zum hellen Design wechseln",
+    "unavailable": "Live-Demo vorübergehend nicht verfügbar.",
+    "resumeShort": "Lebenslauf",
+    "videoUnavailable": "Video nicht verfügbar. Nutzen Sie den Aufnahme-Link oder die Bilder darunter."
   }
 }

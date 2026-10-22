@@ -4,8 +4,8 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { DepthScrollController } from "@/components/motion/depth-scroll-controller";
-import { LandingPreloader } from "@/components/loading/landing-preloader";
+import { AboutSection } from "@/components/sections/about-section";
+import { ContactSection } from "@/components/sections/contact-section";
 import { HashScrollManager } from "@/components/navigation/hash-scroll-manager";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -24,20 +24,21 @@ export default async function HomePage({
   const t = await getTranslations({ locale, namespace: "Routes" });
 
   return (
-    <LandingPreloader>
+    <>
       <HashScrollManager />
       <a className={styles.skipLink} href="#main-content">
         {t("skipMain")}
       </a>
       <SiteHeader />
-      <main id="main-content">
-        <DepthScrollController />
+      <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
         <CapabilitiesSection />
+        <AboutSection />
+        <ContactSection />
       </main>
       <SiteFooter />
-    </LandingPreloader>
+    </>
   );
 }

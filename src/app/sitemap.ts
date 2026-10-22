@@ -5,7 +5,9 @@ import { siteUrl } from "@/lib/site";
 
 const routes = [
   { pathname: "/", priority: 1 },
-  { pathname: "/projects/moradi-gallery", priority: 0.9 },
+  { pathname: "/projects/hesabo", priority: 0.9 },
+  { pathname: "/projects/3d-online-shop", priority: 0.8 },
+  { pathname: "/projects/moradi-gallery", priority: 0.8 },
   { pathname: "/projects/xo-arena", priority: 0.8 },
   { pathname: "/projects/emerald-case", priority: 0.8 },
   { pathname: "/projects/tarabari-nima", priority: 0.8 },

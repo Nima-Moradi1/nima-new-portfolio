@@ -2,32 +2,43 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Product Engineer",
-    "shortRole": "Product Engineer · Web, PWA & Android",
+    "role": "Senior Frontend Engineer",
+    "shortRole": "Senior Frontend Engineer",
     "location": "Tehran, Iran",
-    "availability": "6+ years building production products across web, PWA, and Android",
+    "availability": "Based in Iran. Open to relocation and international frontend opportunities.",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "I help technical teams turn complex product requirements into fast, secure, and maintainable experiences—from React architecture and real-time features to reliable PWA and Android delivery.",
+    "intro": "I build React and Next.js applications, with experience in financial platforms, real-time interfaces, PWAs, and Android delivery.",
     "statement": "I build scalable web and mobile products where performance, reliability, and clear design work together."
   },
   "navigation": [
-    { "id": "experience", "label": "Experience", "href": "/#experience" },
-    { "id": "work", "label": "Work", "href": "/#work" },
-    { "id": "capabilities", "label": "Capabilities", "href": "/#capabilities" },
-    { "id": "contact", "label": "Contact", "href": "/#contact" }
+    {
+      "id": "work",
+      "label": "Work",
+      "href": "/#work"
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "href": "/#experience"
+    },
+    {
+      "id": "capabilities",
+      "label": "Skills",
+      "href": "/#capabilities"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "href": "/#contact"
+    }
   ],
-  "signals": [
-    "Scalability",
-    "Performance",
-    "Creativity",
-    "Product engineering"
-  ],
+  "signals": [],
   "about": {
     "eyebrow": "Web + mobile product engineering",
     "paragraphs": [
-      "I turn React and TypeScript systems into reliable web, Android, and PWA products. Across finance, commerce, government, and real-time platforms, I use clear architecture and AI-assisted workflows to ship faster without giving up engineering judgment."
+      "I’m a frontend engineer with experience in financial platforms, real-time applications, and web-to-Android delivery. I enjoy making complex product flows easier to use and helping teams maintain the systems behind them."
     ],
     "principles": [
       {
@@ -53,16 +64,15 @@
   "experience": [
     {
       "id": "hesabo",
-      "period": "Feb 2025 — Present",
+      "period": "Feb 2025 - Present",
       "role": "Senior Frontend Developer",
       "company": "Hesabo · Tehran, Iran",
       "summary": "Shaping frontend architecture and delivery for a B2B financial platform spanning Admin, Employer, Employee, and Support experiences.",
       "highlights": [
-        "Mentor and onboard engineers around business flows, maintainable code, and domain-driven boundaries.",
-        "Develop and maintain Android applications with Capacitor, platform integrations, and custom Java plugins.",
-        "Own a customized PWA layer with controlled auto-updates, cache versioning, invalidation, and offline fallbacks.",
-        "Improve build performance, XSS defenses, validation, authorization, and real-time WebSocket/SignalR features.",
-        "Use Codex and Claude Max for architecture, refactoring, review, testing, documentation, and repeatable delivery workflows."
+        "Develop frontend architecture and interfaces across Admin, Employer, Employee, and Support applications.",
+        "Maintain PWA update behavior, cache versioning, and offline fallbacks.",
+        "Deliver Android applications through Capacitor, including platform integrations and custom Java plugins.",
+        "Mentor engineers and contribute to real-time features, validation, and frontend security improvements."
       ],
       "technologies": [
         "React",
@@ -76,13 +86,13 @@
     },
     {
       "id": "basilica",
-      "period": "Mar 2024 — Mar 2025",
+      "period": "Mar 2024 - Dec 2024",
       "role": "Senior Frontend Engineer",
       "company": "Basilica Finance · Tehran, Iran",
-      "summary": "Led frontend delivery for a scalable finance PWA designed for protected user journeys and high request volumes.",
+      "summary": "Developed financial-product interfaces with Next.js and TypeScript in collaboration with the product team.",
       "highlights": [
-        "Built protected authentication and product flows with Next.js, TypeScript, Zustand, Tailwind CSS, and MUI.",
-        "Delivered Lighthouse-focused performance improvements and maintained release quality through GitHub/GitLab review."
+        "Built authentication and product interfaces with shared application state.",
+        "Contributed to code review and frontend performance work."
       ],
       "technologies": [
         "Next.js",
@@ -95,12 +105,13 @@
     },
     {
       "id": "barname-negar",
-      "period": "Jan 2023 — Mar 2024",
+      "period": "Jan 2023 - Mar 2024",
       "role": "Frontend Developer",
       "company": "BarnameNegar · Tehran, Iran",
-      "summary": "Built internal government dashboards and panels with server-rendered, REST-connected workflows.",
+      "summary": "Built internal dashboards, integrated REST APIs, and developed reusable frontend interfaces.",
       "highlights": [
-        "Delivered Vite and TypeScript applications with SSR, REST APIs, Tailwind CSS, shadcn/ui, and Redux-based state management."
+        "Implemented dashboard workflows with TypeScript and reusable UI components.",
+        "Integrated REST APIs and Redux-based application state."
       ],
       "technologies": [
         "Vite",
@@ -114,13 +125,13 @@
     },
     {
       "id": "kzi",
-      "period": "Dec 2020 — Sep 2022",
+      "period": "Dec 2020 - Sep 2022",
       "role": "React Developer",
       "company": "KZI",
       "summary": "Delivered e-commerce and content experiences with React, JavaScript, component libraries, and modern state management.",
       "highlights": [
-        "Maintained Lighthouse performance and dependable PWA/SPA behavior with Material UI and Redux Toolkit.",
-        "Worked across Vite, TypeScript, HeroUI, React Hook Form, Yup, and router-driven application architecture."
+        "Built React interfaces for e-commerce and content experiences.",
+        "Maintained shared components, form validation, and application state."
       ],
       "technologies": [
         "React",
@@ -135,11 +146,79 @@
   ],
   "projects": [
     {
+      "id": "hesabo-platform",
+      "number": "04",
+      "title": "Hesabo",
+      "category": "Professional work",
+      "summary": "Frontend engineering for a financial platform spanning Admin, Employer, Employee, and Support applications.",
+      "contribution": "Contribute to frontend architecture, PWA updates, Android delivery, and real-time interfaces with the engineering team.",
+      "image": "/assets/projects/hesabo/homepage.jpg",
+      "imageAlt": "Hesabo website presenting its employee salary access platform",
+      "technologies": ["React", "TypeScript", "Capacitor", "Service workers"],
+      "href": "/projects/hesabo",
+      "featured": true,
+      "accent": "coral"
+    },
+    {
+      "id": "xo-arena",
+      "number": "02",
+      "title": "XO Arena",
+      "category": "Independent project",
+      "summary": "A real-time multiplayer application with server-authoritative game state, authenticated sessions, and persistent player data.",
+      "contribution": "Built shared contracts and a server-validated game engine with Next.js, TypeScript, Express, Socket.IO, Prisma, MySQL, Zod, avatar uploads, and httpOnly sessions.",
+      "image": "/assets/projects/xo-arena/game-room.webp",
+      "imageAlt": "XO Arena live game room with a completed Tic-Tac-Toe match",
+      "technologies": ["Next.js", "TypeScript", "Socket.IO", "Prisma"],
+      "href": "/projects/xo-arena",
+      "featured": true,
+      "accent": "lime",
+      "status": "Recorded walkthrough",
+      "sourceUrl": "https://github.com/Nima-Moradi1/xo-arena",
+      "walkthroughUrl": "/assets/projects/xo-arena/xo-arena-preview.mp4"
+    },
+    {
+      "id": "3d-online-shop",
+      "number": "03",
+      "title": "3D Online Shop",
+      "category": "Independent project",
+      "summary": "An interactive 3D boutique for browsing real garments and exploring photographic outfit previews.",
+      "contribution": "Built the personal project alongside my professional work, including the 3D storefront, catalog integration, and accessible fallbacks.",
+      "image": "/assets/projects/3d-online-shop/boutique.webp",
+      "imageAlt": "Actual SAROCHI 3D boutique with garment racks and Persian shopping controls",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Three.js",
+        "React Three Fiber"
+      ],
+      "href": "/projects/3d-online-shop",
+      "requestedDestination": "https://3d-shop-design.ir/",
+      "liveVerified": true,
+      "featured": true,
+      "accent": "lime",
+      "liveVerifiedAt": "2026-10-22"
+    },
+    {
+      "id": "emerald-case",
+      "number": "03",
+      "title": "Emerald Case",
+      "category": "Independent project",
+      "summary": "An e-commerce application for customizing phone cases.",
+      "contribution": "Built the full-stack application with Next.js, TypeScript, Prisma, and PostgreSQL, with image uploads and commerce integrations.",
+      "image": "/assets/projects/emerald-case/homepage.jpg",
+      "imageAlt": "Emerald Case storefront showing its custom phone-case builder",
+      "technologies": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "href": "/projects/emerald-case",
+      "featured": false,
+      "accent": "violet",
+      "sourceUrl": "https://github.com/Nima-Moradi1/emeraldCase"
+    },
+    {
       "id": "moradi-gallery",
       "number": "01",
       "title": "Moradi Gallery",
-      "category": "Immersive 3D experience · Visual case study",
-      "summary": "A bilingual luxury watch gallery shaped by a persistent WebGL scene, cinematic scroll storytelling, and responsive fallbacks.",
+      "category": "Concept",
+      "summary": "A bilingual watch-gallery concept exploring 3D storytelling and responsive interaction.",
       "contribution": "Built the visual and technical system with Next.js 16, React 19, TypeScript, Three.js, React Three Fiber, Drei, GSAP, Motion, next-intl, and Tailwind CSS 4.",
       "image": "/assets/projects/moradi-gallery/homepage-fa.png",
       "imageAlt": "Persian Moradi Gallery homepage with an original black and gold watch",
@@ -152,71 +231,9 @@
         "WebGL"
       ],
       "href": "/projects/moradi-gallery",
-      "featured": true,
-      "accent": "violet"
-    },
-    {
-      "id": "xo-arena",
-      "number": "02",
-      "title": "XO Arena",
-      "category": "Real-time multiplayer PWA · Product case study",
-      "summary": "A type-safe multiplayer PWA with live rooms, secure sessions, computer opponents, and mobile install support.",
-      "contribution": "Built shared contracts and a server-validated game engine with Next.js, TypeScript, Express, Socket.IO, Prisma, MySQL, Zod, avatar uploads, and httpOnly sessions.",
-      "image": "/assets/projects/xo-arena/game-room.webp",
-      "imageAlt": "XO Arena live game room with a completed Tic-Tac-Toe match",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Socket.IO",
-        "Prisma",
-        "MySQL",
-        "PWA"
-      ],
-      "href": "/projects/xo-arena",
-      "featured": true,
-      "accent": "lime"
-    },
-    {
-      "id": "emerald-case",
-      "number": "03",
-      "title": "Emerald Case",
-      "category": "Full-stack e-commerce · Oct–Nov 2023",
-      "summary": "A multilingual custom phone-case storefront with image uploads, authentication, checkout, and responsive theming.",
-      "contribution": "Built the product with Next.js and TypeScript, using Prisma and MongoDB for data, Stripe for payments, Resend for email, and Zustand plus Context for client state.",
-      "image": "/assets/projects/emerald-case/homepage.jpg",
-      "imageAlt": "Emerald Case storefront showing its custom phone-case builder",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "MongoDB",
-        "Stripe",
-        "i18n"
-      ],
-      "href": "/projects/emerald-case",
-      "featured": true,
-      "accent": "violet"
-    },
-    {
-      "id": "hesabo-platform",
-      "number": "04",
-      "title": "Hesabo Platform",
-      "category": "B2B financial platform · Production",
-      "summary": "Four connected Admin, Employer, Employee, and Support surfaces for a production B2B financial platform.",
-      "contribution": "Developed domain-driven interfaces and real-time features across Vite, TypeScript, MobX, React Context, HeroUI, Tailwind CSS, Android delivery, and a controlled PWA cache layer.",
-      "image": "/assets/projects/hesabo/homepage.jpg",
-      "imageAlt": "Hesabo website presenting its employee salary access platform",
-      "technologies": [
-        "Vite",
-        "TypeScript",
-        "MobX",
-        "React Context",
-        "HeroUI",
-        "Capacitor"
-      ],
-      "href": "https://hesabo.com/",
-      "featured": true,
-      "accent": "coral"
+      "featured": false,
+      "accent": "violet",
+      "sourceUrl": "https://github.com/Nima-Moradi1/moradi-gallery"
     },
     {
       "id": "lingo-learn",
@@ -231,14 +248,14 @@
       "logoAlt": "Lingo Learn logo",
       "technologies": ["WordPress", "WooCommerce", "Elementor", "RTL"],
       "href": "https://lingo-learn.ir/",
-      "featured": true,
+      "featured": false,
       "accent": "lime"
     },
     {
       "id": "tarabari-nima",
       "number": "06",
       "title": "Tarabari Nima",
-      "category": "Interactive logistics · Visual case study",
+      "category": "Concept",
       "summary": "A Persian freight journey where one container moves from warehouse lift to truck, port crane, ship and aircraft.",
       "contribution": "Built the RTL marketing demo, interactive route globe and scroll-driven cargo story with Next.js, GSAP, Three.js and React Three Fiber.",
       "image": "/assets/projects/tarabari-nima/loaded-truck.webp",
@@ -252,88 +269,57 @@
         "Tailwind CSS"
       ],
       "href": "/projects/tarabari-nima",
-      "featured": true,
-      "accent": "coral"
+      "featured": false,
+      "accent": "coral",
+      "sourceUrl": "https://github.com/Nima-Moradi1/tarabari-nima"
     }
   ],
   "capabilities": [
     {
-      "id": "web-architecture",
-      "index": "01",
-      "title": "Web architecture",
-      "label": "01 · Web architecture",
-      "description": "Scalable interfaces, rendering strategies, and domain boundaries for production web products.",
-      "skills": [
-        "React",
-        "Next.js",
-        "Vite",
-        "TypeScript",
-        "SSR / CSR / SSG",
-        "ISR / PPR",
-        "DDD",
-        "Module Federation"
-      ]
+      "id": "frontend",
+      "index": "1",
+      "title": "Frontend engineering",
+      "label": "Frontend engineering",
+      "description": "Component architecture, application state, and responsive interfaces.",
+      "skills": ["React", "Next.js", "TypeScript", "HTML/CSS"],
+      "evidenceHref": "/projects/hesabo"
     },
     {
-      "id": "mobile-pwa",
-      "index": "02",
-      "title": "Mobile & PWA delivery",
-      "label": "02 · Mobile & PWA delivery",
-      "description": "Android and installable web experiences with deliberate release and cache behavior.",
-      "skills": [
-        "Capacitor",
-        "Android",
-        "Java plugins",
-        "Service Workers",
-        "Safe auto-updates",
-        "Cache versioning",
-        "Offline fallbacks",
-        "Release stability"
-      ]
+      "id": "mobile",
+      "index": "2",
+      "title": "PWA and Android delivery",
+      "label": "PWA and Android delivery",
+      "description": "Installable applications, update behavior, offline fallbacks, and platform integration.",
+      "skills": ["Service workers", "Capacitor", "Android", "Java plugins"],
+      "evidenceHref": "/projects/hesabo"
     },
     {
-      "id": "ui-quality",
-      "index": "03",
-      "title": "UI, state & quality",
-      "label": "03 · UI, state & quality",
-      "description": "Adaptable design systems, predictable state, validation, observability, and test coverage.",
-      "skills": [
-        "Tailwind CSS",
-        "shadcn/ui",
-        "MUI / HeroUI",
-        "Zustand",
-        "Redux Toolkit",
-        "MobX",
-        "Unit / E2E testing",
-        "Sentry"
-      ]
+      "id": "realtime",
+      "index": "3",
+      "title": "APIs and real-time features",
+      "label": "APIs and real-time features",
+      "description": "API integration and interfaces driven by live application state.",
+      "skills": ["REST", "WebSockets / SignalR", "Prisma"],
+      "evidenceHref": "/projects/xo-arena"
     },
     {
-      "id": "ai-systems-data",
-      "index": "04",
-      "title": "AI, systems & data",
-      "label": "04 · AI, systems & data",
-      "description": "Human-directed AI workflows, real-time integrations, APIs, and supporting backend systems.",
-      "skills": [
-        "Codex",
-        "Claude Max",
-        "Node.js",
-        "LangChain agents",
-        "WebSockets / SignalR",
-        "REST / GraphQL",
-        "Prisma / SQL / MongoDB",
-        "Docker"
-      ]
+      "id": "quality",
+      "index": "4",
+      "title": "Quality and collaboration",
+      "label": "Quality and collaboration",
+      "description": "Testing, debugging, code review, and clear technical communication.",
+      "skills": ["Vitest", "Playwright", "GitHub Actions"],
+      "evidenceHref": "/projects/3d-online-shop"
     }
   ],
   "education": {
     "title": "B.Sc. Computer Engineering",
-    "institution": "Tehran Azad University · 2021 — 2026",
-    "note": "Computer engineering study alongside professional product delivery across web and mobile.",
+    "institution": "Tehran Azad University",
+    "note": "Graduated in 2026.",
     "languages": [
-      "Persian · Native/Bilingual",
-      "English · Native/Bilingual",
-      "German · Elementary"
+      "Persian: Native",
+      "English: Professional working proficiency",
+      "German: Elementary"
     ]
   },
   "socialLinks": [

@@ -56,12 +56,12 @@
       {
         "id": "state",
         "title": "Focused client state",
-        "text": "Zustand and React Context separate fast customization interactions from shared application state."
+        "text": "React Query and React Context separate fast customization interactions from shared application state."
       },
       {
         "id": "data",
         "title": "Typed persistence",
-        "text": "Prisma provides a typed data layer over MongoDB for users, products and order workflows."
+        "text": "Prisma provides a typed data layer over PostgreSQL for users, products and order workflows."
       },
       {
         "id": "commerce",

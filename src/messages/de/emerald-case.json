@@ -56,12 +56,12 @@
       {
         "id": "state",
         "title": "Fokussierter Client-State",
-        "text": "Zustand und React Context trennen schnelle Personalisierungsinteraktionen vom gemeinsamen App-State."
+        "text": "React Query und React Context trennen schnelle Personalisierungsinteraktionen vom gemeinsamen App-State."
       },
       {
         "id": "data",
         "title": "Typisierte Persistenz",
-        "text": "Prisma bietet eine typisierte Datenschicht über MongoDB für Nutzer-, Produkt- und Bestellabläufe."
+        "text": "Prisma bietet eine typisierte Datenschicht über PostgreSQL für Nutzer-, Produkt- und Bestellabläufe."
       },
       {
         "id": "commerce",

@@ -3,9 +3,9 @@
   "back": "Zurück zu den ausgewählten Projekten",
   "hero": {
     "eyebrow": "Produktfallstudie · Echtzeitsysteme",
-    "title": "Echtzeitspiel – von Anfang bis Ende konsequent entwickelt.",
+    "title": "Echtzeit-Mehrspieler mit serverseitigem Spielzustand",
     "intro": "XO Arena ist ein modulares, typsicheres Tic-Tac-Toe-Produkt rund um sichere Identitäten, serverautorisierte Partien, Live-Matchmaking, persistente Profile und installierbare Nutzung auf Mobilgeräten.",
-    "availability": "Vollständiges lokales Produkt · Aufgezeichnete Produktführung"
+    "availability": "Aufgezeichneter lokaler Rundgang. Öffentlicher Quellcode verfügbar."
   },
   "system": {
     "eyebrow": "Systemübersicht · 02",
@@ -72,15 +72,15 @@
         "id": "profile",
         "alt": "XO-Arena-Profil mit Einstellungen für Spitzname und Avatar sowie einer persistenten Tabelle der letzten Partien",
         "title": "Persistenter Spielerverlauf",
-        "description": "Profilbearbeitung und die jüngsten Partien machen Identität und Persistenz sichtbar – einschließlich Modus, Gegner, Ergebnis und Zugzahl."
+        "description": "Profilbearbeitung und die jüngsten Partien machen Identität und Persistenz sichtbar - einschließlich Modus, Gegner, Ergebnis und Zugzahl."
       }
     ]
   },
   "deployment": {
     "eyebrow": "Hinweis zum Deployment · 04",
-    "title": "Warum dies eine Fallstudie ist – und keine kurzlebige Demo.",
-    "paragraph1": "Das vollständige Erlebnis von XO Arena ist auf persistente Dienste angewiesen: sichere Sessions, einen Anwendungsserver, Socket.IO-Räume, eine relationale Datenbank und Speicher für hochgeladene Medien. Statt einen nur teilweise bereitgestellten Build zu veröffentlichen, der das Produkt falsch darstellt, dokumentiert diese Seite das vollständige lokale System anhand real aufgezeichneter Abläufe und Produktaufnahmen.",
-    "paragraph2": "Die Implementierung ist auf ein Deployment ausgelegt; die Präsentation benennt bewusst und transparent die Infrastruktur, die ein verlässliches Echtzeitprodukt benötigt."
+    "title": "Bereitstellungsstatus",
+    "paragraph1": "Lokaler Rundgang und öffentlicher Quellcode sind verfügbar. Eine öffentliche Bereitstellung wurde nicht verifiziert.",
+    "paragraph2": "Die vollständige Anwendung benötigt Next.js-Client, Anwendungsserver, Socket.IO, Datenbank und Medienspeicher. Die Aufnahme belegt lokale Funktionalität, keinen Produktionsverkehr oder Betriebszuverlässigkeit."
   },
   "next": {
     "eyebrow": "Im Portfolio weiterlesen",

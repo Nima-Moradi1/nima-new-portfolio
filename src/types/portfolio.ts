@@ -28,6 +28,12 @@ export type ProjectItem = {
   technologies: string[];
   href?: string;
   featured: boolean;
+  status?: string;
+  sourceUrl?: string;
+  walkthroughUrl?: string;
+  requestedDestination?: string;
+  liveVerified?: boolean;
+  liveVerifiedAt?: string;
   accent: "lime" | "violet" | "coral";
 };
 
@@ -38,6 +44,7 @@ export type CapabilityGroup = {
   label: string;
   description: string;
   skills: string[];
+  evidenceHref?: string;
 };
 
 export type PortfolioContent = {
