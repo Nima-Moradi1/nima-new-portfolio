@@ -33,6 +33,21 @@ New detailed engineering notes are written in English and carry `lang=en`, `dir=
 - Public web-fetch infrastructure could not retrieve several domains; local Chrome verified the destinations. An independent second connection did not establish availability everywhere.
 - Field Core Web Vitals and a comparable pre-change performance baseline are unavailable. No performance improvement or WCAG conformance certification is claimed.
 
-Validation is deferred until the complete implementation has been committed and pushed to the feature branch, as requested. Fresh results will be recorded after that push.
+Validation began after the complete implementation was committed and pushed to the feature branch, as requested.
 
 The shop repository was confirmed PRIVATE through GitHub CLI after the connector returned 404. Public source buttons are therefore omitted for that project; its live demo, genuine capture, implementation notes, and status remain available. Repository visibility was not changed.
+
+## Final verification
+
+- `npm run lint`, `npm run typecheck`, and all 38 unit tests passed on the final implementation.
+- `DEPLOYMENT_SHA=$(git rev-parse HEAD) npm run build` passed for implementation commit `ceb81c5`; all three homepages and project routes are prerendered HTML after removal of the route loading shells.
+- The actual standalone runtime was started with production binding `HOSTNAME=0.0.0.0`, port 3100, and copied public/static assets. All 16 Playwright checks passed in desktop and mobile Chrome: locale/direction, 320/390/768/1024/1440px reflow, case-study routes, ordinary navigation, persistent theme, useful content with JavaScript disabled, and axe checks in both settled themes.
+- Browser plugin was unavailable; the repository's Playwright tooling used installed Chrome. The bundled Playwright Chromium executable was absent. No browser dependency was installed.
+- Manual browser evidence: keyboard skip link focuses `main-content`; optional scene starts with zero canvases, creates one after Explore 3D, and returns to zero on close; unavailable WebGL keeps the still and core text; no application console errors in the normal standalone flow; PDF serves as `application/pdf`; share image serves as `image/png` from genuine JPEG imagery.
+- At 200% text sizing, navigation collapses based on available width and all header controls remain in the viewport. 320px reflow covers the CSS-width equivalent of 400% zoom on a 1280px display. This is not a physical browser zoom or device certification.
+- PDF verified as one tagged page with selectable text, corrected chronology, PostgreSQL, completed 2026 education, and professional English proficiency. The final rendered page was inspected visually. No private phone number is included.
+- Desktop/mobile hero, selected work, experience, new case study, light theme, share image, and enlarged-text captures were inspected. Local evidence is saved under `/tmp/employer-*.png`, outside committed source.
+- Initial browser failures exposed mobile media overflow, remaining route loading shells, and unsupported WebP share rendering; these were corrected and rechecked. Theme audits wait for the controls' brief feedback transitions to finish.
+- Binding Next.js to the loopback IP triggered a known Next 16 rewrite/redirect issue during local checks. The production-style 0.0.0.0 binding serves English correctly. The original locale middleware was preserved; no experimental workaround or dependency upgrade shipped.
+
+Remaining limits: Persian/German updates await owner language review; new engineering notes explicitly remain English. No dedicated VoiceOver/NVDA session, physical-device matrix, field Web Vitals, comparable pre-change benchmark, live XO multiplayer failure/reconnect test, Emerald transaction/email completion, or globally independent demo availability result is claimed. The accessibility tree was spot-checked; automated axe results are not a complete WCAG certification. External project READMEs were not modified.
