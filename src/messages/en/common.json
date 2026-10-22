@@ -1,10 +1,10 @@
 {
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
-    "homeTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeDescription": "Senior Frontend Engineer Nima Moradirad helps technical teams turn complex product requirements into fast, secure, and maintainable experiences—from React architecture and real-time features to reliable PWA and Android delivery.",
-    "homeOgTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeOgDescription": "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology.",
+    "homeTitle": "Nima Moradirad | Senior Frontend Engineer | React & Next.js",
+    "homeDescription": "Senior frontend engineer building React and Next.js applications. Explore financial-platform experience, real-time projects, PWA delivery, and source code.",
+    "homeOgTitle": "Senior Frontend Engineer",
+    "homeOgDescription": "I build React and Next.js applications, with experience in financial platforms, real-time interfaces, PWAs, and Android delivery.",
     "xoTitle": "XO Arena · Real-time multiplayer PWA",
     "xoDescription": "A product case study for XO Arena: a type-safe real-time Tic-Tac-Toe platform with Socket.IO matchmaking, secure sessions, server-validated turns, profiles, and installable PWA support.",
     "xoOgDescription": "A recorded product walkthrough and engineering case study for a modular, real-time multiplayer platform.",
@@ -19,12 +19,12 @@
       "Three.js",
       "portfolio"
     ],
-    "manifestName": "Signal Atelier Portfolio",
-    "manifestShortName": "Signal Atelier",
+    "manifestName": "Nima Moradirad Portfolio",
+    "manifestShortName": "Nima Moradirad",
     "manifestDescription": "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology.",
-    "openGraphAlt": "Nima Moradirad — senior frontend engineer",
-    "openGraphLabel": "SIGNAL ATELIER · PORTFOLIO",
-    "openGraphHeadline": "Digital systems with signal."
+    "openGraphAlt": "Nima Moradirad - senior frontend engineer",
+    "openGraphLabel": "Nima Moradirad",
+    "openGraphHeadline": "Senior Frontend Engineer"
   },
   "LocaleSwitcher": {
     "label": "Change language",
@@ -191,7 +191,7 @@
   },
   "ResumeDialog": {
     "label": "Document · PDF",
-    "title": "Nima Moradirad — Résumé",
+    "title": "Nima Moradirad - Résumé",
     "close": "Close résumé preview",
     "previewAlt": "Nima Moradirad’s résumé, covering profile, capabilities, professional experience, selected work, education, and technical toolkit",
     "description": "A concise, one-page overview of experience and selected work.",
@@ -207,5 +207,36 @@
   },
   "A11y": {
     "externalSuffix": "opens in a new tab"
+  },
+  "Employer": {
+    "work": "Selected work",
+    "workIntro": "Professional experience and independent projects, with my contribution and engineering decisions explained.",
+    "experience": "Professional experience",
+    "skills": "Skills",
+    "about": "About me",
+    "education": "Education",
+    "languages": "Languages",
+    "contact": "Contact",
+    "contactCopy": "Hiring for a frontend role? I’d be glad to discuss the product, team, and engineering challenges.",
+    "email": "Email",
+    "resume": "Download résumé",
+    "viewWork": "View work",
+    "caseStudy": "Read case study",
+    "source": "Source code",
+    "live": "Live demo",
+    "company": "Company website",
+    "walkthrough": "Watch walkthrough",
+    "supporting": "More projects",
+    "evidence": "See related work",
+    "menu": "Menu",
+    "explore": "Explore 3D",
+    "close3d": "Close 3D",
+    "sceneUnavailable": "The 3D scene is unavailable. The static preview remains accessible.",
+    "englishNotice": "Detailed case-study notes are available in English.",
+    "translationNotice": "Updated translations are AI-assisted and awaiting language review.",
+    "back": "Back to selected work",
+    "themeDark": "Switch to dark theme",
+    "themeLight": "Switch to light theme",
+    "unavailable": "Live demo temporarily unavailable."
   }
 }

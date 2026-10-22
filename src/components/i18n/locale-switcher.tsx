@@ -68,35 +68,37 @@ export function LocaleSwitcher() {
           aria-label={t("label")}
         >
           <p className={styles.label}>{t("label")}</p>
-          {routing.locales.map((candidate) => {
-            const active = candidate === locale;
-            return (
-              <DropdownMenuPrimitive.Item asChild key={candidate}>
-                <Link
-                  className={styles.option}
-                  href={`${pathname}${locationSuffix}`}
-                  locale={candidate}
-                  hrefLang={candidate}
-                  scroll={false}
-                  aria-current={active ? "page" : undefined}
-                >
-                  <span className={styles.optionMark}>
-                    <bdi>{localeMarks[candidate]}</bdi>
-                  </span>
-                  <span className={styles.optionName}>
-                    {t(`locales.${candidate}`)}
-                  </span>
-                  <Check
-                    className={styles.check}
-                    data-active={active}
-                    aria-hidden="true"
-                    size={14}
-                    strokeWidth={2}
-                  />
-                </Link>
-              </DropdownMenuPrimitive.Item>
-            );
-          })}
+          <DropdownMenuPrimitive.Group>
+            {routing.locales.map((candidate) => {
+              const active = candidate === locale;
+              return (
+                <DropdownMenuPrimitive.Item asChild key={candidate}>
+                  <Link
+                    className={styles.option}
+                    href={`${pathname}${locationSuffix}`}
+                    locale={candidate}
+                    hrefLang={candidate}
+                    scroll={false}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    <span className={styles.optionMark}>
+                      <bdi>{localeMarks[candidate]}</bdi>
+                    </span>
+                    <span className={styles.optionName}>
+                      {t(`locales.${candidate}`)}
+                    </span>
+                    <Check
+                      className={styles.check}
+                      data-active={active}
+                      aria-hidden="true"
+                      size={14}
+                      strokeWidth={2}
+                    />
+                  </Link>
+                </DropdownMenuPrimitive.Item>
+              );
+            })}
+          </DropdownMenuPrimitive.Group>
         </DropdownMenuPrimitive.Content>
       </DropdownMenuPrimitive.Portal>
     </DropdownMenuPrimitive.Root>

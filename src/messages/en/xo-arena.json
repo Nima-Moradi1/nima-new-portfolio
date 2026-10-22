@@ -3,9 +3,9 @@
   "back": "Back to selected work",
   "hero": {
     "eyebrow": "Product case study · Real-time systems",
-    "title": "Real-time play, engineered end to end.",
+    "title": "Real-time multiplayer with authoritative game state",
     "intro": "XO Arena is a modular, type-safe Tic-Tac-Toe product built around secure identity, server-authoritative matches, live matchmaking, persistent profiles, and installable mobile behavior.",
-    "availability": "Complete local product · Recorded walkthrough"
+    "availability": "Recorded local walkthrough. Public source code available."
   },
   "system": {
     "eyebrow": "System map · 02",
@@ -78,9 +78,9 @@
   },
   "deployment": {
     "eyebrow": "Deployment note · 04",
-    "title": "Why this is a case study—not a temporary demo.",
-    "paragraph1": "XO Arena’s complete experience depends on persistent services: secure sessions, an application server, Socket.IO rooms, a relational database, and uploaded-media storage. Rather than publish a partially provisioned build that misrepresents the product, this page documents the complete local system through its actual recorded flows and product captures.",
-    "paragraph2": "The implementation is shaped for deployment; the presentation is intentionally honest about the infrastructure a reliable real-time product requires."
+    "title": "Deployment status",
+    "paragraph1": "Recorded local walkthrough. Public source code available. The recording shows the local application; a public deployment was not verified.",
+    "paragraph2": "Running the full application requires the Next.js client, application server, Socket.IO, database, and media storage. The recording is evidence of local functionality, not production traffic or operating reliability."
   },
   "next": {
     "eyebrow": "Continue the portfolio",

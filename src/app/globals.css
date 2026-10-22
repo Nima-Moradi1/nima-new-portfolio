@@ -202,10 +202,10 @@
   --duration-base: 420ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --header-height: 5.5rem;
+  --header-height: 4.5rem;
   --content-width: 92rem;
-  --gutter: clamp(1.25rem, 4vw, 4.5rem);
-  --theme-duration: 650ms;
+  --gutter: clamp(1.25rem, 3vw, 3rem);
+  --theme-duration: 200ms;
   --directional-icon-scale: 1;
   --inline-nudge: 0.16rem;
   --signal-scan-start: -180%;
@@ -241,16 +241,16 @@ html[lang="fa"] {
 }
 
 [data-theme="light"] {
-  --ink: #f0eee5;
-  --ink-soft: #e7e3d7;
-  --surface: #ddd8ca;
-  --surface-lift: #faf7ee;
+  --ink: #f2f4ef;
+  --ink-soft: #e8ece5;
+  --surface: #dce2d8;
+  --surface-lift: #fafbf8;
   --paper: #171a15;
-  --muted: #666b61;
+  --muted: #535b50;
   --muted-bright: #33382f;
   --line: rgba(23, 26, 21, 0.14);
   --line-strong: rgba(23, 26, 21, 0.28);
-  --signal: #4d7a12;
+  --signal: #3b650c;
   --signal-soft: #315b08;
   --violet: #6948c8;
   --coral: #bd4f3e;
@@ -401,51 +401,9 @@ html[dir="rtl"] body {
     var(--ink);
 }
 
-html[data-theme="light"] body {
-  background:
-    radial-gradient(
-      circle at 12% 4%,
-      rgba(216, 151, 68, 0.16),
-      transparent 27rem
-    ),
-    radial-gradient(
-      circle at 88% 24%,
-      rgba(77, 122, 18, 0.12),
-      transparent 31rem
-    ),
-    linear-gradient(rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    var(--ink);
-  background-attachment: fixed;
-  background-size:
-    auto,
-    auto,
-    5rem 5rem,
-    5rem 5rem,
-    auto;
-}
-
+html[data-theme="light"] body,
 html[dir="rtl"][data-theme="light"] body {
-  background:
-    radial-gradient(
-      circle at 88% 4%,
-      rgba(216, 151, 68, 0.16),
-      transparent 27rem
-    ),
-    radial-gradient(
-      circle at 12% 24%,
-      rgba(77, 122, 18, 0.12),
-      transparent 31rem
-    ),
-    linear-gradient(rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 26, 21, 0.055) 1px, transparent 1px),
-    var(--ink);
-  background-size:
-    auto,
-    auto,
-    5rem 5rem,
-    5rem 5rem,
-    auto;
+  background: var(--ink);
 }
 
 body::selection,
@@ -693,7 +651,7 @@ html[lang="fa"] .magnetic-link {
 
 @media (max-width: 54rem) {
   :root {
-    --header-height: 4.8rem;
+    --header-height: 4.5rem;
   }
 }
 
@@ -732,5 +690,29 @@ html[lang="fa"] .magnetic-link {
 
   .depth-portal {
     display: none;
+  }
+}
+
+/* Native anchor navigation and focus remain visible below the compact header. */
+:target {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 0.75rem;
+  inset-inline-start: 0.75rem;
+  transform: translateY(-180%);
+  background: var(--signal);
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+@media (max-width: 25rem) {
+  :root {
+    --header-height: 7rem;
   }
 }

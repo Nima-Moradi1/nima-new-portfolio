@@ -1,117 +1,127 @@
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { usePortfolio } from "@/content/use-portfolio";
 import { Link } from "@/i18n/navigation";
-import { Reveal } from "@/components/motion/reveal";
 import { Badge } from "@/components/ui/badge";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { cn } from "@/lib/cn";
-import { projectsSectionClassNames as styles } from "./projects-section.class-names";
-import artwork from "./projects-section.module.css";
+import type { ProjectItem } from "@/types/portfolio";
+import styles from "./portfolio-layout.module.css";
 
-export function ProjectsSection() {
-  const locale = useLocale();
-  const portfolio = usePortfolio();
-  const t = useTranslations("Projects");
-  const InternalArrow = locale === "fa" ? ArrowLeft : ArrowRight;
-
+function ProjectPreview({
+  project,
+  supporting = false,
+}: {
+  project: ProjectItem;
+  supporting?: boolean;
+}) {
+  const t = useTranslations("Employer");
   return (
-    <section
-      className={styles.root}
-      id="work"
-      aria-labelledby="work-title"
-      data-depth-section
-    >
-      <div className={styles.shell} data-depth-plane>
-        <Reveal className={cn(styles.headerFrame, artwork.headerFrame)}>
-          <SectionHeading
-            id="work-title"
-            eyebrow={t("eyebrow")}
-            title={t("title")}
-            description={t("description")}
-          />
-        </Reveal>
-
-        <div className={styles.grid}>
-          {portfolio.projects.map((project, index) => {
-            const content = (
-              <article
-                className={styles.card}
-                data-accent={project.accent}
-                data-featured={index === 0}
-              >
-                <div className={styles.visual}>
-                  <Image
-                    className={styles.image}
-                    src={project.image}
-                    alt={project.imageAlt}
-                    fill
-                    sizes="(max-width: 864px) 100vw, 25vw"
-                  />
-                  {project.logo ? (
-                    <div className={styles.logo}>
-                      <Image
-                        src={project.logo}
-                        alt={project.logoAlt ?? `${project.title} logo`}
-                        fill
-                        sizes="9rem"
-                      />
-                    </div>
-                  ) : null}
-                </div>
-                <div className={styles.content}>
-                  <div className={styles.kicker}>
-                    <span>{project.category}</span>
-                    {project.href?.startsWith("/") ? (
-                      <InternalArrow aria-hidden="true" size={19} />
-                    ) : (
-                      <ArrowUpRight aria-hidden="true" size={19} />
-                    )}
-                  </div>
-                  <h3 className={styles.title}>{project.title}</h3>
-                  <p className={styles.summary}>{project.summary}</p>
-                  <div className={styles.tags}>
-                    {project.technologies.slice(0, 4).map((technology) => (
-                      <Badge
-                        className={styles.tag}
-                        variant="outline"
-                        key={technology}
-                      >
-                        <bdi>{technology}</bdi>
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            );
-
-            return (
-              <Reveal key={project.id} delay={index * 0.08}>
-                {project.href?.startsWith("/") ? (
-                  <Link
-                    className={styles.cardLink}
-                    href={project.href}
-                    aria-label={t("internalLabel", { title: project.title })}
-                  >
-                    {content}
-                  </Link>
-                ) : project.href ? (
-                  <a
-                    className={styles.cardLink}
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={t("externalLabel", { title: project.title })}
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  content
-                )}
-              </Reveal>
-            );
-          })}
+    <article className={supporting ? undefined : styles.project}>
+      <div className={styles.media}>
+        <Image
+          className={styles.image}
+          src={project.image}
+          alt={project.imageAlt}
+          fill
+          sizes={
+            supporting
+              ? "(max-width: 768px) 90vw, 540px"
+              : "(max-width: 768px) 90vw, 580px"
+          }
+        />
+      </div>
+      <div className={styles.projectCopy}>
+        <p className={styles.kind}>{project.category}</p>
+        <h3 className={styles.projectTitle}>{project.title}</h3>
+        <p className={styles.body}>{project.summary}</p>
+        <p className={styles.contribution}>{project.contribution}</p>
+        {project.status ? (
+          <p className={styles.period}>{project.status}</p>
+        ) : null}
+        <div className={styles.tags}>
+          {project.technologies.slice(0, 4).map((tech) => (
+            <Badge variant="outline" key={tech}>
+              <bdi dir="ltr">{tech}</bdi>
+            </Badge>
+          ))}
+        </div>
+        <div className={styles.links}>
+          {project.href?.startsWith("/") ? (
+            <Link
+              className={styles.link}
+              href={project.href}
+              aria-label={`${t("caseStudy")}: ${project.title}`}
+            >
+              {t("caseStudy")}
+            </Link>
+          ) : project.href ? (
+            <a
+              className={styles.link}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("live")}
+            </a>
+          ) : null}
+          {project.liveVerified && project.requestedDestination ? (
+            <a
+              className={styles.link}
+              href={project.requestedDestination}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("live")}
+            </a>
+          ) : null}
+          {project.sourceUrl ? (
+            <a
+              className={styles.link}
+              href={project.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t("source")}: ${project.title}`}
+            >
+              {t("source")}
+            </a>
+          ) : null}
+          {project.walkthroughUrl ? (
+            <a
+              className={styles.link}
+              href={project.walkthroughUrl}
+              aria-label={`${t("walkthrough")}: ${project.title}`}
+            >
+              {t("walkthrough")}
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
+  );
+}
+export function ProjectsSection() {
+  const portfolio = usePortfolio();
+  const t = useTranslations("Employer");
+  return (
+    <section className={styles.section} id="work" aria-labelledby="work-title">
+      <div className={styles.shell}>
+        <h2 className={styles.heading} id="work-title">
+          {t("work")}
+        </h2>
+        <p className={styles.description}>{t("workIntro")}</p>
+        <div className={styles.projects}>
+          {portfolio.projects
+            .filter((p) => p.featured)
+            .map((project) => (
+              <ProjectPreview project={project} key={project.id} />
+            ))}
+        </div>
+        <h2 className={styles.supportingTitle}>{t("supporting")}</h2>
+        <div className={styles.supporting}>
+          {portfolio.projects
+            .filter((p) => !p.featured)
+            .map((project) => (
+              <ProjectPreview project={project} key={project.id} supporting />
+            ))}
         </div>
       </div>
     </section>
