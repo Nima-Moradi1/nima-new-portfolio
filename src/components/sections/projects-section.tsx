@@ -69,8 +69,20 @@ function ProjectPreview({
               href={project.requestedDestination}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${t("live")}: ${project.title}`}
             >
               {t("live")}
+            </a>
+          ) : null}
+          {project.companyUrl ? (
+            <a
+              className={styles.link}
+              href={project.companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t("company")}: ${project.title}`}
+            >
+              {t("company")}
             </a>
           ) : null}
           {project.sourceUrl ? (

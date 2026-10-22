@@ -157,7 +157,8 @@
       "technologies": ["React", "TypeScript", "Capacitor", "Service workers"],
       "href": "/projects/hesabo",
       "featured": true,
-      "accent": "coral"
+      "accent": "coral",
+      "companyUrl": "https://hesabo.com/"
     },
     {
       "id": "xo-arena",
@@ -211,7 +212,10 @@
       "href": "/projects/emerald-case",
       "featured": false,
       "accent": "violet",
-      "sourceUrl": "https://github.com/Nima-Moradi1/emeraldCase"
+      "sourceUrl": "https://github.com/Nima-Moradi1/emeraldCase",
+      "requestedDestination": "https://emerald-case.vercel.app/en/",
+      "liveVerified": true,
+      "liveVerifiedAt": "2026-10-22"
     },
     {
       "id": "moradi-gallery",
@@ -233,7 +237,10 @@
       "href": "/projects/moradi-gallery",
       "featured": false,
       "accent": "violet",
-      "sourceUrl": "https://github.com/Nima-Moradi1/moradi-gallery"
+      "sourceUrl": "https://github.com/Nima-Moradi1/moradi-gallery",
+      "requestedDestination": "https://moradi-gallery.vercel.app/fa",
+      "liveVerified": true,
+      "liveVerifiedAt": "2026-10-22"
     },
     {
       "id": "lingo-learn",
@@ -271,7 +278,10 @@
       "href": "/projects/tarabari-nima",
       "featured": false,
       "accent": "coral",
-      "sourceUrl": "https://github.com/Nima-Moradi1/tarabari-nima"
+      "sourceUrl": "https://github.com/Nima-Moradi1/tarabari-nima",
+      "requestedDestination": "https://tarabari-nima.vercel.app/",
+      "liveVerified": true,
+      "liveVerifiedAt": "2026-10-22"
     }
   ],
   "capabilities": [

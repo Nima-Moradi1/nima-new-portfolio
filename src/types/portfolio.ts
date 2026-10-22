@@ -30,6 +30,7 @@ export type ProjectItem = {
   featured: boolean;
   status?: string;
   sourceUrl?: string;
+  companyUrl?: string;
   walkthroughUrl?: string;
   requestedDestination?: string;
   liveVerified?: boolean;
