@@ -37,7 +37,7 @@ Playwright browser checks can use installed Chrome. Set `PLAYWRIGHT_CHROME=1` wh
 
 Edit `src/messages/{en,fa,de}/portfolio.json` for identity, chronology, projects, skills, education, and social profiles. `common.json` holds interface labels. `src/content/project-evidence.ts` contains English engineering notes; other locales explicitly identify those notes as English. Updated Persian/German copy is disclosed as AI-assisted pending owner language review.
 
-Existing case-study routes remain available. New routes are `/projects/hesabo` and `/projects/3d-online-shop`, with the same locale-prefix convention. The latter route has a stable project ID; its correct destination is **https://3d-shop-design.ir/**, confirmed by the owner. Do not substitute the unrelated `sarochi-new` repository. The actual source is `Nima-Moradi1/sarochi-shop-design`.
+Existing case-study routes remain available. New routes are `/projects/hesabo` and `/projects/3d-online-shop`, with the same locale-prefix convention. The latter route has a stable project ID; its correct destination is **https://3d-shop-design.ir/**, confirmed by the owner. Do not substitute the unrelated `sarochi-new` repository. The actual source is the private `Nima-Moradi1/sarochi-shop-design` repository. Its source link is omitted so reviewers are not sent to a login or 404 page.
 
 Live-link visibility is controlled separately by `liveVerified`. Update that flag only after confirming the application, HTTPS, and destination identity; `liveVerifiedAt` records the date. Source inspection does not establish a completed payment or a production performance result.
 

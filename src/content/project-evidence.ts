@@ -67,16 +67,16 @@ export const projectEvidence: Record<string, ProjectEvidence> = {
     title: "Interactive product presentation in a 3D boutique",
     summary:
       "A personal project built alongside my professional work, published at 3d-shop-design.ir.",
-    status: "Independent project. Live boutique verified on 22 October 2026.",
+    status:
+      "Independent project. Live boutique verified on 22 October 2026. Source code is private.",
     caption:
       "The actual deployed SAROCHI boutique, captured on 22 October 2026: garment racks, accessory display, Persian controls, and the fitting-room entry.",
     liveUrl: "https://3d-shop-design.ir/",
-    sourceUrl: "https://github.com/Nima-Moradi1/sarochi-shop-design",
     sections: [
       {
         title: "My contribution",
         paragraphs: [
-          "I built this personal project alongside my professional work. The implementation brings together the interactive boutique environment, garment browsing, product information, catalog integration, and photographic outfit previews. The source repository and deployment configuration identify the same 3d-shop-design.ir destination.",
+          "I built this personal project alongside my professional work. The implementation brings together the interactive boutique environment, garment browsing, product information, catalog integration, and photographic outfit previews. The private source repository and local deployment configuration identify the same 3d-shop-design.ir destination.",
           "The project is an independent exploration of product presentation. It is not presented as a client commission, a payment-enabled store, or evidence of retail sales.",
         ],
       },

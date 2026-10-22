@@ -25,10 +25,7 @@ export default async function OpenGraphImage({
     getMessages({ locale }),
     readFile(join(process.cwd(), "src/assets/fonts/Vazirmatn-Regular.ttf")),
     readFile(
-      join(
-        process.cwd(),
-        "public/assets/projects/3d-online-shop/boutique.webp",
-      ),
+      join(process.cwd(), "public/assets/projects/3d-online-shop/share.jpg"),
     ),
   ]);
   const portfolio = materializePortfolio(
@@ -63,9 +60,8 @@ export default async function OpenGraphImage({
         </div>
       </div>
       {/* Actual project imagery, rather than an invented product screenshot. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`data:image/webp;base64,${preview.toString("base64")}`}
+        src={`data:image/jpeg;base64,${preview.toString("base64")}`}
         width={390}
         height={390}
         alt=""

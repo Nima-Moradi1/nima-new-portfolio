@@ -237,6 +237,8 @@
     "back": "Back to selected work",
     "themeDark": "Switch to dark theme",
     "themeLight": "Switch to light theme",
-    "unavailable": "Live demo temporarily unavailable."
+    "unavailable": "Live demo temporarily unavailable.",
+    "resumeShort": "Résumé",
+    "videoUnavailable": "Video unavailable. Use the recording link or screenshots below."
   }
 }

@@ -76,8 +76,12 @@ test("preserves case study routes, real media, and status-specific links", async
 
 test("keeps a readable static page when optional scripts are unavailable", async ({
   browser,
+  baseURL,
 }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL,
+  });
   const page = await context.newPage();
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -95,6 +99,14 @@ test("passes automated accessibility checks in both themes", async ({
     if (theme === "light")
       await page.getByRole("button", { name: "Switch to light theme" }).click();
     await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+    // Audit the selected theme after the controls' brief feedback transitions.
+    await page.evaluate(async () => {
+      await Promise.all(
+        document
+          .getAnimations()
+          .map((animation) => animation.finished.catch(() => {})),
+      );
+    });
     const result = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();

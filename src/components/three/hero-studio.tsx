@@ -24,6 +24,7 @@ export function HeroStudio() {
           src="/assets/hero/desk-still.webp"
           alt={studio("fallbackAlt")}
           fill
+          loading="eager"
           sizes="(max-width: 960px) 40vw, 440px"
           className={styles.still}
         />

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Menu, Moon, Sun } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/i18n/locale-switcher";
 import { useTheme } from "@/components/theme/theme-provider";
@@ -22,12 +22,34 @@ export function SiteHeader() {
   const t = useTranslations("Employer");
   const navigation = useTranslations("Navigation");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const innerRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const ThemeIcon = theme === "dark" ? Sun : Moon;
+  useEffect(() => {
+    const inner = innerRef.current;
+    if (!inner) return;
+    const nav = inner.querySelector("nav");
+    const brand = inner.firstElementChild;
+    const actions = inner.lastElementChild;
+    if (!nav || !brand || !actions) return;
+    const observer = new ResizeObserver(() => {
+      const gap = parseFloat(getComputedStyle(inner).columnGap) || 0;
+      const required =
+        brand.scrollWidth + nav.scrollWidth + actions.scrollWidth + gap * 2;
+      setCompact(
+        nav.getBoundingClientRect().width > 0 && required > inner.clientWidth,
+      );
+    });
+    [inner, nav, brand, actions].forEach((element) =>
+      observer.observe(element),
+    );
+    return () => observer.disconnect();
+  }, []);
   return (
     <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-      <header className={styles.header}>
-        <div className={styles.inner}>
+      <header className={styles.header} data-compact={compact}>
+        <div className={styles.inner} ref={innerRef}>
           <Link
             href="/#top"
             className={styles.brand}
@@ -58,10 +80,12 @@ export function SiteHeader() {
           <div className={styles.actions}>
             <a
               className={styles.resume}
+              aria-label={t("resume")}
               href={portfolio.identity.resumeUrl}
               download="Nima-Moradirad-Resume.pdf"
             >
-              {t("resume")}
+              <span className={styles.resumeFull}>{t("resume")}</span>
+              <span className={styles.resumeShort}>{t("resumeShort")}</span>
             </a>
             <button
               type="button"

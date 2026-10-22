@@ -36,7 +36,7 @@ export function XoArenaVideo() {
       <figcaption className={styles.body}>{t("video.ariaLabel")}</figcaption>
       {failed ? (
         <p role="status" className={styles.notice}>
-          {t("video.buffering")}
+          {labels("videoUnavailable")}
         </p>
       ) : null}
       <a

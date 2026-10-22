@@ -34,3 +34,5 @@ New detailed engineering notes are written in English and carry `lang=en`, `dir=
 - Field Core Web Vitals and a comparable pre-change performance baseline are unavailable. No performance improvement or WCAG conformance certification is claimed.
 
 Validation is deferred until the complete implementation has been committed and pushed to the feature branch, as requested. Fresh results will be recorded after that push.
+
+The shop repository was confirmed PRIVATE through GitHub CLI after the connector returned 404. Public source buttons are therefore omitted for that project; its live demo, genuine capture, implementation notes, and status remain available. Repository visibility was not changed.

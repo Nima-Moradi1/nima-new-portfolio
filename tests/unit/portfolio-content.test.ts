@@ -33,9 +33,7 @@ describe("employer-focused content contract", () => {
     ).toEqual(["hesabo-platform", "xo-arena", "3d-online-shop"]);
     const shop = portfolio.projects.find((p) => p.id === "3d-online-shop")!;
     expect(shop.requestedDestination).toBe("https://3d-shop-design.ir/");
-    expect(shop.sourceUrl).toBe(
-      "https://github.com/Nima-Moradi1/sarochi-shop-design",
-    );
+    expect(shop.sourceUrl).toBeUndefined();
     expect(shop.liveVerified).toBe(true);
     expect(projectEvidence["3d-online-shop"].liveUrl).toBe(
       shop.requestedDestination,

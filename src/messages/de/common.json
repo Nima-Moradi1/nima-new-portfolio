@@ -237,6 +237,8 @@
     "back": "Zurück zu den Arbeiten",
     "themeDark": "Zum dunklen Design wechseln",
     "themeLight": "Zum hellen Design wechseln",
-    "unavailable": "Live-Demo vorübergehend nicht verfügbar."
+    "unavailable": "Live-Demo vorübergehend nicht verfügbar.",
+    "resumeShort": "Lebenslauf",
+    "videoUnavailable": "Video nicht verfügbar. Nutzen Sie den Aufnahme-Link oder die Bilder darunter."
   }
 }

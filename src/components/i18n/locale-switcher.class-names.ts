@@ -1,6 +1,6 @@
 export const localeSwitcherClassNames = {
   trigger:
-    "group locale-switcher inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-full border border-border bg-[color-mix(in_srgb,var(--floating-surface)_88%,transparent)] px-2.5 text-[var(--muted-bright)] shadow-[inset_0_1px_color-mix(in_srgb,var(--paper)_7%,transparent)] backdrop-blur-[12px] transition-[border-color,background-color] duration-150 hover:border-line-strong hover:bg-floating-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary data-[state=open]:border-primary/55 data-[state=open]:bg-floating-surface motion-reduce:transition-none",
+    "group locale-switcher inline-flex h-11 cursor-pointer items-center gap-1.5 rounded-full border border-border bg-[color-mix(in_srgb,var(--floating-surface)_88%,transparent)] px-2.5 text-[var(--muted-bright)] shadow-[inset_0_1px_color-mix(in_srgb,var(--paper)_7%,transparent)] backdrop-blur-[12px] transition-[border-color,background-color] duration-150 hover:border-line-strong hover:bg-floating-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary data-[state=open]:border-primary/55 data-[state=open]:bg-floating-surface motion-reduce:transition-none",
   icon: "size-3.5 text-muted-foreground group-data-[state=open]:text-primary",
   activeMark:
     "min-w-[1.25rem] text-center font-mono text-[0.58rem] font-[700] tracking-[0.04em] [direction:ltr] [unicode-bidi:isolate]",

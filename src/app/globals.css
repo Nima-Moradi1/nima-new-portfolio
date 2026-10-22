@@ -344,29 +344,6 @@ html {
   color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1rem);
-  transition:
-    --ink var(--theme-duration) ease,
-    --ink-soft var(--theme-duration) ease,
-    --surface var(--theme-duration) ease,
-    --surface-lift var(--theme-duration) ease,
-    --paper var(--theme-duration) ease,
-    --muted var(--theme-duration) ease,
-    --muted-bright var(--theme-duration) ease,
-    --line var(--theme-duration) ease,
-    --line-strong var(--theme-duration) ease,
-    --signal var(--theme-duration) ease,
-    --signal-soft var(--theme-duration) ease,
-    --book-grid var(--theme-duration) ease,
-    --book-glow var(--theme-duration) ease,
-    --floating-surface var(--theme-duration) ease,
-    --header-glass var(--theme-duration) ease,
-    --mobile-nav-bg var(--theme-duration) ease,
-    --signal-wash var(--theme-duration) ease,
-    --book-paper var(--theme-duration) ease,
-    --book-ink var(--theme-duration) ease,
-    --book-muted var(--theme-duration) ease,
-    --book-rule var(--theme-duration) ease,
-    --book-accent var(--theme-duration) ease;
 }
 
 html[data-theme="light"] {
@@ -711,7 +688,7 @@ html[lang="fa"] .magnetic-link {
 .skip-link:focus {
   transform: translateY(0);
 }
-@media (max-width: 25rem) {
+@media (max-width: 40rem) {
   :root {
     --header-height: 7rem;
   }
