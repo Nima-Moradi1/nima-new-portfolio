@@ -14,11 +14,6 @@
   },
   "navigation": [
     {
-      "id": "work",
-      "label": "Work",
-      "href": "/#work"
-    },
-    {
       "id": "experience",
       "label": "Experience",
       "href": "/#experience"
@@ -27,6 +22,11 @@
       "id": "capabilities",
       "label": "Skills",
       "href": "/#capabilities"
+    },
+    {
+      "id": "work",
+      "label": "Work",
+      "href": "/#work"
     },
     {
       "id": "contact",
@@ -67,9 +67,10 @@
       "period": "Apr 2026 - Present",
       "role": "Frontend Chapter Lead",
       "company": "Hesabo · Tehran, Iran",
-      "summary": "Leading frontend architecture, engineering standards and delivery at Hesabo; joined in August 2025 and promoted in April 2026.",
+      "summary": "Leading frontend architecture, engineering standards and delivery at Hesabo; joined in August 2025 and promoted in April 2026. My Hesabo work also covers real-time financial charts, detailed financial panels, payment-service-provider integrations and a dedicated support chat room built with WebSockets and our custom in-house tools.",
       "highlights": [
         "Led a refactor of reusable UI, business logic and the design system: **17% smaller bundle** and **9% better initial-load performance**, as reported in my résumé.",
+        "Built **real-time financial charts**, detailed finance panels and payment-service-provider integrations, including a **dedicated WebSocket support chat** and custom tools developed in-house.",
         "Architected shared components, utilities and configurable layouts with drag-and-drop and resizing; delivered mobile versions of role-based panels without duplicating application logic.",
         "Developed **project-aware Claude and Codex agents** for implementation and review, with Cypress E2E, integration and mock-based validation and CI/CD quality checks.",
         "Improved role-aware routing, network requests and caching; strengthened Nginx and payment-facing protections against **CSRF, XSS, clickjacking and unsafe CORS**, alongside architectural reviews and mentorship."
@@ -162,8 +163,8 @@
       "number": "04",
       "title": "Hesabo",
       "category": "Professional work",
-      "summary": "Frontend architecture and technical leadership for a multi-application financial platform.",
-      "contribution": "Lead reusable systems, project-aware AI agents, automated validation and secure delivery; previously shipped seven role-based applications and Capacitor Android builds.",
+      "summary": "Frontend leadership for a financial platform spanning detailed finance panels, real-time charts, payments and dedicated support chat.",
+      "contribution": "Lead shared architecture, AI agents and secure delivery; build detailed financial panels, payment-provider integrations, real-time charts and a dedicated WebSocket support chat using our in-house tools.",
       "image": "/assets/projects/hesabo/homepage.jpg",
       "imageAlt": "Hesabo website presenting its employee salary access platform",
       "technologies": ["React", "TypeScript", "AI agents", "Capacitor"],
@@ -185,7 +186,8 @@
             "title": "My contribution",
             "paragraphs": [
               "I led reusable UI, business-logic and design-system refactoring, configurable layouts and mobile-ready panels. The supplied résumé reports a 17% smaller bundle and 9% better initial-load performance for this refactor.",
-              "I develop architecture-aware Claude/Codex agents and automate validation with Cypress E2E, integration and mock tests. I also work on role-aware routing, caching, Nginx and payment security, architectural reviews and mentorship."
+              "I develop architecture-aware Claude/Codex agents and automate validation with Cypress E2E, integration and mock tests. I also work on role-aware routing, caching, Nginx and payment security, architectural reviews and mentorship.",
+              "My Hesabo work also covers real-time financial charts, detailed financial panels, payment-service-provider integrations and a dedicated support chat room built with WebSockets and our custom in-house tools."
             ]
           },
           {
@@ -419,8 +421,23 @@
       "evidenceHref": "/projects/xo-arena"
     },
     {
-      "id": "mobile",
+      "id": "financial-support",
       "index": "5",
+      "title": "Financial operations and support systems",
+      "label": "Financial operations and support systems",
+      "description": "Build **detailed financial panels, real-time charts and payment-provider integrations** alongside dedicated **WebSocket support chat rooms**. Our in-house tools support product-specific conversations and financial workflows.",
+      "skills": [
+        "Real-time charts",
+        "Financial panels",
+        "Payment providers",
+        "WebSocket support chat",
+        "Custom tooling"
+      ],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "mobile",
+      "index": "6",
       "title": "Android and iOS engineering",
       "label": "Android and iOS engineering",
       "description": "Use **Capacitor** for Android and iOS, custom native configuration, plugins and release workflows. My work spans payment, SMS, core-banking and real-time chart integrations; the supplied résumé specifically documents shipped Android builds.",
@@ -429,7 +446,7 @@
     },
     {
       "id": "performance",
-      "index": "6",
+      "index": "7",
       "title": "Performance that supports the product",
       "label": "Performance that supports the product",
       "description": "Optimize **LCP, INP and CLS** for stable product pages, filtering, checkout and live dashboards. FCP, TTFB, TBT, Speed Index and long tasks guide diagnosis; TTI is a legacy diagnostic. Faster, steadier interactions support conversion, retention and trust without implying unmeasured gains.",
@@ -443,7 +460,7 @@
     },
     {
       "id": "quality",
-      "index": "7",
+      "index": "8",
       "title": "Engineering quality and delivery",
       "label": "Engineering quality and delivery",
       "description": "Use **Cypress E2E, integration and mock tests**, code review, automated validation agents and CI/CD quality gates to make releases reviewable and reliable.",

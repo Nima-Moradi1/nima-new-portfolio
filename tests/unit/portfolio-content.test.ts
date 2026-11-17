@@ -8,9 +8,9 @@ describe("employer-focused content contract", () => {
     expect(portfolio.identity.shortRole).toContain("Frontend Lead");
     expect(portfolio.identity.availability).not.toMatch(/6\+ years/);
     expect(portfolio.navigation.map((p) => p.href)).toEqual([
-      "/#work",
       "/#experience",
       "/#capabilities",
+      "/#work",
       "/#contact",
     ]);
   });
@@ -25,7 +25,7 @@ describe("employer-focused content contract", () => {
     expect(portfolio.experience[2].period).toBe("Mar 2024 - Mar 2025");
     expect(
       portfolio.experience.every(
-        (p) => p.highlights.length >= 2 && p.highlights.length <= 4,
+        (p) => p.highlights.length >= 2 && p.highlights.length <= 5,
       ),
     ).toBe(true);
   });
@@ -53,7 +53,7 @@ describe("employer-focused content contract", () => {
     );
     expect(portfolio.education.note).not.toMatch(/20\d{2}/);
     expect(portfolio.education.languages).toContain("English: C1 proficiency");
-    expect(portfolio.capabilities).toHaveLength(7);
+    expect(portfolio.capabilities).toHaveLength(8);
     expect(
       portfolio.capabilities.every((g) =>
         g.evidenceHref?.startsWith("/projects/"),

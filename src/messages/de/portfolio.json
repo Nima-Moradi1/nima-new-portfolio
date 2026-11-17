@@ -14,11 +14,6 @@
   },
   "navigation": [
     {
-      "id": "work",
-      "label": "Projekte",
-      "href": "/#work"
-    },
-    {
       "id": "experience",
       "label": "Erfahrung",
       "href": "/#experience"
@@ -27,6 +22,11 @@
       "id": "capabilities",
       "label": "Kenntnisse",
       "href": "/#capabilities"
+    },
+    {
+      "id": "work",
+      "label": "Projekte",
+      "href": "/#work"
     },
     {
       "id": "contact",
@@ -67,9 +67,10 @@
       "period": "Apr. 2026 – heute",
       "role": "Frontend Chapter Lead",
       "company": "Hesabo · Teheran, Iran",
-      "summary": "Verantwortlich für Frontend-Architektur, Engineering-Standards und Auslieferung bei Hesabo; Eintritt im August 2025, Beförderung im April 2026.",
+      "summary": "Verantwortlich für Frontend-Architektur, Engineering-Standards und Auslieferung bei Hesabo; Eintritt im August 2025, Beförderung im April 2026. Meine Arbeit bei Hesabo umfasst außerdem Echtzeit-Finanzdiagramme, detaillierte Finanz-Panels, Zahlungsdienstleister-Integrationen und einen eigenen WebSocket-Support-Chat mit intern entwickelten Werkzeugen.",
       "highlights": [
         "Leitete ein Refactoring von UI-Komponenten, Geschäftslogik und Designsystem: **17 % kleineres Bundle** und **9 % bessere initiale Ladeleistung**, laut meinem Lebenslauf.",
+        "Entwickelte **Echtzeit-Finanzdiagramme**, detaillierte Finanz-Panels und Integrationen mit Zahlungsdienstleistern sowie einen **eigenen WebSocket-Support-Chat** mit intern entwickelten Werkzeugen.",
         "Entwarf gemeinsame Komponenten, Hilfsfunktionen und konfigurierbare Layouts mit Drag-and-drop und Größenänderung; lieferte mobile Rollen-Panels ohne duplizierte Anwendungslogik.",
         "Entwickelte **projektbewusste Claude- und Codex-Agenten** für Implementierung und Review, ergänzt durch Cypress-E2E-, Integrations- und Mock-Tests sowie CI/CD-Qualitätsprüfungen.",
         "Verbesserte rollenabhängiges Routing, Netzwerkanfragen und Caching; verstärkte Nginx und Zahlungssicherheit gegen **CSRF, XSS, Clickjacking und unsichere CORS-Konfigurationen**, begleitet von Architektur-Reviews und Mentoring."
@@ -162,8 +163,8 @@
       "number": "04",
       "title": "Hesabo",
       "category": "Berufliche Arbeit",
-      "summary": "Frontend-Architektur und technische Führung für eine Finanzplattform mit mehreren Anwendungen.",
-      "contribution": "Leite gemeinsame Systeme, projektbewusste KI-Agenten, automatische Validierung und sichere Auslieferung; zuvor sieben rollenbasierte Anwendungen und Capacitor-Android-Builds entwickelt.",
+      "summary": "Frontend-Führung für eine Finanzplattform mit detaillierten Finanz-Panels, Echtzeitdiagrammen, Zahlungsintegrationen und eigenem Support-Chat.",
+      "contribution": "Leite gemeinsame Architektur, KI-Agenten und sichere Auslieferung; entwickle Finanz-Panels, Zahlungsdienstleister-Integrationen, Echtzeitdiagramme und einen eigenen WebSocket-Support-Chat mit unseren internen Werkzeugen.",
       "image": "/assets/projects/hesabo/homepage.jpg",
       "imageAlt": "Hesabo-Website zur Plattform für flexiblen Zugriff auf Mitarbeitergehälter",
       "technologies": ["React", "TypeScript", "AI agents", "Capacitor"],
@@ -185,7 +186,8 @@
             "title": "Mein Beitrag",
             "paragraphs": [
               "Ich leitete das Refactoring gemeinsamer UI, Geschäftslogik und Designsysteme sowie konfigurierbare Layouts und mobile Panels. Der vorgelegte Lebenslauf nennt dafür 17 % weniger Bundle-Größe und 9 % bessere initiale Ladeleistung.",
-              "Ich entwickle architekturbewusste Claude-/Codex-Agenten und automatisiere Validierung mit Cypress-E2E-, Integrations- und Mock-Tests. Hinzu kommen Rollen-Routing, Caching, Nginx, Zahlungssicherheit, Architektur-Reviews und Mentoring."
+              "Ich entwickle architekturbewusste Claude-/Codex-Agenten und automatisiere Validierung mit Cypress-E2E-, Integrations- und Mock-Tests. Hinzu kommen Rollen-Routing, Caching, Nginx, Zahlungssicherheit, Architektur-Reviews und Mentoring.",
+              "Meine Arbeit bei Hesabo umfasst außerdem Echtzeit-Finanzdiagramme, detaillierte Finanz-Panels, Zahlungsdienstleister-Integrationen und einen eigenen WebSocket-Support-Chat mit intern entwickelten Werkzeugen."
             ]
           },
           {
@@ -419,8 +421,23 @@
       "evidenceHref": "/projects/xo-arena"
     },
     {
-      "id": "mobile",
+      "id": "financial-support",
       "index": "5",
+      "title": "Finanzprozesse und eigene Support-Systeme",
+      "label": "Finanzprozesse und eigene Support-Systeme",
+      "description": "Entwicklung **detaillierter Finanz-Panels, Echtzeitdiagramme und Zahlungsdienstleister-Integrationen** sowie eigener **WebSocket-Support-Chaträume**. Intern entwickelte Werkzeuge unterstützen produktspezifische Kommunikation und Finanzabläufe.",
+      "skills": [
+        "Real-time charts",
+        "Financial panels",
+        "Payment providers",
+        "WebSocket support chat",
+        "Custom tooling"
+      ],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "mobile",
+      "index": "6",
       "title": "Android- und iOS-Engineering",
       "label": "Android- und iOS-Engineering",
       "description": "**Capacitor** für Android und iOS, native Konfigurationen, Plugins und Release-Workflows. Dazu kommen Zahlungs-, SMS-, Kernbank- und Echtzeitdiagramm-Integrationen; der vorgelegte Lebenslauf belegt konkret ausgelieferte Android-Builds.",
@@ -429,7 +446,7 @@
     },
     {
       "id": "performance",
-      "index": "6",
+      "index": "7",
       "title": "Performance im Produktkontext",
       "label": "Performance im Produktkontext",
       "description": "Optimierung von **LCP, INP und CLS** für Produktseiten, Filter, Checkout und Live-Dashboards. FCP, TTFB, TBT, Speed Index und Long Tasks dienen der Diagnose; TTI ist eine ältere Diagnosemetrik. Schnelle, stabile Interaktionen unterstützen Conversion, Bindung und Vertrauen ohne unbelegte Erfolgszahlen.",
@@ -443,7 +460,7 @@
     },
     {
       "id": "quality",
-      "index": "7",
+      "index": "8",
       "title": "Engineering-Qualität und Auslieferung",
       "label": "Engineering-Qualität und Auslieferung",
       "description": "**Cypress-E2E-, Integrations- und Mock-Tests**, Code-Reviews, automatische Validierungsagenten und CI/CD-Qualitätsprüfungen machen Releases nachvollziehbar und zuverlässig.",

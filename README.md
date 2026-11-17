@@ -5,8 +5,8 @@ Employer-focused portfolio for Nima Moradirad, Senior Software Engineer and Fron
 ## What visitors can inspect
 
 - Role-specific hero with work and résumé links, available without a loading gate.
-- Selected work led by Hesabo, XO Arena, and 3D Online Shop, followed by supporting projects.
-- Five professional role entries in a vertical chronology, seven evidence-linked capability groups, About, education, languages, and direct contact links.
+- Professional experience first, then skills, then projects. Selected work is led by Hesabo, XO Arena and 3D Online Shop.
+- Five professional role entries in a vertical chronology, eight evidence-linked capability groups, About, education, languages, and direct contact links.
 - Case studies with personal contribution, implementation decisions, genuine captures, source links, and factual limitations.
 - An optional workstation scene. Its default still is a genuine capture of the existing scene; the Three.js code loads only after **Explore 3D**. A conventional header control changes theme independently.
 - The original selectable-text, two-page résumé supplied by the owner. The original public URL is retained.

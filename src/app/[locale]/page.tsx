@@ -32,9 +32,9 @@ export default async function HomePage({
       <SiteHeader />
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <ProjectsSection />
         <ExperienceSection />
         <CapabilitiesSection />
+        <ProjectsSection />
         <AboutSection />
         <ContactSection />
       </main>

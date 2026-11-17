@@ -1,6 +1,12 @@
+# Latest owner follow-up (2026-11-17)
+
+- Owner requests actual homepage + navigation order: Professional Experience -> Skills -> Projects, and expanded Hesabo responsibilities/capabilities for real-time charts, detailed financial panels, payment providers, dedicated WebSocket support chat and custom in-house tooling; apply to EN/FA/DE. Implemented, checks pending.
+- MVP/outage notices now use a shared restrained amber treatment with semantic dark/light warning token, icon, border, soft surface and selective bold title on both cards and case studies. Checks pending.
+- Run 44127066081 passed all container checks but Liara Iran builder failed Docker Hub pull with `denied: RBAC: access denied` for the exact base image. Three retries failed; old production SHA still a18911c. CLI confirms Germany is supported. Switch only build location to Germany; keep immutable base, tested runtime, app, hosting region, domains and plan. Next verify source changes/build and deploy through corrected workflow.
+
 # Portfolio modernization execution handoff
 
-LATEST: first release candidate failed container smoke before deployment. Root cause isolated and fixed in `deploy/package.sh`: traced public directory already existed, so `cp -a public target/public` nested assets under public/public. Use content-copy `public/.` and `.next/static/.` into explicit destination directories. Production was not changed by failed run 44126431506. Next: commit/push packaging correction to feature and main, await full workflow and verify production.
+LATEST: first release candidate failed container smoke before deployment. Root cause isolated and fixed in `deploy/package.sh`: traced public directory already existed, so `cp -a public target/public` nested assets under public/public. Use content-copy `public/.` and `.next/static/.` into explicit destination directories. Production was not changed by failed run 44126431506. Packaging correction committed/pushed to feature and main as 47c856e. New run 44127066081 is in progress; next await full workflow and verify production.
 
 Updated: 2026-11-17. Requested scope: attached master execution brief and supplied original PDF résumé. Keep this file until implementation, tests, build, deployment and production verification are complete; then commit its removal.
 
@@ -104,3 +110,11 @@ Updated: 2026-11-17. Requested scope: attached master execution brief and suppli
 - Pushed the verified feature history to main without rewriting history. GitHub Actions run: https://github.com/Nima-Moradi1/nima-new-portfolio/actions/runs/44126431506 . Locked npm install, lint, typecheck and unit tests have passed; Linux production build is in progress.
 - Final local browser suite 27 passed / one intentional touch-only desktop skip. Decoded Persian mobile and German desktop assets/layouts inspected; no browser page errors.
 - Do not advance main while release.mjs is running: it verifies main still matches the release SHA. Keep handoff until exact production SHA, all locales/assets/download and browser checks pass. After completion, documentation-only result/handoff cleanup commits may use [skip ci] to avoid rebuilding unchanged application code; report deployed source SHA separately.
+
+## Owner follow-up validated
+
+- Actual homepage DOM order and header/mobile menu now Experience, Skills, Projects. Added regression assertion for rendered section order.
+- Hesabo lead highlights, project summary/contribution, localized case study and a dedicated financial/support capability now cover real-time charts, detailed finance panels, payment providers, custom WebSocket support rooms and in-house tools. All EN/FA/DE catalogs retain schema parity. Eight capability groups.
+- Shared ProjectStatusNotice used by cards and case studies: mild amber warning token, tinted panel, icon, semibold label and ordinary explanatory text; dark/light screenshots visually inspected. Full both-theme axe suite passes.
+- Fresh local checks: 39 unit tests passed, 27 E2E passed / one intentional desktop skip, lint 0 errors / one existing OG warning, typecheck passed, production build passed (24 generated pages).
+- Ready to commit/push owner changes and Germany builder correction, then await production verification. Earlier packaging fix passed Linux container checks; prior Liara failure was registry RBAC in Iran, not app or credentials.

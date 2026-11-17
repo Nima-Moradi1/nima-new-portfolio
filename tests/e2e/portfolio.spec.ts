@@ -9,6 +9,11 @@ test("shows useful content immediately, with all roles and direct contact", asyn
     page.getByRole("heading", { level: 1, name: "Senior Software Engineer" }),
   ).toBeVisible();
   await expect(page.locator(".landing-preloader")).toHaveCount(0);
+  expect(
+    await page
+      .locator("main > section[id]")
+      .evaluateAll((es) => es.map((e) => e.id)),
+  ).toEqual(["top", "experience", "capabilities", "work", "about", "contact"]);
   await expect(page.locator("canvas")).toHaveCount(0);
   await expect(page.locator("#experience article")).toHaveCount(5);
   for (const role of await page.locator("#experience article").all())
