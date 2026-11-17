@@ -21,6 +21,8 @@ Accessible names now include visible brand/language labels. Persian case-study t
 
 The deployment verifier checks all current case-study routes and locales, current text/status, exact SHA, JS/CSS and PDF/preview bytes, plus removed-route noindex/404 behavior. This also fixes the previous production workflow's obsolete missing-asset requirement.
 
+The first candidate's Linux container check exposed a packaging bug: Next.js tracing already created `standalone/public`, so copying the directory nested assets under `public/public`. Packaging now explicitly copies directory contents into existing destinations for both public assets and static chunks. The failed candidate was stopped before deployment.
+
 ## Local verification
 
 - `npm test`: **39 passed**, nine files.

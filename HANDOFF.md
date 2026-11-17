@@ -1,5 +1,7 @@
 # Portfolio modernization execution handoff
 
+LATEST: first release candidate failed container smoke before deployment. Root cause isolated and fixed in `deploy/package.sh`: traced public directory already existed, so `cp -a public target/public` nested assets under public/public. Use content-copy `public/.` and `.next/static/.` into explicit destination directories. Production was not changed by failed run 44126431506. Next: commit/push packaging correction to feature and main, await full workflow and verify production.
+
 Updated: 2026-11-17. Requested scope: attached master execution brief and supplied original PDF résumé. Keep this file until implementation, tests, build, deployment and production verification are complete; then commit its removal.
 
 ## A. Project overview

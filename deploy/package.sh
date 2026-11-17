@@ -9,9 +9,11 @@ node -e 'const assert = require("node:assert/strict"); const {config} = require(
 test -f .next/standalone/server.js || { echo 'Standalone server is missing.' >&2; exit 1; }
 # Never reuse generated runtime files from a previous build.
 test ! -e build/liara || { echo 'Refusing to reuse an existing runtime bundle.' >&2; exit 1; }
-mkdir -p build/liara .next/standalone/.next
-cp -a public .next/standalone/public
-cp -a .next/static .next/standalone/.next/static
+mkdir -p build/liara .next/standalone/public .next/standalone/.next/static
+# File tracing can already create public/ (for example for Open Graph images).
+# Copy contents, so an existing destination never produces public/public/.
+cp -a public/. .next/standalone/public/
+cp -a .next/static/. .next/standalone/.next/static/
 cp deploy/healthcheck.cjs .next/standalone/healthcheck.cjs
 tar --exclude='.env*' --exclude='*.tsbuildinfo' \
   -czf build/liara/runtime.tar.gz -C .next/standalone .
