@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { usePortfolio } from "@/content/use-portfolio";
 import styles from "./portfolio-layout.module.css";
+import { EmphasizedText } from "@/components/ui/emphasized-text";
 export function ExperienceSection() {
   const portfolio = usePortfolio();
   const t = useTranslations("Employer");
@@ -28,7 +29,9 @@ export function ExperienceSection() {
               </div>
               <ul className={`${styles.bullets} ${styles.body}`}>
                 {role.highlights.map((text) => (
-                  <li key={text}>{text}</li>
+                  <li key={text}>
+                    <EmphasizedText text={text} />
+                  </li>
                 ))}
               </ul>
             </article>

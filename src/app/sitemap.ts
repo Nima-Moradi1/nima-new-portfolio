@@ -10,7 +10,6 @@ const routes = [
   { pathname: "/projects/moradi-gallery", priority: 0.8 },
   { pathname: "/projects/xo-arena", priority: 0.8 },
   { pathname: "/projects/emerald-case", priority: 0.8 },
-  { pathname: "/projects/tarabari-nima", priority: 0.8 },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -24,12 +24,11 @@ Third-party source dependencies retain their respective licenses. The principal 
 ## User-provided assets
 
 - `public/assets/nima-moradirad.jpg` — portrait extracted from the résumé supplied by Nima Moradirad; used as personal portfolio content.
-- `public/nima-moradirad-resume.pdf` and its optimized WebP preview — the one-page professional résumé supplied by Nima Moradirad for public portfolio use.
+- `public/nima-moradirad-resume.pdf` and its optimized WebP preview — the original two-page professional résumé supplied by Nima Moradirad for public portfolio use.
 - `public/assets/projects/xo-arena/*` — WebP captures and optimized H.264/VP9 derivatives of the XO Arena screenshots and recording supplied by Nima Moradirad.
 - `public/assets/projects/emerald-case/homepage.jpg` — portfolio capture of Nima Moradirad's Emerald Case project from its public project URL.
 - `public/assets/projects/hesabo/homepage.jpg` — portfolio capture of the public Hesabo product site representing Nima Moradirad's production work.
 - `public/assets/projects/lingo-learn/homepage.jpg` and `logo.png` — homepage capture and logo from the public Lingo Learn site, added at the user's direction to document portfolio work.
-- `public/assets/projects/tarabari-nima/*` — optimized screenshots and a 14.5-second WebM/MP4 recording captured from Nima Moradirad's Tarabari Nima project and its live site for this case study. The underlying scene artwork and generated plates are documented in that project's `docs/ASSET_REGISTER.md`.
 
 No third-party stock imagery is included. Personal résumé, portrait, and XO Arena media rights remain with Nima Moradirad.
 

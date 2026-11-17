@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { projectEvidence } from "@/content/project-evidence";
+import en from "@/messages/en/portfolio.json";
+import fa from "@/messages/fa/portfolio.json";
+import de from "@/messages/de/portfolio.json";
 import {
   localizedProjectPath,
   projectLanguages,
@@ -7,7 +9,10 @@ import {
 } from "@/lib/project-paths";
 import type { AppLocale } from "@/i18n/routing";
 export function evidenceMetadata(slug: string, locale: AppLocale): Metadata {
-  const project = projectEvidence[slug];
+  const project = { en, fa, de }[locale].projects.find(
+    (p) => p.href === `/projects/${slug}`,
+  )!;
+  const title = project.caseStudy?.title ?? project.title;
   const canonical = localizedProjectPath(locale, slug);
   const images =
     slug === "3d-online-shop"
@@ -38,12 +43,12 @@ export function evidenceMetadata(slug: string, locale: AppLocale): Metadata {
               },
             ];
   return {
-    title: project.title,
+    title,
     description: project.summary,
     alternates: { canonical, languages: projectLanguages(slug) },
     openGraph: {
       type: "article",
-      title: project.title,
+      title,
       description: project.summary,
       url: canonical,
       locale: projectOgLocales[locale],
@@ -51,7 +56,7 @@ export function evidenceMetadata(slug: string, locale: AppLocale): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: project.title,
+      title,
       description: project.summary,
       images,
     },

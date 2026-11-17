@@ -1,30 +1,29 @@
 {
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
-    "homeTitle": "Nima Moradirad | Senior Frontend Engineer | React & Next.js",
-    "homeDescription": "Senior frontend engineer building React and Next.js applications. Explore financial-platform experience, real-time projects, PWA delivery, and source code.",
-    "homeOgTitle": "Senior Frontend Engineer",
-    "homeOgDescription": "I build React and Next.js applications, with experience in financial platforms, real-time interfaces, PWAs, and Android delivery.",
+    "homeTitle": "Nima Moradirad | Senior Software Engineer | Frontend & AI",
+    "homeDescription": "I lead frontend architecture and build secure web and mobile products. My work connects React and Next.js, real-time systems, and product-specific AI agents with reliable engineering delivery.",
+    "homeOgTitle": "Senior Software Engineer",
+    "homeOgDescription": "I lead frontend architecture and build secure web and mobile products. My work connects React and Next.js, real-time systems, and product-specific AI agents with reliable engineering delivery.",
     "xoTitle": "XO Arena · Real-time multiplayer PWA",
     "xoDescription": "A product case study for XO Arena: a type-safe real-time Tic-Tac-Toe platform with Socket.IO matchmaking, secure sessions, server-validated turns, profiles, and installable PWA support.",
     "xoOgDescription": "A recorded product walkthrough and engineering case study for a modular, real-time multiplayer platform.",
     "keywords": [
-      "frontend engineer",
-      "senior frontend engineer",
+      "Software engineering",
+      "Frontend architecture",
       "React",
       "Next.js",
-      "TypeScript",
-      "frontend architecture",
-      "PWA",
-      "Three.js",
-      "portfolio"
+      "AI agents",
+      "Capacitor",
+      "Web security",
+      "Core Web Vitals"
     ],
     "manifestName": "Nima Moradirad Portfolio",
     "manifestShortName": "Nima Moradirad",
-    "manifestDescription": "A product engineering portfolio spanning scalable web, Android, PWA, real-time systems, and creative technology.",
+    "manifestDescription": "Hands-on Frontend Chapter Lead with experience across fintech, B2G and commerce. I combine deep frontend specialization with system design, mentorship and product delivery, from browser interfaces to native integrations and release quality gates.",
     "openGraphAlt": "Nima Moradirad - senior frontend engineer",
     "openGraphLabel": "Nima Moradirad",
-    "openGraphHeadline": "Senior Frontend Engineer"
+    "openGraphHeadline": "Senior Software Engineer"
   },
   "LocaleSwitcher": {
     "label": "Change language",
@@ -72,7 +71,8 @@
     "resumeCta": "Download résumé",
     "contactCta": "Start a conversation",
     "scrollCue": "Scroll forward into the next system",
-    "signalsLabel": "Areas of practice"
+    "signalsLabel": "Areas of practice",
+    "role": "Senior Software Engineer"
   },
   "About": {
     "title": "Human products. Scalable systems.",
@@ -194,7 +194,7 @@
     "title": "Nima Moradirad - Résumé",
     "close": "Close résumé preview",
     "previewAlt": "Nima Moradirad’s résumé, covering profile, capabilities, professional experience, selected work, education, and technical toolkit",
-    "description": "A concise, one-page overview of experience and selected work.",
+    "description": "The original two-page résumé, including technical leadership and employment history.",
     "open": "Open full size",
     "download": "Download PDF"
   },
@@ -217,7 +217,7 @@
     "education": "Education",
     "languages": "Languages",
     "contact": "Contact",
-    "contactCopy": "Hiring for a frontend role? I’d be glad to discuss the product, team, and engineering challenges.",
+    "contactCopy": "Hiring for software engineering or frontend leadership? Let’s discuss your product and engineering challenges.",
     "email": "Email",
     "resume": "Download résumé",
     "viewWork": "View work",
@@ -239,6 +239,14 @@
     "themeLight": "Switch to light theme",
     "unavailable": "Live demo temporarily unavailable.",
     "resumeShort": "Résumé",
-    "videoUnavailable": "Video unavailable. Use the recording link or screenshots below."
+    "videoUnavailable": "Video unavailable. Use the recording link or screenshots below.",
+    "sceneLoading": "Loading the interactive workstation…",
+    "evidenceTitle": "Engineering in practice",
+    "contextTitle": "Product context",
+    "contributionTitle": "My contribution",
+    "outcomeTitle": "Evidence and scope",
+    "projectCaption": "Public project capture. Private application screens and confidential product details are not published.",
+    "rotateLeft": "Rotate left",
+    "rotateRight": "Rotate right"
   }
 }

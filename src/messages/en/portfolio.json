@@ -2,15 +2,15 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Senior Frontend Engineer",
-    "shortRole": "Senior Frontend Engineer",
+    "role": "Senior Software Engineer",
+    "shortRole": "Software Engineer · Frontend Lead",
     "location": "Tehran, Iran",
-    "availability": "Based in Iran. Open to relocation and international frontend opportunities.",
+    "availability": "Based in Tehran. Open to relocation and international software engineering opportunities.",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "I build React and Next.js applications, with experience in financial platforms, real-time interfaces, PWAs, and Android delivery.",
-    "statement": "I build scalable web and mobile products where performance, reliability, and clear design work together."
+    "intro": "I lead frontend architecture and build secure web and mobile products. My work connects **React and Next.js**, real-time systems, and **product-specific AI agents** with reliable engineering delivery.",
+    "statement": "Hands-on Frontend Chapter Lead with experience across fintech, B2G and commerce. I combine deep frontend specialization with system design, mentorship and product delivery, from browser interfaces to native integrations and release quality gates."
   },
   "navigation": [
     {
@@ -38,7 +38,7 @@
   "about": {
     "eyebrow": "Web + mobile product engineering",
     "paragraphs": [
-      "I’m a frontend engineer with experience in financial platforms, real-time applications, and web-to-Android delivery. I enjoy making complex product flows easier to use and helping teams maintain the systems behind them."
+      "Hands-on Frontend Chapter Lead with experience across fintech, B2G and commerce. I combine deep frontend specialization with system design, mentorship and product delivery, from browser interfaces to native integrations and release quality gates."
     ],
     "principles": [
       {
@@ -64,35 +64,55 @@
   "experience": [
     {
       "id": "hesabo",
-      "period": "Feb 2025 - Present",
-      "role": "Senior Frontend Developer",
+      "period": "Apr 2026 - Present",
+      "role": "Frontend Chapter Lead",
       "company": "Hesabo · Tehran, Iran",
-      "summary": "Shaping frontend architecture and delivery for a B2B financial platform spanning Admin, Employer, Employee, and Support experiences.",
+      "summary": "Leading frontend architecture, engineering standards and delivery at Hesabo; joined in August 2025 and promoted in April 2026.",
       "highlights": [
-        "Develop frontend architecture and interfaces across Admin, Employer, Employee, and Support applications.",
-        "Maintain PWA update behavior, cache versioning, and offline fallbacks.",
-        "Deliver Android applications through Capacitor, including platform integrations and custom Java plugins.",
-        "Mentor engineers and contribute to real-time features, validation, and frontend security improvements."
+        "Led a refactor of reusable UI, business logic and the design system: **17% smaller bundle** and **9% better initial-load performance**, as reported in my résumé.",
+        "Architected shared components, utilities and configurable layouts with drag-and-drop and resizing; delivered mobile versions of role-based panels without duplicating application logic.",
+        "Developed **project-aware Claude and Codex agents** for implementation and review, with Cypress E2E, integration and mock-based validation and CI/CD quality checks.",
+        "Improved role-aware routing, network requests and caching; strengthened Nginx and payment-facing protections against **CSRF, XSS, clickjacking and unsafe CORS**, alongside architectural reviews and mentorship."
       ],
       "technologies": [
         "React",
         "TypeScript",
+        "Claude / Codex",
+        "Cypress",
+        "Nginx",
+        "CI/CD"
+      ]
+    },
+    {
+      "id": "hesabo-senior",
+      "period": "Aug 2025 - Apr 2026",
+      "role": "Senior Frontend Developer",
+      "company": "Hesabo · Tehran, Iran",
+      "summary": "Developed seven role-based applications spanning Admin, Support, Employer, Employee, Finance and Marketing operations with React, TypeScript, Vite and MobX.",
+      "highlights": [
+        "Developed **seven role-based applications** spanning Admin, Support, Employer, Employee, Finance and Marketing operations with React, TypeScript, Vite and MobX.",
+        "Shipped **Capacitor Android builds and PWAs**, including cache updates, fallback behavior and real-time financial interactions."
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "MobX",
         "Capacitor",
         "Android",
-        "PWA",
-        "WebSockets",
-        "AI-assisted delivery"
+        "PWA"
       ]
     },
     {
       "id": "basilica",
-      "period": "Mar 2024 - Dec 2024",
+      "period": "Mar 2024 - Mar 2025",
       "role": "Senior Frontend Engineer",
       "company": "Basilica Finance · Tehran, Iran",
-      "summary": "Developed financial-product interfaces with Next.js and TypeScript in collaboration with the product team.",
+      "summary": "Led Next.js/TypeScript and PWA delivery with a distributed international team, building responsive financial interfaces.",
       "highlights": [
-        "Built authentication and product interfaces with shared application state.",
-        "Contributed to code review and frontend performance work."
+        "Led **Next.js/TypeScript and PWA delivery** with a distributed international team, building responsive financial interfaces.",
+        "Built real-time market-prediction dashboards and AI market-analysis bot interfaces, plus user/admin panels for liquidity, payments, orders and financial operations.",
+        "Integrated trading-agent and MetaTrader workflows; strengthened authentication and payment security, improved Lighthouse performance and reviewed GitHub/GitLab merge requests."
       ],
       "technologies": [
         "Next.js",
@@ -108,10 +128,10 @@
       "period": "Jan 2023 - Mar 2024",
       "role": "Frontend Developer",
       "company": "BarnameNegar · Tehran, Iran",
-      "summary": "Built internal dashboards, integrated REST APIs, and developed reusable frontend interfaces.",
+      "summary": "Engineered B2G portals and operational dashboards with TypeScript, Vite, Redux, SSR and REST APIs.",
       "highlights": [
-        "Implemented dashboard workflows with TypeScript and reusable UI components.",
-        "Integrated REST APIs and Redux-based application state."
+        "Engineered **B2G portals and operational dashboards** with TypeScript, Vite, Redux, SSR and REST APIs.",
+        "Built reusable role-aware modules and consistent API-driven UI states for administrative, reporting and data-management workflows."
       ],
       "technologies": [
         "Vite",
@@ -128,20 +148,12 @@
       "period": "Dec 2020 - Sep 2022",
       "role": "React Developer",
       "company": "KZI",
-      "summary": "Delivered e-commerce and content experiences with React, JavaScript, component libraries, and modern state management.",
+      "summary": "Built React commerce and content applications with JavaScript, Redux Toolkit and MUI and reusable customer-facing patterns.",
       "highlights": [
-        "Built React interfaces for e-commerce and content experiences.",
-        "Maintained shared components, form validation, and application state."
+        "Built React commerce and content applications with **JavaScript, Redux Toolkit and MUI** and reusable customer-facing patterns.",
+        "Supported SPA/PWA behavior and frontend performance work, including Lighthouse-oriented optimization."
       ],
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Material UI",
-        "Redux Toolkit",
-        "PWA",
-        "React Hook Form",
-        "Yup"
-      ]
+      "technologies": ["React", "JavaScript", "Redux Toolkit", "MUI", "PWA"]
     }
   ],
   "projects": [
@@ -150,15 +162,41 @@
       "number": "04",
       "title": "Hesabo",
       "category": "Professional work",
-      "summary": "Frontend engineering for a financial platform spanning Admin, Employer, Employee, and Support applications.",
-      "contribution": "Contribute to frontend architecture, PWA updates, Android delivery, and real-time interfaces with the engineering team.",
+      "summary": "Frontend architecture and technical leadership for a multi-application financial platform.",
+      "contribution": "Lead reusable systems, project-aware AI agents, automated validation and secure delivery; previously shipped seven role-based applications and Capacitor Android builds.",
       "image": "/assets/projects/hesabo/homepage.jpg",
       "imageAlt": "Hesabo website presenting its employee salary access platform",
-      "technologies": ["React", "TypeScript", "Capacitor", "Service workers"],
+      "technologies": ["React", "TypeScript", "AI agents", "Capacitor"],
       "href": "/projects/hesabo",
       "featured": true,
       "accent": "coral",
-      "companyUrl": "https://hesabo.com/"
+      "companyUrl": "https://hesabo.com/",
+      "caseStudy": {
+        "title": "Frontend leadership for a financial platform",
+        "caption": "Public project capture. Private application screens and confidential product details are not published.",
+        "sections": [
+          {
+            "title": "Product context",
+            "paragraphs": [
+              "Multi-role financial applications require shared architecture, secure access and reliable updates across browser and installed clients. I joined Hesabo in August 2025 and became Frontend Chapter Lead in April 2026."
+            ]
+          },
+          {
+            "title": "My contribution",
+            "paragraphs": [
+              "I led reusable UI, business-logic and design-system refactoring, configurable layouts and mobile-ready panels. The supplied résumé reports a 17% smaller bundle and 9% better initial-load performance for this refactor.",
+              "I develop architecture-aware Claude/Codex agents and automate validation with Cypress E2E, integration and mock tests. I also work on role-aware routing, caching, Nginx and payment security, architectural reviews and mentorship."
+            ]
+          },
+          {
+            "title": "Evidence and scope",
+            "paragraphs": [
+              "Earlier, I developed seven role-based React/TypeScript/Vite/MobX applications and shipped Capacitor Android builds and PWAs. The public image is the company website, not the private financial applications.",
+              "The résumé is the source of the refactor figures; this portfolio does not independently remeasure employer systems. Product-aware Figma-to-code and feature-branch testing workflows are described at capability level without confidential implementation details."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "xo-arena",
@@ -197,7 +235,35 @@
       "liveVerified": true,
       "featured": true,
       "accent": "lime",
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "MVP / Early-stage platform prototype",
+      "statusNote": "An initial implementation of a broader platform under confidential development. The full production scope cannot currently be shown publicly.",
+      "caseStudy": {
+        "title": "Interactive product presentation in a 3D boutique",
+        "caption": "Public project capture. Private application screens and confidential product details are not published.",
+        "sections": [
+          {
+            "title": "Product context",
+            "paragraphs": [
+              "An early MVP of a broader confidential platform. The public boutique explores garment discovery, catalog information and photographic outfit previews."
+            ]
+          },
+          {
+            "title": "My contribution",
+            "paragraphs": [
+              "I built the Next.js/TypeScript application and Three.js/React Three Fiber environment, with HTML browsing controls, reduced-motion handling and WebGL fallbacks.",
+              "Compact garment images precede focused full-resolution assets. Catalog requests use bounded upstream access and caching; unavailable or expired stock and price information is cleared."
+            ]
+          },
+          {
+            "title": "Evidence and scope",
+            "paragraphs": [
+              "Photographic outfit previews illustrate appearance, not measured fit. Generation depends on an external service; purchasing is delegated to the official product destination.",
+              "The capture documents the public prototype. The full platform and private source cannot be shown; no sales figures, completed checkout or universal device-performance result is claimed."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "emerald-case",
@@ -215,7 +281,35 @@
       "sourceUrl": "https://github.com/Nima-Moradi1/emeraldCase",
       "requestedDestination": "https://emerald-case.vercel.app/en/",
       "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "Processing servers temporarily offline",
+      "statusNote": "Processing infrastructure is temporarily unavailable. The storefront and case study remain available; processing-dependent features may not work.",
+      "caseStudy": {
+        "title": "Custom phone cases from image to configuration",
+        "caption": "Public project capture. Private application screens and confidential product details are not published.",
+        "sections": [
+          {
+            "title": "Product context",
+            "paragraphs": [
+              "A full-stack commerce project joining uploaded images with phone model, material, finish and color selections. Processing servers are temporarily offline."
+            ]
+          },
+          {
+            "title": "My contribution",
+            "paragraphs": [
+              "I built localized Next.js/TypeScript interfaces with upload, configuration, authentication and persisted order data. Prisma models configurations, users, orders and addresses in PostgreSQL.",
+              "The source includes Kinde, UploadThing, Stripe, Resend and React Query integrations. A saved design and a paid order are separate states."
+            ]
+          },
+          {
+            "title": "Evidence and scope",
+            "paragraphs": [
+              "The public storefront and source support inspection of the implementation. Processing-dependent features may be unavailable while infrastructure is offline.",
+              "A dependency or screenshot does not establish configured production services. Successful payment, transactional email and sales outcomes are not claimed."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "moradi-gallery",
@@ -240,7 +334,35 @@
       "sourceUrl": "https://github.com/Nima-Moradi1/moradi-gallery",
       "requestedDestination": "https://moradi-gallery.vercel.app/fa",
       "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "MVP / Early-stage platform prototype",
+      "statusNote": "An initial implementation of a broader platform under confidential development. The full production scope cannot currently be shown publicly.",
+      "caseStudy": {
+        "title": "A bilingual watch-gallery platform prototype",
+        "caption": "Public project capture. Private application screens and confidential product details are not published.",
+        "sections": [
+          {
+            "title": "Product context",
+            "paragraphs": [
+              "An early MVP for a broader platform in confidential development. The public Persian/English gallery explores an original watch concept and responsive 3D storytelling."
+            ]
+          },
+          {
+            "title": "My contribution",
+            "paragraphs": [
+              "I built the localized Next.js application with Three.js, React Three Fiber, GSAP, Motion and next-intl. Persistent scene organization coordinates narrative and interaction.",
+              "RTL/LTR reading order, small screens, reduced motion and WebGL fallbacks keep content and navigation meaningful beyond the canvas."
+            ]
+          },
+          {
+            "title": "Evidence and scope",
+            "paragraphs": [
+              "The public source and screenshot describe the prototype only. Full production scope and confidential product details are not available for public review.",
+              "The watch is an original concept asset, not verified retail stock. No commercial sales or measured performance outcome is claimed."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lingo-learn",
@@ -257,80 +379,83 @@
       "href": "https://lingo-learn.ir/",
       "featured": false,
       "accent": "lime"
-    },
-    {
-      "id": "tarabari-nima",
-      "number": "06",
-      "title": "Tarabari Nima",
-      "category": "Concept",
-      "summary": "A Persian freight journey where one container moves from warehouse lift to truck, port crane, ship and aircraft.",
-      "contribution": "Built the RTL marketing demo, interactive route globe and scroll-driven cargo story with Next.js, GSAP, Three.js and React Three Fiber.",
-      "image": "/assets/projects/tarabari-nima/loaded-truck.webp",
-      "imageAlt": "Marked container loaded on a blue freight truck in the Tarabari Nima journey",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "GSAP",
-        "Three.js",
-        "React Three Fiber",
-        "Tailwind CSS"
-      ],
-      "href": "/projects/tarabari-nima",
-      "featured": false,
-      "accent": "coral",
-      "sourceUrl": "https://github.com/Nima-Moradi1/tarabari-nima",
-      "requestedDestination": "https://tarabari-nima.vercel.app/",
-      "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
     }
   ],
   "capabilities": [
     {
       "id": "frontend",
       "index": "1",
-      "title": "Frontend engineering",
-      "label": "Frontend engineering",
-      "description": "Component architecture, application state, and responsive interfaces.",
-      "skills": ["React", "Next.js", "TypeScript", "HTML/CSS"],
+      "title": "Frontend architecture",
+      "label": "Frontend architecture",
+      "description": "**React, Next.js and TypeScript** backed by modular boundaries, system design and reusable design systems. I lead architectural reviews, mentorship and delivery planning.",
+      "skills": ["React", "Next.js", "TypeScript", "Vite", "Design systems"],
       "evidenceHref": "/projects/hesabo"
     },
     {
-      "id": "mobile",
+      "id": "ai",
       "index": "2",
-      "title": "PWA and Android delivery",
-      "label": "PWA and Android delivery",
-      "description": "Installable applications, update behavior, offline fallbacks, and platform integration.",
-      "skills": ["Service workers", "Capacitor", "Android", "Java plugins"],
+      "title": "Product-specific AI agents",
+      "label": "Product-specific AI agents",
+      "description": "I develop **architecture-aware Claude and Codex agents** around repository context, tools, hooks and UI rules. Workflows include feature-branch validation, regression review and Figma-to-code implementation; confidential agent details remain private.",
+      "skills": ["Claude / Codex", "Agentic workflows", "RAG / MCP", "Cypress"],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "security",
+      "index": "3",
+      "title": "Secure application engineering",
+      "label": "Secure application engineering",
+      "description": "Protect authentication, payment flows and sensitive client data through **XSS/CSRF defenses**, validation, session/token handling and secure API communication. I coordinate browser controls with Nginx, server authorization and CORS headers; CORS enforcement belongs to the server and browser.",
+      "skills": ["XSS / CSRF", "Clickjacking", "CORS", "Authentication"],
       "evidenceHref": "/projects/hesabo"
     },
     {
       "id": "realtime",
-      "index": "3",
-      "title": "APIs and real-time features",
-      "label": "APIs and real-time features",
-      "description": "API integration and interfaces driven by live application state.",
-      "skills": ["REST", "WebSockets / SignalR", "Prisma"],
+      "index": "4",
+      "title": "Real-time systems and data",
+      "label": "Real-time systems and data",
+      "description": "Build **WebSocket interfaces** with connection lifecycle handling, reconnection and synchronized UI state. API design, Redis, databases and distributed-system concepts inform frontend decisions; XO Arena demonstrates my server-validated game state and persistent data.",
+      "skills": ["WebSockets / SignalR", "Socket.IO", "Redis", "Prisma / SQL"],
       "evidenceHref": "/projects/xo-arena"
     },
     {
-      "id": "quality",
-      "index": "4",
-      "title": "Quality and collaboration",
-      "label": "Quality and collaboration",
-      "description": "Testing, debugging, code review, and clear technical communication.",
-      "skills": ["Vitest", "Playwright", "GitHub Actions"],
+      "id": "mobile",
+      "index": "5",
+      "title": "Android and iOS engineering",
+      "label": "Android and iOS engineering",
+      "description": "Use **Capacitor** for Android and iOS, custom native configuration, plugins and release workflows. My work spans payment, SMS, core-banking and real-time chart integrations; the supplied résumé specifically documents shipped Android builds.",
+      "skills": ["Capacitor", "Android / iOS", "Native integrations", "PWA"],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "performance",
+      "index": "6",
+      "title": "Performance that supports the product",
+      "label": "Performance that supports the product",
+      "description": "Optimize **LCP, INP and CLS** for stable product pages, filtering, checkout and live dashboards. FCP, TTFB, TBT, Speed Index and long tasks guide diagnosis; TTI is a legacy diagnostic. Faster, steadier interactions support conversion, retention and trust without implying unmeasured gains.",
+      "skills": [
+        "Core Web Vitals",
+        "Network / caching",
+        "Lighthouse",
+        "Profiling"
+      ],
       "evidenceHref": "/projects/3d-online-shop"
+    },
+    {
+      "id": "quality",
+      "index": "7",
+      "title": "Engineering quality and delivery",
+      "label": "Engineering quality and delivery",
+      "description": "Use **Cypress E2E, integration and mock tests**, code review, automated validation agents and CI/CD quality gates to make releases reviewable and reliable.",
+      "skills": ["Cypress", "Vitest / Playwright", "CI/CD", "GitHub / GitLab"],
+      "evidenceHref": "/projects/hesabo"
     }
   ],
   "education": {
     "title": "B.Sc. Computer Engineering",
-    "institution": "Tehran Azad University",
-    "note": "Graduated in 2026.",
-    "languages": [
-      "Persian: Native",
-      "English: Professional working proficiency",
-      "German: Elementary"
-    ]
+    "institution": "Islamic Azad University, Tehran",
+    "note": "B.Sc. Computer Engineering.",
+    "languages": ["English: C1 proficiency"]
   },
   "socialLinks": [
     {

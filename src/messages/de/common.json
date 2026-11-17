@@ -1,30 +1,29 @@
 {
   "Metadata": {
     "siteName": "Nima Moradirad · Portfolio",
-    "homeTitle": "Nima Moradirad · Senior Frontend Engineer",
-    "homeDescription": "Senior Frontend Engineer Nima Moradirad unterstützt technische Teams dabei, komplexe Produktanforderungen in schnelle, sichere und wartbare Anwendungen umzusetzen - von React-Architekturen und Echtzeitfunktionen bis zur zuverlässigen Auslieferung von PWAs und Android-Apps.",
-    "homeOgTitle": "Senior Frontend Engineer",
-    "homeOgDescription": "Ich entwickle React- und Next.js-Anwendungen und habe Erfahrung mit Finanzplattformen, Echtzeitoberflächen, PWAs und Android-Auslieferung.",
+    "homeTitle": "Nima Moradirad | Senior Software Engineer | Frontend & AI",
+    "homeDescription": "Ich leite die Frontend-Architektur und entwickle sichere Web- und Mobile-Produkte. Meine Arbeit verbindet React und Next.js, Echtzeitsysteme und produktspezifische KI-Agenten mit zuverlässiger Softwareentwicklung.",
+    "homeOgTitle": "Senior Software Engineer",
+    "homeOgDescription": "Ich leite die Frontend-Architektur und entwickle sichere Web- und Mobile-Produkte. Meine Arbeit verbindet React und Next.js, Echtzeitsysteme und produktspezifische KI-Agenten mit zuverlässiger Softwareentwicklung.",
     "xoTitle": "XO Arena · Echtzeit-Multiplayer-PWA",
     "xoDescription": "Eine Produktfallstudie zu XO Arena: eine typsichere Echtzeitplattform für Tic-Tac-Toe mit Socket.IO-Matchmaking, sicheren Sessions, servervalidierten Spielzügen, Profilen und installierbarer PWA-Unterstützung.",
     "xoOgDescription": "Eine aufgezeichnete Produktführung und technische Fallstudie zu einer modularen Echtzeit-Multiplayer-Plattform.",
     "keywords": [
-      "Frontend Engineer",
-      "Senior Frontend Engineer",
+      "Software engineering",
+      "Frontend architecture",
       "React",
       "Next.js",
-      "TypeScript",
-      "Frontend-Architektur",
-      "PWA",
-      "Three.js",
-      "Portfolio"
+      "AI agents",
+      "Capacitor",
+      "Web security",
+      "Core Web Vitals"
     ],
     "manifestName": "Nima Moradirad Portfolio",
     "manifestShortName": "Nima Moradirad",
-    "manifestDescription": "Ein Portfolio für Produktentwicklung rund um skalierbare Webanwendungen, Android, PWA, Echtzeitsysteme und kreative Technologien.",
+    "manifestDescription": "Als operativ tätiger Frontend Chapter Lead arbeite ich an Fintech-, B2G- und Commerce-Produkten. Ich verbinde fundierte Frontend-Spezialisierung mit Systemdesign, Mentoring und Produktentwicklung – von Browseroberflächen bis zu nativen Integrationen und Qualitätsprüfungen vor Releases.",
     "openGraphAlt": "Nima Moradirad - Senior Frontend Engineer",
     "openGraphLabel": "Nima Moradirad",
-    "openGraphHeadline": "Senior Frontend Engineer"
+    "openGraphHeadline": "Senior Software Engineer"
   },
   "LocaleSwitcher": {
     "label": "Sprache wechseln",
@@ -72,7 +71,8 @@
     "resumeCta": "Lebenslauf herunterladen",
     "contactCta": "Gespräch beginnen",
     "scrollCue": "Weiter zum nächsten System scrollen",
-    "signalsLabel": "Arbeitsfelder"
+    "signalsLabel": "Arbeitsfelder",
+    "role": "Senior Software Engineer"
   },
   "About": {
     "title": "Produkte für Menschen. Skalierbare Systeme.",
@@ -194,7 +194,7 @@
     "title": "Nima Moradirad - Lebenslauf",
     "close": "Lebenslaufvorschau schließen",
     "previewAlt": "Lebenslauf von Nima Moradirad mit Profil, Kompetenzen, Berufserfahrung, ausgewählten Projekten, Ausbildung und technischem Werkzeugkasten",
-    "description": "Ein kompakter einseitiger Überblick über Erfahrung und ausgewählte Projekte.",
+    "description": "Der originale zweiseitige Lebenslauf mit technischer Führung und beruflichem Werdegang.",
     "open": "In voller Größe öffnen",
     "download": "PDF herunterladen"
   },
@@ -217,7 +217,7 @@
     "education": "Ausbildung",
     "languages": "Sprachen",
     "contact": "Kontakt",
-    "contactCopy": "Sie besetzen eine Frontend-Stelle? Ich spreche gern über das Produkt, das Team und die technischen Herausforderungen.",
+    "contactCopy": "Sie suchen Softwareentwicklung oder Frontend-Führung? Sprechen wir über Ihr Produkt und Ihre technischen Herausforderungen.",
     "email": "E-Mail",
     "resume": "Lebenslauf herunterladen",
     "viewWork": "Arbeiten ansehen",
@@ -239,6 +239,14 @@
     "themeLight": "Zum hellen Design wechseln",
     "unavailable": "Live-Demo vorübergehend nicht verfügbar.",
     "resumeShort": "Lebenslauf",
-    "videoUnavailable": "Video nicht verfügbar. Nutzen Sie den Aufnahme-Link oder die Bilder darunter."
+    "videoUnavailable": "Video nicht verfügbar. Nutzen Sie den Aufnahme-Link oder die Bilder darunter.",
+    "sceneLoading": "Interaktiver Arbeitsplatz wird geladen…",
+    "evidenceTitle": "Engineering in der Praxis",
+    "contextTitle": "Produktkontext",
+    "contributionTitle": "Mein Beitrag",
+    "outcomeTitle": "Nachweise und Umfang",
+    "projectCaption": "Öffentliche Projektaufnahme. Private Anwendungsoberflächen und vertrauliche Produktdetails werden nicht veröffentlicht.",
+    "rotateLeft": "Nach links drehen",
+    "rotateRight": "Nach rechts drehen"
   }
 }

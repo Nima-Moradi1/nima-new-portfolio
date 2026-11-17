@@ -3,6 +3,7 @@ import { usePortfolio } from "@/content/use-portfolio";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import styles from "./portfolio-layout.module.css";
+import { EmphasizedText } from "@/components/ui/emphasized-text";
 export function CapabilitiesSection() {
   const portfolio = usePortfolio();
   const t = useTranslations("Employer");
@@ -20,7 +21,9 @@ export function CapabilitiesSection() {
           {portfolio.capabilities.map((group) => (
             <article className={styles.skill} key={group.id}>
               <h3>{group.title}</h3>
-              <p className={styles.body}>{group.description}</p>
+              <p className={styles.body}>
+                <EmphasizedText text={group.description} />
+              </p>
               <div className={styles.tags}>
                 {group.skills.map((skill) => (
                   <Badge key={skill} variant="outline">

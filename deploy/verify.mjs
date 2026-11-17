@@ -33,9 +33,18 @@ async function verify() {
   for (const locale of ["en", "fa", "de"]) {
     const prefix = locale === "en" ? "" : `/${locale}`;
     const copy = JSON.parse(
-      await readFile(`src/messages/${locale}/tarabari-nima.json`, "utf8"),
+      await readFile(`src/messages/${locale}/portfolio.json`, "utf8"),
     );
-    for (const route of [prefix || "/", `${prefix}/projects/tarabari-nima`]) {
+    for (const route of [
+      prefix || "/",
+      ...[
+        "hesabo",
+        "3d-online-shop",
+        "emerald-case",
+        "moradi-gallery",
+        "xo-arena",
+      ].map((slug) => `${prefix}/projects/${slug}`),
+    ]) {
       const response = await request(route);
       assert.equal(
         response.headers.get("x-deployment-sha"),
@@ -48,25 +57,30 @@ async function verify() {
         new RegExp(`<html\\b[^>]*\\blang="${locale}"`),
         `${route}: wrong locale`,
       );
-      if (route.includes("tarabari-nima")) {
-        // Compare actual rendered text with the checked-out translations.
-        const escape = (text) =>
-          text
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#x27;");
+      const escape = (value) =>
+        value
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#x27;");
+      const project = copy.projects.find((p) => route === `${prefix}${p.href}`);
+      const expectedTitle =
+        project?.caseStudy?.title ??
+        (project?.id === "xo-arena" ? "XO Arena" : copy.identity.role);
+      assert(
+        html.includes(escape(expectedTitle)),
+        `${route}: current professional content missing`,
+      );
+      assert(
+        !html.includes("tarabari-nima"),
+        `${route}: removed project reference remains`,
+      );
+      if (project?.statusNote)
         assert(
-          html.includes(escape(copy.hero.title)),
-          `${route}: current hero text missing`,
+          html.includes(escape(project.statusNote)),
+          `${route}: project status missing`,
         );
-        assert(
-          html.includes("https://tarabari-nima.vercel.app/") &&
-            html.includes("https://github.com/Nima-Moradi1/tarabari-nima"),
-          `${route}: live or source link missing`,
-        );
-      }
       const references = [...html.matchAll(/(?:src|href)="([^"<>]+)"/g)].map(
         (match) => match[1].replaceAll("&amp;", "&"),
       );
@@ -85,39 +99,34 @@ async function verify() {
       chunks.forEach((url) => assets.add(url));
       console.log(`Verified ${route}: ${locale}, ${sha.slice(0, 7)}`);
     }
-    const removedRoute = `${prefix}/projects/azita-mohajer`;
-    const removedResponse = await fetch(new URL(removedRoute, origin), {
-      redirect: "error",
-      signal: AbortSignal.timeout(15000),
-      headers: { "Cache-Control": "no-cache" },
-    });
-    if (removedResponse.status === 200) {
-      // Next.js can stream the 404 UI after sending HTTP headers. In that
-      // case, require its noindex marker and 404 fallback in the HTML.
-      const removedHtml = await removedResponse.text();
-      assert.match(removedHtml, /<meta name="robots" content="noindex"\s*\/>/);
-      assert.match(removedHtml, /NEXT_HTTP_ERROR_FALLBACK;404/);
-    } else {
-      assert.equal(
-        removedResponse.status,
-        404,
-        `${removedRoute}: removed project is still published`,
-      );
+    for (const slug of ["azita-mohajer", "tarabari-nima"]) {
+      const removedRoute = `${prefix}/projects/${slug}`;
+      const removedResponse = await fetch(new URL(removedRoute, origin), {
+        redirect: "error",
+        signal: AbortSignal.timeout(15000),
+        headers: { "Cache-Control": "no-cache" },
+      });
+      if (removedResponse.status === 200) {
+        // Next.js can stream the 404 UI after sending HTTP headers. In that
+        // case, require its noindex marker and 404 fallback in the HTML.
+        const removedHtml = await removedResponse.text();
+        assert.match(
+          removedHtml,
+          /<meta name="robots" content="noindex"\s*\/>/,
+        );
+        assert.match(removedHtml, /NEXT_HTTP_ERROR_FALLBACK;404/);
+      } else {
+        assert.equal(
+          removedResponse.status,
+          404,
+          `${removedRoute}: removed project is still published`,
+        );
+      }
     }
   }
 
-  for (const name of [
-    "home.webp",
-    "container-pickup.webp",
-    "loaded-truck.webp",
-    "port-loading.webp",
-    "ship-passage.webp",
-    "aircraft-takeoff.webp",
-    "freight-loading.webm",
-    "freight-loading.mp4",
-  ]) {
-    assets.add(`/assets/projects/tarabari-nima/${name}`);
-  }
+  assets.add("/assets/hero/desk-still.webp");
+  assets.add("/assets/nima-moradirad-resume-preview.webp");
   assets.add("/nima-moradirad-resume.pdf");
   // Compare bytes, so a 200 response containing an error page or old asset fails.
   for (const asset of assets) {

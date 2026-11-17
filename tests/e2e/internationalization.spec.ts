@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 for (const [locale, path, dir, title] of [
-  ["en", "/", "ltr", "Senior Frontend Engineer"],
-  ["fa", "/fa", "rtl", "مهندس ارشد فرانت‌اند"],
-  ["de", "/de", "ltr", "Senior Frontend Engineer"],
+  ["en", "/", "ltr", "Senior Software Engineer"],
+  ["fa", "/fa", "rtl", "مهندس ارشد نرم‌افزار"],
+  ["de", "/de", "ltr", "Senior Software Engineer"],
 ] as const) {
   test(`${locale} preserves language, direction, case-study paths and mobile reflow`, async ({
     page,

@@ -29,6 +29,12 @@ export type ProjectItem = {
   href?: string;
   featured: boolean;
   status?: string;
+  statusNote?: string;
+  caseStudy?: {
+    title: string;
+    caption: string;
+    sections: Array<{ title: string; paragraphs: string[] }>;
+  };
   sourceUrl?: string;
   companyUrl?: string;
   walkthroughUrl?: string;

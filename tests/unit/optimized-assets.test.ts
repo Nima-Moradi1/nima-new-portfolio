@@ -48,7 +48,7 @@ describe("optimized portfolio assets", () => {
     ).toBe(false);
   });
 
-  it("includes one optimized résumé preview and a one-page source PDF", () => {
+  it("includes one optimized résumé preview and the original two-page source PDF", () => {
     expect(size("assets/nima-moradirad-resume-preview.webp")).toBeLessThan(
       300_000,
     );
@@ -66,6 +66,6 @@ describe("optimized portfolio assets", () => {
       resolve(root, "nima-moradirad-resume.pdf"),
       "latin1",
     );
-    expect(source.match(/\/Type\s*\/Page\b/g)).toHaveLength(1);
+    expect(source.match(/\/Type\s*\/Page\b/g)).toHaveLength(2);
   });
 });

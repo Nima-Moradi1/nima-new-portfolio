@@ -6,11 +6,11 @@ test("shows useful content immediately, with all roles and direct contact", asyn
 }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { level: 1, name: "Senior Frontend Engineer" }),
+    page.getByRole("heading", { level: 1, name: "Senior Software Engineer" }),
   ).toBeVisible();
   await expect(page.locator(".landing-preloader")).toHaveCount(0);
   await expect(page.locator("canvas")).toHaveCount(0);
-  await expect(page.locator("#experience article")).toHaveCount(4);
+  await expect(page.locator("#experience article")).toHaveCount(5);
   for (const role of await page.locator("#experience article").all())
     await expect(role).toBeVisible();
   const titles = await page.locator("#work h3").allTextContents();
@@ -52,7 +52,6 @@ test("preserves case study routes, real media, and status-specific links", async
     "3d-online-shop",
     "emerald-case",
     "moradi-gallery",
-    "tarabari-nima",
   ]) {
     const response = await page.goto(`/projects/${slug}`);
     expect(response?.status()).toBe(200);
@@ -85,8 +84,8 @@ test("keeps a readable static page when optional scripts are unavailable", async
   const page = await context.newPage();
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.locator("#work h3")).toHaveCount(7);
-  await expect(page.locator("#experience article")).toHaveCount(4);
+  await expect(page.locator("#work h3")).toHaveCount(6);
+  await expect(page.locator("#experience article")).toHaveCount(5);
   await expect(page.locator("#contact a[href^='mailto:']")).toBeVisible();
   await context.close();
 });

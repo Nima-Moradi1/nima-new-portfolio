@@ -2,15 +2,15 @@
   "identity": {
     "name": "Nima Moradirad",
     "initials": "NM",
-    "role": "Senior Frontend Engineer",
-    "shortRole": "Senior Frontend-Engineer",
+    "role": "Senior Software Engineer",
+    "shortRole": "Softwareingenieur · Frontend Lead",
     "location": "Teheran, Iran",
-    "availability": "In Iran ansässig. Offen für einen Umzug und internationale Frontend-Positionen.",
+    "availability": "In Teheran ansässig. Offen für einen Umzug und internationale Positionen in der Softwareentwicklung.",
     "email": "nimamoradirad@gmail.com",
     "resumeUrl": "/nima-moradirad-resume.pdf",
     "resumePreview": "/assets/nima-moradirad-resume-preview.webp",
-    "intro": "Ich entwickle React- und Next.js-Anwendungen und habe Erfahrung mit Finanzplattformen, Echtzeitoberflächen, PWAs und Android-Auslieferung.",
-    "statement": "Ich entwickle skalierbare Web- und Mobile-Produkte, in denen Performance, Zuverlässigkeit und klares Design zusammenspielen."
+    "intro": "Ich leite die Frontend-Architektur und entwickle sichere Web- und Mobile-Produkte. Meine Arbeit verbindet **React und Next.js**, Echtzeitsysteme und **produktspezifische KI-Agenten** mit zuverlässiger Softwareentwicklung.",
+    "statement": "Als operativ tätiger Frontend Chapter Lead arbeite ich an Fintech-, B2G- und Commerce-Produkten. Ich verbinde fundierte Frontend-Spezialisierung mit Systemdesign, Mentoring und Produktentwicklung – von Browseroberflächen bis zu nativen Integrationen und Qualitätsprüfungen vor Releases."
   },
   "navigation": [
     {
@@ -38,7 +38,7 @@
   "about": {
     "eyebrow": "Produktentwicklung für Web + Mobile",
     "paragraphs": [
-      "Ich bin Frontend-Engineer mit Erfahrung in Finanzplattformen, Echtzeitanwendungen und Web-to-Android-Auslieferung. Ich vereinfache gern komplexe Produktabläufe und unterstütze Teams dabei, ihre Systeme wartbar zu halten."
+      "Als operativ tätiger Frontend Chapter Lead arbeite ich an Fintech-, B2G- und Commerce-Produkten. Ich verbinde fundierte Frontend-Spezialisierung mit Systemdesign, Mentoring und Produktentwicklung – von Browseroberflächen bis zu nativen Integrationen und Qualitätsprüfungen vor Releases."
     ],
     "principles": [
       {
@@ -64,35 +64,55 @@
   "experience": [
     {
       "id": "hesabo",
-      "period": "Feb. 2025 - heute",
-      "role": "Senior Frontend Developer",
+      "period": "Apr. 2026 – heute",
+      "role": "Frontend Chapter Lead",
       "company": "Hesabo · Teheran, Iran",
-      "summary": "Gestaltung der Frontend-Architektur und Auslieferung einer B2B-Finanzplattform mit Anwendungen für Administration, Arbeitgeber, Mitarbeitende und Support.",
+      "summary": "Verantwortlich für Frontend-Architektur, Engineering-Standards und Auslieferung bei Hesabo; Eintritt im August 2025, Beförderung im April 2026.",
       "highlights": [
-        "Mentoring und Onboarding im Team mit Fokus auf Geschäftsabläufe, wartbaren Code und domänengetriebene Grenzen.",
-        "Entwicklung und Wartung von Android-Anwendungen mit Capacitor, Plattformintegrationen und eigenen Java-Plugins.",
-        "Verantwortung für eine angepasste PWA-Schicht mit kontrollierten automatischen Updates, Cache-Versionierung, Invalidierung und Offline-Fallbacks.",
-        "Verbesserung von Build-Performance, XSS-Schutz, Validierung, Autorisierung sowie Echtzeitfunktionen mit WebSocket und SignalR."
+        "Leitete ein Refactoring von UI-Komponenten, Geschäftslogik und Designsystem: **17 % kleineres Bundle** und **9 % bessere initiale Ladeleistung**, laut meinem Lebenslauf.",
+        "Entwarf gemeinsame Komponenten, Hilfsfunktionen und konfigurierbare Layouts mit Drag-and-drop und Größenänderung; lieferte mobile Rollen-Panels ohne duplizierte Anwendungslogik.",
+        "Entwickelte **projektbewusste Claude- und Codex-Agenten** für Implementierung und Review, ergänzt durch Cypress-E2E-, Integrations- und Mock-Tests sowie CI/CD-Qualitätsprüfungen.",
+        "Verbesserte rollenabhängiges Routing, Netzwerkanfragen und Caching; verstärkte Nginx und Zahlungssicherheit gegen **CSRF, XSS, Clickjacking und unsichere CORS-Konfigurationen**, begleitet von Architektur-Reviews und Mentoring."
       ],
       "technologies": [
         "React",
         "TypeScript",
+        "Claude / Codex",
+        "Cypress",
+        "Nginx",
+        "CI/CD"
+      ]
+    },
+    {
+      "id": "hesabo-senior",
+      "period": "Aug. 2025 – Apr. 2026",
+      "role": "Senior Frontend Developer",
+      "company": "Hesabo · Teheran, Iran",
+      "summary": "Entwickelte sieben rollenbasierte Anwendungen für Admin, Support, Arbeitgeber, Beschäftigte, Finanzen und Marketing mit React, TypeScript, Vite und MobX.",
+      "highlights": [
+        "Entwickelte **sieben rollenbasierte Anwendungen** für Admin, Support, Arbeitgeber, Beschäftigte, Finanzen und Marketing mit React, TypeScript, Vite und MobX.",
+        "Lieferte **Capacitor-Android-Builds und PWAs** einschließlich Cache-Updates, Fallbacks und Echtzeitinteraktionen für Finanzprodukte."
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "MobX",
         "Capacitor",
         "Android",
-        "PWA",
-        "WebSockets",
-        "AI-assisted delivery"
+        "PWA"
       ]
     },
     {
       "id": "basilica",
-      "period": "März 2024 - Dez. 2024",
+      "period": "März 2024 – März 2025",
       "role": "Senior Frontend Engineer",
       "company": "Basilica Finance · Teheran, Iran",
-      "summary": "Technische Leitung der Frontend-Umsetzung einer skalierbaren Finanz-PWA für geschützte Nutzerabläufe und hohe Anfragevolumina.",
+      "summary": "Leitete Next.js-/TypeScript- und PWA-Entwicklung mit einem verteilten internationalen Team und entwickelte responsive Finanzoberflächen.",
       "highlights": [
-        "Umsetzung geschützter Authentifizierungs- und Produktabläufe mit Next.js, TypeScript, Zustand, Tailwind CSS und MUI.",
-        "Realisierung Lighthouse-orientierter Performance-Verbesserungen und Sicherung der Release-Qualität durch Reviews auf GitHub und GitLab."
+        "Leitete **Next.js-/TypeScript- und PWA-Entwicklung** mit einem verteilten internationalen Team und entwickelte responsive Finanzoberflächen.",
+        "Baute Echtzeit-Dashboards für Marktprognosen, Oberflächen für KI-Marktanalyse-Bots sowie Nutzer- und Admin-Panels für Liquidität, Zahlungen, Aufträge und Finanzprozesse.",
+        "Integrierte Trading-Agenten und MetaTrader-Workflows; verbesserte Authentifizierungs- und Zahlungssicherheit sowie Lighthouse-Leistung und prüfte GitHub-/GitLab-Merge-Requests."
       ],
       "technologies": [
         "Next.js",
@@ -108,10 +128,10 @@
       "period": "Jan. 2023 - März 2024",
       "role": "Frontend Developer",
       "company": "BarnameNegar · Teheran, Iran",
-      "summary": "Entwicklung interner Dashboards und Verwaltungsoberflächen für den öffentlichen Sektor mit serverseitigem Rendering und REST-basierten Abläufen.",
+      "summary": "Entwickelte B2G-Portale und operative Dashboards mit TypeScript, Vite, Redux, SSR und REST-APIs.",
       "highlights": [
-        "Entwicklung interner Dashboards und Verwaltungsoberflächen für den öffentlichen Sektor mit serverseitigem Rendering und REST-basierten Abläufen.",
-        "Umsetzung von Vite- und TypeScript-Anwendungen mit SSR, REST APIs, Tailwind CSS, shadcn/ui und Redux-basiertem State Management."
+        "Entwickelte **B2G-Portale und operative Dashboards** mit TypeScript, Vite, Redux, SSR und REST-APIs.",
+        "Erstellte wiederverwendbare rollenabhängige Module und konsistente API-gesteuerte UI-Zustände für Verwaltung, Berichte und Datenmanagement."
       ],
       "technologies": [
         "Vite",
@@ -128,20 +148,12 @@
       "period": "Dez. 2020 - Sept. 2022",
       "role": "React Developer",
       "company": "KZI",
-      "summary": "Umsetzung von E-Commerce- und Content-Erlebnissen mit React, JavaScript, Komponentenbibliotheken und modernem State Management.",
+      "summary": "Entwickelte React-Commerce- und Content-Anwendungen mit JavaScript, Redux Toolkit und MUI sowie gemeinsamen UI-Mustern.",
       "highlights": [
-        "Sicherung der Lighthouse-Performance sowie eines verlässlichen PWA- und SPA-Verhaltens mit Material UI und Redux Toolkit.",
-        "Arbeit mit Vite, TypeScript, HeroUI, React Hook Form, Yup und routerbasierter Anwendungsarchitektur."
+        "Entwickelte React-Commerce- und Content-Anwendungen mit **JavaScript, Redux Toolkit und MUI** sowie gemeinsamen UI-Mustern.",
+        "Unterstützte SPA-/PWA-Verhalten und Frontend-Optimierungen anhand von Lighthouse-Diagnosen."
       ],
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Material UI",
-        "Redux Toolkit",
-        "PWA",
-        "React Hook Form",
-        "Yup"
-      ]
+      "technologies": ["React", "JavaScript", "Redux Toolkit", "MUI", "PWA"]
     }
   ],
   "projects": [
@@ -150,15 +162,41 @@
       "number": "04",
       "title": "Hesabo",
       "category": "Berufliche Arbeit",
-      "summary": "Frontend-Entwicklung für eine Finanzplattform mit Admin-, Arbeitgeber-, Mitarbeiter- und Support-Anwendungen.",
-      "contribution": "Ich wirke im Engineering-Team an Frontend-Architektur, PWA-Updates, Android-Auslieferung und Echtzeitoberflächen mit.",
+      "summary": "Frontend-Architektur und technische Führung für eine Finanzplattform mit mehreren Anwendungen.",
+      "contribution": "Leite gemeinsame Systeme, projektbewusste KI-Agenten, automatische Validierung und sichere Auslieferung; zuvor sieben rollenbasierte Anwendungen und Capacitor-Android-Builds entwickelt.",
       "image": "/assets/projects/hesabo/homepage.jpg",
       "imageAlt": "Hesabo-Website zur Plattform für flexiblen Zugriff auf Mitarbeitergehälter",
-      "technologies": ["React", "TypeScript", "Capacitor", "Service workers"],
+      "technologies": ["React", "TypeScript", "AI agents", "Capacitor"],
       "href": "/projects/hesabo",
       "featured": true,
       "accent": "coral",
-      "companyUrl": "https://hesabo.com/"
+      "companyUrl": "https://hesabo.com/",
+      "caseStudy": {
+        "title": "Frontend-Führung für eine Finanzplattform",
+        "caption": "Öffentliche Projektaufnahme. Private Anwendungsoberflächen und vertrauliche Produktdetails werden nicht veröffentlicht.",
+        "sections": [
+          {
+            "title": "Produktkontext",
+            "paragraphs": [
+              "Finanzanwendungen mit mehreren Rollen brauchen gemeinsame Architektur, sichere Zugriffe und zuverlässige Updates in Browsern und installierten Clients. Ich bin seit August 2025 bei Hesabo und seit April 2026 Frontend Chapter Lead."
+            ]
+          },
+          {
+            "title": "Mein Beitrag",
+            "paragraphs": [
+              "Ich leitete das Refactoring gemeinsamer UI, Geschäftslogik und Designsysteme sowie konfigurierbare Layouts und mobile Panels. Der vorgelegte Lebenslauf nennt dafür 17 % weniger Bundle-Größe und 9 % bessere initiale Ladeleistung.",
+              "Ich entwickle architekturbewusste Claude-/Codex-Agenten und automatisiere Validierung mit Cypress-E2E-, Integrations- und Mock-Tests. Hinzu kommen Rollen-Routing, Caching, Nginx, Zahlungssicherheit, Architektur-Reviews und Mentoring."
+            ]
+          },
+          {
+            "title": "Nachweise und Umfang",
+            "paragraphs": [
+              "Zuvor entwickelte ich sieben rollenbasierte React-/TypeScript-/Vite-/MobX-Anwendungen und lieferte Capacitor-Android-Builds und PWAs. Die öffentliche Aufnahme zeigt die Firmenwebsite, keine privaten Finanzanwendungen.",
+              "Die Refactoring-Zahlen stammen aus dem Lebenslauf; dieses Portfolio vermisst Arbeitgebersysteme nicht unabhängig. Figma-to-Code- und Feature-Branch-Testworkflows werden ohne vertrauliche Implementierungsdetails beschrieben."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "xo-arena",
@@ -197,7 +235,35 @@
       "liveVerified": true,
       "featured": true,
       "accent": "lime",
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "MVP / Früher Plattformprototyp",
+      "statusNote": "Eine erste Umsetzung einer umfassenderen Plattform in vertraulicher Entwicklung. Der vollständige Produktionsumfang kann derzeit nicht öffentlich gezeigt werden.",
+      "caseStudy": {
+        "title": "Interaktive Produktpräsentation in einer 3D-Boutique",
+        "caption": "Öffentliche Projektaufnahme. Private Anwendungsoberflächen und vertrauliche Produktdetails werden nicht veröffentlicht.",
+        "sections": [
+          {
+            "title": "Produktkontext",
+            "paragraphs": [
+              "Ein frühes MVP einer umfassenderen Plattform in vertraulicher Entwicklung. Die öffentliche Boutique zeigt Kleidungssuche, Kataloginformationen und fotografische Outfit-Vorschauen."
+            ]
+          },
+          {
+            "title": "Mein Beitrag",
+            "paragraphs": [
+              "Ich entwickelte die Next.js-/TypeScript-Anwendung und die Three.js-/React-Three-Fiber-Umgebung mit HTML-Steuerung, reduzierter Bewegung und WebGL-Fallbacks.",
+              "Kompakte Kleidungsbilder laden vor hochauflösenden Detailbildern. Kataloganfragen verwenden begrenzte Upstream-Zugriffe und Caching; nicht verfügbare oder abgelaufene Bestands- und Preisangaben werden entfernt."
+            ]
+          },
+          {
+            "title": "Nachweise und Umfang",
+            "paragraphs": [
+              "Fotografische Outfit-Vorschauen zeigen das Erscheinungsbild, keine gemessene Passform. Die Generierung benötigt einen externen Dienst; Käufe erfolgen am offiziellen Produktziel.",
+              "Die Aufnahme dokumentiert den öffentlichen Prototyp. Vollständige Plattform und privater Quellcode bleiben vertraulich; Verkaufszahlen, abgeschlossene Zahlungen oder allgemeingültige Geräteleistung werden nicht behauptet."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "emerald-case",
@@ -215,7 +281,35 @@
       "sourceUrl": "https://github.com/Nima-Moradi1/emeraldCase",
       "requestedDestination": "https://emerald-case.vercel.app/en/",
       "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "Verarbeitungsserver vorübergehend offline",
+      "statusNote": "Die Verarbeitungsinfrastruktur ist vorübergehend nicht verfügbar. Storefront und Fallstudie bleiben zugänglich; verarbeitungsabhängige Funktionen können ausfallen.",
+      "caseStudy": {
+        "title": "Individuelle Handyhüllen vom Bild zur Konfiguration",
+        "caption": "Öffentliche Projektaufnahme. Private Anwendungsoberflächen und vertrauliche Produktdetails werden nicht veröffentlicht.",
+        "sections": [
+          {
+            "title": "Produktkontext",
+            "paragraphs": [
+              "Ein Full-Stack-Commerce-Projekt verbindet hochgeladene Bilder mit Telefonmodell, Material, Oberfläche und Farbe. Die Verarbeitungsserver sind vorübergehend offline."
+            ]
+          },
+          {
+            "title": "Mein Beitrag",
+            "paragraphs": [
+              "Ich entwickelte lokalisierte Next.js-/TypeScript-Oberflächen mit Upload, Konfiguration, Authentifizierung und gespeicherten Bestellungen. Prisma modelliert Konfigurationen, Nutzer, Bestellungen und Adressen in PostgreSQL.",
+              "Der Quellcode integriert Kinde, UploadThing, Stripe, Resend und React Query. Ein gespeichertes Design und eine bezahlte Bestellung sind getrennte Zustände."
+            ]
+          },
+          {
+            "title": "Nachweise und Umfang",
+            "paragraphs": [
+              "Storefront und Quellcode ermöglichen die Prüfung der Umsetzung. Verarbeitungsabhängige Funktionen können während des Infrastrukturausfalls nicht verfügbar sein.",
+              "Eine Abhängigkeit oder Aufnahme belegt keine produktive Dienstkonfiguration. Erfolgreiche Zahlungen, Transaktions-E-Mails und Umsatzergebnisse werden nicht behauptet."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "moradi-gallery",
@@ -240,7 +334,35 @@
       "sourceUrl": "https://github.com/Nima-Moradi1/moradi-gallery",
       "requestedDestination": "https://moradi-gallery.vercel.app/fa",
       "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
+      "liveVerifiedAt": "2026-10-22",
+      "status": "MVP / Früher Plattformprototyp",
+      "statusNote": "Eine erste Umsetzung einer umfassenderen Plattform in vertraulicher Entwicklung. Der vollständige Produktionsumfang kann derzeit nicht öffentlich gezeigt werden.",
+      "caseStudy": {
+        "title": "Prototyp einer zweisprachigen Uhrenplattform",
+        "caption": "Öffentliche Projektaufnahme. Private Anwendungsoberflächen und vertrauliche Produktdetails werden nicht veröffentlicht.",
+        "sections": [
+          {
+            "title": "Produktkontext",
+            "paragraphs": [
+              "Ein frühes MVP einer größeren Plattform in vertraulicher Entwicklung. Die öffentliche persisch-englische Galerie untersucht ein eigenes Uhrenkonzept und responsives 3D-Storytelling."
+            ]
+          },
+          {
+            "title": "Mein Beitrag",
+            "paragraphs": [
+              "Ich entwickelte die lokalisierte Next.js-Anwendung mit Three.js, React Three Fiber, GSAP, Motion und next-intl. Eine persistente Szene koordiniert Erzählung und Interaktion.",
+              "RTL-/LTR-Lesereihenfolge, kleine Bildschirme, reduzierte Bewegung und WebGL-Fallbacks halten Inhalte und Navigation auch außerhalb des Canvas nutzbar."
+            ]
+          },
+          {
+            "title": "Nachweise und Umfang",
+            "paragraphs": [
+              "Öffentlicher Quellcode und Aufnahme beschreiben ausschließlich den Prototyp. Der vollständige Produktionsumfang und vertrauliche Produktdetails sind nicht öffentlich einsehbar.",
+              "Die Uhr ist ein eigenes Konzeptobjekt, kein bestätigter Warenbestand. Kommerzielle Verkäufe oder gemessene Performance-Ergebnisse werden nicht behauptet."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lingo-learn",
@@ -257,80 +379,83 @@
       "href": "https://lingo-learn.ir/",
       "featured": false,
       "accent": "lime"
-    },
-    {
-      "id": "tarabari-nima",
-      "number": "06",
-      "title": "Tarabari Nima",
-      "category": "Konzept",
-      "summary": "Eine persische Frachtreise, bei der ein Container vom Lager per Lkw, Hafenkran, Schiff und Flugzeug weiterreist.",
-      "contribution": "Entwicklung der RTL-Marketingdemo, des interaktiven Routenglobus und der scrollgesteuerten Frachtgeschichte mit Next.js, GSAP, Three.js und React Three Fiber.",
-      "image": "/assets/projects/tarabari-nima/loaded-truck.webp",
-      "imageAlt": "Markierter Container auf einem blauen Fracht-Lkw in der Tarabari-Nima-Reise",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "GSAP",
-        "Three.js",
-        "React Three Fiber",
-        "Tailwind CSS"
-      ],
-      "href": "/projects/tarabari-nima",
-      "featured": false,
-      "accent": "coral",
-      "sourceUrl": "https://github.com/Nima-Moradi1/tarabari-nima",
-      "requestedDestination": "https://tarabari-nima.vercel.app/",
-      "liveVerified": true,
-      "liveVerifiedAt": "2026-10-22"
     }
   ],
   "capabilities": [
     {
       "id": "frontend",
       "index": "1",
-      "title": "Frontend-Entwicklung",
-      "label": "Frontend-Entwicklung",
-      "description": "Komponentenarchitektur, Anwendungszustand und responsive Oberflächen.",
-      "skills": ["React", "Next.js", "TypeScript", "HTML/CSS"],
+      "title": "Frontend-Architektur",
+      "label": "Frontend-Architektur",
+      "description": "**React, Next.js und TypeScript** mit modularen Grenzen, Systemdesign und wiederverwendbaren Designsystemen. Dazu gehören Architektur-Reviews, Mentoring und Lieferplanung.",
+      "skills": ["React", "Next.js", "TypeScript", "Vite", "Design systems"],
       "evidenceHref": "/projects/hesabo"
     },
     {
-      "id": "mobile",
+      "id": "ai",
       "index": "2",
-      "title": "PWA und Android-Auslieferung",
-      "label": "PWA und Android-Auslieferung",
-      "description": "Installierbare Anwendungen, Updates, Offline-Fallbacks und Plattformintegration.",
-      "skills": ["Service workers", "Capacitor", "Android", "Java plugins"],
+      "title": "Produktspezifische KI-Agenten",
+      "label": "Produktspezifische KI-Agenten",
+      "description": "Ich entwickle **architekturbewusste Claude- und Codex-Agenten** anhand von Repository-Kontext, Tools, Hooks und UI-Regeln. Workflows umfassen Feature-Branch-Validierung, Regressionsprüfung und Figma-to-Code; vertrauliche Agentendetails bleiben geschützt.",
+      "skills": ["Claude / Codex", "Agentic workflows", "RAG / MCP", "Cypress"],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "security",
+      "index": "3",
+      "title": "Sichere Anwendungsentwicklung",
+      "label": "Sichere Anwendungsentwicklung",
+      "description": "Schutz von Anmeldung, Zahlungen und sensiblen Clientdaten durch **XSS-/CSRF-Abwehr**, Validierung, Session-/Token-Verwaltung und sichere API-Kommunikation. Browsermaßnahmen werden mit Nginx, serverseitiger Autorisierung und CORS-Headern abgestimmt; Server und Browser setzen CORS durch.",
+      "skills": ["XSS / CSRF", "Clickjacking", "CORS", "Authentication"],
       "evidenceHref": "/projects/hesabo"
     },
     {
       "id": "realtime",
-      "index": "3",
-      "title": "APIs und Echtzeitfunktionen",
-      "label": "APIs und Echtzeitfunktionen",
-      "description": "API-Anbindung und Oberflächen mit aktuellem Anwendungszustand.",
-      "skills": ["REST", "WebSockets / SignalR", "Prisma"],
+      "index": "4",
+      "title": "Echtzeitsysteme und Daten",
+      "label": "Echtzeitsysteme und Daten",
+      "description": "Entwicklung von **WebSocket-Oberflächen** mit Verbindungslebenszyklus, Wiederverbindung und synchronisiertem UI-Zustand. API-Architektur, Redis, Datenbanken und verteilte Systeme prägen Frontend-Entscheidungen; XO Arena zeigt servervalidierte Spielzustände und persistente Daten.",
+      "skills": ["WebSockets / SignalR", "Socket.IO", "Redis", "Prisma / SQL"],
       "evidenceHref": "/projects/xo-arena"
     },
     {
-      "id": "quality",
-      "index": "4",
-      "title": "Qualität und Zusammenarbeit",
-      "label": "Qualität und Zusammenarbeit",
-      "description": "Tests, Debugging, Code-Review und klare technische Kommunikation.",
-      "skills": ["Vitest", "Playwright", "GitHub Actions"],
+      "id": "mobile",
+      "index": "5",
+      "title": "Android- und iOS-Engineering",
+      "label": "Android- und iOS-Engineering",
+      "description": "**Capacitor** für Android und iOS, native Konfigurationen, Plugins und Release-Workflows. Dazu kommen Zahlungs-, SMS-, Kernbank- und Echtzeitdiagramm-Integrationen; der vorgelegte Lebenslauf belegt konkret ausgelieferte Android-Builds.",
+      "skills": ["Capacitor", "Android / iOS", "Native integrations", "PWA"],
+      "evidenceHref": "/projects/hesabo"
+    },
+    {
+      "id": "performance",
+      "index": "6",
+      "title": "Performance im Produktkontext",
+      "label": "Performance im Produktkontext",
+      "description": "Optimierung von **LCP, INP und CLS** für Produktseiten, Filter, Checkout und Live-Dashboards. FCP, TTFB, TBT, Speed Index und Long Tasks dienen der Diagnose; TTI ist eine ältere Diagnosemetrik. Schnelle, stabile Interaktionen unterstützen Conversion, Bindung und Vertrauen ohne unbelegte Erfolgszahlen.",
+      "skills": [
+        "Core Web Vitals",
+        "Network / caching",
+        "Lighthouse",
+        "Profiling"
+      ],
       "evidenceHref": "/projects/3d-online-shop"
+    },
+    {
+      "id": "quality",
+      "index": "7",
+      "title": "Engineering-Qualität und Auslieferung",
+      "label": "Engineering-Qualität und Auslieferung",
+      "description": "**Cypress-E2E-, Integrations- und Mock-Tests**, Code-Reviews, automatische Validierungsagenten und CI/CD-Qualitätsprüfungen machen Releases nachvollziehbar und zuverlässig.",
+      "skills": ["Cypress", "Vitest / Playwright", "CI/CD", "GitHub / GitLab"],
+      "evidenceHref": "/projects/hesabo"
     }
   ],
   "education": {
     "title": "B.Sc. Computer Engineering",
-    "institution": "Tehran Azad University",
-    "note": "Abschluss 2026.",
-    "languages": [
-      "Persisch: Muttersprache",
-      "Englisch: Berufliche Arbeitskenntnisse",
-      "Deutsch: Grundkenntnisse"
-    ]
+    "institution": "Islamische Azad-Universität, Teheran",
+    "note": "B.Sc. Computer Engineering.",
+    "languages": ["Englisch: Niveau C1"]
   },
   "socialLinks": [
     {

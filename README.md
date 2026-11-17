@@ -1,15 +1,15 @@
 # Nima Moradirad - engineering portfolio
 
-Employer-focused portfolio for Nima Moradirad, Senior Frontend Engineer. Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, next-intl, and accessible Radix/shadcn primitives. The existing dark/green identity and English, Persian RTL, and German routes are preserved.
+Employer-focused portfolio for Nima Moradirad, Senior Software Engineer and Frontend Chapter Lead. Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, next-intl, and accessible Radix/shadcn primitives. The existing dark/green identity and English, Persian RTL, and German routes are preserved.
 
 ## What visitors can inspect
 
 - Role-specific hero with work and résumé links, available without a loading gate.
 - Selected work led by Hesabo, XO Arena, and 3D Online Shop, followed by supporting projects.
-- All four professional roles in a vertical chronology, four evidence-linked skills groups, About, education, languages, and direct contact links.
+- Five professional role entries in a vertical chronology, seven evidence-linked capability groups, About, education, languages, and direct contact links.
 - Case studies with personal contribution, implementation decisions, genuine captures, source links, and factual limitations.
 - An optional workstation scene. Its default still is a genuine capture of the existing scene; the Three.js code loads only after **Explore 3D**. A conventional header control changes theme independently.
-- A selectable-text, one-page résumé generated from the English portfolio content. The original public URL is retained.
+- The original selectable-text, two-page résumé supplied by the owner. The original public URL is retained.
 
 ## Development
 
@@ -35,13 +35,13 @@ Playwright browser checks can use installed Chrome. Set `PLAYWRIGHT_CHROME=1` wh
 
 ## Content and routes
 
-Edit `src/messages/{en,fa,de}/portfolio.json` for identity, chronology, projects, skills, education, and social profiles. `common.json` holds interface labels. `src/content/project-evidence.ts` contains English engineering notes; other locales explicitly identify those notes as English. Updated Persian/German copy is disclosed as AI-assisted pending owner language review.
+Edit `src/messages/{en,fa,de}/portfolio.json` for identity, chronology, projects, skills, education, and social profiles. `common.json` holds interface labels. `src/content/project-evidence.ts` contains public destinations; all three locales include the complete updated case studies. Updated Persian/German copy is disclosed as AI-assisted pending owner language review.
 
 Existing case-study routes remain available. New routes are `/projects/hesabo` and `/projects/3d-online-shop`, with the same locale-prefix convention. The latter route has a stable project ID; its correct destination is **https://3d-shop-design.ir/**, confirmed by the owner. Do not substitute the unrelated `sarochi-new` repository. The actual source is the private `Nima-Moradi1/sarochi-shop-design` repository. Its source link is omitted so reviewers are not sent to a login or 404 page.
 
 Live-link visibility is controlled separately by `liveVerified`. Update that flag only after confirming the application, HTTPS, and destination identity; `liveVerifiedAt` records the date. Source inspection does not establish a completed payment or a production performance result.
 
-To update the résumé, run `node scripts/generate-resume.mjs` with Chrome installed. Render the resulting PDF with Poppler, inspect it, and regenerate `public/assets/nima-moradirad-resume-preview.webp` from the first page before publication. Keep historical job titles and factual dates synchronized with the site. Never include private credentials or unsupported metrics.
+To update the résumé, run `node scripts/generate-resume.mjs <original.pdf>` to copy the owner-supplied PDF unchanged. Render the resulting PDF with Poppler, inspect it, and regenerate `public/assets/nima-moradirad-resume-preview.webp` from the first page before publication. Keep historical job titles and factual dates synchronized with the site. Never include private credentials or unsupported metrics.
 
 ## Deployment
 
@@ -51,4 +51,4 @@ The optional contact API is preserved. Without configured Resend credentials it 
 
 ## Evidence and boundaries
 
-See [implementation notes](docs/employer-focused-implementation.md), [design system](DESIGN_SYSTEM.md), [performance](PERFORMANCE.md), and [asset provenance](ASSET_LICENSES.md). Historical verification documents describe their own revisions; they are not current performance measurements. Private employer applications and data are not published. Moradi Gallery and Tarabari Nima are concepts; XO Arena is represented by its local recording and source.
+See [implementation notes](docs/employer-focused-implementation.md), [design system](DESIGN_SYSTEM.md), [performance](PERFORMANCE.md), and [asset provenance](ASSET_LICENSES.md). Historical verification documents describe their own revisions; they are not current performance measurements. Private employer applications and data are not published. Moradi Gallery and 3D Online Shop are public MVPs of confidential platforms; Emerald Case processing servers are temporarily offline; XO Arena is represented by its local recording and source.

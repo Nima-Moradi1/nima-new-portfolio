@@ -4,6 +4,7 @@ import { usePortfolio } from "@/content/use-portfolio";
 import { HeroStudio } from "@/components/three/hero-studio";
 import { Button } from "@/components/ui/button";
 import styles from "./portfolio-layout.module.css";
+import { EmphasizedText } from "@/components/ui/emphasized-text";
 
 export function HeroSection() {
   const portfolio = usePortfolio();
@@ -15,7 +16,9 @@ export function HeroSection() {
           <h1 className={styles.heroTitle} id="hero-title">
             {portfolio.identity.role}
           </h1>
-          <p className={styles.heroIntro}>{portfolio.identity.intro}</p>
+          <p className={styles.heroIntro}>
+            <EmphasizedText text={portfolio.identity.intro} />
+          </p>
           <div className={styles.actions}>
             <Button asChild className={styles.action}>
               <a href="#work">
@@ -30,7 +33,7 @@ export function HeroSection() {
             <Button asChild variant="outline" className={styles.action}>
               <a
                 href={portfolio.identity.resumeUrl}
-                download="Nima-Moradirad-Resume.pdf"
+                download="Nima-Moradirad-2027-update.pdf"
               >
                 {t("resume")}
               </a>

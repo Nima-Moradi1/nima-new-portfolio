@@ -16,24 +16,12 @@ describe("MobileExperienceReader", () => {
     const next = screen.getByRole("button", { name: "Next experience" });
 
     expect(previous).toBeDisabled();
-    expect(
-      screen.getByRole("heading", { name: "Senior Frontend Developer" }),
-    ).toBeInTheDocument();
-
-    fireEvent.click(next);
-    expect(
-      screen.getByRole("heading", { name: "Senior Frontend Engineer" }),
-    ).toBeInTheDocument();
-
-    fireEvent.click(next);
-    expect(
-      screen.getByRole("heading", { name: "Frontend Developer" }),
-    ).toBeInTheDocument();
-
-    fireEvent.click(next);
-    expect(
-      screen.getByRole("heading", { name: "React Developer" }),
-    ).toBeInTheDocument();
+    for (const [index, experience] of portfolio.experience.entries()) {
+      expect(
+        screen.getByRole("heading", { name: experience.role }),
+      ).toBeInTheDocument();
+      if (index < portfolio.experience.length - 1) fireEvent.click(next);
+    }
     expect(next).toBeDisabled();
   });
 
@@ -67,7 +55,7 @@ describe("MobileExperienceReader", () => {
       container.querySelector(".mobile-experience-reader__book article"),
     ).toBe(paper);
     expect(
-      screen.getByRole("heading", { name: "Senior Frontend Engineer" }),
+      screen.getByRole("heading", { name: "Senior Frontend Developer" }),
     ).toBeInTheDocument();
   });
 

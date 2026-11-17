@@ -35,7 +35,12 @@ function ProjectPreview({
         <p className={styles.body}>{project.summary}</p>
         <p className={styles.contribution}>{project.contribution}</p>
         {project.status ? (
-          <p className={styles.period}>{project.status}</p>
+          <div className={styles.projectStatus}>
+            <p>
+              <strong>{project.status}</strong>
+            </p>
+            {project.statusNote ? <p>{project.statusNote}</p> : null}
+          </div>
         ) : null}
         <div className={styles.tags}>
           {project.technologies.slice(0, 4).map((tech) => (

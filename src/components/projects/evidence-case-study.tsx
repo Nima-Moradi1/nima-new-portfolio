@@ -7,6 +7,7 @@ import { projectEvidence } from "@/content/project-evidence";
 import { materializePortfolio } from "@/content/portfolio";
 import type { PortfolioContent } from "@/types/portfolio";
 import styles from "./evidence-case-study.module.css";
+import { EmphasizedText } from "@/components/ui/emphasized-text";
 
 export async function EvidenceCaseStudy({
   slug,
@@ -39,13 +40,16 @@ export async function EvidenceCaseStudy({
             {t("back")}
           </Link>
           <p className={styles.kind}>{project.category}</p>
-          <h1 className={styles.title} lang="en" dir="ltr">
-            {evidence.title}
+          <h1 className={styles.title}>
+            {project.caseStudy?.title ?? project.title}
           </h1>
           <p className={styles.intro}>{project.summary}</p>
-          <p className={styles.status} lang="en" dir="ltr">
-            {evidence.status}
-          </p>
+          {project.status ? (
+            <div className={styles.status}>
+              <strong>{project.status}</strong>
+              {project.statusNote ? <p>{project.statusNote}</p> : null}
+            </div>
+          ) : null}
           <div className={styles.links}>
             {evidence.liveUrl ? (
               <a
@@ -85,29 +89,17 @@ export async function EvidenceCaseStudy({
               className={styles.image}
               priority
             />
-            <figcaption lang="en" dir="ltr">
-              {evidence.caption}
-            </figcaption>
+            <figcaption>{project.caseStudy?.caption}</figcaption>
           </figure>
-          {locale !== "en" ? (
-            <p className={styles.notice}>{t("englishNotice")}</p>
-          ) : null}
-          <div className={styles.prose} lang="en" dir="ltr">
-            {evidence.sections.map((section) => (
+          <div className={styles.prose}>
+            {project.caseStudy?.sections.map((section) => (
               <section key={section.title}>
                 <h2>{section.title}</h2>
                 {section.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
+                  <p key={p}>
+                    <EmphasizedText text={p} />
+                  </p>
                 ))}
-                {section.codeUrl ? (
-                  <a
-                    href={section.codeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {section.codeLabel}
-                  </a>
-                ) : null}
               </section>
             ))}
           </div>
