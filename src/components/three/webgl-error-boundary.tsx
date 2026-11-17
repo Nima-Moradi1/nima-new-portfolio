@@ -5,6 +5,7 @@ import { Component, type ErrorInfo, type ReactNode } from "react";
 type WebGLErrorBoundaryProps = {
   children: ReactNode;
   fallback: ReactNode;
+  onError?: () => void;
 };
 
 type WebGLErrorBoundaryState = {
@@ -22,6 +23,7 @@ export class WebGLErrorBoundary extends Component<
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
+    this.props.onError?.();
     if (process.env.NODE_ENV === "development") {
       console.error("WebGL scene failed; rendering the static fallback.", {
         error,

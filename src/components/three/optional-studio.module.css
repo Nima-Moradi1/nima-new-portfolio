@@ -16,6 +16,47 @@
 .still {
   object-fit: cover;
   object-position: center 58%;
+  transition: opacity 240ms ease;
+}
+.hidden {
+  opacity: 0;
+}
+.loading {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+.instructions {
+  color: var(--muted-bright);
+  font-size: 0.875rem;
+}
+.interactive canvas {
+  touch-action: pan-y !important;
+}
+@media (max-width: 767px) {
+  .viewport:not([data-exploring="true"]) {
+    display: none;
+  }
+}
+.rotation {
+  position: absolute;
+  inset: auto 0.75rem 0.75rem auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.rotation button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  background: var(--ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .still {
+    transition: none;
+  }
 }
 .control {
   min-height: 2.75rem;

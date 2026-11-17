@@ -4,7 +4,7 @@ import {
   AdaptiveDpr,
   Html,
   PerspectiveCamera,
-  PresentationControls,
+  OrbitControls,
   RoundedBox,
   useCursor,
   useTexture,
@@ -16,7 +16,14 @@ import {
   type ThreeEvent,
 } from "@react-three/fiber";
 import { Pointer } from "lucide-react";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import * as THREE from "three";
 import type { Theme } from "@/components/theme/theme-provider";
 import { cn } from "@/lib/cn";
@@ -86,6 +93,7 @@ const KEY_LAYOUT = KEY_ROWS.flatMap((row, rowIndex) => {
 const PAINTING_URL = "/assets/hero/senior-engineer-systems-painting.webp";
 
 type DeskSceneProps = {
+  rotation?: number;
   active: boolean;
   pullLabel: string;
   reducedMotion: boolean;
@@ -409,27 +417,20 @@ function EngineerWallArtwork({
 function ResponsiveCamera() {
   const camera = useRef<THREE.PerspectiveCamera>(null);
   const size = useThree((state) => state.size);
-  const compact = size.width < 640;
+  const aspect = size.width / Math.max(size.height, 1);
 
   useLayoutEffect(() => {
     const node = camera.current;
     if (!node) return;
-    const position: [number, number, number] = compact
-      ? [8.5, 6.35, 14.9]
-      : [4.9, 4.35, 9.25];
-    node.position.set(position[0], position[1], position[2]);
+    // Fit the panel's actual aspect ratio, not an unrelated viewport breakpoint.
+    const fit = Math.max(1, 1.15 / aspect);
+    node.position.set(5.4 * fit, 4.5 * fit, 10.4 * fit);
     node.lookAt(0, 0.65, 0);
     node.updateProjectionMatrix();
-  }, [compact]);
+  }, [aspect]);
 
   return (
-    <PerspectiveCamera
-      ref={camera}
-      makeDefault
-      fov={compact ? 48 : 42}
-      near={0.1}
-      far={60}
-    />
+    <PerspectiveCamera ref={camera} makeDefault fov={42} near={0.1} far={60} />
   );
 }
 
@@ -445,6 +446,7 @@ function CodeMonitor({
   palette: Palette;
 }) {
   const lastCharacter = useRef(-1);
+  const lastPaint = useRef(-1);
   const [editor] = useState(createEditorTexture);
   const editorRef = useRef(editor);
 
@@ -466,6 +468,8 @@ function CodeMonitor({
 
   useFrame(({ clock }) => {
     if (!active || reducedMotion) return;
+    if (clock.elapsedTime - lastPaint.current < 1 / 15) return;
+    lastPaint.current = clock.elapsedTime;
     const cycle = clock.elapsedTime % 20;
     const progress = Math.min(cycle / 16.5, 1);
     const rawCharacter = Math.floor(progress * EDITOR_CODE.length);
@@ -1659,6 +1663,32 @@ function FirstUsableFrame({ onReady }: { onReady: () => void }) {
   return null;
 }
 
+function SceneLifecycle({ rotation = 0 }: { rotation?: number }) {
+  const { gl, camera, invalidate } = useThree();
+  const [lost, setLost] = useState(false);
+  const previousRotation = useRef(rotation);
+  useEffect(() => {
+    const canvas = gl.domElement;
+    const onLost = () => setLost(true);
+    canvas.addEventListener("webglcontextlost", onLost);
+    return () => canvas.removeEventListener("webglcontextlost", onLost);
+  }, [gl]);
+  useEffect(() => {
+    const delta = rotation - previousRotation.current;
+    previousRotation.current = rotation;
+    if (!delta) return;
+    const target = new THREE.Vector3(0, 0.65, 0);
+    camera.position
+      .sub(target)
+      .applyAxisAngle(new THREE.Vector3(0, 1, 0), (delta * Math.PI) / 8)
+      .add(target);
+    camera.lookAt(target);
+    invalidate();
+  }, [camera, invalidate, rotation]);
+  if (lost) throw new Error("WebGL context lost");
+  return null;
+}
+
 export function DeskScene(props: DeskSceneProps) {
   const palette = getPalette(props.theme);
   const isDark = props.theme === "dark";
@@ -1667,7 +1697,7 @@ export function DeskScene(props: DeskSceneProps) {
     <Canvas
       aria-hidden="true"
       dpr={[1, 1.5]}
-      frameloop={props.active ? "always" : "demand"}
+      frameloop={props.active && !props.reducedMotion ? "always" : "demand"}
       style={{ touchAction: "pan-y" }}
       gl={{
         alpha: true,
@@ -1680,6 +1710,7 @@ export function DeskScene(props: DeskSceneProps) {
       shadows={false}
     >
       <ResponsiveCamera />
+      <SceneLifecycle rotation={props.rotation} />
       <ambientLight intensity={isDark ? 1.35 : 2.6} />
       <directionalLight
         color={isDark ? "#f0ffe1" : "#fff6df"}
@@ -1693,20 +1724,21 @@ export function DeskScene(props: DeskSceneProps) {
         decay={2}
         position={[-4, 1.5, 4]}
       />
-      <PresentationControls
-        enabled
-        global
-        cursor
-        snap={false}
-        speed={1.25}
-        zoom={0.92}
-        rotation={[0.03, -0.28, 0]}
-        polar={[-0.16, 0.28]}
-        azimuth={[-Infinity, Infinity]}
-        damping={0.16}
-      >
-        <Workstation {...props} />
-      </PresentationControls>
+      <group rotation={[0.03, -0.28, 0]}>
+        <Suspense fallback={null}>
+          <Workstation {...props} />
+        </Suspense>
+      </group>
+      <OrbitControls
+        makeDefault
+        target={[0, 0.65, 0]}
+        enablePan={false}
+        enableZoom={false}
+        enableDamping={!props.reducedMotion}
+        minPolarAngle={0.65}
+        maxPolarAngle={1.45}
+        rotateSpeed={0.7}
+      />
       <AdaptiveDpr pixelated />
     </Canvas>
   );

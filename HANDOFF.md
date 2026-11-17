@@ -72,3 +72,26 @@ Updated: 2026-11-17. Requested scope: attached master execution brief and suppli
 - Root cause reproduced: texture suspension propagated through R3F Canvas; deferred renderer teardown invoked forceContextLoss on the live canvas. Explicit inner Suspense boundary fixes the reproduced failure. Added readiness transition, scoped OrbitControls using existing Drei, native keyboard-operable rotation buttons, mobile access, context-loss fallback and 15Hz editor texture updates. Reduced motion uses demand frames.
 - Initial lint: 0 errors, 1 pre-existing OG-image img warning. Initial unit run 37 pass / 2 stale reader expectations; updated expectations. Initial typecheck found stale generated Azita route types, not source errors; production build regenerates types. First production compilation/types/static generation passed; final tracing pending.
 - Next: complete browser coverage, inspect screenshots, run all source checks and lab audit; then commit/push meaningful milestones, release and verify production.
+
+## Milestone: regression coverage and performance review
+
+- Content milestone committed and pushed: `09fe980`; initial handoff: `52ca02a`. Feature branch is `feat/portfolio-modernization`; production main remains unchanged until checks finish.
+- Unit suite: all 39 pass. Baseline browser suite: all 16 pass on desktop/mobile (EN/FA/DE reflow 320-1440, navigation, static JS-disabled access, both themes and axe accessibility).
+- Additional 3D/download/removal browser checks: 8 pass. These verify frozen reduced-motion frames, pointer/keyboard rotation, repeated activation, unsupported WebGL and simulated context loss, original PDF bytes and removed routes. Added actual touch and locale-switching journeys for final run.
+- Production build and regenerated typecheck passed. Stale generated Azita types disappeared after build.
+- First Lighthouse 13.6 local lab: mobile performance 88, FCP 1.213s, LCP 3.794s, CLS .00135, TBT 85ms, Speed Index 1.553s, server response 6ms; desktop performance 100, FCP .286s, LCP .794s, CLS .0188, TBT 3.9ms, SI .548s, server response 7ms. No field/INP dataset.
+- Audit identified missing priority on mobile LCP preview and label/name mismatches in brand and locale controls. Addressed image preload/high priority and matching accessible names; rerun required. Local SEO canonical warning expected because canonical points to production domain.
+- Existing production workflow failures traced via GitHub logs: obsolete required `/assets/projects/tarabari-nima/home.webp` returned 404. Updated verifier removes old dependency and asserts absence instead.
+- Confirmed authenticated Liara app `nimamoradirad`, docker small-g2, ACTIVE. GitHub access works through existing Git credentials without printing them. Existing release workflow remains the deployment path.
+
+## Final interaction milestone
+
+- All 27 applicable browser tests passed (one desktop skip is a touch-only test). Actual horizontal CDP touch gesture, keyboard and pointer rotation, language switching and route retention verified.
+- Mobile LCP remained ~3.96s in isolated simulation after image priority; investigation showed the newly exposed large mobile artwork became LCP. Changed mobile to compact opt-in 3D control: preview and canvas appear on activation, retaining the original initial reading composition without hiding the feature. Desktop priority preload retained. Final measurements pending.
+- Refined résumé preview description to match its actual first page and removed unsupported German language knowledge from Person schema. Final test/build after these small changes pending.
+
+## Release candidate validation
+
+- Final mobile compact-view Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 92 (canonical points to production, so local SEO warning is expected). Mobile lab FCP/LCP 1.220s, CLS 0, TBT 91ms, Speed Index 2.032s, server-response diagnostic 103ms. Prior desktop lab: Performance 100, LCP .794s, CLS .0188. Field p75/INP unavailable.
+- Original-source and public PDF SHA-256 are identical: D3A8412B034586FC556AAB3D8888C6B7C5C78222B207BE0F58893A91F81E4CDD.
+- Latest unit suite 39/39 pass; source and test typecheck passes. New context-loss test required an HTMLCanvasElement type assertion; corrected. Final browser run pending, then release candidate commit/push and production workflow.
