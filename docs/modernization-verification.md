@@ -6,7 +6,7 @@ The owner-supplied two-page `Nima-Moradirad-2027-update.pdf` is authoritative fo
 
 - Senior Software Engineer positioning retains deep frontend specialization and identifies Frontend Chapter Lead responsibilities.
 - Hesabo: joined August 2025, Senior Frontend Developer until April 2026, then Frontend Chapter Lead. Basilica: March 2024–March 2025. Other employment dates preserved from the source.
-- Five role entries, seven capability groups, localized metadata and four complete case studies in English, Persian and German. Only résumé-supported English C1 proficiency is listed; no graduation year is invented.
+- Five role entries, eight capability groups, localized metadata and four complete case studies in English, Persian and German. Only résumé-supported English C1 proficiency is listed; no graduation year is invented.
 - The 17% bundle reduction and 9% initial-load improvement are explicitly attributed to the supplied résumé, not independently measured employer results.
 - The public PDF is byte-for-byte identical to the supplied source, SHA-256 `D3A8412B034586FC556AAB3D8888C6B7C5C78222B207BE0F58893A91F81E4CDD`. The preview is its first page. The replacement script copies the original without rewriting it.
 - Moradi Gallery and 3D Online Shop consistently identify their public MVP scope and confidential larger platforms. Emerald Case identifies temporarily unavailable processing servers. The removed project has no remaining public route, catalog, card, asset or sitemap entry.
@@ -38,15 +38,15 @@ Local dependencies were already installed with pnpm; the production workflow ins
 
 Lighthouse 13.6, local production server, Chromium, default simulated mobile throttling and desktop preset. These are lab snapshots, not a statistical comparison or field p75 data. Initial mobile artwork rendering produced LCP ~3.79–3.96s; a compact mobile opt-in and deferred artwork restored a content-first first viewport.
 
-| Lab metric | Mobile, compact opt-in | Desktop, initial audit |
-| --- | ---: | ---: |
-| Performance score | 100 | 100 |
-| FCP | 1.220s | 0.286s |
-| LCP | 1.220s | 0.794s |
-| CLS | 0 | 0.0188 |
-| TBT | 91ms | 3.9ms |
-| Speed Index | 2.032s | 0.548s |
-| Server-response diagnostic | 103ms | 7ms |
+| Lab metric                 | Mobile, compact opt-in | Desktop, initial audit |
+| -------------------------- | ---------------------: | ---------------------: |
+| Performance score          |                    100 |                    100 |
+| FCP                        |                 1.220s |                 0.286s |
+| LCP                        |                 1.220s |                 0.794s |
+| CLS                        |                      0 |                 0.0188 |
+| TBT                        |                   91ms |                  3.9ms |
+| Speed Index                |                 2.032s |                 0.548s |
+| Server-response diagnostic |                  103ms |                    7ms |
 
 Local Accessibility and Best Practices scored 100. Local SEO scored 92 because the canonical URL correctly points to the production domain. INP, real-user TTFB and field p75 Core Web Vitals are unavailable: navigation Lighthouse audits do not establish them. TBT is not a substitute for INP. Remaining framework JavaScript and CSS diagnostics were reviewed; optional Three.js stays outside initial page loading.
 
@@ -57,3 +57,11 @@ Pending at this checkpoint. Release through the existing GitHub Actions → Liar
 ## Boundaries
 
 Browser mobile checks emulate Chromium devices; physical Android/iPhone validation and field performance are not established. German/Persian copy is complete but still benefits from owner language review. The portfolio does not deploy or restart Emerald Case processing infrastructure. Existing untracked user work is preserved.
+
+## Owner follow-up
+
+Homepage and navigation order is Professional Experience → Skills → Projects. Hesabo copy and a dedicated skills group now explicitly describe real-time financial charts, detailed finance panels, payment-service-provider integrations, a dedicated WebSocket support chat and custom in-house tools, supplied directly by the owner. These additions are synchronized across all three locales. Shared amber notices clearly distinguish public MVP/confidential scope and temporary processing outages from project descriptions, with icon, border, tinted background and semibold label in both themes.
+
+The follow-up passed the 39-unit and 27-browser-test suites, typecheck, lint and production build. A WebKit 26.5 mobile smoke additionally reached a ready 3D frame on the Persian page, with no page errors or horizontal overflow; this does not establish physical iPhone validation.
+
+The corrected standalone bundle passed all Linux container checks in run 44127066081. Liara's Iran builder then rejected the pinned public base-image pull with registry RBAC access denied. Deployment now selects the supported Germany build location while retaining the exact base image, tested runtime, existing application, hosting and domains. New production verification is pending.

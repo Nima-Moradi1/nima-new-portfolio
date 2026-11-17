@@ -133,7 +133,7 @@ async function main() {
           "--app=nimamoradirad",
           "--platform=docker",
           "--port=3000",
-          "--build-location=iran",
+          "--build-location=germany",
           `--api-token=${token}`,
           `--message=${message}`,
           "--no-app-logs",
