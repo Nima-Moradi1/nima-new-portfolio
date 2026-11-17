@@ -95,3 +95,10 @@ Updated: 2026-11-17. Requested scope: attached master execution brief and suppli
 - Final mobile compact-view Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 92 (canonical points to production, so local SEO warning is expected). Mobile lab FCP/LCP 1.220s, CLS 0, TBT 91ms, Speed Index 2.032s, server-response diagnostic 103ms. Prior desktop lab: Performance 100, LCP .794s, CLS .0188. Field p75/INP unavailable.
 - Original-source and public PDF SHA-256 are identical: D3A8412B034586FC556AAB3D8888C6B7C5C78222B207BE0F58893A91F81E4CDD.
 - Latest unit suite 39/39 pass; source and test typecheck passes. New context-loss test required an HTMLCanvasElement type assertion; corrected. Final browser run pending, then release candidate commit/push and production workflow.
+
+## Production deployment in progress
+
+- Final release candidate `b4cf55907557d77e9270e6ebf7c8251bdca80438` built successfully with DEPLOYMENT_SHA set. Local `deploy/verify.mjs` passed all 18 localized routes, removed-route behavior and 26 exact asset hashes.
+- Pushed the verified feature history to main without rewriting history. GitHub Actions run: https://github.com/Nima-Moradi1/nima-new-portfolio/actions/runs/44126431506 . Locked npm install, lint, typecheck and unit tests have passed; Linux production build is in progress.
+- Final local browser suite 27 passed / one intentional touch-only desktop skip. Decoded Persian mobile and German desktop assets/layouts inspected; no browser page errors.
+- Do not advance main while release.mjs is running: it verifies main still matches the release SHA. Keep handoff until exact production SHA, all locales/assets/download and browser checks pass. After completion, documentation-only result/handoff cleanup commits may use [skip ci] to avoid rebuilding unchanged application code; report deployed source SHA separately.
