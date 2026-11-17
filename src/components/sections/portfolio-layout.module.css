@@ -190,14 +190,6 @@
   font-size: 0.9375rem;
   color: var(--muted-bright);
 }
-.projectStatus {
-  border-inline-start: 2px solid var(--signal-soft);
-  padding-inline-start: 0.875rem;
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--muted-bright);
-}
-.projectStatus strong,
 .body strong,
 .heroIntro strong {
   color: var(--paper);

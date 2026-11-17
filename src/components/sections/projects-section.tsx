@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import type { ProjectItem } from "@/types/portfolio";
 import styles from "./portfolio-layout.module.css";
+import { ProjectStatusNotice } from "@/components/projects/project-status-notice";
 
 function ProjectPreview({
   project,
@@ -34,13 +35,13 @@ function ProjectPreview({
         <h3 className={styles.projectTitle}>{project.title}</h3>
         <p className={styles.body}>{project.summary}</p>
         <p className={styles.contribution}>{project.contribution}</p>
-        {project.status ? (
-          <div className={styles.projectStatus}>
-            <p>
-              <strong>{project.status}</strong>
-            </p>
-            {project.statusNote ? <p>{project.statusNote}</p> : null}
-          </div>
+        {project.status && project.statusNote ? (
+          <ProjectStatusNotice
+            title={project.status}
+            description={project.statusNote}
+          />
+        ) : project.status ? (
+          <p className={styles.period}>{project.status}</p>
         ) : null}
         <div className={styles.tags}>
           {project.technologies.slice(0, 4).map((tech) => (

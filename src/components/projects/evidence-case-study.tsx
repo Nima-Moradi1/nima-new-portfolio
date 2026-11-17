@@ -8,6 +8,7 @@ import { materializePortfolio } from "@/content/portfolio";
 import type { PortfolioContent } from "@/types/portfolio";
 import styles from "./evidence-case-study.module.css";
 import { EmphasizedText } from "@/components/ui/emphasized-text";
+import { ProjectStatusNotice } from "./project-status-notice";
 
 export async function EvidenceCaseStudy({
   slug,
@@ -44,11 +45,13 @@ export async function EvidenceCaseStudy({
             {project.caseStudy?.title ?? project.title}
           </h1>
           <p className={styles.intro}>{project.summary}</p>
-          {project.status ? (
-            <div className={styles.status}>
-              <strong>{project.status}</strong>
-              {project.statusNote ? <p>{project.statusNote}</p> : null}
-            </div>
+          {project.status && project.statusNote ? (
+            <ProjectStatusNotice
+              title={project.status}
+              description={project.statusNote}
+            />
+          ) : project.status ? (
+            <p className={styles.status}>{project.status}</p>
           ) : null}
           <div className={styles.links}>
             {evidence.liveUrl ? (

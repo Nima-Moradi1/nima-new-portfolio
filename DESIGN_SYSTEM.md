@@ -164,3 +164,7 @@ The mobile site is recomposed, not scaled. Hover-only affordances are removed on
 ## Employer-focused revision
 
 The current homepage supersedes the earlier theatrical/chapter layout: restrained variation/motion/density 5/3/4; 1200px content shell; 72px compact header; one green accent; semantic dark/light tokens; 16px media panels and rounded actions. Hero title is solid and fluid (approximately 38-64px), section headings 29-40px, body 16-18px, essential metadata 14-15px. Persian uses the existing IranYekanX font without letter spacing. Ordinary vertical reading order and visible evidence take priority over motion. No full-page loader or canvas-dependent navigation.
+
+## Project scope and availability notices
+
+Use the shared ProjectStatusNotice for public MVP/confidential scope and temporarily unavailable processing infrastructure. A mild amber `--warning` token adapts to light/dark themes. Keep a tinted surface, restrained border and icon, a semibold status title and neutral explanatory text. These static notices are visually distinct from ordinary project copy and do not use urgent live-alert semantics.

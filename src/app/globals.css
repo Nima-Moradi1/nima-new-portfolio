@@ -177,6 +177,7 @@
   --violet: #a98cff;
   --coral: #ff7e67;
   --error: #ff9b8b;
+  --warning: #efc785;
   --success: #b8ff45;
   --header-glass: rgba(9, 11, 10, 0.7);
   --mobile-nav-bg: rgba(9, 11, 10, 0.97);
@@ -255,6 +256,7 @@ html[lang="fa"] {
   --violet: #6948c8;
   --coral: #bd4f3e;
   --error: #a43c2b;
+  --warning: #805014;
   --success: #477512;
   --header-glass: rgba(214, 218, 195, 0.66);
   --mobile-nav-bg: rgba(224, 225, 207, 0.94);
