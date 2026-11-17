@@ -1,3 +1,19 @@
+# FINAL STATUS: all requested application work verified
+
+- Original brief and all three owner follow-up requirements implemented and verified. Live release v67 / source 07b48ad on both domains. 39 unit tests, 27 local and 27 live E2E tests pass (one intentional touch-only desktop skip each), typecheck/build pass; lint has only the pre-existing OG img warning.
+- Production Lighthouse: mobile performance 98, FCP/LCP 1.236s, CLS 0, TBT 148ms, SI 1.893s, server response 133ms; desktop performance 100, FCP .543s, LCP .623s, CLS 0, TBT 4ms, SI .807s, server response 488ms. Accessibility/SEO/Best Practices 100 both. Field/INP and physical-device validation not established.
+- Permanent record: docs/modernization-verification.md and docs/performance/modernization-lab-2026-11-17.json. GitHub CI passed source/build/container; upload transport stalled, so exact CI-tested artifact was deployed with local CLI successfully. No claim of green end-to-end CI deployment.
+- Next and final action after this record is committed/pushed: delete this temporary HANDOFF.md, commit/push deletion with [skip ci], fast-forward local main and confirm remote SHAs and unchanged production SHA. User's pre-existing .tmp-moradi-gallery remains untouched.
+
+# Production verified: v67 / 07b48ad
+
+- Liara v67 is current and READY. Exact source SHA 07b48ad64d7e35effe761ef7f774316ff78b682e on nimamoradirad.com and nimamoradirad.liara.run.
+- GitHub run 44129831375 passed locked install/lint/typecheck/39 unit tests/Linux build/container verification. Upload to Liara from GitHub stalled after archive creation for over eight minutes; canceled it before any new release existed. Downloaded its tested Linux runtime artifact 14348054243 and verified SHA256 b9b725d43166a840e04d79e58025c4e9c1d01d56ef98863d33597c75b0f8e6bb against CI manifest.
+- Deployed that unchanged artifact through authenticated local Liara CLI 9.7 using Germany builder; exact pinned base-image pull and build succeeded. No plan/DNS/domain/hosting changes. CLI success corroborated by Liara current READY release and both live SHAs after routing propagation.
+- Verified all 18 locale routes and all 26 asset hashes on EACH public domain against extracted CI public/static bytes, including original PDF/preview and removed routes.
+- Full production Playwright suite: 27 passed / one intentional desktop skip (mobile-only touch). Both-theme accessibility, responsive reflow, language switching, section order, pointer/keyboard/touch 3D and fallbacks all pass. Local 39 unit tests pass; local WebKit mobile smoke passed.
+- Current next action: finish production Lighthouse mobile/desktop measurements, update permanent verification report and commit/push final handoff record, then remove HANDOFF.md and commit/push its deletion using docs-only [skip ci]. Do not redeploy unchanged application code merely for final documentation cleanup.
+
 # Latest owner follow-up (2026-11-17)
 
 - Owner requests actual homepage + navigation order: Professional Experience -> Skills -> Projects, and expanded Hesabo responsibilities/capabilities for real-time charts, detailed financial panels, payment providers, dedicated WebSocket support chat and custom in-house tooling; apply to EN/FA/DE. Implemented, checks pending.

@@ -1,5 +1,7 @@
 # Portfolio modernization — November 2026
 
+Completed and production-verified: Liara **v67**, application source **07b48ad64d7e35effe761ef7f774316ff78b682e**. English, Persian and German are live on both public domains. Final documentation commits do not change the deployed application.
+
 ## Scope and source
 
 The owner-supplied two-page `Nima-Moradirad-2027-update.pdf` is authoritative for employment and education. The execution brief separately supplies the AI-agent, mobile and broader engineering capability descriptions. No confidential implementation details are published.
@@ -50,13 +52,37 @@ Lighthouse 13.6, local production server, Chromium, default simulated mobile thr
 
 Local Accessibility and Best Practices scored 100. Local SEO scored 92 because the canonical URL correctly points to the production domain. INP, real-user TTFB and field p75 Core Web Vitals are unavailable: navigation Lighthouse audits do not establish them. TBT is not a substitute for INP. Remaining framework JavaScript and CSS diagnostics were reviewed; optional Three.js stays outside initial page loading.
 
+## Production performance
+
+Lighthouse 13.6 navigation audits of https://nimamoradirad.com after v67 activation. Default simulated mobile throttling and desktop preset, collected separately after browser tests. Full compact results: [lab record](performance/modernization-lab-2026-11-17.json).
+
+| Lab metric                           | Production mobile | Production desktop |
+| ------------------------------------ | ----------------: | -----------------: |
+| Performance                          |                98 |                100 |
+| Accessibility / Best Practices / SEO |   100 / 100 / 100 |    100 / 100 / 100 |
+| FCP                                  |            1.236s |             0.543s |
+| LCP                                  |            1.236s |             0.623s |
+| CLS                                  |                 0 |                  0 |
+| TBT                                  |             148ms |                4ms |
+| Speed Index                          |            1.893s |             0.807s |
+| Server-response diagnostic           |             133ms |              488ms |
+
+Both lab LCP/CLS results meet the specified good thresholds. Field p75, INP and real-user TTFB remain unmeasured. No Lighthouse runtime warnings. Remaining diagnostics concern stylesheet/font dependency chains; mobile estimated render-blocking savings were 140ms. No application rewrite was justified by those findings.
+
 ## Delivery and production verification
 
-Pending at this checkpoint. Release through the existing GitHub Actions → Liara `nimamoradirad` workflow. Verify the exact deployed SHA on both domains, original résumé bytes, all locales and browser smoke tests before removing the temporary handoff.
+- Repository: [Nima-Moradi1/nima-new-portfolio](https://github.com/Nima-Moradi1/nima-new-portfolio), branch `main`; categorized `feat`, `fix` and `docs` commits, also synchronized to `feat/portfolio-modernization`.
+- Owner follow-up commits: `27c8c4a` (experience-first order and Hesabo responsibilities), `0f89add` (shared warning notices), `07b48ad` (Germany builder).
+- [GitHub run 44129831375](https://github.com/Nima-Moradi1/nima-new-portfolio/actions/runs/44129831375) passed the locked npm install, lint, typecheck, 39 unit tests, Linux build, standalone packaging and production-container smoke checks. Its Liara upload stalled after archive creation for over eight minutes; it was canceled before a new release existed. This workflow is not reported as a successful automated deployment.
+- Downloaded its tested Linux runtime artifact `14348054243`, verified the original manifest SHA-256 `b9b725d43166a840e04d79e58025c4e9c1d01d56ef98863d33597c75b0f8e6bb`, and deployed that unchanged bundle with the authenticated local Liara CLI 9.7 and Germany builder. No dependency reinstall, Windows build substitution, plan change, DNS change or domain change.
+- Liara application `nimamoradirad`: release **v67**, current and **READY**. CLI completion corroborated through Liara release metadata and exact live SHA **07b48ad64d7e35effe761ef7f774316ff78b682e** on [production](https://nimamoradirad.com) and [Liara domain](https://nimamoradirad.liara.run) after routing propagation.
+- On each public domain: all **18 localized routes** and **26 exact asset hashes** verified against the CI runtime's extracted public/static files, including the original PDF and preview; removed routes verified as noindex/404.
+- Full live Playwright suite against `https://nimamoradirad.com`: **27 passed**, one intentional desktop skip for the mobile-only touch case, 1.5 minutes. This includes section order, all locales/reflow, language switching, both-theme accessibility, original PDF bytes, routes, pointer/keyboard/touch 3D rotation, reopening and failure/reduced-motion fallbacks.
+- Application source is fully committed and pushed. Final result/handoff cleanup uses documentation-only `[skip ci]` commits, preserving the verified deployed application; temporary handoff is retained in Git history.
 
 ## Boundaries
 
-Browser mobile checks emulate Chromium devices; physical Android/iPhone validation and field performance are not established. German/Persian copy is complete but still benefits from owner language review. The portfolio does not deploy or restart Emerald Case processing infrastructure. Existing untracked user work is preserved.
+Browser mobile checks emulate Chromium devices; physical Android/iPhone validation and field performance are not established. German/Persian copy is complete but still benefits from owner language review. GitHub-runner upload transport remains unreliable; the successful release used the exact CI-tested artifact through the local authenticated CLI. This external transport limitation is not presented as a repaired automated CI deployment. The portfolio does not deploy or restart Emerald Case processing infrastructure. Existing untracked user work is preserved.
 
 ## Owner follow-up
 
@@ -64,4 +90,4 @@ Homepage and navigation order is Professional Experience → Skills → Projects
 
 The follow-up passed the 39-unit and 27-browser-test suites, typecheck, lint and production build. A WebKit 26.5 mobile smoke additionally reached a ready 3D frame on the Persian page, with no page errors or horizontal overflow; this does not establish physical iPhone validation.
 
-The corrected standalone bundle passed all Linux container checks in run 44127066081. Liara's Iran builder then rejected the pinned public base-image pull with registry RBAC access denied. Deployment now selects the supported Germany build location while retaining the exact base image, tested runtime, existing application, hosting and domains. New production verification is pending.
+The corrected standalone bundle passed all Linux container checks in run 44127066081. Liara's Iran builder then rejected the pinned public base-image pull with registry RBAC access denied. Deployment now selects the supported Germany build location while retaining the exact base image, tested runtime, existing application, hosting and domains. Production verification completed as recorded above.
