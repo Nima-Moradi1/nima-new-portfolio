@@ -41,7 +41,7 @@ export function LocaleSwitcher() {
         <button
           className={styles.trigger}
           type="button"
-          aria-label={t("current", { language: t(`locales.${locale}`) })}
+          aria-label={`${localeMarks[locale]} · ${t("current", { language: t(`locales.${locale}`) })}`}
         >
           <Languages
             className={styles.icon}

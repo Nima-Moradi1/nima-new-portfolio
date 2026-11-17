@@ -83,7 +83,7 @@
   "Experience": {
     "eyebrow": "Professional trajectory",
     "title": "A career, bound in chapters.",
-    "fallbackTitle": "A career path written in four chapters.",
+    "fallbackTitle": "A career path across five role chapters.",
     "fallbackDescription": "The 3D reader is replaced with a motion-safe edition on this device.",
     "desktopDescription": "Scroll to turn the pages. Use arrow keys when the reader is focused.",
     "mobileDescription": "A touch-optimized edition of the experience book.",
@@ -104,7 +104,7 @@
   },
   "Capabilities": {
     "eyebrow": "Engineering capabilities",
-    "title": "Web to Android",
+    "title": "Web, Android and iOS",
     "description": "Architecture, delivery, quality, and AI-assisted systems for production products.",
     "regionLabel": "Horizontal engineering capabilities timeline",
     "chromeTitle": "Skills & experience",
@@ -193,7 +193,7 @@
     "label": "Document · PDF",
     "title": "Nima Moradirad - Résumé",
     "close": "Close résumé preview",
-    "previewAlt": "Nima Moradirad’s résumé, covering profile, capabilities, professional experience, selected work, education, and technical toolkit",
+    "previewAlt": "First page of Nima Moradirad’s original two-page résumé, covering technical leadership, engineering skills and Hesabo experience",
     "description": "The original two-page résumé, including technical leadership and employment history.",
     "open": "Open full size",
     "download": "Download PDF"

@@ -83,7 +83,7 @@
   "Experience": {
     "eyebrow": "Beruflicher Weg",
     "title": "Eine Laufbahn in Kapiteln.",
-    "fallbackTitle": "Ein Berufsweg, erzählt in vier Kapiteln.",
+    "fallbackTitle": "Ein Berufsweg in fünf beruflichen Kapiteln.",
     "fallbackDescription": "Auf diesem Gerät wird die 3D-Ansicht durch eine bewegungsarme Ausgabe ersetzt.",
     "desktopDescription": "Scrollen Sie, um umzublättern. Wenn der Reader fokussiert ist, können Sie auch die Pfeiltasten verwenden.",
     "mobileDescription": "Eine für Touch-Eingaben optimierte Ausgabe des Erfahrungsbuchs.",
@@ -104,7 +104,7 @@
   },
   "Capabilities": {
     "eyebrow": "Technische Kompetenzen",
-    "title": "Vom Web bis Android.",
+    "title": "Web, Android und iOS",
     "description": "Architektur, Delivery, Qualität und KI-gestützte Systeme für produktive Anwendungen.",
     "regionLabel": "Horizontale Zeitleiste der technischen Kompetenzen",
     "chromeTitle": "Kompetenzen & Erfahrung",
@@ -193,7 +193,7 @@
     "label": "Dokument · PDF",
     "title": "Nima Moradirad - Lebenslauf",
     "close": "Lebenslaufvorschau schließen",
-    "previewAlt": "Lebenslauf von Nima Moradirad mit Profil, Kompetenzen, Berufserfahrung, ausgewählten Projekten, Ausbildung und technischem Werkzeugkasten",
+    "previewAlt": "Erste Seite des originalen zweiseitigen Lebenslaufs von Nima Moradirad mit technischer Führung, Engineering-Kompetenzen und Hesabo-Erfahrung",
     "description": "Der originale zweiseitige Lebenslauf mit technischer Führung und beruflichem Werdegang.",
     "open": "In voller Größe öffnen",
     "download": "PDF herunterladen"

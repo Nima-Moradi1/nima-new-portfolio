@@ -39,6 +39,8 @@
   font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--muted-bright);
+  border-inline-start: 2px solid var(--signal-soft);
+  padding-inline-start: 0.875rem;
 }
 .links {
   display: flex;
@@ -98,4 +100,9 @@
   font-size: 0.9375rem;
   color: var(--muted-bright);
   margin-bottom: 2rem;
+}
+:global(html[lang="fa"]) .title,
+:global(html[lang="fa"]) .prose h2 {
+  letter-spacing: normal;
+  line-height: 1.6;
 }

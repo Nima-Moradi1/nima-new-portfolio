@@ -144,7 +144,7 @@ export default async function LocaleLayout({
     jobTitle: portfolio.identity.role,
     email: `mailto:${portfolio.identity.email}`,
     sameAs: portfolio.socialLinks.map((link) => link.href),
-    knowsLanguage: ["en", "fa", "de"],
+    knowsLanguage: ["en"],
   };
 
   return (

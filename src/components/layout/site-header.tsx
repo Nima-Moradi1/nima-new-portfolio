@@ -50,11 +50,7 @@ export function SiteHeader() {
     <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
       <header className={styles.header} data-compact={compact}>
         <div className={styles.inner} ref={innerRef}>
-          <Link
-            href="/#top"
-            className={styles.brand}
-            aria-label={navigation("goTop")}
-          >
+          <Link href="/#top" className={styles.brand}>
             <Image
               src="/assets/nima-moradirad.jpg"
               alt=""
@@ -82,7 +78,7 @@ export function SiteHeader() {
               className={styles.resume}
               aria-label={t("resume")}
               href={portfolio.identity.resumeUrl}
-              download="Nima-Moradirad-Resume.pdf"
+              download="Nima-Moradirad-2027-update.pdf"
             >
               <span className={styles.resumeFull}>{t("resume")}</span>
               <span className={styles.resumeShort}>{t("resumeShort")}</span>
